@@ -95,9 +95,13 @@ Prepare a human-readable summary in a well-structured paragraph, eliminating any
         """This is a round 2
         """   
         for item in self.genai_questions_for_sme:
+            print ('--------------------------Question--------->>>>>>>>>')
+            print (item)
             sme_response = self.SMEAgent.create(messages=[{'content': item, 'role': 'user'}], context=None)
+            print ('--------------------------Answer--------->>>>>>>>>')
             print (sme_response)
             self.genai_responses_from_sme.append(sme_response)
+            print ('<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>')
 
     def init_chat(self, message):
         """_summary_
