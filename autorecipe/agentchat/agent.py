@@ -24,22 +24,6 @@ class Agent:
         """Get the name of the agent."""
         return self._name
 
-    def send(
-        self,
-        message: Union[Dict, str],
-        recipient: "Agent",
-        request_reply: Optional[bool] = None,
-    ):
-        """(Abstract method) Send a message to another agent."""
-
-    def receive(
-        self,
-        message: Union[Dict, str],
-        sender: "Agent",
-        request_reply: Optional[bool] = None,
-    ):
-        """(Abstract method) Receive a message from another agent."""
-
     def reset(self):
         """(Abstract method) Reset the agent."""
 

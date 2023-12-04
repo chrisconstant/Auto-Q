@@ -63,43 +63,27 @@ def extract_code(
     print (extracted)
     return extracted
 
-def extract_questions(text):
-    chat_agent_response = content_str(text)
-    questions_start_index = chat_agent_response.find("1. ")
-    questions_end_index = chat_agent_response.rfind("\n\n") + 2  # Adding 2 to include the last newline characters
-    questions_string = chat_agent_response[questions_start_index:questions_end_index]
-
-    # Splitting the questions into a list
-    questions_list = questions_string.split("\n")
-
-    # Removing empty elements from the list
-    questions_list = [question.strip() for question in questions_list if question.strip()]
-
-    # Printing the list of questions
-    print(json.dumps(questions_list, indent=2))
-
-
 class GenAIChatClient(Model):
-    def __init__(self, model, params, credentials):
+    def __init__(self, model, params, credentials, system_message):
         self.client = LangChainChatInterface(
             model=model,
             params=GenerateParams(**params),
             credentials=Credentials(**credentials),
         )
         self._conversation_id = None
+        self.system_message = system_message
 
     def _preprocess_create_payload(self, messages):
         chatmessage = []
+        if self._conversation_id is None:
+            chatmessage.append(SystemMessage(content=self.system_message))
         for item in messages:
-            #print (extract_code(item['content']))
-            print (extract_questions(item['content']))
             if item['role'] == 'system':
                 chatmessage.append(SystemMessage(content=item['content']))
             elif item['role'] == 'user':
                 chatmessage.append(HumanMessage(content=item['content']))
             elif item['role'] == 'assistant':
                 chatmessage.append(AIMessage(content=item['content']))
-        #print(chatmessage)
         return [chatmessage]
 
     def create(self, context, messages):
@@ -108,16 +92,37 @@ class GenAIChatClient(Model):
         if self._conversation_id:
             result = self.client.generate(
                 messages=messages,
-                #options=ChatOptions(
-                #    conversation_id=self._conversation_id,
-                #    use_conversation_parameters=True,
-                #),
+                options=ChatOptions(
+                    conversation_id=self._conversation_id,
+                    use_conversation_parameters=True,
+                ),
             )
             return result.generations[0][0].text
         else:
             result = self.client.generate(messages=messages)
-            #print (result)
             self._conversation_id = result.generations[0][0].generation_info["meta"]["conversation_id"]
             return result.generations[0][0].text
         
-    
+
+    def extract_questions(self, text):
+        chat_agent_response = content_str(text)
+        questions_start_index = chat_agent_response.find("1. ")
+        questions_end_index = chat_agent_response.rfind("\n\n") + 2  # Adding 2 to include the last newline characters
+        questions_string = chat_agent_response[questions_start_index:questions_end_index]
+
+        # Splitting the questions into a list
+        questions_list = questions_string.split("\n")
+
+        # Removing empty elements from the list
+        questions_list = [question.strip() for question in questions_list if question.strip()]
+        final_questions  = []
+        for item in questions_list:
+            first_space_index = item.find(' ')
+            if first_space_index != -1:
+                final_questions.append(item[first_space_index+1:])
+            else:
+                final_questions.append(item)
+
+        # Printing the list of questions
+        return final_questions
+
