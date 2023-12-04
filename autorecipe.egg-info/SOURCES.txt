@@ -10,3 +10,5 @@ autorecipe/agentchat/agent.py
 autorecipe/agentchat/assistant_agent.py
 autorecipe/agentchat/conversable_agent.py
 autorecipe/agentchat/user_proxy_agent.py
+autorecipe/genai/GenAIChat.py
+autorecipe/genai/__init__.py

@@ -2,27 +2,24 @@ from .agent import Agent
 from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Type, Union
 from collections import defaultdict
 import copy
-
-from genai.credentials import Credentials
-from genai.schemas import GenerateParams
+from autorecipe.genai.GenAIChat import GenAIChatClient
 from genai.model import Model
 
-MAX_CONSECUTIVE_AUTO_REPLY = 100
-DEFAULT_CONFIG = {
-    "model": "meta-llama/llama-2-70b-chat",
-    "params": {
-        "min_new_tokens": 10,
-        "max_new_tokens": 200,
-    },
-    "creds": {
-        "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
-        "api_endpoint": "https://bam-api.res.ibm.com",
-    },
-}
-llm_config: Union[Dict, Literal[False]]
-
-
 class ConversableAgent(Agent):
+    MAX_CONSECUTIVE_AUTO_REPLY = 100
+    DEFAULT_CONFIG = {
+        "model": "meta-llama/llama-2-70b-chat",
+        "params": {
+            "decoding_method": "greedy",
+            "min_new_tokens": 200,
+            "max_new_tokens": 2000,
+        },
+        "creds": {
+            "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
+            "api_endpoint": "https://bam-api.res.ibm.com",
+        },
+    }
+
     def __init__(
         self,
         name: str,
@@ -51,10 +48,10 @@ class ConversableAgent(Agent):
             self.genai_config = self.DEFAULT_CONFIG.copy()
             if isinstance(genai_config, dict):
                 self.genai_config.update(genai_config)
-            self.client = Model(
-                self.genai_config["model"],
-                params=GenerateParams(**self.genai_config["params"]),
-                credentials=Credentials(**self.genai_config),
+            self.client = GenAIChatClient(
+                self.genai_config['model'],
+                self.genai_config['params'],
+                self.genai_config['creds'],
             )
 
         self._code_execution_config: Union[Dict, Literal[False]] = (
@@ -183,7 +180,7 @@ class ConversableAgent(Agent):
                 "role"
             ] = "assistant"  # only messages with role 'assistant' can have a function call.
             genai_message["function_call"] = dict(genai_message["function_call"])
-        self._genai_message[conversation_id].append(genai_message)
+        self._genai_messages[conversation_id].append(genai_message)
         return True
 
     def send(
@@ -193,28 +190,13 @@ class ConversableAgent(Agent):
         request_reply: Optional[bool] = None,
         silent: Optional[bool] = False,
     ):
+        print ('I am in send - it will be send to ' + recipient.name)
         # When the agent composes and sends the message, the role of the message is "assistant"
         # unless it's "function".
         valid = self._append_genai_messages(message, "assistant", recipient)
+        print (valid)
         if valid:
             recipient.receive(message, self, request_reply, silent)
-        else:
-            raise ValueError(
-                "Message can't be converted into a valid ChatCompletion message. Either content or function_call must be provided."
-            )
-
-    async def a_send(
-        self,
-        message: Union[Dict, str],
-        recipient: Agent,
-        request_reply: Optional[bool] = None,
-        silent: Optional[bool] = False,
-    ):
-        # When the agent composes and sends the message, the role of the message is "assistant"
-        # unless it's "function".
-        valid = self._append_genai_messages(message, "assistant", recipient)
-        if valid:
-            await recipient.a_receive(message, self, request_reply, silent)
         else:
             raise ValueError(
                 "Message can't be converted into a valid ChatCompletion message. Either content or function_call must be provided."
@@ -239,6 +221,7 @@ class ConversableAgent(Agent):
         request_reply: Optional[bool] = None,
         silent: Optional[bool] = False,
     ):
+        print ('I am in recive of ' + self.name +  ' and reply will be send to ' + sender.name)
         self._process_received_message(message, sender, silent)
         if (
             request_reply is False
@@ -248,27 +231,17 @@ class ConversableAgent(Agent):
             return
         reply = self.generate_reply(messages=self.chat_messages[sender], sender=sender)
         if reply is not None:
+            print ('I am about to send response ' + reply)
             self.send(reply, sender, silent=silent)
 
-    async def a_receive(
-        self,
-        message: Union[Dict, str],
-        sender: Agent,
-        request_reply: Optional[bool] = None,
-        silent: Optional[bool] = False,
-    ):
-        self._process_received_message(message, sender, silent)
-        if (
-            request_reply is False
-            or request_reply is None
-            and self.reply_at_receive[sender] is False
-        ):
-            return
-        reply = await self.a_generate_reply(sender=sender)
-        if reply is not None:
-            await self.a_send(reply, sender, silent=silent)
-
     def _prepare_chat(self, recipient, clear_history):
+        """This interaction clear all the info. 
+
+        :param recipient: _description_
+        :type recipient: _type_
+        :param clear_history: _description_
+        :type clear_history: _type_
+        """
         self.reset_consecutive_auto_reply_counter(recipient)
         recipient.reset_consecutive_auto_reply_counter(self)
         self.reply_at_receive[recipient] = recipient.reply_at_receive[self] = True
@@ -283,20 +256,17 @@ class ConversableAgent(Agent):
         silent: Optional[bool] = False,
         **context,
     ):
+        """_summary_
+
+        :param recipient: _description_
+        :type recipient: ConversableAgent
+        :param clear_history: _description_, defaults to True
+        :type clear_history: Optional[bool], optional
+        :param silent: _description_, defaults to False
+        :type silent: Optional[bool], optional
+        """
         self._prepare_chat(recipient, clear_history)
         self.send(self.generate_init_message(**context), recipient, silent=silent)
-
-    async def a_initiate_chat(
-        self,
-        recipient: "ConversableAgent",
-        clear_history: Optional[bool] = True,
-        silent: Optional[bool] = False,
-        **context,
-    ):
-        self._prepare_chat(recipient, clear_history)
-        await self.a_send(
-            self.generate_init_message(**context), recipient, silent=silent
-        )
 
     def reset(self):
         """Reset the agent."""
@@ -319,8 +289,10 @@ class ConversableAgent(Agent):
     def reset_consecutive_auto_reply_counter(self, sender: Optional[Agent] = None):
         """Reset the consecutive_auto_reply_counter of the sender."""
         if sender is None:
+            print ('none - sender')
             self._consecutive_auto_reply_counter.clear()
         else:
+            print ('----sender ', sender.name)
             self._consecutive_auto_reply_counter[sender] = 0
 
     def clear_history(self, agent: Optional[Agent] = None):
@@ -343,11 +315,13 @@ class ConversableAgent(Agent):
             messages = self._genai_messages[sender]
 
         # TODO: #1143 handle token limit exceeded error
+        # print (self._genai_system_message + messages, messages[-1].pop("context", None))
         response = client.create(
             context=messages[-1].pop("context", None),
             messages=self._genai_system_message + messages,
         )
-        return True, client.extract_text_or_function_call(response)[0]
+        # print (response)
+        return True, response
 
     def check_termination_and_human_reply(
         self,
@@ -365,7 +339,7 @@ class ConversableAgent(Agent):
         no_human_input_msg = ""
         if self.human_input_mode == "ALWAYS":
             reply = self.get_human_input(
-                f"Provide feedback to {sender.name}. Press enter to skip and use auto-reply, or type 'exit' to end the conversation: "
+                f"Provide feedback to {sender.name}. Last response was {message}. Press enter to skip and use auto-reply, or type 'exit' to end the conversation: "
             )
             no_human_input_msg = "NO HUMAN INPUT RECEIVED." if not reply else ""
             # if the human input is empty, and the message is a termination message, then we will terminate the conversation
@@ -394,80 +368,6 @@ class ConversableAgent(Agent):
                 else:
                     # self.human_input_mode == "TERMINATE":
                     reply = self.get_human_input(
-                        f"Please give feedback to {sender.name}. Press enter or type 'exit' to stop the conversation: "
-                    )
-                    no_human_input_msg = "NO HUMAN INPUT RECEIVED." if not reply else ""
-                    # if the human input is empty, and the message is a termination message, then we will terminate the conversation
-                    reply = reply or "exit"
-
-        # print the no_human_input_msg
-        # if no_human_input_msg:
-        #    print(colored(f"\n>>>>>>>> {no_human_input_msg}", "red"), flush=True)
-
-        # stop the conversation
-        if reply == "exit":
-            # reset the consecutive_auto_reply_counter
-            self._consecutive_auto_reply_counter[sender] = 0
-            return True, None
-
-        # send the human reply
-        if reply or self._max_consecutive_auto_reply_dict[sender] == 0:
-            # reset the consecutive_auto_reply_counter
-            self._consecutive_auto_reply_counter[sender] = 0
-            return True, reply
-
-        # increment the consecutive_auto_reply_counter
-        self._consecutive_auto_reply_counter[sender] += 1
-        # if self.human_input_mode != "NEVER":
-        #    print(colored("\n>>>>>>>> USING AUTO REPLY...", "red"), flush=True)
-
-        return False, None
-
-    async def a_check_termination_and_human_reply(
-        self,
-        messages: Optional[List[Dict]] = None,
-        sender: Optional[Agent] = None,
-        config: Optional[Any] = None,
-    ) -> Tuple[bool, Union[str, Dict, None]]:
-        """(async) Check if the conversation should be terminated, and if human reply is provided."""
-        if config is None:
-            config = self
-        if messages is None:
-            messages = self._oai_messages[sender]
-        message = messages[-1]
-        reply = ""
-        no_human_input_msg = ""
-        if self.human_input_mode == "ALWAYS":
-            reply = await self.a_get_human_input(
-                f"Provide feedback to {sender.name}. Press enter to skip and use auto-reply, or type 'exit' to end the conversation: "
-            )
-            no_human_input_msg = "NO HUMAN INPUT RECEIVED." if not reply else ""
-            # if the human input is empty, and the message is a termination message, then we will terminate the conversation
-            reply = reply if reply or not self._is_termination_msg(message) else "exit"
-        else:
-            if (
-                self._consecutive_auto_reply_counter[sender]
-                >= self._max_consecutive_auto_reply_dict[sender]
-            ):
-                if self.human_input_mode == "NEVER":
-                    reply = "exit"
-                else:
-                    # self.human_input_mode == "TERMINATE":
-                    terminate = self._is_termination_msg(message)
-                    reply = await self.a_get_human_input(
-                        f"Please give feedback to {sender.name}. Press enter or type 'exit' to stop the conversation: "
-                        if terminate
-                        else f"Please give feedback to {sender.name}. Press enter to skip and use auto-reply, or type 'exit' to stop the conversation: "
-                    )
-                    no_human_input_msg = "NO HUMAN INPUT RECEIVED." if not reply else ""
-                    # if the human input is empty, and the message is a termination message, then we will terminate the conversation
-                    reply = reply if reply or not terminate else "exit"
-            elif self._is_termination_msg(message):
-                if self.human_input_mode == "NEVER":
-                    reply = "exit"
-                else:
-                    # self.human_input_mode == "TERMINATE":
-                    reply = await self.a_get_human_input(
                         f"Please give feedback to {sender.name}. Press enter or type 'exit' to stop the conversation: "
                     )
                     no_human_input_msg = "NO HUMAN INPUT RECEIVED." if not reply else ""
@@ -521,3 +421,58 @@ class ConversableAgent(Agent):
     def function_map(self) -> Dict[str, Callable]:
         """Return the function map."""
         return self._function_map
+
+    def generate_reply(
+        self,
+        messages: Optional[List[Dict]] = None,
+        sender: Optional[Agent] = None,
+        exclude: Optional[List[Callable]] = None,
+    ) -> Union[str, Dict, None]:
+        if all((messages is None, sender is None)):
+            error_msg = f"Either {messages=} or {sender=} must be provided."
+            raise AssertionError(error_msg)
+
+        if messages is None:
+            messages = self._genai_messages[sender]
+
+        for reply_func_tuple in self._reply_func_list:
+            print (reply_func_tuple)
+            reply_func = reply_func_tuple["reply_func"]
+            if exclude and reply_func in exclude:
+                continue
+            if self._match_trigger(reply_func_tuple["trigger"], sender):
+                final, reply = reply_func(self, messages=messages, sender=sender, config=reply_func_tuple["config"])
+                if final:
+                    return reply
+        return self._default_auto_reply
+    
+    def _match_trigger(self, trigger, sender):
+        """Check if the sender matches the trigger."""
+        if trigger is None:
+            return sender is None
+        elif isinstance(trigger, str):
+            return trigger == sender.name
+        elif isinstance(trigger, type):
+            return isinstance(sender, trigger)
+        elif isinstance(trigger, Agent):
+            return trigger == sender
+        elif isinstance(trigger, Callable):
+            return trigger(sender)
+        elif isinstance(trigger, list):
+            return any(self._match_trigger(t, sender) for t in trigger)
+        else:
+            raise ValueError(f"Unsupported trigger type: {type(trigger)}")
+        
+    def get_human_input(self, prompt: str) -> str:
+        """Get human input.
+
+        Override this method to customize the way to get human input.
+
+        Args:
+            prompt (str): prompt for the human input.
+
+        Returns:
+            str: human input.
+        """
+        reply = input(prompt)
+        return reply
