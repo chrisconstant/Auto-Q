@@ -60,7 +60,7 @@ def extract_code(
         elif group2:
             extracted.append(("", group2.strip()))
 
-    print (extracted)
+    #print (extracted)
     return extracted
 
 class GenAIChatClient(Model):

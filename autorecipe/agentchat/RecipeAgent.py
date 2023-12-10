@@ -1,8 +1,8 @@
 from autorecipe.genai.GenAIChat import GenAIChatClient
 from collections import defaultdict
 
-class RecipeAgent:
 
+class RecipeAgent:
     # configuration
     DEFAULT_CONFIG = {
         "model": "meta-llama/llama-2-70b-chat",
@@ -25,7 +25,12 @@ Your job is to build an anomaly model using real time time series sensor data
  questions to be asked in sequential orders to subject matter experts. Typical questions should focus on the
 important components for which anomaly model should be build, the important failure modes and the ability of
  sensor data to detect these failure. You should also leverage the additional information made available in user message if any. 
+ Please do not use a conversational approach to ask questions and gather information.
 """
+
+# Note: Please do not use a conversational approach to ask questions and gather information. 
+# I'll ask follow-up questions based on the response I receive to ensure that I have a clear 
+# understanding of the problem and the data.
 
     SMESystemPrompt = """
 You act as a reliability engineer who is expert in failure modes and effect analysis (FMEA) of asset 
@@ -42,6 +47,15 @@ Prepare a human-readable summary in a well-structured paragraph, eliminating any
  predicting and preventing failures. Ensure the summary provides a coherent narrative. 
 """
 
+    QuestionGenerator = """
+Pretend you are a question generation system. I will give you a list of questions or a pair of question and answer 
+extracted from the conversation between two users where question is asked by data scientist and 
+subject matter expert has provided corresponding answer. Based on the conversation, you reply me with additional set of 
+questions that data scientist can ask to subject matter expert. The newly generated questions must align with original set of questions. 
+you should avoid generating duplicate questions. you should also avoid questions for which potential answer can be similar.
+ Please do not use a conversational approach to ask questions and gather information.
+"""
+
     def __init__(
         self,
         name: str,
@@ -51,62 +65,101 @@ Prepare a human-readable summary in a well-structured paragraph, eliminating any
         self._genai_messages = defaultdict(list)
 
         self.DSAgent = GenAIChatClient(
-            model = self.genai_config["model"],
-            params = self.genai_config["params"],
-            credentials = self.genai_config["creds"],
-            system_message = self.DSSystemPrompt,
+            model=self.genai_config["model"],
+            params=self.genai_config["params"],
+            credentials=self.genai_config["creds"],
+            system_message=self.DSSystemPrompt,
         )
 
         self.SMEAgent = GenAIChatClient(
-            model = self.genai_config["model"],
-            params = self.genai_config["params"],
-            credentials = self.genai_config["creds"],
-            system_message = self.SMESystemPrompt,
+            model=self.genai_config["model"],
+            params=self.genai_config["params"],
+            credentials=self.genai_config["creds"],
+            system_message=self.SMESystemPrompt,
         )
 
-
         self.SummarizeAgent = GenAIChatClient(
-            model = self.genai_config["model"],
-            params = self.genai_config["params"],
-            credentials = self.genai_config["creds"],
-            system_message = self.InfoSummaryPromt,
+            model=self.genai_config["model"],
+            params=self.genai_config["params"],
+            credentials=self.genai_config["creds"],
+            system_message=self.InfoSummaryPromt,
+        )
+
+        self.QuestionGeneratorAgent = GenAIChatClient(
+            model=self.genai_config["model"],
+            params=self.genai_config["params"],
+            credentials=self.genai_config["creds"],
+            system_message=self.QuestionGenerator,
         )
 
         self.genai_questions_for_sme = []
         self.genai_responses_from_sme = []
-
+        self.genai_questions_for_ds = []
 
     def init_round(self, message):
-        """This is a round 1
-        """   
-        ds_response = self.DSAgent.create(messages=[{'content': message, 'role': 'user'}], context=None)
-        sme_response = self.SMEAgent.create(messages=[{'content': message, 'role': 'user'}], context=None)
+        """This is a round 1"""
+        ds_response = self.DSAgent.create(
+            messages=[{"content": message, "role": "user"}], context=None
+        )
+        print (ds_response)
+
+        sme_response = self.SMEAgent.create(
+            messages=[{"content": message, "role": "user"}], context=None
+        )
         ds_questions = self.DSAgent.extract_questions(ds_response)
         self.genai_questions_for_sme.extend(ds_questions)
+        print (len(self.genai_questions_for_sme))
 
         # round 1 revision
-        ds_summary = self.SummarizeAgent.create(messages=[{'content': sme_response, 'role': 'user'}], context=None)
-        addon = ds_summary + ' Would you like to add additional set of questions based on provided information?'
-        ds_response_1 = self.DSAgent.create(messages=[{'content': addon, 'role': 'user'}], context=None)
+        ds_summary = self.SummarizeAgent.create(
+            messages=[{"content": sme_response, "role": "user"}], context=None
+        )
+        addon = (
+            ds_summary
+            + " Would you like to add additional set of questions based on provided information?"
+        )
+        ds_response_1 = self.DSAgent.create(
+            messages=[{"content": addon, "role": "user"}], context=None
+        )
         ds_questions_1 = self.DSAgent.extract_questions(ds_response_1)
         self.genai_questions_for_sme.extend(ds_questions_1)
+        print (len(self.genai_questions_for_sme))
 
     def next_round(self):
-        """This is a round 2
-        """   
+        """This is a round 2"""
         for item in self.genai_questions_for_sme:
-            print ('--------------------------Question--------->>>>>>>>>')
+            print("--------------------------Question--------->>>>>>>>>")
             print (item)
-            sme_response = self.SMEAgent.create(messages=[{'content': item, 'role': 'user'}], context=None)
-            print ('--------------------------Answer--------->>>>>>>>>')
+            sme_response = self.SMEAgent.create(
+                messages=[{"content": item, "role": "user"}], context=None
+            )
+            print("--------------------------Answer--------->>>>>>>>>")
             print (sme_response)
             self.genai_responses_from_sme.append(sme_response)
-            print ('<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>')
+            print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
+
+    def question_generation(self):
+        """This is a question generation"""
+        # purelly using questions
+
+        # approch 1. Q1, Q2, Q3, ..... , Q20 ---> Q21, ...., Q30 (Question Prediction)
+        result = '\n'.join(['question: ' + item for item in self.genai_questions_for_sme])
+        question_response = self.QuestionGeneratorAgent.create(
+            messages=[{"content": result, "role": "user"}], context=None
+        )
+        print (question_response)
+
+        # approach 2. Q1, A1 --> Q2
+        # purely using question-answer pair
+        for qid in range(len(self.genai_questions_for_sme)):
+            result = f'Question: {self.genai_questions_for_sme[qid]} \n Answer: {self.genai_responses_from_sme[qid]}'
+            question_response = self.QuestionGeneratorAgent.create(
+                messages=[{"content": result, "role": "user"}], context=None
+            )
+            print (question_response)
 
     def init_chat(self, message):
-        """_summary_
-        """
+        """_summary_"""
         self.init_round(message=message)
         self.next_round()
-        
-
+        self.question_generation()
