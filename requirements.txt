@@ -3,3 +3,4 @@ streamlit-chat==0.1.1
 ibm-generative-ai==0.5.1
 langchain==0.0.348
 python-dotenv==1.0.0
+mlflow
