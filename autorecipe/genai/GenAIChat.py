@@ -8,6 +8,7 @@ from langchain.schema import HumanMessage, SystemMessage, AIMessage
 from typing import Callable, Dict, List, Optional, Tuple, Union
 import re
 import json
+import mlflow
 
 UNKNOWN = "unknown"
 def content_str(content: Union[str, List]) -> str:
@@ -64,7 +65,8 @@ def extract_code(
     return extracted
 
 class GenAIChatClient(Model):
-    def __init__(self, model, params, credentials, system_message):
+    def __init__(self, name, model, params, credentials, system_message):
+        self.name = name
         self.client = LangChainChatInterface(
             model=model,
             params=GenerateParams(**params),
@@ -86,22 +88,29 @@ class GenAIChatClient(Model):
                 chatmessage.append(AIMessage(content=item['content']))
         return [chatmessage]
 
-    def create(self, context, messages):
+    def create(self, context, messages, experiment_id):
         """ """
-        messages = self._preprocess_create_payload(messages)
-        if self._conversation_id:
-            result = self.client.generate(
-                messages=messages,
-                options=ChatOptions(
-                    conversation_id=self._conversation_id,
-                    use_conversation_parameters=True,
-                ),
-            )
-            return result.generations[0][0].text
-        else:
-            result = self.client.generate(messages=messages)
-            self._conversation_id = result.generations[0][0].generation_info["meta"]["conversation_id"]
-            return result.generations[0][0].text
+        with mlflow.start_run(experiment_id=experiment_id, nested=True) as conv:
+            q_dict = {"Question": messages}
+            mlflow.log_dict(q_dict, 'Question.json')
+            messages = self._preprocess_create_payload(messages)
+            if self._conversation_id:
+                result = self.client.generate(
+                    messages=messages,
+                    options=ChatOptions(
+                        conversation_id=self._conversation_id,
+                        use_conversation_parameters=True,
+                    ),
+                )
+                a_dict = {"Answer": result.generations[0][0].text}
+                mlflow.log_dict(a_dict, 'Answer.json')
+                return result.generations[0][0].text
+            else:
+                result = self.client.generate(messages=messages)
+                self._conversation_id = result.generations[0][0].generation_info["meta"]["conversation_id"]
+                a_dict = {"Answer": result.generations[0][0].text}
+                mlflow.log_dict(a_dict, 'Answer.json')
+                return result.generations[0][0].text
         
 
     def extract_questions(self, text):

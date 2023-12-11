@@ -1,5 +1,6 @@
 from autorecipe.genai.GenAIChat import GenAIChatClient
 from collections import defaultdict
+import mlflow
 
 
 class RecipeAgent:
@@ -28,9 +29,9 @@ important components for which anomaly model should be build, the important fail
  Please do not use a conversational approach to ask questions and gather information.
 """
 
-# Note: Please do not use a conversational approach to ask questions and gather information. 
-# I'll ask follow-up questions based on the response I receive to ensure that I have a clear 
-# understanding of the problem and the data.
+    # Note: Please do not use a conversational approach to ask questions and gather information.
+    # I'll ask follow-up questions based on the response I receive to ensure that I have a clear
+    # understanding of the problem and the data.
 
     SMESystemPrompt = """
 You act as a reliability engineer who is expert in failure modes and effect analysis (FMEA) of asset 
@@ -65,6 +66,7 @@ you should avoid generating duplicate questions. you should also avoid questions
         self._genai_messages = defaultdict(list)
 
         self.DSAgent = GenAIChatClient(
+            name="DS",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -72,6 +74,7 @@ you should avoid generating duplicate questions. you should also avoid questions
         )
 
         self.SMEAgent = GenAIChatClient(
+            name="SME",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -79,6 +82,7 @@ you should avoid generating duplicate questions. you should also avoid questions
         )
 
         self.SummarizeAgent = GenAIChatClient(
+            name="Summarizer",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -86,6 +90,7 @@ you should avoid generating duplicate questions. you should also avoid questions
         )
 
         self.QuestionGeneratorAgent = GenAIChatClient(
+            name="QA",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -96,70 +101,89 @@ you should avoid generating duplicate questions. you should also avoid questions
         self.genai_responses_from_sme = []
         self.genai_questions_for_ds = []
 
-    def init_round(self, message):
+    def init_round(self, message, experiment_id):
         """This is a round 1"""
         ds_response = self.DSAgent.create(
-            messages=[{"content": message, "role": "user"}], context=None
+            messages=[{"content": message, "role": "user"}],
+            context=None,
+            experiment_id=experiment_id,
         )
-        print (ds_response)
+        print(ds_response)
 
         sme_response = self.SMEAgent.create(
-            messages=[{"content": message, "role": "user"}], context=None
+            messages=[{"content": message, "role": "user"}],
+            context=None,
+            experiment_id=experiment_id,
         )
         ds_questions = self.DSAgent.extract_questions(ds_response)
         self.genai_questions_for_sme.extend(ds_questions)
-        print (len(self.genai_questions_for_sme))
+        print(len(self.genai_questions_for_sme))
 
         # round 1 revision
         ds_summary = self.SummarizeAgent.create(
-            messages=[{"content": sme_response, "role": "user"}], context=None
+            messages=[{"content": sme_response, "role": "user"}],
+            context=None,
+            experiment_id=experiment_id,
         )
         addon = (
             ds_summary
             + " Would you like to add additional set of questions based on provided information?"
         )
         ds_response_1 = self.DSAgent.create(
-            messages=[{"content": addon, "role": "user"}], context=None
+            messages=[{"content": addon, "role": "user"}],
+            context=None,
+            experiment_id=experiment_id,
         )
         ds_questions_1 = self.DSAgent.extract_questions(ds_response_1)
         self.genai_questions_for_sme.extend(ds_questions_1)
-        print (len(self.genai_questions_for_sme))
+        print(len(self.genai_questions_for_sme))
 
-    def next_round(self):
+    def next_round(self, experiment_id):
         """This is a round 2"""
         for item in self.genai_questions_for_sme:
             print("--------------------------Question--------->>>>>>>>>")
-            print (item)
+            print(item)
             sme_response = self.SMEAgent.create(
-                messages=[{"content": item, "role": "user"}], context=None
+                messages=[{"content": item, "role": "user"}],
+                context=None,
+                experiment_id=experiment_id,
             )
             print("--------------------------Answer--------->>>>>>>>>")
-            print (sme_response)
+            print(sme_response)
             self.genai_responses_from_sme.append(sme_response)
             print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
 
-    def question_generation(self):
+    def question_generation(self, experiment_id):
         """This is a question generation"""
         # purelly using questions
 
         # approch 1. Q1, Q2, Q3, ..... , Q20 ---> Q21, ...., Q30 (Question Prediction)
-        result = '\n'.join(['question: ' + item for item in self.genai_questions_for_sme])
-        question_response = self.QuestionGeneratorAgent.create(
-            messages=[{"content": result, "role": "user"}], context=None
+        result = "\n".join(
+            ["question: " + item for item in self.genai_questions_for_sme]
         )
-        print (question_response)
+        question_response = self.QuestionGeneratorAgent.create(
+            messages=[{"content": result, "role": "user"}],
+            context=None,
+            experiment_id=experiment_id,
+        )
+        print(question_response)
 
         # approach 2. Q1, A1 --> Q2
         # purely using question-answer pair
         for qid in range(len(self.genai_questions_for_sme)):
-            result = f'Question: {self.genai_questions_for_sme[qid]} \n Answer: {self.genai_responses_from_sme[qid]}'
+            result = f"Question: {self.genai_questions_for_sme[qid]} \n Answer: {self.genai_responses_from_sme[qid]}"
             question_response = self.QuestionGeneratorAgent.create(
-                messages=[{"content": result, "role": "user"}], context=None
+                messages=[{"content": result, "role": "user"}],
+                context=None,
+                experiment_id=experiment_id,
             )
-            print (question_response)
+            print(question_response)
 
     def init_chat(self, message):
         """_summary_"""
-        self.init_round(message=message)
-        self.next_round()
-        self.question_generation()
+        import uuid
+        experiment_id = mlflow.create_experiment("MyExperiment_" + str(uuid.uuid4()))
+        with mlflow.start_run(experiment_id=experiment_id):
+            self.init_round(message=message, experiment_id=experiment_id)
+            self.next_round(experiment_id=experiment_id)
+            self.question_generation(experiment_id=experiment_id)
