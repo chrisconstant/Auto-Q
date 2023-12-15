@@ -182,7 +182,11 @@ you should avoid generating duplicate questions. you should also avoid questions
     def init_chat(self, message):
         """_summary_"""
         import uuid
-        experiment_id = mlflow.create_experiment("MyExperiment_" + str(uuid.uuid4()))
+        experiment_name = "MyExperiment_" + str(uuid.uuid4())
+        experiment_id = mlflow.create_experiment(experiment_name)
+        print(f">>> Message: {message}")
+        print(f">>> Experiment id: {experiment_id}")
+        print(f">>> Experiment name: {experiment_name}")
         with mlflow.start_run(experiment_id=experiment_id):
             self.init_round(message=message, experiment_id=experiment_id)
             self.next_round(experiment_id=experiment_id)
