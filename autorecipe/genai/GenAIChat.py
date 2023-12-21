@@ -85,6 +85,11 @@ class GenAIChatClient(Model):
         self._conversation_id = None
         self.system_message = system_message
 
+        # track the request in and request out
+        self._prompt_tokens = 0
+        self._completion_tokens = 0
+        self._total_tokens = 0
+
     def _preprocess_create_payload(self, messages):
         chatmessage = []
         if self._conversation_id is None:
@@ -97,6 +102,13 @@ class GenAIChatClient(Model):
             elif item["role"] == "assistant":
                 chatmessage.append(AIMessage(content=item["content"]))
         return [chatmessage]
+
+    def _update_tokens_usage(
+        self, prompt_tokens=0, completion_tokens=0, total_tokens=0
+    ):
+        self._prompt_tokens += prompt_tokens
+        self._completion_tokens += completion_tokens
+        self._total_tokens += total_tokens
 
     def create(self, context, messages, experiment_id):
         """ """
@@ -113,6 +125,12 @@ class GenAIChatClient(Model):
                     ),
                 )
                 a_dict = {"Answer": result.generations[0][0].text}
+                t_dict = result.generations[0][0].generation_info["token_usage"]
+                self._update_tokens_usage(
+                    t_dict["prompt_tokens"],
+                    t_dict["completion_tokens"],
+                    t_dict["total_tokens"],
+                )
                 mlflow.log_dict(a_dict, "Answer.json")
                 return result.generations[0][0].text
             else:
@@ -121,6 +139,12 @@ class GenAIChatClient(Model):
                     "meta"
                 ]["conversation_id"]
                 a_dict = {"Answer": result.generations[0][0].text}
+                t_dict = result.generations[0][0].generation_info["token_usage"]
+                self._update_tokens_usage(
+                    t_dict["prompt_tokens"],
+                    t_dict["completion_tokens"],
+                    t_dict["total_tokens"],
+                )
                 mlflow.log_dict(a_dict, "Answer.json")
                 return result.generations[0][0].text
 
@@ -151,3 +175,7 @@ class GenAIChatClient(Model):
 
         # Printing the list of questions
         return final_questions
+
+    def print_token_usage(self):
+        print(f'The usages Promt Token: {self._prompt_tokens}, \
+              Generated Token: {self._completion_tokens}, Total Token : {self._total_tokens}')

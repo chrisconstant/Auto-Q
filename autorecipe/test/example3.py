@@ -56,24 +56,33 @@ If you don't know the answer to a question, please don't share false information
 print('------------------')
 print ('++++++++++++')
 
+#print (result)
 conversation_id = result.generations[0][0].generation_info["meta"]["conversation_id"]
 print(f"New conversation with ID '{conversation_id}' has been created!")
 print(f"Response: {result.generations[0][0].text}")
 print(result.llm_output)
 #print(result.generations[0][0].generation_info)
 
+print(result.generations[0][0].generation_info['token_usage']) 
+
+# {'prompt_tokens': 154, 'completion_tokens': 100, 'total_tokens': 254, 'generated_token_count': 100, 'input_token_count': 154}
+
+
 if True:
-    prompt = "What was the asset name we wanted to build anomaly model."
-    print(f"Request: {prompt}")
-    result = llm.generate(
-        messages=[[HumanMessage(content=prompt)]],
-        options=ChatOptions(conversation_id=conversation_id, use_conversation_parameters=True),
-    )
-    conversation_id = result.generations[0][0].generation_info["meta"]["conversation_id"]
-    print(f"New conversation with ID '{conversation_id}' has been created!")
-    print(f"Response: {result.generations[0][0].text}")
-    print(result.llm_output)
-    #print(result.generations[0][0].generation_info)
+
+    for i in range(50):
+        prompt = "What was the asset name we wanted to build anomaly model."
+        #print(f"Request: {prompt}")
+        result = llm.generate(
+            messages=[[HumanMessage(content=prompt)]],
+            options=ChatOptions(conversation_id=conversation_id, use_conversation_parameters=True),
+        )
+        conversation_id = result.generations[0][0].generation_info["meta"]["conversation_id"]
+        #print(f"New conversation with ID '{conversation_id}' has been created!")
+        #print(f"Response: {result.generations[0][0].text}")
+        #print(result.llm_output)
+        print(result.generations[0][0].generation_info['token_usage'])
+        #print(result.generations[0][0].generation_info)
 
 """You act as a reliability engineer who is expert in failure modes and effect analysis (FMEA) of asset 
 reliability. You task is to provide a accurate information about asset's component, subcomponent, failure mode

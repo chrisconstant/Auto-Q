@@ -208,6 +208,10 @@ your responses are socially unbiased and positive in nature.
             )
             print(question_response)
 
+    def print_token_usage(self):
+        self.DSAgent.print_token_usage()
+        self.SMEAgent.print_token_usage()
+
     def init_chat(self, message):
         """_summary_"""
         import uuid
@@ -218,5 +222,8 @@ your responses are socially unbiased and positive in nature.
         print(f">>> Experiment name: {experiment_name}")
         with mlflow.start_run(experiment_id=experiment_id):
             self.init_round(message=message, experiment_id=experiment_id)
+            self.print_token_usage()
             self.next_round(experiment_id=experiment_id)
+            self.print_token_usage()
             self.question_generation(experiment_id=experiment_id)
+            self.print_token_usage()
