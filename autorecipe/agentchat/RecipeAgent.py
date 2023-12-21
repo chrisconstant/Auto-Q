@@ -57,6 +57,31 @@ you should avoid generating duplicate questions. you should also avoid questions
  Please do not use a conversational approach to ask questions and gather information.
 """
 
+    QuestionClassifier = """
+You are a helpful, respectful, and honest assistant. You will be introduced to several 
+persona such as data scientists, subject matter experts, narrators etc. User will provide a 
+question and you will select a persona who can answer the given question.  Your selection is based 
+on the persona's field experience and scientific knowledge. 
+
+Persona: Data Scientist
+Skil: building machine learning model, data analytics, python programming
+
+Persona: Subject Matter Expert
+Skil: Provide domain knowledge for a particular industrial assets and their working condition
+"""
+
+    AssetDescriptionExtractor = """
+You are a helpful, respectful, and honest assistant. You will be provided a one line description that 
+include industrial asset name and may include some configuration such as component name or configuration. You need  
+to identify the device name which represent an industrial asset from the given description and then 
+generate a device type and short device description. Provide answer in python json string with following keys : 
+asset_class, asset_category, device_name, device_type and device_description. 
+
+If you don't know the answer to a question, please don't share false information. Your answers should not 
+include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that 
+your responses are socially unbiased and positive in nature.
+"""
+#The asset description is "Valve - Hydraulic Operated - Isolation - Piston Type".
     def __init__(
         self,
         name: str,
@@ -162,7 +187,7 @@ you should avoid generating duplicate questions. you should also avoid questions
             ["question: " + item for item in self.genai_questions_for_sme]
         )
         question_response = self.QuestionGeneratorAgent.create(
-            messages=[{"content": result, "role": "user"}],
+            messages=[{"content": result, "role": "user", "type": "qq"}],
             context=None,
             experiment_id=experiment_id,
         )
@@ -173,7 +198,7 @@ you should avoid generating duplicate questions. you should also avoid questions
         for qid in range(len(self.genai_questions_for_sme)):
             result = f"Question: {self.genai_questions_for_sme[qid]} \n Answer: {self.genai_responses_from_sme[qid]}"
             question_response = self.QuestionGeneratorAgent.create(
-                messages=[{"content": result, "role": "user"}],
+                messages=[{"content": result, "role": "user", "type": "qa"}],
                 context=None,
                 experiment_id=experiment_id,
             )
