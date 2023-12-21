@@ -90,7 +90,7 @@ your responses are socially unbiased and positive in nature.
         self.genai_config = self.DEFAULT_CONFIG.copy()
         self._genai_messages = defaultdict(list)
 
-        # this is a data scien
+        # agent 1
         self.DSAgent = GenAIChatClient(
             name="DS",
             description='Data Scientist',
@@ -101,6 +101,7 @@ your responses are socially unbiased and positive in nature.
             system_message=self.DSSystemPrompt,
         )
 
+        # agent 2
         self.SMEAgent = GenAIChatClient(
             name="SME",
             description='Subject Matter Expert',
@@ -111,6 +112,7 @@ your responses are socially unbiased and positive in nature.
             system_message=self.SMESystemPrompt,
         )
 
+        # agent 3
         self.SummarizeAgent = GenAIChatClient(
             name="Summarizer",
             description='Answer Summarizer',
@@ -121,6 +123,7 @@ your responses are socially unbiased and positive in nature.
             system_message=self.InfoSummaryPromt,
         )
 
+        # agent 4
         self.QuestionGeneratorAgent = GenAIChatClient(
             name="QA",
             description='Question Answer Generator',
@@ -131,34 +134,39 @@ your responses are socially unbiased and positive in nature.
             system_message=self.QuestionGenerator,
         )
 
+        # messages - storage
         self.genai_questions_for_sme = []
         self.genai_responses_from_sme = []
         self.genai_questions_for_ds = []
+        self.genai_responses_for_ds = []
 
     def init_round(self, message, experiment_id):
-        """This is a round 1"""
+
+        """Zero shot"""
         ds_response = self.DSAgent.create(
             messages=[{"content": message, "role": "user"}],
             context=None,
             experiment_id=experiment_id,
         )
-        print(ds_response)
 
         sme_response = self.SMEAgent.create(
             messages=[{"content": message, "role": "user"}],
             context=None,
             experiment_id=experiment_id,
         )
+
+        # extract initial set og question prepared by DS
         ds_questions = self.DSAgent.extract_questions(ds_response)
         self.genai_questions_for_sme.extend(ds_questions)
-        print(len(self.genai_questions_for_sme))
 
-        # round 1 revision
+        """In Context Learning : Invoke Summarize Agent and then Get summary"""
         ds_summary = self.SummarizeAgent.create(
             messages=[{"content": sme_response, "role": "user"}],
             context=None,
             experiment_id=experiment_id,
         )
+
+        """ Now ask DS """
         addon = (
             ds_summary
             + " Would you like to add additional set of questions based on provided information?"
@@ -170,7 +178,6 @@ your responses are socially unbiased and positive in nature.
         )
         ds_questions_1 = self.DSAgent.extract_questions(ds_response_1)
         self.genai_questions_for_sme.extend(ds_questions_1)
-        print(len(self.genai_questions_for_sme))
 
     def next_round(self, experiment_id):
         """This is a round 2"""
@@ -226,9 +233,10 @@ your responses are socially unbiased and positive in nature.
         print(f">>> Experiment id: {experiment_id}")
         print(f">>> Experiment name: {experiment_name}")
         with mlflow.start_run(experiment_id=experiment_id):
+            # Initial round
             self.init_round(message=message, experiment_id=experiment_id)
-            self.print_token_usage()
+            # if number of questions are Zero, do some post analysis.... else move forward
+            # Now use initial seed questions for second round
+            if self.
             self.next_round(experiment_id=experiment_id)
-            self.print_token_usage()
             self.question_generation(experiment_id=experiment_id)
-            self.print_token_usage()
