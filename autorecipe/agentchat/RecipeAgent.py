@@ -90,9 +90,11 @@ your responses are socially unbiased and positive in nature.
         self.genai_config = self.DEFAULT_CONFIG.copy()
         self._genai_messages = defaultdict(list)
 
+        # this is a data scien
         self.DSAgent = GenAIChatClient(
             name="DS",
             description='Data Scientist',
+            skill='building machine learning model, data analytics, python programming',
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -102,6 +104,7 @@ your responses are socially unbiased and positive in nature.
         self.SMEAgent = GenAIChatClient(
             name="SME",
             description='Subject Matter Expert',
+            skill='Provide domain knowledge for a particular industrial assets and their working condition',
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -111,6 +114,7 @@ your responses are socially unbiased and positive in nature.
         self.SummarizeAgent = GenAIChatClient(
             name="Summarizer",
             description='Answer Summarizer',
+            skill='generate summary of provided document, document summarization task',
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -120,6 +124,7 @@ your responses are socially unbiased and positive in nature.
         self.QuestionGeneratorAgent = GenAIChatClient(
             name="QA",
             description='Question Answer Generator',
+            skill='generate new set of questions from input documents',
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],

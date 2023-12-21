@@ -74,9 +74,10 @@ def extract_code(
 
 
 class GenAIChatClient(Model):
-    def __init__(self, name, description, model, params, credentials, system_message):
+    def __init__(self, name, description, skill, model, params, credentials, system_message):
         self.name = name
         self.description = description
+        self.skill = skill
         self.client = LangChainChatInterface(
             model=model,
             params=GenerateParams(**params),
