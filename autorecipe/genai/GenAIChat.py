@@ -11,6 +11,8 @@ import json
 import mlflow
 
 UNKNOWN = "unknown"
+
+
 def content_str(content: Union[str, List]) -> str:
     if type(content) is str:
         return content
@@ -19,14 +21,20 @@ def content_str(content: Union[str, List]) -> str:
         if item["type"] == "text":
             rst += item["text"]
         else:
-            assert isinstance(item, dict) and item["type"] == "image_url", "Wrong content format."
+            assert (
+                isinstance(item, dict) and item["type"] == "image_url"
+            ), "Wrong content format."
             rst += "<image>"
     return rst
 
 
 CODE_BLOCK_PATTERN = r"```[ \t]*(\w+)?[ \t]*\r?\n(.*?)\r?\n[ \t]*```"
+
+
 def extract_code(
-    text: Union[str, List], pattern: str = CODE_BLOCK_PATTERN, detect_single_line_code: bool = False
+    text: Union[str, List],
+    pattern: str = CODE_BLOCK_PATTERN,
+    detect_single_line_code: bool = False,
 ) -> List[Tuple[str, str]]:
     """Extract code from a text.
 
@@ -61,12 +69,14 @@ def extract_code(
         elif group2:
             extracted.append(("", group2.strip()))
 
-    #print (extracted)
+    # print (extracted)
     return extracted
 
+
 class GenAIChatClient(Model):
-    def __init__(self, name, model, params, credentials, system_message):
+    def __init__(self, name, description, model, params, credentials, system_message):
         self.name = name
+        self.description = description
         self.client = LangChainChatInterface(
             model=model,
             params=GenerateParams(**params),
@@ -80,19 +90,19 @@ class GenAIChatClient(Model):
         if self._conversation_id is None:
             chatmessage.append(SystemMessage(content=self.system_message))
         for item in messages:
-            if item['role'] == 'system':
-                chatmessage.append(SystemMessage(content=item['content']))
-            elif item['role'] == 'user':
-                chatmessage.append(HumanMessage(content=item['content']))
-            elif item['role'] == 'assistant':
-                chatmessage.append(AIMessage(content=item['content']))
+            if item["role"] == "system":
+                chatmessage.append(SystemMessage(content=item["content"]))
+            elif item["role"] == "user":
+                chatmessage.append(HumanMessage(content=item["content"]))
+            elif item["role"] == "assistant":
+                chatmessage.append(AIMessage(content=item["content"]))
         return [chatmessage]
 
     def create(self, context, messages, experiment_id):
         """ """
         with mlflow.start_run(experiment_id=experiment_id, nested=True) as conv:
             q_dict = {"Question": messages}
-            mlflow.log_dict(q_dict, 'Question.json')
+            mlflow.log_dict(q_dict, "Question.json")
             messages = self._preprocess_create_payload(messages)
             if self._conversation_id:
                 result = self.client.generate(
@@ -103,35 +113,41 @@ class GenAIChatClient(Model):
                     ),
                 )
                 a_dict = {"Answer": result.generations[0][0].text}
-                mlflow.log_dict(a_dict, 'Answer.json')
+                mlflow.log_dict(a_dict, "Answer.json")
                 return result.generations[0][0].text
             else:
                 result = self.client.generate(messages=messages)
-                self._conversation_id = result.generations[0][0].generation_info["meta"]["conversation_id"]
+                self._conversation_id = result.generations[0][0].generation_info[
+                    "meta"
+                ]["conversation_id"]
                 a_dict = {"Answer": result.generations[0][0].text}
-                mlflow.log_dict(a_dict, 'Answer.json')
+                mlflow.log_dict(a_dict, "Answer.json")
                 return result.generations[0][0].text
-        
 
     def extract_questions(self, text):
         chat_agent_response = content_str(text)
         questions_start_index = chat_agent_response.find("1. ")
-        questions_end_index = chat_agent_response.rfind("\n\n") + 2  # Adding 2 to include the last newline characters
-        questions_string = chat_agent_response[questions_start_index:questions_end_index]
+        questions_end_index = (
+            chat_agent_response.rfind("\n\n") + 2
+        )  # Adding 2 to include the last newline characters
+        questions_string = chat_agent_response[
+            questions_start_index:questions_end_index
+        ]
 
         # Splitting the questions into a list
         questions_list = questions_string.split("\n")
 
         # Removing empty elements from the list
-        questions_list = [question.strip() for question in questions_list if question.strip()]
-        final_questions  = []
+        questions_list = [
+            question.strip() for question in questions_list if question.strip()
+        ]
+        final_questions = []
         for item in questions_list:
-            first_space_index = item.find(' ')
+            first_space_index = item.find(" ")
             if first_space_index != -1:
-                final_questions.append(item[first_space_index+1:])
+                final_questions.append(item[first_space_index + 1 :])
             else:
                 final_questions.append(item)
 
         # Printing the list of questions
         return final_questions
-

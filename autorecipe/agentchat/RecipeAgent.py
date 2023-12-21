@@ -64,10 +64,10 @@ question and you will select a persona who can answer the given question.  Your 
 on the persona's field experience and scientific knowledge. 
 
 Persona: Data Scientist
-Skil: building machine learning model, data analytics, python programming
+Skill: building machine learning model, data analytics, python programming
 
 Persona: Subject Matter Expert
-Skil: Provide domain knowledge for a particular industrial assets and their working condition
+Skill: Provide domain knowledge for a particular industrial assets and their working condition
 """
 
     AssetDescriptionExtractor = """
@@ -92,6 +92,7 @@ your responses are socially unbiased and positive in nature.
 
         self.DSAgent = GenAIChatClient(
             name="DS",
+            description='Data Scientist',
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -100,6 +101,7 @@ your responses are socially unbiased and positive in nature.
 
         self.SMEAgent = GenAIChatClient(
             name="SME",
+            description='Subject Matter Expert',
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -108,6 +110,7 @@ your responses are socially unbiased and positive in nature.
 
         self.SummarizeAgent = GenAIChatClient(
             name="Summarizer",
+            description='Answer Summarizer',
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -116,6 +119,7 @@ your responses are socially unbiased and positive in nature.
 
         self.QuestionGeneratorAgent = GenAIChatClient(
             name="QA",
+            description='Question Answer Generator',
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
