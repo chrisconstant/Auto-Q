@@ -1,7 +1,7 @@
 from autorecipe.genai.GenAIChat import GenAIChatClient
 from collections import defaultdict
 import mlflow
-
+import random
 
 class RecipeAgent:
     # configuration
@@ -155,7 +155,7 @@ your responses are socially unbiased and positive in nature.
             experiment_id=experiment_id,
         )
 
-        # extract initial set og question prepared by DS
+        # extract initial set of questions prepared by DS
         ds_questions = self.DSAgent.extract_questions(ds_response)
         self.genai_questions_for_sme.extend(ds_questions)
 
@@ -180,25 +180,29 @@ your responses are socially unbiased and positive in nature.
         self.genai_questions_for_sme.extend(ds_questions_1)
 
     def next_round(self, experiment_id):
-        """This is a round 2"""
+        """This is a round 2 - Where DS and SME talk to each other"""
         for item in self.genai_questions_for_sme:
-            print("--------------------------Question--------->>>>>>>>>")
-            print(item)
+            #print("--------------------------Question--------->>>>>>>>>")
+            #print(item)
             sme_response = self.SMEAgent.create(
                 messages=[{"content": item, "role": "user"}],
                 context=None,
                 experiment_id=experiment_id,
             )
-            print("--------------------------Answer--------->>>>>>>>>")
-            print(sme_response)
+            #print("--------------------------Answer--------->>>>>>>>>")
+            #print(sme_response)
             self.genai_responses_from_sme.append(sme_response)
-            print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
+            #print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
 
     def question_generation(self, experiment_id):
         """This is a question generation"""
         # purelly using questions
 
         # approch 1. Q1, Q2, Q3, ..... , Q20 ---> Q21, ...., Q30 (Question Prediction)
+        # we use the questions that were designed to ask SME
+
+        # approach 1
+        # all questions and let context to cut it
         result = "\n".join(
             ["question: " + item for item in self.genai_questions_for_sme]
         )
@@ -207,18 +211,55 @@ your responses are socially unbiased and positive in nature.
             context=None,
             experiment_id=experiment_id,
         )
+        print ('Approach 1 output ----------------->')
+        print(question_response)
+
+        # approach 2
+        # most recent first
+        result = "\n".join(
+            ["question: " + self.genai_questions_for_sme[-1]]
+        )
+        question_response = self.QuestionGeneratorAgent.create(
+            messages=[{"content": result, "role": "user", "type": "qq"}],
+            context=None,
+            experiment_id=experiment_id,
+        )
+        print ('Approach 2 output ----------------->')
+        print(question_response)
+
+        # approach 3 - random sampling
+        # most recent first
+        selected_elements = random.sample(self.genai_questions_for_sme, 10)
+        result = "\n".join(
+            ["question: " + item for item in selected_elements]
+        )
+        question_response = self.QuestionGeneratorAgent.create(
+            messages=[{"content": result, "role": "user", "type": "qq"}],
+            context=None,
+            experiment_id=experiment_id,
+        )
+        print ('Approach 3 output ----------------->')
         print(question_response)
 
         # approach 2. Q1, A1 --> Q2
         # purely using question-answer pair
         for qid in range(len(self.genai_questions_for_sme)):
-            result = f"Question: {self.genai_questions_for_sme[qid]} \n Answer: {self.genai_responses_from_sme[qid]}"
+            print ('New Question -   ----------------->')
+            intermediate_result = f"Question: {self.genai_questions_for_sme[qid]} \n Answer: {self.genai_responses_from_sme[qid]}"
+            result = self.SummarizeAgent.create(
+                messages=[{"content": intermediate_result, "role": "user"}],
+                context=None,
+                experiment_id=experiment_id,
+            )
+            print (result)
+            result = result + '\n\n From the above summary, generate few more questions to be asked to Subject matter expert.'
             question_response = self.QuestionGeneratorAgent.create(
                 messages=[{"content": result, "role": "user", "type": "qa"}],
                 context=None,
                 experiment_id=experiment_id,
             )
             print(question_response)
+            print('<------------------- Done')
 
     def print_token_usage(self):
         self.DSAgent.print_token_usage()
@@ -237,6 +278,9 @@ your responses are socially unbiased and positive in nature.
             self.init_round(message=message, experiment_id=experiment_id)
             # if number of questions are Zero, do some post analysis.... else move forward
             # Now use initial seed questions for second round
-            if self.
-            self.next_round(experiment_id=experiment_id)
-            self.question_generation(experiment_id=experiment_id)
+            if len(self.genai_questions_for_sme) > 0:
+                # interact with SME and then talk to DS
+                self.next_round(experiment_id=experiment_id)
+
+                # now we have response from sme, so we can create few more questions 
+                self.question_generation(experiment_id=experiment_id)
