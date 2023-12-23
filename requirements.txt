@@ -4,3 +4,4 @@ ibm-generative-ai[langchain]==0.5.1
 langchain==0.0.348
 python-dotenv==1.0.0
 mlflow
+rouge-score

@@ -2,6 +2,11 @@ from autorecipe.genai.GenAIChat import GenAIChatClient
 from collections import defaultdict
 import mlflow
 import random
+from autorecipe.genai.utils import (
+    filter_and_sort_questions,
+    filter_and_sort_questions_using_reference,
+)
+
 
 class RecipeAgent:
     # configuration
@@ -81,7 +86,8 @@ If you don't know the answer to a question, please don't share false information
 include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that 
 your responses are socially unbiased and positive in nature.
 """
-#The asset description is "Valve - Hydraulic Operated - Isolation - Piston Type".
+
+    # The asset description is "Valve - Hydraulic Operated - Isolation - Piston Type".
     def __init__(
         self,
         name: str,
@@ -93,8 +99,8 @@ your responses are socially unbiased and positive in nature.
         # agent 1
         self.DSAgent = GenAIChatClient(
             name="DS",
-            description='Data Scientist',
-            skill='building machine learning model, data analytics, python programming',
+            description="Data Scientist",
+            skill="building machine learning model, data analytics, python programming",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -104,8 +110,8 @@ your responses are socially unbiased and positive in nature.
         # agent 2
         self.SMEAgent = GenAIChatClient(
             name="SME",
-            description='Subject Matter Expert',
-            skill='Provide domain knowledge for a particular industrial assets and their working condition',
+            description="Subject Matter Expert",
+            skill="Provide domain knowledge for a particular industrial assets and their working condition",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -115,8 +121,8 @@ your responses are socially unbiased and positive in nature.
         # agent 3
         self.SummarizeAgent = GenAIChatClient(
             name="Summarizer",
-            description='Answer Summarizer',
-            skill='generate summary of provided document, document summarization task',
+            description="Answer Summarizer",
+            skill="generate summary of provided document, document summarization task",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -126,8 +132,8 @@ your responses are socially unbiased and positive in nature.
         # agent 4
         self.QuestionGeneratorAgent = GenAIChatClient(
             name="QA",
-            description='Question Answer Generator',
-            skill='generate new set of questions from input documents',
+            description="Question Answer Generator",
+            skill="generate new set of questions from input documents",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
@@ -141,7 +147,6 @@ your responses are socially unbiased and positive in nature.
         self.genai_responses_for_ds = []
 
     def init_round(self, message, experiment_id):
-
         """Zero shot"""
         ds_response = self.DSAgent.create(
             messages=[{"content": message, "role": "user"}],
@@ -157,7 +162,11 @@ your responses are socially unbiased and positive in nature.
 
         # extract initial set of questions prepared by DS
         ds_questions = self.DSAgent.extract_questions(ds_response)
-        self.genai_questions_for_sme.extend(ds_questions)
+        f_ds_question = filter_and_sort_questions_using_reference(
+            ds_questions, ds_questions, is_identical=True
+        )
+        self.genai_questions_for_sme.extend(f_ds_question)
+        print(f_ds_question)
 
         """In Context Learning : Invoke Summarize Agent and then Get summary"""
         ds_summary = self.SummarizeAgent.create(
@@ -169,30 +178,36 @@ your responses are socially unbiased and positive in nature.
         """ Now ask DS """
         addon = (
             ds_summary
-            + " Would you like to add additional set of questions based on provided information?"
+            #+ "\n\n Would you like to add additional set of questions based on provided information?"
+            + "\n\n From the above summary, generate few more questions to be asked to subject matter expert."
         )
         ds_response_1 = self.DSAgent.create(
             messages=[{"content": addon, "role": "user"}],
             context=None,
             experiment_id=experiment_id,
         )
+
         ds_questions_1 = self.DSAgent.extract_questions(ds_response_1)
-        self.genai_questions_for_sme.extend(ds_questions_1)
+        # handle duplicate question and asnwer
+        f_ds_question_1 = filter_and_sort_questions_using_reference(self.genai_questions_for_sme, ds_questions_1)
+        f_ds_question_2 = filter_and_sort_questions(f_ds_question_1)
+        self.genai_questions_for_sme.extend(f_ds_question_2)
+        print (f_ds_question_2)
 
     def next_round(self, experiment_id):
         """This is a round 2 - Where DS and SME talk to each other"""
         for item in self.genai_questions_for_sme:
-            #print("--------------------------Question--------->>>>>>>>>")
-            #print(item)
+            # print("--------------------------Question--------->>>>>>>>>")
+            # print(item)
             sme_response = self.SMEAgent.create(
                 messages=[{"content": item, "role": "user"}],
                 context=None,
                 experiment_id=experiment_id,
             )
-            #print("--------------------------Answer--------->>>>>>>>>")
-            #print(sme_response)
+            # print("--------------------------Answer--------->>>>>>>>>")
+            # print(sme_response)
             self.genai_responses_from_sme.append(sme_response)
-            #print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
+            # print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
 
     def question_generation(self, experiment_id):
         """This is a question generation"""
@@ -211,55 +226,58 @@ your responses are socially unbiased and positive in nature.
             context=None,
             experiment_id=experiment_id,
         )
-        print ('Approach 1 output ----------------->')
+        print("Approach 1 output ----------------->")
+        question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
         print(question_response)
 
         # approach 2
         # most recent first
-        result = "\n".join(
-            ["question: " + self.genai_questions_for_sme[-1]]
-        )
+        result = "\n".join(["question: " + self.genai_questions_for_sme[-1]])
         question_response = self.QuestionGeneratorAgent.create(
             messages=[{"content": result, "role": "user", "type": "qq"}],
             context=None,
             experiment_id=experiment_id,
         )
-        print ('Approach 2 output ----------------->')
+        print("Approach 2 output ----------------->")
+        question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
         print(question_response)
 
         # approach 3 - random sampling
         # most recent first
-        selected_elements = random.sample(self.genai_questions_for_sme, 10)
-        result = "\n".join(
-            ["question: " + item for item in selected_elements]
-        )
+        selected_elements = random.sample(self.genai_questions_for_sme, min(len(self.genai_questions_for_sme), 10))
+        result = "\n".join(["question: " + item for item in selected_elements])
         question_response = self.QuestionGeneratorAgent.create(
             messages=[{"content": result, "role": "user", "type": "qq"}],
             context=None,
             experiment_id=experiment_id,
         )
-        print ('Approach 3 output ----------------->')
+        print("Approach 3 output ----------------->")
+        question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
         print(question_response)
 
         # approach 2. Q1, A1 --> Q2
         # purely using question-answer pair
         for qid in range(len(self.genai_questions_for_sme)):
-            print ('New Question -   ----------------->')
+            print("New Question -   ----------------->")
             intermediate_result = f"Question: {self.genai_questions_for_sme[qid]} \n Answer: {self.genai_responses_from_sme[qid]}"
             result = self.SummarizeAgent.create(
                 messages=[{"content": intermediate_result, "role": "user"}],
                 context=None,
                 experiment_id=experiment_id,
             )
-            print (result)
-            result = result + '\n\n From the above summary, generate few more questions to be asked to Subject matter expert.'
+            print(result)
+            result = (
+                result
+                + "\n\n From the above summary, generate few more questions to be asked to Subject matter expert."
+            )
             question_response = self.QuestionGeneratorAgent.create(
                 messages=[{"content": result, "role": "user", "type": "qa"}],
                 context=None,
                 experiment_id=experiment_id,
             )
+            question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
             print(question_response)
-            print('<------------------- Done')
+            print("<------------------- Done")
 
     def print_token_usage(self):
         self.DSAgent.print_token_usage()
@@ -268,6 +286,7 @@ your responses are socially unbiased and positive in nature.
     def init_chat(self, message):
         """_summary_"""
         import uuid
+
         experiment_name = "MyExperiment_" + str(uuid.uuid4())
         experiment_id = mlflow.create_experiment(experiment_name)
         print(f">>> Message: {message}")
@@ -282,5 +301,5 @@ your responses are socially unbiased and positive in nature.
                 # interact with SME and then talk to DS
                 self.next_round(experiment_id=experiment_id)
 
-                # now we have response from sme, so we can create few more questions 
+                # now we have response from sme, so we can create few more questions
                 self.question_generation(experiment_id=experiment_id)
