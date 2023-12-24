@@ -161,12 +161,13 @@ your responses are socially unbiased and positive in nature.
         )
 
         # extract initial set of questions prepared by DS
+        #print (ds_response)
         ds_questions = self.DSAgent.extract_questions(ds_response)
         f_ds_question = filter_and_sort_questions_using_reference(
-            ds_questions, ds_questions, is_identical=True
+            ds_questions, ds_questions, is_identical=True, filter_threshold=0.98,
         )
         self.genai_questions_for_sme.extend(f_ds_question)
-        print(f_ds_question)
+        #print(f_ds_question)
 
         """In Context Learning : Invoke Summarize Agent and then Get summary"""
         ds_summary = self.SummarizeAgent.create(
@@ -189,8 +190,8 @@ your responses are socially unbiased and positive in nature.
 
         ds_questions_1 = self.DSAgent.extract_questions(ds_response_1)
         # handle duplicate question and asnwer
-        f_ds_question_1 = filter_and_sort_questions_using_reference(self.genai_questions_for_sme, ds_questions_1)
-        f_ds_question_2 = filter_and_sort_questions(f_ds_question_1)
+        f_ds_question_1 = filter_and_sort_questions_using_reference(self.genai_questions_for_sme, ds_questions_1, filter_threshold=0.98)
+        f_ds_question_2 = filter_and_sort_questions(f_ds_question_1, filter_threshold=0.98)
         self.genai_questions_for_sme.extend(f_ds_question_2)
         print (f_ds_question_2)
 
@@ -210,6 +211,7 @@ your responses are socially unbiased and positive in nature.
             # print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
 
     def question_generation(self, experiment_id):
+        tmp_DSets = []
         """This is a question generation"""
         # purelly using questions
 
@@ -226,9 +228,8 @@ your responses are socially unbiased and positive in nature.
             context=None,
             experiment_id=experiment_id,
         )
-        print("Approach 1 output ----------------->")
         question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
-        print(question_response)
+        tmp_DSets.extend(question_response)
 
         # approach 2
         # most recent first
@@ -238,9 +239,8 @@ your responses are socially unbiased and positive in nature.
             context=None,
             experiment_id=experiment_id,
         )
-        print("Approach 2 output ----------------->")
         question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
-        print(question_response)
+        tmp_DSets.extend(question_response)
 
         # approach 3 - random sampling
         # most recent first
@@ -251,9 +251,8 @@ your responses are socially unbiased and positive in nature.
             context=None,
             experiment_id=experiment_id,
         )
-        print("Approach 3 output ----------------->")
         question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
-        print(question_response)
+        tmp_DSets.extend(question_response)
 
         # approach 2. Q1, A1 --> Q2
         # purely using question-answer pair
@@ -276,8 +275,16 @@ your responses are socially unbiased and positive in nature.
                 experiment_id=experiment_id,
             )
             question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
-            print(question_response)
-            print("<------------------- Done")
+            tmp_DSets.extend(question_response)
+
+        f_tmp_DSets_1 = filter_and_sort_questions_using_reference(self.genai_questions_for_sme, tmp_DSets, filter_threshold=0.98)
+        f_tmp_DSets_2 = filter_and_sort_questions(f_tmp_DSets_1, filter_threshold=0.98)
+        self.genai_questions_for_sme.extend(f_tmp_DSets_2)
+
+        import pandas as pd
+        print (len(self.genai_questions_for_sme))
+        df = pd.DataFrame({'questions': self.genai_questions_for_sme})
+        df.to_csv('genai_questions.csv', index=False)
 
     def print_token_usage(self):
         self.DSAgent.print_token_usage()

@@ -152,9 +152,12 @@ class GenAIChatClient(Model):
     def extract_questions(self, text):
         chat_agent_response = content_str(text)
         questions_start_index = chat_agent_response.find("1. ")
-        questions_end_index = (
-            chat_agent_response.rfind("\n\n") + 2
-        )  # Adding 2 to include the last newline characters
+
+        if "\n\n" in chat_agent_response:
+            questions_end_index = chat_agent_response.rfind("\n\n") + 2
+        else:
+            questions_end_index = len(chat_agent_response)
+
         questions_string = chat_agent_response[
             questions_start_index:questions_end_index
         ]
