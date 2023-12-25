@@ -1,4 +1,5 @@
 from autorecipe.genai.GenAIChat import GenAIChatClient
+from autorecipe.genai.GenAIInstruct import GenAIInstructClient
 from collections import defaultdict
 import mlflow
 import random
@@ -16,6 +17,7 @@ class RecipeAgent:
             "decoding_method": "greedy",
             "min_new_tokens": 200,
             "max_new_tokens": 2000,
+            "stop_sequences": ["(TOKENSTOP)"],
         },
         "creds": {
             "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
@@ -65,14 +67,30 @@ you should avoid generating duplicate questions. you should also avoid questions
     QuestionClassifier = """
 You are a helpful, respectful, and honest assistant. You will be introduced to several 
 persona such as data scientists, subject matter experts, narrators etc. User will provide a 
-question and you will select a persona who can answer the given question.  Your selection is based 
-on the persona's field experience and scientific knowledge. 
+question and you will select a persona who can answer the given question. Your selection is based 
+on the persona's field experience and scientific knowledge. Sometime questions can be answered by 
+multiple personas. Here is the two personas along with their skill description.  
 
 Persona: Data Scientist
 Skill: building machine learning model, data analytics, python programming
 
 Persona: Subject Matter Expert
 Skill: Provide domain knowledge for a particular industrial assets and their working condition
+"""
+
+    QuestionClassifierPropmt = """
+    Assuming user is seeking information about who can answer the following question. There is a possibility
+    that more than one persona can provide different level of information. Please generate only personas.
+
+    Question: How do you ensure that the wind turbine gearbox is properly aligned and balanced? What are the consequences of misalignment or imbalance, and how do you correct these issues?
+
+    Question: Can you discuss the role of condition monitoring in predicting and preventing wind turbine gearbox failures? What are the different types of condition monitoring techniques, and how do they help identify potential failures?
+    
+    Question: Can you provide examples of common mistakes or oversights that can lead to wind turbine gearbox failures? How can these mistakes be avoided, and what are the consequences of not addressing them?
+
+    Question: Are there any additional data sources or information that can be leveraged to improve the accuracy of the anomaly model, such as historical data or expert knowledge? This will help me identify potential sources of additional information that can be used to improve the model.
+
+
 """
 
     AssetDescriptionExtractor = """
@@ -86,6 +104,49 @@ If you don't know the answer to a question, please don't share false information
 include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that 
 your responses are socially unbiased and positive in nature.
 """
+
+    QAClassifierSystemPrompt = """
+You are a helpful, respectful, and honest assistant. You will be introduced to several 
+persona such as data scientists, subject matter experts, narrators etc. User will provide a 
+question and you will select a persona who can answer the given question. Your selection is based 
+on the persona's field experience and scientific knowledge. Sometime questions can be answered by 
+multiple personas. Here is the two personas along with their skill description.  
+
+Persona: Subject Matter Expert
+Skill: Provide domain knowledge for a particular industrial assets and their working condition
+
+Persona: Data Scientist
+Skill: building machine learning model, data analytics, python programming
+
+"""
+
+    QAClassifierPrompt = """
+Assuming user is seeking guidance about who can answer the given question. There is a possibility
+that more than one personas can provide different level of information. Your answer should include 
+all personas who can be the best persona to consult for the question. You will use the example provided 
+in a form of Internal thought to find the answer for all questions.
+
+Question: What are the most common failure modes for wind turbine gearboxes? This will help me identify the failure modes that the anomaly model should be able to detect. 
+Please use (Internal thought).
+
+(Internal thought): first we find out the list of candidate personas mentioned in System Prompt. 
+
+We found two personas listed in system prompt: [Subject Matter Expert, Data Scientist]. 
+
+First, let us evaluate first persona (Subject Matter Expert). The Subject Matter Expert has knowledge of the domain and can provide
+ information about the common failure modes for wind turbine gearboxes. This question is best suited for a Subject Matter Expert.
+ The sentiment for Subject Matter Expert is positive.
+
+Next, we evaluate second persona (Data Scientist). This question is primarily related to the domain knowledge of
+ wind turbine gearboxes and their failure modes. Therefore, Data Scientist is not the best persona to consult for this question. 
+ The sentiment for Data Scientist is negative. 
+
+Overall, Subject Matter Expert has positive sentiment.
+
+Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
+
+"""
+
 
     # The asset description is "Valve - Hydraulic Operated - Isolation - Piston Type".
     def __init__(
@@ -138,6 +199,18 @@ your responses are socially unbiased and positive in nature.
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
             system_message=self.QuestionGenerator,
+        )
+
+        # agent 5
+        self.QuestionClassifierAgent = GenAIInstructClient(
+            name="QClassifier",
+            description="Find right person for a given question",
+            skill="use LLM to classifier a question into persona",
+            model=self.genai_config["model"],
+            params=self.genai_config["params"],
+            credentials=self.genai_config["creds"],
+            system_message=self.QAClassifierSystemPrompt,
+            question_message=self.QAClassifierPrompt,
         )
 
         # messages - storage
@@ -286,6 +359,19 @@ your responses are socially unbiased and positive in nature.
         df = pd.DataFrame({'questions': self.genai_questions_for_sme})
         df.to_csv('genai_questions.csv', index=False)
 
+    def question_assignment(self, experiment_id):
+        """_summary_
+
+        :param experiment_id: _description_
+        :type experiment_id: _type_
+        """
+
+        # for each question
+        # find whi will asnwer the questions
+        # assign them into their respective queue
+
+        pass
+
     def print_token_usage(self):
         self.DSAgent.print_token_usage()
         self.SMEAgent.print_token_usage()
@@ -310,3 +396,9 @@ your responses are socially unbiased and positive in nature.
 
                 # now we have response from sme, so we can create few more questions
                 self.question_generation(experiment_id=experiment_id)
+
+                # now we can do question assignment 
+                self.question_assignment(experiment_id=experiment_id)
+
+                # ideally we should have answer generation
+                # self.answer_generation()
