@@ -7,7 +7,7 @@ from autorecipe.genai.utils import (
     filter_and_sort_questions,
     filter_and_sort_questions_using_reference,
 )
-
+import pandas as pd
 
 class RecipeAgent:
     # configuration
@@ -217,7 +217,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.genai_questions_for_sme = []
         self.genai_responses_from_sme = []
         self.genai_questions_for_ds = []
-        self.genai_responses_for_ds = []
+        self.genai_responses_from_ds = []
 
     def init_round(self, message, experiment_id):
         """Zero shot"""
@@ -354,7 +354,6 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         f_tmp_DSets_2 = filter_and_sort_questions(f_tmp_DSets_1, filter_threshold=0.98)
         self.genai_questions_for_sme.extend(f_tmp_DSets_2)
 
-        import pandas as pd
         print (len(self.genai_questions_for_sme))
         df = pd.DataFrame({'questions': self.genai_questions_for_sme})
         df.to_csv('genai_questions.csv', index=False)
@@ -369,6 +368,10 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         # for each question
         # find whi will asnwer the questions
         # assign them into their respective queue
+
+        #sindex = answer.rfind('Answer:')
+        #eindex = answer.rfind('(TOKENSTOP')
+        #print (answer[sindex+7:eindex])   # 7 = len('Answer:')
 
         pass
 
