@@ -8,11 +8,14 @@ from autorecipe.genai.utils import (
     filter_and_sort_questions_using_reference,
 )
 import pandas as pd
+from colorama import Fore, Style
+
 
 class RecipeAgent:
     # configuration
     DEFAULT_CONFIG = {
-        "model": "meta-llama/llama-2-70b-chat",
+        # "model": "meta-llama/llama-2-70b-chat",
+        "model": "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
         "params": {
             "decoding_method": "greedy",
             "min_new_tokens": 200,
@@ -147,7 +150,6 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
 """
 
-
     # The asset description is "Valve - Hydraulic Operated - Isolation - Piston Type".
     def __init__(
         self,
@@ -218,9 +220,18 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.genai_responses_from_sme = []
         self.genai_questions_for_ds = []
         self.genai_responses_from_ds = []
+        self.total_processed_question_sme = 0
+        self.total_processed_question_ds = 0
+
+        self.testmode = 1
 
     def init_round(self, message, experiment_id):
         """Zero shot"""
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.GREEN}--------------------- Round 1 ------------------------------.{Style.RESET_ALL}"
+            )
+
         ds_response = self.DSAgent.create(
             messages=[{"content": message, "role": "user"}],
             context=None,
@@ -234,13 +245,29 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         )
 
         # extract initial set of questions prepared by DS
-        #print (ds_response)
+        if self.testmode:
+            print(f"{Style.BRIGHT}{Fore.BLUE} ds_response >>> {Style.RESET_ALL}")
+            print(ds_response)
+            print(f"{Style.BRIGHT}{Fore.BLUE} sme_response >>> {Style.RESET_ALL}")
+            print(sme_response)
+
         ds_questions = self.DSAgent.extract_questions(ds_response)
         f_ds_question = filter_and_sort_questions_using_reference(
-            ds_questions, ds_questions, is_identical=True, filter_threshold=0.98,
+            ds_questions,
+            ds_questions,
+            is_identical=True,
+            filter_threshold=0.98,
         )
         self.genai_questions_for_sme.extend(f_ds_question)
-        #print(f_ds_question)
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} ds_questions : {len(ds_questions)} >>> {Style.RESET_ALL}"
+            )
+            print(ds_questions)
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} f_ds_question {len(f_ds_question)} >>> {Style.RESET_ALL}"
+            )
+            print(f_ds_question)
 
         """In Context Learning : Invoke Summarize Agent and then Get summary"""
         ds_summary = self.SummarizeAgent.create(
@@ -248,11 +275,16 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             context=None,
             experiment_id=experiment_id,
         )
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} ds_summary : {len(ds_summary)} >>> {Style.RESET_ALL}"
+            )
+            print(ds_summary)
 
         """ Now ask DS """
         addon = (
             ds_summary
-            #+ "\n\n Would you like to add additional set of questions based on provided information?"
+            # + "\n\n Would you like to add additional set of questions based on provided information?"
             + "\n\n From the above summary, generate few more questions to be asked to subject matter expert."
         )
         ds_response_1 = self.DSAgent.create(
@@ -262,28 +294,55 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         )
 
         ds_questions_1 = self.DSAgent.extract_questions(ds_response_1)
-        # handle duplicate question and asnwer
-        f_ds_question_1 = filter_and_sort_questions_using_reference(self.genai_questions_for_sme, ds_questions_1, filter_threshold=0.98)
-        f_ds_question_2 = filter_and_sort_questions(f_ds_question_1, filter_threshold=0.98)
+        f_ds_question_1 = filter_and_sort_questions_using_reference(
+            self.genai_questions_for_sme, ds_questions_1, filter_threshold=0.98
+        )
+        f_ds_question_2 = filter_and_sort_questions(
+            f_ds_question_1, filter_threshold=0.98
+        )
         self.genai_questions_for_sme.extend(f_ds_question_2)
-        print (f_ds_question_2)
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} ds_response_1 : {len(ds_response_1)} >>> {Style.RESET_ALL}"
+            )
+            print(ds_response_1)
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} ds_questions_1 : {len(ds_questions_1)} >>> {Style.RESET_ALL}"
+            )
+            print(ds_questions_1)
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} f_ds_question_2 : {len(f_ds_question_2)} >>> {Style.RESET_ALL}"
+            )
+            print(f_ds_question_2)
 
     def next_round(self, experiment_id):
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.GREEN}--------------------- Round 2 ------------------------------.{Style.RESET_ALL}"
+            )
+
         """This is a round 2 - Where DS and SME talk to each other"""
         for item in self.genai_questions_for_sme:
-            # print("--------------------------Question--------->>>>>>>>>")
-            # print(item)
             sme_response = self.SMEAgent.create(
                 messages=[{"content": item, "role": "user"}],
                 context=None,
                 experiment_id=experiment_id,
             )
-            # print("--------------------------Answer--------->>>>>>>>>")
-            # print(sme_response)
+            if self.testmode:
+                print(f"{Style.BRIGHT}{Fore.BLUE} Question : >>> {Style.RESET_ALL}")
+                print(item)
+                print(f"{Style.BRIGHT}{Fore.BLUE} Answer : >>> {Style.RESET_ALL}")
+                print(sme_response)
+
             self.genai_responses_from_sme.append(sme_response)
             # print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
 
     def question_generation(self, experiment_id):
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.GREEN}--------------------- Round 3 ------------------------------.{Style.RESET_ALL}"
+            )
+
         tmp_DSets = []
         """This is a question generation"""
         # purelly using questions
@@ -301,8 +360,17 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             context=None,
             experiment_id=experiment_id,
         )
-        question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
-        tmp_DSets.extend(question_response)
+        question_response_1 = self.QuestionGeneratorAgent.extract_questions(
+            question_response
+        )
+        tmp_DSets.extend(question_response_1)
+        if self.testmode:
+            print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
+            print(result)
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
+            )
+            print(question_response_1)
 
         # approach 2
         # most recent first
@@ -312,32 +380,50 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             context=None,
             experiment_id=experiment_id,
         )
-        question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
-        tmp_DSets.extend(question_response)
+        question_response_2 = self.QuestionGeneratorAgent.extract_questions(
+            question_response
+        )
+        tmp_DSets.extend(question_response_2)
+        if self.testmode:
+            print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
+            print(result)
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
+            )
+            print(question_response_2)
 
         # approach 3 - random sampling
         # most recent first
-        selected_elements = random.sample(self.genai_questions_for_sme, min(len(self.genai_questions_for_sme), 10))
+        selected_elements = random.sample(
+            self.genai_questions_for_sme, min(len(self.genai_questions_for_sme), 10)
+        )
         result = "\n".join(["question: " + item for item in selected_elements])
         question_response = self.QuestionGeneratorAgent.create(
             messages=[{"content": result, "role": "user", "type": "qq"}],
             context=None,
             experiment_id=experiment_id,
         )
-        question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
-        tmp_DSets.extend(question_response)
+        question_response_3 = self.QuestionGeneratorAgent.extract_questions(
+            question_response
+        )
+        tmp_DSets.extend(question_response_3)
+        if self.testmode:
+            print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
+            print(result)
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
+            )
+            print(question_response_3)
 
-        # approach 2. Q1, A1 --> Q2
+        # approach 4. Q1, A1 --> Q2
         # purely using question-answer pair
         for qid in range(len(self.genai_questions_for_sme)):
-            print("New Question -   ----------------->")
             intermediate_result = f"Question: {self.genai_questions_for_sme[qid]} \n Answer: {self.genai_responses_from_sme[qid]}"
             result = self.SummarizeAgent.create(
                 messages=[{"content": intermediate_result, "role": "user"}],
                 context=None,
                 experiment_id=experiment_id,
             )
-            print(result)
             result = (
                 result
                 + "\n\n From the above summary, generate few more questions to be asked to Subject matter expert."
@@ -347,16 +433,37 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 context=None,
                 experiment_id=experiment_id,
             )
-            question_response = self.QuestionGeneratorAgent.extract_questions(question_response)
-            tmp_DSets.extend(question_response)
+            question_response_1 = self.QuestionGeneratorAgent.extract_questions(
+                question_response
+            )
+            tmp_DSets.extend(question_response_1)
+            if self.testmode:
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_input_1 :  >>> {Style.RESET_ALL}"
+                )
+                print(intermediate_result)
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_summary  :  >>> {Style.RESET_ALL}"
+                )
+                print(result)
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_input : {len(question_response_1)} >>> {Style.RESET_ALL}"
+                )
+                print(question_response)
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
+                )
+                print(question_response_1)
 
-        f_tmp_DSets_1 = filter_and_sort_questions_using_reference(self.genai_questions_for_sme, tmp_DSets, filter_threshold=0.98)
+        f_tmp_DSets_1 = filter_and_sort_questions_using_reference(
+            self.genai_questions_for_sme, tmp_DSets, filter_threshold=0.98
+        )
         f_tmp_DSets_2 = filter_and_sort_questions(f_tmp_DSets_1, filter_threshold=0.98)
         self.genai_questions_for_sme.extend(f_tmp_DSets_2)
 
-        print (len(self.genai_questions_for_sme))
-        df = pd.DataFrame({'questions': self.genai_questions_for_sme})
-        df.to_csv('genai_questions.csv', index=False)
+        print(len(self.genai_questions_for_sme))
+        df = pd.DataFrame({"questions": self.genai_questions_for_sme})
+        df.to_csv("genai_questions.csv", index=False)
 
     def question_assignment(self, experiment_id):
         """_summary_
@@ -369,9 +476,16 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         # find whi will asnwer the questions
         # assign them into their respective queue
 
-        #sindex = answer.rfind('Answer:')
-        #eindex = answer.rfind('(TOKENSTOP')
-        #print (answer[sindex+7:eindex])   # 7 = len('Answer:')
+        # sindex = answer.rfind('Answer:')
+        # eindex = answer.rfind('(TOKENSTOP')
+        # print (answer[sindex+7:eindex])   # 7 = len('Answer:')
+        answer_text = ""
+
+        if "Subject Matter Expert" in answer_text:
+            print("Add to SME")
+
+        if "Data Scientist" in answer_text:
+            print("Add to DS")
 
         pass
 
@@ -400,7 +514,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 # now we have response from sme, so we can create few more questions
                 self.question_generation(experiment_id=experiment_id)
 
-                # now we can do question assignment 
+                # now we can do question assignment
                 self.question_assignment(experiment_id=experiment_id)
 
                 # ideally we should have answer generation
