@@ -2,7 +2,7 @@ from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
 obj = RecipeAgent(name='Maximo')
 
-#obj.init_chat(message='The industrial asset class is standby generator')
+obj.init_chat(message='The industrial asset class is standby generator')
 #obj.init_chat(message='The industrial asset class is air comporessor')
 #obj.init_chat(message='The industrial asset class is hydroelectric power turbine')
 #obj.init_chat(message='The industrial asset class is wind turbine')
@@ -14,7 +14,7 @@ obj = RecipeAgent(name='Maximo')
 
 
 #obj.init_chat(message='The industrial asset class is air compressor')
-obj.init_chat(message='The industrial asset class is wind turbine gearbox')
+#obj.init_chat(message='The industrial asset class is wind turbine gearbox')
 
 #client.search_runs(experiment_ids=experiment.experiment_id,order_by=['start_time ASC'])
 #ans = client.search_runs(experiment_ids=experiment.experiment_id)

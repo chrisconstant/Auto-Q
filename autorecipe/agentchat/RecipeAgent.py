@@ -9,17 +9,19 @@ from autorecipe.genai.utils import (
 )
 import pandas as pd
 from colorama import Fore, Style
+import uuid
 
 
 class RecipeAgent:
     # configuration
     DEFAULT_CONFIG = {
-        # "model": "meta-llama/llama-2-70b-chat",
+        #"model": "meta-llama/llama-2-70b-chat",
         "model": "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
+        #"model": "ibm/granite-13b-chat-v2",
         "params": {
             "decoding_method": "greedy",
             "min_new_tokens": 200,
-            "max_new_tokens": 2000,
+            "max_new_tokens": 1500,  #2000
             "stop_sequences": ["(TOKENSTOP)"],
         },
         "creds": {
@@ -48,16 +50,20 @@ You act as a reliability engineer who is expert in failure modes and effect anal
 reliability. You task is to provide a accurate information about asset's component, subcomponent, failure mode
 failure reason, failure code and degradation mechanisum along with severity and ability to detect them 
 before it happen via preventive maintainance. You will be provided an enough information
-about the asset class such as wind turbine, pump, oil well, etc.
+about the asset class.
 """
 
     InfoSummaryPromt = """
 Prepare a human-readable summary in a well-structured paragraph, eliminating any 
  special characters such as new lines and tabs. Focus on capturing the main components, failure modes and 
  reasons, degradation mechanisms, severity and detectability ratings, emphasizing the crucial insights for 
- predicting and preventing failures. Ensure the summary provides a coherent narrative. 
+ predicting and preventing failures. Ensure the summary provides a coherent narrative. If user gives list of questions, 
+ then summary should be written based on questions content for a given asset class. 
 """
-
+# If user gives list of questions, then summary should be written based on questions content.
+# Generate one paragraph summary. 
+# Generate the background document to answer the given question.
+    
     QuestionGenerator = """
 Pretend you are a question generation system. I will give you a list of questions or a pair of question and answer 
 extracted from the conversation between two users where question is asked by data scientist and 
@@ -158,6 +164,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.name = name
         self.genai_config = self.DEFAULT_CONFIG.copy()
         self._genai_messages = defaultdict(list)
+        stateful = False
 
         # agent 1
         self.DSAgent = GenAIChatClient(
@@ -168,6 +175,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
             system_message=self.DSSystemPrompt,
+            stateful=stateful,
         )
 
         # agent 2
@@ -179,6 +187,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
             system_message=self.SMESystemPrompt,
+            stateful=stateful,
         )
 
         # agent 3
@@ -190,6 +199,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
             system_message=self.InfoSummaryPromt,
+            stateful=stateful,
         )
 
         # agent 4
@@ -201,6 +211,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
             system_message=self.QuestionGenerator,
+            stateful=stateful,
         )
 
         # agent 5
@@ -271,10 +282,11 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         """In Context Learning : Invoke Summarize Agent and then Get summary"""
         ds_summary = self.SummarizeAgent.create(
-            messages=[{"content": sme_response, "role": "user"}],
+            messages=[{"content": sme_response + "\n Generate one paragraph summary.", "role": "user"}],
             context=None,
             experiment_id=experiment_id,
         )
+        self.context_documents_ = ds_summary
         if self.testmode:
             print(
                 f"{Style.BRIGHT}{Fore.BLUE} ds_summary : {len(ds_summary)} >>> {Style.RESET_ALL}"
@@ -314,6 +326,21 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 f"{Style.BRIGHT}{Fore.BLUE} f_ds_question_2 : {len(f_ds_question_2)} >>> {Style.RESET_ALL}"
             )
             print(f_ds_question_2)
+        self.context_questions_seeds_total_ = len(self.genai_questions_for_sme)
+
+
+        # now we generate context document
+        result = "\n".join(
+            [f"{i+1}. {item}" for i, item in enumerate(self.genai_questions_for_sme)]
+        )
+        result += "\n Generate one paragraph summary."
+        ds_context_summary = self.SummarizeAgent.create(
+            messages=[{"content": result, "role": "user"}],
+            context=None,
+            experiment_id=experiment_id,
+        )
+        self.question_context_documents_ = ds_context_summary
+
 
     def next_round(self, experiment_id):
         if self.testmode:
@@ -352,8 +379,11 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         # approach 1
         # all questions and let context to cut it
+        randomized_questions = random.sample(
+            self.genai_questions_for_sme, len(self.genai_questions_for_sme)
+        )
         result = "\n".join(
-            ["question: " + item for item in self.genai_questions_for_sme]
+            [f"{i+1}. {item}" for i, item in enumerate(randomized_questions)]
         )
         question_response = self.QuestionGeneratorAgent.create(
             messages=[{"content": result, "role": "user", "type": "qq"}],
@@ -367,14 +397,16 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         if self.testmode:
             print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
             print(result)
+            print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
+            print(question_response)
             print(
-                f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
+                f"{Style.BRIGHT}{Fore.BLUE} question_response_1 : {len(question_response_1)} >>> {Style.RESET_ALL}"
             )
             print(question_response_1)
 
         # approach 2
         # most recent first
-        result = "\n".join(["question: " + self.genai_questions_for_sme[-1]])
+        result = "\n".join(["1. " + self.genai_questions_for_sme[-1]])
         question_response = self.QuestionGeneratorAgent.create(
             messages=[{"content": result, "role": "user", "type": "qq"}],
             context=None,
@@ -387,6 +419,8 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         if self.testmode:
             print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
             print(result)
+            print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
+            print(question_response)
             print(
                 f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
             )
@@ -397,7 +431,9 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         selected_elements = random.sample(
             self.genai_questions_for_sme, min(len(self.genai_questions_for_sme), 10)
         )
-        result = "\n".join(["question: " + item for item in selected_elements])
+        result = "\n".join(
+            [f"{i+1}. {item}" for i, item in enumerate(selected_elements)]
+        )
         question_response = self.QuestionGeneratorAgent.create(
             messages=[{"content": result, "role": "user", "type": "qq"}],
             context=None,
@@ -410,6 +446,8 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         if self.testmode:
             print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
             print(result)
+            print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
+            print(question_response)
             print(
                 f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
             )
@@ -495,18 +533,41 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
     def init_chat(self, message):
         """_summary_"""
-        import uuid
 
+        # this is a context prompt
+        self.context_prompt_ = message
+
+        # setting the MLFLow experiments
         experiment_name = "MyExperiment_" + str(uuid.uuid4())
         experiment_id = mlflow.create_experiment(experiment_name)
-        print(f">>> Message: {message}")
+
+        print(f">>> Message: {self.context_prompt_}")
         print(f">>> Experiment id: {experiment_id}")
         print(f">>> Experiment name: {experiment_name}")
+
+        # start recording
         with mlflow.start_run(experiment_id=experiment_id):
             # Initial round
-            self.init_round(message=message, experiment_id=experiment_id)
+            self.init_round(message=self.context_prompt_, experiment_id=experiment_id)
             # if number of questions are Zero, do some post analysis.... else move forward
             # Now use initial seed questions for second round
+
+            if self.testmode:
+                print(
+                    f"{Style.BRIGHT}{Fore.MAGENTA} CP: <<< {self.context_prompt_} >>> {Style.RESET_ALL}"
+                )
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} CPDoc: <<< {self.context_documents_} >>> {Style.RESET_ALL}"
+                )
+                print(
+                    f"{Style.BRIGHT}{Fore.CYAN} SeedQuestions: <<< {self.context_questions_seeds_total_} >>> {Style.RESET_ALL}"
+                )
+                print(
+                    f"{Style.BRIGHT}{Fore.GREEN} CPDSDOC: <<< {self.question_context_documents_} >>> {Style.RESET_ALL}"
+                )
+
+            exit(0)
+
             if len(self.genai_questions_for_sme) > 0:
                 # interact with SME and then talk to DS
                 self.next_round(experiment_id=experiment_id)

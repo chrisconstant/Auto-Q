@@ -9,6 +9,8 @@ from typing import Callable, Dict, List, Optional, Tuple, Union
 import re
 import json
 import mlflow
+import socket
+import time
 
 UNKNOWN = "unknown"
 
@@ -74,7 +76,17 @@ def extract_code(
 
 
 class GenAIChatClient(Model):
-    def __init__(self, name, description, skill, model, params, credentials, system_message):
+    def __init__(
+        self,
+        name,
+        description,
+        skill,
+        model,
+        params,
+        credentials,
+        system_message,
+        stateful=True,
+    ):
         self.name = name
         self.description = description
         self.skill = skill
@@ -85,11 +97,16 @@ class GenAIChatClient(Model):
         )
         self._conversation_id = None
         self.system_message = system_message
+        self.stateful = stateful
 
         # track the request in and request out
         self._prompt_tokens = 0
         self._completion_tokens = 0
         self._total_tokens = 0
+
+        # trial
+        self._max_retries = 3
+        self._retry_delay = 10
 
     def _preprocess_create_payload(self, messages):
         chatmessage = []
@@ -118,45 +135,79 @@ class GenAIChatClient(Model):
             mlflow.log_dict(q_dict, "Question.json")
             messages = self._preprocess_create_payload(messages)
             if self._conversation_id:
-                result = self.client.generate(
-                    messages=messages,
-                    options=ChatOptions(
-                        conversation_id=self._conversation_id,
-                        use_conversation_parameters=True,
-                    ),
-                )
-                a_dict = {"Answer": result.generations[0][0].text}
-                t_dict = result.generations[0][0].generation_info["token_usage"]
-                self._update_tokens_usage(
-                    t_dict["prompt_tokens"],
-                    t_dict["completion_tokens"],
-                    t_dict["total_tokens"],
-                )
-                mlflow.log_dict(a_dict, "Answer.json")
-                return result.generations[0][0].text
+                result = None
+                for attempt in range(1, self._max_retries + 1):
+                    try:
+                        result = self.client.generate(
+                            messages=messages,
+                            options=ChatOptions(
+                                conversation_id=self._conversation_id,
+                                use_conversation_parameters=True,
+                            ),
+                        )
+                        break
+                    except (OSError, socket.error, ConnectionResetError) as e:
+                        if isinstance(e, socket.error) and e.errno == 10054:
+                            if attempt < self._max_retries:
+                                time.sleep(self._retry_delay)
+
+                if result:
+                    a_dict = {"Answer": result.generations[0][0].text}
+                    t_dict = result.generations[0][0].generation_info["token_usage"]
+                    self._update_tokens_usage(
+                        t_dict["prompt_tokens"],
+                        t_dict["completion_tokens"],
+                        t_dict["total_tokens"],
+                    )
+                    mlflow.log_dict(a_dict, "Answer.json")
+                    return result.generations[0][0].text
+                else:
+                    return ''
             else:
-                result = self.client.generate(messages=messages)
-                self._conversation_id = result.generations[0][0].generation_info[
-                    "meta"
-                ]["conversation_id"]
-                a_dict = {"Answer": result.generations[0][0].text}
-                t_dict = result.generations[0][0].generation_info["token_usage"]
-                self._update_tokens_usage(
-                    t_dict["prompt_tokens"],
-                    t_dict["completion_tokens"],
-                    t_dict["total_tokens"],
-                )
-                mlflow.log_dict(a_dict, "Answer.json")
-                return result.generations[0][0].text
+                result = None
+                for attempt in range(1, self._max_retries + 1):
+                    try:
+                        result = self.client.generate(messages=messages)
+                        break
+                    except (OSError, socket.error, ConnectionResetError) as e:
+                        if isinstance(e, socket.error) and e.errno == 10054:
+                            if attempt < self._max_retries:
+                                time.sleep(self._retry_delay)
+                        
+                if result:
+                    if self.stateful:
+                        self._conversation_id = result.generations[0][0].generation_info[
+                            "meta"
+                        ]["conversation_id"]
+                    a_dict = {"Answer": result.generations[0][0].text}
+                    t_dict = result.generations[0][0].generation_info["token_usage"]
+                    self._update_tokens_usage(
+                        t_dict["prompt_tokens"],
+                        t_dict["completion_tokens"],
+                        t_dict["total_tokens"],
+                    )
+                    mlflow.log_dict(a_dict, "Answer.json")
+                    return result.generations[0][0].text
+                else:
+                    return ''
 
     def extract_questions(self, text):
         chat_agent_response = content_str(text)
         questions_start_index = chat_agent_response.find("1. ")
+        if '1. ' not in chat_agent_response:
+            if '* ' in chat_agent_response:
+                questions_start_index = chat_agent_response.find("* ")
 
         if "\n\n" in chat_agent_response:
             questions_end_index = chat_agent_response.rfind("\n\n") + 2
         else:
             questions_end_index = len(chat_agent_response)
+
+        if questions_end_index == questions_start_index:
+            if "\n" in chat_agent_response:
+                questions_end_index = chat_agent_response.rfind("\n") + 2
+            else:
+                questions_end_index = len(chat_agent_response)
 
         questions_string = chat_agent_response[
             questions_start_index:questions_end_index
@@ -181,5 +232,7 @@ class GenAIChatClient(Model):
         return final_questions
 
     def print_token_usage(self):
-        print(f'The usages Promt Token: {self._prompt_tokens}, \
-              Generated Token: {self._completion_tokens}, Total Token : {self._total_tokens}')
+        print(
+            f"The usages Promt Token: {self._prompt_tokens}, \
+              Generated Token: {self._completion_tokens}, Total Token : {self._total_tokens}"
+        )
