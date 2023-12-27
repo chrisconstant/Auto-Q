@@ -88,18 +88,16 @@ Skill: Provide domain knowledge for a particular industrial assets and their wor
 """
 
     QuestionClassifierPropmt = """
-    Assuming user is seeking information about who can answer the following question. There is a possibility
-    that more than one persona can provide different level of information. Please generate only personas.
+Assuming user is seeking information about who can answer the following question. There is a possibility
+that more than one persona can provide different level of information. Please generate only personas.
 
-    Question: How do you ensure that the wind turbine gearbox is properly aligned and balanced? What are the consequences of misalignment or imbalance, and how do you correct these issues?
+Question: How do you ensure that the wind turbine gearbox is properly aligned and balanced? What are the consequences of misalignment or imbalance, and how do you correct these issues?
 
-    Question: Can you discuss the role of condition monitoring in predicting and preventing wind turbine gearbox failures? What are the different types of condition monitoring techniques, and how do they help identify potential failures?
-    
-    Question: Can you provide examples of common mistakes or oversights that can lead to wind turbine gearbox failures? How can these mistakes be avoided, and what are the consequences of not addressing them?
+Question: Can you discuss the role of condition monitoring in predicting and preventing wind turbine gearbox failures? What are the different types of condition monitoring techniques, and how do they help identify potential failures?
 
-    Question: Are there any additional data sources or information that can be leveraged to improve the accuracy of the anomaly model, such as historical data or expert knowledge? This will help me identify potential sources of additional information that can be used to improve the model.
+Question: Can you provide examples of common mistakes or oversights that can lead to wind turbine gearbox failures? How can these mistakes be avoided, and what are the consequences of not addressing them?
 
-
+Question: Are there any additional data sources or information that can be leveraged to improve the accuracy of the anomaly model, such as historical data or expert knowledge? This will help me identify potential sources of additional information that can be used to improve the model.
 """
 
     AssetDescriptionExtractor = """
