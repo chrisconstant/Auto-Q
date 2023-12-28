@@ -1,20 +1,19 @@
 from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
 obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='wind turbine gearbox')
+obj.init_chat()
 
-obj.init_chat(message='The industrial asset class is standby generator')
-#obj.init_chat(message='The industrial asset class is air comporessor')
-#obj.init_chat(message='The industrial asset class is hydroelectric power turbine')
-#obj.init_chat(message='The industrial asset class is wind turbine')
-#obj.init_chat(message='The industrial asset class is electrical transformer')
-#obj.init_chat(message='The industrial asset class is induced draft fan')
-#obj.init_chat(message='The industrial asset class is blast furnace')
-#obj.init_chat(message='The industrial asset class is electric battery')
-#obj.init_chat(message='The industrial asset class is industrial robot')
-
-
+#obj.init_chat(message='standby generator')
+#obj.init_chat(message='air comporessor')
+#obj.init_chat(message='hydroelectric power turbine')
+#obj.init_chat(message='wind turbine')
+#obj.init_chat(message='electrical transformer')
+#obj.init_chat(message='induced draft fan')
+#obj.init_chat(message='blast furnace')
+#obj.init_chat(message='electric battery')
+#obj.init_chat(message='industrial robot')
 #obj.init_chat(message='The industrial asset class is air compressor')
-#obj.init_chat(message='The industrial asset class is wind turbine gearbox')
 
 #client.search_runs(experiment_ids=experiment.experiment_id,order_by=['start_time ASC'])
 #ans = client.search_runs(experiment_ids=experiment.experiment_id)

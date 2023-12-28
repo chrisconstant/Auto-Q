@@ -11,6 +11,9 @@ import pandas as pd
 from colorama import Fore, Style
 import uuid
 
+# have model specific configuration
+# QA does not need longer context to generate
+# Max token generation need to be adjusted per
 
 class RecipeAgent:
     # configuration
@@ -21,7 +24,7 @@ class RecipeAgent:
         "params": {
             "decoding_method": "greedy",
             "min_new_tokens": 200,
-            "max_new_tokens": 1500,  #2000
+            "max_new_tokens": 2000, #1500,
             "stop_sequences": ["(TOKENSTOP)"],
         },
         "creds": {
@@ -158,9 +161,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
     def __init__(
         self,
         name: str,
+        custom_config=None,
     ):
         self.name = name
-        self.genai_config = self.DEFAULT_CONFIG.copy()
+        self.genai_config = dict(self.DEFAULT_CONFIG)
+        if custom_config:
+            self.genai_config.update(custom_config)
+
         self._genai_messages = defaultdict(list)
         stateful = False
 
@@ -233,6 +240,9 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.total_processed_question_ds = 0
 
         self.testmode = 1
+
+    def set_asset_class(self, asset_class):
+        self.asset_class = asset_class
 
     def init_round(self, message, experiment_id):
         """Zero shot"""
@@ -529,11 +539,11 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.DSAgent.print_token_usage()
         self.SMEAgent.print_token_usage()
 
-    def init_chat(self, message):
+    def init_chat(self):
         """_summary_"""
 
         # this is a context prompt
-        self.context_prompt_ = message
+        self.context_prompt_ = 'The industrial asset class is ' + self.asset_class
 
         # setting the MLFLow experiments
         experiment_name = "MyExperiment_" + str(uuid.uuid4())
