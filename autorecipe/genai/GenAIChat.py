@@ -11,6 +11,7 @@ import json
 import mlflow
 import socket
 import time
+from genai.exceptions.genai_exception import GenAiException
 
 UNKNOWN = "unknown"
 
@@ -130,13 +131,14 @@ class GenAIChatClient(Model):
 
     def create(self, context, messages, experiment_id):
         """ """
+        time.sleep(5) # putting sleep for 5 second
         with mlflow.start_run(experiment_id=experiment_id, nested=True) as conv:
             q_dict = {"Question": messages}
             mlflow.log_dict(q_dict, "Question.json")
             messages = self._preprocess_create_payload(messages)
             if self._conversation_id:
                 result = None
-                for attempt in range(1, self._max_retries + 1):
+                for _ in range(1, self._max_retries + 1):
                     try:
                         result = self.client.generate(
                             messages=messages,
@@ -146,15 +148,14 @@ class GenAIChatClient(Model):
                             ),
                         )
                         break
-                    except (OSError, socket.error, ConnectionResetError) as e:
-                        if isinstance(e, socket.error) and e.errno == 10054:
-                            if attempt < self._max_retries:
-                                time.sleep(self._retry_delay)
+                    except (OSError, socket.error, ConnectionResetError, Exception, GenAiException) as e:
+                        print ('Error ....' + str(e))
+                        time.sleep(self._retry_delay)
 
                 if result:
                     a_dict = {"Answer": result.generations[0][0].text}
                     t_dict = result.generations[0][0].generation_info["token_usage"]
-                    self._update_tokens_usage(
+                    self._upWdate_tokens_usage(
                         t_dict["prompt_tokens"],
                         t_dict["completion_tokens"],
                         t_dict["total_tokens"],
@@ -165,14 +166,13 @@ class GenAIChatClient(Model):
                     return ''
             else:
                 result = None
-                for attempt in range(1, self._max_retries + 1):
+                for _ in range(1, self._max_retries + 1):
                     try:
                         result = self.client.generate(messages=messages)
                         break
-                    except (OSError, socket.error, ConnectionResetError) as e:
-                        if isinstance(e, socket.error) and e.errno == 10054:
-                            if attempt < self._max_retries:
-                                time.sleep(self._retry_delay)
+                    except (OSError, socket.error, ConnectionResetError, Exception, GenAiException) as e:
+                        print (str(e))
+                        time.sleep(self._retry_delay)
                         
                 if result:
                     if self.stateful:

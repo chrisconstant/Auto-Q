@@ -65,11 +65,11 @@ LLMsets = ['ibm/granite-13b-instruct-v2',
 #Is this question for Data Scientist?
 
 import pandas as pd
-df = pd.read_csv('./genai_questions_1.csv')
+df = pd.read_csv('./genai_questions.csv')
 instructions = df['questions'].to_list()
 
 llm = LangChainInterface(
-    model=LLMsets[0],
+    model=LLMsets[1],
     credentials=Credentials(api_key, api_endpoint),
     params=GenerateParams(
         decoding_method="greedy",
