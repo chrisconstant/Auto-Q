@@ -61,6 +61,7 @@ class GenAIInstructClient(Model):
         with mlflow.start_run(experiment_id=experiment_id, nested=True) as conv:
             q_dict = {"Question": messages}
             mlflow.log_dict(q_dict, "Question.json")
+            result = None
             for _ in range(1, self._max_retries + 1):
                 try:
                     result = self.client.generate(
@@ -73,19 +74,18 @@ class GenAIInstructClient(Model):
                     print ('Error ....' + str(e))
                     time.sleep(self._retry_delay)
 
-            answer = result.generations[0][0].text
-            sindex = answer.rfind("Answer:")
-            eindex = answer.rfind("(TOKENSTOP")
-            #print(answer[sindex + 7 : eindex])  # 7 = len('Answer:')
-            a_dict = {"Answer": result.generations[0][0].text}
-            t_dict = result.generations[0][0].generation_info["token_usage"]
-            self._update_tokens_usage(
-                t_dict["prompt_tokens"],
-                t_dict["completion_tokens"],
-                t_dict["total_tokens"],
-            )
-            mlflow.log_dict(a_dict, "Answer.json")
-            return result.generations[0][0].text
+            if result:
+                a_dict = {"Answer": result.generations[0][0].text}
+                t_dict = result.generations[0][0].generation_info["token_usage"]
+                self._update_tokens_usage(
+                    t_dict["prompt_tokens"],
+                    t_dict["completion_tokens"],
+                    t_dict["total_tokens"],
+                )
+                mlflow.log_dict(a_dict, "Answer.json")
+                return result.generations[0][0].text
+            else:
+                return ''
 
     def print_token_usage(self):
         print(

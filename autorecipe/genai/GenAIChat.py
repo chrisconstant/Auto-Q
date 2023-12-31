@@ -171,7 +171,7 @@ class GenAIChatClient(Model):
                         result = self.client.generate(messages=messages)
                         break
                     except (OSError, socket.error, ConnectionResetError, Exception, GenAiException) as e:
-                        print (str(e))
+                        print ('Error ....' + str(e))
                         time.sleep(self._retry_delay)
                         
                 if result:
@@ -192,8 +192,16 @@ class GenAIChatClient(Model):
                     return ''
 
     def extract_questions(self, text):
+        """Doing implmenetation
+
+        :param text: _description_
+        :type text: _type_
+        :return: _description_
+        :rtype: _type_
+        """
         chat_agent_response = content_str(text)
         questions_start_index = chat_agent_response.find("1. ")
+
         if '1. ' not in chat_agent_response:
             if '* ' in chat_agent_response:
                 questions_start_index = chat_agent_response.find("* ")
@@ -205,7 +213,7 @@ class GenAIChatClient(Model):
 
         if questions_end_index == questions_start_index:
             if "\n" in chat_agent_response:
-                questions_end_index = chat_agent_response.rfind("\n") + 2
+                questions_end_index = chat_agent_response.rfind("\n")
             else:
                 questions_end_index = len(chat_agent_response)
 
@@ -222,11 +230,14 @@ class GenAIChatClient(Model):
         ]
         final_questions = []
         for item in questions_list:
-            first_space_index = item.find(" ")
-            if first_space_index != -1:
-                final_questions.append(item[first_space_index + 1 :])
-            else:
-                final_questions.append(item)
+            if len(item) > 5:
+                first_space_index = item.find(" ")
+                if first_space_index != -1:
+                    final_questions.append(item[first_space_index + 1 :])
+                else:
+                    final_questions.append(item)
+
+        # few more options - add latter            
 
         # Printing the list of questions
         return final_questions

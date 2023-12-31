@@ -17,6 +17,39 @@ from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 # QA does not need longer context to generate
 # Max token generation need to be adjusted per
 
+import ray
+
+
+@ray.remote
+def generate_response(llm, question, experiment_id):
+    llm_answer = llm.create(
+        context=None, messages=question, experiment_id=experiment_id
+    )
+    return llm_answer
+
+
+@ray.remote
+def generate_chain_response(
+    agent1, agent2, input_question, input_answer, experiment_id
+):
+    intermediate_result = f"Question: {input_question} \n Answer: {input_answer}"
+    result_summary = agent1.create(
+        messages=[{"content": intermediate_result, "role": "user"}],
+        context=None,
+        experiment_id=experiment_id,
+    )
+    result = (
+        result_summary
+        + "\n\n From the above summary, generate few more questions to be asked to Subject matter expert."
+    )
+    question_response = agent2.create(
+        messages=[{"content": result, "role": "user", "type": "qa"}],
+        context=None,
+        experiment_id=experiment_id,
+    )
+    question_response_1 = agent2.extract_questions(question_response)
+    return (result_summary, question_response, question_response_1)
+
 
 class RecipeAgent:
     LLMsets = [
@@ -259,9 +292,11 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.total_processed_question_ds = 0
         self.total_processed_answer_sme = 0
         self.total_processed_answer_ds = 0
+        self.question_generation_track = []
 
         # this is to print the all intermediate message for debug and imporovement
         self.testmode = 1
+        ray.init()
 
     def set_asset_class(self, asset_class):
         self.asset_class = asset_class
@@ -400,37 +435,57 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 f"{Style.BRIGHT}{Fore.GREEN}--------------------- Answer Generation Start ------------------------------.{Style.RESET_ALL}"
             )
 
-        """This is a round 2 - Where DS and SME talk to each other"""
+        """This is a round 2 - Where SME answer"""
+        refs = []
         for item in self.genai_questions_for_sme[self.total_processed_question_sme :]:
-            sme_response = self.SMEAgent.create(
-                messages=[{"content": item, "role": "user"}],
-                context=None,
-                experiment_id=experiment_id,
+            refs.append(
+                generate_response.remote(
+                    self.SMEAgent,
+                    [{"content": self.context_prompt_ + ". " + item, "role": "user"}],
+                    experiment_id,
+                )
             )
-            if self.testmode:
+        sme_responses = ray.get(refs)
+        self.genai_responses_from_sme.extend(sme_responses)
+        if self.testmode:
+            for item_index, item in enumerate(
+                self.genai_questions_for_sme[self.total_processed_question_sme :]
+            ):
                 print(f"{Style.BRIGHT}{Fore.BLUE} Question : >>> {Style.RESET_ALL}")
                 print(item)
                 print(f"{Style.BRIGHT}{Fore.BLUE} Answer : >>> {Style.RESET_ALL}")
-                print(sme_response)
+                print(sme_responses[item_index])
 
-            self.genai_responses_from_sme.append(sme_response)
-            # print("<<<<<<<<<<<<<<<<<<<-------End--------->>>>>>>>>")
-
-        """This is a round 2 - Where DS responds to other"""
+        """This is a round 2 - Where DS answer """
+        refs = []
         for item in self.genai_questions_for_ds[self.total_processed_question_ds :]:
             tmp_ds_question = "Provide a background document to answer the given question. \n\n Question: "
-            sme_response = self.DSAgent.create(
-                messages=[{"content": tmp_ds_question + item, "role": "user"}],
-                context=None,
-                experiment_id=experiment_id,
+            refs.append(
+                generate_response.remote(
+                    self.DSAgent,
+                    [
+                        {
+                            "content": tmp_ds_question
+                            + " "
+                            + self.context_prompt_
+                            + ". "
+                            + item,
+                            "role": "user",
+                        }
+                    ],
+                    experiment_id,
+                )
             )
-            if self.testmode:
+        ds_responses = ray.get(refs)
+        if self.testmode:
+            for item_index, item in enumerate(
+                self.genai_questions_for_ds[self.total_processed_question_ds :]
+            ):
                 print(f"{Style.BRIGHT}{Fore.BLUE} Question : >>> {Style.RESET_ALL}")
                 print(item)
                 print(f"{Style.BRIGHT}{Fore.BLUE} Answer : >>> {Style.RESET_ALL}")
-                print(sme_response)
-
-            self.genai_responses_from_ds.append(sme_response)
+                print(ds_responses[item_index])
+        self.genai_responses_from_ds.extend(ds_responses)
 
         self.total_processed_question_ds = len(self.genai_responses_from_ds)
         self.total_processed_question_sme = len(self.genai_responses_from_sme)
@@ -452,35 +507,36 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         """
         tmp_DSets = []
 
-        # approach 1
+        # Approach 1
         # all questions in (random order) and let context to cut it
-        # at some point it will be over the context and then system will remove or raise flag 
-        randomized_questions = random.sample(
-            input_question_sets, len(input_question_sets)
-        )
-        result = "\n".join(
-            [f"{i+1}. {item}" for i, item in enumerate(randomized_questions)]
-        )
-        question_response = self.QuestionGeneratorAgent.create(
-            messages=[{"content": result, "role": "user", "type": "qq"}],
-            context=None,
-            experiment_id=experiment_id,
-        )
-        question_response_1 = self.QuestionGeneratorAgent.extract_questions(
-            question_response
-        )
-        tmp_DSets.extend(question_response_1)
-        if self.testmode:
-            print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
-            print(result)
-            print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
-            print(question_response)
-            print(
-                f"{Style.BRIGHT}{Fore.BLUE} question_response_1 : {len(question_response_1)} >>> {Style.RESET_ALL}"
+        # at some point it will be over the context and then system will remove or raise flag
+        if len(input_question_sets) < 30:
+            randomized_questions = random.sample(
+                input_question_sets, len(input_question_sets)
             )
-            print(question_response_1)
+            result = "\n".join(
+                [f"{i+1}. {item}" for i, item in enumerate(randomized_questions)]
+            )
+            question_response = self.QuestionGeneratorAgent.create(
+                messages=[{"content": result, "role": "user", "type": "qq"}],
+                context=None,
+                experiment_id=experiment_id,
+            )
+            question_response_1 = self.QuestionGeneratorAgent.extract_questions(
+                question_response
+            )
+            tmp_DSets.extend(question_response_1)
+            if self.testmode:
+                print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
+                print(result)
+                print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
+                print(question_response)
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_response_1 : {len(question_response_1)} >>> {Style.RESET_ALL}"
+                )
+                print(question_response_1)
 
-        '''
+        """
         # approach 2
         # most recent first
         result = "\n".join(["1. " + input_question_sets[-1]])
@@ -502,74 +558,83 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
             )
             print(question_response_2)
-        '''
-            
+        """
+
         # approach 3 - 10 most recent questions
         # most recent first
-        selected_elements = random.sample(
-            input_question_sets, min(len(input_question_sets), 10)
-        )
-        result = "\n".join(
-            [f"{i+1}. {item}" for i, item in enumerate(selected_elements)]
-        )
-        question_response = self.QuestionGeneratorAgent.create(
-            messages=[{"content": result, "role": "user", "type": "qq"}],
-            context=None,
-            experiment_id=experiment_id,
-        )
-        question_response_3 = self.QuestionGeneratorAgent.extract_questions(
-            question_response
-        )
-        tmp_DSets.extend(question_response_3)
-        if self.testmode:
-            print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
-            print(result)
-            print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
-            print(question_response)
-            print(
-                f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
+        for _ in range(len(input_question_sets)//100+1):
+            selected_elements = random.sample(
+                input_question_sets, min(len(input_question_sets), 30)
             )
-            print(question_response_3)
+            result = "\n".join(
+                [f"{i+1}. {item}" for i, item in enumerate(selected_elements)]
+            )
+            question_response = self.QuestionGeneratorAgent.create(
+                messages=[{"content": result, "role": "user", "type": "qq"}],
+                context=None,
+                experiment_id=experiment_id,
+            )
+            question_response_3 = self.QuestionGeneratorAgent.extract_questions(
+                question_response
+            )
+            tmp_DSets.extend(question_response_3)
+            if self.testmode:
+                print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
+                print(result)
+                print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
+                print(question_response)
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_3)} >>> {Style.RESET_ALL}"
+                )
+                print(question_response_3)
 
         # approach 4. Q1, A1 --> Q2
         # purely using question-answer pair
+        tmp_tmp_DSets = []
+        tmp_tmp_RSet = []
+        tmp_tmp_QSet = []
+
+        refs = []
         for qid in range(index_to_be_used, len(input_question_sets)):
-            intermediate_result = f"Question: {input_question_sets[qid]} \n Answer: {input_answer_sets[qid]}"
-            result = self.SummarizeAgent.create(
-                messages=[{"content": intermediate_result, "role": "user"}],
-                context=None,
-                experiment_id=experiment_id,
+            refs.append(
+                generate_chain_response.remote(
+                    self.SummarizeAgent,
+                    self.QuestionGeneratorAgent,
+                    input_question_sets[qid],
+                    input_answer_sets[qid],
+                    experiment_id,
+                )
             )
-            result = (
-                result
-                + "\n\n From the above summary, generate few more questions to be asked to Subject matter expert."
-            )
-            question_response = self.QuestionGeneratorAgent.create(
-                messages=[{"content": result, "role": "user", "type": "qa"}],
-                context=None,
-                experiment_id=experiment_id,
-            )
-            question_response_1 = self.QuestionGeneratorAgent.extract_questions(
-                question_response
-            )
-            tmp_DSets.extend(question_response_1)
-            if self.testmode:
+        ray_responses = ray.get(refs)
+        for qid in range(len(ray_responses)):
+            tmp_tmp_RSet.append(ray_responses[qid][0])
+            tmp_tmp_QSet.append(ray_responses[qid][1])
+            tmp_tmp_DSets.append(ray_responses[qid][2])
+
+        # generating a global string
+        for qid in range(len(tmp_tmp_DSets)):
+            tmp_DSets.extend(tmp_tmp_DSets[qid])
+
+        if self.testmode:
+            for qid in range(index_to_be_used, len(input_question_sets)):
                 print(
                     f"{Style.BRIGHT}{Fore.BLUE} question_input_1 :  >>> {Style.RESET_ALL}"
                 )
-                print(intermediate_result)
+                print(
+                    f"Question: {input_question_sets[qid]} \n Answer: {input_answer_sets[qid]}"
+                )
                 print(
                     f"{Style.BRIGHT}{Fore.BLUE} question_summary  :  >>> {Style.RESET_ALL}"
                 )
-                print(result)
+                print(tmp_tmp_RSet[qid - index_to_be_used])
                 print(
-                    f"{Style.BRIGHT}{Fore.BLUE} question_input : {len(question_response_1)} >>> {Style.RESET_ALL}"
+                    f"{Style.BRIGHT}{Fore.BLUE} question_input : {len(tmp_tmp_QSet[qid - index_to_be_used])} >>> {Style.RESET_ALL}"
                 )
-                print(question_response)
+                print(tmp_tmp_QSet[qid - index_to_be_used])
                 print(
-                    f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_1)} >>> {Style.RESET_ALL}"
+                    f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(tmp_tmp_DSets[qid - index_to_be_used])} >>> {Style.RESET_ALL}"
                 )
-                print(question_response_1)
+                print(tmp_tmp_DSets[qid - index_to_be_used])
 
         return tmp_DSets
 
@@ -642,53 +707,81 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         total_ds_q = 0
         total_sme_q = 0
         total_outside_q = 0
+        total_overlap_q = 0
+        llm_answers = []
 
+        refs = []
         for question in self.question_placeholder_:
-            llm_answer = self.QuestionClassifierAgent.create(
-                context=None, messages=question, experiment_id=experiment_id
+            refs.append(
+                generate_response.remote(
+                    self.QuestionClassifierAgent, question, experiment_id
+                )
             )
+        llm_answers = ray.get(refs)
+
+        # now we have answer and we can assign it to the right place
+        for llm_index, llm_answer in enumerate(llm_answers):
+            # extract the text
             sindex = llm_answer.rfind("Answer:")
             eindex = llm_answer.rfind("(TOKENSTOP")
             answer_text = llm_answer[sindex + 7 : eindex]  # 7 = len('Answer:')
 
             other_q1 = False
             if "Subject Matter Expert" in answer_text:
-                self.genai_questions_for_sme.append(question)
+                self.genai_questions_for_sme.append(
+                    self.question_placeholder_[llm_index]
+                )
                 total_sme_q = total_sme_q + 1
             else:
                 other_q1 = True
 
             other_q2 = False
             if "Data Scientist" in answer_text:
-                self.genai_questions_for_ds.append(question)
+                self.genai_questions_for_ds.append(
+                    self.question_placeholder_[llm_index]
+                )
                 total_ds_q = total_ds_q + 1
             else:
                 other_q2 = True
 
             if other_q1 and other_q2:
                 total_outside_q = total_outside_q + 1
-                self.genai_questions_outof_scope.append(question)
+                self.genai_questions_outof_scope.append(
+                    self.question_placeholder_[llm_index]
+                )
+
+            if not other_q1 and not other_q2:
+                total_overlap_q = total_overlap_q + 1
 
             if self.testmode:
-                print(f"Question: {question}")
+                print(f"Question: {self.question_placeholder_[llm_index]}")
                 print(f" >>> Answer: {answer_text}")
 
         if self.testmode:
             print(
-                f"Questions for SME : {total_sme_q}, Data Scientist {total_ds_q}, Other_Question : {total_outside_q}"
+                f"Questions for SME : {total_sme_q}, Data Scientist {total_ds_q}, Other Question : {total_outside_q}, Overlap Question : {total_overlap_q}"
             )
             print(
                 f"{Style.BRIGHT}{Fore.GREEN}--------------------- Question Asignment End Round ------------------------------.{Style.RESET_ALL}"
             )
 
+        self.question_generation_track.append(
+            {
+                "total_sme_q": total_sme_q,
+                "total_ds_q": total_ds_q,
+                "total_outside_q": total_outside_q,
+                "total_overlap_q": total_overlap_q,
+            }
+        )
+
     def print_token_usage(self):
         self.DSAgent.print_token_usage()
         self.SMEAgent.print_token_usage()
 
-    def init_chat(self):
+    def init_chat(self, round=2):
         """_summary_"""
 
-        # this is a context prompt
+        # this is a context prompt (agenda)
         self.context_prompt_ = "The industrial asset class is " + self.asset_class
 
         # setting the MLFLow experiments
@@ -701,7 +794,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         # start recording
         with mlflow.start_run(experiment_id=experiment_id):
-            # Initial round
+            # Initial round (DSE and SME get ready for their meeting, and they do some background work)
             self.init_round(message=self.context_prompt_, experiment_id=experiment_id)
 
             if self.testmode:
@@ -725,7 +818,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             if len(self.question_placeholder_) > 0:
                 # Now use initial seed questions for second round
                 total_round = 0
-                while True:
+                while total_round <= round:
                     # question assignment: questions from placeholder will be assigned to SME/DS.
                     # after question_assignment round, reset the question placeholder
                     self.question_assignment(experiment_id=experiment_id)
@@ -740,8 +833,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                     # condition to quit early
                     if len(self.question_placeholder_) == 0:
                         break
-                    if total_round > 5:
-                        break
+ 
                     total_round = total_round + 1
 
         # this is a final step

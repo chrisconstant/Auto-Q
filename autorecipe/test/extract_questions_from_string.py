@@ -1,28 +1,18 @@
 from typing import Callable, Dict, List, Optional, Tuple, Union
 
 ssquestion = """
-Here are some additional questions that a data scientist could ask a subject matter expert based on the provided conversation:
+  Sure, here are some additional questions that could be asked to a subject matter expert to gather more information about the wind turbine gearbox and its potential failure modes:
 
-1. Can you provide more details about the types of sensors used to collect data on the wind turbine gearbox?
-2. How is the data from the sensors transmitted and stored, and are there any potential issues with data loss or corruption?
-3. How is the performance of the existing condition monitoring tools and techniques evaluated, and are there any metrics that could be used to measure the improvement with the anomaly detection model?
-4. Are there any specific data quality issues or missing data that need to be addressed in the anomaly detection model?
-5. How will the anomaly detection model be deployed and maintained in a distributed environment with multiple wind turbines?
-6. Are there any specific communication protocols or interfaces that should be used for the integration of the anomaly detection model into the existing IoT/OT system?
-7. Are there any specific data governance or data management policies that should be considered when building the anomaly detection model?
-8. Are there any specific legal or regulatory requirements related to data privacy or data protection that should be taken into account when building the anomaly detection model?
-9. Are there any specific data integration or data transformation requirements that should be considered when building the anomaly detection model?
-10. Are there any specific data validation or data verification procedures that should be used to ensure the accuracy and reliability of the anomaly detection model?
-11. Are there any specific data security or data access controls that should be implemented to protect the anomaly detection model and the associated data?
-12. Are there any specific data lineage or data provenance requirements that should be considered when building the anomaly detection model?
-13. Are there any specific data quality metrics or data quality standards that should be used to evaluate the performance of the anomaly detection model?
-14. Are there any specific data visualization or reporting requirements for the output of the anomaly detection model, such as dashboards or alerts?
-15. Are there any specific data security or data privacy requirements for the output of the anomaly detection model, such as data encryption or access controls?
-16. Are there any specific data retention or data archiving requirements that should be considered when building the anomaly detection model?
-17. Are there any specific data backup or data recovery procedures that should be implemented to ensure the availability and resilience of the anomaly detection model?
-18. Are there any specific data archiving or data retention policies that should be considered when building the anomaly detection model?
-19. Are there any specific data backup or data recovery procedures that should be implemented to ensure the availability and resilience of the anomaly detection model?
-20. Are there any specific data archiving or data retention policies that should be considered when building the anomaly detection model?
+1. Can you provide more information about the specific components of the gearbox that are most critical to its operation and potential failure modes?
+2. How do the failure modes of the gearbox components relate to each other? For example, if a bearing fails, is it likely to lead to failure of other components?
+3. What are the most common causes of gearbox failure in wind turbines, and how do they relate to the operating conditions of the turbine?
+4. Can you provide examples of how the degradation mechanisms of the gearbox components can lead to failure, and how these failures can be detected through vibration analysis, oil analysis, or visual inspection?
+5. What are the typical warning signs or indicators that a gearbox failure is imminent, and how can these be detected in real-time?
+6. Are there any specific maintenance tasks or procedures that can help prevent gearbox failures, and how often should these tasks be performed?
+7. How do environmental factors such as temperature, humidity, and vibration affect the operation and lifespan of the gearbox components?
+8. Are there any specific sensor data or other metrics that can be used to monitor the health of the gearbox in real-time, and how can these data be used to build an anomaly model?
+9. Can you provide examples of how a gearbox failure can impact the overall performance and reliability of the wind turbine, and what are the potential consequences of a failure?
+10. Are there any industry standards or best practices for gearbox maintenance and failure prevention in wind turbines, and how can these be incorporated into the anomaly model?
 """
 
 def content_str(content: Union[str, List]) -> str:

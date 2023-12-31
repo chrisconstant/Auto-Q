@@ -1,0 +1,812 @@
+﻿TypeData.GenCompType
+-
+Accumulator - Hydraulic - Bladder Type
+Accumulator - Pneumatic - Bladder Type
+Packaged Air Conditioning Unit
+Steam Jet Air Ejector
+Ammonia Vaporization System
+-
+Autoclave - Sliding Double Door
+Axle_1
+Battery - Charger
+Battery - Inverter
+Battery - Flooded Lead Acid - Lead Calcium/Antimony
+Battery - NICAD
+Battery - Flooded Lead Acid - Plante
+Battery - Valve Regulated Lead Acid
+Battery - VRLA - Non-Gel Type
+Bar Code Delivery Sorter
+Bearing - Rolling Element - Grease
+Bearing - Rolling Element - Oil
+Blower_Positive Displacement_Roots Type
+Air Pre-Heater - Vertical Type
+Brake - Disc - Air Operated
+Brake - Electro-Mechanical
+"	Barge Unloader Ladder Type with Fixed Cantilever Boom"
+Barge Unloader Ladder Type with Movable Boom
+Coal Handling - Conveyor - Belt Type
+Material Handling - Conveyor - Belt Type with AC Gear Motor Drive
+Material Handling - Conveyor - Belt Type with AC Motor Drive
+Material Handling - Conveyor - Polyurethane Rollers and Frame
+Pulverizer Coal Feeder - Belt Type
+Pulverizer Coal Feeder - Volumetric Star or Overshot Roll Feeder
+Material Handling - Conveyor - Rollers and Frame
+Material Handling - Conveyor - Screw Type with AC Gear Motor Drive
+Conveyor - Bucket Vertical Type with Drive Motor
+Coal Handling - Vibrating Feeder
+Feeder - Screw Auger - Direct Drive
+Feeder - Screw Auger - In-Direct Drive
+Pugmill Mixer - Large Electric Drive
+Pulverizer - Coal - Bowl Type
+Pulverizer - Coal - Roll Wheel Type
+Pulverizer - Horizontal Ball Mill - Lime Slaker
+Coal Handling - Magnetic Separator
+Bumper - Hydraulic
+Bumper - Spring
+Bumper - Solid
+Cable - Plant - Control - Silicon Rubber Insulation and Sheath
+Cable - Plant - Instrumentation - CPE Jacket with FREP Insulation
+Cable - Plant - Low Power and Control - CSPE Jacket with XLPE Insulation
+Cable - Plant - Low Power and Control - Neoprene Jacket with XLPE Insulation
+Cable - Buried Power - Jacketed - Butyl
+Cable - Buried Power - Jacketed - EPR-DF
+Cable - Buried Power - Jacketed - EPR-DR
+Cable - Buried Power - Jacketed - TR-XLP
+Cable - Buried Power - Jacketed - XLP-HMWPE
+Cable - Buried Power - PILC
+Cable - Buried Power - Unjacketed - Butyl
+Cable - Buried Power - Unjacketed - EPR-DF
+Cable - Buried Power - Unjacketed - TR-XLP
+Cable - Buried Power - Unjacketed - XLP-HMWPE
+"Cable - Plant - 5-15kV - Black EPR - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5-15kV - Black EPR - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5kV - Black EPR - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5kV - Black EPR - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5kV - Black EPR - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, wet/dry splice"
+"Cable - Plant - 5-35kV - Black EPR - Jacketed-Shielded - Underground - wet cable, outdoor/dry termination, wet splice"
+"Cable - Plant - 5-15kV - Brown EPR - Discharge Resistant - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5-15kV - Brown EPR - Discharge Resistant - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5kV - Brown EPR - Discharge Resistant - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5kV - Brown EPR - Discharge Resistant - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5kV - Brown EPR - Discharge Resistant - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, wet/dry splice"
+"Cable - Plant - 5-35kV - Brown EPR - Discharge Resistant - Jacketed-Shielded - Underground - wet cable, outdoor/dry termination, wet splice"
+"Cable - Plant - 5-15kV - Butyl - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5-15kV - Butyl - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5kV - Butyl - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5kV - Butyl - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5kV - Butyl - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, wet/dry splice"
+"Cable - Plant - 5-35kV - Butyl - Jacketed-Shielded - Underground - wet cable, outdoor/dry termination, wet splice"
+"Cable - Plant - 5-15kV - Pink EPR - Discharge Free - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5-15kV - Pink EPR - Discharge Free - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5kV - Pink EPR - Discharge Free - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5kV - Pink EPR - Discharge Free - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5kV - Pink EPR - Discharge Free - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, wet/dry splice"
+"Cable - Plant - 5-35kV - Pink EPR - Discharge Free - Jacketed-Shielded - Underground - wet cable, outdoor/dry termination, wet splice"
+Cable - Plant - Splice - 5-15kV
+"Cable - Plant - 5-15kV - TR-XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5-15kV - TR-XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5-35kV - TR-XLPE - Jacketed-Shielded - Underground - wet cable, outdoor/dry termination, wet splice"
+"Cable - Plant - 5-15kV - XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice"
+"Cable - Plant - 5-15kV - XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice"
+"Cable - Plant - 5-35kV - XLPE - Jacketed-Shielded - Underground - wet cable, outdoor/dry termination, wet splice"
+HVAC - Chiller & Centrifugal Compressor
+HVAC - Chiller & Reciprocating Compressor
+HVAC - Chiller & Rotary Screw Compressor
+CIP - Clean In-Place Skid
+Electrostatic Precipitator - High Voltage
+CNC Robotic Containerization System
+CNC Machine - Multi-Axis Cutter
+Compressor - Centrifugal
+"Compressor & Pump - Rotary, Liquid Ring"
+Compressor - Reciprocating
+Compressor - Rotary Screw
+Cooling Tower - Mechanical Draft - Counter Flow
+Cooling Tower - Mechanical Draft - Counter Flow
+Cooling Tower - Mechanical Draft - Cross Flow
+Cooling Tower - Mechanical Draft - Cross Flow
+Cooling Tower - Natural Draft - Counter Flow
+Cooling Tower - Natural Draft - Counter Flow
+Cooling Tower - Natural Draft - Cross Flow
+Cooling Tower - Natural Draft - Cross Flow
+Coupling - Controlled Torque
+Fluid Drive - Geared Variable Speed
+Fluid Drive - Multi-Stage Variable Speed
+Fluid Drive - Scoop Tube Type
+Coupling - Gear Type - Continuously Lubricated
+Coupling - Gear Type - Grease Lubricated
+Coupling - Grid Type
+Coupling - Disc or Diaphragm Type
+Coupling - Elastomeric Type - Doughnut or Block
+Coupling - Elastomeric Type - Jaw or Spider Insert
+Coupling - Elastomeric Type - Synthetic Gear
+Coupling - Elastomeric Type - Tire
+Coupling - Elastomeric Type - Pin and Bush
+Crane Brake - Electro-Mechanical
+Crane - Hoist Cable - Wire Rope
+Crane Control with No Resistors or Load Banks
+Crane Control - Resistive
+Crane Control Resistors or Load Banks
+Crane Drum - Grooved Surface with Bull Gear
+Crane - End Truck - Bridge and Trolley
+Crane - Hook Block Assembly
+Crane - J Hook - Riveted
+Crane - Status Lights
+Crane Rails - Trolley and Bridge
+Crane - Sheave with Bearing
+Crane - Spreader Beam with Equalizers
+Crane - Wheels - Bridge and Trolley
+Crane - Window
+Cylinder_Air-Pneumatic with Piston Rod
+Cylinder_Hydraulic
+Distribution Disconnect - Fused
+Filter - Liquid - Lube Oil - Duplex Type
+Filter - Lube Oil - Large
+Heater - Electric - Lube Oil
+Heat Exchanger - Lube Oil Cooler
+I&C - Pressure Indicator - Differential
+I&C - Pressure Switch - Differential
+I&C - Gauge - Pressure
+I&C - Pressure Switch - Bourdon or Bellows
+I&C - Pressure Switch with Gauge
+I&C - Switch - Control - Hand
+I&C - Switch - Control - Push Button
+I&C - Level Switch - LO Float Type
+I&C - Terminal Strip
+I&C - Temperature Switch - Bourdon or Bellows
+Pipe - Coupling - Dresser Type
+Pipe - Expansion Joint
+Pipe - Flex Lines - Small
+Pipe and Fittings - Rigid
+Pipe - Tubing - Rigid
+Pump - Horizontal - Gear PDP LO Type - Engine Driven
+"Pump - Horizontal - Gear PDP LO Type, Gearbox and Motor"
+Pump - Horizontal - Gear PDP LO Type and TEFC Motor
+Pump - Horizontal - Screw PDP LO Type - Engine Driven
+Pump - Vertical - Gear PDP LO Type and TEFC Motor
+Relay - Control - Electromechanical - De-energized - High Cycle
+Relay - Control - Electromechanical - De-energized - Low Cycle
+Relay - Control - Electromechanical - Energized - High Cycle
+Relay - Control - Electromechanical - Energized - Low Cycle
+Reservoir or Sump - Lube Oil with Float Valve
+Strainer - Free Standing - Lube Oil - Large
+Strainer - Free Standing - Lube Oil - Basket Type
+Switchgear - Motor Control Center - Starter Bucket
+Switchgear - Motor Control Center - Starter Bucket with Control Switch
+Valve - Check - Duo - Lube Oil - Small
+Valve - Check - Swing - Lube Oil - Small
+"Valve - Manual - Vent, Drain, and Isolation"
+Valve - Pressure Relief - Low Pressure Spring Piston Actuated
+Valve - Pressure Relief - Medium Pressure Spring Actuated
+Valve - Thermostatic - Lube Oil
+Diesel Engine - Interim Tier 4 DPF/DOC
+Diesel Engine - Tier 2 - Non-Road Engine
+Diesel Engine - Tier 3 DPF/DOC
+Diesel Engine - Tier 3 EGR
+Diesel Engine - Tier 3 NET
+Diesel Engine - Tier 4
+Discharge Chute with Liner
+Drive Belt
+Air Dryer - Heated
+Air Dryer - Heat Of Compression Drum Type
+Air Dryer - Unheated
+Diesel - Small Standby
+Duct Isolation - Damper Gate - Slide Type
+Fan - Blower Type
+Fan - ID or FD - Axial
+Fan - ID or FD - Centrifugal
+Fan - Propeller Type - Low Voltage 115_230V Horizontal TE Motor
+Fan - Propeller Type - Low Voltage 230_460V Horizontal TE Motor
+Fin Fan Motor with Actuator Controlled Fan Pitch
+Fin Fan Motor with Belt Driven Fan
+Fin Fan Motor with Shaft Mounted Fan
+Vacuum Belt Filter - Flue Gas Desulfurization
+Absorber Vessel - Flue Gas Desulfurization
+Filter - Air - Cartridge Type
+Filter - Air - Oil Bath Type
+Filter - Air - Media Type
+Filter - Liquid - Cartridge Single Type
+Filter - Liquid - Cartridge Duplex Type
+Filter - Liquid - Chemical Type
+Filter - Strainer - Mechanical
+FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - IT4 DPF/DOC Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - T3 DPF/DOC Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - T3 EGR Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - T3 NET Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - T4 Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Portable Instrument Air - IT4 DPF/DOC Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Portable Instrument Air - T3 DPF/DOC Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Portable Instrument Air - T3 EGR Diesel Driven
+"	FLEX or FLEX SUPPORT - Air Compressor - Portable Instrument Air - T3 NET Diesel Driven"
+FLEX or FLEX SUPPORT - Air Compressor - Portable Instrument Air - T4 Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Rotary Screw - IT4 DPF/DOC Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Rotary Screw - T3 DPF/DOC Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Rotary Screw - T3 EGR Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Rotary Screw - T3 NET Diesel Driven
+FLEX or FLEX SUPPORT - Air Compressor - Rotary Screw - T4 Diesel Driven
+FLEX - Generator - 1MW or Less - IT4 DPF/DOC Diesel Driven
+FLEX - Generator - 1MW or Less - T3 DPF/DOC Diesel Driven
+FLEX - Generator - 1MW or Less - T3 EGR Diesel Driven
+FLEX - Generator - 1MW or Less - T3 NET Diesel Driven
+FLEX - Generator - 1MW or Less - T4 Diesel Driven
+-
+FLEX or SUPPORT - Light Tower - Diesel Powered
+FLEX - Pump - Horizontal - Mechanical Seal Non-Oil bath - IT4 DPF/DOC Diesel Driven
+-
+FLEX - Pump - Horizontal - Mechanical Seal Non-Oil Bath - T3 DPF/DOC Diesel Driven
+FLEX - Pump - Horizontal - Mechanical Seal Non-Oil Bath - T3 EGR Diesel Driven
+FLEX - Pump - Horizontal - Mechanical Seal Non-Oil Bath - T3 NET Diesel Driven
+FLEX - Pump - Horizontal - Mechanical Seal Non-Oil Bath - T4 Diesel Driven
+FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - IT4 DPF/DOC Diesel Driven
+FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - T3 DPF/DOC Diesel Driven
+FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - T3 EGR Diesel Driven
+FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - T3 NET Diesel Driven
+FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - T4 Diesel Driven
+FLEX - Pump - Horizontal - Packing Seal - IT4 DPF/DOC Diesel Driven
+FLEX - Pump - Horizontal - Packing Seal - T3 DPF/DOC Diesel Driven
+FLEX - Pump - Horizontal - Packing Seal - T3 EGR Diesel Driven
+FLEX - Pump - Horizontal - Packing Seal - T3 NET Diesel Driven
+FLEX - Pump - Horizontal - Packing Seal - T4 Diesel Driven
+FLEX - Pump - Horizontal - Axial Split Case_Mechanical Seal - LV Motor Driven
+FLEX - Pump - Horizontal - Axial Split Case_Packing Seal - LV Motor Driven
+FLEX - Pump - LP - Packing Seal - Clutch Drive - IT4 DPF/DOC Diesel Driven
+FLEX - Pump - LP - Packing Seal - Clutch Drive - T3 DPF/DOC Diesel Driven
+FLEX - Pump - LP - Packing Seal - Clutch Drive - T3 EGR Diesel Driven
+FLEX - Pump - LP - Packing Seal - Clutch Drive - T3 NET Diesel Driven
+FLEX - Pump - LP - Packing Seal - Clutch Drive - T4 Diesel Driven
+FLEX - Pump - LP - Packing Seal - Direct Drive - IT4 DPF/DOC Diesel Driven
+FLEX - Pump - LP - Packing Seal - Direct Drive - T3 DPF/DOC Diesel Driven
+FLEX - Pump - LP - Packing Seal - Direct Drive - T3 EGR Diesel Driven
+FLEX - Pump - LP - Packing Seal - Direct Drive - T3 NET Diesel Driven
+FLEX - Pump - LP - Packing Seal - Direct Drive - T4 Diesel Driven
+FLEX - Pump - Positive Displacement Hydraulically Balanced Diaphragm - Crank Shaft Driven - Electric Motor
+FLEX - Pump - Positive Displacement Hydraulically Balanced Diaphragm - Crank Shaft Driven - T2 NET Diesel
+FLEX - Pump - Positive Displacement Hydraulically Balanced Diaphragm - Wobble Plate Driven - Electric Motor
+FLEX - Pump - Satellite Hydraulic Drive - IT4 DPF/DOC Diesel Driven
+FLEX - Pump - Satellite Hydraulic Drive - T3 DPF/DOC Diesel Driven
+FLEX - Pump - Satellite Hydraulic Drive - T3 EGR Diesel Driven
+FLEX - Pump - Satellite Hydraulic Drive - T3 NET Diesel Driven
+FLEX - Pump - Satellite Hydraulic Drive - T4 Diesel Driven
+Fly Ash Feeder - Pressure Conveying
+Fly Ash Handling - Pressure Conveying
+Bull Gear
+Gear and Chain Drive
+Gearbox - Standard
+Gearbox - Standard
+Gearbox with Oil Cooler
+Gearbox with Oil Cooler
+Gearbox - Worm Reducer
+Gearbox - Small - Rolling Element Bearings
+Gearbox - Small - Sleeve Bearings
+Gearbox Single Planetary - Wind Turbine
+Gearbox - Worm Gear Type with Oil Cooler
+Gearbox - Worm Gear Type
+Gearbox_Worm - Crane Hoist
+Gear Rack and Pinion - Linear
+Main Generator - 1800RPM - Hydrogen Cooled
+Main Generator - 1800RPM - Water Cooled
+Main Generator - 3600RPM - Smooth Rotor - Air Cooled
+Main Generator - 3600RPM - Smooth Rotor - Water Air Cooled
+Generator - Auxiliary - Medium Voltage <15Kv - Rolling Element - Grease Lubed - Air Cooled
+Generator - Auxiliary - Medium Voltage <15Kv - Sleeve Bearing - Air Cooled
+Main Generator Stator Water Cooling System - GE
+Main Generator Stator Water Cooling System - West
+Generator - MG Set with 460V Motor and Generator - Rolling Element - Grease Lubed - Air Cooled
+Main Generator - Salient Pole - Vertical - Indirectly Cooled
+Main Generator - Exciter - GeneRex
+Main Generator - Exciter - Rotating Brushed
+Main Generator - Exciter - Rotating Brushless
+Main Generator - Exciter - Static
+Grounding Brush - Filament Type - Adjustable
+Grounding Brush - Filament Type - Adjustable Spring
+Gas Turbine - Combustor - Can-Annular- Dry Low NOx
+Gas Turbine - Compressor - Single Stage
+Gas Turbine - Enclosures - Forced Ventilation - Heated
+Gas Turbine - Fuel Gas - Emergency Shutdown Valve and Actuator
+Gas Turbine - Fuel Gas - Filter Separator Coalescer
+Gas Turbine - Fuel Gas - Flow Meter
+Gas Turbine - Fuel Gas - Gas Control Valve and Actuator
+Gas Turbine - Fuel Gas - Gas Purge Valve and Actuator
+Gas Turbine - Fuel Gas - Gas Splitter Valve and Actuator
+Gas Turbine - Fuel Gas - Performance Heater - Shell & Tube
+Gas Turbine - Fuel Gas - Pressure Reducing Station
+Gas Turbine - Fuel Gas - Startup Heater - Electric
+Gas Turbine - Hot Section - Turbine - Bolted Rotor - Tilt Pad Bearing Only
+Gas Turbine - Hot Section - Turbine - Bolted Rotor - Tilt Pad and Midspan Journal Bearings
+Gas Turbine - HRSG - Ammonia Vaporization System
+Gas Turbine - HRSG - Attemperator
+Gas Turbine - HRSG - Deaerator
+Gas Turbine - HRSG - Duct Burner - Gas Pressure Control Valve
+Gas Turbine - HRSG - Duct Burner - Main Gas Isolation Valve and Actuator
+Gas Turbine - HRSG - Duct Burner - Runner Type
+Gas Turbine - HRSG - Horizontal - Intake - Exhaust and Structures
+Gas Turbine - HRSG - HP Section - Horizontal 3 Stage
+Gas Turbine - HRSG - IP & Reheat Section - Horizontal 3 Stage
+Gas Turbine - HRSG - LP Section - Horizontal 3 Stage
+Gas Turbine - HRSG - Selective Catalytic Reduction System - SCR Reactor
+Gas Turbine - Inlet Air and Filtration
+Gas Turbine - Lube Oil - Cleaner - Electrostatic Precipitator
+Gas Turbine - Lube Oil - Heat Exchanger - Plate and Frame
+Gas Turbine - Lube Oil - Oil Supply
+Gas Turbine - Lube Oil - AC Oil Pump
+Gas Turbine - Lube Oil - AC & DC Seal Oil Pump
+Gas Turbine - Lube Oil - DC Oil Pump
+Gas Turbine - Static Starter - Disconnect Switch (Generator & Neutral)
+Gas Turbine - Static Starter - Isolation Transformer (Dry Type)
+Gas Turbine - Static Starter - Isolation Transformer (Oil Filled)
+Gas Turbine - Static Starter - Load Commutating Inverter (LCI)
+Gas Turbine - Static Starter - Micro-Processor Control
+Gas Turbine - Static Starter - Static Frequency Converter (SFC)
+Gas Turbine - Turning Gear
+Heating Coil - Electric Type
+Heating or Cooling Coil - Liquid Type
+Heating Coil - Steam Type
+Heater - Liquid - Electric
+Hydraulic Hose
+Hose - Rubber - Reinforced - Medium to Large
+HVAC - Air Handling Equipment
+HVAC - Damper with Isolation Louvers
+HVAC - Dampers & Ducting
+HVAC - Duct Work
+HVAC - Duct Work with Liner
+HVAC - Expansion Joint - Fabric Type
+HVAC - Expansion Joint - Metal Type
+Heat Exchanger - Air Cooled
+Heat Exchanger - Feedwater Heater
+Heat Exchanger - Feedwater Heater - High Pressure
+Heat Exchanger - Feedwater Heater - High Pressure - Copper Alloy Tubes
+Heat Exchanger - Feedwater Heater - High Pressure - Titanium Tube
+Heat Exchanger - Feedwater Heater - Low Pressure
+Heat Exchanger - Feedwater Heater - Low Pressure - Copper Alloy Tubes
+Heat Exchanger - Feedwater Heater - Low Pressure - Titanium Tubes
+Heat Exchanger - Main Condenser
+Heat Exchanger - Main Condenser
+Heat Exchanger - Plate and Frame
+Heat Exchanger - General Tube Type
+Heat Exchanger - General Tube Type
+Hydraulic Motor - Gear Type
+Hydraulic Motor - Vane Type
+Hydraulic Pump with Reservoir_V0
+Hydraulic Pump - Gear Type
+Hydraulic Pump - Vane Type - No Reservoir
+Hydro-Generator- Salient Pole - Indirectly Cooled - Vertical
+Hydro-Turbine Governor - Electronic
+Hydro-Turbine Governor - Mechanical
+Hydro Turbine - Kaplan Type
+Hydro Turbine - Pumped Storage - Reversible Francis Type
+Fin Fan Pneumatic Actuator For Pitch Control
+I&C - Analytical Transmitter Analyzer
+I&C - Analyzer Transmitter
+I&C - Bar Code Reader Scanner
+I&C - Booster
+I&C - Booster
+I&C - Capacitor - Electrolytic
+I&C - Capacitor - Electrolytic
+I&C - Capacitor - Oil Filled
+I&C - Capacitor Bank - Power Factor Correction
+I&C - Circuit Boards - General Type
+I&C - Conductivity Transmitter
+I&C - Analog Electronic Controller
+I&C - Analog Electronic Controller
+I&C - Pneumatic Controller
+I&C - Pneumatic Controller
+I&C - Control Panel Electronic (Human - Machine Interface Control)
+I&C - E Stops and Interlocks
+I&C - Fan - Muffin Type
+I&C - Filter Choke
+I&C - Flow - Level Switch Only - Thermal Comparison
+I&C - Flow - Level Switch - Thermal Electronic
+I&C - Flow Meter and Sensor
+I&C - Flow Transmitter
+I&C - Level Gauge - Mechanical Float
+I&C - Level Gauge - Sight Glass Type
+I&C - Instrumentation - pH Probe
+I&C - Signal Isolator
+I&C - Level Sensor And Transmitter
+I&C - Level Detector - Nuclear Source Type
+I&C - Logic Transmitter - Field  Buss Only
+I&C - Panel Meters - General Type
+I&C - Multivariable DP Style Flow Transmitter with P&T
+I&C - Multivariable Transmitter
+I&C - Fiber Optic Sensor with Controller/Power Supply
+I&C - LED Light Barrier
+-
+I&C - Photo Sensor
+I&C - Programmable Logic Controller
+I&C - Programmable Process Control Switch
+I&C - Positioner
+I&C - Positioner
+I&C - Positioner - Digital
+I&C - Position Switch and Monitor
+I&C - Pressure Regulator
+I&C - Pressure Regulator
+I&C - Pressure Transmitter - Differential
+I&C - Proximity Probes & Electronics (Vib-Position-Wear)
+I&C - Pressure Sensor And Transmitter
+I&C - Pressure Sensor And Transmitter
+I&C - Pressure Sensor And Transmitter
+I&C - Pressure Switch
+I&C - Pressure Switch
+I&C - DC Power Supply
+I&C - DC Power Supply
+I&C - DC Power Supply
+I&C - DC Power Supply - In-Storage Maintenance
+I&C - DC Power Supply - No Fans
+I&C - DC Power Supply - with Fans
+I&C - Resolver_1
+I&C - Signal Conditioner
+I&C - Signal Conditioner
+I&C - Speed Indicator
+I&C - Switch - Limit Type
+I&C - Temperature Transmitter
+I&C - Temperature Sensor with Indicator - Bulb Type
+I&C - Temperature Switch
+I&C - Temperature Switch - Non-Electronic Types
+I&C - Temperature Switch - Electronic Types
+I&C - Vibration & Shock Switch - Static Type
+I&C - I/P and E/P Transducer
+I&C - I/P and E/P Transducer
+Induction Heating Coil - No Power Supply
+Iso-Phase Bus - Forced Draft
+Jack - Screw Type
+Jack - Ball Type
+Distribution Lightning Arrestor - MOV
+Distribution Lightning Arrestor - Silicon Carbide
+Liner
+Mechanical Linkage
+Load Tap Changer - Power Station - Oil Immersed Contacts - OLTC
+Load Tap Changer - Power Station - Vacuum Bottle Oil Immersed - OLTC
+Load Tap Changer - Substation - Oil Immersed
+Load Tap Changer - Substation - Oil Immersed Contacts - OLTC
+Load Tap Changer - Substation - Vacuum Bottle
+Load Tap Changer - Substation - Vacuum Bottle Oil Immersed - OLTC
+Centralized Lubrication System - Grease
+Magnet - Lifting
+Mechanical - Pivot Arm with Bushing
+Welding Die
+-
+Motor - Direct Current - Medium and Large
+Motor - Direct Current - Small
+Motor - Direct Current - Horizontal - Medium to Large - Open Frame
+Motor - Direct Current - Horizontal - Medium to Large - TE/TEFC
+-
+-
+-
+Motor - Low Voltage - 600V - Horizontal Wound Rotor
+Motor - Low Voltage - 600V - Horizontal Wound Rotor
+-
+Motor - Low Voltage - 115_230V Horizontal Open Drip Proof - Rolling Element Grease Lubed
+Motor - Low Voltage - 115_230V Horizontal TEFC - Rolling Element Grease Lubed
+Motor - Low Voltage - 115_230V Horizontal Open Drip Proof - Sleeve Oil Lubed
+Motor - Low Voltage - 115_230V Horizontal Open Drip Proof - Bushing Oil-Impregnated
+Motor - Low Voltage - 230_600V Horizontal TEFC - Rolling Element Grease Lubed
+Motor - Low Voltage - 230_600V Horizontal Open Drip Proof - Rolling Element Grease Lubed
+Motor - Low Voltage - 230_600V Horizontal Open Drip Proof - Rolling Element Oil Lubed
+Motor - Low Voltage - 230_600V Horizontal Open Drip Proof - Sleeve Bearing Oil Lubed
+Motor - Low Voltage - 230_600V Horizontal WP with Filters - Rolling Element Grease Lubed
+Motor - Low Voltage - 230_600V Horizontal WP with Filters - Rolling Element Oil Lubed
+Motor - Low Voltage - 230_600V Horizontal WP with Filters - Sleeve Bearing Oil Lubed
+Motor - Low Voltage - 115_230V Horizontal TE - Rolling Element Grease Lubed
+Motor - Low Voltage - 230_600V Horizontal TE - Rolling Element Grease Lubed
+Motor - GearMotor - Low Voltage - 120V_600V - Horizontal - TEFC
+Motor - Low Voltage - 600V - Vertical Hollow Shaft - TEFC - Grease Lubed
+Motor - Low Voltage - 600V - Vertical Hollow Shaft - TEFC - Grease Lubed
+Motor - Low Voltage - 600V - Vertical Hollow Shaft - TEFC - Oil/Grease Lubed
+Motor - Low Voltage - 600V - Vertical Hollow Shaft - TEFC - Oil/Grease Lubed
+Motor - Low Voltage - 600V - Vertical Hollow Shaft - WP - Grease Lubed
+Motor - Low Voltage - 600V - Vertical Hollow Shaft - WP - Grease Lubed
+Motor - Low Voltage - 600V - Vertical Hollow Shaft - WP - Oil/Grease Lubed
+Motor - Low Voltage - 600V - Vertical Hollow Shaft - WP - Oil/Grease Lubed
+Motor - Low Voltage - 600V - Vertical Solid Shaft - TEFC - Grease Lubed
+Motor - Low Voltage - 600V - Vertical Solid Shaft - TEFC - Grease Lubed
+Motor - Low Voltage - 600V - Vertical Solid Shaft - TEFC - Oil/Grease Lubed
+Motor - Low Voltage - 600V - Vertical Solid Shaft - TEFC - Oil/Grease Lubed
+Motor - Low Voltage - 600V - Vertical Solid Shaft - WP - Grease Lubed
+Motor - Low Voltage - 600V - Vertical Solid Shaft - WP - Grease Lubed
+Motor - Low Voltage - 600V - Vertical Solid Shaft - WP - Oil/Grease Lubed
+Motor - Low Voltage - 600V - Vertical Solid Shaft - WP - Oil/Grease Lubed
+Motor - Medium Voltage <15kV
+Motor - Medium Voltage <15Kv - Horizontal - Filters - Rolling Element - Grease Lubed
+Motor - Medium Voltage <15Kv - Horizontal - Filters - Rolling Element - Grease Lubed
+Motor  Medium Voltage <15Kv  Horizontal  Filters  Rolling Element  Grease Lubed
+Motor - Medium Voltage <15Kv - Horizontal - Filters - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - Filters - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - Filters - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - Filters - Sleeve Bearing - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - Filters - Sleeve Bearing - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - Filters - Sleeve Bearing - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Rolling Element - Grease Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Rolling Element - Grease Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Rolling Element - Grease Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Sleeve Bearing - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Sleeve Bearing - Oil Lubed
+Motor - Medium Voltage <15Kv - Horizontal - TEFC - Sleeve Bearing - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Hollow Shaft - Rolling Element - Oil/Grease Lubed
+Motor - Medium Voltage <15Kv - Vertical - Hollow Shaft - Rolling Element - Oil/Grease Lubed
+Motor - Medium Voltage <15Kv - Vertical - Hollow Shaft - Rolling Element - Oil/Grease Lubed
+Motor - Medium Voltage <15Kv - Vertical - Hollow Shaft - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Hollow Shaft - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Rolling Element - Oil/Grease Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Rolling Element - Oil/Grease Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Rolling Element - Oil/Grease Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Rolling Element - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad-  Ball Guide - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad-  Ball Guide - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Ball Guide - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Sleeve Guide - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Sleeve Guide - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Sleeve Guide - Oil Lubed
+Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Ball Guide - Oil/Grease Lubed
+Nozzle
+-
+Distribution Circuit Breaker Air Gap - 1kV to 34kV
+Distribution Circuit Breaker Oil Filled - 1kV to 34kV
+Distribution Circuit Breaker Vacuum - 1kV to 34kV
+Circuit Breaker - Substation - Oil Filled
+Circuit Breaker - Substation - SF6 Dual Pressure
+Circuit Breaker - Substation - SF6 Single Pressure
+Pipe - Drain Trap
+Pipe - Flanged Adapter
+Pump - Horizontal - Multistage - Barrel Type - Mechanical Seal - Radial Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Barrel Type - Mechanical Seal - Radial-Sleeve Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Barrel Type - Mechanical Seal - Kingsbury-Sleeve Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Radial Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Radial-Sleeve Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Kingsbury-Sleeve Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Sleeve Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Kingsbury-Sleeve Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Radial-Sleeve Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Radial Bearings-Oil Lubed
+Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Sleeve Bearings-Oil Lubed
+Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Mechanical Seal - Sleeve Bearings_Oil Lubed
+Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Mechanical Seal - Rolling Element Bearings_Oil Lubed
+Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Mechanical Seal - Rolling Element Bearings_Grease Lubed
+Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Mechanical Seal - Rolling Element_Sleeve Bearings_Oil Lubed
+Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Packing Seal - Sleeve Bearings_Oil Lubed
+Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Packing Seal - Rolling Element Bearings_Oil Lubed
+Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Packing Seal - Rolling Element Bearings_Grease Lubed
+Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Packing Seal - Rolling Element_Sleeve Bearings_Oil Lubed
+-
+Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Mechanical Seal - Rolling Element Bearings - Oil Lubed
+Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Mechanical Seal - Rolling Element Bearings - Grease Lubed
+Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Packing Seal - Rolling Element Bearings - Oil Lubed
+Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Packing Seal - Rolling Element Bearings - Grease Lubed
+Pump - Horizontal - Single Stage - Single Suction - FGD Absorber Recycle - Elastomeric Liner
+Pump - Horizontal - Single Stage - Single Suction - Slurry or FGD Absorber Recycle - Metallic Liner
+Pump - Horizontal - Single Stage - Single Suction - Slurry or FGD Absorber Recycle - Ceramic Liner
+Pump - Horizontal - Single Stage - Single Suction - Close Couple End Suction Type - Mechanical Seal
+Pump - Horizontal - Single Stage - Single Suction - Close Couple End Suction Type - Packing Seal
+-
+-
+Pump - Positive Displacement
+Pump - Positive Displacement - Charging Pump
+Pump - Chemical Injection - Small Positive Displacement Type
+Pump - Chemical Injection - Double Diaphragm Type
+Pump - Submersible Solids Handling with 460V Motor
+Pump - Vacuum - Liquid Ring
+Pump - Vacuum - Small
+-
+Pump - Vertical - Close Coupled
+Pump - Vertical - Deep Draft - Axial Flow
+Pump - Vertical - Deep Draft - Axial Flow
+Pump - Vertical - Deep Draft - Radial Flow - Oil/Grease Lubed
+Pump - Vertical - Deep Draft - Radial Flow - Oil/Grease Lubed
+Pump - Vertical - Deep Draft - Radial Flow - Product Lubed
+Pump - Vertical - Deep Draft - Radial Flow - Product Lubed
+Poles_Wood_Distribution_DFir_ACZA
+Poles_Wood_Distribution_DFir_Creosote
+Poles_Wood_Distribution_DFir_Penta
+Poles_Wood_Distribution_SoPine_CCA
+Poles_Wood_Distribution_SoPine_Creosote
+Poles_Wood_Distribution_SoPine_Penta
+Poles_Wood_Distribution_WRCedar_CCA
+Poles_Wood_Distribution_WRCedar_Creosote
+Poles_Wood_Distribution_WRCedar_Penta
+Poles_Wood_Transmission_DFir_ACZA
+Poles_Wood_Transmission_DFir_Creosote
+Poles_Wood_Transmission_DFir_Penta
+Poles_Wood_Transmission_SoPine_CCA
+Poles_Wood_Transmission_SoPine_Creosote
+Poles_Wood_Transmission_SoPine_Penta
+Poles_Wood_Transmission_WRCedar_CCA
+Poles_Wood_Transmission_WRCedar_Creosote
+Poles_Wood_Transmission_WRCedar_Penta
+Poles_Wood_Transmission and Attachments_DFir_Creosote
+Air Compressor - Portable - Rotary Screw - General Use - IT4 DPF/DOC Diesel Driven
+Crane Power - Collector Rail System - AC/DC
+Power - Festoon Cable
+Power Track - Flexible Cable and Hose Carrier
+Solar Array - Photovoltaic - Large Fixed
+Solar Array - Photovoltaic - Sun Tracking
+Power System - Solar-Photovoltaic - Sun Tracking
+Power System - Solar-Photovoltaic
+Power System - UPS - Non-Gel VLRA Battery
+Pulley
+Railroad Car Trucks
+Mechanical Rake - Debris
+Thickener Rake
+Distribution Recloser - Oil Filled
+Distribution Recloser - Oil Filled - Vacuum Bottle
+Distribution Recloser - SF6 Filled - Vacuum Bottle
+Distribution Recloser - Solid Dielectric
+Rectifier Bank/Charger_Switch Mode
+Relay - Control - Electromechanical
+Relay - Control - Electromechanical
+Relay - Control - Electromechanical
+Relay - Control - Solid State
+Relay - Control - Solid State
+Relay - Control - Electromechanical - AC coil - De-Energized
+Relay - Control - Electromechanical - AC coil - Energized
+Relay - Control - Electromechanical - DC coil - De-Energized
+Relay - Control - Electromechanical - DC coil - Energized
+Relay - Motor Protection and Management - Microprocessor - Remotely Monitored
+Relay - Motor Protection and Management - Microprocessor - Un-Monitored
+Relay - Overspeed Protection - Electronic_V0
+Relay - Protective - Electromechanical
+Relay - Protective - Electromechanical
+Relay - Protective - Solid State
+Relay - Protective - Solid State
+Relay - Protective - System Protection (Line-Feeder-Bus-Transformer) - Microprocessor - Remotely Monitored
+Relay - Protective - System Protection (Line-Feeder-Bus-Transformer) - Microprocessor - Un-Monitored
+Relay - Timing - Bellows Type
+Relay - Electro-Pneumatic Timing - AC Coil
+Relay - Electro-Pneumatic Timing - AC Coil
+Relay - Electro-Pneumatic Timing - DC Coil
+Relay - Electro-Pneumatic Timing - DC Coil
+Scale - Load Cell
+Selective Catalytic Reduction System - SCR Reactor
+Water Intake Screen - Traveling Type
+Shaft with Spline
+Shaft with Bearing and Housing
+Shaft with Boot or Bellows
+Shaft - Conductor Roll - Shaft-Bearing-Collector Ring
+Shaft with Flanged End
+Shaft with Geared Coupling
+Shaft with Universal Joint
+Sheave
+Sheave with Hub
+Stack with Dampers
+Strainer - Mechanical
+Structure - Metal_1
+Switchgear - Circuit Breaker Panel
+Load Commutating Inverter (LCI)_Liquid Cooled
+Switchgear - Low Voltage
+Switchgear - Low Voltage
+Switchgear - Low Voltage
+Switchgear - Low Voltage - Breaker only
+Switchgear - Motor Control Centers
+Switchgear - Motor Control Centers
+Switchgear - Motor Control_Starter Panel
+-
+-
+Switchgear - Medium Voltage - 1kV to 15kV - Breaker only
+Switchgear - Medium Voltage - 1kV to 15kV - Cubicle & Bus
+Switchgear - Medium Voltage - 1kV to 15kV
+Switchgear - Medium Voltage - 1kV to 15kV
+Switchgear - Medium Voltage - 1kV to 15kV - Vacuum Bottle Type - Breaker only
+Switchgear - Medium Voltage - 1kV to 15kV - Vacuum Bottle Type
+Switchgear - Panel - Freeze Protection Heat Trace_Chromolox
+Switchgear - Panel - Process Heat Trace_Chromolox
+Switchgear - Power and Control Panel
+Static Frequency Converter (SFC) - Air Cooled
+Switchgear - Variable Frequency Drive - 600V (VFD)
+Switch - Large Mechanical Limit Type
+Tank Mixer or Agitator
+Tank with Electric Heater
+Tool - Pneumatic - Hammer Drill
+Trailer with Enclosure
+Main Turbine - 1800RPM - HP
+Main Turbine - 1800RPM - LP
+Main Turbine - 3600RPM - HP
+Main Turbine - 3600RPM - IP
+Main Turbine - 3600RPM - LP
+Main Turbine - EHC Hydraulics
+Main Turbine Gland Steam System with Atemperator
+Main Turbine Gland Steam System without Atemperator
+Main Turbine Lube Oil Heat Exchanger
+Main Turbine Lube Oil AC Aux_Startup Oil Pump and Motor
+Main Turbine Lube Oil AC Bearing Oil Pump and Motor
+Main Turbine Lube Oil Bearing Oil Lift Pump and Motor
+Main Turbine Lube Oil DC Emergency Pump and Motor
+Main Turbine Lube Oil Reservoir with Booster Pump
+Main Turbine Lube Oil Reservoir with Ejectors
+Main Turbine - MHC Controls - GE - Separately Mounted Control Valves
+Main Turbine - MHC Controls - GE - Shell or Chest Mounted Control Valves
+Main Turbine - MHC Controls - Westinghouse - Separately Mounted Governor Valves
+Turbine - Main Feedwater Type with MHC
+Turbine - Main Feedwater Type with MHC Controls
+Turbine - Main Feedwater - Trip System - Westinghouse
+Turbine - Process - Small
+Turbine - Main Feedwater Type with EHC Controls
+Turbine - Main Feedwater Type with EHC Controls
+Turbine - Terry - Solid Wheel - HPCI Type
+Turbine - Terry - Solid Wheel with Electronic Controls
+Turbine - Terry - Solid Wheel with Mechanical Hydraulic Controls
+Main Turbine - Trip System - Westinghouse
+Transformer - Station Aux_Startup - No LTC
+Transformer - Power Station Auxiliary or Startup with De-Energized DETC
+Transformer - Station Aux_Startup - LTC
+Transformer - Power Station Auxiliary or Startup with OLTC
+Transformer - Current - CT - <15kV
+Transformer - Current - CT -  >15kV
+Transformer - Station Load Center Oil Fill Bushing
+Transformer - Power Station Load Center - Liquid Filled - Oil Filled Bushings
+Transformer - Station Load Center Solid Bushing
+Transformer - Power Station Load Center - Liquid Filled - Solid Bushings
+Transformer - Power Station Load Center - Dry-Type
+Transformer - General Purpose - Liquid Filled - Solid Bushings - Fan Cooled
+Transformer - Lighting
+Transformer - Station Main_GSU
+Transformer - Power Station Main or GSU with De-Energized DETC
+Transformer - Potential - PT
+Transformer - Substation - No LTC
+Transformer - Substation with De-Energized DETC
+Transformer - Substation - LTC
+Transformer - Substation with OLTC
+Transformer - 69Kv Substation - Fixed Load Tap
+Unloading Station - Anhydrous Ammonia
+Valve Actuator - Steam Turbine -  Control Valve Actuator - Double Acting
+Valve Actuator - Steam Turbine - Steam Control Valve - Single Acting with Bellville Spring
+Valve Actuator - Steam Turbine - Steam Stop Valve - Single Acting with Bellville Spring
+Valve Actuator - Steam Turbine Steam Stop Valve - Single Acting with Coil Spring
+Valve Actuator - AOV - Diaphragm - Modulating with Digital Positioner
+Valve Actuator - AOV - Diaphragm - Modulating
+Valve Actuator - AOV - Diaphragm - Non-Modulating
+Valve Actuator - AOV - Piston Air Operated - Modulating with Digital Positioner
+Valve Actuator - AOV - Piston Air Operated - Modulating
+Valve Actuator - AOV - Piston Air Operated - Non-Modulating
+Valve Actuator - MOV - Motor Operated_AC_Rotork_NA & A-Range
+Valve Actuator - Motor Operated - MOV_AC_Limitorque
+Valve Actuator - Motor Operated - MOV_DC_Limitorque
+Valve - Air Operated - AOV - Diaphragm
+Valve - Air Operated - AOV - Diaphragm
+Valve - Air Operated - AOV - Piston
+Valve - Air Operated - AOV - Piston
+Valve - Air Operated - AOV - Diaphragm with Positioner/Booster
+Valve - Air Operated - AOV - Diaphragm with Positioner/Booster
+Valve - Air Operated - AOV - Piston with Positioner/Booster
+Valve - Ball
+Valve - Butterfly
+Valve - Check - Duo
+Valve - Check - Piston - Lift
+Valve - Check - Piston - Lift
+Valve - Check - Swing
+Valve - Check - Swing
+Valve - Check - Swing
+Valve - Check - Swing
+Valve - Check - Tilting Disk
+Valve - Check - Tilting Disc
+Valve - Check - In-Line
+Valve - Check - Double Disc
+Valve - Backflow Preventer - Dual Check Type
+Valve - Electro-Hydraulic Servo
+Valve - Gate
+Valve - Globe
+Valve - Hydraulic Operated - Isolation - Piston Type
+Valve - 4-Way Hydraulic
+Valve - Hydraulic Pilot Operated Spring Return
+Valve - Motor Operated - MOV
+Valve - Motor Operated - MOV_AC_Limitorque
+Valve - Motor Operated - MOV - DC Motor
+Valve - Motor Operated - MOV_DC_Limitorque
+Valve - Motor Operated - MOV_AC_Rotork_NA & A-Range
+Valve - Power Operated Relief - Pneumatic Actuated
+Valve - Power Operated Relief - Solenoid Actuated
+Valve - Pressure Control - Diaphragm Type - Manual Adjust
+Valve - Pressure Relief - Spring Actuated
+Valve - Solenoid Operated - SOV
+Valve - SOV - Process - Direct Acting
+Valve - SOV - Process - Piloted Type - Hard Seat
+Valve - SOV - Process - Piloted Type - Soft Seat
+Valve - Steam Turbine - Steam Control Valve Balanced Type using a Single-Acting Actuator
+Valve - Steam Turbine - Combined Steam Stop & Control Valve with Unbalanced Stop Valve using a Double-Acting Control Valve Actuator
+Valve - Steam Turbine - Combined Steam Stop & Control Valve with Unbalanced Stop Valve using a Single-Acting Control Valve Actuator
+Valve - Steam Turbine - Steam Stop Valve Balanced Type using a Single-Acting Actuator
+Valve - Weir Type - Air Operated
+Valve - Weir Type - Manual
+Voltage Regulator - Substation
+Winch - Electric

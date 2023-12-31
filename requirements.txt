@@ -5,3 +5,4 @@ langchain==0.0.348
 python-dotenv==1.0.0
 mlflow
 rouge-score
+ray==2.9.0
