@@ -61,7 +61,7 @@ class RecipeAgent:
 
     # configuration
     DEFAULT_CONFIG = {
-        "model": LLMsets[3],
+        "model": LLMsets[1],
         "params": {
             "decoding_method": "greedy",
             "min_new_tokens": 200,
@@ -818,7 +818,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             if len(self.question_placeholder_) > 0:
                 # Now use initial seed questions for second round
                 total_round = 0
-                while total_round <= round:
+                while total_round < round:
                     # question assignment: questions from placeholder will be assigned to SME/DS.
                     # after question_assignment round, reset the question placeholder
                     self.question_assignment(experiment_id=experiment_id)

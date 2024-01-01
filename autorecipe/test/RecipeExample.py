@@ -2,7 +2,7 @@ from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='wind turbine gearbox')
-obj.init_chat()
+obj.init_chat(round=2)
 
 #obj.init_chat(message='standby generator')
 #obj.init_chat(message='air comporessor')
