@@ -5,13 +5,14 @@ import mlflow
 import random
 from autorecipe.genai.utils import (
     filter_and_sort_questions,
-    filter_and_sort_questions_using_reference,
+    filter_questions_using_reference,
 )
 import pandas as pd
 from colorama import Fore, Style
 import uuid
 from genai.schemas import ChatOptions, GenerateParams, ReturnOptions
 from genai.schemas.generate_params import HAPOptions, ModerationsOptions
+from collections import OrderedDict
 
 # have model specific configuration
 # QA does not need longer context to generate
@@ -334,10 +335,8 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         # extract initial set of questions prepared by DS
         ds_questions = self.DSAgent.extract_questions(ds_response)
-        f_ds_question = filter_and_sort_questions_using_reference(
+        f_ds_question = filter_and_sort_questions(
             ds_questions,
-            ds_questions,
-            is_identical=True,
             filter_threshold=0.98,
         )
 
@@ -388,7 +387,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         ds_questions_1 = self.DSAgent.extract_questions(ds_response_1)
 
         # finalize the question preparations
-        f_ds_question_1 = filter_and_sort_questions_using_reference(
+        f_ds_question_1 = filter_questions_using_reference(
             self.question_placeholder_, ds_questions_1, filter_threshold=0.98
         )
         f_ds_question_2 = filter_and_sort_questions(
@@ -405,6 +404,10 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 f"{Style.BRIGHT}{Fore.BLUE} ds_questions_1 : {len(ds_questions_1)} >>> {Style.RESET_ALL}"
             )
             print(ds_questions_1)
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} f_ds_question_1 : {len(f_ds_question_1)} >>> {Style.RESET_ALL}"
+            )
+            print(f_ds_question_1)
             print(
                 f"{Style.BRIGHT}{Fore.BLUE} f_ds_question_2 : {len(f_ds_question_2)} >>> {Style.RESET_ALL}"
             )
@@ -527,9 +530,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             )
             tmp_DSets.extend(question_response_1)
             if self.testmode:
-                print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}"
+                )
                 print(result)
-                print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}"
+                )
                 print(question_response)
                 print(
                     f"{Style.BRIGHT}{Fore.BLUE} question_response_1 : {len(question_response_1)} >>> {Style.RESET_ALL}"
@@ -562,7 +569,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         # approach 3 - 10 most recent questions
         # most recent first
-        for _ in range(len(input_question_sets)//100+1):
+        for _ in range(len(input_question_sets) // 100 + 1):
             selected_elements = random.sample(
                 input_question_sets, min(len(input_question_sets), 30)
             )
@@ -579,9 +586,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             )
             tmp_DSets.extend(question_response_3)
             if self.testmode:
-                print(f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}")
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_input :  >>> {Style.RESET_ALL}"
+                )
                 print(result)
-                print(f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}")
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} question_response >>> {Style.RESET_ALL}"
+                )
                 print(question_response)
                 print(
                     f"{Style.BRIGHT}{Fore.BLUE} question_response : {len(question_response_3)} >>> {Style.RESET_ALL}"
@@ -678,8 +689,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         # post process the questions and then
         # remove duplicate question with high threshold
-        f_tmp_DSets_1 = filter_and_sort_questions_using_reference(
-            self.genai_questions_for_sme + self.genai_questions_for_ds,
+        unique_list = list(
+            OrderedDict.fromkeys(
+                self.genai_questions_for_sme + self.genai_questions_for_ds
+            )
+        )
+        f_tmp_DSets_1 = filter_questions_using_reference(
+            unique_list,
             tmp_DSets,
             filter_threshold=0.98,
         )
@@ -688,6 +704,18 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.question_placeholder_.extend(f_tmp_DSets_2)
 
         if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} Question so far in Bank : {len(unique_list)} >>> {Style.RESET_ALL}"
+            )
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} total Questions generated : {len(tmp_DSets)} >>> {Style.RESET_ALL}"
+            )
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} f_tmp_DSets_1 : {len(f_tmp_DSets_1)} >>> {Style.RESET_ALL}"
+            )
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} f_tmp_DSets_2 : {len(f_tmp_DSets_2)} >>> {Style.RESET_ALL}"
+            )
             print(f"Total New Questions : {len(self.question_placeholder_)}")
             print(
                 f"{Style.BRIGHT}{Fore.GREEN}--------------------- Question Generation End ------------------------------.{Style.RESET_ALL}"
@@ -771,6 +799,9 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 "total_ds_q": total_ds_q,
                 "total_outside_q": total_outside_q,
                 "total_overlap_q": total_overlap_q,
+                "total_questions": (
+                    total_sme_q + total_ds_q + total_outside_q - total_overlap_q
+                ),
             }
         )
 
@@ -833,11 +864,40 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                     # condition to quit early
                     if len(self.question_placeholder_) == 0:
                         break
- 
+
                     total_round = total_round + 1
 
         # this is a final step
         df = pd.DataFrame(
-            {"questions": self.genai_questions_for_sme + self.genai_questions_for_ds}
+            {
+                "questions": list(
+                    OrderedDict.fromkeys(
+                        self.genai_questions_for_sme
+                        + self.genai_questions_for_ds
+                        + self.question_placeholder_
+                    )
+                )
+            }
         )
-        df.to_csv(f"genai_questions_{experiment_id}.csv", index=False)
+        df.to_csv(f"genai_questions_bank_{experiment_id}.csv", index=False)
+
+        df = pd.DataFrame(
+            {
+                "questions": self.genai_questions_for_sme,
+                "answers": self.genai_responses_from_sme,
+            }
+        )
+        df.to_csv(f"genai_questions_answer_sme_bank_{experiment_id}.csv", index=False)
+
+        df = pd.DataFrame(
+            {
+                "questions": self.genai_questions_for_ds,
+                "answers": self.genai_responses_from_ds,
+            }
+        )
+        df.to_csv(f"genai_questions_answer_ds_bank_{experiment_id}.csv", index=False)
+
+        df = pd.DataFrame(self.question_generation_track)
+        df.to_csv(f"genai_questions_track_{experiment_id}.csv", index=False)
+
+
