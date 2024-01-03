@@ -19,13 +19,6 @@ You are a helpful, respectful, and honest assistant. User will provide list of q
 written by various different persona. These questions are labelled as useful question. Your role is
 to provide rules that justify why these questions are labelled as useful.   
 
-Here are some examples of guideline that define what is usefulness of question means. 
-1. Questions that are relevant, informative, and thought-provoking in the context of particular domain 
-are candidates for "usefulness". 
-2. Question is useful if it has a level of depth and complexity that makes them useful for learning and discussion. 
-3. The questions are clear and concise, making it easy for others to understand and respond to them.
-Note that these guidelines are not complete and you should suggest any other guidelines.
-
 """
 
 ClassifierPrompt = """
@@ -44,20 +37,30 @@ Here is a list of questions labelled as "useful":
 
 Can you generate some rule on why these questions are labelled as useful?
 
+Answer: Here are some examples of guideline that define what is usefulness of question means. 
+1. Questions that are relevant, informative, and thought-provoking in the context of particular domain 
+are candidates for "usefulness". 
+2. Question is useful if it has a level of depth and complexity that makes them useful for learning and discussion. 
+3. The questions are clear and concise, making it easy for others to understand and respond to them.
+Note that these guidelines are not complete and you should suggest any other guidelines.
+4. The questions generate curiosity and desire to understand specific concepts and principles.
+5. The questions that are open-ended and encourage exploration and discovery are useful.
+6. The questions encourage investigation and research, prompting individuals to explore new ideas and concepts.
+7. 
 """
 
 
 LLMsets = [
-    "ibm/granite-13b-instruct-v2",
+    #"ibm/granite-13b-instruct-v2",
     "meta-llama/llama-2-70b-chat",
-    "google/flan-ul2",
+    #"google/flan-ul2",
     "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
 ]
 
 # Is this question for Subject Matter Expert?
 # Is this question for Data Scientist?
 
-for i in range(4):
+for i in range(len(LLMsets)):
 
     llm = LangChainInterface(
         model=LLMsets[i],
@@ -85,7 +88,7 @@ for i in range(4):
     )
     answer = llm.generate(
         prompts=[
-            f"System Prompt: {SystemPrompt} \n\n {ClassifierPrompt} ."
+            f"System Prompt: {SystemPrompt} \n\n Question: \n\n {ClassifierPrompt}"
         ]
     )
     print(answer.generations[0][0].text)
