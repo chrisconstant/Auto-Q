@@ -13,6 +13,7 @@ obj.init_chat(round=2)
 #obj.init_chat(message='blast furnace')
 #obj.init_chat(message='electric battery')
 #obj.init_chat(message='industrial robot')
+
 #obj.init_chat(message='The industrial asset class is air compressor')
 
 #client.search_runs(experiment_ids=experiment.experiment_id,order_by=['start_time ASC'])
