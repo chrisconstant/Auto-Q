@@ -2,23 +2,18 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Function to read questions and answers from CSV with a custom separator
 def read_questions_from_csv(file_path, separator=','):
     questions = []
     with open(file_path, 'r') as file:
-        lines = file.readlines()
+        lines = file.readlines()[1:]  # Skip the first line (header)
         for line in lines:
             parts = line.strip().split(separator)
-            question = f"\"{parts[0]}\"\n\nWhom do you think this question is appropriate for?"
-            choices = parts[1:]
-            questions.append({'question': question, 'choices': choices})
+            question = f"\"{parts[0]}\"\n\n Whom do you think this question is appropriate for?"
+            # Exclude the second column (real answer) from choices
+            choices = parts[2:]
+            real_persona = parts[1]
+            questions.append({'question': question, 'choices': choices, 'real_persona': real_persona})
     return questions
-
-
-
-# Sample CSV file structure:
-# Question 1;Choice A;Choice B;Choice C;Choice D
-# Question 2;Choice X;Choice Y;Choice Z
 
 # Define the CSV file path and separator
 csv_file_path = 'questions.csv'
@@ -30,17 +25,20 @@ questions = read_questions_from_csv(csv_file_path, separator=csv_separator)
 # Add question numbers to the questions list
 questions_with_numbers = [{'number': f'Q{i}', **question} for i, question in enumerate(questions, 1)]
 
-# Main route to display the questionnaire
+# Main route to display the survey
 @app.route('/')
 def index():
-    return render_template('questionnaire.html', questions=questions_with_numbers)
+    return render_template('survey.html', questions=questions_with_numbers)
 
 # Route to handle form submission
 @app.route('/submit', methods=['POST'])
 def submit():
     user_responses = {key: request.form[key] for key in request.form}
-    # Process user responses as needed
-    return render_template('thank_you.html', responses=user_responses, questions=questions_with_numbers)
+    
+    # Get the real persona for the submitted questions
+    real_personas = [question['real_persona'] for question in questions]
+    
+    return render_template('thank_you.html', responses=user_responses, questions=questions_with_numbers, real_personas=real_personas)
 
 if __name__ == '__main__':
     app.run(debug=True)

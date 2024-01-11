@@ -17,17 +17,45 @@
         }
 
         p {
-            color: #2f4f4f; /* Dark slate gray color for responses */
             text-align: left; /* Left-align the responses */
+            margin-bottom: 1em; /* One-line space between responses */
+        }
+
+        .real-persona {
+            color: blue;
+        }
+
+        .selected-persona {
+            color: orange;
+        }
+
+        .match {
+            color: green;
+        }
+
+        .mismatch {
+            color: red;
         }
     </style>
 </head>
 <body>
     <h1>Thank You for Submitting!</h1>
     {% if responses %}
-        <p>Responses:</p>
         {% for question in questions %}
-            <p><strong>{{ question['number'] }}:</strong> {{ question['question'] }}<br> Answer: {{ responses[question['number']] }}</p>
+            <p><strong>{{ question['number'] }}:</strong> {{ question['question'] }}</p>
+
+            {# Display Real Persona and Selected Option with color coding #}
+            <p>
+                <span class="real-persona">Real Persona:</span>
+                <span class="{% if real_personas[loop.index0] == responses[question['number']] %}match{% else %}mismatch{% endif %}">
+                    {{ real_personas[loop.index0] }}
+                </span><br>
+
+                <span class="selected-persona">Selected Persona:</span>
+                <span class="{% if real_personas[loop.index0] == responses[question['number']] %}match{% else %}mismatch{% endif %}">
+                    {{ responses[question['number']] }}
+                </span>
+            </p>
         {% endfor %}
     {% else %}
         <p>No responses submitted.</p>
