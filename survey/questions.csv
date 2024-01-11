@@ -1,24 +1,17 @@
-Can you provide an overview of the wind turbine gearbox and its components?;Developer;Executive;SME;Customer
-What are the most common failure modes for wind turbine gearboxes?;SME;Developer;Executive;Customer
-Which sensors are available for collecting data from the wind turbine gearbox?;SME;Customer;Developer;Executive
-What is the sampling rate for the sensor data?;Customer;SME;Developer;Executive
-Are there any specific failure modes that are more critical than others?;Executive;Customer;Developer;SME
-Are there any specific components that are more prone to failure than others?;SME;Developer;Executive;Customer
-How does the wind turbine gearbox operate, and what are the normal operating conditions?;Developer;Executive;Customer;SME
-Are there any external factors that can affect the operation of the wind turbine gearbox, such as temperature, humidity, or vibration?;Developer;Customer;Executive;SME
-Are there any existing maintenance schedules or procedures that can be leveraged to inform the anomaly model?;Executive;Developer;SME;Customer
-Are there any specific regulatory or compliance requirements that the anomaly model must adhere to?;Customer;Developer;SME;Executive
-Are there any additional data sources or information that can be leveraged to improve the accuracy of the anomaly model, such as historical data or expert knowledge?;Developer;SME;Customer;Executive
-What is the desired level of accuracy for the anomaly model, and what are the consequences of false positives or false negatives?;SME;Developer;Executive;Customer
-Can you provide more details about the common failure modes of the wind turbine gearbox, such as bearing failure, gear failure, shaft failure, and coupling failure? What are the typical symptoms of these failures, and how do they affect the operation of the wind turbine?;Developer;Executive;Customer;SME
-How do environmental factors, such as temperature, humidity, and vibration, affect the operation and lifespan of the wind turbine gearbox? Are there any specific environmental conditions that are particularly challenging for the gearbox?;Developer;SME;Executive;Customer
-Can you discuss the importance of lubrication in the wind turbine gearbox? What types of lubricants are commonly used, and how often should they be replaced? What are the consequences of improper lubrication?;Executive;Developer;Customer;SME
-How do you detect bearing failure in a wind turbine gearbox? What are the typical signs of bearing failure, and how do you determine the severity of the failure?;SME;Executive;Customer;Developer
-Can you explain the concept of wind turbine gearbox oil analysis? What information can be gained from oil analysis, and how is it used to predict and prevent failures?;Developer;SME;Executive;Customer
-How do you perform a visual inspection of the wind turbine gearbox? What are the key components and areas to inspect, and what are the signs of potential failures?;Customer;Developer;SME;Executive
-Can you discuss the role of condition monitoring in predicting and preventing wind turbine gearbox failures? What are the different types of condition monitoring techniques, and how do they help identify potential failures?;Executive;Customer;Developer;SME
-How do you prioritize maintenance and repairs for a wind turbine gearbox? What factors do you consider when determining which components to repair or replace first?;SME;Executive;Customer;Developer
-Can you provide examples of common mistakes or oversights that can lead to wind turbine gearbox failures? How can these mistakes be avoided, and what are the consequences of not addressing them?;Developer;Customer;Executive;SME
-How do you ensure that the wind turbine gearbox is properly aligned and balanced? What are the consequences of misalignment or imbalance, and how do you correct these issues?;Executive;Customer;Developer;SME
-Can you provide more details about the gearbox's lubrication system, including the type of lubricant used, the lubrication intervals, and the lubricant's viscosity?;Developer;SME;Executive;Customer
-How do you currently monitor the wind turbine gearbox's temperature, and what are the normal operating temperatures for the gearbox?;Customer;Developer;Executive;SME
+Question; Real Persona; Persona Option 1; Persona Option 2; Persona Option 3; Persona Option 4
+Can you provide an overview of the wind turbine gearbox and its components?;Subject Matter Expert;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+What are the most common failure modes for wind turbine gearboxes?;Data Scientist;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Which sensors are available for collecting data from the wind turbine gearbox?;Both DS & SME;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+What is the sampling rate for the sensor data?;None of the above;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Are there any specific failure modes that are more critical than others?;Subject Matter Expert;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Are there any specific components that are more prone to failure than others?;Data Scientist;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+How does the wind turbine gearbox operate, and what are the normal operating conditions?;Both DS & SME;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Are there any external factors that can affect the operation of the wind turbine gearbox, such as temperature, humidity, or vibration?;None of the above;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Are there any existing maintenance schedules or procedures that can be leveraged to inform the anomaly model?;Subject Matter Expert;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Are there any specific regulatory or compliance requirements that the anomaly model must adhere to?;Data Scientist;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Are there any additional data sources or information that can be leveraged to improve the accuracy of the anomaly model, such as historical data or expert knowledge?;Both DS & SME;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+What is the desired level of accuracy for the anomaly model, and what are the consequences of false positives or false negatives?;None of the above;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Can you provide more details about the common failure modes of the wind turbine gearbox, such as bearing failure, gear failure, shaft failure, and coupling failure? What are the typical symptoms of these failures, and how do they affect the operation of the wind turbine?;Subject Matter Expert;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+How do environmental factors, such as temperature, humidity, and vibration, affect the operation and lifespan of the wind turbine gearbox? Are there any specific environmental conditions that are particularly challenging for the gearbox?;Data Scientist;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+Can you discuss the importance of lubrication in the wind turbine gearbox? What types of lubricants are commonly used, and how often should they be replaced? What are the consequences of improper lubrication?;Both DS & SME;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
+How do you detect bearing failure in a wind turbine gearbox? What are the typical signs of bearing failure, and how do you determine the severity of the failure?;None of the above;Subject Matter Expert;Data Scientist;Both DS & SME;None of the above
