@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autoqa-surveyapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: autoqa-surveyapp
+  template:
+    metadata:
+      labels:
+        component: autoqa-surveyapp
+    spec:
+      imagePullSecrets:
+        - name: all-icr-io
+      containers:
+      - name: autoqa-surveyapp
+        image: us.icr.io/aimodelfactory/autoqa-surveyapp:1.0.0
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: autoqa-surveyapp-service
+spec:
+  selector:
+    component: autoqa-surveyapp
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 5000
+  type: ClusterIP  # Use "LoadBalancer" for external access
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: autoqa-surveyapp-ingress
+  annotations:
+    route.openshift.io/termination: "edge"
+spec:
+  tls:
+    - hosts:
+        - modelfactory-9ca4d14d48413d18ce61b80811ba4308-0000.us-south.containers.appdomain.cloud
+      secretName: modelfactory-9ca4d14d48413d18ce61b80811ba4308-0000
+  rules:
+    - host: autoqa-surveyapp.modelfactory-9ca4d14d48413d18ce61b80811ba4308-0000.us-south.containers.appdomain.cloud
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: autoqa-surveyapp-service
+                port:
+                  number: 5000
