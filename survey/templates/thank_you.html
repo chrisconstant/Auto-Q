@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            background-color: #f5f5dc; /* Pale yellow background */
+            text-align: center; /* Center-align text */
+            margin: 20px;
+        }
+
+        h1 {
+            color: #696969; /* Dim gray color for the heading */
+        }
+
+        p {
+            color: #2f4f4f; /* Dark slate gray color for responses */
+            text-align: left; /* Left-align the responses */
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank You for Submitting!</h1>
+    {% if responses %}
+        <p>Responses:</p>
+        {% for question in questions %}
+            <p><strong>{{ question['number'] }}:</strong> {{ question['question'] }}<br> Answer: {{ responses[question['number']] }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No responses submitted.</p>
+    {% endif %}
+</body>
+</html>

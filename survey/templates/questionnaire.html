@@ -1,0 +1,66 @@
+<!-- questionnaire.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Evaluation</title>
+    <style>
+        body {
+            background-color: #f5f5dc; /* Pale yellow background */
+            text-align: center; /* Center-align text */
+            margin: 20px;
+        }
+
+        h1 {
+            color: #696969; /* Dim gray color for the heading */
+        }
+
+        form {
+            background-color: #fff; /* White background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block; /* Center-align the form */
+            text-align: left; /* Left-align the form content */
+        }
+
+        p {
+            color: #2f4f4f; /* Dark slate gray color for questions */
+            white-space: pre-line; /* Preserve new lines in the text */
+            margin-bottom: 1em; /* One-line space between options */
+        }
+
+        strong {
+            font-weight: bold; /* Bold style for question */
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50; /* Green button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expert Evaluation</h1>
+    <form action="/submit" method="post">
+        {% for question in questions %}
+            <p><strong>{{ question['number'] }}: {{ question['question'] }}</strong></p>
+            {% for choice in question['choices'] %}
+                <input type="radio" name="{{ question['number'] }}" value="{{ choice }}">{{ choice }}<br>
+            {% endfor %}
+        {% endfor %}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
