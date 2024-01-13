@@ -12,7 +12,7 @@ from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 # make sure you have a .env file under genai root with
 # GENAI_KEY=<your-genai-key>
 api_key = "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg"
-api_endpoint = 'https://bam-api.res.ibm.com'
+api_endpoint = "https://bam-api.res.ibm.com"
 
 SystemPrompt = """
 You are a helpful, respectful, and honest assistant. User will provide a 
@@ -54,20 +54,34 @@ Overall, all conditions have positive sentiment. Hence, the question is useful f
 Answer: The final answer is useful. (TOKENSTOP)
 """
 
-LLMsets = ['ibm/granite-13b-instruct-v2',
-        'meta-llama/llama-2-70b-chat',
-        'google/flan-ul2',
-        'thebloke/mixtral-8x7b-instruct-v0-1-gptq']
+LLMsets = [
+    "ibm/granite-13b-instruct-v2",
+    "meta-llama/llama-2-70b-chat",
+    "google/flan-ul2",
+    "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
+]
 
-#Is this question for Subject Matter Expert?
-#Is this question for Data Scientist?
+# Is this question for Subject Matter Expert?
+# Is this question for Data Scientist?
 
 import pandas as pd
-df = pd.read_csv('./genai_questions.csv')
-instructions = df['questions'].to_list()
+
+df = pd.read_csv("./genai_questions.csv")
+df = pd.read_csv(
+    "../question_classification/question_classifier/data/test.csv",
+    sep="\t",
+    header=None,
+)
+df.columns = ["Source"]
+df["label"] = df["Source"].apply(lambda x: x[0])
+df["questions"] = df["Source"].apply(lambda x: x[2:])
+df = df[["label", "questions"]]
+print(df)
+
+instructions = df["questions"].to_list()
 
 llm = LangChainInterface(
-    model=LLMsets[3],
+    model=LLMsets[1],
     credentials=Credentials(api_key, api_endpoint),
     params=GenerateParams(
         decoding_method="greedy",
@@ -87,15 +101,34 @@ llm = LangChainInterface(
     ),
 )
 
+ansSet = []
 for qindex, qpromt in enumerate(instructions):
-    print ('Start...-----------------------------------------------------------------------------')
-    print (qpromt)
+    print(
+        "Start...-----------------------------------------------------------------------------"
+    )
+    print(qpromt)
     result = llm.generate(
-        prompts=[f"System Prompt: {SystemPrompt} \n\n {ClassifierPrompt} \n\n Question: {qpromt}. Please use (Internal thought)."]
+        prompts=[
+            f"System Prompt: {SystemPrompt} \n\n {ClassifierPrompt} \n\n Question: {qpromt}. Please use (Internal thought)."
+        ]
     )
     answer = result.generations[0][0].text
-    #print (answer)
-    sindex = answer.rfind('Answer:')
-    eindex = answer.rfind('(TOKENSTOP')
-    print (answer[sindex+7:eindex])   # 7 = len('Answer:')
-    print ('-----------------------------------------------------------------------------...End')
+    print (answer)
+    sindex = answer.rfind("Answer:")
+    eindex = answer.rfind("(TOKENSTOP")
+    print(answer[sindex + 7 : eindex])  # 7 = len('Answer:')
+    labelX = "0"
+    if "is useful" in answer[sindex + 7 : eindex]:
+        labelX = "1"
+    print (labelX)
+    ansSet.append(labelX)
+    print(
+        "-----------------------------------------------------------------------------...End"
+    )
+
+if len(ansSet) == len(instructions):
+    df["answer"] = ansSet
+    df.to_csv(
+        "../question_classification/question_classifier/data/testResult_lamma.csv",
+        index=False,
+    )
