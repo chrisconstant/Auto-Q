@@ -25,6 +25,20 @@ conditions hold:
 
 """
 
+ExamplerClassifierPrompt = """
+
+Question:  ?
+Answer: (TOKENSTOP)
+
+Question: ... ?
+Answer: (TOKENSTOP)
+
+Question: ... ?
+Answer: (TOKENSTOP)
+
+"""
+
+
 ClassifierPrompt = """
 Assuming user is seeking guidance about usefulness of given question. You will use the example provided 
 in a form of Internal thought to find the answer for all questions.
@@ -81,7 +95,7 @@ print(df)
 instructions = df["questions"].to_list()
 
 llm = LangChainInterface(
-    model=LLMsets[1],
+    model=LLMsets[2],
     credentials=Credentials(api_key, api_endpoint),
     params=GenerateParams(
         decoding_method="greedy",
