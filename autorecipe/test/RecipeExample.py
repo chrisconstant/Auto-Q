@@ -4,6 +4,10 @@ obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='wind turbine gearbox')
 obj.init_chat(round=2)
 
+# anomaly detection model
+# failure event prediction
+# asset health index model
+
 #obj.init_chat(message='standby generator')
 #obj.init_chat(message='air comporessor')
 #obj.init_chat(message='hydroelectric power turbine')
