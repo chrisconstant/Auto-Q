@@ -1,0 +1,30 @@
+1. What are the typical operating conditions of a wind turbine gearbox, such as temperature, load, and speed?
+2. What are the common failure modes of wind turbine gearbox components, such as gears, bearings, and seals?
+3. What are the typical data patterns of wind turbine gearbox sensors, such as vibration, temperature, and noise?
+4. What are the data quality issues that may affect wind turbine gearbox data, such as missing values, outliers, and drift?
+5. What are the statistical features that can capture the anomalies in wind turbine gearbox data, such as mean, variance, and skewness?
+6. What are the machine learning algorithms that can be used for anomaly detection in wind turbine gearbox data, such as PCA, SVM, and neural networks?
+7. What are the evaluation metrics that can be used to assess the performance of wind turbine gearbox anomaly detection models, such as accuracy, precision, and recall?
+8. What are the data preprocessing techniques that can improve the performance of wind turbine gearbox anomaly detection models, such as normalization, dimensionality reduction, and feature selection?
+9. What are the data visualization tools that can help interpret the results of wind turbine gearbox anomaly detection models, such as scatter plots, histograms, and heatmaps?
+10. What are the ethical considerations that should be taken into account when deploying wind turbine gearbox anomaly detection models, such as privacy, fairness, and transparency?
+11. What are the design factors that affect the reliability of wind turbine gearboxes, such as materials, tolerances, and lubrication?
+12. What are the environmental factors that affect the performance of wind turbine gearboxes, such as humidity, dust, and salt?
+13. What are the operational factors that affect the wear and tear of wind turbine gearboxes, such as start-stop cycles, idling, and overloading?
+14. What are the maintenance factors that affect the lifespan of wind turbine gearboxes, such as inspections, repairs, and replacements?
+15. What are the regulatory factors that affect the safety and compliance of wind turbine gearboxes, such as standards, certifications, and inspections?
+16. What are the economic factors that affect the cost and benefit of wind turbine gearboxes, such as prices, subsidies, and taxes?
+17. What are the social factors that affect the acceptance and adoption of wind turbine gearboxes, such as perceptions, attitudes, and values?
+18. What are the technical factors that affect the integration and interoperability of wind turbine gearboxes, such as interfaces, protocols, and standards?
+19. What are the legal factors that affect the liability and responsibility of wind turbine gearboxes, such as contracts, warranties, and disputes?
+20. What are the environmental factors that affect the sustainability and circularity of wind turbine gearboxes, such as recycling, reuse, and disposal?
+21. What are the effects of wind turbulence on the load distribution and fatigue of wind turbine gearboxes?
+22. What are the effects of wind shear on the torque and power of wind turbine gearboxes?
+23. What are the effects of yaw misalignment on the efficiency and wear of wind turbine gearboxes?
+24. What are the effects of blade pitch on the load and speed of wind turbine gearboxes?
+25. What are the effects of generator type on the design and operation of wind turbine gearboxes?
+26. What are the effects of control strategy on the performance and reliability of wind turbine gearboxes?
+27. What are the effects of data fusion on the accuracy and robustness of wind turbine gearbox anomaly detection models?
+28. What are the effects of data augmentation on the generalization and transferability of wind turbine gearbox anomaly detection models?
+29. What are the effects of data imputation on the completeness and correctness of wind turbine gearbox anomaly detection models?
+30. What are the effects of data labeling on the interpretability and explainability of wind turbine gearbox anomaly detection models?

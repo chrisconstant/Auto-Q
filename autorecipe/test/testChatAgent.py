@@ -41,29 +41,11 @@ langchain_model = LangChainInterface(
     model=modelSet[1], params=params, credentials=creds
 )
 
-# Get the prompt to use - you can modify this!
-prompt = hub.pull("hwchase17/react")
-
 background_ds = """Your job is to build an anomaly model using real time time series sensor data
  obtained from IoT/OT system. In order to get domain understanding of the problem you will prepare a series of 
  questions to be asked in sequential orders to subject matter experts. Typical questions should focus on the
 important components for which anomaly model should be build, the important failure modes and the ability of
  sensor data to detect these failure. """
 
-extra_condition = 'Generate 5 questions per thought. '
-prompt.template = background_ds + extra_condition + prompt.template
-print("\nprompt", prompt)
-
-wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
-search = DuckDuckGoSearchResults(max_results=1)
-
-tools = []
-
-# Construct the ReAct agent
-agent = create_react_agent(langchain_model, tools, prompt)
-
-# Create an agent executor by passing in the agent and tools
-agent_executor = AgentExecutor(
-    agent=agent, tools=tools, verbose=True, handle_parsing_errors=True
-)
-agent_executor.invoke({"input": "Generate 100 questions for building anomaly detection model for wind turbine gearbox"})
+ans = langchain_model(background_ds + "\n Answer this question: Generate 100 questions for building anomaly detection model for wind turbine gearbox")
+print (ans)

@@ -1,0 +1,100 @@
+1. What are the key components of a wind turbine gearbox that are critical for anomaly detection?
+2. What are the typical failure modes of a wind turbine gearbox?
+3. How do these failure modes manifest in the sensor data?
+4. What sensors are available to monitor the wind turbine gearbox?
+5. What is the sampling rate of the available sensors?
+6. What is the range of values for each sensor?
+7. Are there any known issues with the sensor data, such as missing values or outliers?
+8. What is the typical operating temperature range for the wind turbine gearbox?
+9. What is the typical operating load for the wind turbine gearbox?
+10. What is the typical operating speed for the wind turbine gearbox?
+11. Are there any environmental factors that can affect the wind turbine gearbox, such as temperature or humidity?
+12. Are there any external factors that can affect the wind turbine gearbox, such as wind speed or direction?
+13. What is the typical maintenance schedule for the wind turbine gearbox?
+14. What are the typical maintenance tasks performed on the wind turbine gearbox?
+15. How is the health of the wind turbine gearbox currently monitored?
+16. What are the typical failure rates for the wind turbine gearbox?
+17. What are the consequences of a wind turbine gearbox failure?
+18. How is a wind turbine gearbox failure detected?
+19. How is a wind turbine gearbox failure diagnosed?
+20. How is a wind turbine gearbox failure repaired?
+21. How is a wind turbine gearbox failure prevented?
+22. What is the typical lifespan of a wind turbine gearbox?
+23. What is the typical cost of a wind turbine gearbox replacement?
+24. What is the typical cost of a wind turbine gearbox repair?
+25. What is the typical cost of a wind turbine gearbox maintenance?
+26. What is the typical cost of a wind turbine gearbox downtime?
+27. What is the typical cost of a wind turbine gearbox failure?
+28. What is the typical cost of a wind turbine gearbox inspection?
+29. What is the typical cost of a wind turbine gearbox upgrade?
+30. What is the typical cost of a wind turbine gearbox retrofit?
+31. What is the typical cost of a wind turbine gearbox refurbishment?
+32. What is the typical cost of a wind turbine gearbox overhaul?
+33. What is the typical cost of a wind turbine gearbox rebuild?
+34. What is the typical cost of a wind turbine gearbox replacement part?
+35. What is the typical cost of a wind turbine gearbox maintenance tool?
+36. What is the typical cost of a wind turbine gearbox diagnostic tool?
+37. What is the typical cost of a wind turbine gearbox monitoring system?
+38. What is the typical cost of a wind turbine gearbox data analysis tool?
+39. What is the typical cost of a wind turbine gearbox predictive maintenance tool?
+40. What is the typical cost of a wind turbine gearbox condition-based monitoring tool?
+41. What is the typical cost of a wind turbine gearbox remote monitoring tool?
+42. What is the typical cost of a wind turbine gearbox real-time monitoring tool?
+43. What is the typical cost of a wind turbine gearbox predictive failure analysis tool?
+44. What is the typical cost of a wind turbine gearbox root cause analysis tool?
+45. What is the typical cost of a wind turbine gearbox failure mode and effects analysis tool?
+46. What is the typical cost of a wind turbine gearbox maintenance strategy development tool?
+47. What is the typical cost of a wind turbine gearbox maintenance plan development tool?
+48. What is the typical cost of a wind turbine gearbox maintenance schedule development tool?
+49. What is the typical cost of a wind turbine gearbox maintenance task development tool?
+50. What is the typical cost of a wind turbine gearbox maintenance procedure development tool?
+51. What is the typical cost of a wind turbine gearbox maintenance training tool?
+52. What is the typical cost of a wind turbine gearbox maintenance documentation tool?
+53. What is the typical cost of a wind turbine gearbox maintenance communication tool?
+54. What is the typical cost of a wind turbine gearbox maintenance collaboration tool?
+55. What is the typical cost of a wind turbine gearbox maintenance knowledge management tool?
+56. What is the typical cost of a wind turbine gearbox maintenance best practices tool?
+57. What is the typical cost of a wind turbine gearbox maintenance lessons learned tool?
+58. What is the typical cost of a wind turbine gearbox maintenance benchmarking tool?
+59. What is the typical cost of a wind turbine gearbox maintenance continuous improvement tool?
+60. What is the typical cost of a wind turbine gearbox maintenance performance measurement tool?
+61. What is the typical cost of a wind turbine gearbox maintenance process improvement tool?
+62. What is the typical cost of a wind turbine gearbox maintenance organization development tool?
+63. What is the typical cost of a wind turbine gearbox maintenance culture development tool?
+64. What is the typical cost of a wind turbine gearbox maintenance leadership development tool?
+65. What is the typical cost of a wind turbine gearbox maintenance team development tool?
+66. What is the typical cost of a wind turbine gearbox maintenance individual development tool?
+67. What is the typical cost of a wind turbine gearbox maintenance coaching tool?
+68. What is the typical cost of a wind turbine gearbox maintenance mentoring tool?
+69. What is the typical cost of a wind turbine gearbox maintenance training and development tool?
+70. What is the typical cost of a wind turbine gearbox maintenance succession planning tool?
+71. What is the typical cost of a wind turbine gearbox maintenance talent management tool?
+72. What is the typical cost of a wind turbine gearbox maintenance workforce planning tool?
+73. What is the typical cost of a wind turbine gearbox maintenance performance management tool?
+74. What is the typical cost of a wind turbine gearbox maintenance compensation management tool?
+75. What is the typical cost of a wind turbine gearbox maintenance benefits management tool?
+76. What is the typical cost of a wind turbine gearbox maintenance recognition and reward tool?
+77. What is the typical cost of a wind turbine gearbox maintenance employee engagement tool?
+78. What is the typical cost of a wind turbine gearbox maintenance employee satisfaction tool?
+79. What is the typical cost of a wind turbine gearbox maintenance employee retention tool?
+80. What is the typical cost of a wind turbine gearbox maintenance employee development tool?
+81. What is the typical cost of a wind turbine gearbox maintenance employee performance tool?
+82. What is the typical cost of a wind turbine gearbox maintenance employee productivity tool?
+83. What is the typical cost of a wind turbine gearbox maintenance employee motivation tool?
+84. What is the typical cost of a wind turbine gearbox maintenance employee morale tool?
+85. What is the typical cost of a wind turbine gearbox maintenance employee well-being tool?
+86. What is the typical cost of a wind turbine gearbox maintenance employee health tool?
+87. What is the typical cost of a wind turbine gearbox maintenance employee safety tool?
+88. What is the typical cost of a wind turbine gearbox maintenance employee security tool?
+89. What is the typical cost of a wind turbine gearbox maintenance employee training tool?
+90. What is the typical cost of a wind turbine gearbox maintenance employee education tool?
+91. What is the typical cost of a wind turbine gearbox maintenance employee communication tool?
+92. What is the typical cost of a wind turbine gearbox maintenance employee collaboration tool?
+93. What is the typical cost of a wind turbine gearbox maintenance employee knowledge management tool?
+94. What is the typical cost of a wind turbine gearbox maintenance employee best practices tool?
+95. What is the typical cost of a wind turbine gearbox maintenance employee lessons learned tool?
+96. What is the typical cost of a wind turbine gearbox maintenance employee benchmarking tool?
+97. What is the typical cost of a wind turbine gearbox maintenance employee continuous improvement tool?
+98. What is the typical cost of a wind turbine gearbox maintenance employee performance measurement tool?
+99. What is the typical cost of a wind turbine gearbox maintenance employee process improvement tool?
+100. What is the typical cost of a wind turbine gearbox maintenance employee organization development tool?

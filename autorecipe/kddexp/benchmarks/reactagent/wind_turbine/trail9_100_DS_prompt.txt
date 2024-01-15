@@ -1,0 +1,100 @@
+1. What are the common failure modes of the gearbox?
+2. What are the important parameters to monitor in the gearbox?
+3. What are the typical values of these parameters in normal operation?
+4. What are the acceptable ranges of these parameters?
+5. How often do these parameters need to be monitored?
+6. What are the consequences of gearbox failure?
+7. How can gearbox failure be detected using sensor data?
+8. What are the limitations of sensor data in detecting gearbox failure?
+9. Are there any other ways to detect gearbox failure besides sensor data?
+10. How often do gearbox failures occur?
+11. What are the common failure modes of the generator?
+12. What are the important parameters to monitor in the generator?
+13. What are the typical values of these parameters in normal operation?
+14. What are the acceptable ranges of these parameters?
+15. How often do these parameters need to be monitored?
+16. What are the consequences of generator failure?
+17. How can generator failure be detected using sensor data?
+18. What are the limitations of sensor data in detecting generator failure?
+19. Are there any other ways to detect generator failure besides sensor data?
+20. How often do generator failures occur?
+21. What are the common failure modes of the main shaft?
+22. What are the important parameters to monitor in the main shaft?
+23. What are the typical values of these parameters in normal operation?
+24. What are the acceptable ranges of these parameters?
+25. How often do these parameters need to be monitored?
+26. What are the consequences of main shaft failure?
+27. How can main shaft failure be detected using sensor data?
+28. What are the limitations of sensor data in detecting main shaft failure?
+29. Are there any other ways to detect main shaft failure besides sensor data?
+30. How often do main shaft failures occur?
+31. What are the common failure modes of the bearings?
+32. What are the important parameters to monitor in the bearings?
+33. What are the typical values of these parameters in normal operation?
+34. What are the acceptable ranges of these parameters?
+35. How often do these parameters need to be monitored?
+36. What are the consequences of bearings failure?
+37. How can bearings failure be detected using sensor data?
+38. What are the limitations of sensor data in detecting bearings failure?
+39. Are there any other ways to detect bearings failure besides sensor data?
+40. How often do bearings failures occur?
+41. What are the common failure modes of the blades?
+42. What are the important parameters to monitor in the blades?
+43. What are the typical values of these parameters in normal operation?
+44. What are the acceptable ranges of these parameters?
+45. How often do these parameters need to be monitored?
+46. What are the consequences of blades failure?
+47. How can blades failure be detected using sensor data?
+48. What are the limitations of sensor data in detecting blades failure?
+49. Are there any other ways to detect blades failure besides sensor data?
+50. How often do blades failures occur?
+51. What are the common failure modes of the sensors?
+52. What are the important parameters to monitor in the sensors?
+53. What are the typical values of these parameters in normal operation?
+54. What are the acceptable ranges of these parameters?
+55. How often do these parameters need to be monitored?
+56. What are the consequences of sensors failure?
+57. How can sensors failure be detected using sensor data?
+58. What are the limitations of sensor data in detecting sensors failure?
+59. Are there any other ways to detect sensors failure besides sensor data?
+60. How often do sensors failures occur?
+61. What is the sampling rate of the sensors?
+62. What is the resolution of the sensors?
+63. What is the accuracy of the sensors?
+64. What is the precision of the sensors?
+65. What is the range of the sensors?
+66. What is the noise level of the sensors?
+67. What is the drift of the sensors?
+68. What is the hysteresis of the sensors?
+69. What is the repeatability of the sensors?
+70. What is the reproducibility of the sensors?
+71. What is the linearity of the sensors?
+72. What is the stability of the sensors?
+73. What is the sensitivity of the sensors?
+74. What is the cross-sensitivity of the sensors?
+75. What is the temperature coefficient of the sensors?
+76. What is the humidity coefficient of the sensors?
+77. What is the vibration coefficient of the sensors?
+78. What is the shock coefficient of the sensors?
+79. What is the radiation coefficient of the sensors?
+80. What is the chemical coefficient of the sensors?
+81. What is the aging coefficient of the sensors?
+82. What is the failure rate of the sensors?
+83. What is the mean time between failures (MTBF) of the sensors?
+84. What is the mean time to failure (MTTF) of the sensors?
+85. What is the mean time to repair (MTTR) of the sensors?
+86. What is the downtime of the sensors?
+87. What is the maintenance cost of the sensors?
+88. What is the replacement cost of the sensors?
+89. What is the total cost of ownership (TCO) of the sensors?
+90. What is the return on investment (ROI) of the sensors?
+91. What is the payback period of the sensors?
+92. What is the internal rate of return (IRR) of the sensors?
+93. What is the net present value (NPV) of the sensors?
+94. What is the profitability index (PI) of the sensors?
+95. What is the accounting rate of return (ARR) of the sensors?
+96. What is the accounting period of the sensors?
+97. What is the accounting method of the sensors?
+98. What is the accounting policy of the sensors?
+99. What is the accounting standard of the sensors?
+100. What is the accounting software of the sensors?

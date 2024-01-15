@@ -1,0 +1,50 @@
+1. What are the typical operating conditions of a wind turbine gearbox, such as temperature, load, and speed?
+2. What are the common failure modes of wind turbine gearbox components, such as gears, bearings, and seals?
+3. What are the typical data patterns of wind turbine gearbox sensors, such as vibration, temperature, and noise?
+4. What are the relevant data features for detecting anomalies in wind turbine gearbox data, such as mean, standard deviation, skewness, and kurtosis?
+5. What are the appropriate threshold values for detecting anomalies in wind turbine gearbox data, based on the component type, operating condition, and data pattern?
+6. What are the potential sources of noise and interference in wind turbine gearbox data, such as electrical, mechanical, and environmental factors?
+7. What are the appropriate data preprocessing techniques for wind turbine gearbox data, such as normalization, filtering, and transformation?
+8. What are the appropriate data postprocessing techniques for wind turbine gearbox data, such as aggregation, visualization, and reporting?
+9. What are the potential limitations and challenges of building an anomaly detection model for wind turbine gearbox data, such as data quality, data quantity, and data complexity?
+10. What are the potential benefits and outcomes of building an anomaly detection model for wind turbine gearbox data, such as cost savings, performance improvement, and safety enhancement?
+11. What are the typical data ranges of wind turbine gearbox sensors, such as minimum, maximum, and average?
+12. What are the typical data trends of wind turbine gearbox sensors, such as increasing, decreasing, or stable?
+13. What are the typical data distributions of wind turbine gearbox sensors, such as normal, uniform, or skewed?
+14. What are the typical data correlations of wind turbine gearbox sensors, such as positive, negative, or zero?
+15. What are the typical data seasonalities of wind turbine gearbox sensors, such as daily, weekly, or monthly?
+16. What are the typical data periodicities of wind turbine gearbox sensors, such as hourly, daily, or weekly?
+17. What are the typical data cycles of wind turbine gearbox sensors, such as short-term, medium-term, or long-term?
+18. What are the typical data trends of wind turbine gearbox components, such as wear, fatigue, or corrosion?
+19. What are the typical data patterns of wind turbine gearbox components, such as degradation, failure, or replacement?
+20. What are the typical data features of wind turbine gearbox components, such as size, weight, or material?
+21. What are the typical data characteristics of wind turbine gearbox components, such as strength, stiffness, or durability?
+22. What are the typical data uncertainties of wind turbine gearbox components, such as variability, randomness, or bias?
+23. What are the typical data errors of wind turbine gearbox components, such as missing, incorrect, or irrelevant?
+24. What are the typical data outliers of wind turbine gearbox components, such as extreme, abnormal, or unusual?
+25. What are the typical data noises of wind turbine gearbox components, such as electrical, mechanical, or acoustic?
+26. What are the typical data interferences of wind turbine gearbox components, such as electromagnetic, thermal, or vibrational?
+27. What are the typical data preprocessing methods for wind turbine gearbox data, such as cleaning, smoothing, or imputation?
+28. What are the typical data filtering methods for wind turbine gearbox data, such as band-pass, low-pass, or high-pass?
+29. What are the typical data transformation methods for wind turbine gearbox data, such as logarithmic, exponential, or power?
+30. What are the typical data normalization methods for wind turbine gearbox data, such as min-max scaling, z-score scaling, or decimal scaling?
+31. What are the typical data aggregation methods for wind turbine gearbox data, such as mean, median, or mode?
+32. What are the typical data visualization methods for wind turbine gearbox data, such as line plot, scatter plot, or bar plot?
+33. What are the typical data reporting methods for wind turbine gearbox data, such as table, chart, or graph?
+34. What are the typical data validation methods for wind turbine gearbox data, such as cross-validation, bootstrapping, or hypothesis testing?
+35. What are the typical data verification methods for wind turbine gearbox data, such as accuracy, precision, or recall?
+36. What are the typical data security methods for wind turbine gearbox data, such as encryption, decryption, or hashing?
+37. What are the typical data privacy methods for wind turbine gearbox data, such as anonymization, pseudonymization, or aggregation?
+38. What are the typical data quality methods for wind turbine gearbox data, such as completeness, consistency, or timeliness?
+39. What are the typical data quantity methods for wind turbine gearbox data, such as volume, velocity, or variety?
+40. What are the typical data complexity methods for wind turbine gearbox data, such as dimensionality, connectivity, or interpretability?
+41. What are the typical data limitations of wind turbine gearbox data, such as bias, noise, or interference?
+42. What are the typical data challenges of wind turbine gearbox data, such as missing, incorrect, or irrelevant?
+43. What are the typical data opportunities of wind turbine gearbox data, such as insights, trends, or patterns?
+44. What are the typical data benefits of wind turbine gearbox data, such as cost savings, performance improvement, or safety enhancement?
+45. What are the typical data risks of wind turbine gearbox data, such as security, privacy, or quality?
+46. What are the typical data ethics of wind turbine gearbox data, such as fairness, accountability, or transparency?
+47. What are the typical data governance of wind turbine gearbox data, such as ownership, control, or access?
+48. What are the typical data management of wind turbine gearbox data, such as storage, retrieval, or processing?
+49. What are the typical data analytics of wind turbine gearbox data, such as descriptive, predictive, or prescriptive?
+50. What are the typical data applications of wind turbine gearbox data, such as monitoring, diagnosis, or optimization?

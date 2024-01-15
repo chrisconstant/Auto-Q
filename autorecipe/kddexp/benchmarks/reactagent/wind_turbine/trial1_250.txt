@@ -1,0 +1,146 @@
+1. What are the most common types of anomalies in wind turbine gearboxes?
+2. What are the causes of these anomalies?
+3. How can we detect anomalies in wind turbine gearboxes?
+4. What are the best features to use for anomaly detection in wind turbine gearboxes?
+5. What are the limitations of current anomaly detection methods for wind turbine gearboxes?
+6. How can we improve the accuracy of anomaly detection in wind turbine gearboxes?
+7. What are the best machine learning algorithms for anomaly detection in wind turbine gearboxes?
+8. How can we evaluate the performance of an anomaly detection model for wind turbine gearboxes?
+9. What are the trade-offs between false positives and false negatives in anomaly detection for wind turbine gearboxes?
+10. How can we handle imbalanced data in anomaly detection for wind turbine gearboxes?
+11. What is the distribution of load torque in a typical wind turbine gearbox?
+12. How does temperature affect the performance of a wind turbine gearbox?
+13. What are the normal vibration patterns in a wind turbine gearbox?
+14. How can we detect abnormal vibrations in a wind turbine gearbox?
+15. What are the effects of lubricant degradation on wind turbine gearbox performance?
+16. How can we monitor the condition of the lubricant in a wind turbine gearbox?
+17. What are the effects of misalignment on wind turbine gearbox performance?
+18. How can we detect misalignment in a wind turbine gearbox?
+19. What are the effects of cavitation on wind turbine gearbox performance?
+20. How can we detect cavitation in a wind turbine gearbox?
+21. What are the effects of mechanical wear on wind turbine gearbox performance?
+22. How can we detect mechanical wear in a wind turbine gearbox?
+23. What are the effects of electrical erosion on wind turbine gearbox performance?
+24. How can we detect electrical erosion in a wind turbine gearbox?
+25. What are the effects of contamination on wind turbine gearbox performance?
+26. How can we detect contamination in a wind turbine gearbox?
+27. What are the effects of moisture on wind turbine gearbox performance?
+28. How can we detect moisture in a wind turbine gearbox?
+29. What are the effects of vibration on wind turbine gearbox performance?
+30. How can we detect abnormal vibrations in a wind turbine gearbox caused by imbalance?
+31. What are the effects of imbalance on wind turbine gearbox performance?
+32. How can we detect imbalance in a wind turbine gearbox?
+33. What are the effects of misalignment on wind turbine gearbox performance?
+34. How can we detect misalignment in a wind turbine gearbox caused by bent shafts?
+35. What are the effects of bent shafts on wind turbine gearbox performance?
+36. How can we detect bent shafts in a wind turbine gearbox?
+37. What are the effects of loose bearings on wind turbine gearbox performance?
+38. How can we detect loose bearings in a wind turbine gearbox?
+39. What are the effects of damaged gears on wind turbine gearbox performance?
+40. How can we detect damaged gears in a wind turbine gearbox?
+41. What are the effects of high loads on wind turbine gearbox performance?
+42. How can we detect high loads in a wind turbine gearbox?
+43. What are the effects of low loads on wind turbine gearbox performance?
+44. How can we detect low loads in a wind turbine gearbox?
+45. What are the effects of variable loads on wind turbine gearbox performance?
+46. How can we detect variable loads in a wind turbine gearbox?
+47. What are the effects of start-stop cycles on wind turbine gearbox performance?
+48. How can we detect start-stop cycles in a wind turbine gearbox?
+49. What are the effects of temperature fluctuations on wind turbine gearbox performance?
+50. How can we detect temperature fluctuations in a wind turbine gearbox?
+51. What are the effects of humidity on wind turbine gearbox performance?
+52. How can we detect humidity in a wind turbine gearbox?
+53. What are the effects of salt mist on wind turbine gearbox performance?
+54. How can we detect salt mist in a wind turbine gearbox?
+55. What are the effects of dust on wind turbine gearbox performance?
+56. How can we detect dust in a wind turbine gearbox?
+57. What are the effects of rain on wind turbine gearbox performance?
+58. How can we detect rain in a wind turbine gearbox?
+59. What are the effects of snow on wind turbine gearbox performance?
+60. How can we detect snow in a wind turbine gearbox?
+61. What are the effects of ice on wind turbine gearbox performance?
+62. How can we detect ice in a wind turbine gearbox?
+63. What are the effects of lightning strikes on wind turbine gearbox performance?
+64. How can we detect lightning strikes in a wind turbine gearbox?
+65. What are the effects of voltage surges on wind turbine gearbox performance?
+66. How can we detect voltage surges in a wind turbine gearbox?
+67. What are the effects of electromagnetic interference on wind turbine gearbox performance?
+68. How can we detect electromagnetic interference in a wind turbine gearbox?
+69. What are the effects of radio frequency interference on wind turbine gearbox performance?
+70. How can we detect radio frequency interference in a wind turbine gearbox?
+71. What are the effects of vibration on wind turbine gearbox performance?
+72. How can we detect abnormal vibrations in a wind turbine gearbox caused by loose bearings?
+73. What are the effects of loose bearings on wind turbine gearbox performance?
+74. How can we detect loose bearings in a wind turbine gearbox caused by insufficient lubrication?
+75. What are the effects of insufficient lubrication on wind turbine gearbox performance?
+76. How can we detect insufficient lubrication in a wind turbine gearbox?
+77. What are the effects of over-lubrication on wind turbine gearbox performance?
+78. How can we detect over-lubrication in a wind turbine gearbox?
+79. What are the effects of contamination on wind turbine gearbox performance?
+80. How can we detect contamination in a wind turbine gearbox caused by dirty lubricant?
+81. What are the effects of dirty lubricant on wind turbine gearbox performance?
+82. How can we detect dirty lubricant in a wind turbine gearbox?
+83. What are the effects of water contamination on wind turbine gearbox performance?
+84. How can we detect water contamination in a wind turbine gearbox?
+85. What are the effects of chemical contamination on wind turbine gearbox performance?
+86. How can we detect chemical contamination in a wind turbine gearbox?
+87. What are the effects of particle contamination on wind turbine gearbox performance?
+88. How can we detect particle contamination in a wind turbine gearbox?
+89. What are the effects of corrosion on wind turbine gearbox performance?
+90. How can we detect corrosion in a wind turbine gearbox?
+91. What are the effects of fatigue on wind turbine gearbox performance?
+92. How can we detect fatigue in a wind turbine gearbox?
+93. What are the effects of wear on wind turbine gearbox performance?
+94. How can we detect wear in a wind turbine gearbox?
+95. What are the effects of surface distress on wind turbine gearbox performance?
+96. How can we detect surface distress in a wind turbine gearbox?
+97. What are the effects of pitting on wind turbine gearbox performance?
+98. How can we detect pitting in a wind turbine gearbox?
+99. What are the effects of spalling on wind turbine gearbox performance?
+100. How can we detect spalling in a wind turbine gearbox?
+101. What are the effects of fretting on wind turbine gearbox performance?
+102. How can we detect fretting in a wind turbine gearbox?
+103. What are the effects of scuffing on wind turbine gearbox performance?
+104. How can we detect scuffing in a wind turbine gearbox?
+105. What are the effects of plastic deformation on wind turbine gearbox performance?
+106. How can we detect plastic deformation in a wind turbine gearbox?
+107. What are the effects of delamination on wind turbine gearbox performance?
+108. How can we detect delamination in a wind turbine gearbox?
+109. What are the effects of impact loading on wind turbine gearbox performance?
+110. How can we detect impact loading in a wind turbine gearbox?
+111. What are the effects of overloading on wind turbine gearbox performance?
+112. How can we detect overloading in a wind turbine gearbox?
+113. What are the effects of underloading on wind turbine gearbox performance?
+114. How can we detect underloading in a wind turbine gearbox?
+115. What are the effects of variable loading on wind turbine gearbox performance?
+116. How can we detect variable loading in a wind turbine gearbox?
+117. What are the effects of torsional loading on wind turbine gearbox performance?
+118. How can we detect torsional loading in a wind turbine gearbox?
+119. What are the effects of axial loading on wind turbine gearbox performance?
+120. How can we detect axial loading in a wind turbine gearbox?
+121. What are the effects of radial loading on wind turbine gearbox performance?
+122. How can we detect radial loading in a wind turbine gearbox?
+123. What are the effects of cyclic loading on wind turbine gearbox performance?
+124. How can we detect cyclic loading in a wind turbine gearbox?
+125. What are the effects of transient loading on wind turbine gearbox performance?
+126. How can we detect transient loading in a wind turbine gearbox?
+127. What are the effects of shock loading on wind turbine gearbox performance?
+128. How can we detect shock loading in a wind turbine gearbox?
+129. What are the effects of vibration on wind turbine gearbox performance?
+130. How can we detect abnormal vibrations in a wind turbine gearbox caused by misalignment?
+131. What are the effects of misalignment on wind turbine gearbox performance?
+132. What are the effects of misalignment on wind turbine gearbox performance caused by bent shafts?
+133. How can we detect misalignment in a wind turbine gearbox caused by bent shafts?
+134. What are the effects of bent shafts on wind turbine gearbox performance?
+135. How can we detect bent shafts in a wind turbine gearbox?
+136. What are the effects of imbalance on wind turbine gearbox performance?
+137. How can we detect imbalance in a wind turbine gearbox?
+138. What are the effects of imbalance on wind turbine gearbox performance caused by worn bearings?
+139. How can we detect imbalance in a wind turbine gearbox caused by worn bearings?
+140. What are the effects of worn bearings on wind turbine gearbox performance?
+141. How can we detect worn bearings in a wind turbine gearbox?
+142. What are the effects of insufficient lubrication on wind turbine gearbox performance?
+143. How can we detect insufficient lubrication in a wind turbine gearbox?
+144. What are the effects of over-lubrication on wind turbine gearbox performance?
+145. How can we detect over-lubrication in a wind turbine gearbox?
+146. What are the effects of contamination on wind turbine gearbox performance?

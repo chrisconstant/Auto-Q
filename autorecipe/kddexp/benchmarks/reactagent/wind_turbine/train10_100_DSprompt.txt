@@ -1,0 +1,100 @@
+1. What are the typical failure modes of wind turbine gearbox?
+2. How can temperature sensor detect gearbox failure?
+3. How can vibration sensor detect gearbox failure?
+4. How can oil pressure sensor detect gearbox failure?
+5. How can oil level sensor detect gearbox failure?
+6. How can sound sensor detect gearbox failure?
+7. Can temperature sensor detect gearbox overheating?
+8. Can vibration sensor detect gearbox pitting?
+9. Can vibration sensor detect gearbox cracking?
+10. Can oil pressure sensor detect gearbox leakage?
+11. Can sound sensor detect gearbox vibration?
+12. Can sound sensor detect gearbox overheating?
+13. What are the typical failure modes of wind turbine generator?
+14. How can temperature sensor detect generator failure?
+15. How can vibration sensor detect generator failure?
+16. How can oil pressure sensor detect generator failure?
+17. How can oil level sensor detect generator failure?
+18. How can sound sensor detect generator failure?
+19. Can temperature sensor detect generator overheating?
+20. Can vibration sensor detect generator imbalance?
+21. Can vibration sensor detect generator misalignment?
+22. Can oil pressure sensor detect generator oil leakage?
+23. Can sound sensor detect generator vibration?
+24. Can sound sensor detect generator overheating?
+25. What are the typical failure modes of wind turbine main shaft?
+26. How can temperature sensor detect main shaft failure?
+27. How can vibration sensor detect main shaft failure?
+28. How can oil pressure sensor detect main shaft failure?
+29. How can oil level sensor detect main shaft failure?
+30. How can sound sensor detect main shaft failure?
+31. Can temperature sensor detect main shaft overheating?
+32. Can vibration sensor detect main shaft imbalance?
+33. Can vibration sensor detect main shaft misalignment?
+34. Can oil pressure sensor detect main shaft oil leakage?
+35. Can sound sensor detect main shaft vibration?
+36. Can sound sensor detect main shaft overheating?
+37. What are the typical failure modes of wind turbine bearings?
+38. How can temperature sensor detect bearing failure?
+39. How can vibration sensor detect bearing failure?
+40. How can oil pressure sensor detect bearing failure?
+41. How can oil level sensor detect bearing failure?
+42. How can sound sensor detect bearing failure?
+43. Can temperature sensor detect bearing overheating?
+44. Can vibration sensor detect bearing wear?
+45. Can vibration sensor detect bearing damage?
+46. Can oil pressure sensor detect bearing oil leakage?
+47. Can sound sensor detect bearing vibration?
+48. Can sound sensor detect bearing overheating?
+49. What are the typical failure modes of wind turbine blades?
+50. How can temperature sensor detect blade failure?
+51. How can vibration sensor detect blade failure?
+52. How can oil pressure sensor detect blade failure?
+53. How can oil level sensor detect blade failure?
+54. How can sound sensor detect blade failure?
+55. Can temperature sensor detect blade ice formation?
+56. Can vibration sensor detect blade cracks?
+57. Can vibration sensor detect blade imbalance?
+58. Can oil pressure sensor detect blade oil leakage?
+59. Can sound sensor detect blade vibration?
+60. Can sound sensor detect blade overheating?
+61. What are the typical failure modes of wind turbine brake?
+62. How can temperature sensor detect brake failure?
+63. How can vibration sensor detect brake failure?
+64. How can oil pressure sensor detect brake failure?
+65. How can oil level sensor detect brake failure?
+66. How can sound sensor detect brake failure?
+67. Can temperature sensor detect brake overheating?
+68. Can vibration sensor detect brake wear?
+69. Can vibration sensor detect brake damage?
+70. Can oil pressure sensor detect brake oil leakage?
+71. Can sound sensor detect brake vibration?
+72. Can sound sensor detect brake overheating?
+73. What are the typical failure modes of wind turbine yaw system?
+74. How can temperature sensor detect yaw system failure?
+75. How can vibration sensor detect yaw system failure?
+76. How can oil pressure sensor detect yaw system failure?
+77. How can oil level sensor detect yaw system failure?
+78. How can sound sensor detect yaw system failure?
+79. Can temperature sensor detect yaw system overheating?
+80. Can vibration sensor detect yaw system imbalance?
+81. Can vibration sensor detect yaw system misalignment?
+82. Can oil pressure sensor detect yaw system oil leakage?
+83. Can sound sensor detect yaw system vibration?
+84. Can sound sensor detect yaw system overheating?
+85. What are the typical failure modes of wind turbine pitch system?
+86. How can temperature sensor detect pitch system failure?
+87. How can vibration sensor detect pitch system failure?
+88. How can oil pressure sensor detect pitch system failure?
+89. How can oil level sensor detect pitch system failure?
+90. How can sound sensor detect pitch system failure?
+91. Can temperature sensor detect pitch system overheating?
+92. Can vibration sensor detect pitch system imbalance?
+93. Can vibration sensor detect pitch system misalignment?
+94. Can oil pressure sensor detect pitch system oil leakage?
+95. Can sound sensor detect pitch system vibration?
+96. Can sound sensor detect pitch system overheating?
+97. What are the typical failure modes of wind turbine hydraulic system?
+98. How can temperature sensor detect hydraulic system failure?
+99. How can vibration sensor detect hydraulic system failure?
+100. How can oil pressure sensor detect hydraulic system failure?
