@@ -6,6 +6,8 @@ import random
 from autorecipe.genai.utils import (
     filter_and_sort_questions,
     filter_questions_using_reference,
+    filter_questions_using_TTR,
+    filter_questions_using_Flan,
 )
 import pandas as pd
 from colorama import Fore, Style
@@ -13,6 +15,7 @@ import uuid
 from genai.schemas import ChatOptions, GenerateParams, ReturnOptions
 from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 from collections import OrderedDict
+import pandas as pd
 
 # have model specific configuration
 # QA does not need longer context to generate
@@ -284,16 +287,23 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.question_placeholder_ = (
             []
         )  # store all the questions generated in current round
+        self.question_track_round_info_placeholder_ = []  # store the question round
+
         self.genai_questions_for_sme = []  # store all the questions to be asked to SME
         self.genai_responses_from_sme = []  # store all the response from SME
+        self.genai_track_round_info_sme = []  # store all the response from SME
+
         self.genai_questions_for_ds = []  # store all the questions to be asked to DS
         self.genai_responses_from_ds = []  # store all the response from DS
+        self.genai_track_round_info_ds = []  # store all the response from DS
+
         self.genai_questions_outof_scope = []  # this is out of scope question
+        self.question_generation_track = []  # track number of questions being generated
+
         self.total_processed_question_sme = 0
         self.total_processed_question_ds = 0
         self.total_processed_answer_sme = 0
         self.total_processed_answer_ds = 0
-        self.question_generation_track = []
 
         # this is to print the all intermediate message for debug and imporovement
         self.testmode = 1
@@ -394,6 +404,14 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             f_ds_question_1, filter_threshold=0.98
         )
         self.question_placeholder_.extend(f_ds_question_2)
+
+        # apply filtering ()
+        self.question_placeholder_ = filter_questions_using_TTR(
+            self.question_placeholder_
+        )
+        self.question_placeholder_ = filter_questions_using_Flan(
+            self.question_placeholder_
+        )
 
         if self.testmode:
             print(
@@ -703,6 +721,16 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         f_tmp_DSets_2 = filter_and_sort_questions(f_tmp_DSets_1, filter_threshold=0.98)
         self.question_placeholder_.extend(f_tmp_DSets_2)
 
+        # ttr replacement
+        self.question_placeholder_ = filter_questions_using_TTR(
+            self.question_placeholder_
+        )
+        # flan replacement
+        self.question_placeholder_ = filter_questions_using_Flan(
+            self.question_placeholder_
+        )
+
+
         if self.testmode:
             print(
                 f"{Style.BRIGHT}{Fore.BLUE} Question so far in Bank : {len(unique_list)} >>> {Style.RESET_ALL}"
@@ -721,7 +749,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 f"{Style.BRIGHT}{Fore.GREEN}--------------------- Question Generation End ------------------------------.{Style.RESET_ALL}"
             )
 
-    def question_assignment(self, experiment_id):
+    def question_assignment(self, experiment_id, total_round=0):
         """_summary_ This code will iterate over all the questions in question_placeholder_
 
         :param experiment_id: _description_
@@ -759,6 +787,8 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 self.genai_questions_for_sme.append(
                     self.question_placeholder_[llm_index]
                 )
+                # adding round id
+                self.genai_track_round_info_sme.append(total_round)
                 total_sme_q = total_sme_q + 1
             else:
                 other_q1 = True
@@ -768,6 +798,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 self.genai_questions_for_ds.append(
                     self.question_placeholder_[llm_index]
                 )
+                self.genai_track_round_info_ds.append(total_round)
                 total_ds_q = total_ds_q + 1
             else:
                 other_q2 = True
@@ -795,6 +826,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         self.question_generation_track.append(
             {
+                "round": total_round,
                 "total_sme_q": total_sme_q,
                 "total_ds_q": total_ds_q,
                 "total_outside_q": total_outside_q,
@@ -852,8 +884,11 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 while total_round < round:
                     # question assignment: questions from placeholder will be assigned to SME/DS.
                     # after question_assignment round, reset the question placeholder
-                    self.question_assignment(experiment_id=experiment_id)
+                    self.question_assignment(
+                        experiment_id=experiment_id, total_round=total_round
+                    )
                     self.question_placeholder_ = []
+                    self.question_track_round_info_placeholder_ = []
 
                     # interact with SME and then talk to DS
                     self.answer_generation(experiment_id=experiment_id)
@@ -866,38 +901,70 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                         break
 
                     total_round = total_round + 1
+                    self.question_track_round_info_placeholder_ = [
+                        total_round for _ in range(len(self.question_placeholder_))
+                    ]
 
-        # this is a final step
-        df = pd.DataFrame(
-            {
-                "questions": list(
-                    OrderedDict.fromkeys(
-                        self.genai_questions_for_sme
-                        + self.genai_questions_for_ds
-                        + self.question_placeholder_
-                    )
-                )
-            }
+        # temp variable
+        model_initial = self.genai_config["model"].split("/")[1].split("-")[0]
+
+        sme_tuples = list(
+            zip(self.genai_questions_for_sme, self.genai_track_round_info_sme)
         )
-        df.to_csv(f"genai_questions_bank_{experiment_id}.csv", index=False)
+        ds_tuples = list(
+            zip(self.genai_questions_for_ds, self.genai_track_round_info_ds)
+        )
+        placeholder_tuples = list(
+            zip(self.question_placeholder_, self.question_track_round_info_placeholder_)
+        )
+
+        set1 = set(sme_tuples)
+        set2 = set(ds_tuples)
+        set3 = set(placeholder_tuples)
+        merged_set = set1.union(set2)
+        final_set = merged_set.union(set3)
+        final_list = list(final_set)
+        if self.testmode:
+            print(f"{Style.BRIGHT}{Fore.BLUE} SME Tuples >>> {Style.RESET_ALL}")
+            print(sme_tuples)
+            print(f"{Style.BRIGHT}{Fore.BLUE} DS Tuples >>> {Style.RESET_ALL}")
+            print(ds_tuples)
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} Total questions : {len(merged_set)} >>> {Style.RESET_ALL}"
+            )
+        # this is a final step
+        df = pd.DataFrame(final_list, columns=["questions", "round"])
+        df.to_csv(
+            f"genai_questions_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            index=False,
+        )
 
         df = pd.DataFrame(
             {
                 "questions": self.genai_questions_for_sme,
                 "answers": self.genai_responses_from_sme,
+                "round": self.genai_track_round_info_sme,
             }
         )
-        df.to_csv(f"genai_questions_answer_sme_bank_{experiment_id}.csv", index=False)
+        df.to_csv(
+            f"genai_questions_answer_sme_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            index=False,
+        )
 
         df = pd.DataFrame(
             {
                 "questions": self.genai_questions_for_ds,
                 "answers": self.genai_responses_from_ds,
+                "round": self.genai_track_round_info_ds,
             }
         )
-        df.to_csv(f"genai_questions_answer_ds_bank_{experiment_id}.csv", index=False)
+        df.to_csv(
+            f"genai_questions_answer_ds_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            index=False,
+        )
 
         df = pd.DataFrame(self.question_generation_track)
-        df.to_csv(f"genai_questions_track_{experiment_id}.csv", index=False)
-
-
+        df.to_csv(
+            f"genai_questions_track_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            index=False,
+        )
