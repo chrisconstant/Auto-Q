@@ -6,3 +6,6 @@ python-dotenv==1.0.0
 mlflow
 rouge-score
 ray==2.9.0
+evaluate==0.4.1
+torch 
+transformers
