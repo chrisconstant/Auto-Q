@@ -1,66 +1,132 @@
-<!-- questionnaire.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Add a link to Google's Material Design CSS file -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expert Evaluation</title>
     <style>
         body {
-            background-color: #f5f5dc; /* Pale yellow background */
-            text-align: center; /* Center-align text */
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
             margin: 20px;
         }
 
-        h1 {
-            color: #696969; /* Dim gray color for the heading */
-        }
-
-        form {
-            background-color: #fff; /* White background for the form */
-            padding: 20px;
+        .question-box {
+            background-color: #eaf3f8; /* Light blue background color for question-answer block */
+            border: 2px solid #0056b3; /* IBM Blue border color */
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block; /* Center-align the form */
-            text-align: left; /* Left-align the form content */
+            padding: 10px;
+            margin-bottom: 15px;
         }
 
-        p {
-            color: #2f4f4f; /* Dark slate gray color for questions */
-            white-space: pre-line; /* Preserve new lines in the text */
-            margin-bottom: 1em; /* One-line space between options */
+        .header {
+            color: #0056b3; /* IBM Blue color for the heading */
         }
 
-        strong {
-            font-weight: bold; /* Bold style for question */
+        .input-field {
+            margin-bottom: 20px;
         }
 
-        input[type="submit"] {
-            background-color: #4caf50; /* Green button color */
+        .input-field p {
+            margin: 0;
+        }
+
+        .input-field label {
+            color: #6f777d; /* Gray color for questions */
+        }
+
+        .input-field input[type="radio"] {
+            background-color: #0056b3; /* IBM Blue color for radio buttons */
+        }
+
+        .submit-button {
+            background-color: #0056b3; /* IBM Blue button color */
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
+        .highlight {
+            background-color: yellow; /* Set your desired highlight color */
+            font-weight: bold; /* Optionally, make the text bold or apply other styles */
+        }
+        /* Additional styles for the evaluation report box */
+        .evaluation-report-box {
+            background-color: #f5f5dc; /* Pale yellow background */
+            border: 2px solid #696969; /* Dim gray border color */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
 
-        input[type="radio"] {
-            margin-right: 5px;
+        .rule-set {
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
-    <h1>Expert Evaluation</h1>
-    <form action="/submit" method="post">
-        {% for question in questions %}
-            <p><strong>{{ question['number'] }}: {{ question['question'] }}</strong></p>
-            {% for choice in question['choices'] %}
-                <input type="radio" name="{{ question['number'] }}" value="{{ choice }}">{{ choice }}<br>
-            {% endfor %}
-        {% endfor %}
+    <div class="container">
+        <h3 class="header">Expert Evaluation</h3>
+        <!-- Evaluation Report Box -->
+        <div class="evaluation-report-box">
+            <h5>Evaluation Report Description</h5>
+            <p>LLMs like Mystral and GPTs (possible rumor) utilize the concept of Mixture of Experts (MoE) to enhance their performance. Routing is a crucial function that determines where to direct incoming requests. In this evaluation, we aim to assess the LLM's ability to logically divert questions to the appropriate expert. For instance, a question like "What is an isolation forest algorithm?" can be answered by data science experts, so the question should be routed to the Data Science Expert. The objective of this evaluation is to determine how effectively LLMs are making decisions between two experts: Data Science Expert and Subject Matter Expert. Please note that LLMs consider multiple aspects of the question and demonstrate collaborative behavior while selecting experts. For example, if a question is irrelevant to both experts, neither expert will be selected. On the other hand, if a question can be best answered by both experts, both will be selected. This evaluation will assess the LLM's ability to make such decisions effectively.
+            </p>
+            <p>
+            <img src="./DSImage.png" alt="Image Description">
+            </p>
+            <h5>Rule-set</h5>
+            <ul class="rule-set">
+                <li>We have provided 15 questions, each with four options.</li>
+                <li>Each question has been assigned a unique number</li>
+                <li>Upon completion of the evaluation, we only store the chosen response for each question, along with a unique identifier (UUID) for each evaluation.</li>
+                <li>No datetime information or location/IP data is being collected.</li>
+                <!-- Add more rules as needed -->
+            </ul>
+                <p>The following 15 questions are automatically generated by LLMs while building an 
+                    <span class="highlight">Anomaly Detection</span> Model using 
+                    <span class="highlight">IOT Sensor Data</span> for a 
+                    <span class="highlight">Wind Turbine Gearbox Asset.</span></p>
+        </div>
         <br>
-        <input type="submit" value="Submit">
-    </form>
+        <form id="evaluationForm" action="/submit" method="post">
+            {% for question in questions %}
+                <div class="question-box">
+                    <p><strong>{{ question['number'] }}: {{ question['question'] }}</strong></p>
+                    <div class="input-field">
+                        {% for choice in question['choices'] %}
+                            <p>
+                                <label>
+                                    <input type="radio" name="{{ question['number'] }}" value="{{ choice }}" class="question-option" />
+                                    <span>{{ choice }}</span>
+                                </label>
+                            </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            <br>
+            <button class="btn waves-effect waves-light submit-button" type="submit" name="action" id="submitBtn" disabled>
+                Submit <i class="material-icons right">send</i>
+            </button>
+        </form>
+
+    </div>
+    <!-- Include Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.getElementById('evaluationForm').addEventListener('input', function () {
+            var submitBtn = document.getElementById('submitBtn');
+            var radioButtons = document.querySelectorAll('.question-option:checked');
+            submitBtn.disabled = radioButtons.length !== {{ questions|length }};
+        });
+    </script>
 </body>
 </html>

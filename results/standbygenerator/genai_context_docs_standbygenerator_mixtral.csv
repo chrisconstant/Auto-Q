@@ -1,0 +1,67 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is standby generator,"
+Standby generators can experience various failure modes, including the engine failing to start, poor engine performance, loss of generator output power, overheating of the engine or alternator, transfer switch failure, and leaks in the fuel, cooling, or lubrication systems. These failures can be attributed to a lack of maintenance, wear and tear, corrosion, dirt and debris accumulation, vibration, overloading, and electrical disturbances. The failure codes for standby generators range from P0xx to P8xx, corresponding to various systems such as the engine control system, fuel system, ignition system, engine mechanical system, cooling system, exhaust system, charging system, control system, and generator output system. The degradation mechanisms for standby generators include deposit buildup in the fuel system, corrosion of the engine or alternator components, wear of the bearings and seals, leaks in the fuel, cooling, or lubrication systems, electrical erosion of the windings, and insulation degradation. The severity of the failure mode depends on the impact of the failure on the system and the consequences of the failure, while the ability to detect the failure can vary, with some failures being easily detectable through regular maintenance and inspections, while others may not be apparent until a critical situation arises. To prevent failures and ensure the reliable operation of standby generators, it is essential to implement a comprehensive maintenance program that includes regular inspections, testing, and timely replacement of worn or damaged components.","To ensure the ongoing effectiveness of an anomaly detection model for standby generators, specific data quality and drift monitoring techniques should be applied, along with appropriate data pre-processing and feature engineering techniques. Key performance indicators (KPIs) and performance metrics should be used to assess the model's effectiveness, taking into account the specific business context and impact of anomalies. Regular maintenance and usage patterns should be considered when building the model, as well as any regulatory or industry-specific standards for standby generator performance. Data post-processing and model interpretation techniques should also be applied after the model is built, with attention to data privacy and security considerations. Certain sensors may be more important than others for detecting anomalies, and key performance metrics and normal operating conditions should be monitored for anomalies. Failure modes, degradation mechanisms, and severity and detectability ratings should be evaluated to ensure the success and sustainability of the maintenance program. A comprehensive maintenance program should be implemented to prevent failures and ensure reliable operation, including inspections, testing, and component replacement. The sensor data from the IoT/OT system can be used to build an anomaly model, with careful consideration given to selecting the most relevant and informative sensor data. The anomaly model can be integrated into the overall maintenance and operation workflow, supporting decision-making and optimizing resource allocation. The performance of the anomaly model can be evaluated and validated using appropriate metrics, and the most common and critical failure modes and degradation mechanisms should be monitored for early detection and assessment of severity.","Sure, I'd be happy to help you with that! Here is some information about the failure modes and effects analysis (FMEA) of a standby generator:
+
+Asset: Standby Generator
+
+Component/Subcomponent:
+
+* Engine
+* Alternator
+* Fuel system
+* Cooling system
+* Exhaust system
+* Lubrication system
+* Control panel
+* Transfer switch
+
+Failure Mode:
+The following are some common failure modes for standby generators:
+
+* Engine fails to start
+* Engine runs poorly
+* Loss of generator output power
+* Overheating of the engine or alternator
+* Failure of the transfer switch to operate
+* Leaks in the fuel, cooling, or lubrication systems
+* Failure of the control panel to operate properly
+
+Failure Reason:
+The following are some common failure reasons for standby generators:
+
+* Lack of maintenance
+* Wear and tear
+* Corrosion
+* Dirt and debris accumulation
+* Vibration
+* Overloading
+* Electrical disturbances
+
+Failure Code:
+The following are some common failure codes for standby generators:
+
+* P0xx: Engine control system
+* P1xx: Fuel system
+* P2xx: Ignition system
+* P3xx: Engine mechanical system
+* P4xx: Cooling system
+* P5xx: Exhaust system
+* P6xx: Charging system
+* P7xx: Control system
+* P8xx: Generator output system
+
+Degradation Mechanism:
+The following are some common degradation mechanisms for standby generators:
+
+* Deposit buildup in the fuel system
+* Corrosion of the engine or alternator components
+* Wear of the bearings and seals
+* Leaks in the fuel, cooling, or lubrication systems
+* Electrical erosion of the windings
+* Insulation degradation
+
+Severity:
+The severity of the failure mode depends on the impact of the failure on the system and the consequences of the failure. For example, a failure of the engine to start may be considered a high severity, while a minor leak in the fuel system may be considered a low severity.
+
+Ability to Detect:
+"

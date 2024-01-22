@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Add a link to Google's Material Design CSS file -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You</title>
     <style>
         body {
+            font-family: 'Arial', sans-serif;
             background-color: #f5f5dc; /* Pale yellow background */
             text-align: center; /* Center-align text */
             margin: 20px;
         }
 
         h1 {
-            color: #696969; /* Dim gray color for the heading */
+            color: #0056b3; /* IBM Blue color for the heading */
         }
 
-        p {
-            text-align: left; /* Left-align the responses */
-            margin-bottom: 1em; /* One-line space between responses */
+        .question-box {
+            background-color: #eaf3f8; /* Light blue background color for question-answer block */
+            border: 2px solid #0056b3; /* IBM Blue border color */
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: left; /* Left-align the question and answers */
+        }
+
+        .question-info {
+            margin-bottom: 1em; /* One-line space between question and answers */
         }
 
         .real-persona {
@@ -42,23 +54,27 @@
     <h1>Thank You for Submitting!</h1>
     {% if responses %}
         {% for question in questions %}
-            <p><strong>{{ question['number'] }}:</strong> {{ question['question'] }}</p>
+            <div class="question-box">
+                <p class="question-info"><strong>{{ question['number'] }}:</strong> {{ question['question'] }}</p>
 
-            {# Display Real Persona and Selected Option with color coding #}
-            <p>
-                <span class="real-persona">Real Persona:</span>
-                <span class="{% if real_personas[loop.index0] == responses[question['number']] %}match{% else %}mismatch{% endif %}">
-                    {{ real_personas[loop.index0] }}
-                </span><br>
+                {# Display Real Persona and Selected Option with color coding #}
+                <p>
+                    <span class="real-persona">Real Persona:</span>
+                    <span class="{% if real_personas[loop.index0] == responses[question['number']] %}match{% else %}mismatch{% endif %}">
+                        {{ real_personas[loop.index0] }}
+                    </span><br>
 
-                <span class="selected-persona">Selected Persona:</span>
-                <span class="{% if real_personas[loop.index0] == responses[question['number']] %}match{% else %}mismatch{% endif %}">
-                    {{ responses[question['number']] }}
-                </span>
-            </p>
+                    <span class="selected-persona">Selected Persona:</span>
+                    <span class="{% if real_personas[loop.index0] == responses[question['number']] %}match{% else %}mismatch{% endif %}">
+                        {{ responses[question['number']] }}
+                    </span>
+                </p>
+            </div>
         {% endfor %}
     {% else %}
         <p>No responses submitted.</p>
     {% endif %}
+    <!-- Include Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

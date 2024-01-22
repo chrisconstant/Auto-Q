@@ -2,7 +2,76 @@ from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='wind turbine gearbox')
-obj.init_chat(round=1)
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='standby generator')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='air comporessor')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='hydroelectric power turbine')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='electrical transformer')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='induced draft fan')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='blast furnace')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='electric battery')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='industrial robot')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Substation Electrical Transformer')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Water-Cooled Condenser')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Turbine Generator')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Industrial boiler')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Industrial Oven')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Industrial Furnace')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Centrifugal Compressor')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Hydraulic Press')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Steam Turbine')
+obj.init_chat(round=2)
+
 
 # anomaly detection model
 # failure event prediction

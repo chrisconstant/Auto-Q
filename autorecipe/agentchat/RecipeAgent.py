@@ -307,7 +307,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         # this is to print the all intermediate message for debug and imporovement
         self.testmode = 1
-        ray.init()
+        ray.init(ignore_reinit_error=True, num_cpus=8)
 
     def set_asset_class(self, asset_class):
         self.asset_class = asset_class
@@ -336,6 +336,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             context=None,
             experiment_id=experiment_id,
         )
+        self.sme_response_ = sme_response
 
         if self.testmode:
             print(f"{Style.BRIGHT}{Fore.BLUE} ds_response >>> {Style.RESET_ALL}")
@@ -966,5 +967,18 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         df = pd.DataFrame(self.question_generation_track)
         df.to_csv(
             f"genai_questions_track_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            index=False,
+        )
+
+        df = pd.DataFrame(
+            {
+                "context_prompt": [self.context_prompt_],
+                "ds_context": [self.context_documents_],
+                "question_context": [self.question_context_documents_],
+                "sme_context": [self.sme_response_],
+            }
+        )
+        df.to_csv(
+            f"genai_context_docs_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
             index=False,
         )

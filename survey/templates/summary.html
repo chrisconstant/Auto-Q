@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-wise Summary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #0056b3; /* IBM Blue color for the heading */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0056b3; /* IBM Blue color for table header */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Question-wise Summary</h1>
+
+    <p>Total Number of Questions: {{ total_questions }}</p>
+    <p>Total Number of Responses: {{ total_responses }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Question Number</th>
+                <th>Selected Option</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in summary_data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
