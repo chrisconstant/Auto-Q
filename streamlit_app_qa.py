@@ -117,7 +117,7 @@ def main():
         # For now, simulating a response
         with st.chat_message("ai", avatar="#️⃣"):
             display_message("""Welcome to Auto-Q System! I am a responsible and automated AI system designed to help you generate questions. I also have a skil to select the right persona who can answer the question. \n \n In this demo, I will provide a preview of a few examples of questions and answers. Let's get started!""")
-            time.sleep(10)
+            time.sleep(7)
 
             with st.spinner("Inviting team members (Data Scientist 👨‍🔬, Subject Matter Expert 🧑‍🏭, etc)..."):
                 time.sleep(5)
@@ -150,7 +150,8 @@ def main():
         # display system messages
         with st.chat_message("ai", avatar="#️⃣"):
             display_message("Let me set the agenda! \n \n")
-            display_message(system_prompt)
+            display_message(system_prompt + '. First, generate background document for the given asset.')
+            time.sleep(2)
 
         _, col2 = st.columns([0.25,4.75])  # Adjust column widths as needed
 
@@ -158,9 +159,16 @@ def main():
             with st.chat_message("user", avatar='🧑‍🏭'):
                 display_message(sme_prompt)
 
+        time.sleep(2)
+
         with col2:
             with st.chat_message("user", avatar='👨‍🔬'):
                 display_message(ds_promt)
+
+        # display system messages
+        with st.chat_message("ai", avatar="#️⃣"):
+            display_message(f"I have generated total {len(all_question)} questions. Out of these, I have generated answer for {len(question)} questions. Based on output configuration, I will now provide generated questions and answers. Please review it with carefully!")
+            display_message("\n")
 
         # display tables
         total_ans = num_qa
@@ -169,7 +177,7 @@ def main():
         for i in range(total_ans):
 
             with st.chat_message("ai", avatar="#️⃣"):
-                display_message(question[i])
+                display_message('❓' + '\n' + question[i])
 
             _, col2 = st.columns([0.25,4.75])  # Adjust column widths as needed
 
