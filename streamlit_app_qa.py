@@ -1,5 +1,6 @@
 # app.py
 import streamlit as st
+import matplotlib.pyplot as plt
 import time
 
 system_prompt = ''
@@ -37,6 +38,27 @@ def collect_system_messages(assetname='windturbinegearbox',model='mixtral'):
     ds_promt = list(df['ds_context'])[0]
     sme_prompt = list(df['sme_context'])[0]
     
+def plot_results(total_questions = 6617, answered_questions = 488):
+    unanswered_questions = total_questions - answered_questions
+
+    unanswered_questions = total_questions - answered_questions
+
+    # Calculate the percentage of answered and unanswered questions
+    answered_percentage = (answered_questions / total_questions) * 100
+    unanswered_percentage = (unanswered_questions / total_questions) * 100
+
+    # Define the colors for the pie chart slices
+    colors = ['lightblue', 'lightcoral']
+
+    # Create the pie chart
+    fig, ax = plt.subplots(figsize=(2, 2))  # Adjust the figsize to make the pie chart smaller
+    ax.pie([answered_percentage, unanswered_percentage], 
+           labels=['Answered Questions', 'Unanswered Questions'], 
+           autopct='%1.1f%%', startangle=90, colors=colors)
+
+    ax.axis('equal')
+    st.pyplot(fig)
+
 def collect_question_answer_messages(assetname='windturbinegearbox',model='mixtral'):
     """_summary_
     """
@@ -58,8 +80,8 @@ def collect_question_answer_messages(assetname='windturbinegearbox',model='mixtr
     all_question = merged_df3['questions'].to_list()
 
 def main():
-    st.set_page_config(page_title="AI Recipe")
-    st.title("Auto-Q : Automated Multi-Agent System")
+    st.set_page_config(page_title="Question Generation AI Recipe")
+    st.title("Auto-Qx5 : Automated Multi-Agent System")
     st.markdown(
         """<style>.block-container{max-width: 66rem !important;}</style>""",
         unsafe_allow_html=True,
@@ -70,11 +92,13 @@ def main():
     </span>
     """
     st.markdown(disclaimer, unsafe_allow_html=True)
-
-    chat_container = st.container()
-    refresh_flag = False
-
     with st.sidebar:
+
+        st.markdown("## Auto-Qx5 System")
+        st.markdown("""
+            This is a sample app that demonstrates Mixture of Experts technology for a domain specific question generation.
+        """)
+
         with st.form(key="my_form"):
             st.header("Input Configuration")
             selected_asset = st.selectbox(
@@ -116,7 +140,7 @@ def main():
 
         # For now, simulating a response
         with st.chat_message("ai", avatar="#️⃣"):
-            display_message("""Welcome to Auto-Q System! I am a responsible and automated AI system designed to help you generate questions. I also have a skil to select the right persona who can answer the question. \n \n In this demo, I will provide a preview of a few examples of questions and answers. Let's get started!""")
+            display_message("""Welcome to Auto-Qx5 System! I am a responsible and automated AI system designed to help you generate questions. I also have a skil to select the right persona who can answer the question. \n \n In this demo, I will provide a preview of a few examples of questions and answers. Let's get started!""")
             time.sleep(7)
 
             with st.spinner("Inviting team members (Data Scientist 👨‍🔬, Subject Matter Expert 🧑‍🏭, etc)..."):
@@ -169,6 +193,9 @@ def main():
         with st.chat_message("ai", avatar="#️⃣"):
             display_message(f"I have generated total {len(all_question)} questions. Out of these, I have generated answer for {len(question)} questions. Based on output configuration, I will now provide generated questions and answers. Please review it with carefully!")
             display_message("\n")
+            _, col2, _ = st.columns([0.25,0.50,0.25])  # Adjust column widths as needed
+            with col2:
+                plot_results()
 
         # display tables
         total_ans = num_qa
