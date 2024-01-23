@@ -1,0 +1,39 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is standby generator,"  The standby generator is a critical asset for providing backup power in the event of a mains failure. It consists of several subcomponents, including the engine, alternator, control panel, fuel system, cooling system, exhaust system, and electrical system. Failure modes include engine failure, alternator failure, control panel failure, and fuel system failure. Engine failure can occur due to wear and tear, poor maintenance, overheating, lack of lubrication, or contamination, and can be difficult to detect before failure. Alternator failure can also occur due to wear and tear, poor maintenance, overheating, lack of lubrication, or contamination. Control panel failure can occur due to electronic component failure, power surge, moisture ingress, or poor maintenance, and can be difficult to detect before failure. Fuel system failure can occur due to clogged fuel filters, fuel leaks, fuel pump failure, or poor maintenance, and can result in reduced fuel flow, contamination, or corrosion. Regular maintenance and monitoring are crucial to preventing and predicting failures in the standby generator, and can help ensure its reliability and availability when needed.","  The standby generator system is a critical component of the facility's power infrastructure, and its failure can have significant consequences. To ensure the system's reliability, it is essential to monitor its performance and detect potential failures before they occur. The anomaly model should be trained on a dataset that includes a variety of operating conditions and failure modes, with a focus on the most common failure modes such as overheating, low oil pressure, and faulty alternator. The model should aim to achieve a high detection accuracy and low false positive rate, and be able to detect anomalies in real-time. The sensor data should be collected at regular intervals, and the granularity of the data should be sufficient to capture the relevant changes in the generator's performance. The model should be interpretable, and the results should be visualized and communicated to stakeholders in a clear and actionable manner. Additionally, domain-specific features and transforms can be applied to the sensor data to improve the accuracy of the model. The system should be designed to integrate with existing systems such as SCADA or building management systems, and there should be specific maintenance schedules and procedures in place to prevent or predict failures. Finally, the environmental conditions should be taken into account, and the model should be able to detect anomalies in various operating conditions.","  Sure, I can provide you with information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of a standby generator.
+
+Component: Standby Generator
+
+Subcomponents:
+
+1. Engine
+2. Alternator
+3. Control Panel
+4. Fuel System
+5. Cooling System
+6. Exhaust System
+7. Electrical System
+
+Failure Modes:
+
+1. Engine Failure
+	* Failure Reason: Wear and tear, poor maintenance, overheating, lack of lubrication, contamination, etc.
+	* Failure Code: ENG-01
+	* Degradation Mechanism: Increased wear on engine components, reduced lubrication, increased heat generation, etc.
+	* Severity: High
+	* Detectability: Difficult to detect before failure, can be detected through regular maintenance and monitoring
+2. Alternator Failure
+	* Failure Reason: Wear and tear, poor maintenance, overheating, lack of lubrication, contamination, etc.
+	* Failure Code: ALT-01
+	* Degradation Mechanism: Increased wear on alternator components, reduced lubrication, increased heat generation, etc.
+	* Severity: High
+	* Detectability: Difficult to detect before failure, can be detected through regular maintenance and monitoring
+3. Control Panel Failure
+	* Failure Reason: Electronic component failure, power surge, moisture ingress, poor maintenance, etc.
+	* Failure Code: CTL-01
+	* Degradation Mechanism: Increased resistance, reduced conductivity, oxidation, etc.
+	* Severity: Medium
+	* Detectability: Difficult to detect before failure, can be detected through regular maintenance and monitoring
+4. Fuel System Failure
+	* Failure Reason: Clogged fuel filter, fuel leak, fuel pump failure, poor maintenance, etc.
+	* Failure Code: FUE-01
+	* Degradation Mechanism: Reduced fuel flow, contamination, corros"

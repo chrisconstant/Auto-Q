@@ -81,7 +81,8 @@ def collect_question_answer_messages(assetname='windturbinegearbox',model='mixtr
 
 def main():
     st.set_page_config(page_title="Question Generation AI Recipe")
-    st.title("Auto-Qx5 : Automated Multi-Agent System")
+    font_size = 24
+    st.markdown(f"<h1 style='font-size:{font_size}px;'>Auto-Qx5: Automated Question Generation for Industrial Assets using Mixture of Agents</h1>", unsafe_allow_html=True)
     st.markdown(
         """<style>.block-container{max-width: 66rem !important;}</style>""",
         unsafe_allow_html=True,
@@ -103,13 +104,13 @@ def main():
             st.header("Input Configuration")
             selected_asset = st.selectbox(
                 "Select an Asset Class",
-                ["Wind Turbine Gearbox", "Standby Generator", "Chiller"],
+                ["Wind Turbine Gearbox", "Standby Generator", "Air Compressor"],
                 key="editable_dropdown_asset",
                 format_func=lambda x: x,
             )
             selected_model = st.selectbox(
                 "Select LLM",
-                ["LAMMA", "Mixtral", "Granite"],
+                ["Mixtral", "LLAMA"],
                 key="editable_dropdown_model",
                 format_func=lambda x: x,
             )
@@ -117,8 +118,8 @@ def main():
 
             with st.container():
                 st.header("Output Configuration")
-                num_qa = st.radio("How many Question-Answer pairs?", [5, 10, "All"])
-                num_questions = st.radio("How many additional Questions?", [5, 10, "All"])
+                num_qa = st.radio("How many Question-Answer pairs?", [5, "Skip", "All"])
+                num_questions = st.radio("How many additional Questions?", [5, "Skip", "All"])
 
             st.markdown(
                     "<style>div[data-testid='stFormSubmitButton'] {display: flex; justify-content: center;}</style>",
@@ -201,6 +202,8 @@ def main():
         total_ans = num_qa
         if num_qa == 'All':
             total_ans = len(question)
+        elif num_qa == 'Skip':
+            total_ans = 0
         for i in range(total_ans):
 
             with st.chat_message("ai", avatar="#️⃣"):
@@ -219,12 +222,15 @@ def main():
                         display_message(ds_answer[i])
                         
         # display questions
-        with st.chat_message("ai", avatar="#️⃣"):
-            display_message("System has generated following additional questions, which are yet pending for anaswer generation.")
-        _, col2 = st.columns([0.25,4.75])  # Adjust column widths as needed
         total_ans = num_questions
         if num_questions == 'All':
             total_ans = len(all_question)
+        elif num_questions == 'Skip':
+            total_ans = 0
+        if total_ans > 0:
+            with st.chat_message("ai", avatar="#️⃣"):
+                display_message("System has generated following additional questions, which are yet pending for anaswer generation.")
+        _, col2 = st.columns([0.25,4.75])  # Adjust column widths as needed
         for item in range(len(all_question)):
             if all_question[item] not in question:
                 total_ans = total_ans - 1

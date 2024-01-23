@@ -1,0 +1,52 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is air comporessor,"  The air compressor is a critical asset in many industrial and commercial settings, and its failure can have significant consequences. The compressor unit is the most critical component, and its failure modes include piston ring failure, which can reduce compressor efficiency, increase energy consumption, and decrease air output. The reason for this failure is often wear and tear due to high cycle fatigue, contamination, or improper installation. The severity of this failure is high, and it can be detected by monitoring compressor performance, pressure, and current draw. The electric motor is another crucial component, and its failure modes include bearing failure, which can also reduce motor efficiency, increase energy consumption, and decrease air output. The reason for this failure is often wear and tear due to high cycle fatigue, contamination, or improper installation. The severity of this failure is also high, and it can be detected by monitoring motor performance, vibration, and temperature. Other components, such as the air filter, dryer, pressure regulator, safety valve, and control panel, can also fail, but their failure modes and effects are less severe. Understanding the potential failure modes and their impact on the system is crucial for predicting and preventing failures, and regular maintenance and monitoring are essential to ensure the air compressor operates reliably and efficiently.","  The air compressor system is a critical asset for industrial operations, and its failure can have significant consequences. To predict and prevent failures, it is essential to monitor the system's performance and detect anomalies in real-time. The system's sensors provide valuable data that can be used to detect changes in pressure, temperature, flow rate, and other parameters that may indicate a failure. The most common failure modes include mechanical failures, such as worn-out bearings or valves, and electrical failures, such as short circuits or overheating. The sensors used in the system include pressure sensors, temperature sensors, current sensors, and vibration sensors, which provide data that can be used to detect anomalies and predict failures. The system's components, such as the safety valve and air filter, need regular maintenance and replacement to ensure optimal performance. The sensors need to be calibrated regularly to ensure accurate data collection. The system's failure modes, maintenance schedules, and sensor data collection rates all need to be taken into account when building an anomaly model to detect potential failures and prevent downtime.","  Sure, I can provide you with information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of an air compressor.
+
+Air Compressor Component/Subcomponent List:
+
+1. Compressor Unit
+	* Piston
+	* Cylinder
+	* Valves (inlet and outlet)
+	* Piston ring
+	* Cylinder liner
+2. Electric Motor
+	* Stator
+	* Rotor
+	* Bearings (ball or roller)
+	* Windings
+3. Air Filter
+	* Filter element
+	* Housing
+4. Dryer
+	* Desiccant cartridge
+	* Housing
+5. Pressure Regulator
+	* Diaphragm
+	* Spring
+	* Valve stem
+6. Safety Valve
+	* Valve stem
+	* Spring
+	* Seat
+7. Control Panel
+	* Electronic components (e.g., relays, contactors, sensors)
+	* Wiring and connections
+8. Air Tank
+	* Tank body
+	* Inlet and outlet valves
+	* Pressure gauge
+
+Failure Modes and Effects Analysis (FMEA):
+
+1. Compressor Unit
+	* Failure Mode: Piston ring failure
+	* Effect: Reduced compressor efficiency, increased energy consumption, and decreased air output.
+	* Reason: Wear and tear due to high cycle fatigue, contamination, or improper installation.
+	* Failure Code: 10-121
+	* Degradation Mechanism: Wear and tear, fatigue, contamination, improper installation.
+	* Severity: 8/10
+	* Detectability: 7/10 (can be detected by monitoring compressor performance, pressure, and current draw)
+2. Electric Motor
+	* Failure Mode: Bearing failure
+	* Effect: Reduced motor efficiency, increased energy consumption, and decreased air output.
+	* Reason: Wear and tear due to high cycle fatigue, contamination, or"
