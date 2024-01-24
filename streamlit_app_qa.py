@@ -171,7 +171,7 @@ def main():
 
         # For now, simulating a response
         with st.chat_message("ai", avatar="#️⃣"):
-            display_message("""Welcome to Auto-Qx5 System! I am a responsible and automated (multi-agent) AI system designed to assist you in generating domain specific questions. Additionally, I have the skill to select the right persona who can provide answers to the questions. \n \n In this demonstration, I will provide a preview of a few examples of questions and answers. Let's begin!""")
+            display_message("""Welcome to Auto-Qx5 System! I am a responsible and automated (multi-agent) AI system designed to assist you in generating domain specific questions. Additionally, I have the skill to select the right persona who can provide answers to the questions. \n \n My goal is to auto-generate a list of questions based on a selected asset class. In this demonstration, I will provide a preview of a few examples of questions and answers. Let's begin!""")
             time.sleep(7)
 
             with st.spinner("Inviting team members (Data Scientist 👨‍🔬, Subject Matter Expert 🧑‍🏭, etc)..."):
