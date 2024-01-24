@@ -38,6 +38,22 @@ def collect_system_messages(assetname='windturbinegearbox',model='mixtral'):
     ds_promt = list(df['ds_context'])[0]
     sme_prompt = list(df['sme_context'])[0]
     
+def trim_repeated_right_side(sentence, max_repetitions):
+    import re
+    # Define the regex pattern to match repeated occurrences of the last letter
+    pattern = re.compile(rf'({re.escape(sentence[-1])})\1{{{max_repetitions - 1},}}$')
+
+    # Trim the right side by replacing repeated occurrences with a single occurrence
+    result_word = pattern.sub(sentence[-1], sentence)
+
+    return result_word
+
+def reduction_factor(sentence):
+    sent1 = trim_repeated_right_side(sentence, max_repetitions=50)
+    return len(sent1)*100.0/len(sentence)
+
+
+
 def plot_results(total_questions = 6617, answered_questions = 488):
     unanswered_questions = total_questions - answered_questions
 
@@ -58,6 +74,20 @@ def plot_results(total_questions = 6617, answered_questions = 488):
 
     ax.axis('equal')
     st.pyplot(fig)
+
+def display_chat_message_warning(score):
+    # Define emoji based on the score
+    if score < 0.1:
+        score_emoji = "👎 Ignore Answer Please"
+        score_color = "red"
+        # Display chat message with score
+        st.markdown(f'<p style="color: {score_color};">{score_emoji}</p>', unsafe_allow_html=True)
+    else:
+        score_emoji = "👍 Initial Quality Check Passed"
+        score_color = "green"
+        # Display chat message with score
+        st.markdown(f'<p style="color: {score_color};">{score_emoji}</p>', unsafe_allow_html=True)
+
 
 def collect_question_answer_messages(assetname='windturbinegearbox',model='mixtral'):
     """_summary_
@@ -127,7 +157,7 @@ def main():
                 )
 
             submit_button = st.form_submit_button(label="Run")
-        
+
     # Use a container to store chat messages
     if submit_button and selected_asset and selected_model:
         st.empty()
@@ -141,7 +171,7 @@ def main():
 
         # For now, simulating a response
         with st.chat_message("ai", avatar="#️⃣"):
-            display_message("""Welcome to Auto-Qx5 System! I am a responsible and automated AI system designed to help you generate questions. I also have a skil to select the right persona who can answer the question. \n \n In this demo, I will provide a preview of a few examples of questions and answers. Let's get started!""")
+            display_message("""Welcome to Auto-Qx5 System! I am a responsible and automated (multi-agent) AI system designed to assist you in generating domain specific questions. Additionally, I have the skill to select the right persona who can provide answers to the questions. \n \n In this demonstration, I will provide a preview of a few examples of questions and answers. Let's begin!""")
             time.sleep(7)
 
             with st.spinner("Inviting team members (Data Scientist 👨‍🔬, Subject Matter Expert 🧑‍🏭, etc)..."):
@@ -192,7 +222,7 @@ def main():
 
         # display system messages
         with st.chat_message("ai", avatar="#️⃣"):
-            display_message(f"I have generated total {len(all_question)} questions. Out of these, I have generated answer for {len(question)} questions. Based on output configuration, I will now provide generated questions and answers. Please review it with carefully!")
+            display_message(f"I have generated a total of {len(all_question)} questions. Of these, I have provided answers for {len(question)} questions. Based on the output configuration, I will now provide the generated questions and answers for your review. Please carefully review them.")
             display_message("\n")
             _, col2, _ = st.columns([0.25,0.50,0.25])  # Adjust column widths as needed
             with col2:
@@ -215,12 +245,16 @@ def main():
                 with col2:
                     with st.chat_message("user", avatar='🧑‍🏭'):
                         display_message(sme_answer[i])
+                        score = reduction_factor(sme_answer[i]) 
+                        display_chat_message_warning(score)
 
             if len(ds_answer[i]) > 0:
                 with col2:
                     with st.chat_message("user", avatar='👨‍🔬'):
                         display_message(ds_answer[i])
-                        
+                        score = reduction_factor(ds_answer[i]) 
+                        display_chat_message_warning(score)
+
         # display questions
         total_ans = num_questions
         if num_questions == 'All':
