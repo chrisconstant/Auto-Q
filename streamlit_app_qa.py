@@ -77,7 +77,7 @@ def plot_results(total_questions = 6617, answered_questions = 488):
 
 def display_chat_message_warning(score):
     # Define emoji based on the score
-    if score < 0.1:
+    if score < 10.0:
         score_emoji = "👎 Ignore Answer Please"
         score_color = "red"
         # Display chat message with score
