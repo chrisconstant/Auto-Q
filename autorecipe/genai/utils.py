@@ -36,8 +36,10 @@ def get_TTR(questions):
         total_tokens = len(tokens)
         freq_dist = FreqDist(tokens)
         num_types = len(freq_dist)
-        normalized_ttr = num_types / math.sqrt(total_tokens)
-
+        if total_tokens > 0:
+            normalized_ttr = num_types / math.sqrt(total_tokens)
+        else:
+            normalized_ttr = num_types
         TTR = normalized_ttr
         # Append TTR to TTR_List
         TTR_List.append(TTR)
