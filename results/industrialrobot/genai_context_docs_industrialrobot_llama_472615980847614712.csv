@@ -1,0 +1,43 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is industrial robot,"  The industrial robot has several components, subcomponents, and failure modes that can impact its performance and longevity. The arm's joints are susceptible to wear and tear, which can lead to high cycle fatigue and difficulty in detecting without regular maintenance. The motor's windings can short circuit due to overheating, caused by excessive current draw, and the sensor's lens can crack due to impact or wear and tear, both with medium severity and difficulty in detection. The control system's programmable logic controller (PLC) can experience software bugs due to human error during programming, with gradual degradation over time and medium severity. The power supply's capacitors can fail due to aging or overvolt, with medium severity and difficulty in detection. Regular maintenance, cleaning, and software updates are crucial to preventing and predicting failures in this industrial robot.
+
+If the user provides a list of questions, the summary can be tailored to address those questions, providing specific information related to the components, subcomponents, failure modes, and severity ratings for the given asset class. For example, if the user asks about the arm's joints, the summary can highlight the high cycle fatigue failure mode, the difficulty in detecting it without regular maintenance, and the severity rating.","  The industrial robot system consists of several critical components, including the arm, motor, sensor, and control system, which must be monitored to prevent failures. The most common failure modes include sudden changes in temperature, pressure, or motion, and can be detected using sensors such as accelerometers, temperature sensors, and current sensors. The robot's programming and control system can also impact its ability to detect and respond to failures, and specific algorithms and techniques can be used to improve fault detection and diagnostics. Regular maintenance tasks, such as lubricating the arm's joints and addressing software bugs in the control system's PLC, are crucial for preventing failures. Potential failures in the arm's joints, motor, sensor, or control system can be detected using sensors or monitoring systems, and addressing these issues promptly is essential to prevent performance degradation and costly repairs. The sensor's lens crack and power supply capacitor failure are also common issues that can impact the robot's performance and must be addressed. Overheating in the motor can be prevented by ensuring proper cooling and monitoring temperature levels. By integrating an anomaly model into the existing monitoring and maintenance processes, real-time alerts can be provided to operators, and proactive maintenance can be scheduled to prevent failures and ensure optimal performance.","  Sure, I can provide information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of an industrial robot.
+
+Industrial Robot:
+
+1. Component: Arm
+	* Subcomponent: Joints
+		+ Failure mode: Wear and tear of joint bearings
+		+ Failure reason: High cycle fatigue due to repetitive movement
+		+ Failure code: 123456
+		+ Degradation mechanism: Gradual wear and tear over time
+		+ Severity: High
+		+ Detectability: Difficult to detect without regular maintenance
+2. Component: Motor
+	* Subcomponent: Windings
+		+ Failure mode: Short circuit
+		+ Failure reason: Overheating due to excessive current draw
+		+ Failure code: 234567
+		+ Degradation mechanism: Insulation degradation
+		+ Severity: High
+		+ Detectability: Difficult to detect without regular maintenance
+3. Component: Sensor
+	* Subcomponent: Lens
+		+ Failure mode: Cracking
+		+ Failure reason: Impact or wear and tear
+		+ Failure code: 345678
+		+ Degradation mechanism: Gradual degradation over time
+		+ Severity: Medium
+		+ Detectability: Difficult to detect without regular cleaning and inspection
+4. Component: Control System
+	* Subcomponent: Programmable Logic Controller (PLC)
+		+ Failure mode: Software bug
+		+ Failure reason: Human error during programming
+		+ Failure code: 456789
+		+ Degradation mechanism: Gradual degradation over time
+		+ Severity: Medium
+		+ Detectability: Difficult to detect without regular software updates and testing
+5. Component: Power Supply
+	* Subcomponent: Capacitors
+		+ Failure mode: Capacitor failure
+		+ Failure reason: Aging or overvolt"

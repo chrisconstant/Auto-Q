@@ -134,7 +134,7 @@ def main():
             st.header("Input Configuration")
             selected_asset = st.selectbox(
                 "Select an Asset Class",
-                ["Wind Turbine Gearbox", "Standby Generator", "Air Compressor"],
+                ["Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot"],
                 key="editable_dropdown_asset",
                 format_func=lambda x: x,
             )

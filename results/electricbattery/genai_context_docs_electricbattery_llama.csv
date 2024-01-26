@@ -1,0 +1,46 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is electric battery,"  The electric battery FMEA highlights five critical failure modes: positive plate failure, negative plate failure, electrolyte failure, separator failure, and terminal failure. These failures can occur due to various reasons such as corrosion, wear and tear, manufacturing defects, leakage, contamination, concentration imbalance, puncture, and mechanical stress. The degradation mechanisms include corrosion, oxidation, mechanical stress, leakage, contamination, and concentration imbalance. The severity rating for all failure modes is high, indicating a significant impact on the battery's performance and lifespan. However, the detectability rating is difficult to detect before failure, emphasizing the importance of regular maintenance and monitoring to identify potential issues before they become critical. By understanding these failure modes and mechanisms, manufacturers and users can take proactive steps to prevent or mitigate these failures, ensuring the reliable operation of electric batteries.","  The electric battery system consists of various components, including positive and negative plates, electrolyte, and separator, which can fail due to various degradation mechanisms such as corrosion, sulfation, and overcharge. The most common failure modes include positive plate failure, negative plate failure, and separator failure, which can manifest in sensor data as changes in voltage, current, temperature, and charge/discharge cycles. Seasonal and environmental factors, such as temperature and humidity, can also affect battery performance and potentially cause anomalies. To build an effective anomaly model, it is important to leverage relevant sensor data, such as voltage, current, and temperature readings, and account for known issues and defects, regulatory and compliance requirements, and specific visualization and reporting requirements. Machine learning algorithms can be used to detect anomalies, but data quality, sensor noise, and overfitting must be carefully considered. The degradation mechanisms for each failure mode are related to the sensor data, and specific patterns and trends in the data can indicate impending failures. The anomaly model should be prioritized based on the severity and detectability ratings of each failure mode, with a focus on the most critical failure modes first.","  Sure, I can provide information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of electric batteries using Failure Modes and Effects Analysis (FMEA).
+
+Electric Battery FMEA
+
+Component: Electric Battery
+
+Subcomponents:
+
+1. Positive Plate
+2. Negative Plate
+3. Electrolyte
+4. Separator
+5. Terminal
+6. Housing
+
+Failure Modes:
+
+1. Positive Plate Failure
+	* Failure Reason: Corrosion, wear and tear, manufacturing defects
+	* Failure Code: PPF-1
+	* Degradation Mechanism: Corrosion, oxidation, mechanical stress
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+2. Negative Plate Failure
+	* Failure Reason: Corrosion, wear and tear, manufacturing defects
+	* Failure Code: NPF-1
+	* Degradation Mechanism: Corrosion, oxidation, mechanical stress
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+3. Electrolyte Failure
+	* Failure Reason: Leakage, contamination, concentration imbalance
+	* Failure Code: EFL-1
+	* Degradation Mechanism: Leakage, contamination, concentration imbalance
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+4. Separator Failure
+	* Failure Reason: Puncture, wear and tear, manufacturing defects
+	* Failure Code: SFT-1
+	* Degradation Mechanism: Puncture, wear and tear, mechanical stress
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+5. Terminal Failure
+	* Failure Reason: Corrosion, wear and tear, manufacturing defects
+	* Failure Code: TF-1
+	* Degradation Mechanism: Corrosion"

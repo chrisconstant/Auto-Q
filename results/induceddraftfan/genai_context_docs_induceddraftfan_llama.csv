@@ -1,0 +1,35 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is induced draft fan,"  Sure, here's a summary of the induced draft fan's components, failure modes, and degradation mechanisms:
+
+The induced draft fan consists of several components, including fan blades, a hub, a motor, inlet guide vanes, outlet guide vanes, bearings, and seals. The fan blades are the most critical component and can fail due to breakage caused by excessive stress from imbalance, fatigue, or impact. The hub can also fail due to cracking or breaking caused by excessive torque or bending moment. The degradation mechanisms for the fan blades and hub include fatigue, corrosion, and wear and tear. The severity of these failures is high, and detectability is difficult before failure. Therefore, regular maintenance and inspection are crucial to prevent unexpected failures and ensure the asset's reliability.
+
+I hope this summary helps! Let me know if you have any further questions or if there's anything else I can assist you with.","  The induced draft fan system is a critical component of the power generation process, consisting of a fan, motor, and associated components. The fan blades, hub, inlet guide vanes, and outlet guide vanes are the primary components that require monitoring to prevent failures. The most common failure modes include blade erosion, hub damage, and bearing and seal failures, which can result in increased vibration, temperature, and pressure drop. Sensor data can be used to detect anomalies, and correlations exist between specific sensors and failure modes. External factors such as weather data, production schedules, and maintenance records can also be used to enhance the accuracy of the anomaly model. Regulations and safety guidelines must be followed, and algorithms such as machine learning and statistical modeling can be used for anomaly detection. The sensors used for anomaly detection include vibration, temperature, pressure, and flow rate sensors. The data collection rate and historical data availability vary, and seasonal patterns can affect the data. Real-time anomaly detection is critical to prevent equipment damage and ensure safety. The inlet and outlet guide vanes contribute to the fan's performance and efficiency, and their failure modes include wear and tear, and structural damage. Maintenance and inspection procedures are performed regularly, and the fan's control system and sensors monitor its performance and alert operators to potential problems. The fan's normal operating conditions include specific speed, flow rate, and pressure drop parameters, and its operating temperature and pressure range affect its performance and lifespan. Failure modes for the fan blades and hub include erosion, fatigue, and structural damage, and their root causes include design flaws, manufacturing defects, and operating conditions. Vibration and noise can affect the fan's operation and reliability, and can be mitigated or monitored through proper maintenance and balancing. The bearing and seal components used in the fan's motor can fail due to wear and tear, and their failure can cause equipment damage and safety hazards. The fan blades are typically made of steel or composite materials, and their shape and size vary depending on the fan's design. They are attached to the hub using a bolted or welded connection.","  Sure, I can provide you with information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of an induced draft fan, which is an industrial asset class.
+
+Induced Draft Fan
+
+An induced draft fan is a type of fan that uses the principle of induced flow to create a pressure difference between the inlet and outlet of the fan. It is commonly used in various industrial applications such as air handling units, heat exchangers, and dust collection systems.
+
+Components and Subcomponents
+
+1. Fan blades: The fan blades are the moving parts that create the airflow. They are typically made of aluminum, steel, or composite materials.
+2. Hub: The hub is the central part of the fan that connects the fan blades to the motor shaft.
+3. Motor: The motor is the driving component that rotates the fan blades. It can be an electric motor or a hydraulic motor.
+4. Inlet guide vanes: The inlet guide vanes are stationary blades that guide the airflow into the fan.
+5. Outlet guide vanes: The outlet guide vanes are stationary blades that guide the airflow out of the fan.
+6. Bearings: The bearings are used to support the fan shaft and allow it to rotate smoothly.
+7. Seals: The seals are used to prevent air leakage between the fan and the surrounding environment.
+
+Failure Modes and Failure Reasons
+
+1. Fan blades:
+	* Failure mode: Breakage
+	* Failure reason: Excessive stress due to imbalance, fatigue, or impact
+	* Failure code: 101
+	* Degradation mechanism: Fatigue, corrosion, or wear and tear
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+2. Hub:
+	* Failure mode: Cracking or breaking
+	* Failure reason: Excessive stress due to torque or bending moment
+	* Failure code: 102
+	* Degradation mechanism: Fatigue, corrosion, or wear and"

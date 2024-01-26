@@ -1,0 +1,50 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is electrical transformer,"  The electrical transformer is a critical asset in the power distribution system, and its failure can have significant consequences. The transformer has several subcomponents, including the core, windings, insulation, bushings, tank, and radiator, which can fail due to various reasons such as overheating, corrosion, mechanical stress, and poor quality materials. The failure modes include core failure, winding failure, insulation failure, bushing failure, tank failure, and radiator failure, with severity ratings ranging from high to low. The degradation mechanisms include aging, excessive flux, excessive current, moisture, and poor quality materials. Detectability of these failures varies, with some being difficult to detect before failure, while others can be detected through regular maintenance and inspection. Understanding the failure modes, mechanisms, and detectability is crucial for predicting and preventing transformer failures, ensuring the reliability and efficiency of the power distribution system.","  The electrical transformer system is a critical asset for power distribution, and its failure can have significant consequences. To predict and prevent failures, it is essential to have a comprehensive understanding of the system's components, failure modes, and degradation mechanisms. The typical rate of data collection for sensor data is 100 Hz, and there are seasonal and periodic patterns that need to be considered when building the anomaly model. External factors such as temperature, humidity, and vibration can affect the sensor data and need to be considered. Known issues such as sensor drift and calibration errors must be addressed. The system must comply with regulations such as IEC 61508, and stakeholders and subject matter experts should be consulted during development and deployment. The model should be able to detect past anomalies and failures, and the most critical components that require monitoring and anomaly detection include the transformer oil, windings, and insulation. The most common failure modes include overheating, arcing, and corrosion, and sensor data such as temperature, pressure, and current can help detect anomalies. The data acquisition system used to collect sensor data includes a historian, and analytical techniques such as machine learning algorithms can be used to detect anomalies. The sensors collect data every 100 milliseconds, and industry standards and best practices for transformer maintenance and inspection should be followed. The typical lead times for repairing or replacing a failed component can impact the decision-making process for predictive maintenance. The transformer's age can impact its likelihood of failure, and age-related failure modes such as aging insulation and corrosion are more common. Past failures have been detected and addressed through manual inspections and repairs, and some failure modes are more critical than others due to their potential impact on the system's functionality and safety.","  Sure, I can provide you with information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of electrical transformers using Failure Modes and Effects Analysis (FMEA).
+
+Component: Electrical Transformer
+
+Subcomponents:
+
+1. Core
+2. Windings
+3. Insulation
+4. Bushings
+5. Tank
+6. Radiator
+7. Cooling system
+8. Electrical connections
+
+Failure Modes:
+
+1. Core failure
+	* Failure reason: Overheating, corrosion, mechanical stress
+	* Failure code: C1
+	* Degradation mechanism: Aging, excessive flux, poor quality materials
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+2. Winding failure
+	* Failure reason: Overheating, mechanical stress, poor quality materials
+	* Failure code: W1
+	* Degradation mechanism: Aging, excessive current, poor quality materials
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+3. Insulation failure
+	* Failure reason: Overheating, moisture, mechanical stress
+	* Failure code: I1
+	* Degradation mechanism: Aging, excessive voltage, poor quality materials
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+4. Bushing failure
+	* Failure reason: Overheating, mechanical stress, poor quality materials
+	* Failure code: B1
+	* Degradation mechanism: Aging, excessive voltage, poor quality materials
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+5. Tank failure
+	* Failure reason: Corrosion, mechanical stress, poor quality materials
+	* Failure code: T1
+	* Degradation mechanism: Aging, excessive pressure, poor quality materials
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+6. Radiator failure
+	* Failure reason: Corrosion, mechanical stress,"

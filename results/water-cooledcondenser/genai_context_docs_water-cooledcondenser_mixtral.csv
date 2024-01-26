@@ -1,0 +1,60 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Water-Cooled Condenser,"
+The water-cooled condenser is a critical component of power generation systems, and its failure can lead to significant downtime and increased maintenance costs. The main failure modes of the condenser include leakage and erosion of condenser tubes, failure of condenser fan bearings, and leakage in the condenser shell, cooling water pumps, and circulating water system. These failures can be attributed to poor quality of components, inadequate maintenance, high temperature and pressure, aggressive cooling water, poor quality of sealing material, lack of lubrication, overloading of condenser fan, and poor quality of cooling and circulating water. The degradation mechanisms of the condenser include erosion, corrosion, and fouling of condenser tubes, which can be caused by high-velocity water droplets, aggressive cooling water, and the accumulation of impurities, respectively. The severity of these failures can range from reduced efficiency to catastrophic failure, while their detectability can vary from visual inspection to complex testing. To prevent these failures, it is crucial to ensure the quality of components, perform regular maintenance, monitor temperature and pressure, use high-quality cooling and circulating water, and implement condition monitoring and predictive maintenance strategies.","To ensure accurate anomaly detection in Water-Cooled Condensers, it's crucial to address potential data issues, such as missing values, outliers, or data quality problems. Environmental factors, like temperature and humidity, can impact condenser performance and lead to anomalies. The anomaly detection model aims to improve asset availability, reduce maintenance costs, and enhance safety. Past anomalies or failures can help identify root causes and detection methods. Common condenser failure modes include mechanical or chemical issues, and sensors should be reliable and accurate to monitor KPIs effectively. Real-time monitoring requires a sufficient sampling rate, and machine learning algorithms should be tailored to the specific asset. Regulatory and safety requirements must be considered, along with potential consequences of missed anomalies. Maintenance activities, sensor data quality, and existing data sources are all factors that can impact the anomaly detection model's performance. Evaluation and improvement of the model's performance are essential, as well as understanding the impact of cooling water quality and historical records for training and validation. The output should meet specific requirements, such as visualization and alerting. Existing sensors, regulatory requirements, and real-time monitoring methods should be taken into account during implementation.","Sure, I'd be happy to help you with that! Here is some information about the failure modes and effects analysis (FMEA) of a water-cooled condenser:
+
+Asset: Water-Cooled Condenser
+
+Component/Subcomponent:
+
+* Tube bundles
+* Condenser tubes
+* Tube sheets
+* Water boxes
+* Water distribution system
+* Condenser shell
+* Condenser fan
+* Condenser bearings
+* Sealing system
+* Cooling water pumps
+* Circulating water system
+
+Failure Mode:
+
+* Leakage in condenser tubes
+* Erosion of condenser tubes
+* Corrosion of condenser tubes
+* Fouling of condenser tubes
+* Failure of condenser fan bearings
+* Failure of sealing system
+* Leakage in the condenser shell
+* Failure of cooling water pumps
+* Leakage in the circulating water system
+
+Failure Reason:
+
+* Poor quality of condenser tubes
+* Inadequate maintenance of condenser tubes
+* High temperature and pressure
+* Aggressive cooling water
+* Poor quality of sealing material
+* Lack of lubrication in bearings
+* Overloading of condenser fan
+* Poor quality of cooling water
+* Poor quality of circulating water
+
+Failure Code:
+
+* TB-LT: Leakage in condenser tubes
+* TB-ET: Erosion of condenser tubes
+* TB-CT: Corrosion of condenser tubes
+* TB-FT: Fouling of condenser tubes
+* FB-BF: Failure of condenser fan bearings
+* SS-FL: Failure of sealing system
+* CS-LL: Leakage in the condenser shell
+* CP-FL: Failure of cooling water pumps
+* CW-FL: Leakage in the circulating water system
+
+Degradation Mechanism:
+
+* Erosion: Caused by the impingement of high-velocity water droplets on the condenser tubes
+* Corrosion: Caused"

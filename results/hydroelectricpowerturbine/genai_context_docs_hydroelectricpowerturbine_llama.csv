@@ -1,0 +1,76 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is hydroelectric power turbine,"  The hydroelectric power turbine's components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability have been analyzed using Failure Modes and Effects Analysis (FMEA). The turbine blades are susceptible to fatigue failure due to cyclic stress from water flow, with a high severity rating of 9/10 and moderate detectability of 7/10. The turbine shaft is also prone to fatigue failure due to cyclic stress from water flow, with a high severity rating of 8/10 and moderate detectability of 6/10. The turbine bearings are susceptible to wear and tear due to friction and erosion from water flow, with a high severity rating of 7/10 and high detectability of 8/10. The turbine seals are prone to leakage due to degradation of the seal material from water flow, with a moderate severity rating of 6/10 and high detectability of 9/10. Finally, the generator coils are susceptible to short circuits due to faulty insulation, with a high severity rating of 8/10 and moderate detectability of 7/10. Understanding these failure modes and mechanisms can help predict and prevent failures, ensuring the reliable operation of the hydroelectric power turbine.","  The hydroelectric power turbine system is a critical infrastructure that requires accurate anomaly detection to prevent failures and ensure optimal performance. The system is subject to various failure modes, including turbine seals' leakage, turbine bearings' wear and tear, turbine blades' fatigue, generator coil short circuits, and turbine shaft's fatigue. These failure modes can be caused by various factors, including environmental conditions, operating conditions, and component wear and tear. To detect anomalies, an IoT/OT system is used, which collects data from various sensors. The data is then processed using machine learning algorithms, and alerts are generated in real-time. The accuracy of the anomaly model is critical, and it is evaluated based on its ability to detect anomalies with a high degree of accuracy. The most critical components of the system that require anomaly detection are the turbine seals, bearings, blades, generator coils, and shaft. The desired level of accuracy for the anomaly model is high, and it is achieved by leveraging expert knowledge, additional data sources, and advanced machine learning techniques. The computational resources and time required to build and deploy the anomaly model are limited, and the model must be integrated with the existing IoT/OT system. The specific sensors that are most important in detecting anomalies include temperature, pressure, and vibration sensors. External factors, such as temperature, humidity, and vibration, can impact the accuracy of the sensor data. The consequences of an anomaly can be severe, including equipment failure, downtime, and environmental damage. The hydroelectric power turbine system is a complex system that requires a comprehensive understanding of its components, failure modes, and operating conditions to develop an accurate anomaly detection model.","  Sure, I can provide you with information on the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of a hydroelectric power turbine using Failure Modes and Effects Analysis (FMEA).
+
+Here's a sample FMEA for a hydroelectric power turbine:
+
+1. Component: Turbine Blades
+
+Subcomponent: Blade Material
+
+Failure Mode: Fatigue Failure
+
+Failure Reason: Cyclic Stress due to Water Flow
+
+Failure Code: 1411
+
+Degradation Mechanism: Material Fatigue
+
+Severity: 9/10 (High)
+
+Detectability: 7/10 (Moderate)
+
+2. Component: Turbine Shaft
+
+Subcomponent: Shaft Material
+
+Failure Mode: Fatigue Failure
+
+Failure Reason: Cyclic Stress due to Water Flow
+
+Failure Code: 1412
+
+Degradation Mechanism: Material Fatigue
+
+Severity: 8/10 (High)
+
+Detectability: 6/10 (Moderate)
+
+3. Component: Turbine Bearings
+
+Subcomponent: Bearing Material
+
+Failure Mode: Wear and Tear
+
+Failure Reason: Friction and Erosion due to Water Flow
+
+Failure Code: 1421
+
+Degradation Mechanism: Surface Wear
+
+Severity: 7/10 (High)
+
+Detectability: 8/10 (High)
+
+4. Component: Turbine Seals
+
+Subcomponent: Seal Material
+
+Failure Mode: Leakage
+
+Failure Reason: Degradation of Seal Material due to Water Flow
+
+Failure Code: 1431
+
+Degradation Mechanism: Material Degradation
+
+Severity: 6/10 (Moderate)
+
+Detectability: 9/10 (High)
+
+5. Component: Generator Coils
+
+Subcomponent: Copper Winding
+
+Failure Mode: Short Circuit
+
+Failure Reason: Faulty Insulation due"
