@@ -1,0 +1,32 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Turbine Generator,"Turbine generators, a critical component of power generation, are subject to various failure modes that can be attributed to degradation mechanisms such as thermal stress, fatigue, creep, and erosion. The most common failure modes include cracking, corrosion, or wear of the turbine rotor blades, short circuit or ground fault of the generator stator windings, leakage or fracture of the turbine casing, and failure of the excitation system's exciter. These failures can be caused by material defects, insulation degradation, overloading, high thermal stress, and foreign object damage. The severity of these failures ranges from moderate to high, with catastrophic failure being a possibility in some cases. Detecting these failures can be challenging, with some failures occurring in areas that are not easily accessible or visible, such as cracks in turbine rotor blades. However, some failures can be detected through methods such as insulation resistance testing, partial discharge monitoring, visual inspection, and pressure testing. To prevent these failures, regular maintenance, monitoring, and inspections are crucial, as well as addressing any underlying issues such as material defects or insulation degradation. By doing so, the lifespan and efficiency of turbine generators can be improved, and the risk of catastrophic failure can be minimized.","
+To evaluate the anomaly detection model for turbine generator sensors, specific performance metrics and key performance indicators (KPIs) should be used, considering factors such as environmental conditions, external events, and domain-specific knowledge. Failures typically manifest in various ways in the sensor data, such as sudden spikes, gradual increases, or oscillations, and can be caused by specific failure modes or degradation mechanisms. Constraints on computational resources and latency requirements, as well as regulatory and safety requirements, must be met. Critical components of turbine generators that can fail and cause downtime or damage include specific sensors and their normal operating ranges. Maintenance or operational practices can mask or exacerbate sensor signals, and historical sensor data is available for training and testing the anomaly detection model. The desired level of sensitivity and specificity, frequency of failures, and consequences of false positives or negatives should be considered. Known patterns or trends in the sensor data prior to a failure, future expansion plans, and specific regulatory or safety requirements are also important factors. The anomaly detection model should address any data privacy or security concerns and be designed to handle potential issues with sensor drift, noise, or data quality. The effectiveness of the model should be evaluated and measured through specific metrics, and the sampling rate of the sensor data should be consistent over time.","
+Sure, I'd be happy to help you with that! Here is some general information about the common components, subcomponents, failure modes, failure reasons, degradation mechanisms, failure codes, and the severity and detectability of failures for turbine generators:
+
+1. Component: Turbine rotor
+	* Subcomponent: Blades
+	* Failure mode: Cracking, corrosion, or wear
+	* Failure reason: High thermal stress, material defects, or foreign object damage
+	* Degradation mechanism: Fatigue, creep, or erosion
+	* Failure code: Turbine rotor blade crack/corrosion/wear
+	* Severity: High, as it can lead to catastrophic failure of the turbine
+	* Ability to detect: Difficult, as cracks can initiate and propagate in areas that are not easily accessible or visible
+2. Component: Generator stator
+	* Subcomponent: Windings
+	* Failure mode: Short circuit or ground fault
+	* Failure reason: Insulation degradation, overheating, or mechanical damage
+	* Degradation mechanism: Thermal aging, voltage stress, or vibration
+	* Failure code: Generator stator winding short/ground fault
+	* Severity: High, as it can lead to a complete loss of generation
+	* Ability to detect: Moderate, as inter-turn faults can be detected through insulation resistance testing or partial discharge monitoring
+3. Component: Turbine casing
+	* Subcomponent: Bolts or welds
+	* Failure mode: Leakage or fracture
+	* Failure reason: Overloading, corrosion, or fatigue
+	* Degradation mechanism: Creep, stress corrosion cracking, or fretting
+	* Failure code: Turbine casing leak/fracture
+	* Severity: Moderate to high, as it can lead to a loss of efficiency or a catastrophic failure
+	* Ability to detect: Moderate, as leakage or deformation can be detected through visual inspection or pressure testing
+4. Component: Generator excitation system
+	* Subcomponent: Exciter
+	* Fail"

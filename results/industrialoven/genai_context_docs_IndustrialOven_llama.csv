@@ -1,0 +1,43 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Industrial Oven,"  The industrial oven is a complex system composed of various components and subcomponents that work together to provide a controlled heating environment for various industrial processes. The main components include heating elements, temperature control systems, fans or blowers, insulation, doors or access panels, and safety features. The heating elements are susceptible to failure due to overheating, mechanical stress, or corrosion, while the temperature control system can fail due to thermocouple or temperature probe malfunction. The fans or blowers can fail due to motor malfunction, blade damage, or bearing failure, and the insulation can deteriorate over time due to refractory material degradation or mineral wool insulation settlement. The doors or access panels can fail due to hinge or bracket malfunction, locking mechanism failure, or seal or gasket degradation. Finally, safety features such as emergency stops and safety interlocks are critical to prevent accidents and ensure operator safety. Understanding the potential failure modes and mechanisms is crucial to predict and prevent failures, ensuring the reliable operation of the industrial oven.","  The industrial oven is a complex system with multiple components and sensors that require careful monitoring to prevent failures. The available sensors include temperature sensors, pressure sensors, current sensors, and others. There are specific regulations and safety guidelines that must be considered when building the anomaly detection model, such as maintaining specific temperature ranges to ensure safety. The sensor data may indicate potential failures, such as gradual temperature increases, and the most common failure modes include overheating, underheating, and mechanical failure. The industrial oven's components and their functions include heating elements, temperature control systems, fans or blowers, and insulation. Additional sources of data, such as maintenance records and production schedules, can improve the accuracy of the anomaly detection model. Failures can occur at specific times of day or production cycles, and environmental factors, such as humidity and temperature, can affect the oven's performance. The heating element, temperature control system, and fans or blowers are the most critical components for which anomaly detection is crucial. The typical data range for each sensor, specific components and subcomponents of the heating elements, and maintenance or testing procedures can impact the detection of potential failures. The industrial oven's insulation can deteriorate over time, and specific environmental factors can affect its operation. The system must comply with regulations and standards, and its components interact with each other, with potential failure modes associated with these interactions. Safety features, such as emergency stops and safety interlocks, are also important to consider. Understanding the temperature control systems and the common failure modes of thermocouples or temperature probes is crucial. By considering these factors, a comprehensive anomaly detection model can be built to predict and prevent failures in the industrial oven.","  Sure, I can provide you with information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of an industrial oven.
+
+Industrial Oven:
+
+1. Components:
+* Heating elements (e.g., electric heating elements, gas burners)
+* Temperature control system (e.g., thermocouples, temperature controllers)
+* Fans or blowers (e.g., for circulation of hot air)
+* Insulation (e.g., refractory insulation, mineral wool insulation)
+* Doors or access panels (e.g., for loading and unloading materials)
+* Safety features (e.g., emergency stops, safety interlocks)
+2. Subcomponents:
+* Heating elements:
+	+ Heating coils or resistive heating elements
+	+ Insulation around heating elements
+	+ Terminals or connections
+* Temperature control system:
+	+ Thermocouples or temperature probes
+	+ Temperature controllers or PID controllers
+	+ Wiring and connections
+* Fans or blowers:
+	+ Motors
+	+ Blades or fan wheels
+	+ Bearings or lubrication systems
+* Insulation:
+	+ Refractory materials (e.g., ceramic fiber blankets, castable refractories)
+	+ Mineral wool insulation (e.g., rock wool, glass wool)
+* Doors or access panels:
+	+ Hinges or door brackets
+	+ Locking mechanisms or latches
+	+ Seals or gaskets
+* Safety features:
+	+ Emergency stop buttons or switches
+	+ Safety interlocks (e.g., door interlocks, temperature interlocks)
+3. Failure modes:
+* Heating elements:
+	+ Failure due to overheating or thermal stress
+	+ Failure due to mechanical stress or vibration
+	+ Failure due to corrosion or oxidation
+* Temperature control system:
+	+ Failure due to thermocouple or temperature probe malfunction
+	+ Failure"

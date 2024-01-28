@@ -1,0 +1,50 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Industrial boiler,"  The industrial boiler system is a critical asset in a plant's operations, and its failure can have significant consequences. The system consists of several components, including the boiler drum, headers, tubes, tube sheets, bank tubes, superheater tubes, economizer tubes, and air preheater tubes. The most common failure modes for these components include corrosion, denting, cracking, and overheating, which can be caused by a variety of factors such as water chemistry imbalance, excessive heat, contamination, mechanical stress, impact, or vibration. The failure of these components can lead to severe consequences, including loss of steam generation, reduced plant efficiency, and even catastrophic explosions. To prevent these failures, it is essential to implement regular inspections, maintenance, and repairs, as well as monitor the system's performance and address any issues promptly. Additionally, proper training and education of operators and maintenance personnel are crucial to ensure the safe and reliable operation of the industrial boiler system.","  The boiler system failure modes can manifest in various ways in sensor data, such as unexpected changes in temperature, pressure, or flow rate. Normal operating ranges for sensors in the boiler system include temperature ranges for steam, water, and flue gas, as well as pressure and flow rate ranges for feedwater and combustion air. Seasonal and periodic patterns in sensor data can be accommodated in the anomaly model by using techniques such as seasonal decomposition or autoregressive integrated moving average (ARIMA) models. The most common failure modes in an industrial boiler system include tube leaks, overheating, and water carryover, which can be detected using machine learning algorithms such as one-class SVM or autoencoders. Existing datasets or historical data can be used to train the anomaly model, and known issues or faults in the boiler system can be incorporated into the model using techniques such as domain knowledge-based feature engineering. Regulatory or safety requirements can be adhered to by using techniques such as safety-based anomaly detection or risk-based anomaly detection. Specific machine learning algorithms or techniques that have been used successfully in similar applications include autoencoders, Isolation Forest, and Local Outlier Factor (LOF). The sensors that are most important in detecting anomalies in the boiler system include temperature sensors, pressure sensors, and flow rate sensors. The failure modes of different components of the boiler system can impact the overall performance of the system, and specific failure modes such as tube leaks can be critical. Air preheater tubes can be detected and addressed using techniques such as eddy current testing or ultrasonic testing. Typical lead times for repairing or replacing failed components in the boiler system can vary depending on the component and severity of the failure, and repairs or replacements can be prioritized based on safety and operational considerations. The boiler system can be operated within safe limits by monitoring water chemistry balance, and safety measures such as alarms and trips can be used to prevent catastrophic failures. Water chemistry balance can be monitored using sensors such as pH probes, conductivity probes, and dissolved oxygen probes, and acceptable limits for various parameters can be set based on industry standards or regulations. Real-world","  Sure, I can provide you with information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of an industrial boiler using Failure Modes and Effects Analysis (FMEA).
+
+Industrial Boiler System
+
+1. Component: Boiler Drum
+
+Subcomponents:
+
+* Shell
+* Headers
+* Tubes
+* Tube sheets
+* Bank tubes
+* Superheater tubes
+* Economizer tubes
+* Air preheater tubes
+
+Failure Modes:
+
+* Shell failure due to corrosion, denting, or cracking
+* Header failure due to corrosion, cracking, or overheating
+* Tube failure due to corrosion, cracking, or overheating
+* Tube sheet failure due to corrosion, cracking, or overheating
+* Bank tube failure due to corrosion, cracking, or overheating
+* Superheater tube failure due to corrosion, cracking, or overheating
+* Economizer tube failure due to corrosion, cracking, or overheating
+* Air preheater tube failure due to corrosion, cracking, or overheating
+
+Failure Reasons:
+
+* Corrosion due to water chemistry imbalance, excessive heat, or contamination
+* Overheating due to insufficient cooling water flow, high heat input, or malfunctioning control system
+* Denting or cracking due to mechanical stress, impact, or vibration
+* Overpressure due to malfunctioning safety valve or blockage in the steam line
+
+Failure Codes:
+
+* Shell failure: F101
+* Header failure: F102
+* Tube failure: F103
+* Tube sheet failure: F104
+* Bank tube failure: F105
+* Superheater tube failure: F106
+* Economizer tube failure: F107
+* Air preheater tube failure: F108
+
+Degradation Mechanisms:
+
+* Corrosion: Wear and tear of the component surface due to"

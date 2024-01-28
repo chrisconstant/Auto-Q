@@ -1,0 +1,50 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Substation Electrical Transformer,"  The Substation Electrical Transformer is a critical component in the power distribution system, and its failure can have significant consequences. The transformer core, windings, insulation, bushings, couplers, connectors, cooling system, and protection and control system are the main subcomponents that make up this component. Failure modes include transformer core failure, transformer winding failure, insulation failure, bushing failure, coupler failure, and connector failure. These failures can occur due to various reasons such as overheating, corrosion, mechanical stress, aging, overloading, and poor maintenance. The degradation mechanisms for these failure modes include aging, humidity, and poor maintenance. The severity rating for these failure modes is high, indicating that they can have a significant impact on the system's functionality and reliability. However, the detectability rating is difficult to detect before failure, which means that predicting these failures can be challenging. Therefore, it is crucial to have a robust maintenance and inspection plan in place to identify and address any potential issues before they become major failures. Additionally, operating the transformer within its designated specifications and ensuring proper cooling and protection can help prevent or mitigate these failure modes.","  The Substation Electrical Transformer is a critical asset in the power grid, and its failure can have significant consequences, including power outages, equipment damage, and even safety risks. To predict and prevent failures, it is essential to understand the transformer's critical components, failure modes, and degradation mechanisms. The most common failure modes include aging, corrosion, mechanical stress, and overheating, which can be caused by various factors such as environmental conditions, maintenance schedules, and other external factors. To detect anomalies and predict potential failures, an anomaly model can be developed using sensor data from the transformer. The model can be deployed and integrated into the existing monitoring and control systems, and data visualization tools can be used to present the results to stakeholders. The accuracy of the model should be evaluated, and the desired level of accuracy should be determined. The transformer's performance and reliability are critical, and specific operating conditions and parameters must be followed to prevent or mitigate failures. The protection and control system in place should also be considered when developing the anomaly model. Industry standards, regulations, and guidelines must be followed for the transformer's maintenance, inspection, and operation. The sensors used to monitor the transformer's condition can provide valuable data for the anomaly model, and the degradation mechanisms for each failure mode should be well understood. Environmental conditions, such as humidity, temperature, and air quality, can also impact the transformer's performance and potential failure modes. By considering all these factors, a comprehensive anomaly model can be developed to predict and prevent failures in the Substation Electrical Transformer.","  Sure, I can provide you with information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of a Substation Electrical Transformer using Failure Modes and Effects Analysis (FMEA).
+
+Component: Substation Electrical Transformer
+
+Subcomponents:
+
+1. Transformer core
+2. Transformer windings
+3. Insulation
+4. Bushings
+5. Couplers
+6. Connectors
+7. Cooling system
+8. Protection and control system
+
+Failure Modes:
+
+1. Transformer core failure
+	* Failure reason: Overheating, corrosion, mechanical stress
+	* Failure code: C1
+	* Degradation mechanism: Aging, overloading, poor maintenance
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+2. Transformer winding failure
+	* Failure reason: Overheating, corrosion, mechanical stress
+	* Failure code: C2
+	* Degradation mechanism: Aging, overloading, poor maintenance
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+3. Insulation failure
+	* Failure reason: Deterioration, moisture, mechanical stress
+	* Failure code: C3
+	* Degradation mechanism: Aging, humidity, poor maintenance
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+4. Bushing failure
+	* Failure reason: Overheating, corrosion, mechanical stress
+	* Failure code: C4
+	* Degradation mechanism: Aging, overloading, poor maintenance
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+5. Coupler failure
+	* Failure reason: Overheating, corrosion, mechanical stress
+	* Failure code: C5
+	* Degradation mechanism: Aging, overloading, poor maintenance
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+6. Connector failure
+	* Failure reason:"

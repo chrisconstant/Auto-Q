@@ -1,0 +1,39 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Industrial boiler,"The industrial boiler is a critical piece of equipment in many industrial processes, but it is subject to various failure modes that can lead to significant downtime and safety risks. The boiler tubes, made of different materials, can fail due to corrosion caused by exposure to corrosive gases or liquids, leading to leaks or even catastrophic failure. The boiler feed pump, which circulates water through the boiler, can suffer from excessive wear due to abrasive particles in the feedwater, leading to reduced efficiency and eventual failure. The combustion chamber, which contains the burner, can fail due to spalling of the refractory material caused by high-temperature exposure and thermal shock, which can lead to a catastrophic boiler failure. The burner nozzle can also fail due to erosion caused by the high-velocity combustion gases, leading to a reduction in combustion efficiency and increased emissions. To prevent these failures, regular inspections, such as visual examinations, dimensional checks, thickness measurements, and temperature monitoring, are essential to detect degradation before it becomes a critical failure. The severity of these failures varies, with some leading to catastrophic consequences, while others can be mitigated with timely maintenance and repairs. Overall, understanding the common failure modes, degradation mechanisms, and detection methods for industrial boiler components is crucial for ensuring safe and reliable operation.","
+To summarize, the key components of an anomaly detection model for industrial boilers include monitoring critical parameters such as temperature, pressure, and sensor data volume, velocity, and storage limitations. The model should focus on detecting known failure modes, such as leaks and temperature fluctuations, and incorporate external factors like weather conditions and maintenance schedules. The desired sensitivity and specificity levels must be balanced, and the reliability and accuracy of sensors should be considered. Historical data is crucial for training and testing the model, and the output format should be tailored to stakeholder needs. Regulatory requirements, safety standards, and KPIs must be considered in the model's design and operation. Timely maintenance, repairs, and visual inspections can mitigate common failure modes and degradation mechanisms. Access to historical sensor data, understanding erosion and corrosion mechanisms, and considering high-temperature exposure and thermal shock effects are essential for predicting and preventing failures.","
+Sure, I'd be happy to help you with that! Here is some information about the industrial boiler asset class, including its components, subcomponents, common failure modes, reasons, codes, degradation mechanisms, and the severity and detectability of those failures.
+
+Asset: Industrial Boiler
+
+Component: Boiler Tube
+
+* Subcomponent: Tube material
+* Failure Mode: Corrosion
+* Failure Reason: Exposure to corrosive gases or liquids
+* Failure Code: CR-101
+* Degradation Mechanism: Pitting, stress corrosion cracking, and/or general thinning of the tube material
+* Severity: High, as corrosion can lead to leaks or even catastrophic failure of the boiler
+* Ability to Detect: Regular inspections, such as visual examinations and thickness measurements, can detect corrosion before it becomes a critical failure.
+
+Component: Boiler Feed Pump
+* Subcomponent: Impeller
+* Failure Mode: Wear
+* Failure Reason: Abrasive particles in the feedwater
+* Faility Code: WE-201
+* Degradation Mechanism: Erosion, pitting, and/or general wear of the impeller blades
+* Severity: Medium, as excessive wear can lead to reduced pump efficiency and eventual failure
+* Ability to Detect: Regular inspections, such as visual examinations and dimensional checks, can detect wear before it becomes a critical failure.
+
+Component: Combustion Chamber
+* Subcomponent: Refractory Material
+* Failure Mode: Spalling
+* Failure Reason: High-temperature exposure and thermal shock
+* Failure Code: SP-301
+* Degradation Mechanism: Cracking, spalling, and/or degradation of the refractory material
+* Severity: High, as failure of the combustion chamber can lead to a catastrophic boiler failure
+* Ability to Detect: Regular inspections, such as visual examinations and temperature monitoring, can detect degradation before it becomes a critical failure.
+
+Component: Burner
+* Subcomponent: Nozzle
+* Failure Mode: Erosion
+* Failure"

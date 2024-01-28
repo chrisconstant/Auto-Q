@@ -11,7 +11,7 @@ from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 
 # make sure you have a .env file under genai root with
 # GENAI_KEY=<your-genai-key>
-api_key = "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg"
+api_key = "pak-KnqohFjgmJKou_eirLnIJMtbxdFzUYylnzScnLxVhY0"
 api_endpoint = "https://bam-api.res.ibm.com"
 
 SystemPrompt = """
@@ -153,15 +153,15 @@ LLMsets = [
 
 import pandas as pd
 
-df = pd.read_csv("./genai_questions.csv")
-instructions = df["questions"].to_list()[:12]
+df = pd.read_csv("../../results/windturbinegearbox/genai_questions_bank_windturbinegearbox_llama.csv")
+instructions = df["questions"].to_list()
 
 llm = LangChainInterface(
     model=LLMsets[3],
     credentials=Credentials(api_key, api_endpoint),
     params=GenerateParams(
         decoding_method="greedy",
-        max_new_tokens=1000,
+        max_new_tokens=2000,
         min_new_tokens=200,
         temperature=0.5,
         top_k=50,
@@ -197,14 +197,25 @@ for i in range(len(instructions)):
     refs.append(generate_response.remote(instructions[i]))
 
 parallel_returns = ray.get(refs)
+final_answer = []
+for i in range(len(instructions)):
+    sindex = parallel_returns[i].rfind("Answer:")
+    eindex = parallel_returns[i].rfind("(TOKENSTOP")
+    answer_text = parallel_returns[i][sindex + 7 : eindex]
+    final_answer.append(answer_text)
 
 for i in range(len(instructions)):
     print(
         "Start...-----------------------------------------------------------------------------"
     )
     print(instructions[i])
-    answer = parallel_returns[i]
+    answer = final_answer[i]
     print(answer)
     print(
         "-----------------------------------------------------------------------------...End"
     )
+
+df = pd.DataFrame([instructions,final_answer])
+df = df.T
+df.columns = ['instruction', 'final_answer']
+df.to_csv('question_type_classification_answer_windturbine_lamma.csv',index=False)
