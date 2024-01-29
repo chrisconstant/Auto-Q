@@ -1,0 +1,48 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is blast furnace,"
+""Blast furnaces, a critical asset class in the ironmaking process, are prone to various failure modes in their subcomponents, including the refractory lining, iron ore feed system, coke and fuel delivery system, hot blast system, refractory-lined raceway, cooling system, dampers and vents, ducts and elbows, and stack. Failure modes such as erosion, cracking, spalling, blockage, leakage, and insufficient pressure or cooling are common and can be caused by high temperature, thermal shock, mechanical stress, wear and tear, corrosion, or mechanical failure. The severity of these failures ranges from reduced efficiency to complete shutdown, and their detectability varies, with some failures being easily detectable through regular inspections and others requiring advanced diagnostic tools. To prevent these failures, it is crucial to implement regular maintenance, monitoring, and inspection programs, addressing issues such as buildup of material, wear and tear, and mechanical failure before they escalate. Understanding the failure modes, reasons, codes, degradation mechanisms, severity, and detectability of these failures is essential for predicting and preventing failures in blast furnaces, ensuring their safe and efficient operation.""","
+The blast furnace is subject to increased wear and tear and failure due to high temperatures, corrosive materials, and cyclical loading. Sensors in the blast furnace may be sensitive to changes in operating conditions, with a risk of sensor drift or failure that could impact the anomaly detection model's accuracy. The blast furnace is currently maintained using historical data on past failures and maintenance activities, with temperature, pressure, and gas flow rates being key performance indicators for anomaly detection. Failure modes not captured by sensor data include erosion, cracking, and spalling, requiring additional data sources. The blast furnace's typical operating range is within specific temperature and pressure thresholds, with consequences of failure including potential harm to the ironmaking process. False positives or negatives in anomaly detection can have significant consequences, and sensor data is collected frequently with time-based patterns. Regulatory and safety requirements must be considered in developing and deploying the anomaly model, with specific performance metrics and KPIs used to evaluate its performance. Operational and maintenance procedures may need modification based on anomaly model results, and specific sensors, data preprocessing techniques, and integration requirements must be considered. The most common failure modes in each blast furnace subcomponent, their impact on the ironmaking process, and their causes must be evaluated. The anomaly model must be accurate, reliable, and able to detect failures early, with specific data privacy and security requirements considered. Historical data on failure frequency, duration, and contributing factors must be evaluated, with current monitoring and inspection practices and their limitations considered.","
+Sure, I'd be happy to help you with that! Here is some information about the blast furnace asset class, including its components, subcomponents, common failure modes, reasons, codes, degradation mechanisms, and the severity and detectability of those failures.
+
+**Component:** Blast Furnace
+
+**Subcomponents:**
+
+* Refractory lining
+* Iron ore feed system
+* Coke and fuel delivery system
+* Hot blast system
+* Refractory-lined raceway
+* Cooling system
+* Dampers and vents
+* Ducts and elbows
+* Stack
+
+**Failure Modes, Reasons, and Codes:**
+
+1. **Refractory lining failure:**
+* Failure Mode: Erosion, cracking, or spalling of the refractory lining
+* Failure Reason: High temperature, thermal shock, or mechanical stress
+* Failure Code: RL-1
+2. **Iron ore feed system failure:**
+* Failure Mode: Blockage or uneven flow of iron ore
+* Failure Reason: Buildup of material, wear and tear, or mechanical failure
+* Failure Code: IO-2
+3. **Coke and fuel delivery system failure:**
+* Failure Mode: Leakage or blockage
+* Failure Reason: Wear and tear, corrosion, or mechanical failure
+* Failure Code: CF-3
+4. **Hot blast system failure:**
+* Failure Mode: Leakage or insufficient pressure
+* Failure Reason: Erosion, corrosion, or mechanical failure
+* Failure Code: HB-4
+5. **Refractory-lined raceway failure:**
+* Failure Mode: Erosion, cracking, or spalling of the refractory lining
+* Failure Reason: High temperature, thermal shock, or mechanical stress
+* Failure Code: RR-1
+6. **Cooling system failure:**
+* Failure Mode: Leakage or insufficient cooling
+* Failure Reason: Erosion, corrosion, or mechanical failure
+* Failure Code: C-5
+7. **Dampers and vents failure:**
+* Failure Mode: Leakage or ins"

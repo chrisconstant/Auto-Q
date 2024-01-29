@@ -1,0 +1,56 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is induced draft fan,"The Induced Draft Fan is a critical component of many industrial systems, with various components that can fail in different ways. The impeller, which drives the airflow, can experience erosion, cracking, or bending due to dirt accumulation, excessive vibration, or mechanical stress. The motor can overheat, experience electrical faults, or suffer mechanical failure due to overloading, voltage fluctuations, or poor maintenance. The drive shaft can misalign, bend, or break due to mechanical stress, misalignment, or wear. The bearings can wear out, overheat, or fail to lubricate due to insufficient lubrication, contamination, or excessive load. The seals can leak, wear, or fail due to wear, corrosion, or poor installation. The inlet and outlet dampers can fail to open or close properly or warp due to mechanical failure, wear, or corrosion. The control system can experience software bugs, hardware failure, or communication errors. The failure codes for these components are F001 to F007, and the degradation mechanisms include erosion, fatigue, corrosion, overheating, electrical erosion, mechanical wear, bending, torsion, wear, pitting, spalling, leakage, and corrosion. Understanding these failure modes, reasons, codes, and degradation mechanisms is crucial for predicting and preventing failures in Induced Draft Fans, ensuring their reliable and efficient operation.","
+To summarize, the key focus for an anomaly detection system for the Induced Draft Fan should be on monitoring specific KPIs, such as vibration, temperature, and pressure, with appropriate threshold values. External factors, such as weather conditions and maintenance schedules, should also be taken into account. The main types of failures include mechanical, electrical, and operational issues, which can be caused by various factors, including wear, contamination, and excessive load. Current sensors provide measurements such as temperature, vibration, and pressure, but their accuracy and reliability may vary. Maintenance practices, such as inspections, cleaning, lubrication, and part replacement, are crucial to prevent failures and should be performed regularly based on the specific failure rates, mean time to failure, and mean time to repair. Recommended maintenance practices to prevent failures include software updates, hardware checks, communication checks, cleaning, balancing, alignment checks, inspections, electrical checks, and part replacement. Common causes of failures include damper failures due to mechanical failure, wear, and corrosion, bearing failures due to wear, contamination, and excessive load, and seal failures due to leakage, corrosion, and wear.","
+Sure, I'd be happy to help you with that! Here is the required information for the Induced Draft Fan asset class:
+
+Asset: Induced Draft Fan
+
+Component/Subcomponent:
+
+* Impeller
+* Motor
+* Drive shaft
+* Bearings
+* Seals
+* Inlet and outlet dampers
+* Control system
+
+Failure Mode:
+
+* Impeller: Erosion, cracking, or bent blades
+* Motor: Overheating, electrical faults, or mechanical failure
+* Drive shaft: Misalignment, bent or broken shaft
+* Bearings: Wear, overheating, or failure to lubricate
+* Seals: Leakage, wear, or failure
+* Inlet and outlet dampers: Failure to open or close properly, warping
+* Control system: Software or hardware failure, communication errors
+
+Failure Reason:
+
+* Impeller: Dirt accumulation, excessive vibration, or mechanical stress
+* Motor: Overloading, voltage fluctuations, or poor maintenance
+* Drive shaft: Mechanical stress, misalignment, or wear
+* Bearings: Insufficient lubrication, contamination, or excessive load
+* Seals: Wear, corrosion, or poor installation
+* Inlet and outlet dampers: Mechanical failure, wear, or corrosion
+* Control system: Software bugs, hardware failure, or communication errors
+
+Failure Code:
+
+* Impeller: F001
+* Motor: F002
+* Drive shaft: F003
+* Bearings: F004
+* Seals: F005
+* Inlet and outlet dampers: F006
+* Control system: F007
+
+Degradation Mechanism:
+
+* Impeller: Erosion, fatigue, or corrosion
+* Motor: Overheating, electrical erosion, or mechanical wear
+* Drive shaft: Bending, torsion, or wear
+* Bearings: Wear, pitting, or spalling
+* Seals: Leakage, wear, or corrosion
+* Inlet and outlet dampers: Wear, corrosion, or mechanical failure
+* Control system: Degradation of software or"

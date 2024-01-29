@@ -1,0 +1,46 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Centrifugal Compressor,"  The Centrifugal Compressor is a critical asset in the process industry, and its failure can have significant consequences. The compressor has several subcomponents, including the impeller, compressor housing, inlet guide vanes, diffuser, volute, bearings, shaft, and motor. The Failure Modes and Effects Analysis (FMEA) identifies several potential failure modes, including impeller failure, compressor housing failure, inlet guide vanes failure, diffuser failure, and bearing failure. These failures can occur due to various reasons such as overloading, erosion, corrosion, fatigue, and wear and tear. The degradation mechanisms include progressive wear and tear, material fatigue, and sudden impact. The severity and detectability of these failures vary, with some being difficult to detect before failure, while others can be detected through regular maintenance and inspection. Understanding the potential failure modes and their impact on the compressor's performance is crucial for predicting and preventing failures, ensuring the reliability and efficiency of the asset. Regular maintenance, inspection, and monitoring of the compressor's performance can help prevent unexpected failures and reduce downtime.","  The centrifugal compressor's performance changes over time, with seasonal patterns affecting the anomaly model. Environmental factors like temperature, humidity, and pressure impact sensor data and operating conditions like flow rate, pressure, and speed. Maintenance records and historical data can inform the anomaly model. The model will be integrated with existing systems, considering regulatory and safety considerations. Common failure modes include bearing failure, impeller failure, and diffuser failure, which can be detected by sensors monitoring vibrations, temperature, and pressure. Specific lubrication procedures and maintenance tasks can help prevent or detect failures earlier. The compressor's performance is affected by environmental factors, and certain operating conditions increase the likelihood of certain failure modes. The sensors provide data on vibrations, temperature, pressure, and flow rate, collected at varying frequencies. Failure modes identified in the FMEA affect the compressor's performance, and degradation mechanisms progress over time. Warning signs include increased vibrations or noise levels. Impeller failure is more critical than diffuser failure. Industry standards and regulations must be considered when monitoring and maintaining the compressor.","  Sure, I can provide you with information on the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of a Centrifugal Compressor using Failure Modes and Effects Analysis (FMEA).
+
+Component: Centrifugal Compressor
+
+Subcomponents:
+
+1. Impeller
+2. Compressor housing
+3. Inlet guide vanes
+4. Diffuser
+5. Volute
+6. Bearings (thrust and journal)
+7. Shaft
+8. Coupling
+9. Motor
+
+Failure Modes:
+
+1. Impeller failure
+	* Failure reason: Overloading, erosion, corrosion, fatigue
+	* Failure code: 101
+	* Degradation mechanism: Progressive wear and tear, material fatigue, or sudden impact
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+2. Compressor housing failure
+	* Failure reason: Overloading, corrosion, fatigue
+	* Failure code: 102
+	* Degradation mechanism: Progressive wear and tear, material fatigue, or sudden impact
+	* Severity: High
+	* Detectability: Difficult to detect before failure
+3. Inlet guide vanes failure
+	* Failure reason: Erosion, corrosion, fatigue
+	* Failure code: 103
+	* Degradation mechanism: Progressive wear and tear, material fatigue, or sudden impact
+	* Severity: Medium
+	* Detectability: Difficult to detect before failure
+4. Diffuser failure
+	* Failure reason: Erosion, corrosion, fatigue
+	* Failure code: 104
+	* Degradation mechanism: Progressive wear and tear, material fatigue, or sudden impact
+	* Severity: Medium
+	* Detectability: Difficult to detect before failure
+5. Bearing failure (thrust and journal)
+	* Failure reason: Wear and tear, corrosion, fatigue
+	* Failure code:"

@@ -1,0 +1,57 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Steam Turbine," Steam turbines, a common industrial asset, are subject to various failure modes, including rotor imbalance or bowing, blade cracking or loss, journal bearing failure, seal failure, erosion or corrosion of turbine blades, inadequate lubrication of bearings, rotor rub, and thermal stress damage. These failures can be attributed to improper maintenance or installation, exceeding design limits, lack of proper lubrication, vibration or shock loading, corrosive or erosive environment, fatigue due to cyclic loading, or overheating. The degradation mechanisms include wear and tear due to friction, corrosion due to moisture or chemical exposure, erosion due to particulate matter, fatigue due to cyclic loading, and creep due to high temperatures. Catastrophic failure of the steam turbine can lead to significant downtime and repair costs, as well as collateral damage to other equipment or facilities. Regular inspections and maintenance, non-destructive testing methods, and real-time monitoring of operating conditions and performance can help detect and prevent some failure modes, making preventive maintenance crucial for steam turbines to ensure their reliability and longevity.","To summarize, the anomaly detection model for steam turbines should undergo data preprocessing steps such as normalization and outlier removal. Failures typically manifest in sensor data through common patterns or trends, and regulatory, safety, legal, or ethical requirements must be met. The desired sensitivity and specificity of the model should balance trade-offs, and specific performance metrics or evaluation criteria should be used. Critical sensors for detecting failures include those that measure temperature, pressure, and vibration, and the expected frequency and duration of failures vary by component. The model should incorporate user needs, preferences, or expectations, and historical data or domain knowledge can validate or refine the model. Interactions or dependencies between failure modes or degradation mechanisms can affect the sensitivity or specificity of sensor data. The typical ranges and distributions of sensor readings under normal operating conditions should be considered, as well as the potential consequences of false positives or false negatives. Environmental factors such as temperature, humidity, pressure, and vibration can affect sensor readings and failure modes. The most common and critical failure modes for steam turbines in the industry should be identified and understood in terms of their manifestation in sensor data.","Sure, I'd be happy to help you with that! Here's some information about the failure modes and effects analysis (FMEA) of a steam turbine, which is a common type of industrial asset.
+
+**Component/Subcomponent:** Steam Turbine
+
+**Failure Mode:**
+
+* Rotor imbalance or bowing
+* Blade cracking or loss
+* Journal bearing failure
+* Seal failure
+* Erosion or corrosion of turbine blades
+* Inadequate lubrication of bearings
+* Rotor rub
+* Thermal stress damage
+
+**Failure Reason:**
+
+* Improper maintenance or installation
+* Exceeding design limits
+* Lack of proper lubrication
+* Vibration or shock loading
+* Corrosive or erosive environment
+* Fatigue due to cyclic loading
+* Overheating
+
+**Failure Code:**
+
+* F001 - Rotor imbalance or bowing
+* F002 - Blade cracking or loss
+* F003 - Journal bearing failure
+* F004 - Seal failure
+* F005 - Erosion or corrosion of turbine blades
+* F006 - Inadequate lubrication of bearings
+* F007 - Rotor rub
+* F008 - Thermal stress damage
+
+**Degradation Mechanism:**
+
+* Wear and tear due to friction
+* Corrosion due to moisture or chemical exposure
+* Erosion due to particulate matter
+* Fatigue due to cyclic loading
+* Creep due to high temperatures
+
+**Severity:**
+
+* Catastrophic failure of the steam turbine can lead to significant downtime and repair costs.
+* Collateral damage to other equipment or facilities can also occur.
+
+**Ability to Detect:**
+
+* Regular inspections and maintenance can help detect and prevent some failure modes.
+* Vibration analysis, thermal imaging, and other non-destructive testing methods can be used to detect degradation or damage.
+* Real-time monitoring of operating conditions and performance can also provide early warning of potential failures.
+
+Preventive maintenance is crucial for steam turbines to ensure their reliability and longe"

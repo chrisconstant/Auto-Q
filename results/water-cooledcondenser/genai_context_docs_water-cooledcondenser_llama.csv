@@ -1,0 +1,24 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Water-Cooled Condenser,"  Sure, here's a summary of the main components, failure modes, and degradation mechanisms for a Water-Cooled Condenser:
+
+The Water-Cooled Condenser is a heat exchanger that transfers heat from a fluid to a cooling medium, and it consists of several main components, including the shell, tubes, tube sheets, baffles, supports, inlet and outlet headers, and cooling water system. Failure modes for this asset class include tube failure due to corrosion, erosion, or mechanical damage, tube sheet failure due to corrosion, erosion, or mechanical damage, and baffle failure due to corrosion, erosion, or mechanical damage. Degradation mechanisms include corrosion, erosion, and mechanical damage, which can be caused by various factors such as impurities in the cooling water, high fluid velocities, abrasive particles, overpressure, or vibration. Understanding these failure modes and degradation mechanisms is crucial for predicting and preventing failures in Water-Cooled Condensers, and regular inspections and maintenance can help identify and address these issues before they become major problems.","  The Water-Cooled Condenser is a critical asset in various industries, and its failure can have significant consequences. External factors such as operating conditions, environmental factors, and maintenance practices can affect its performance and reliability. Key sensor inputs used to monitor the condenser's performance include temperature, pressure, and flow rate. Existing rules and thresholds for detecting anomalies include pressure and temperature limits, but these have been ineffective in detecting early signs of failure. The most common failure modes include tube failures, corrosion, and erosion, which can be caused by design or operating conditions. Tube sheets and baffles are critical components that enhance heat transfer but can fail due to corrosion or mechanical stress. Real-world failures have been caused by factors such as inadequate maintenance, design flaws, and manufacturing defects. Understanding the correlations between sensor inputs and failure modes is crucial for building an effective anomaly model. The cooling water system's flow rates, temperatures, and pressure levels also play a significant role in the condenser's performance. To prevent failures, it is essential to monitor the condenser's performance regularly, maintain proper operating conditions, and address any issues promptly.","  Sure, I can provide you with information on the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of a Water-Cooled Condenser.
+
+Water-Cooled Condenser:
+
+A Water-Cooled Condenser is a type of heat exchanger that is used to cool a fluid, such as water or air, by transferring heat from the fluid to a cooling medium, such as water or air. It is commonly used in power plants, chemical plants, and other industrial facilities.
+
+Components and Subcomponents:
+
+1. Shell: The shell is the outer casing of the condenser and is typically made of carbon steel or stainless steel.
+2. Tubes: The tubes are the inner tubes of the condenser where the fluid flows through and are typically made of copper, aluminum, or stainless steel.
+3. Tube sheets: The tube sheets are the plates that separate the tubes and provide a surface for the fluid to flow across.
+4. Baffles: The baffles are the plates that are installed inside the shell to direct the fluid flow and increase the heat transfer rate.
+5. Supports: The supports are the structures that hold the tubes and tube sheets in place.
+6. Inlet and outlet headers: The inlet and outlet headers are the connections that allow the fluid to enter and exit the condenser.
+7. Cooling water system: The cooling water system is responsible for circulating the cooling water through the condenser.
+
+Failure Modes and Failure Reasons:
+
+1. Tube failure: Tube failure can occur due to corrosion, erosion, or mechanical damage. Corrosion can be caused by the presence of impurities in the cooling water, while erosion can be caused by high fluid velocities or abrasive particles in the fluid. Mechanical damage can be caused by overpressure or vibration.
+2. Tube sheet failure: Tube sheet failure can occur due to corrosion, erosion, or mechanical damage, similar to tube failure.
+3. Baffle failure: Baffle failure can occur due to corrosion, eros"

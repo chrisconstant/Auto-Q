@@ -1,0 +1,26 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Centrifugal Compressor,"
+In a centrifugal compressor, there are several critical components that can fail, leading to catastrophic consequences. The compressor impeller can crack or fracture due to high mechanical stress, fatigue, or corrosion, resulting in a high severity failure mode that can lead to complete compressor failure. This type of failure is difficult to detect beforehand, but techniques such as vibration analysis, thermography, and eddy current testing can be used to detect early signs of damage. The compressor bearings can also fail due to insufficient lubrication, misalignment, contamination, or overloading, leading to degradation of the bearing material and potential damage to other components. This failure mode has a medium to high severity, and while it can be detected through routine inspections, vibration analysis, and temperature monitoring, early detection is crucial to prevent further damage. Lastly, the seal system can experience leakage or loss of compression due to wear, corrosion, damage to the seals, or misalignment of the compressor components. This failure mode has a medium to high severity, as it can lead to loss of efficiency, increased energy consumption, and environmental impact. It can be detected through routine inspections, pressure and flow measurements, and acoustic emissions monitoring. Overall, predicting and preventing failures in a centrifugal compressor requires a proactive approach, including regular inspections, monitoring of key performance indicators, and timely maintenance interventions.","
+The centrifugal compressor's performance is currently monitored through key performance indicators (KPIs) such as pressure, temperature, and flow rate. The anomaly detection model aims to provide early warnings of potential failures, reduce downtime, and improve overall performance. Additional information about the compressor or sensor data, past failures, specific sensors, known trends, sampling rate, environmental conditions, and failure mode manifestations can help build a more effective model. The centrifugal compressor's common failure modes include mechanical wear, corrosion, and instability, which can manifest as sudden spikes, gradual changes, or periodic patterns in the sensor data. Best practices from similar systems and established thresholds can improve the monitoring and maintenance strategy. Communication of the compressor's health and performance to stakeholders, as well as the decision-making process for maintenance interventions, should be well-defined. Upgrade or replacement plans, techniques for detecting early signs of damage, and factors that can exacerbate the risk of failure are also important considerations. The centrifugal compressor's performance is typically monitored using tools or software for data analysis, and historical failure cases and regulatory requirements should be taken into account. Specific sensor types are used for detecting anomalies in the compressor's impeller, bearings, and seal system, and routine inspections are performed at specified intervals. The maintenance intervention process for each failure mode and its duration should be well-understood, and regulatory or safety requirements related to monitoring and maintenance should be adhered to."," Sure, I'd be happy to help with that! For a centrifugal compressor, here is an example of the information you might gather during a failure modes and effects analysis (FMEA):
+
+1. Component: Compressor impeller
+	* Failure mode: Cracking or fracturing of the impeller blades
+	* Failure reason: High mechanical stress, fatigue, or corrosion
+	* Failure code: Fracture (FR)
+	* Degradation mechanism: Material degradation due to high-speed operation, vibration, or corrosive environment
+	* Severity: High, as this can lead to catastrophic failure of the compressor
+	* Ability to detect: Difficult to detect before failure, as cracks can initiate and grow without being visible during routine inspections. However, techniques such as vibration analysis, thermography, and eddy current testing can be used to detect early signs of damage.
+2. Component: Compressor bearings
+	* Failure mode: Bearing failure or excessive wear
+	* Failure reason: Insufficient lubrication, misalignment, contamination, or overloading
+	* Failure code: Bearing failure (BF)
+	* Degradation mechanism: Degradation of the bearing material due to wear, corrosion, or fatigue
+	* Severity: Medium to high, as bearing failure can lead to damage to other components and downtime
+	* Ability to detect: Can be detected through routine inspections, vibration analysis, and temperature monitoring. However, early detection is critical to prevent further damage.
+3. Component: Seal system
+	* Failure mode: Leakage or loss of compression
+	* Failure reason: Wear, corrosion, or damage to the seals, or misalignment of the compressor components
+	* Failure code: Leakage (LK)
+	* Degradation mechanism: Degradation of the seal material due to wear, corrosion, or fatigue
+	* Severity: Medium to high, as leakage can lead to loss of efficiency, increased energy consumption, and environmental impact
+	* Ability to detect: Can be detected through routine inspections, pressure and flow measurements, and ac"

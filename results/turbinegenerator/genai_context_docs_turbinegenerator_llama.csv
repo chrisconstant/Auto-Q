@@ -1,0 +1,41 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Turbine Generator,"  The Turbine Generator is a critical asset in power generation plants that converts steam or gas energy into electrical energy. It consists of a turbine and a generator coupled together. The turbine expands the high-pressure steam or gas, which rotates the generator's shaft, producing electricity. The components and subcomponents of the Turbine Generator include the turbine blades, rotor, stator, bearings, and seals, and the generator's stator windings, rotor windings, brushes, slip rings, and bearings. Failure modes and effects analysis (FMEA) identifies potential failure modes, their effects, degradation mechanisms, severity, and detectability. For the Turbine Generator, failure modes include blade failure due to fatigue or erosion, rotor failure due to shaft cracking or bearing failure, and stator failure due to winding faults or insulation failure. These failures can result in loss of power generation, increased vibration, noise, heat, and smoke. Degradation mechanisms include fatigue, erosion, corrosion, overheating, arcing, and wear. Severity ratings are high for all failure modes, and detectability is difficult to detect before failure. FMEA provides crucial insights for predicting and preventing failures in the Turbine Generator, enabling proactive maintenance strategies to ensure reliable operation and minimize downtime.","  The Turbine Generator's control system interacts with sensors and data streams through various control loops and algorithms, which could impact the anomaly model. The desired level of sensitivity for the model is high, with specific thresholds and criteria to determine anomalies. External factors, such as environmental conditions and data acquisition system issues, may affect the sensor data and cause false positives or negatives. Known faults or issues with the sensors or data acquisition system should be considered when building the model. The normal operating ranges for sensor data vary under different operating conditions, and seasonal patterns should be taken into account. The most critical components to monitor for anomalies are the rotor, stator, and turbine blades. Common failure modes include shaft cracking, bearing failure, winding faults, insulation failure, and blade fatigue or erosion. Industry standards, regulations, and guidelines must be followed when monitoring and maintaining the generator. Failure modes can impact surrounding equipment or systems, such as the power grid. The specific sensors used monitor temperature, pressure, vibration, and other parameters, and data is collected at various frequencies. The data is used to detect anomalies or predict potential failures. Warning signs of imminent failure include increased vibration, temperature changes, and abnormal sound. Degradation mechanisms, such as wear and tear, corrosion, and fatigue, impact the generator's efficiency and reliability. Insulation failure and winding faults can cause the stator to fail, while blade fatigue or erosion can cause turbine blade failure.","  Sure, I can provide you with information on the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability of a Turbine Generator using Failure Modes and Effects Analysis (FMEA).
+
+Turbine Generator Overview:
+A Turbine Generator is a critical asset in power generation plants that converts the energy of steam or gas into electrical energy. It consists of a turbine and a generator coupled together. The turbine expands the high-pressure steam or gas, which then rotates the generator's shaft, producing electricity.
+
+Components and Subcomponents:
+
+1. Turbine:
+	* Blades
+	* Rotor
+	* Stator
+	* Bearings
+	* Seals
+2. Generator:
+	* Stator windings
+	* Rotor windings
+	* Brushes
+	* Slip rings
+	* Bearings
+
+Failure Modes and Effects:
+
+1. Turbine:
+	* Blade failure due to fatigue or erosion (Failure Code: T1)
+		+ Effect: Loss of power generation, increased vibration, and noise
+		+ Degradation Mechanism: Fatigue, erosion, or corrosion
+		+ Severity: High
+		+ Detectability: Difficult to detect before failure
+	* Rotor failure due to shaft cracking or bearing failure (Failure Code: T2)
+		+ Effect: Loss of power generation, increased vibration, and noise
+		+ Degradation Mechanism: Fatigue, corrosion, or wear
+		+ Severity: High
+		+ Detectability: Difficult to detect before failure
+	* Stator failure due to winding faults or insulation failure (Failure Code: T3)
+		+ Effect: Loss of power generation, increased heat, and smoke
+		+ Degradation Mechanism: Overheating, arcing, or corrosion
+		+ Severity: High
+		+ Detectability: Difficult to detect before failure
+2. Generator:
+	* Stator winding failure due to overhe"

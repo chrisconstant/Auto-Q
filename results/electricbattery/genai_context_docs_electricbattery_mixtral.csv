@@ -1,0 +1,27 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is electric battery,"The electric battery is a complex system with various components, subcomponents, and failure modes. The battery cells, which consist of an anode, cathode, and separator, can fail due to short circuits caused by dendrite growth, separator puncture, or impurity contamination. This failure mode is severe, as it can lead to a fire or explosion. The Battery Management System (BMS) is responsible for monitoring and controlling the battery cells' charging and discharging. The BMS can fail due to a communication failure caused by faulty wiring, corrosion, or damage to the Electronic Control Unit (ECU). This failure mode is medium severity, as it can cause the BMS to malfunction, leading to reduced battery performance. The battery pack, which includes interconnects, terminals, and a cooling system, can fail due to thermal runaway caused by overcharging, overdischarging, or short-circuiting. This failure mode is high severity, as it can lead to a fire or explosion. To predict and prevent failures, regular inspections and testing are necessary to detect signs of degradation or damage. The severity and detectability of each failure mode are critical factors to consider when developing a predictive maintenance strategy.","
+An electric battery system's key parameters typically monitored include physical characteristics such as temperature and voltage, as well as operational metrics such as state of charge and efficiency. Anomalies in sensor data can indicate potential failure modes, but these may not always fall within specific threshold ranges and may require advanced statistical techniques for detection. A balance must be struck between sensitivity and specificity in the anomaly detection model, with false positives and false negatives having significant consequences. External factors such as temperature and humidity can affect battery performance, and should be considered in model-building. Specific requirements for the anomaly detection model include real-time capability, computational resource constraints, and regulatory or safety considerations. Common failure modes in battery systems include thermal runaway, degradation of capacity, and reduced lifespan. Performance metrics for the anomaly detection model may include accuracy, precision, and recall. Seasonality, cyclical behavior, and known patterns in sensor data should be taken into account when building the model. Failure modes manifest in sensor data through changes in measured parameters or patterns in time series data. External factors such as environmental conditions or usage patterns could impact battery performance or failure rates. Specific sensor data available for each battery component includes temperature, voltage, and current readings. Regulatory or safety requirements must be considered when developing the anomaly detection model. Early signs of failure or degradation may be indicated by known patterns or trends in sensor data. Sensor measurements are taken at frequent intervals with a specified granularity for time series data.","
+ Sure, I'd be happy to help with that!
+
+When it comes to an electric battery, there are several components, subcomponents, and failure modes to consider. Here are some examples:
+
+1. **Component: Battery Cells**
+	* **Subcomponent: Anode, Cathode, and Separator**
+	* **Failure Mode: Short Circuit**
+		+ **Failure Reason:** Dendrite growth, separator puncture, or impurity contamination can cause a short circuit.
+		+ **Failure Code:** SC-1, SC-2, SC-3
+		+ **Degradation Mechanism:** Degradation of the anode and cathode materials, as well as the separator, can lead to short circuits.
+		+ **Severity:** High, as a short circuit can cause a fire or explosion.
+		+ **Ability to Detect:** Routine inspections and testing can detect signs of degradation, but detecting a short circuit in progress can be challenging.
+2. **Component: Battery Management System (BMS)**
+	* **Subcomponent: Electronic Control Unit (ECU), Temperature Sensors, Voltage Sensors, and Current Sensors**
+	* **Failure Mode: Communication Failure**
+		+ **Failure Reason:** Faulty wiring, corrosion, or damage to the ECU can cause a communication failure.
+		+ **Failure Code:** CF-1, CF-2, CF-3
+		+ **Degradation Mechanism:** Over time, the ECU can degrade due to environmental factors, such as temperature and humidity.
+		+ **Severity:** Medium, as a communication failure can cause the BMS to malfunction, leading to reduced battery performance.
+		+ **Ability to Detect:** Regular inspections and testing can detect signs of degradation or damage to the ECU.
+3. **Component: Battery Pack**
+	* **Subcomponent: Interconnects, Terminals, and Cooling System**
+	* **Failure Mode: Thermal Runaway**
+		+ **Failure Reason:** Overcharging, overdischarging, or short-circuiting can cause a"

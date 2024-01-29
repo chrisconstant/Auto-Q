@@ -1,0 +1,32 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Hydraulic Press,"  The Hydraulic Press is a critical asset in the manufacturing process, and its failure can have significant consequences. The Hydraulic System, which includes the Hydraulic Pump, Cylinder, and Valve, is the most critical component of the press. The Pump Motor is susceptible to failure due to overheating, worn bearings, or electrical failure, which can lead to the failure of the entire Hydraulic System. The Cylinder Rod is also prone to failure due to wear and tear, corrosion, or overloading, which can result in the failure of the Hydraulic System. The Hydraulic Valve, specifically the Valve Spool, is also vulnerable to failure due to wear and tear, corrosion, or contamination. The degradation mechanisms for these components include wear and tear on moving parts, corrosion, overloading, and contamination. The severity rating for these failure modes is high, indicating that they can have a significant impact on the production process. Regular maintenance checks and monitoring of temperature and pressure readings can help detect potential failures before they occur. Overall, it is crucial to regularly inspect and maintain the Hydraulic Press to prevent unexpected failures and minimize downtime.","  The Hydraulic Press operates by using a hydraulic system to generate pressure and move a piston, which can be used to perform various tasks such as cutting, forming, and pressing. Normal operating conditions include a temperature range of 15-40°C and a pressure range of 100-700 bar. The machine is typically monitored using sensors that measure pressure, temperature, and flow rate. Anomalies can be detected by monitoring for unusual patterns in these sensor readings, such as sudden changes in pressure or temperature. The Hydraulic Press is composed of several critical components, including the hydraulic pump, cylinder, and valve. These components can fail due to various reasons such as worn bearings, overloading, contamination, and overheating. Common failure modes include electrical failure in the hydraulic pump, worn or corroded cylinder rods, and stuck or leaking valves. Regular maintenance tasks include checking and replacing worn parts, and ensuring proper alignment and lubrication. Industry standards and regulations, such as OSHA and ISO guidelines, should be followed to ensure safe operation and maintenance of the machine.","  Sure, I can help you with that. A Hydraulic Press is a piece of equipment that uses hydraulic pressure to generate a force that can be used to shape, cut, or form various materials.
+
+Here's a list of components, subcomponents, failure modes, failure reasons, failure codes, and degradation mechanisms for a Hydraulic Press, along with their severity and detectability via preventive maintenance:
+
+1. Hydraulic System:
+	* Component: Hydraulic Pump
+	* Subcomponent: Pump Motor
+	* Failure Mode: Pump Motor Failure
+	* Failure Reason: Overheating, worn bearings, or electrical failure
+	* Failure Code: 10-121
+	* Degradation Mechanism: Wear and tear on moving parts, overheating, contamination
+	* Severity: High
+	* Detectability: Difficult to detect before failure, but can be monitored through temperature and pressure readings, and regular maintenance checks
+2. Hydraulic System:
+	* Component: Hydraulic Cylinder
+	* Subcomponent: Cylinder Rod
+	* Failure Mode: Cylinder Rod Failure
+	* Failure Reason: Worn or damaged rod, corrosion, or overloading
+	* Failure Code: 10-122
+	* Degradation Mechanism: Wear and tear on moving parts, corrosion, overloading
+	* Severity: High
+	* Detectability: Difficult to detect before failure, but can be monitored through pressure readings, and regular maintenance checks
+3. Hydraulic System:
+	* Component: Hydraulic Valve
+	* Subcomponent: Valve Spool
+	* Failure Mode: Valve Spool Failure
+	* Failure Reason: Worn or damaged spool, corrosion, or contamination
+	* Failure Code: 10-123
+	* Degradation Mechanism: Wear and tear on moving parts, corrosion, contamination
+	* Severity: High
+	"

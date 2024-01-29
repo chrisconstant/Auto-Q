@@ -1,0 +1,79 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is hydroelectric power turbine,"
+The failure modes of a hydroelectric power turbine include cracks or fractures in the turbine blades, bending or twisting of the turbine shaft, wear or failure of the bearings, leaks in the seals, malfunction or failure of the hydro-mechanical governors, malfunction or failure of the control systems, and overheating or failure of the generator. These failures can be caused by fatigue due to cyclic loading, overloading or excessive loading, corrosion due to moisture or chemical attack, wear and tear due to friction or erosion, manufacturing defects, insufficient lubrication, or inadequate maintenance or inspection. The severity of these failures can range from low to high, with high severity failures leading to critical failures and system shutdown. The ability to detect these failures can vary, with some failures being easily detectable through regular inspection and maintenance, while others may be difficult to detect until failure occurs. Preventive maintenance measures include regular inspection and maintenance of the turbine blades, shaft, bearings, seals, governors, control systems, and generators, lubrication management to prevent wear and corrosion, monitoring of vibration, temperature, and other operating parameters to detect degradation, and implementation of redundancy and protection systems to minimize the impact of failures. It is important to conduct a detailed FMEA for each specific application to ensure accurate and effective risk assessment and management.","
+To summarize, the anomaly detection model for the hydroelectric power turbine should focus on key performance indicators such as temperature, pressure, and RPM to distinguish between normal and anomalous behavior, with the goal of detecting anomalies in real-time for timely action. External factors such as weather conditions, water levels, and maintenance activities should be considered, and historical data on past failures, maintenance, and sensor data should be used to train and validate the model. Common failure modes include erosion, corrosion, and mechanical wear, and the desired sensitivity and specificity of the model should be balanced with the constraints and limitations of data availability and privacy. Sensors that are more sensitive to these failure modes should be prioritized, and the manifestation of failure modes in sensor data should be identified to improve the model's accuracy. The expected outcome of the model is to improve the overall maintenance and monitoring of the hydroelectric power turbine system, with the consequences of failure being significant in terms of safety, financial, and reputational impact. The current frequency and scope of inspections and maintenance should be considered, and the most common causes of failure should be identified to inform the model's development. The reliability and accuracy of sensors in detecting early signs of failure should also be evaluated.","
+Sure, I'd be happy to help you with that! Here is some information about the failure modes and effects analysis (FMEA) of a hydroelectric power turbine:
+
+Asset: Hydroelectric Power Turbine
+
+Component/Subcomponent:
+
+* Turbine blades
+* Turbine shaft
+* Bearings
+* Seals
+* Hydro-mechanical governors
+* Control systems
+* Generator
+
+Failure Mode:
+
+* Turbine blade cracks or fractures
+* Turbine shaft bending or twisting
+* Bearings wear or failure
+* Seal leaks
+* Governor malfunction or failure
+* Control system malfunction or failure
+* Generator overheating or failure
+
+Failure Reason:
+
+* Fatigue due to cyclic loading
+* Overloading or excessive loading
+* Corrosion due to moisture or chemical attack
+* Wear and tear due to friction or erosion
+* Manufacturing defects
+* Insufficient lubrication
+* Inadequate maintenance or inspection
+
+Failure Code:
+
+* FTF (failure to function)
+* FTS (failure to start)
+* FTR (failure to run)
+* FTT (failure to track)
+* FTE (failure to energize)
+* FTP (failure to produce)
+* FTPS (failure to protect)
+
+Degradation Mechanism:
+
+* Degradation due to wear and tear
+* Degradation due to corrosion
+* Degradation due to fatigue
+* Degradation due to erosion
+* Degradation due to overloading
+* Degradation due to insufficient lubrication
+* Degradation due to manufacturing defects
+
+Severity:
+
+* Low (minor impact on system performance)
+* Medium (significant impact on system performance)
+* High (critical failure leading to system shutdown)
+
+Ability to Detect:
+
+* High (easily detectable through regular inspection and maintenance)
+* Medium (detectable through periodic inspection and maintenance)
+* Low (difficult to detect until failure occurs)
+
+Preventive Maintenance:
+
+* Regular inspection and maintenance of turbine blades, shaft, bearings, seals, governors, control systems, and generators
+* Lubrication management to prevent wear and corrosion
+* Monitoring of vibration, temperature, and other operating parameters to detect degradation
+* Replacement of components before they fail
+* Implementation of redundancy and protection systems to minimize the impact of failures
+
+Note: The above information is a general guideline and may vary depending on the specific design and operating conditions of the hydroelectric power turbine. It is important to conduct a detailed FMEA for each specific application to ensure accurate and effective risk assessment and management."

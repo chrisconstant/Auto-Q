@@ -1,0 +1,41 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is electrical transformer,"The electrical winding of a transformer is a critical component that can fail due to insulation breakdown or overheating, leading to high severity consequences such as catastrophic failure. Insulation breakdown can occur due to voltage stress, thermal stress, or contamination, while overheating can result from overloading, poor ventilation, or insulation breakdown. These failures can be caused by electrical and thermal degradation of the insulation material, increased resistance due to oxidation, or mechanical degradation of the conductor. Detecting these failures can be challenging, as it often requires partial discharge or specialized testing. The core of a transformer can also fail due to disbonding or overheating, resulting in reduced efficiency or increased noise. Core disbonding can be caused by vibration, thermal stress, or mechanical stress, while overheating can be due to overfluxing, poor ventilation, or mechanical degradation. The degradation mechanisms for core failures include fatigue, corrosion, or delamination of the core laminations. Detecting these failures can be moderately feasible through visual inspection or partial discharge testing. Overall, it is crucial to predict and prevent failures in transformers by monitoring temperature, conducting regular inspections, and implementing preventive maintenance measures.","
+To summarize, the anomaly detection model for electrical transformers in the IoT/OT system should consider any known interactions or dependencies with other assets or systems, and focus on detecting common patterns, trends, or abrupt changes in sensor data that indicate failure modes. The model should be trained and tested using historical sensor data, if available, and aim to prevent safety risks, equipment damage, and financial losses by detecting and acting on anomalies in a timely manner. The model should help achieve specific performance or reliability targets, and alert the maintenance team through preferred methods such as email, SMS, or dashboard notifications. The model should prioritize sensors or sensor data types that are critical for detecting anomalies, and comply with any regulatory or compliance requirements for monitoring and reporting on transformer performance and anomalies. The model should account for typical operating conditions, seasonality or periodic patterns, and known failure modes, while considering any computational resource constraints and model complexity. The model should monitor key performance metrics, collect sensor data at specified intervals, and aim for desired false positive and false negative rates. The transformer's temperature, ventilation, partial discharge, voltage stress, thermal stress, mechanical degradation, core inspections, resistance, and visual indicators should be monitored and integrated with the anomaly detection model to improve overall transformer health. The desired outcomes of the model should be clearly defined, and its performance evaluated using appropriate metrics."," Sure, I'd be happy to help with that! For an electrical transformer, here is some information about the components, subcomponents, failure modes, failure reasons, failure codes, degradation mechanisms, severity, and detectability:
+
+Component: Electrical winding
+
+* Subcomponent: Conductor
+* Failure mode: Insulation breakdown
+* Failure reason: Voltage stress, thermal stress, or contamination
+* Failure code: WO-IN-01 (winding insulation breakdown)
+* Degradation mechanism: Electrical and thermal degradation of the insulation material
+* Severity: High (can lead to catastrophic failure)
+* Ability to detect: Low (usually requires partial discharge or other specialized testing)
+
+Component: Electrical winding
+
+* Subcomponent: Conductor
+* Failure mode: Overheating
+* Failure reason: Overloading, poor ventilation, or insulation breakdown
+* Failure code: WO-OH-01 (winding overheating)
+* Degradation mechanism: Increased resistance due to oxidation, thermal degradation of the insulation material, or mechanical degradation of the conductor
+* Severity: High (can lead to catastrophic failure)
+* Ability to detect: Moderate (can be detected through temperature monitoring or thermal imaging)
+
+Component: Core
+
+* Subcomponent: Core lamination
+* Failure mode: Disbonding
+* Failure reason: Vibration, thermal stress, or mechanical stress
+* Failure code: CO-DB-01 (core disbonding)
+* Degradation mechanism: Fatigue, corrosion, or delamination of the core laminations
+* Severity: Moderate (can lead to reduced efficiency or increased noise)
+* Ability to detect: Moderate (can be detected through visual inspection or partial discharge testing)
+
+Component: Core
+
+* Subcomponent: Core lamination
+* Failure mode: Overheating
+* Failure reason: Overfluxing, poor ventilation, or mechanical degradation
+* Failure code: CO-OH-01 (core overheating)
+* Degradation mechanism: Increased temperature due"
