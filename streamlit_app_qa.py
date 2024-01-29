@@ -226,7 +226,7 @@ def main():
             display_message("\n")
             _, col2, _ = st.columns([0.25,0.50,0.25])  # Adjust column widths as needed
             with col2:
-                plot_results()
+                plot_results(total_questions = len(all_question), answered_questions = len(question))
 
         # display tables
         total_ans = num_qa
