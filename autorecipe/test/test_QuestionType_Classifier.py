@@ -114,7 +114,6 @@ Answer: The final answer is Concept. (TOKENSTOP)
 extraQ = """Question: Is Michael Jackson an African American?
 Answer: Verification
 
-
 Question: Does a Mercedes dealer have to unlock a locked radio?
 Answer: Verification
 
