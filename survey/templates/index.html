@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add a link to Google's Material Design CSS file -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5dc; /* Pale yellow background */
+            text-align: center; /* Center-align text */
+            margin: 20px;
+        }
+
+        h1 {
+            color: #0056b3; /* IBM Blue color for the heading */
+        }
+
+        .survey-container {
+            background-color: #eaf3f8; /* Light blue background color for question-answer block */
+            border: 2px solid #0056b3; /* IBM Blue border color */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left; /* Left-align the survey content */
+        }
+
+        .btn-next {
+            background-color: #0056b3; /* IBM Blue color for the button */
+            color: #ffffff; /* White text color */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Auto-Q Survey!</h1>
+
+    <div class="survey-container">
+        <form action="/redirect_survey" method="post">
+            <p>Select your preference:</p>
+            <label>
+                <input type="radio" name="survey_option" value="option1">
+                <span>Question Classifier Survey</span>
+            </label>
+            <label>
+                <input type="radio" name="survey_option" value="option2">
+                <span>Question Topic Survey</span>
+            </label>
+
+            <br><br>
+            <button class="btn btn-next" type="submit">Next</button>
+        </form>
+    </div>
+
+    <!-- Include Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

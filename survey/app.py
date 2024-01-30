@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, distinct
 
@@ -27,6 +27,39 @@ def read_questions_from_csv(file_path, separator=','):
         questions.append({'question': question[i], 'choices': choices[i], 'real_persona': real_persona[i]})
     return questions
 
+@app.route('/redirect_survey', methods=['POST'])
+def redirect_survey():
+    selected_option = request.form.get('survey_option')
+
+    if selected_option == 'option1':
+        return redirect(url_for('questionclassifier'))  # Redirect to webpage1
+    elif selected_option == 'option2':
+        return redirect(url_for('topicsurvey'))  # Redirect to webpage2
+    else:
+        # Handle other cases or errors
+        return redirect(url_for('index'))
+
+def read_topics_from_csv(file_path):
+    """_summary_
+
+    :param file_path: _description_
+    :type file_path: _type_
+    :param separator: _description_, defaults to ','
+    :type separator: str, optional
+    :return: _description_
+    :rtype: _type_
+    """
+    questions = []
+    import pandas as pd
+    df = pd.read_csv(file_path)
+    rep = list(df['Name'])
+    freq = list(df['Count'])
+    Representation = list(df['Representation'])
+    Representative_Docs = list(df['Representative_Docs'])
+    for i in range(len(rep)):
+        questions.append({'number': i, 'rep': rep[i], 'freq': freq[i], 'representation': Representation[i], 'representativeDocs': Representative_Docs[i]})
+    return questions
+
 # Define the CSV file path and separator
 csv_file_path = 'questions.csv'
 csv_separator = ','  # Change this to your desired separator
@@ -37,10 +70,25 @@ questions = read_questions_from_csv(csv_file_path, separator=csv_separator)
 # Add question numbers to the questions list
 questions_with_numbers = [{'number': f'Q{i}', **question} for i, question in enumerate(questions, 1)]
 
+# topic
+# Define the CSV file path and separator
+csv_file_path_1 = 'top10_recipe.csv'
+topics = read_topics_from_csv(csv_file_path_1)
+
+# Main route to display the survey
+@app.route('/topicsurvey')
+def topicsurvey():
+    return render_template('topic_survey.html', topics=topics)
+
+# Main route to display the survey
+@app.route('/questionclassifier')
+def questionclassifier():
+    return render_template('survey.html', questions=questions_with_numbers)
+
 # Main route to display the survey
 @app.route('/')
 def index():
-    return render_template('survey.html', questions=questions_with_numbers)
+    return render_template('index.html')
 
 # Route to handle form submission
 @app.route('/submit', methods=['POST'])

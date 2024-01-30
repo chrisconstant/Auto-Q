@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Evaluation-II</title>
+    <title>Question Topic Survey</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -73,10 +73,10 @@
 </head>
 <body>
     <div class="container">
-        <h3 class="header">Expert Evaluation II</h3>
+        <h3 class="header">Question Topic Survey</h3>
         <!-- Evaluation Report Box -->
         <div class="evaluation-report-box">
-            <h5>Evaluation-II Report Description</h5>
+            <h5>Report Description</h5>
             <p> This experiment focus on question diversity, topic coverage, and look and feel of machine generated instructions. 
             </p>
             <h5>Rule-set</h5>
@@ -104,15 +104,6 @@
                     <p><strong>{{ topic['number'] }}: {{ topic['rep'] }}</strong></p>
                     <p>Topic Frequency: {{ topic['freq'] }}</p>
                     <p>Topic Word: {{ topic['repr'] }}</p>
-                    <div class="input-field">
-                        {% for choice in question['choices'] %}
-                            <p>
-                                <label>
-                                    <span>{{ choice }}</span>
-                                </label>
-                            </p>
-                        {% endfor %}
-                    </div>
                 </div>
             {% endfor %}
             <div class="question-box">
