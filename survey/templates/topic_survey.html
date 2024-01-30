@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add a link to Google's Material Design CSS file -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Evaluation-II</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .question-box {
+            background-color: #eaf3f8; /* Light blue background color for question-answer block */
+            border: 2px solid #0056b3; /* IBM Blue border color */
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .header {
+            color: #0056b3; /* IBM Blue color for the heading */
+        }
+
+        .input-field {
+            margin-bottom: 20px;
+        }
+
+        .input-field p {
+            margin: 0;
+        }
+
+        .input-field label {
+            color: #6f777d; /* Gray color for questions */
+        }
+
+        .input-field input[type="radio"] {
+            background-color: #0056b3; /* IBM Blue color for radio buttons */
+        }
+
+        .submit-button {
+            background-color: #0056b3; /* IBM Blue button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .highlight {
+            background-color: yellow; /* Set your desired highlight color */
+            font-weight: bold; /* Optionally, make the text bold or apply other styles */
+        }
+        /* Additional styles for the evaluation report box */
+        .evaluation-report-box {
+            background-color: #f5f5dc; /* Pale yellow background */
+            border: 2px solid #696969; /* Dim gray border color */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .rule-set {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="header">Expert Evaluation II</h3>
+        <!-- Evaluation Report Box -->
+        <div class="evaluation-report-box">
+            <h5>Evaluation-II Report Description</h5>
+            <p> This experiment focus on question diversity, topic coverage, and look and feel of machine generated instructions. 
+            </p>
+            <h5>Rule-set</h5>
+            <ul class="rule-set">
+                <li>From our dataset of over 2900+ questions, we've identified 10 distinct topics and their frequency. We've also provided representative words for each topic and examples of questions that fall within each category. Additionally, we've asked 4 questions and assigned a unique number to each one.</li>
+                <li><p></p></li>
+                <li> <b>1. Humanness</b>. The questions should resemble those expected from a real person. </li>
+                <li><p></p></li>
+                <li> <b>2. Topic Coverage</b>. A wide range of topics should be covered, ideally including the top 5-10 topics. </li>
+                <li><p></p></li>
+                <li> <b>3. Engagement</b>. The questions should keep the subject matter expert motivated during the information discovery phase. </li>
+                <li><p></p></li>
+                <li> <b>4. Novelty</b>. The system should help identify any previously unconsidered topics or questions.</li>
+                <li><p></p></li>
+                <li>No datetime information or location/IP data is being collected.</li>
+                <!-- Add more rules as needed -->
+            </ul>
+                <p>Score the quality of the questions on a scale of 1 to 3, with 3 being good, 2 being moderate, and 1 being poor
+                </p>
+        </div>
+        <br>
+        <form id="evaluationForm" action="/submit" method="post">
+            {% for topic in topics %}
+                <div class="question-box">
+                    <p><strong>{{ topic['number'] }}: {{ topic['rep'] }}</strong></p>
+                    <p>Topic Frequency: {{ topic['freq'] }}</p>
+                    <p>Topic Word: {{ topic['repr'] }}</p>
+                    <div class="input-field">
+                        {% for choice in question['choices'] %}
+                            <p>
+                                <label>
+                                    <span>{{ choice }}</span>
+                                </label>
+                            </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="question-box">
+                <p><strong><b>Humanness</b>: Are generated questions resemble those expected from a real person?</strong></p>
+                <div class="input-field">
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="1" class="question-option">
+                            <span>1. Poor</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="2" class="question-option">
+                            <span>2. Moderate</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="3" class="question-option">
+                            <span>3: Good </span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="question-box">
+                <p><strong><b>Topic Coverage</b>: Are you satisfied with topics coverage?</strong></p>
+                <div class="input-field">
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="1" class="question-option">
+                            <span>1. Poor</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="2" class="question-option">
+                            <span>2. Moderate</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="3" class="question-option">
+                            <span>3: Good </span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="question-box">
+                <p><strong><b>Engagement</b>: Do you think the questions will keep subject matter expert engaged during information discovery phase?</strong></p>
+                <div class="input-field">
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="1" class="question-option">
+                            <span>1. Poor</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="2" class="question-option">
+                            <span>2. Moderate</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="3" class="question-option">
+                            <span>3: Good </span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="question-box">
+                <p><strong><b>Novelty</b>: Did we identified any topic that is previously not considered or question is novel?</strong></p>
+                <div class="input-field">
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="1" class="question-option">
+                            <span>1. Poor</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="2" class="question-option">
+                            <span>2. Moderate</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="humanness" value="3" class="question-option">
+                            <span>3: Good </span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+        
+
+            <br>
+            <button class="btn waves-effect waves-light submit-button" type="submit" name="action" id="submitBtn" disabled>
+                Submit <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+    <!-- Include Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.getElementById('evaluationForm').addEventListener('input', function () {
+            var submitBtn = document.getElementById('submitBtn');
+            var radioButtons = document.querySelectorAll('.question-option:checked');
+            submitBtn.disabled = radioButtons.length !== {{ questions|length }};
+        });
+    </script>
+</body>
+</html>
