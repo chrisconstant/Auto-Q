@@ -17,20 +17,19 @@ with app.app_context():
 
 def read_questions_from_csv(file_path, separator=','):
     questions = []
-    with open(file_path, 'r') as file:
-        lines = file.readlines()[1:]  # Skip the first line (header)
-        for line in lines:
-            parts = line.strip().split(separator)
-            question = f"\"{parts[0]}\"\n\n Whom do you think this question is appropriate for?"
-            # Exclude the second column (real answer) from choices
-            choices = parts[2:]
-            real_persona = parts[1]
-            questions.append({'question': question, 'choices': choices, 'real_persona': real_persona})
+    import pandas as pd
+    df = pd.read_csv(file_path)
+    df['Question'] = df['Question'].apply(lambda x: f"{x} \n\n Whom do you think this question is appropriate for?")
+    question = list(df['Question'])
+    real_persona = list(df['Real Persona'])
+    choices = df[['Persona Option 1','Persona Option 2','Persona Option 3','Persona Option 4']].to_numpy().tolist()
+    for i in range(len(question)):
+        questions.append({'question': question[i], 'choices': choices[i], 'real_persona': real_persona[i]})
     return questions
 
 # Define the CSV file path and separator
 csv_file_path = 'questions.csv'
-csv_separator = ';'  # Change this to your desired separator
+csv_separator = ','  # Change this to your desired separator
 
 # Read questions from the CSV file with the specified separator
 questions = read_questions_from_csv(csv_file_path, separator=csv_separator)
