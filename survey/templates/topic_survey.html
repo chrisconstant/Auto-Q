@@ -77,7 +77,7 @@
         <!-- Evaluation Report Box -->
         <div class="evaluation-report-box">
             <h5>Report Description</h5>
-            <p> This experiment focus on question diversity, topic coverage, and look and feel of machine generated instructions. 
+            <p>This experiment focus on question diversity, topic coverage, and look and feel of machine generated instructions. 
             </p>
             <h5>Rule-set</h5>
             <ul class="rule-set">
@@ -98,32 +98,39 @@
                 </p>
         </div>
         <br>
-        <form id="evaluationForm" action="/submit" method="post">
+        <form id="evaluationForm" action="/submit_topic" method="post">
             {% for topic in topics %}
                 <div class="question-box">
                     <p><strong>{{ topic['number'] }}: {{ topic['rep'] }}</strong></p>
                     <p>Topic Frequency: {{ topic['freq'] }}</p>
-                    <p>Topic Word: {{ topic['repr'] }}</p>
+                    <p>Topic Word: <b>{{ topic['repr'] }}</b></p>
+                    {% for sentence in topic['sentence_list'] %}
+                    <div class="question-box">
+                        <p><strong>{{ loop.index }}: {{ sentence }}</strong></p>
+                        <!-- You can add additional information or modify this based on your needs -->
+                    </div>
+                    {% endfor %}                
                 </div>
             {% endfor %}
+
             <div class="question-box">
                 <p><strong><b>Humanness</b>: Are generated questions resemble those expected from a real person?</strong></p>
                 <div class="input-field">
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="1" class="question-option">
+                            <input type="radio" name="humanness_group" value="1" class="question-option">
                             <span>1. Poor</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="2" class="question-option">
+                            <input type="radio" name="humanness_group" value="2" class="question-option">
                             <span>2. Moderate</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="3" class="question-option">
+                            <input type="radio" name="humanness_group" value="3" class="question-option">
                             <span>3: Good </span>
                         </label>
                     </p>
@@ -134,19 +141,19 @@
                 <div class="input-field">
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="1" class="question-option">
+                            <input type="radio" name="topic_coverage_group" value="1" class="question-option">
                             <span>1. Poor</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="2" class="question-option">
+                            <input type="radio" name="topic_coverage_group" value="2" class="question-option">
                             <span>2. Moderate</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="3" class="question-option">
+                            <input type="radio" name="topic_coverage_group" value="3" class="question-option">
                             <span>3: Good </span>
                         </label>
                     </p>
@@ -157,49 +164,47 @@
                 <div class="input-field">
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="1" class="question-option">
+                            <input type="radio" name="engagement_group" value="1" class="question-option">
                             <span>1. Poor</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="2" class="question-option">
+                            <input type="radio" name="engagement_group" value="2" class="question-option">
                             <span>2. Moderate</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="3" class="question-option">
+                            <input type="radio" name="engagement_group" value="3" class="question-option">
                             <span>3: Good </span>
                         </label>
                     </p>
                 </div>
             </div>
             <div class="question-box">
-                <p><strong><b>Novelty</b>: Did we identified any topic that is previously not considered or question is novel?</strong></p>
+                <p><strong><b>Novelty</b>: Did system surprise you by identify any topic that is kind of novel?</strong></p>
                 <div class="input-field">
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="1" class="question-option">
+                            <input type="radio" name="novelty_group" value="1" class="question-option">
                             <span>1. Poor</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="2" class="question-option">
+                            <input type="radio" name="novelty_group" value="2" class="question-option">
                             <span>2. Moderate</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="humanness" value="3" class="question-option">
+                            <input type="radio" name="novelty_group" value="3" class="question-option">
                             <span>3: Good </span>
                         </label>
                     </p>
                 </div>
-            </div>
-        
-
+            </div>            
             <br>
             <button class="btn waves-effect waves-light submit-button" type="submit" name="action" id="submitBtn" disabled>
                 Submit <i class="material-icons right">send</i>
@@ -212,7 +217,9 @@
         document.getElementById('evaluationForm').addEventListener('input', function () {
             var submitBtn = document.getElementById('submitBtn');
             var radioButtons = document.querySelectorAll('.question-option:checked');
-            submitBtn.disabled = radioButtons.length !== {{ questions|length }};
+            var totalQuestions = 4; // Update this with the actual number of questions
+    
+            submitBtn.disabled = radioButtons.length !== totalQuestions;
         });
     </script>
 </body>

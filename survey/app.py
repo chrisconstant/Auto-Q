@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, distinct
+import ast
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user_responses.db'
@@ -11,6 +12,13 @@ class UserResponse(db.Model):
     evaluation_number = db.Column(db.String(255)) 
     question_number = db.Column(db.String(255))
     selected_option = db.Column(db.String(255))
+
+class TopicSurveyResponse(db.Model):
+    id = db.Column(db.String(255), primary_key=True)
+    humanness_group = db.Column(db.String(1))
+    topic_coverage_group = db.Column(db.String(1))
+    engagement_group = db.Column(db.String(1))
+    novelty_group = db.Column(db.String(1))
 
 with app.app_context():
     db.create_all()
@@ -52,12 +60,15 @@ def read_topics_from_csv(file_path):
     questions = []
     import pandas as pd
     df = pd.read_csv(file_path)
+    df['Name'] = df['Name'].apply(lambda x: x.split("_", 1)[1].replace("_", ", "))
+    df['Representative_Docs'] = df['Representative_Docs'].apply(lambda x: ast.literal_eval(x))
     rep = list(df['Name'])
     freq = list(df['Count'])
+
     Representation = list(df['Representation'])
     Representative_Docs = list(df['Representative_Docs'])
     for i in range(len(rep)):
-        questions.append({'number': i, 'rep': rep[i], 'freq': freq[i], 'representation': Representation[i], 'representativeDocs': Representative_Docs[i]})
+        questions.append({'number': 'Topic Id ' + str(i), 'rep': rep[i], 'freq': freq[i], 'repr': Representation[i], 'sentence_list': Representative_Docs[i]})
     return questions
 
 # Define the CSV file path and separator
@@ -103,6 +114,14 @@ def submit():
     
     return render_template('thank_you.html', responses=user_responses, questions=questions_with_numbers, real_personas=real_personas)
 
+@app.route('/submit_topic', methods=['POST'])
+def submit_topic():
+    user_responses = {key: request.form[key] for key in request.form}
+
+    # save
+    save_topic_responses_to_database(user_responses)
+    
+    return render_template('thank_you_simple.html', responses=user_responses)
 
 # Route to handle question-wise summary
 @app.route('/summary')
@@ -132,6 +151,24 @@ def save_responses_to_database(user_responses):
                 db.session.add(new_response)
 
         db.session.commit()
+
+def save_topic_responses_to_database(user_responses):
+    print (user_responses)
+    import uuid
+    random_uuid = str(uuid.uuid4())
+
+    with app.app_context():
+
+        new_response = TopicSurveyResponse(
+                id=random_uuid,
+                humanness_group=user_responses.get('humanness_group'),
+                topic_coverage_group=user_responses.get('topic_coverage_group'),
+                engagement_group=user_responses.get('engagement_group'),
+                novelty_group=user_responses.get('novelty_group')
+            )
+        db.session.add(new_response)
+        db.session.commit()
+
 
 if __name__ == '__main__':
     app.run(debug=True)
