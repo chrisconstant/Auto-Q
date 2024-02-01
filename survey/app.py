@@ -1,14 +1,18 @@
 import shutil
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for
+from apscheduler.schedulers.background import BackgroundScheduler
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, distinct
 from natsort import natsorted
 import ast
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user_responses.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user_responses.db' 
 db = SQLAlchemy(app)
+
+# Initialize the scheduler
+scheduler = BackgroundScheduler()
 
 class UserResponse(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -216,7 +220,10 @@ def save_topic_responses_to_database(user_responses):
         db.session.add(new_response)
         db.session.commit()
 
+# Add the backup task to run every 24 hours
+scheduler.add_job(backup_database, 'interval', hours=24)
 
 if __name__ == '__main__':
+    scheduler.start()
     app.run(debug=True)
 
