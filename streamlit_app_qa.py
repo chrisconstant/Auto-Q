@@ -12,6 +12,8 @@ ds_answer = []
 sme_answer = []
 all_question = []
 
+assets = ["Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot", "Turbine Generator", "Industrial boiler", "Industrial Oven", "Industrial Furnace", "Centrifugal Compressor", "Hydraulic Press", "Steam Turbine"]
+
 def display_message(display_message, tsleep=0.1):
     message_placeholder = st.empty()
     full_response = ""
@@ -26,6 +28,26 @@ def display_message(display_message, tsleep=0.1):
         full_response += "\n"
 
     message_placeholder.markdown(full_response)
+
+def cross_check_file():
+    import pandas as pd
+    for model in ['llama','mixtral']:
+        for assetname in assets:
+            assetname = assetname.lower().replace(" ", "")
+            #print(f"model: {model}, asset: {assetname}")
+            df1 = pd.read_csv(
+                f"./results/{assetname}/genai_questions_answer_ds_bank_{assetname}_{model}.csv"
+            )
+            df2 = pd.read_csv(
+                f"./results/{assetname}/genai_questions_answer_sme_bank_{assetname}_{model}.csv"
+            )
+            df3 = pd.read_csv(
+                f"./results/{assetname}/genai_questions_bank_{assetname}_{model}.csv"
+            )
+            df = pd.read_csv(
+                f"./results/{assetname}/genai_context_docs_{assetname}_{model}.csv"
+            )
+
 
 def collect_system_messages(assetname='windturbinegearbox',model='mixtral'):
     """_summary_
@@ -51,8 +73,6 @@ def trim_repeated_right_side(sentence, max_repetitions):
 def reduction_factor(sentence):
     sent1 = trim_repeated_right_side(sentence, max_repetitions=50)
     return len(sent1)*100.0/len(sentence)
-
-
 
 def plot_results(total_questions = 6617, answered_questions = 488):
     unanswered_questions = total_questions - answered_questions
@@ -123,6 +143,7 @@ def main():
     </span>
     """
     st.markdown(disclaimer, unsafe_allow_html=True)
+    cross_check_file()
     with st.sidebar:
 
         st.markdown("## Auto-Qx5 System")
@@ -134,7 +155,7 @@ def main():
             st.header("Input Configuration")
             selected_asset = st.selectbox(
                 "Select an Asset Class",
-                ["Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot", "Turbine Generator", "Industrial boiler", "Industrial Oven", "Industrial Furnace", "Centrifugal Compressor", "Hydraulic Press", "Steam Turbine"],
+                assets,
                 key="editable_dropdown_asset",
                 format_func=lambda x: x,
             )

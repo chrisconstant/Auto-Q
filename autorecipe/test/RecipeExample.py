@@ -1,5 +1,6 @@
 from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
+'''
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='wind turbine gearbox')
 obj.init_chat(round=2)
@@ -71,7 +72,107 @@ obj.init_chat(round=2)
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='Steam Turbine')
 obj.init_chat(round=2)
+'''
 
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Power Transformer (Converter transformer)')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Station Transformer')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Reactors')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Isolators with earth switches')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Surge Arrester')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='HV Circuit Breakers (SF6, in set')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Capacitor Voltage Transformer (CVT)')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Current Transfromer (CT)')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Diesel Generator system')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Relays & IEDs')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Substation Automation System Cabinets')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Marshalling, control, interlock, protection panels')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='DC System (Battery and UPS charger)')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Under ground cables')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Over head trasmission lines')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Shiedling & Earthing System (No of earth pit)')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='AC filter')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Current measuring device (CMD)')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Voltage divider')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='DC filter')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Disconnector and grounding switch')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='High speed switches')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Lightning arrester')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='220kV Under ground Cables')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='GIS Chamber /Duct')
+obj.init_chat(round=2)
 
 # anomaly detection model
 # failure event prediction
