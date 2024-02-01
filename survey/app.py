@@ -138,6 +138,23 @@ def summary():
     return render_template('summary.html', summary_data=summary_data, total_questions=total_questions, total_responses=total_responses)
 
 
+# Route to clear the database
+@app.route('/cleardb')
+def clear_database():
+    try:
+        # Delete all records from the UserResponse table
+        db.session.query(UserResponse).delete()
+
+        # Commit the changes
+        db.session.commit()
+
+        message = "Database cleared successfully."
+    except Exception as e:
+        # Handle exceptions if any
+        message = f"Error clearing database: {str(e)}"
+
+    return render_template('admin_action.html', message=message)
+    
 def save_responses_to_database(user_responses):
     print (user_responses)
     import uuid
