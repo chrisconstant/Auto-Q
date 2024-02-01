@@ -1,20 +1,26 @@
-# Use an official Python runtime as a parent image
-FROM python:3.10-slim
+# Use a slimmer Python base image
+FROM python:3.10-slim-buster
 
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy requirements.txt first for caching
+COPY requirements.txt requirements.txt
 
-# Install any needed packages specified in requirements.txt
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 5000 available to the world outside this container
+# Copy remaining files
+COPY . .
+
+# Expose port
 EXPOSE 5000
 
-# Define environment variable
+# Set environment variable
 ENV FLASK_APP=app.py
+
+# Create a directory for the SQLite database file and set permissions
+RUN chmod 777 /app/instance
 
 # Use Gunicorn as the WSGI server
 CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
