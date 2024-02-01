@@ -17,6 +17,7 @@ spec:
       containers:
       - name: autoqa-surveyapp
         image: us.icr.io/aimodelfactory/autoqa-surveyapp:1.0.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
 ---
