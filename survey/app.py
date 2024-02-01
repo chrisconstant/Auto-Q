@@ -1,3 +1,5 @@
+import shutil
+from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, distinct
@@ -141,6 +143,30 @@ def summary():
 
     return render_template('summary.html', summary_data=summary_data, total_questions=total_questions, total_responses=total_responses)
 
+# Route to backup the database
+@app.route('/backup')
+def trigger_backup():
+    return backup_database()
+
+def backup_database():
+    print("Executing database backup...")
+    try:
+        # Generate a timestamp for the backup file
+        timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+        
+        # Specify the backup file path (adjust the path as needed)
+        backup_path = f'instance/dbbackup/user_responses_backup_{timestamp}.db'
+
+        # Copy the database file to the backup location
+        shutil.copy('instance/user_responses.db', backup_path)
+
+        message = f"Database backup created successfully at {backup_path}"
+        print(message)
+    except Exception as e:
+        # Handle exceptions if any
+        message = f"Error creating database backup: {str(e)}"
+
+    return render_template('admin_action.html', message=message)
 
 # Route to clear the database
 @app.route('/cleardb')
