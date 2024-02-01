@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, distinct
+from natsort import natsorted
 import ast
 
 app = Flask(__name__)
@@ -128,6 +129,9 @@ def submit_topic():
 def summary():
     # Use SQLAlchemy's func.count to get the count of each option for each question
     summary_data = db.session.query(UserResponse.question_number, UserResponse.selected_option, func.count()).group_by(UserResponse.question_number, UserResponse.selected_option).all()
+
+    # Convert the result to a list and perform natural sorting
+    summary_data = natsorted(summary_data, key=lambda x: x[0])
 
   # Calculate the total number of questions
     total_questions = db.session.query(func.count(distinct(UserResponse.question_number))).scalar()
