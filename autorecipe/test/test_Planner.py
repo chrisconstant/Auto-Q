@@ -13,11 +13,16 @@ from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 
 asset sustainability taxonomy:
 asset sustainability is root node
-asset sustainability is impacted by greenhouse emissions
-asset sustainability is impacted by air pollution
-asset sustainability is impacted by chemical fluid leakage into the environment 
-asset sustainability is impacted by ecologic impact
-asset sustainability is impacted by life-cycle assessment for the environmental impact
+asset sustainability is analyzed by greenhouse impact
+asset sustainability is analyzed by resources impact
+asset sustainability is contributed by environmental impact
+environmental impact is influenced by air pollution
+environmental impact is influenced by water pollution
+environmental impact is influenced by solid waste
+environmental impact is influenced by noise level
+environmental impact is influenced by ecological consequence
+greenhouse impact is measured by co2-equivalent emissions
+resources impact is depending on non-renewable resources
 
 """
 
@@ -40,13 +45,13 @@ Here is asset health taxonomy.
 
 asset health taxonomy:
 asset health is root node
-asset health is analyzed by component
+asset health is analyzed by component quality
 asset health is analyzed by historical record
 asset health is analyzed by asset profile
-component is impacted by mechanical issue
-component is impacted by electrical issue
-component is impacted by thermal health issue
-component is impacted by chemical health issue
+component quality is impacted by mechanical issue
+component quality is impacted by electrical issue
+component quality is impacted by thermal health issue
+component quality is impacted by chemical health issue
 mechanical issue is measured by on-demand inspection
 mechanical issue is measured by continuous sensors
 mechanical issue is measured by periodic chemical sampling
@@ -58,10 +63,28 @@ asset profile is recorded by age
 asset profile is recorded by operating hours
 asset profile is recorded by idle hours
 
+Here is asset sustainability taxonomy:
+asset sustainability is root node
+asset sustainability is analyzed by greenhouse impact
+asset sustainability is analyzed by resources impact
+asset sustainability is contributed by environmental impact
+environmental impact is influenced by air pollution
+environmental impact is influenced by water pollution
+environmental impact is influenced by solid waste
+environmental impact is influenced by noise level
+environmental impact is influenced by ecological consequence
+greenhouse impact is measured by co2-equivalent emissions
+resources impact is depending on non-renewable resources
+
+
 Python Code:
 ```python
-def callme(node='asset component'):
+def callme(node='asset sustainability'):
     taxonomy = {
+        'asset sustainability': ['greenhouse impact','resources impact','environmental impact'],
+        'environmental impact': ['air pollution','water pollution','solid waste','noise level','ecological consequence'],
+        'greenhouse impact': ['co2-equivalent emissions'],
+        'resources impact': ['non-renewable resources'],
         'asset health': ['component', 'historical record', 'asset profile'],
         'component': ['mechanical issue', 'electrical issue', 'thermal health issue', 'chemical health issue'],
         'mechanical issue': ['on-demand inspection', 'continuous sensors', 'periodic chemical sampling'],
@@ -132,6 +155,18 @@ asset profile is recorded by age
 asset profile is recorded by operating hours
 asset profile is recorded by idle hours
 
+Here is asset sustainability taxonomy:
+asset sustainability is root node
+asset sustainability is analyzed by greenhouse impact
+asset sustainability is analyzed by resources impact
+asset sustainability is contributed by environmental impact
+environmental impact is influenced by air pollution
+environmental impact is influenced by water pollution
+environmental impact is influenced by solid waste
+environmental impact is influenced by noise level
+environmental impact is influenced by ecological consequence
+greenhouse impact is measured by co2-equivalent emissions
+resources impact is depending on non-renewable resources
 
 Goal: calculate asset health using component.
 
@@ -225,11 +260,12 @@ LLMsets = [
     #"meta-llama/llama-2-70b-chat",
 ]
 
-Recipes = ["calculate asset health using asset profile",
+Recipes = ["calculate asset sustainability using environmental impact",
+    "calculate asset health using asset profile",
            "calculate asset health using historical record",
            "calculate asset health using asset component"]
 
-Recipes = [Recipes[2]]
+Recipes = [Recipes[0]]
 
 def generate_code_execute(code_prompt):
     llm_mdl = LangChainInterface(
@@ -266,7 +302,7 @@ def generate_code_execute(code_prompt):
     local_vars = {}
     exec(answer[0][1],globals(), local_vars)
     callme = local_vars['callme']
-    result = callme(node='component')
+    result = callme(node='asset sustainability')
     print (result)
     return result
 
@@ -317,12 +353,12 @@ for sen in Recipes:
         fianl_steps = []
         for step in steps_list:
             if "Generate a Python code" in step:
-                ans1 = generate_code_execute(step)
-                if type(ans1) == bool and ans1:
-                    fianl_steps.append(step.split(' ')[0] + ' What kinds of sensor could be used to check such quality deterioration or measure such KPIs?')
-                elif type(ans1) == str and "yes" in ans1.lower():
-                    fianl_steps.append(step.split(' ')[0] + ' What kinds of sensor could be used to check such quality deterioration or measure such KPIs?')
-                else:
+                # ans1 = generate_code_execute(step)
+                # if type(ans1) == bool and ans1:
+                #     fianl_steps.append(step.split(' ')[0] + ' What kinds of sensor could be used to check such quality deterioration or measure such KPIs?')
+                # elif type(ans1) == str and "yes" in ans1.lower():
+                #     fianl_steps.append(step.split(' ')[0] + ' What kinds of sensor could be used to check such quality deterioration or measure such KPIs?')
+                # else:
                     pass
             else:
                 fianl_steps.append(step)
