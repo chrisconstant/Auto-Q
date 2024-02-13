@@ -16,13 +16,13 @@ from genai.schemas import ChatOptions, GenerateParams, ReturnOptions
 from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 from collections import OrderedDict
 import pandas as pd
+import difflib
 
 # have model specific configuration
 # QA does not need longer context to generate
 # Max token generation need to be adjusted per
 
 import ray
-
 
 @ray.remote
 def generate_response(llm, question, experiment_id):
@@ -36,15 +36,16 @@ def generate_response(llm, question, experiment_id):
 def generate_chain_response(
     agent1, agent2, input_question, input_answer, experiment_id
 ):
-    intermediate_result = f"Question: {input_question} \n Answer: {input_answer}"
+    intermediate_result = f"Here is the pair of question and answer: \n Question: {input_question} \n Answer: {input_answer} \n Generate one paragraph summary"
     result_summary = agent1.create(
         messages=[{"content": intermediate_result, "role": "user"}],
         context=None,
         experiment_id=experiment_id,
     )
     result = (
-        result_summary
-        + "\n\n From the above summary, generate few more questions to be asked to Subject matter expert."
+        "Here is the summary:\n" 
+        + result_summary
+        + "\n\n From the above summary, generate few more questions to be asked to subject matter expert or reliability enginner or quality engineer."
     )
     question_response = agent2.create(
         messages=[{"content": result, "role": "user", "type": "qa"}],
@@ -54,23 +55,44 @@ def generate_chain_response(
     question_response_1 = agent2.extract_questions(question_response)
     return (result_summary, question_response, question_response_1)
 
+def remove_duplicates(paragraphs):
+    unique_paragraphs = []
+    for paragraph in paragraphs:
+        if not any(difflib.SequenceMatcher(None, paragraph, p).ratio() > 0.9 for p in unique_paragraphs):
+            unique_paragraphs.append(paragraph)
+    return unique_paragraphs
+
+def post_process_duplicate(text):
+    paragraphs = text.split("\n\n")
+    unique_paragraphs = remove_duplicates(paragraphs)
+    cleaned_output = "\n\n".join(unique_paragraphs)
+    return cleaned_output
+
+def clean_user_assistant(text):
+    lines = text.split("\n")
+    cleaned_text = "\n".join(line for line in lines if not (line.startswith("User:") or (line == "Assistant:")))
+    return cleaned_text
+
 
 class RecipeAgent:
     LLMsets = [
         "ibm/granite-13b-instruct-v2",
         "meta-llama/llama-2-70b-chat",
         "google/flan-ul2",
-        "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
+        "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+        "ibm/granite-20b-5lang-instruct-rc",
+        "ibm/granite-13b-chat-v2",
+        "ibm/granite-13b-labrador-rc"
     ]
 
     # configuration
     DEFAULT_CONFIG = {
-        "model": LLMsets[1],
+        "model": LLMsets[3],
         "params": {
             "decoding_method": "greedy",
-            "min_new_tokens": 200,
-            "max_new_tokens": 2000,  # 1500,
-            "stop_sequences": ["(TOKENSTOP)"],
+            "min_new_tokens": 100,
+            "max_new_tokens": 2000, # ,, 1500
+            "stop_sequences": ["(TOKENSTOP)","User:","USER:","Assistant:","ASSISTANT:"],
             "stream": True,
             "return_options": ReturnOptions(input_text=False, input_tokens=True),
             "moderations": ModerationsOptions(
@@ -83,35 +105,110 @@ class RecipeAgent:
         },
     }
 
-    # update
-    DSSystemPrompt = """
-You are a helpful AI assistant. You act as a data scientist. Solve tasks using your coding and language skills. 
-Your job is to build an anomaly model using real time time series sensor data
- obtained from IoT/OT system. In order to get domain understanding of the problem you will prepare a series of 
- questions to be asked in sequential orders to subject matter experts. Typical questions should focus on the
-important components for which anomaly model should be build, the important failure modes and the ability of
- sensor data to detect these failure. You should also leverage the additional information made available in user message if any. 
- Please do not use a conversational approach to ask questions and gather information.
-"""
-
-    # Note: Please do not use a conversational approach to ask questions and gather information.
-    # I'll ask follow-up questions based on the response I receive to ensure that I have a clear
-    # understanding of the problem and the data.
+# Pump (Centrifugal)
+# Electrical submersible pump
+# Operator maintaining, design technicial, reliability engineer, technician : RCM Session
+# Note: Please do not use a conversational approach to ask questions and gather information.
+# I'll ask follow-up questions based on the response I receive to ensure that I have a clear
+# understanding of the problem and the data.
 
     SMESystemPrompt = """
-You act as a reliability engineer who is expert in failure modes and effect analysis (FMEA) of asset 
-reliability. You task is to provide a accurate information about asset's component, subcomponent, failure mode
-failure reason, failure code and degradation mechanisum along with severity and ability to detect them 
-before it happen via preventive maintainance. You will be provided an enough information
-about the asset class.
-"""
+    You act as a subject matter expert who is expert in failure modes and effect analysis (FMEA) of asset or system 
+    reliability. 
+    
+    Here is FMEA Procedure:
+
+    An FMEA is a systematic method of identifying and preventing product and process reliability 
+    problems before they occur. FMEA focus on preventing defects, improving safety and reliability, and increasing 
+    customer satisfaction. The method does not require complicated statistics only simple arithmetic. 
+    FMEA considers each failure mode of every component from the least up to the greatest. Your task is to provide 
+    accurate information about asset's component, subcomponent, assembly, failure mode, failure cause, failure code 
+    and degradation mechanism, degradation influence along with severity, likelihood and detectability of the point 
+    of failure (P-F Curve) so immediate intervention in terms of maintenance or operations can be taken to extend 
+    the life of the asset and or system. It determines a risk priority number for ranking efforts. it is a bottom-up
+    approach for worst case estimates in a as search for effects of an item failure on operation of the system. 
+    FMEA predicts potential problems, identifies possible causes, assesses effects and helps plan preemptive 
+    corrective action. 
+    
+    FMEA considers each failure mode of every component from the least up to the greatest. 
+    It determines a risk priority number for ranking efforts. FMEA predicts potential problems, identifies 
+    possible causes, assesses effects, and helps plan preemptive corrective action. The Reliability Engineer 
+    crafts a strategy of both preventive and condition-monitoring tasks that are specifically designed to 
+    identify or prevent failure modes. By using collected information about the equipment, failure modes are 
+    identified, and the appropriate tasks are selected to identify or prevent these failure modes as 
+    early as possible. The strategy is implemented according to the criticality database. 
+    
+    The relative risk of a failure and its effects is determined by three factors. 
+    1. Severity: The consequence of the failure should it occur, 
+    2. Occurrence: The probability or frequency of the failure occurring and 
+    3. Detection: The probability of the failure being detected before the impact and consequence of the 
+    failure is realized. 
+    
+    Using the data and the knowledge of the process or product, each potential 
+    failure mode and effect is rated in each of these factors on a scale ranging from 1 to 10. 
+    By multiplying the ranking for the three factors (Severity x Occurrence x Detection), 
+    a risk priority number will be determined for each potential failure mode and effect. 
+    The RPN (which will range from 1 to 1000 for each failure mode) us used to rank the need for 
+    corrective actions to eliminate or reduce the potential failure mode. 
+
+    User will provide a asset class or ask FMEA related question and you will provide descriptive FMEA 
+    information by following above FMEA Procedure. 
+    """
+
+    QESystemPrompt = """
+    You are a quality engineer responsible for generating FMEA documentation for a given asset class. 
+    Your expertise in quality standards and regulations, including ISO 9001, IATF 16949, and 
+    FMEA guidelines, will be utilized to ensure that the FMEA documentation is accurate, complete, and compliant 
+    with quality standards and regulations. You will provide information to identify potential 
+    failure modes, their causes, and effects, and develop recommendations for improving the product design and 
+    manufacturing processes. Your role will also to participate in design reviews, risk assessments, 
+    and other quality-related activities to ensure that the FMEA documentation provides valuable insights and 
+    recommendations for improving the product's quality and reliability.
+    """
+
+    QESystemPrompt1 = """
+    You act as a quality engineer who provide information on quality standards and regulations 
+    centered around Failure Modes and Effects Analysis (FMEA) process for the given asset class, 
+    with a focus on generating FMEA documentation. You have a strong knowledge of quality standards 
+    and regulations, including ISO 9001, IATF 16949, and FMEA guidelines. You will reviewing the asset 
+    class to identify potential failure modes, their causes, and effects. You 
+    will conduct a comprehensive FMEA analysis to outline the risks, mitigation strategies, 
+    and recommendations for improvement. You will participate in design reviews, risk assessments, 
+    and other quality-related activities. Your goal is to ensure that the FMEA documentation is 
+    generated accurately, completely, and in accordance with quality standards and regulations, 
+    and that it provides valuable insights and recommendations for improving the product design 
+    and manufacturing processes. 
+    """
+
+    RESystemPrompt = """You act as a reliability engineer who provide information on 
+    failure rates, mean time between failures (MTBF), and other reliability metrics 
+    information for the given asset class, with a focus on generating FMEA documentation. 
+    You have a strong knowledge of reliability engineering principles, statistical analysis, 
+    and testing methodologies. You will analyzing the asset class to identify potential 
+    failure modes and their impact on reliability. You will guide team on conducting 
+    reliability testing and data analysis to determine failure rates, MTBF, and other 
+    reliability metrics. You will provide input and guidance to the FMEA team on 
+    reliability-related failure modes, their causes, and effects. You will provide feedback 
+    on the FMEA documentation to ensure that reliability metrics and best practices are 
+    accurately reflected.  
+    """
+
+    SessionSystemPrompt = """You act as an expert for generating failure mode
+        and effect analysis (FMEA). User will provide an asset class and You will prepare a series of 
+        questions to be asked to subject matter expert, quality enginner or reliability engineer. 
+        Typical questions should focus on the important asset's component, subcomponent, assembly, failure mode, 
+        failure cause, failure code and degradation mechanism, degradation influence along with severity, 
+        likelihood and detectability of the point of failure (P-F Curve). Please do not use a conversational 
+        approach to ask questions and gather information. 
+    """
 
     InfoSummaryPromt = """
 Prepare a human-readable summary in a well-structured paragraph, eliminating any 
- special characters such as new lines and tabs. Focus on capturing the main components, failure modes and 
- reasons, degradation mechanisms, severity and detectability ratings, emphasizing the crucial insights for 
- predicting and preventing failures. Ensure the summary provides a coherent narrative. If user gives list of questions, 
- then summary should be written based on questions content for a given asset class. 
+ special characters such as new lines and tabs. Focus on capturing the main component, subcomponent, 
+ assembly, failure mode, failure cause, failure code and degradation mechanism, degradation influence 
+ along with severity, likelihood and detectability of the point of failure (P-F Curve). Emphasize the 
+ crucial insights for predicting and preventing failures. Ensure the summary provides a coherent narrative. 
+ If user gives list of questions, then summary should be written based on questions content for a given asset class. 
 """
     # If user gives list of questions, then summary should be written based on questions content.
     # Generate one paragraph summary.
@@ -119,25 +216,31 @@ Prepare a human-readable summary in a well-structured paragraph, eliminating any
 
     QuestionGenerator = """
 Pretend you are a question generation system. I will give you a list of questions or a pair of question and answer 
-extracted from the conversation between two users where question is asked by data scientist and 
+extracted from the conversation between two users where question is asked by facilitator and 
 subject matter expert has provided corresponding answer. Based on the conversation, you reply me with additional set of 
-questions that data scientist can ask to subject matter expert. The newly generated questions must align with original set of questions. 
+questions that facilitator can ask to subject matter expert. The newly generated questions must align with original set of questions. 
 you should avoid generating duplicate questions. you should also avoid questions for which potential answer can be similar.
  Please do not use a conversational approach to ask questions and gather information.
 """
 
     QuestionClassifier = """
 You are a helpful, respectful, and honest assistant. You will be introduced to several 
-persona such as data scientists, subject matter experts, narrators etc. User will provide a 
-question and you will select a persona who can answer the given question. Your selection is based 
+persona such as subject matter experts, quality engineers or reliability engineers, etc. 
+User will provide a question and you will select a persona who can answer the given question. Your selection is based 
 on the persona's field experience and scientific knowledge. Sometime questions can be answered by 
 multiple personas. Here is the two personas along with their skill description.  
 
-Persona: Data Scientist
-Skill: building machine learning model, data analytics, python programming
+Persona: FMEA Expert
+Skill: Leading the FMEA session and ensuring that the process is followed correctly
 
 Persona: Subject Matter Expert
-Skill: Provide domain knowledge for a particular industrial assets and their working condition
+Skill: Identifying potential failure modes, their effects, and their likelihood of occurrence.
+
+Persona: Quality Engineers
+Skill: Ensures that the FMEA is conducted in accordance with quality standards and regulations
+
+Persona: Reliability Engineers
+Skill: Provide information on failure rates, mean time between failures (MTBF), and other reliability metrics
 """
 
     QuestionClassifierPropmt = """
@@ -167,16 +270,23 @@ your responses are socially unbiased and positive in nature.
 
     QAClassifierSystemPrompt = """
 You are a helpful, respectful, and honest assistant. You will be introduced to several 
-persona such as data scientists, subject matter experts, narrators etc. User will provide a 
-question and you will select a persona who can answer the given question. Your selection is based 
-on the persona's field experience and scientific knowledge. Sometime questions can be answered by 
-multiple personas. Here is the two personas along with their skill description.  
+persona such as fmea expert, subject matter experts, quality engineers or reliability engineers, etc. 
+User will provide a question and you will select a persona who can answer the given question. 
+Your selection is based on the persona's field experience and scientific knowledge. 
+Sometime questions can be answered by multiple personas. Here is the four personas along with 
+their skill description.  
+
+Persona: FMEA Expert
+Skill: Leading the FMEA session and ensuring that the process is followed correctly
 
 Persona: Subject Matter Expert
-Skill: Provide domain knowledge for a particular industrial assets and their working condition
+Skill: Identifying potential failure modes, their effects, and their likelihood of occurrence
 
-Persona: Data Scientist
-Skill: building machine learning model, data analytics, python programming
+Persona: Quality Engineers
+Skill: Ensures that the FMEA is conducted in accordance with quality standards and regulations
+
+Persona: Reliability Engineers
+Skill: Provide information on failure rates, mean time between failures (MTBF), and other reliability metrics
 
 """
 
@@ -191,15 +301,15 @@ Please use (Internal thought).
 
 (Internal thought): first we find out the list of candidate personas mentioned in System Prompt. 
 
-We found two personas listed in system prompt: [Subject Matter Expert, Data Scientist]. 
+We found two personas listed in system prompt: [Subject Matter Expert, FMEA Facilitator, Quality Engineers, Reliability Engineers]. 
 
 First, let us evaluate first persona (Subject Matter Expert). The Subject Matter Expert has knowledge of the domain and can provide
  information about the common failure modes for wind turbine gearboxes. This question is best suited for a Subject Matter Expert.
  The sentiment for Subject Matter Expert is positive.
 
-Next, we evaluate second persona (Data Scientist). This question is primarily related to the domain knowledge of
- wind turbine gearboxes and their failure modes. Therefore, Data Scientist is not the best persona to consult for this question. 
- The sentiment for Data Scientist is negative. 
+Next, we evaluate second persona (FMEA Facilitator). This question is primarily related to the domain knowledge of
+ wind turbine gearboxes and their failure modes. Therefore, FMEA Facilitator is not the best persona to consult for this question. 
+ The sentiment for FMEA Facilitator is negative. 
 
 Overall, Subject Matter Expert has positive sentiment.
 
@@ -221,31 +331,40 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self._genai_messages = defaultdict(list)
         stateful = False
 
+        # agent
+        self.DSAgent = None
+
         # agent 1
-        self.DSAgent = GenAIChatClient(
-            name="DS",
-            description="Data Scientist",
-            skill="building machine learning model, data analytics, python programming",
+        self.SFAgent = GenAIChatClient(
+            name="FR",
+            description="Facilitator",
+            skill="Leading the FMEA session and ensuring that the process is followed correctly",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
-            system_message=self.DSSystemPrompt,
+            system_message=self.SessionSystemPrompt,
             stateful=stateful,
+            post_process_text=True,
+            #question_message=None,
         )
 
         # agent 2
         self.SMEAgent = GenAIChatClient(
             name="SME",
             description="Subject Matter Expert",
-            skill="Provide domain knowledge for a particular industrial assets and their working condition",
+            skill="Identifying potential failure modes, their effects, and their likelihood of occurrence",
             model=self.genai_config["model"],
             params=self.genai_config["params"],
             credentials=self.genai_config["creds"],
             system_message=self.SMESystemPrompt,
             stateful=stateful,
+            post_process_text=True,
+            #question_message=None,
         )
 
         # agent 3
+        tmp_genai_config = dict(self.DEFAULT_CONFIG)
+        tmp_genai_config["params"]["min_new_tokens"] = 50
         self.SummarizeAgent = GenAIChatClient(
             name="Summarizer",
             description="Answer Summarizer",
@@ -255,6 +374,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             credentials=self.genai_config["creds"],
             system_message=self.InfoSummaryPromt,
             stateful=stateful,
+            post_process_text=True,
         )
 
         # agent 4
@@ -269,6 +389,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             credentials=tmp_genai_config["creds"],
             system_message=self.QuestionGenerator,
             stateful=stateful,
+            post_process_text=True,
         )
 
         # agent 5
@@ -281,6 +402,31 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             credentials=self.genai_config["creds"],
             system_message=self.QAClassifierSystemPrompt,
             question_message=self.QAClassifierPrompt,
+        )
+
+        # two more: Reliability and Quality Controller
+        self.QEAgent = GenAIChatClient(
+            name="QE",
+            description="Quality Engineer",
+            skill="Ensures that the FMEA is conducted in accordance with quality standards and regulations",
+            model=self.genai_config["model"],
+            params=self.genai_config["params"],
+            credentials=self.genai_config["creds"],
+            system_message=self.QESystemPrompt,
+            stateful=stateful,
+            post_process_text=True,
+        )
+
+        self.REAgent = GenAIChatClient(
+            name="RE",
+            description="Reliability Engineer",
+            skill="Provide information on failure rates, mean time between failures (MTBF), and other reliability metrics",
+            model=self.genai_config["model"],
+            params=self.genai_config["params"],
+            credentials=self.genai_config["creds"],
+            system_message=self.RESystemPrompt,
+            stateful=stateful,
+            post_process_text=True,
         )
 
         # messages - storage
@@ -297,13 +443,40 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.genai_responses_from_ds = []  # store all the response from DS
         self.genai_track_round_info_ds = []  # store all the response from DS
 
+        self.genai_questions_for_sf = []  # store all the questions to be asked to DS
+        self.genai_responses_from_sf = []  # store all the response from DS
+        self.genai_track_round_info_sf = []  # store all the response from DS
+
+        self.genai_questions_for_re = []  # store all the questions to be asked to DS
+        self.genai_responses_from_re = []  # store all the response from DS
+        self.genai_track_round_info_re = []  # store all the response from DS
+
+        self.genai_questions_for_qe = []  # store all the questions to be asked to DS
+        self.genai_responses_from_qe = []  # store all the response from DS
+        self.genai_track_round_info_qe = []  # store all the response from DS
+
         self.genai_questions_outof_scope = []  # this is out of scope question
         self.question_generation_track = []  # track number of questions being generated
 
+        # sme counter
         self.total_processed_question_sme = 0
-        self.total_processed_question_ds = 0
         self.total_processed_answer_sme = 0
+
+        # ds counter
         self.total_processed_answer_ds = 0
+        self.total_processed_question_ds = 0
+
+        # sf counter
+        self.total_processed_answer_sf = 0
+        self.total_processed_question_sf = 0
+
+        # re counter
+        self.total_processed_answer_re = 0
+        self.total_processed_question_re = 0
+
+        # qe counter
+        self.total_processed_answer_qe = 0
+        self.total_processed_question_qe = 0
 
         # this is to print the all intermediate message for debug and imporovement
         self.testmode = 1
@@ -324,7 +497,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             )
 
         # inform data scientist about the asset class
-        ds_response = self.DSAgent.create(
+        sf_response = self.SFAgent.create(
             messages=[{"content": message, "role": "user"}],
             context=None,
             experiment_id=experiment_id,
@@ -338,99 +511,124 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         )
         self.sme_response_ = sme_response
 
+        # quality engineer
+        qe_response = self.QEAgent.create(
+            messages=[{"content": message, "role": "user"}],
+            context=None,
+            experiment_id=experiment_id,
+        )
+        self.qe_response_ = qe_response
+
+        # reliability engineer
+        re_response = self.REAgent.create(
+            messages=[{"content": message, "role": "user"}],
+            context=None,
+            experiment_id=experiment_id,
+        )
+        self.re_response_ = re_response
+
         if self.testmode:
-            print(f"{Style.BRIGHT}{Fore.BLUE} ds_response >>> {Style.RESET_ALL}")
-            print(ds_response)
+            print(f"{Style.BRIGHT}{Fore.BLUE} sf_response >>> {Style.RESET_ALL}")
+            print(sf_response)
             print(f"{Style.BRIGHT}{Fore.BLUE} sme_response >>> {Style.RESET_ALL}")
             print(sme_response)
-
+            print(f"{Style.BRIGHT}{Fore.BLUE} QE_response >>> {Style.RESET_ALL}")
+            print(qe_response)
+            print(f"{Style.BRIGHT}{Fore.BLUE} RE_response >>> {Style.RESET_ALL}")
+            print(re_response)
+        
         # extract initial set of questions prepared by DS
-        ds_questions = self.DSAgent.extract_questions(ds_response)
-        f_ds_question = filter_and_sort_questions(
-            ds_questions,
+        sf_questions = self.SFAgent.extract_questions(sf_response)
+        f_sf_question = filter_and_sort_questions(
+            sf_questions,
             filter_threshold=0.98,
         )
 
         # put quection in placeholder
-        self.question_placeholder_.extend(f_ds_question)
+        self.question_placeholder_.extend(f_sf_question)
 
         if self.testmode:
             print(
-                f"{Style.BRIGHT}{Fore.BLUE} ds_questions : {len(ds_questions)} >>> {Style.RESET_ALL}"
+                f"{Style.BRIGHT}{Fore.BLUE} sf_questions : {len(sf_questions)} >>> {Style.RESET_ALL}"
             )
-            print(ds_questions)
+            print(sf_questions)
             print(
-                f"{Style.BRIGHT}{Fore.BLUE} f_ds_question {len(f_ds_question)} >>> {Style.RESET_ALL}"
+                f"{Style.BRIGHT}{Fore.BLUE} f_sf_question {len(f_sf_question)} >>> {Style.RESET_ALL}"
             )
-            print(f_ds_question)
+            print(f_sf_question)
 
         """In Context Learning : Invoke Summarize Agent and then Get summary"""
-        ds_summary = self.SummarizeAgent.create(
-            messages=[
-                {
-                    "content": sme_response + "\n Generate one paragraph summary.",
-                    "role": "user",
-                }
-            ],
-            context=None,
-            experiment_id=experiment_id,
-        )
-        self.context_documents_ = ds_summary
-
-        if self.testmode:
-            print(
-                f"{Style.BRIGHT}{Fore.BLUE} ds_summary : {len(ds_summary)} >>> {Style.RESET_ALL}"
+        """Extending to multiple persona ..."""
+        self.track_context_summary_ = []
+        for agent_name, agent_full_name, agent_response in [('sme', 'subject matter expert', sme_response), 
+                                                            ('re', 'reliability engineer', re_response), 
+                                                            ('qe', 'quality engineer', qe_response)]:
+            fs_summary = self.SummarizeAgent.create(
+                messages=[
+                    {
+                        "content": agent_response + "\n Generate one paragraph summary.",
+                        "role": "user",
+                    }
+                ],
+                context=None,
+                experiment_id=experiment_id,
             )
-            print(ds_summary)
+            self.context_documents_ = fs_summary
+            self.track_context_summary_.append((agent_name, agent_full_name, agent_response, fs_summary))
 
-        """ Now ask DS """
-        addon = (
-            ds_summary
-            # + "\n\n Would you like to add additional set of questions based on provided information?"
-            + "\n\n From the above summary, generate few more questions to be asked to subject matter expert."
-        )
-        ds_response_1 = self.DSAgent.create(
-            messages=[{"content": addon, "role": "user"}],
-            context=None,
-            experiment_id=experiment_id,
-        )
+            if self.testmode:
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} fs_summary : {len(fs_summary)} >>> {Style.RESET_ALL}"
+                )
+                print(fs_summary)
 
-        ds_questions_1 = self.DSAgent.extract_questions(ds_response_1)
-
-        # finalize the question preparations
-        f_ds_question_1 = filter_questions_using_reference(
-            self.question_placeholder_, ds_questions_1, filter_threshold=0.98
-        )
-        f_ds_question_2 = filter_and_sort_questions(
-            f_ds_question_1, filter_threshold=0.98
-        )
-        self.question_placeholder_.extend(f_ds_question_2)
-
-        # apply filtering ()
-        self.question_placeholder_ = filter_questions_using_TTR(
-            self.question_placeholder_
-        )
-        self.question_placeholder_ = filter_questions_using_Flan(
-            self.question_placeholder_
-        )
-
-        if self.testmode:
-            print(
-                f"{Style.BRIGHT}{Fore.BLUE} ds_response_1 : {len(ds_response_1)} >>> {Style.RESET_ALL}"
+            """ Now ask DS """
+            addon = (
+                f"Here is the summary: \n {fs_summary} \n\n From the above given summary, generate few more questions to be asked to {agent_full_name}."
             )
-            print(ds_response_1)
-            print(
-                f"{Style.BRIGHT}{Fore.BLUE} ds_questions_1 : {len(ds_questions_1)} >>> {Style.RESET_ALL}"
+            sf_response_1 = self.SFAgent.create(
+                messages=[{"content": addon, "role": "user"}],
+                context=None,
+                experiment_id=experiment_id,
             )
-            print(ds_questions_1)
-            print(
-                f"{Style.BRIGHT}{Fore.BLUE} f_ds_question_1 : {len(f_ds_question_1)} >>> {Style.RESET_ALL}"
+
+            sf_questions_1 = self.SFAgent.extract_questions(sf_response_1)
+
+            # finalize the question preparations
+            f_sf_question_1 = filter_questions_using_reference(
+                self.question_placeholder_, sf_questions_1, filter_threshold=0.98
             )
-            print(f_ds_question_1)
-            print(
-                f"{Style.BRIGHT}{Fore.BLUE} f_ds_question_2 : {len(f_ds_question_2)} >>> {Style.RESET_ALL}"
+            f_sf_question_2 = filter_and_sort_questions(
+                f_sf_question_1, filter_threshold=0.98
             )
-            print(f_ds_question_2)
+            self.question_placeholder_.extend(f_sf_question_2)
+
+            # apply filtering ()
+            self.question_placeholder_ = filter_questions_using_TTR(
+                self.question_placeholder_
+            )
+            self.question_placeholder_ = filter_questions_using_Flan(
+                self.question_placeholder_
+            )
+
+            if self.testmode:
+                print (f"{Style.BRIGHT}{Fore.BLUE} Agent Name :  {agent_name} >>> {Style.RESET_ALL}")
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} sf_response_1 : {len(sf_response_1)} >>> {Style.RESET_ALL}"
+                )
+                print(sf_response_1)
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} sf_questions_1 : {len(sf_questions_1)} >>> {Style.RESET_ALL}"
+                )
+                print(sf_questions_1)
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} f_sf_question_1 : {len(f_sf_question_1)} >>> {Style.RESET_ALL}"
+                )
+                print(f_sf_question_1)
+                print(
+                    f"{Style.BRIGHT}{Fore.BLUE} f_sf_question_2 : {len(f_sf_question_2)} >>> {Style.RESET_ALL}"
+                )
+                print(f_sf_question_2)
 
         self.context_questions_seeds_total_ = len(self.question_placeholder_)
 
@@ -438,13 +636,22 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         result = "\n".join(
             [f"{i+1}. {item}" for i, item in enumerate(self.question_placeholder_)]
         )
-        result += "\n Generate one paragraph summary."
+        result = 'Here is the list of questions: \n' + result + "\n Generate one paragraph summary."
+        # result += "\n Generate one paragraph summary."
         ds_context_summary = self.SummarizeAgent.create(
             messages=[{"content": result, "role": "user"}],
             context=None,
             experiment_id=experiment_id,
         )
         self.question_context_documents_ = ds_context_summary
+        if self.testmode:
+            print (f"{Style.BRIGHT}{Fore.BLUE} Question Context :  {len(self.question_placeholder_)} >>> {Style.RESET_ALL}")
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} Question context : {len(ds_context_summary)} >>> {Style.RESET_ALL}"
+            )
+            print(
+                f"{Style.BRIGHT}{Fore.BLUE} Question context Summary : {ds_context_summary} >>> {Style.RESET_ALL}"
+            )
 
     def answer_generation(self, experiment_id):
         """
@@ -478,13 +685,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 print(f"{Style.BRIGHT}{Fore.BLUE} Answer : >>> {Style.RESET_ALL}")
                 print(sme_responses[item_index])
 
-        """This is a round 2 - Where DS answer """
+        """This is a round 2 - Where FS answer """
         refs = []
-        for item in self.genai_questions_for_ds[self.total_processed_question_ds :]:
+        for item in self.genai_questions_for_sf[self.total_processed_answer_sf :]:
             tmp_ds_question = "Provide a background document to answer the given question. \n\n Question: "
             refs.append(
                 generate_response.remote(
-                    self.DSAgent,
+                    self.SFAgent,
                     [
                         {
                             "content": tmp_ds_question
@@ -498,19 +705,67 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                     experiment_id,
                 )
             )
-        ds_responses = ray.get(refs)
+        fs_responses = ray.get(refs)
         if self.testmode:
             for item_index, item in enumerate(
-                self.genai_questions_for_ds[self.total_processed_question_ds :]
+                self.genai_questions_for_sf[self.total_processed_answer_sf :]
             ):
                 print(f"{Style.BRIGHT}{Fore.BLUE} Question : >>> {Style.RESET_ALL}")
                 print(item)
                 print(f"{Style.BRIGHT}{Fore.BLUE} Answer : >>> {Style.RESET_ALL}")
-                print(ds_responses[item_index])
-        self.genai_responses_from_ds.extend(ds_responses)
+                print(fs_responses[item_index])
+        self.genai_responses_from_sf.extend(fs_responses)
 
-        self.total_processed_question_ds = len(self.genai_responses_from_ds)
+        # to add the code here ...
+        """This is a round 2 - Where QE answer"""
+        refs = []
+        for item in self.genai_questions_for_qe[self.total_processed_question_qe :]:
+            refs.append(
+                generate_response.remote(
+                    self.QEAgent,
+                    [{"content": self.context_prompt_ + ". " + item, "role": "user"}],
+                    experiment_id,
+                )
+            )
+        qe_responses = ray.get(refs)
+        self.genai_responses_from_qe.extend(qe_responses)
+        if self.testmode:
+            for item_index, item in enumerate(
+                self.genai_questions_for_qe[self.total_processed_question_qe :]
+            ):
+                print(f"{Style.BRIGHT}{Fore.BLUE} Question : >>> {Style.RESET_ALL}")
+                print(item)
+                print(f"{Style.BRIGHT}{Fore.BLUE} Answer : >>> {Style.RESET_ALL}")
+                print(qe_responses[item_index])
+
+
+        """This is a round 2 - Where RE answer"""
+        refs = []
+        for item in self.genai_questions_for_re[self.total_processed_question_re :]:
+            refs.append(
+                generate_response.remote(
+                    self.REAgent,
+                    [{"content": self.context_prompt_ + ". " + item, "role": "user"}],
+                    experiment_id,
+                )
+            )
+        re_responses = ray.get(refs)
+        self.genai_responses_from_re.extend(re_responses)
+        if self.testmode:
+            for item_index, item in enumerate(
+                self.genai_questions_for_re[self.total_processed_question_re :]
+            ):
+                print(f"{Style.BRIGHT}{Fore.BLUE} Question : >>> {Style.RESET_ALL}")
+                print(item)
+                print(f"{Style.BRIGHT}{Fore.BLUE} Answer : >>> {Style.RESET_ALL}")
+                print(re_responses[item_index])
+
+        # to add the code here ...
+
+        self.total_processed_question_sf = len(self.genai_responses_from_sf)
         self.total_processed_question_sme = len(self.genai_responses_from_sme)
+        self.total_processed_question_qe = len(self.genai_responses_from_qe)
+        self.total_processed_question_re = len(self.genai_responses_from_re)
 
         if self.testmode:
             print(
@@ -539,6 +794,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             result = "\n".join(
                 [f"{i+1}. {item}" for i, item in enumerate(randomized_questions)]
             )
+            result = "Here is a list of questions: \n" + result + "\n\n From the above list of questions, generate few more questions to be asked to subject matter expert or reliability enginner or quality engineer." 
             question_response = self.QuestionGeneratorAgent.create(
                 messages=[{"content": result, "role": "user", "type": "qq"}],
                 context=None,
@@ -595,6 +851,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             result = "\n".join(
                 [f"{i+1}. {item}" for i, item in enumerate(selected_elements)]
             )
+            result = "Here is a list of questions: \n" + result + "\n\n From the above list of questions, generate few more questions to be asked to subject matter expert or reliability enginner or quality engineer." 
             question_response = self.QuestionGeneratorAgent.create(
                 messages=[{"content": result, "role": "user", "type": "qq"}],
                 context=None,
@@ -684,6 +941,12 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         # approch 1. Q1, Q2, Q3, ..... , Q20 ---> Q21, ...., Q30 (Question Prediction)
         # we use the questions that were designed to ask SME
 
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.GREEN}--------------------- SME ------------------------------.{Style.RESET_ALL}"
+            )
+            print(len(self.genai_questions_for_sme), len(self.genai_responses_from_sme))
+
         # Generate question for SME
         set1 = self._generate_questions(
             self.genai_questions_for_sme,
@@ -693,24 +956,62 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         )
         self.total_processed_answer_sme = len(self.genai_responses_from_sme)
 
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.GREEN}--------------------- SF ------------------------------.{Style.RESET_ALL}"
+            )
+            print(len(self.genai_questions_for_sf), len(self.genai_responses_from_sf))
+
         # Generate question for DS
         set2 = self._generate_questions(
-            self.genai_questions_for_ds,
-            self.genai_responses_from_ds,
-            self.total_processed_answer_ds,
+            self.genai_questions_for_sf,
+            self.genai_responses_from_sf,
+            self.total_processed_answer_sf,
             experiment_id,
         )
-        self.total_processed_answer_ds = len(self.genai_responses_from_ds)
+        self.total_processed_answer_sf = len(self.genai_responses_from_sf)
+
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.GREEN}--------------------- QE ------------------------------.{Style.RESET_ALL}"
+            )
+            print(len(self.genai_questions_for_qe), len(self.genai_responses_from_qe))
+
+        # Generate question for QE
+        set3 = self._generate_questions(
+            self.genai_questions_for_qe,
+            self.genai_responses_from_qe,
+            self.total_processed_answer_qe,
+            experiment_id,
+        )
+        self.total_processed_answer_qe = len(self.genai_responses_from_qe)
+
+        if self.testmode:
+            print(
+                f"{Style.BRIGHT}{Fore.GREEN}--------------------- RE ------------------------------.{Style.RESET_ALL}"
+            )
+            print(len(self.genai_questions_for_re), len(self.genai_responses_from_re))
+
+        # Generate question for DS
+        set4 = self._generate_questions(
+            self.genai_questions_for_re,
+            self.genai_responses_from_re,
+            self.total_processed_answer_re,
+            experiment_id,
+        )
+        self.total_processed_answer_re = len(self.genai_responses_from_re)
 
         # adding the results into the common set
         tmp_DSets.extend(set1)
         tmp_DSets.extend(set2)
+        tmp_DSets.extend(set3)
+        tmp_DSets.extend(set4)
 
         # post process the questions and then
         # remove duplicate question with high threshold
         unique_list = list(
             OrderedDict.fromkeys(
-                self.genai_questions_for_sme + self.genai_questions_for_ds
+                self.genai_questions_for_sme + self.genai_questions_for_sf + self.genai_questions_for_re + self.genai_questions_for_qe
             )
         )
         f_tmp_DSets_1 = filter_questions_using_reference(
@@ -730,7 +1031,6 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.question_placeholder_ = filter_questions_using_Flan(
             self.question_placeholder_
         )
-
 
         if self.testmode:
             print(
@@ -763,8 +1063,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         total_ds_q = 0
         total_sme_q = 0
+        total_sf_q = 0
+        total_re_q = 0
+        total_qe_q = 0
+
         total_outside_q = 0
         total_overlap_q = 0
+
         llm_answers = []
 
         refs = []
@@ -781,36 +1086,55 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             # extract the text
             sindex = llm_answer.rfind("Answer:")
             eindex = llm_answer.rfind("(TOKENSTOP")
-            answer_text = llm_answer[sindex + 7 : eindex]  # 7 = len('Answer:')
+            answer_text = llm_answer[sindex + 7 : eindex].lower()  # 7 = len('Answer:')
 
             other_q1 = False
-            if "Subject Matter Expert" in answer_text:
+            if "subject matter expert" in answer_text:
                 self.genai_questions_for_sme.append(
                     self.question_placeholder_[llm_index]
                 )
-                # adding round id
                 self.genai_track_round_info_sme.append(total_round)
                 total_sme_q = total_sme_q + 1
             else:
                 other_q1 = True
 
             other_q2 = False
-            if "Data Scientist" in answer_text:
-                self.genai_questions_for_ds.append(
+            if "fmea expert" in answer_text:
+                self.genai_questions_for_sf.append(
                     self.question_placeholder_[llm_index]
                 )
-                self.genai_track_round_info_ds.append(total_round)
-                total_ds_q = total_ds_q + 1
+                self.genai_track_round_info_sf.append(total_round)
+                total_sf_q = total_sf_q + 1
             else:
                 other_q2 = True
 
-            if other_q1 and other_q2:
+            other_q3 = False
+            if "reliability engineer" in answer_text:
+                self.genai_questions_for_re.append(
+                    self.question_placeholder_[llm_index]
+                )
+                self.genai_track_round_info_re.append(total_round)
+                total_re_q = total_re_q + 1
+            else:
+                other_q3 = True
+
+            other_q4 = False
+            if "quality engineer" in answer_text:
+                self.genai_questions_for_qe.append(
+                    self.question_placeholder_[llm_index]
+                )
+                self.genai_track_round_info_qe.append(total_round)
+                total_qe_q = total_qe_q + 1
+            else:
+                other_q4 = True
+
+            if other_q1 and other_q2 and other_q3 and other_q4:
                 total_outside_q = total_outside_q + 1
                 self.genai_questions_outof_scope.append(
                     self.question_placeholder_[llm_index]
                 )
 
-            if not other_q1 and not other_q2:
+            if not other_q1 and not other_q2 and not other_q3 and not other_q4:
                 total_overlap_q = total_overlap_q + 1
 
             if self.testmode:
@@ -819,7 +1143,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         if self.testmode:
             print(
-                f"Questions for SME : {total_sme_q}, Data Scientist {total_ds_q}, Other Question : {total_outside_q}, Overlap Question : {total_overlap_q}"
+                f"Questions for SME : {total_sme_q}, FMEA Session : {total_sf_q}, Reliability Engineer : {total_re_q}, Quality Engineer : {total_qe_q}, Other Question : {total_outside_q}, Overlap Question : {total_overlap_q}"
             )
             print(
                 f"{Style.BRIGHT}{Fore.GREEN}--------------------- Question Asignment End Round ------------------------------.{Style.RESET_ALL}"
@@ -829,11 +1153,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             {
                 "round": total_round,
                 "total_sme_q": total_sme_q,
-                "total_ds_q": total_ds_q,
+                "total_fm_q": total_ds_q,
+                "total_re_q": total_re_q,
+                "total_qe_q": total_qe_q, 
                 "total_outside_q": total_outside_q,
                 "total_overlap_q": total_overlap_q,
                 "total_questions": (
-                    total_sme_q + total_ds_q + total_outside_q - total_overlap_q
+                    len(self.question_placeholder_)
                 ),
             }
         )
@@ -865,9 +1191,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 print(
                     f"{Style.BRIGHT}{Fore.MAGENTA} CP: <<< {self.context_prompt_} >>> {Style.RESET_ALL}"
                 )
-                print(
-                    f"{Style.BRIGHT}{Fore.BLUE} CPDoc: <<< {self.context_documents_} >>> {Style.RESET_ALL}"
-                )
+                for agent_name, agent_full_name, agent_response, fs_summary in self.track_context_summary_:
+                    print(
+                        f"{Style.BRIGHT}{Fore.MAGENTA} <<< {agent_name}-{agent_full_name} : >>> {Style.RESET_ALL}"
+                    )
+                    print(
+                        f"{Style.BRIGHT}{Fore.BLUE} <<< {fs_summary} >>> {Style.RESET_ALL}"
+                    )
                 print(
                     f"{Style.BRIGHT}{Fore.CYAN} SeedQuestions: <<< {self.context_questions_seeds_total_} >>> {Style.RESET_ALL}"
                 )
@@ -906,30 +1236,46 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                         total_round for _ in range(len(self.question_placeholder_))
                     ]
 
+        # this part is about flushing the information out for future work
         # temp variable
         model_initial = self.genai_config["model"].split("/")[1].split("-")[0]
 
         sme_tuples = list(
             zip(self.genai_questions_for_sme, self.genai_track_round_info_sme)
         )
-        ds_tuples = list(
-            zip(self.genai_questions_for_ds, self.genai_track_round_info_ds)
+        sf_tuples = list(
+            zip(self.genai_questions_for_sf, self.genai_track_round_info_sf)
+        )
+        re_tuples = list(
+            zip(self.genai_questions_for_re, self.genai_track_round_info_re)
+        )
+        qe_tuples = list(
+            zip(self.genai_questions_for_qe, self.genai_track_round_info_qe)
         )
         placeholder_tuples = list(
             zip(self.question_placeholder_, self.question_track_round_info_placeholder_)
         )
 
         set1 = set(sme_tuples)
-        set2 = set(ds_tuples)
-        set3 = set(placeholder_tuples)
+        set2 = set(sf_tuples)
+        set3 = set(re_tuples)
+        set4 = set(qe_tuples)
+        set5 = set(placeholder_tuples)
+
         merged_set = set1.union(set2)
-        final_set = merged_set.union(set3)
+        merged_set1 = merged_set.union(set3)
+        merged_set2 = merged_set1.union(set4)
+        final_set = merged_set2.union(set5)
         final_list = list(final_set)
         if self.testmode:
             print(f"{Style.BRIGHT}{Fore.BLUE} SME Tuples >>> {Style.RESET_ALL}")
             print(sme_tuples)
-            print(f"{Style.BRIGHT}{Fore.BLUE} DS Tuples >>> {Style.RESET_ALL}")
-            print(ds_tuples)
+            print(f"{Style.BRIGHT}{Fore.BLUE} FC Tuples >>> {Style.RESET_ALL}")
+            print(sf_tuples)
+            print(f"{Style.BRIGHT}{Fore.BLUE} RE Tuples >>> {Style.RESET_ALL}")
+            print(re_tuples)
+            print(f"{Style.BRIGHT}{Fore.BLUE} QE Tuples >>> {Style.RESET_ALL}")
+            print(qe_tuples)
             print(
                 f"{Style.BRIGHT}{Fore.BLUE} Total questions : {len(merged_set)} >>> {Style.RESET_ALL}"
             )
@@ -954,15 +1300,40 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
         df = pd.DataFrame(
             {
-                "questions": self.genai_questions_for_ds,
-                "answers": self.genai_responses_from_ds,
-                "round": self.genai_track_round_info_ds,
+                "questions": self.genai_questions_for_sf,
+                "answers": self.genai_responses_from_sf,
+                "round": self.genai_track_round_info_sf,
             }
         )
         df.to_csv(
-            f"genai_questions_answer_ds_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            f"genai_questions_answer_sf_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
             index=False,
         )
+
+        df = pd.DataFrame(
+            {
+                "questions": self.genai_questions_for_re,
+                "answers": self.genai_responses_from_re,
+                "round": self.genai_track_round_info_re,
+            }
+        )
+        df.to_csv(
+            f"genai_questions_answer_re_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            index=False,
+        )
+
+        df = pd.DataFrame(
+            {
+                "questions": self.genai_questions_for_qe,
+                "answers": self.genai_responses_from_qe,
+                "round": self.genai_track_round_info_qe,
+            }
+        )
+        df.to_csv(
+            f"genai_questions_answer_qe_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            index=False,
+        )
+
 
         df = pd.DataFrame(self.question_generation_track)
         df.to_csv(
@@ -973,9 +1344,11 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         df = pd.DataFrame(
             {
                 "context_prompt": [self.context_prompt_],
-                "ds_context": [self.context_documents_],
+                "sf_context": [self.context_documents_],
                 "question_context": [self.question_context_documents_],
                 "sme_context": [self.sme_response_],
+                "re_context": [self.re_response_],
+                "qe_context": [self.qe_response_],
             }
         )
         df.to_csv(

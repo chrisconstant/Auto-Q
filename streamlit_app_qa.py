@@ -6,13 +6,20 @@ import time
 system_prompt = ''
 ds_promt = ''
 sme_prompt = ''
+sf_prompt = ''
+re_prompt = ''
+qe_prompt = ''
 
 question = []
 ds_answer = []
 sme_answer = []
 all_question = []
+sf_answer = []
+qe_answer = []
+re_answer = []
 
-assets = ["Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot", "Turbine Generator", "Industrial boiler", "Industrial Oven", "Industrial Furnace", "Centrifugal Compressor", "Hydraulic Press", "Steam Turbine"]
+assets = ["Electrical Submersible Pump", "Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot", "Turbine Generator", "Industrial boiler", "Industrial Oven", "Industrial Furnace", "Centrifugal Compressor", "Hydraulic Press", "Steam Turbine"]
+applications = ["FMEA Generation", "Anomaly Detection"]
 
 def display_message(display_message, tsleep=0.1):
     message_placeholder = st.empty()
@@ -30,35 +37,21 @@ def display_message(display_message, tsleep=0.1):
     message_placeholder.markdown(full_response)
 
 def cross_check_file():
-    import pandas as pd
-    for model in ['llama','mixtral']:
-        for assetname in assets:
-            assetname = assetname.lower().replace(" ", "")
-            #print(f"model: {model}, asset: {assetname}")
-            df1 = pd.read_csv(
-                f"./results/{assetname}/genai_questions_answer_ds_bank_{assetname}_{model}.csv"
-            )
-            df2 = pd.read_csv(
-                f"./results/{assetname}/genai_questions_answer_sme_bank_{assetname}_{model}.csv"
-            )
-            df3 = pd.read_csv(
-                f"./results/{assetname}/genai_questions_bank_{assetname}_{model}.csv"
-            )
-            df = pd.read_csv(
-                f"./results/{assetname}/genai_context_docs_{assetname}_{model}.csv"
-            )
+    pass
 
-
-def collect_system_messages(assetname='windturbinegearbox',model='mixtral'):
+def collect_system_messages(assetname='electricalsubmersiblepump',model='granite'):
     """_summary_
     """
-    global system_prompt, ds_promt, sme_prompt
+    global system_prompt, sf_promt, sme_prompt, re_prompt, qe_prompt
 
     import pandas as pd 
     df = pd.read_csv(f'./results/{assetname}/genai_context_docs_{assetname}_{model}.csv')
     system_prompt = list(df['context_prompt'])[0]
-    ds_promt = list(df['ds_context'])[0]
+    sf_promt = list(df['sf_context'])[0]
     sme_prompt = list(df['sme_context'])[0]
+    qe_prompt = list(df['qe_context'])[0]
+    re_prompt = list(df['re_context'])[0]
+    qe_prompt =  list(df['qe_context'])[0]
     
 def trim_repeated_right_side(sentence, max_repetitions):
     import re
@@ -109,21 +102,35 @@ def display_chat_message_warning(score):
         st.markdown(f'<p style="color: {score_color};">{score_emoji}</p>', unsafe_allow_html=True)
 
 
-def collect_question_answer_messages(assetname='windturbinegearbox',model='mixtral'):
+def collect_question_answer_messages(assetname='electricalsubmersiblepump',model='granite'):
     """_summary_
     """
-    global question, ds_answer, sme_answer, all_question
+    global question, sf_answer, sme_answer, all_question, qe_question, re_question, qe_answer, re_answer
 
     import pandas as pd
     # questions,answers,round
-    df1 = pd.read_csv(f'./results/{assetname}/genai_questions_answer_ds_bank_{assetname}_{model}.csv')
+    df1 = pd.read_csv(f'./results/{assetname}/genai_questions_answer_sf_bank_{assetname}_{model}.csv')
     df2 = pd.read_csv(f'./results/{assetname}/genai_questions_answer_sme_bank_{assetname}_{model}.csv')
-    merged_df = pd.merge(df1, df2, on='questions', how='outer', suffixes=('_round1', '_round2'))
-    merged_df = merged_df.sort_values(by='round_round1')
+    df3 = pd.read_csv(f'./results/{assetname}/genai_questions_answer_qe_bank_{assetname}_{model}.csv')
+    df4 = pd.read_csv(f'./results/{assetname}/genai_questions_answer_re_bank_{assetname}_{model}.csv')
+    df1.columns = ['questions', 'answers_sf', 'round_sf']
+    df2.columns = ['questions', 'answers_sme', 'round_sme']
+    df3.columns = ['questions', 'answers_qe', 'round_qe']
+    df4.columns = ['questions', 'answers_re', 'round_re']
+
+    merged_df = pd.merge(df1, df2, on='questions', how='outer')
+    merged_df = pd.merge(merged_df, df3, on='questions', how='outer')
+    merged_df = pd.merge(merged_df, df4, on='questions', how='outer')
+
+    merged_df = merged_df.sort_values(by='round_sme')
+    merged_df = merged_df[merged_df['questions'].str.contains('failure|modes|components|critical|component|maintenance|faults|codes|reasons|degradation|mechanism')]
+    merged_df.to_csv('testing_data.csv',index=False)
     merged_df.fillna('', inplace=True)
     question = merged_df['questions'].to_list()
-    ds_answer = merged_df['answers_round1'].to_list()
-    sme_answer = merged_df['answers_round2'].to_list()
+    sf_answer = merged_df['answers_sf'].to_list()
+    sme_answer = merged_df['answers_sme'].to_list()
+    qe_answer = merged_df['answers_qe'].to_list()
+    re_answer = merged_df['answers_re'].to_list()
 
     df3 = pd.read_csv(f'./results/{assetname}/genai_questions_bank_{assetname}_{model}.csv')
     merged_df3 = df3.sort_values(by='round')
@@ -145,7 +152,6 @@ def main():
     st.markdown(disclaimer, unsafe_allow_html=True)
     cross_check_file()
     with st.sidebar:
-
         st.markdown("## Auto-Qx5 System")
         st.markdown("""
             This is a sample app that demonstrates Mixture of Experts technology for a domain specific question generation.
@@ -159,9 +165,15 @@ def main():
                 key="editable_dropdown_asset",
                 format_func=lambda x: x,
             )
+            selected_application = st.selectbox(
+                "Select an Application",
+                applications,
+                key="editable_dropdown_application",
+                format_func=lambda x: x,
+            )
             selected_model = st.selectbox(
                 "Select LLM",
-                ["Mixtral", "LLAMA"],
+                ["Granite", "Mixtral", "LLAMA"],
                 key="editable_dropdown_model",
                 format_func=lambda x: x,
             )
@@ -180,41 +192,68 @@ def main():
             submit_button = st.form_submit_button(label="Run")
 
     # Use a container to store chat messages
+    # https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
     if submit_button and selected_asset and selected_model:
         st.empty()
-
-        # Send the user input to FastAPI for processing
-        # st.session_state["past"].append(selected_item)
-        # st.session_state["generated"].append(selected_item)
-
-        # Call FastAPI to submit the user input
-        # submit_request(selected_asset)
-
-        # For now, simulating a response
         with st.chat_message("ai", avatar="#️⃣"):
             display_message("""Welcome to Auto-Qx5 System! I am a responsible and automated (multi-agent) AI system designed to assist you in generating domain specific questions. Additionally, I have the skill to select the right persona who can provide answers to the questions. \n \n My goal is to auto-generate a list of questions based on a selected asset class. In this demonstration, I will provide a preview of a few examples of questions and answers. Let's begin!""")
             time.sleep(7)
-
-            with st.spinner("Inviting team members (Data Scientist 👨‍🔬, Subject Matter Expert 🧑‍🏭, etc)..."):
-                time.sleep(5)
-                st.success("Members invited!")
-
-        col1, col2 = st.columns([0.25,4.75])  # Adjust column widths as needed
-        with col2:
-            with st.chat_message("user", avatar='👨‍🔬'):
-                st.write("I am Data Scientist Expert.")
-
-                with st.spinner(" I am getting ready ..."):
+            if selected_application == 'FMEA Generation':
+                with st.spinner("Inviting team members (FMEA Facilitator 👨‍🔬, Subject Matter Expert 🧑‍🏭, Quality Enginner 👨‍💼, Reliability Enginner 👨‍🔧)..."):
                     time.sleep(5)
-                    st.success("I am ready!")
+                    st.success("Members invited!")
+            elif selected_application == 'Anomaly Detection':
+                with st.spinner("Inviting team members (Data Scientist 👨‍💻, Subject Matter Expert 🧑‍🏭, etc)..."):
+                    time.sleep(5)
+                    st.success("Members invited!")
+            else:
+                pass
 
+        _, col2 = st.columns([0.25,4.75])  # Adjust column widths as needed
         with col2:
-            with st.chat_message("user", avatar='🧑‍🏭'):
-                st.write("I am Subject Matter Expert.")
+            if selected_application == 'FMEA Generation':
+                with st.chat_message("user", avatar='👨‍🔬'):
+                    st.write("I am FMEA Facilitator.")
 
-                with st.spinner(" I am getting ready ..."):
-                    time.sleep(2)
-                    st.success("I am ready!")
+                    with st.spinner(" I am getting ready ..."):
+                        time.sleep(5)
+                        st.success("I am ready!")
+
+                with st.chat_message("user", avatar='🧑‍🏭'):
+                    st.write("I am Subject Matter Expert.")
+
+                    with st.spinner(" I am getting ready ..."):
+                        time.sleep(2)
+                        st.success("I am ready!")
+
+                with st.chat_message("user", avatar='👨‍💼'):
+                    st.write("I am Quality Engineer.")
+
+                    with st.spinner(" I am getting ready ..."):
+                        time.sleep(2)
+                        st.success("I am ready!")
+
+                with st.chat_message("user", avatar='👨‍🔧'):
+                    st.write("I am Reliability Engineer.")
+
+                    with st.spinner(" I am getting ready ..."):
+                        time.sleep(2)
+                        st.success("I am ready!")
+ 
+            elif selected_application == 'Anomaly Detection':
+                with st.chat_message("user", avatar='👨‍💻'):
+                    st.write("I am Data Scientist Expert.")
+
+                    with st.spinner(" I am getting ready ..."):
+                        time.sleep(5)
+                        st.success("I am ready!")
+
+                with st.chat_message("user", avatar='🧑‍🏭'):
+                    st.write("I am Subject Matter Expert.")
+
+                    with st.spinner(" I am getting ready ..."):
+                        time.sleep(2)
+                        st.success("I am ready!")
 
         with st.spinner("AI is processing..."):
             assetname = selected_asset.lower().replace(' ','')
@@ -232,14 +271,30 @@ def main():
         _, col2 = st.columns([0.25,4.75])  # Adjust column widths as needed
 
         with col2:
-            with st.chat_message("user", avatar='🧑‍🏭'):
-                display_message(sme_prompt)
 
-        time.sleep(2)
+            if selected_application == 'FMEA Generation':
 
-        with col2:
-            with st.chat_message("user", avatar='👨‍🔬'):
-                display_message(ds_promt)
+                with st.chat_message("user", avatar='🧑‍🏭'):
+                    display_message(sme_prompt)
+
+                time.sleep(2)
+
+                with st.chat_message("user", avatar='👨‍💼'):
+                    display_message(qe_prompt)
+
+                time.sleep(2)
+
+                with st.chat_message("user", avatar='👨‍🔧'):
+                    display_message(re_prompt)
+
+            else:
+                with st.chat_message("user", avatar='🧑‍🏭'):
+                    display_message(sme_prompt)
+
+                time.sleep(2)
+
+                with st.chat_message("user", avatar='👨‍🔬'):
+                    display_message(ds_promt)
 
         # display system messages
         with st.chat_message("ai", avatar="#️⃣"):
@@ -269,11 +324,25 @@ def main():
                         score = reduction_factor(sme_answer[i]) 
                         display_chat_message_warning(score)
 
-            if len(ds_answer[i]) > 0:
+            if len(sf_answer[i]) > 0:
                 with col2:
                     with st.chat_message("user", avatar='👨‍🔬'):
-                        display_message(ds_answer[i])
-                        score = reduction_factor(ds_answer[i]) 
+                        display_message(sf_answer[i])
+                        score = reduction_factor(sf_answer[i]) 
+                        display_chat_message_warning(score)
+
+            if len(re_answer[i]) > 0:
+                with col2:
+                    with st.chat_message("user", avatar='👨‍💼'):
+                        display_message(re_answer[i])
+                        score = reduction_factor(re_answer[i]) 
+                        display_chat_message_warning(score)
+
+            if len(qe_answer[i]) > 0:
+                with col2:
+                    with st.chat_message("user", avatar='👨‍🔧'):
+                        display_message(qe_answer[i])
+                        score = reduction_factor(qe_answer[i]) 
                         display_chat_message_warning(score)
 
         # display questions

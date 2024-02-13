@@ -64,11 +64,18 @@ class GenAIInstructClient(Model):
             result = None
             for _ in range(1, self._max_retries + 1):
                 try:
-                    result = self.client.generate(
-                        prompts=[
-                            f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)."
-                        ]
-                    )
+                    if self.question_message:
+                        result = self.client.generate(
+                            prompts=[
+                                f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)."
+                            ]
+                        )
+                    else:
+                        result = self.client.generate(
+                            prompts=[
+                                f"System Prompt: {self.system_message} \n\n Question: {messages}."
+                            ]
+                        )
                     break
                 except (OSError, socket.error, ConnectionResetError, Exception, GenAiException) as e:
                     print ('Error ....' + str(e))

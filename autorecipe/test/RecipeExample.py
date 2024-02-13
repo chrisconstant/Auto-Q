@@ -1,18 +1,28 @@
 from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Electrical Submersible Pump')
+obj.init_chat(round=1)
+
 '''
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='wind turbine gearbox')
 obj.init_chat(round=2)
+'''
 
+'''
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='standby generator')
 obj.init_chat(round=2)
+'''
 
+'''
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='air comporessor')
 obj.init_chat(round=2)
+'''
 
+'''
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='hydroelectric power turbine')
 obj.init_chat(round=2)
@@ -74,6 +84,7 @@ obj.set_asset_class(asset_class='Steam Turbine')
 obj.init_chat(round=2)
 '''
 
+'''
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='Power Transformer (Converter transformer)')
 obj.init_chat(round=2)
@@ -173,6 +184,7 @@ obj.init_chat(round=2)
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='GIS Chamber /Duct')
 obj.init_chat(round=2)
+'''
 
 # anomaly detection model
 # failure event prediction

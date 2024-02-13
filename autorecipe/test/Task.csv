@@ -1,0 +1,24 @@
+Task,Questions
+Component ,"What are the most critical components of the ESP system that are susceptible to failure, and what are their potential failure modes?"
+Component ,Can you provide a detailed description of the ESP components?
+Component ,"What are the most common components or subsystems that fail in ESP, and how do these failures impact the overall performance and reliability of the system?"
+Component ,"What are the most critical components that can fail in ESP, and what are the potential failure modes for each component?"
+Component ,"How do the components and subcomponents of an ESP interact with each other, and what are the potential failure paths?"
+Component,"How do the ESP's components and subsystems interact with each other, and what are the potential failure modes associated with these interactions?"
+Component,"What are the critical components of an ESP, and what are their functions?"
+Failure Mode,"What are the most common failure modes observed in ESP, and what are their corresponding failure causes?"
+Failure Mode,"What are the common failure modes for each component of the ESP, and what are their causes?"
+Failure Mode,"How often do ESP failures occur, and what is the typical downtime associated with each failure mode?"
+Failure Mode,"How do you identify the potential failure modes for each component, subcomponent, and assembly in the ESP system?"
+Failure Mode,"How do the ESP's components and subsystems interact with each other, and what are the potential failure modes associated with these interactions?"
+Failure Mode,"Can you describe a failure mode that could result in a catastrophic failure of the ESP system, and how would it impact the surrounding equipment and environment?"
+Failure Mode,"Can you identify the most common failure modes of ESP, and what are their root causes?"
+Failure Cause,What are the common causes of failure modes in ESP and how to prevent them?
+Failure Cause,"What are the most common causes of ESP failures, and how do they relate to the operating conditions and maintenance history?"
+Failure Mode,Can you describe the typical failure modes and causes associated with each component?
+Failure Mode,"What are the common failure modes and degradation mechanisms for the ESP system, and how do they impact the overall system performance?"
+Failure Mode,"What are the most common failure modes associated with ESP systems, and what are the contributing factors for each?"
+Component,"Can you provide the name of the main components of the ESP system, and their respective functions?"
+Failure Mode,"Can you provide more details on the specific failure modes and causes associated with ESP, and how they impact the overall performance and lifespan of the ESP?"
+Failure Mode,"What are the key factors that contribute to the failure of ESP systems, and how can they be mitigated through proper design, material selection, and maintenance practices?"
+Failure Cause,Can you describe the typical failure modes and causes associated with each component?

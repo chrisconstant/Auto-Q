@@ -87,6 +87,7 @@ class GenAIChatClient(Model):
         credentials,
         system_message,
         stateful=True,
+        post_process_text=False,
     ):
         self.name = name
         self.description = description
@@ -99,6 +100,7 @@ class GenAIChatClient(Model):
         self._conversation_id = None
         self.system_message = system_message
         self.stateful = stateful
+        self.post_process_text = post_process_text
 
         # track the request in and request out
         self._prompt_tokens = 0
@@ -161,6 +163,8 @@ class GenAIChatClient(Model):
                         t_dict["total_tokens"],
                     )
                     mlflow.log_dict(a_dict, "Answer.json")
+                    if self.post_process_text:
+                        return self.clean_user_assistant(result.generations[0][0].text)
                     return result.generations[0][0].text
                 else:
                     return ''
@@ -187,9 +191,17 @@ class GenAIChatClient(Model):
                         t_dict["total_tokens"],
                     )
                     mlflow.log_dict(a_dict, "Answer.json")
+                    if self.post_process_text:
+                        return self.clean_user_assistant(result.generations[0][0].text)
                     return result.generations[0][0].text
                 else:
                     return ''
+
+    def clean_user_assistant(self, text):
+        lines = text.split("\n")
+        cleaned_text = "\n".join(line for line in lines if not (line.startswith("User:") or (line == "Assistant:")))
+        return cleaned_text
+
 
     def extract_questions(self, text):
         """Doing implmenetation

@@ -1,0 +1,282 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is wind turbine gearbox,"### User:
+
+### System:
+Wind turbine gearbox is a mechanical device that converts the rotational motion of the wind turbine's drive shaft into the linear motion necessary to turn the turbine's blades. The gearbox is composed of a series of gears that are designed to reduce the speed and increase the torque of the drive shaft, allowing the turbine to generate more power.
+
+The gearbox is typically made of high-strength steel and is designed to withstand the harsh conditions of the wind turbine environment, including high temperatures, high humidity, and strong winds. The gearbox is also designed to be maintenance-free, with no moving parts that require lubrication or replacement.
+
+The gearbox is an essential component of the wind turbine, and its failure can result in significant downtime and reduced power generation. Therefore, it is important to perform regular inspections and maintenance on the gearbox to ensure that it is functioning properly and to identify any potential issues before they become serious problems.","
+### System:
+
+### Summary:
+
+### Conclusion:
+
+### Recommendations:
+
+### Acknowledgements:
+
+### References:
+
+### Appendix:
+
+### Glossary:
+
+### Annex:
+
+### Bibliography:
+
+### Index:
+
+### Table of Contents:
+
+### Figure Legends:
+
+### Figure Captions:
+
+### Table of Figures:
+
+### Table of Tables:
+
+### Table of Examples:
+
+### Table of Answers:
+
+### Table of Questions:
+
+### Table of Statements:
+
+### Table of Arguments:
+
+### Table of Proofs:
+
+### Table of Evidence:
+
+### Table of Examples:
+
+### Table of Explanations:
+
+### Table of Solutions:
+
+### Table of Recommendations:
+
+### Table of Conclusions:
+
+### Table of Acknowledgements:
+
+### Table of References:
+
+### Table of Appendix:
+
+### Table of Glossary:
+
+### Table of Annex:
+
+### Table of Bibliography:
+
+### Table of Index:
+
+### Table of Table of Contents:
+
+### Table of Figure Legends:
+
+### Table of Figure Captions:
+
+### Table of Table of Figures:
+
+### Table of Table of Tables:
+
+### Table of Table of Examples:
+
+### Table of Table of Answers:
+
+### Table of Table of Questions:
+
+### Table of Table of Statements:
+
+### Table of Table of Arguments:
+
+### Table of Table of Proofs:
+
+### Table of Table of Evidence:
+
+### Table of Table of Examples:
+
+### Table of Table of Explanations:
+
+### Table of Table of Solutions:
+
+### Table of Table of Recommendations:
+
+### Table of Table of Conclusions:
+
+### Table of Table of Acknowledgements:
+
+### Table of Table of References:
+
+### Table of Table of Appendix:
+
+### Table of Table of Glossary:
+
+### Table of Table of Annex:
+
+### Table of Table of Bibliography:
+
+### Table of Table of Index:
+
+### Table of Table of Table of Contents:
+
+### Table of Table of Figure Legends:
+
+### Table of Table of Figure Captions:
+
+### Table of Table of Table of Figures:
+
+### Table of Table of Table of Tables:
+
+### Table of Table of Table of Examples:
+
+### Table of Table of Table of Answers:
+
+### Table of Table of Table of Questions:
+
+### Table of Table of Table of Statements:
+
+### Table of Table of Table of Arguments:
+
+### Table of Table of Table of Proofs:
+
+### Table of Table of Table of Evidence:
+
+### Table of Table of Table of Examples:
+
+### Table of Table of Table of Explanations:
+
+### Table of Table of Table of Solutions:
+
+### Table of Table of Table of Recommendations:
+
+### Table of Table of Table of Conclusions:
+
+### Table of Table of Table of Acknowledgements:
+
+### Table of Table of Table of References:
+
+### Table of Table of Table of Appendix:
+
+### Table of Table of Table of Glossary:
+
+### Table of Table of Table of Annex:
+
+### Table of Table of Table of Bibliography:
+
+### Table of Table of Table of Index:
+
+### Table of Table of Table of Table of Contents:
+
+### Table of Table of Table of Figure Legends:
+
+### Table of Table of Table of Figure Captions:
+
+### Table of Table of Table of Table of Figures:
+
+### Table of Table of Table of Table of Tables:
+
+### Table of Table of Table of Table of Examples:
+
+### Table of Table of Table of Table of Answers:
+
+### Table of Table of Table of Table of Questions:
+
+### Table of Table of Table of Table of Statements:
+
+### Table of Table of Table of Table of Arguments:
+
+### Table of Table of Table of Table of Proofs:
+
+### Table of Table of Table of Table of Evidence:
+
+### Table of Table of Table of Table of Examples:
+
+### Table of Table of Table of Table of Explanations:
+
+### Table of Table of Table of Table of Solutions:
+
+### Table of Table of Table of Table of Recommendations:
+
+### Table of Table of Table of Table of Conclusions:
+
+### Table of Table of Table of Table of Acknowledgements:
+
+### Table of Table of Table of Table of References:
+
+### Table of Table of Table of Table of Appendix:
+
+### Table of Table of Table of Table of Glossary:
+
+### Table of Table of Table of Table of Annex:
+
+### Table of Table of Table of Table of Bibliography:
+
+### Table of Table of Table of Table of Index:
+
+### Table of Table of Table of Table of Table of Contents:
+
+### Table of Table of Table of Table of Figure Legends:
+
+### Table of Table of Table of Table of Figure Captions:
+
+### Table of Table of Table of Table of Table of Figures:
+
+### Table of Table of Table of Table of Table of Tables:
+
+### Table of Table of Table of Table of Table of Examples:
+
+### Table of Table of Table of Table of Table of Answers:
+
+### Table of Table of Table of Table of Table of Questions:
+
+### Table of Table of Table of Table of Table of Statements:
+
+### Table of Table of Table of Table of Table of Arguments:
+
+### Table of Table of Table of Table of Table of Proofs:
+
+### Table of Table of Table of Table of Table of Evidence:
+
+### Table of Table of Table of Table of Table of Examples:
+
+### Table of Table of Table of Table of Table of Explanations:
+
+### Table of Table of Table of Table of Table of Solutions:
+
+### Table of Table of Table of Table of Table of Recommendations:
+
+### Table of Table of Table of Table of Table of Conclusions:
+
+### Table of Table of Table of Table of Table of Acknowledgements:
+
+### Table of Table of Table of Table of Table of References:
+
+### Table of Table of Table of Table of Table of Appendix:
+
+### Table of Table of Table of Table of Table of Glossary:
+
+### Table of Table of Table of Table of Table of Annex:
+
+### Table of Table of Table of Table of Table of Bibliography:
+
+### Table of Table of Table of Table of Table of Index:
+
+### Table of Table of Table of Table of Table of Table of Contents:
+
+### Table of Table of Table of Table of Table of Figure Legends:
+
+### Table of Table of Table of","
+### System:
+Wind turbine gearbox is a mechanical device that converts the rotational motion of the wind turbine's drive shaft into the linear motion necessary to turn the turbine's blades. The gearbox is composed of a series of gears that are designed to reduce the speed and increase the torque of the drive shaft, allowing the turbine to generate more power.
+
+The gearbox is typically made of high-strength steel and is designed to withstand the harsh conditions of the wind turbine environment, including high temperatures, high humidity, and strong winds. The gearbox is also designed to be maintenance-free, with no moving parts that require lubrication or replacement.
+
+The gearbox is an essential component of the wind turbine, and its failure can result in significant downtime and reduced power generation. Therefore, it is important to perform regular inspections and maintenance on the gearbox to ensure that it is functioning properly and to identify any potential issues before they become serious problems."
