@@ -1,0 +1,57 @@
+Name,Type,Description
+Electrical Submersible Pump,Equipment,An electrical submersible pump (ESP) is a type of pump used to extract oil or gas from underground reservoirs. It is a submersible pump that is designed to operate while submerged in the fluid.
+Power Section,Component,"The power section contains the motor, which converts electrical energy into mechanical energy."
+Motor,Subcomponent,The motor is the component that converts electrical energy into mechanical energy.
+Pump Section,Component,"The pump section contains the pump, which is used to lift the fluid to the surface."
+Pump,Subcomponent,The pump is the component that is used to lift the fluid to the surface.
+Cable,Component,The cable connects the power section to the pump section and carries the electrical energy to the pump.
+Insulation,Subcomponent,The insulation is the component that protects the cable from electrical failure.
+Sucker Rods,Component,The sucker rods are used to connect the pump to the wellbore and are typically made of steel.
+Rod Ends,Subcomponent,The rod ends are the components that connect the sucker rods to the pump.
+Electrical Submersible Pump,Asset,An electrical submersible pump (ESP) is a type of pump used to extract oil or gas from underground reservoirs. It is a submersible pump that is designed to operate while submerged in the fluid.
+Power Section,Component,"The power section contains the motor, which converts electrical energy into mechanical energy."
+Squirrel Cage Induction Motor,Subcomponent,"A squirrel cage induction motor is designed to operate efficiently in high-torque, low-speed applications."
+Pump Section,Component,"The pump section contains the pump, which is used to lift the fluid to the surface."
+Centrifugal Pump,Subcomponent,A centrifugal pump is used to lift the fluid to the surface.
+Cable,Component,The cable connects the power section to the pump section and carries the electrical energy to the pump.
+Sucker Rods,Component,The sucker rods are used to connect the pump to the wellbore and are typically made of steel.
+Electrical Submersible Pump,equipment,An electrical submersible pump (ESP) is a type of pump used to extract oil or gas from underground reservoirs. It is a submersible pump that is designed to operate while submerged in the fluid.
+Power Section,component,"The power section contains the motor, which converts electrical energy into mechanical energy."
+Motor,component,The motor is the component of the power section that converts electrical energy into mechanical energy.
+Pump Section,component,"The pump section contains the pump, which is used to lift the fluid to the surface."
+Pump,component,The pump is the component of the pump section that is used to lift the fluid to the surface.
+Cable,component,The cable connects the power section to the pump section and carries the electrical energy to the pump.
+Insulation,component,The insulation is the component of the cable that protects the electrical conductors from damage due to electrical interference or high voltage.
+Sucker Rods,component,The sucker rods are used to connect the pump to the wellbore and are typically made of steel.
+Rod Ends,component,Rod ends are the components of the sucker rods that connect the pump to the rods.
+Electrical Submersible Pump,Asset,An electrical submersible pump (ESP) is a type of pump used to extract oil or gas from underground reservoirs. It is a submersible pump that is designed to operate while submerged in the fluid.
+Power Section,Component,"The power section contains the motor, which converts electrical energy into mechanical energy."
+Pump Section,Component,"The pump section contains the pump, which is used to lift the fluid to the surface."
+Cable,Component,The cable connects the power section to the pump section and carries the electrical energy to the pump.
+Sucker Rods,Component,The sucker rods are used to connect the pump to the wellbore and are typically made of steel.
+ESP Power Section,Component,"The power section of an ESP contains the motor, which converts electrical energy into mechanical energy."
+ESP Pump Section,Component,"The pump section of an ESP contains the pump, which is used to lift the fluid to the surface."
+ESP Cable,Component,The ESP cable connects the power section to the pump section and carries the electrical energy to the pump.
+Sucker Rods,Component,Sucker rods are used to connect the pump to the wellbore and are typically made of steel.
+Squirrel Cage Induction Motor,Subcomponent,The squirrel cage induction motor is a type of motor used in the power section of an ESP.
+Centrifugal Pump,Subcomponent,The centrifugal pump is a type of pump used in the pump section of an ESP.
+"High-Voltage, Low-Resistance Cable",Subcomponent,"High-voltage, low-resistance cable is used in the ESP cable to minimize power loss and maximize efficiency."
+Steel Sucker Rods,Subcomponent,Steel sucker rods are used in the sucker rods to connect the pump to the wellbore.
+Electrical Submersible Pump,Asset,An electrical submersible pump (ESP) is a type of pump used to extract oil or gas from underground reservoirs. It is a submersible pump that is designed to operate while submerged in the fluid.
+Power Section,Component,"The power section contains the motor, which converts electrical energy into mechanical energy."
+Motor,Subcomponent,The motor is the component that converts electrical energy into mechanical energy.
+Pump Section,Component,"The pump section contains the pump, which is used to lift the fluid to the surface."
+Pump,Subcomponent,The pump is the component used to lift the fluid to the surface.
+Cable,Component,The cable connects the power section to the pump section and carries the electrical energy to the pump.
+Cable,Subcomponent,The cable is the component that connects the power section to the pump section and carries the electrical energy to the pump.
+Sucker Rods,Component,The sucker rods are used to connect the pump to the wellbore and are typically made of steel.
+Sucker Rods,Subcomponent,The sucker rods are the component that connects the pump to the wellbore and are typically made of steel.
+Electrical Submersible Pump,Equipment,An electrical submersible pump (ESP) is a type of pump used to extract oil or gas from underground reservoirs. It is a submersible pump that is designed to operate while submerged in the fluid.
+Power Section,Component,"The power section contains the motor, which converts electrical energy into mechanical energy."
+Motor,Subcomponent,The motor is the component that converts electrical energy into mechanical energy.
+Pump Section,Component,"The pump section contains the pump, which is used to lift the fluid to the surface."
+Pump,Subcomponent,The pump is the component that is used to lift the fluid to the surface.
+Cable,Component,The cable connects the power section to the pump section and carries the electrical energy to the pump.
+Insulation,Subcomponent,The insulation is the component that protects the cable from electrical failure.
+Sucker Rods,Component,The sucker rods are used to connect the pump to the wellbore and are typically made of steel.
+Rod String,Subcomponent,The rod string is the component that connects the pump to the wellbore.

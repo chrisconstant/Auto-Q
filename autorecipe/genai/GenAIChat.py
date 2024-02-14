@@ -111,6 +111,10 @@ class GenAIChatClient(Model):
         self._max_retries = 3
         self._retry_delay = 10
 
+    def update_system_message(self, asset_class, asset_desc):
+        self.system_message = f"{self.system_message} \n\n Asset Class: {asset_class} \n\n Asset Description: {asset_desc} \n\n"
+        print(self.system_message)
+
     def _preprocess_create_payload(self, messages):
         chatmessage = []
         if self._conversation_id is None:

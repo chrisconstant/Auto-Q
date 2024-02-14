@@ -1,0 +1,18 @@
+Name,Description
+Electrical Submersible Pump,An electrical submersible pump (ESP) is a type of pump used to extract oil or gas from underground reservoirs. It is a submersible pump that is designed to operate while submerged in the fluid.
+Power Section,"The power section contains the motor, which converts electrical energy into mechanical energy."
+Pump Section,"The pump section contains the pump, which is used to lift the fluid to the surface."
+Squirrel Cage Induction Motor,"A squirrel cage induction motor is designed to operate efficiently in high-torque, low-speed applications."
+Motor,The motor is the component of the power section that converts electrical energy into mechanical energy.
+Pump,The pump is the component of the pump section that is used to lift the fluid to the surface.
+Insulation,The insulation is the component of the cable that protects the electrical conductors from damage due to electrical interference or high voltage.
+Rod Ends,Rod ends are the components of the sucker rods that connect the pump to the rods.
+ESP Power Section,"The power section of an ESP contains the motor, which converts electrical energy into mechanical energy."
+ESP Pump Section,"The pump section of an ESP contains the pump, which is used to lift the fluid to the surface."
+ESP Cable,The ESP cable connects the power section to the pump section and carries the electrical energy to the pump.
+Centrifugal Pump,The centrifugal pump is a type of pump used in the pump section of an ESP.
+"High-Voltage, Low-Resistance Cable","High-voltage, low-resistance cable is used in the ESP cable to minimize power loss and maximize efficiency."
+Steel Sucker Rods,Steel sucker rods are used in the sucker rods to connect the pump to the wellbore.
+Cable,The cable is the component that connects the power section to the pump section and carries the electrical energy to the pump.
+Sucker Rods,The sucker rods are the component that connects the pump to the wellbore and are typically made of steel.
+Rod String,The rod string is the component that connects the pump to the wellbore.

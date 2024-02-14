@@ -18,7 +18,57 @@ sf_answer = []
 qe_answer = []
 re_answer = []
 
-assets = ["Electrical Submersible Pump", "Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot", "Turbine Generator", "Industrial boiler", "Industrial Oven", "Industrial Furnace", "Centrifugal Compressor", "Hydraulic Press", "Steam Turbine"]
+
+def get_failure_location_level(data, key="Failure Location", level=1):
+    for k, v in data.items():
+        if k == key:
+            return level
+        elif isinstance(v, dict):
+            nested_level = get_failure_location_level(v, key, level + 1)
+            if nested_level:
+                return nested_level
+    return None
+
+def traverse_tree(data):
+    result = []
+    if isinstance(data, dict):
+        result.append({'name': data['name'], 'type': data['type'], 'description': data['description']})
+        if 'components' in data.keys():
+            for item in data['components']:
+                result.extend(traverse_tree(item))
+        elif 'Components' in data.keys():
+            for item in data['components']:
+                result.extend(traverse_tree(item))
+        elif 'subcomponents' in data.keys():
+            for item in data['subcomponents']:
+                result.extend(traverse_tree(item))
+        elif 'Subcomponents' in data.keys():
+            for item in data['Subcomponents']:
+                result.extend(traverse_tree(item))
+        elif 'SubComponents' in data.keys():
+            for item in data['SubComponents']:
+                result.extend(traverse_tree(item))
+        else:
+            pass
+    return result
+
+def flatten_failure_data(data, level):
+    flat_data = []
+    if level == 4:
+        for _, failures in data.items():
+            for _, details in failures.items():
+                for _, details1 in details.items():
+                    flat_data.append(details1)
+    elif level == 3:
+        for _, failures in data.items():
+            for _, details in failures.items():
+                flat_data.append(details)
+    elif level == 2:
+        for _, details in failures.items():
+            flat_data.append(details)
+    return flat_data
+
+assets = ["Electrical Submersible Pump", "Pumps", "Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot", "Turbine Generator", "Industrial boiler", "Industrial Oven", "Industrial Furnace", "Centrifugal Compressor", "Hydraulic Press", "Steam Turbine"]
 applications = ["FMEA Generation", "Anomaly Detection"]
 
 def display_message(display_message, tsleep=0.1):
@@ -38,6 +88,99 @@ def display_message(display_message, tsleep=0.1):
 
 def cross_check_file():
     pass
+
+def display_component_list(assetname='electricalsubmersiblepump',model='granite'):
+    import pandas as pd 
+    import json
+    filename = f'./results/{assetname}/component_list.json'
+    with open(filename, "r") as f:
+        stored_data = json.load(f)
+    
+    ddata = []
+    # Create a Markdown table with rows
+    markdown_str = "### Component Details\n"
+    markdown_str += "| **Name** | **Type** | **Description**  |\n"
+    markdown_str += "|----------------------|-------------------|---------------------|\n"
+    for pdata in stored_data:
+        tmp_data = traverse_tree(pdata)
+        for data in tmp_data:
+            ddata.append([str(value) if not isinstance(value, list) else ", ".join(value) for value in data.values()])
+            markdown_str += "| "
+            markdown_str += " | ".join([str(value) if not isinstance(value, list) else ", ".join(value) for value in data.values()])
+            markdown_str += " |\n"
+        
+    df = pd.DataFrame(ddata, columns=['Name', 'Type', 'Description'])
+    df.to_csv('component.csv',index=False)
+    print(df)
+
+    return markdown_str 
+
+
+def display_finalized_component_list(assetname='electricalsubmersiblepump',model='granite'):
+    import pandas as pd 
+    import json
+    filename = f'./results/{assetname}/finalized_component.csv'
+    df = pd.read_csv(filename)
+    
+    ddata = []
+    # Create a Markdown table with rows
+    markdown_str = "### Component Details\n"
+    markdown_str += "| **Name** | **Description**  |\n"
+    markdown_str += "|----------------------|---------------------|\n"
+    for index, pdata in df.iterrows():
+        markdown_str += "| "
+        markdown_str += " | ".join([", ".join(map(str, value)) if isinstance(value, list) else str(value) for value in pdata.values])
+        markdown_str += " |\n"
+        
+    return markdown_str 
+
+
+def display_final_failure_list(assetname='electricalsubmersiblepump',model='granite'):
+    import pandas as pd 
+    import json
+    filename = f'./results/{assetname}/final_failures.csv'
+    stored_data = pd.read_csv(filename)
+    # Create a Markdown table with rows
+    markdown_str = "### Failure Details\n"
+    markdown_str += "| **Failure Location** | **Failure Mode** | **Failure Causes** | **Failure Effects** |\n"
+    markdown_str += "|----------------------|-------------------|---------------------|---------------------|\n"
+    for index, pdata in stored_data.iterrows():
+        markdown_str += "| "
+        markdown_str += " | ".join([str(value) if not isinstance(value, list) else ", ".join(value) for value in pdata.values])
+        markdown_str += " |\n"
+        
+    return markdown_str 
+
+
+def display_failure_list(assetname='electricalsubmersiblepump',model='granite'):
+    import pandas as pd 
+    import json
+    filename = f'./results/{assetname}/failure_list.json'
+    with open(filename, "r") as f:
+        stored_data = json.load(f)
+    # Create a Markdown table with rows
+    fdata = []
+    markdown_str = "### Failure Details\n"
+    markdown_str += "| **Failure Location** | **Failure Mode** | **Failure Causes** | **Failure Effects** |\n"
+    markdown_str += "|----------------------|-------------------|---------------------|---------------------|\n"
+    for data in stored_data:
+        lvl = get_failure_location_level(data)
+        if lvl == 4 or lvl == 2 or lvl == 3:
+            tmpdata = flatten_failure_data(data, lvl)
+            for data in tmpdata:
+                fdata.append([str(value) if not isinstance(value, list) else ", ".join(value) for value in data.values()])
+                markdown_str += "| "
+                markdown_str += " | ".join([str(value) if not isinstance(value, list) else ", ".join(value) for value in data.values()])
+                markdown_str += " |\n"
+        else:
+            fdata.append([str(value) if not isinstance(value, list) else ", ".join(value) for value in data.values()])
+            markdown_str += "| "
+            markdown_str += " | ".join([str(value) if not isinstance(value, list) else ", ".join(value) for value in data.values()])
+            markdown_str += " |\n"
+        
+    df = pd.DataFrame(fdata, columns=['Failure Location', 'Failure Mode', 'Failure Causes', 'Failure Effects'])
+    df.to_csv('failure.csv',index=False)
+    return markdown_str 
 
 def collect_system_messages(assetname='electricalsubmersiblepump',model='granite'):
     """_summary_
@@ -100,7 +243,6 @@ def display_chat_message_warning(score):
         score_color = "green"
         # Display chat message with score
         st.markdown(f'<p style="color: {score_color};">{score_emoji}</p>', unsafe_allow_html=True)
-
 
 def collect_question_answer_messages(assetname='electricalsubmersiblepump',model='granite'):
     """_summary_
@@ -274,18 +416,20 @@ def main():
 
             if selected_application == 'FMEA Generation':
 
-                with st.chat_message("user", avatar='🧑‍🏭'):
-                    display_message(sme_prompt)
+                skip = True
+                if not skip:
+                    with st.chat_message("user", avatar='🧑‍🏭'):
+                        display_message(sme_prompt)
 
-                time.sleep(2)
+                    time.sleep(2)
 
-                with st.chat_message("user", avatar='👨‍💼'):
-                    display_message(qe_prompt)
+                    with st.chat_message("user", avatar='👨‍💼'):
+                        display_message(qe_prompt)
 
-                time.sleep(2)
+                    time.sleep(2)
 
-                with st.chat_message("user", avatar='👨‍🔧'):
-                    display_message(re_prompt)
+                    with st.chat_message("user", avatar='👨‍🔧'):
+                        display_message(re_prompt)
 
             else:
                 with st.chat_message("user", avatar='🧑‍🏭'):
@@ -310,6 +454,8 @@ def main():
             total_ans = len(question)
         elif num_qa == 'Skip':
             total_ans = 0
+
+        total_ans = 0
         for i in range(total_ans):
 
             with st.chat_message("ai", avatar="#️⃣"):
@@ -344,6 +490,30 @@ def main():
                         display_message(qe_answer[i])
                         score = reduction_factor(qe_answer[i]) 
                         display_chat_message_warning(score)
+
+        # display summary
+        with st.chat_message("ai", avatar="#️⃣"):
+            display_message("I will now proceed to generate FMEA documentation! \n\n First, Let us look at Component, Subcomponent and assemblies \n\n")
+
+        _, col21 = st.columns([0.25,4.75])  # Adjust column widths as needed
+        with col21:
+            c_ans = display_finalized_component_list()
+            with st.chat_message("ai", avatar='👨‍🔬'):
+                display_message('\n')
+                display_message(c_ans)
+
+        # display summary
+        with st.chat_message("ai", avatar="#️⃣"):
+            display_message("I will now proceed to generate FMEA documentation! \n\n Now, Let us look at failure modes information. \n\n")
+
+        _, col21 = st.columns([0.25,4.75])  # Adjust column widths as needed
+        with col21:
+            c_ans = display_final_failure_list()
+            with st.chat_message("ai", avatar='👨‍🔬'):
+                display_message('\n')    
+                display_message(c_ans)
+
+
 
         # display questions
         total_ans = num_questions

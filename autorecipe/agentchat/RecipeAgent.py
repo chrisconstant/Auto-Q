@@ -17,6 +17,7 @@ from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 from collections import OrderedDict
 import pandas as pd
 import difflib
+from autorecipe.agentchat.asset_description import get_asset_description
 
 # have model specific configuration
 # QA does not need longer context to generate
@@ -87,7 +88,7 @@ class RecipeAgent:
 
     # configuration
     DEFAULT_CONFIG = {
-        "model": LLMsets[3],
+        "model": LLMsets[6],
         "params": {
             "decoding_method": "greedy",
             "min_new_tokens": 100,
@@ -122,35 +123,18 @@ class RecipeAgent:
     problems before they occur. FMEA focus on preventing defects, improving safety and reliability, and increasing 
     customer satisfaction. The method does not require complicated statistics only simple arithmetic. 
     FMEA considers each failure mode of every component from the least up to the greatest. Your task is to provide 
-    accurate information about asset's component, subcomponent, assembly, failure mode, failure cause, failure code 
-    and degradation mechanism, degradation influence along with severity, likelihood and detectability of the point 
-    of failure (P-F Curve) so immediate intervention in terms of maintenance or operations can be taken to extend 
-    the life of the asset and or system. It determines a risk priority number for ranking efforts. it is a bottom-up
+    accurate information about asset's component, subcomponent, assembly, failure mode, failure cause, failure influence so 
+    immediate intervention in terms of maintenance or operations can be taken to extend 
+    the life of the asset and or system. It is a bottom-up
     approach for worst case estimates in a as search for effects of an item failure on operation of the system. 
     FMEA predicts potential problems, identifies possible causes, assesses effects and helps plan preemptive 
     corrective action. 
     
-    FMEA considers each failure mode of every component from the least up to the greatest. 
-    It determines a risk priority number for ranking efforts. FMEA predicts potential problems, identifies 
-    possible causes, assesses effects, and helps plan preemptive corrective action. The Reliability Engineer 
-    crafts a strategy of both preventive and condition-monitoring tasks that are specifically designed to 
-    identify or prevent failure modes. By using collected information about the equipment, failure modes are 
-    identified, and the appropriate tasks are selected to identify or prevent these failure modes as 
-    early as possible. The strategy is implemented according to the criticality database. 
+    FMEA considers each failure mode of every component from the least up to the greatest. FMEA predicts 
+    potential problems and identifies possible causes. By using collected information about the equipment, 
+    failure modes are identified, and the appropriate tasks are selected to identify or prevent these 
+    failure modes as early as possible. 
     
-    The relative risk of a failure and its effects is determined by three factors. 
-    1. Severity: The consequence of the failure should it occur, 
-    2. Occurrence: The probability or frequency of the failure occurring and 
-    3. Detection: The probability of the failure being detected before the impact and consequence of the 
-    failure is realized. 
-    
-    Using the data and the knowledge of the process or product, each potential 
-    failure mode and effect is rated in each of these factors on a scale ranging from 1 to 10. 
-    By multiplying the ranking for the three factors (Severity x Occurrence x Detection), 
-    a risk priority number will be determined for each potential failure mode and effect. 
-    The RPN (which will range from 1 to 1000 for each failure mode) us used to rank the need for 
-    corrective actions to eliminate or reduce the potential failure mode. 
-
     User will provide a asset class or ask FMEA related question and you will provide descriptive FMEA 
     information by following above FMEA Procedure. 
     """
@@ -160,54 +144,28 @@ class RecipeAgent:
     Your expertise in quality standards and regulations, including ISO 9001, IATF 16949, and 
     FMEA guidelines, will be utilized to ensure that the FMEA documentation is accurate, complete, and compliant 
     with quality standards and regulations. You will provide information to identify potential 
-    failure modes, their causes, and effects, and develop recommendations for improving the product design and 
-    manufacturing processes. Your role will also to participate in design reviews, risk assessments, 
-    and other quality-related activities to ensure that the FMEA documentation provides valuable insights and 
-    recommendations for improving the product's quality and reliability.
-    """
-
-    QESystemPrompt1 = """
-    You act as a quality engineer who provide information on quality standards and regulations 
-    centered around Failure Modes and Effects Analysis (FMEA) process for the given asset class, 
-    with a focus on generating FMEA documentation. You have a strong knowledge of quality standards 
-    and regulations, including ISO 9001, IATF 16949, and FMEA guidelines. You will reviewing the asset 
-    class to identify potential failure modes, their causes, and effects. You 
-    will conduct a comprehensive FMEA analysis to outline the risks, mitigation strategies, 
-    and recommendations for improvement. You will participate in design reviews, risk assessments, 
-    and other quality-related activities. Your goal is to ensure that the FMEA documentation is 
-    generated accurately, completely, and in accordance with quality standards and regulations, 
-    and that it provides valuable insights and recommendations for improving the product design 
-    and manufacturing processes. 
+    failure modes, their causes, and effects.
     """
 
     RESystemPrompt = """You act as a reliability engineer who provide information on 
-    failure rates, mean time between failures (MTBF), and other reliability metrics 
+    failure modes, their causes, and effects and other failure related 
     information for the given asset class, with a focus on generating FMEA documentation. 
-    You have a strong knowledge of reliability engineering principles, statistical analysis, 
-    and testing methodologies. You will analyzing the asset class to identify potential 
-    failure modes and their impact on reliability. You will guide team on conducting 
-    reliability testing and data analysis to determine failure rates, MTBF, and other 
-    reliability metrics. You will provide input and guidance to the FMEA team on 
-    reliability-related failure modes, their causes, and effects. You will provide feedback 
-    on the FMEA documentation to ensure that reliability metrics and best practices are 
-    accurately reflected.  
+    You will analyzing the asset class to identify potential 
+    failure modes and their impact on reliability.  
     """
 
     SessionSystemPrompt = """You act as an expert for generating failure mode
-        and effect analysis (FMEA). User will provide an asset class and You will prepare a series of 
-        questions to be asked to subject matter expert, quality enginner or reliability engineer. 
-        Typical questions should focus on the important asset's component, subcomponent, assembly, failure mode, 
-        failure cause, failure code and degradation mechanism, degradation influence along with severity, 
-        likelihood and detectability of the point of failure (P-F Curve). Please do not use a conversational 
-        approach to ask questions and gather information. 
+        and effect analysis (FMEA). Given an Asset Class and Asset Description information, 
+        you will prepare a series of questions to be asked to subject matter expert. 
+        Typical questions should focus on the important asset's component, subcomponent, 
+        assembly, failure mode, failure cause and failure effect. Please do not use a conversational 
+        approach to ask questions and gather information.
     """
 
     InfoSummaryPromt = """
 Prepare a human-readable summary in a well-structured paragraph, eliminating any 
  special characters such as new lines and tabs. Focus on capturing the main component, subcomponent, 
- assembly, failure mode, failure cause, failure code and degradation mechanism, degradation influence 
- along with severity, likelihood and detectability of the point of failure (P-F Curve). Emphasize the 
- crucial insights for predicting and preventing failures. Ensure the summary provides a coherent narrative. 
+ assembly, failure mode, failure cause, failure code. Ensure the summary provides a coherent narrative. 
  If user gives list of questions, then summary should be written based on questions content for a given asset class. 
 """
     # If user gives list of questions, then summary should be written based on questions content.
@@ -485,7 +443,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
     def set_asset_class(self, asset_class):
         self.asset_class = asset_class
 
-    def init_round(self, message, experiment_id):
+    def init_round(self, message, experiment_id, asset_description):
         """
         This is a round 1 which inform a basic initialization to the DS and SME agents.
         """
@@ -496,12 +454,20 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 f"{Style.BRIGHT}{Fore.GREEN}--------------------- Round 1 ------------------------------.{Style.RESET_ALL}"
             )
 
+        # adding this to update
+        self.SFAgent.update_system_message(self.asset_class, self.asset_description_)
+        #self.SMEAgent.update_system_message(self.asset_class, self.asset_description_)
+        #self.QEAgent.update_system_message(self.asset_class, self.asset_description_)
+        #self.REAgent.update_system_message(self.asset_class, self.asset_description_)
+
         # inform data scientist about the asset class
+        # sfagent 
         sf_response = self.SFAgent.create(
-            messages=[{"content": message, "role": "user"}],
+            messages=[{"content": "Generate Questions.", "role": "user"}],
             context=None,
             experiment_id=experiment_id,
         )
+        print (sf_response)
 
         # inform SME about the asset class
         sme_response = self.SMEAgent.create(
@@ -1174,6 +1140,10 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         # this is a context prompt (agenda)
         self.context_prompt_ = "The industrial asset class is " + self.asset_class
 
+        # 
+        tmp_asset_desc = get_asset_description(iteration=2, asset_class=self.asset_class)
+        self.asset_description_ = tmp_asset_desc
+
         # setting the MLFLow experiments
         experiment_name = "MyExperiment_" + str(uuid.uuid4())
         experiment_id = mlflow.create_experiment(experiment_name)
@@ -1181,11 +1151,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         print(f">>> Message: {self.context_prompt_}")
         print(f">>> Experiment id: {experiment_id}")
         print(f">>> Experiment name: {experiment_name}")
+        print(f">>> Asset Class : {self.asset_class}")
+        print(f">>> Asset Description : {self.asset_description_}")
 
         # start recording
         with mlflow.start_run(experiment_id=experiment_id):
             # Initial round (DSE and SME get ready for their meeting, and they do some background work)
-            self.init_round(message=self.context_prompt_, experiment_id=experiment_id)
+            self.init_round(message=self.context_prompt_, experiment_id=experiment_id, asset_description=self.asset_description_)
 
             if self.testmode:
                 print(
