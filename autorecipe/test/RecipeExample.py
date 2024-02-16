@@ -1,14 +1,14 @@
 from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='air handling unit')
+obj.init_chat(round=2)
+
+obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='Chiller')
+obj.init_chat(round=2)
+
 '''
-obj = RecipeAgent(name='Maximo')
-obj.set_asset_class(asset_class='wind turbine gearbox')
-obj.init_chat(round=2)
-
-obj = RecipeAgent(name='Maximo')
-obj.set_asset_class(asset_class='standby generator')
-obj.init_chat(round=2)
-
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='air comporessor')
 obj.init_chat(round=2)
