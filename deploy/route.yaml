@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: autoq-ingress
+  name: autoq-route
   annotations:
     route.openshift.io/termination: "edge"
 spec:
   tls:
     - hosts:
-        - modelfactory-9ca4d14d48413d18ce61b80811ba4308-0000.us-south.containers.appdomain.cloud
-      secretName: modelfactory-9ca4d14d48413d18ce61b80811ba4308-0000
+        - ris3-ext-dal12-ocp-9ca4d14d48413d18ce61b80811ba4308-0000.us-south.containers.appdomain.cloud
+      secretName: ris3-ext-dal12-ocp-9ca4d14d48413d18ce61b80811ba4308-0000
   rules:
-    - host: autoq.modelfactory-9ca4d14d48413d18ce61b80811ba4308-0000.us-south.containers.appdomain.cloud
+    - host: autoq.ris3-ext-dal12-ocp-9ca4d14d48413d18ce61b80811ba4308-0000.us-south.containers.appdomain.cloud
       http:
         paths:
           - path: /
