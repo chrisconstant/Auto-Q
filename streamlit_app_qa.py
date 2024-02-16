@@ -12,7 +12,7 @@ ds_answer = []
 sme_answer = []
 all_question = []
 
-assets = ["Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot", "Turbine Generator", "Industrial boiler", "Industrial Oven", "Industrial Furnace", "Centrifugal Compressor", "Hydraulic Press", "Steam Turbine"]
+assets = ["Wind Turbine Gearbox", "Standby Generator", "Air Compressor", "Hydroelectric Power Turbine", "Electrical Transformer", "Induced Draft Fan", "Blast Furnace", "Electric Battery", "Substation Electrical Transformer","Water-Cooled Condenser","Industrial Robot", "Turbine Generator", "Industrial boiler", "Industrial Oven", "Industrial Furnace", "Centrifugal Compressor", "Hydraulic Press", "Steam Turbine", "Chiller", "Air Handling Unit"]
 
 def display_message(display_message, tsleep=0.1):
     message_placeholder = st.empty()
@@ -35,19 +35,22 @@ def cross_check_file():
         for assetname in assets:
             assetname = assetname.lower().replace(" ", "")
             #print(f"model: {model}, asset: {assetname}")
-            df1 = pd.read_csv(
-                f"./results/{assetname}/genai_questions_answer_ds_bank_{assetname}_{model}.csv"
-            )
-            df2 = pd.read_csv(
-                f"./results/{assetname}/genai_questions_answer_sme_bank_{assetname}_{model}.csv"
-            )
-            df3 = pd.read_csv(
-                f"./results/{assetname}/genai_questions_bank_{assetname}_{model}.csv"
-            )
-            df = pd.read_csv(
-                f"./results/{assetname}/genai_context_docs_{assetname}_{model}.csv"
-            )
-
+            try:
+                df1 = pd.read_csv(
+                    f"./results/{assetname}/genai_questions_answer_ds_bank_{assetname}_{model}.csv"
+                )
+                df2 = pd.read_csv(
+                    f"./results/{assetname}/genai_questions_answer_sme_bank_{assetname}_{model}.csv"
+                )
+                df3 = pd.read_csv(
+                    f"./results/{assetname}/genai_questions_bank_{assetname}_{model}.csv"
+                )
+                df = pd.read_csv(
+                    f"./results/{assetname}/genai_context_docs_{assetname}_{model}.csv"
+                )
+            except:
+                print (assetname, model)
+                pass
 
 def collect_system_messages(assetname='windturbinegearbox',model='mixtral'):
     """_summary_
