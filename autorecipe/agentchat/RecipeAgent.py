@@ -60,7 +60,7 @@ class RecipeAgent:
         "ibm/granite-13b-instruct-v2",
         "meta-llama/llama-2-70b-chat",
         "google/flan-ul2",
-        "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
+        "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q"
     ]
 
     # configuration
