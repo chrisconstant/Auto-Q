@@ -115,26 +115,24 @@ def display_component_list(assetname='electricalsubmersiblepump',model='granite'
 
     return markdown_str 
 
-
+@st.cache_data
 def display_finalized_component_list(assetname='electricalsubmersiblepump',model='granite'):
     import pandas as pd 
-    import json
     filename = f'./results/{assetname}/finalized_component.csv'
     df = pd.read_csv(filename)
     
-    ddata = []
     # Create a Markdown table with rows
     markdown_str = "### Component Details\n"
     markdown_str += "| **Name** | **Description**  |\n"
     markdown_str += "|----------------------|---------------------|\n"
-    for index, pdata in df.iterrows():
+    for _, pdata in df.iterrows():
         markdown_str += "| "
         markdown_str += " | ".join([", ".join(map(str, value)) if isinstance(value, list) else str(value) for value in pdata.values])
         markdown_str += " |\n"
         
-    return markdown_str 
+    return markdown_str, df
 
-
+@st.cache_data
 def display_final_failure_list(assetname='electricalsubmersiblepump',model='granite'):
     import pandas as pd 
     import json
@@ -144,12 +142,12 @@ def display_final_failure_list(assetname='electricalsubmersiblepump',model='gran
     markdown_str = "### Failure Details\n"
     markdown_str += "| **Failure Location** | **Failure Mode** | **Failure Causes** | **Failure Effects** |\n"
     markdown_str += "|----------------------|-------------------|---------------------|---------------------|\n"
-    for index, pdata in stored_data.iterrows():
+    for _, pdata in stored_data.iterrows():
         markdown_str += "| "
         markdown_str += " | ".join([str(value) if not isinstance(value, list) else ", ".join(value) for value in pdata.values])
         markdown_str += " |\n"
         
-    return markdown_str 
+    return markdown_str, stored_data
 
 
 def display_failure_list(assetname='electricalsubmersiblepump',model='granite'):
@@ -209,6 +207,10 @@ def trim_repeated_right_side(sentence, max_repetitions):
 def reduction_factor(sentence):
     sent1 = trim_repeated_right_side(sentence, max_repetitions=50)
     return len(sent1)*100.0/len(sentence)
+
+@st.cache_data
+def convert_df(df):
+    return df.to_csv().encode('utf-8')
 
 def plot_results(total_questions = 6617, answered_questions = 488):
     unanswered_questions = total_questions - answered_questions
@@ -315,10 +317,11 @@ def main():
             )
             selected_model = st.selectbox(
                 "Select LLM",
-                ["Granite", "Mixtral", "LLAMA"],
+                ["Granite (Labrador)", "Mixtral", "LLAMA"],
                 key="editable_dropdown_model",
                 format_func=lambda x: x,
             )
+            selected_model = selected_model.split(' ')[0]
             st.write("<style>div.row-widget.stRadio > div{flex-direction:row;}</style>", unsafe_allow_html=True)
 
             with st.container():
@@ -416,7 +419,7 @@ def main():
 
             if selected_application == 'FMEA Generation':
 
-                skip = True
+                skip = False
                 if not skip:
                     with st.chat_message("user", avatar='🧑‍🏭'):
                         display_message(sme_prompt)
@@ -455,7 +458,6 @@ def main():
         elif num_qa == 'Skip':
             total_ans = 0
 
-        total_ans = 0
         for i in range(total_ans):
 
             with st.chat_message("ai", avatar="#️⃣"):
@@ -493,27 +495,27 @@ def main():
 
         # display summary
         with st.chat_message("ai", avatar="#️⃣"):
-            display_message("I will now proceed to generate FMEA documentation! \n\n First, Let us look at Component, Subcomponent and assemblies \n\n")
+            display_message("Let us proceed to generate FMEA documentation! \n")
 
         _, col21 = st.columns([0.25,4.75])  # Adjust column widths as needed
         with col21:
-            c_ans = display_finalized_component_list()
-            with st.chat_message("ai", avatar='👨‍🔬'):
+            c_ans, my_large_df = display_finalized_component_list()
+            with st.chat_message("user", avatar='👨‍🔬'):
+                display_message("First, Let us look at Component, Subcomponent and assemblies of selected asset \n")
+                display_message(c_ans)
+                comp_csv = convert_df(my_large_df)
                 display_message('\n')
-                display_message(c_ans)
-
-        # display summary
-        with st.chat_message("ai", avatar="#️⃣"):
-            display_message("I will now proceed to generate FMEA documentation! \n\n Now, Let us look at failure modes information. \n\n")
-
+                st.download_button("Download " + "⬇️", data=comp_csv,file_name=f'./results/{assetname}/finalized_component.csv',mime='text/csv')
+                
         _, col21 = st.columns([0.25,4.75])  # Adjust column widths as needed
         with col21:
-            c_ans = display_final_failure_list()
-            with st.chat_message("ai", avatar='👨‍🔬'):
-                display_message('\n')    
+            c_ans, f_stored_data = display_final_failure_list()
+            with st.chat_message("user", avatar='👨‍🔬'):
+                display_message("Now, Let us look at Failure Modes of selected asset \n")
                 display_message(c_ans)
-
-
+                failure_csv = convert_df(f_stored_data)
+                display_message('\n')
+                st.download_button("Download " + "⬇️", data=failure_csv,file_name=f'./results/{assetname}/finalized_failure.csv',mime='text/csv')
 
         # display questions
         total_ans = num_questions
