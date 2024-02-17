@@ -12,10 +12,15 @@ from autorecipe.genai.utils import (
 import pandas as pd
 from colorama import Fore, Style
 import uuid
-from genai.schemas import ChatOptions, GenerateParams, ReturnOptions
-from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 from collections import OrderedDict
 import pandas as pd
+
+from genai.schema import (
+    DecodingMethod,
+    ModerationHAP,
+    ModerationParameters,
+    TextGenerationReturnOptions,
+)
 
 # have model specific configuration
 # QA does not need longer context to generate
@@ -65,22 +70,23 @@ class RecipeAgent:
 
     # configuration
     DEFAULT_CONFIG = {
-        "model": LLMsets[1],
+        "model": LLMsets[3],
         "params": {
-            "decoding_method": "greedy",
+            "decoding_method": DecodingMethod.GREEDY,
             "min_new_tokens": 200,
             "max_new_tokens": 2000,  # 1500,
             "stop_sequences": ["(TOKENSTOP)"],
-            "stream": True,
-            "return_options": ReturnOptions(input_text=False, input_tokens=True),
-            "moderations": ModerationsOptions(
-                hap=HAPOptions(input=True, output=False, threshold=0.01)
+            #"stream": True,
+            "return_options": TextGenerationReturnOptions(input_text=False, input_tokens=True),
+            "moderations": ModerationParameters(
+                hap=ModerationHAP(input=True, output=False, threshold=0.01)
             ),
         },
         "creds": {
             "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
             "api_endpoint": "https://bam-api.res.ibm.com",
         },
+        "stream": True,
     }
 
     # update

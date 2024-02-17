@@ -1,20 +1,18 @@
 from genai.credentials import Credentials
-from genai.schemas import GenerateParams
 from genai.extensions.langchain.chat_llm import LangChainChatInterface
-from genai.schemas import ChatOptions, GenerateParams, ReturnOptions
-from genai.schemas.generate_params import HAPOptions, ModerationsOptions
-from genai.model import Model
-from langchain.schema import HumanMessage, SystemMessage, AIMessage
+from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
+# from langchain.schema import HumanMessage, SystemMessage, AIMessage
 from typing import Callable, Dict, List, Optional, Tuple, Union
+from genai.schema import TextGenerationParameters, TextGenerationReturnOptions
 import re
 import json
 import mlflow
 import socket
 import time
-from genai.exceptions.genai_exception import GenAiException
+from genai.exceptions import ApiNetworkException, ApiResponseException, ValidationError
+from genai import Client, Credentials
 
 UNKNOWN = "unknown"
-
 
 def content_str(content: Union[str, List]) -> str:
     if type(content) is str:
@@ -76,7 +74,7 @@ def extract_code(
     return extracted
 
 
-class GenAIChatClient(Model):
+class GenAIChatClient():
     def __init__(
         self,
         name,
@@ -91,10 +89,14 @@ class GenAIChatClient(Model):
         self.name = name
         self.description = description
         self.skill = skill
-        self.client = LangChainChatInterface(
-            model=model,
-            params=GenerateParams(**params),
-            credentials=Credentials(**credentials),
+        ignored_key = 'moderations'
+        filtered_params = {key: value for key, value in params.items() if key != ignored_key}
+
+        self.llm = LangChainChatInterface(
+            client=Client(credentials=Credentials(**credentials)),
+            model_id=model,
+            parameters=TextGenerationParameters(**filtered_params),
+            moderations=params['moderations']
         )
         self._conversation_id = None
         self.system_message = system_message
@@ -140,15 +142,13 @@ class GenAIChatClient(Model):
                 result = None
                 for _ in range(1, self._max_retries + 1):
                     try:
-                        result = self.client.generate(
+                        result = self.llm.generate(
                             messages=messages,
-                            options=ChatOptions(
-                                conversation_id=self._conversation_id,
-                                use_conversation_parameters=True,
-                            ),
-                        )
+                            conversation_id=self._conversation_id,
+                            use_conversation_parameters=True,
+                            )
                         break
-                    except (OSError, socket.error, ConnectionResetError, Exception, GenAiException) as e:
+                    except (OSError, socket.error, ConnectionResetError, Exception, ApiNetworkException, ApiResponseException, ValidationError) as e:
                         print ('Error ....' + str(e))
                         time.sleep(self._retry_delay)
 
@@ -168,9 +168,9 @@ class GenAIChatClient(Model):
                 result = None
                 for _ in range(1, self._max_retries + 1):
                     try:
-                        result = self.client.generate(messages=messages)
+                        result = self.llm.generate(messages=messages)
                         break
-                    except (OSError, socket.error, ConnectionResetError, Exception, GenAiException) as e:
+                    except (OSError, socket.error, ConnectionResetError, Exception) as e:
                         print ('Error ....' + str(e))
                         time.sleep(self._retry_delay)
                         

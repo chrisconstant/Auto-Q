@@ -8,8 +8,15 @@ from nltk.probability import FreqDist
 import math
 from collections import Counter
 from genai.credentials import Credentials
-from genai.model import Model
-from genai.schemas import GenerateParams
+from genai.schema import (
+    DecodingMethod,
+    LengthPenalty,
+    ModerationParameters,
+    ModerationStigma,
+    TextGenerationParameters,
+    TextGenerationReturnOptions,
+)
+from genai.client import Client
 
 @ray.remote
 def check_is_element_duplicate(element, element1, filter_threshold, element1_index):
@@ -53,18 +60,13 @@ def call_QuestionUserfulClassifier(sentence):
     api_key = "pak-GeJBIH1iVY5FuvvSjsc-BrQI_iOdFoJLLQXOzJ3zRuQ"
     api_url = "https://bam-api.res.ibm.com"
     creds = Credentials(api_key, api_endpoint=api_url)
-
     print("\n------------- Example (Model Talk)-------------\n")
-
-    bob_params = GenerateParams(decoding_method="greedy", max_new_tokens=25, temperature=1)
-    QuestionUserfulClassifier = Model(
-        "flan-t5-xl-pt-VQ5QsUX4-2024-01-02-08-18-33",
-        params=bob_params,
-        credentials=creds,
-    )
-
-    q_response = QuestionUserfulClassifier.generate([sentence])
-    q_gen = q_response[0].generated_text
+    bob_params = TextGenerationParameters(decoding_method=DecodingMethod.GREEDY, max_new_tokens=25, temperature=1)
+    client = Client(credentials=creds)
+    q_response =  next(client.text.generation.create(model_id="flan-t5-xl-pt-VQ5QsUX4-2024-01-02-08-18-33",
+                                                inputs=[sentence],
+                                                parameters=bob_params,))
+    q_gen = q_response.results[0].generated_text
     if '0' in q_gen:
         return 0
     return 1        

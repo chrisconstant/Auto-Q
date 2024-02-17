@@ -3,7 +3,6 @@ from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Type, Un
 from collections import defaultdict
 import copy
 from autorecipe.genai.GenAIChat import GenAIChatClient
-from genai.model import Model
 
 class ConversableAgent(Agent):
     MAX_CONSECUTIVE_AUTO_REPLY = 100
@@ -305,7 +304,7 @@ class ConversableAgent(Agent):
         self,
         messages: Optional[List[Dict]] = None,
         sender: Optional[Agent] = None,
-        config: Optional[Model] = None,
+        config: Optional[Agent] = None,
     ) -> Tuple[bool, Union[str, Dict, None]]:
         """Generate a reply using autogen.oai."""
         client = self.client if config is None else config

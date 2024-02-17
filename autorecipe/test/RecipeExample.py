@@ -74,6 +74,7 @@ obj.set_asset_class(asset_class='Steam Turbine')
 obj.init_chat(round=2)
 '''
 
+'''
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='Power Transformer (Converter transformer)')
 obj.init_chat(round=2)
@@ -197,3 +198,4 @@ obj.init_chat(round=2)
 #client = MlflowClient()
 #from mlflow import MlflowClient
 #obj.init_chat(message='The industrial asset class is Accumulator Hydraulic Bladder Type')
+'''
