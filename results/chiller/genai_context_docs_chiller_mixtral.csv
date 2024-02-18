@@ -1,0 +1,39 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is Chiller,"Failure Reason: Faulty sensors, wiring issues, or outdated software can cause the control system to fail.
+Failure Code: CS-01
+Degradation Mechanism: The control system can fail due to aging, lack of maintenance, or the use of outdated software.
+Severity: High - A control system failure can cause a complete shutdown of the chiller, leading to a significant loss of cooling capacity.
+Ability to Detect: High - Control system issues can typically be detected through regular inspections and performance monitoring. It is important to regularly update the software and perform maintenance on the control system to prevent failures. Implementing a backup system can also help prevent downtime in the event of a control system failure.
+
+In summary, chillers can experience failures in various components, including the compressor, condenser, evaporator, and control system. Failures can be caused by aging, lack of maintenance, or operating the chiller outside of its specified parameters. The severity of failures can range from medium to high, with some failures causing a complete shutdown of the chiller. The ability to detect failures varies, with some failures being easily detectable through regular inspections and performance monitoring, while others may only become apparent once the component has already failed. To prevent failures, it is important to perform regular maintenance, update software, and implement backup systems.","The anomaly detection model for the chiller system should provide alerts for any anomalies detected, initiate corrective actions, and log the anomalies for further analysis. The chiller system's common failure modes include sensor failures, refrigerant leaks, and compressor issues, which can significantly impact system availability and maintenance costs. The model should prioritize false positive reduction and minimize detection latency. Data-related concerns include data quality, data gaps, and addressing potential sensor failures. Historical data is available for model training, validation, and testing purposes, with varying volume, variety, and velocity. Undetected anomalies or failures can lead to significant downtime and maintenance costs. The model should consider regulatory, safety, and industry-specific requirements, and account for environmental and load conditions, as well as operational patterns. The model should monitor key performance indicators, including temperature, pressure, and flow rate, while accounting for computational resource constraints, data access, and time limitations. The model should also consider external factors, such as weather or power outages, and their impact on the control system. The sensor data is collected and stored through a control system, with preprocessing and cleaning performed before use. The backup system prevents downtime in the event of a control system failure, and the sensors detect various anomalies, including temperature, pressure, and flow rate. The performance of the control system is monitored through specific metrics and KPIs, with past failures and maintenance schedules considered. The model should identify leading indicators in the sensor data to predict control system failures before they occur.","Asset Class: Chiller
+
+1. Component: Compressor
+
+Failure Mode: Compressor fails to compress refrigerant
+Failure Reason: Dirty or worn-out compressor valves, insufficient lubrication, or a seized compressor motor
+Failure Code: CC-01
+Degradation Mechanism: Aging, lack of maintenance, or operating the chiller outside of its specified parameters can cause the compressor to fail.
+Severity: High - A compressor failure can cause a complete shutdown of the chiller, leading to a significant loss of cooling capacity.
+Ability to Detect: Medium - While some compressor issues can be detected through regular maintenance and performance monitoring, others may only become apparent once the compressor has already failed.
+
+2. Component: Condenser
+
+Failure Mode: Leak in the condenser
+Failure Reason: Corrosion, vibration, or improper installation
+Failure Code: CD-01
+Degradation Mechanism: A leak in the condenser can be caused by a variety of factors, including corrosion from dirty or untreated water, vibration from the compressor, or improper installation of the condenser.
+Severity: Medium - A leak in the condenser can reduce the cooling capacity of the chiller and increase energy consumption.
+Ability to Detect: High - Leaks in the condenser can typically be detected through regular inspections and performance monitoring.
+
+3. Component: Evaporator
+
+Failure Mode: Frost build-up on the evaporator
+Failure Reason: Low refrigerant charge, dirty or clogged filters, or improper refrigerant flow
+Failure Code: CE-01
+Degradation Mechanism: Frost build-up on the evaporator can be caused by a variety of factors, including a low refrigerant charge, dirty or clogged filters, or improper refrigerant flow.
+Severity: Medium - Frost build-up on the evaporator can reduce the cooling capacity of the chiller and increase energy consumption.
+Ability to Detect: High - Frost build-up on the evaporator can typically be detected through regular inspections and performance monitoring.
+
+4. Component: Control System
+
+Failure Mode: Control system failure"
