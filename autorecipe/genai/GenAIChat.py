@@ -155,7 +155,7 @@ class GenAIChatClient():
                 if result:
                     a_dict = {"Answer": result.generations[0][0].text}
                     t_dict = result.generations[0][0].generation_info["token_usage"]
-                    self._upWdate_tokens_usage(
+                    self._update_tokens_usage(
                         t_dict["prompt_tokens"],
                         t_dict["completion_tokens"],
                         t_dict["total_tokens"],

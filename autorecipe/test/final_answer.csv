@@ -1,0 +1,65 @@
+component,failure_short,sensor,tem_behaviour,dmessage,pcode_ans,scode_ans,SynPrompt,CodeGenerationPrompt
+Engine,Fuel starvation ,fuel level ,steady decrease,"We are interested in detecting sudden increase in fuel level  sensor time series due to 
+Fuel starvation  failure associated with Standby Generator's Engine component using statistical approach.","from statsmodels.regression.linear_model import OLS
+import pandas as pd
+
+def detect_temporalbehavior(sensor_data, window_size=0.1, threshold=-1):
+    if not isinstance(sensor_data, pd.DataFrame):
+        raise ValueError(""sensor_data must be a pandas DataFrame"")
+    
+    if 'time' not in sensor_data.columns or 'value' not in sensor_data.columns:
+        raise ValueError(""sensor_data must have both 'time' and 'value' columns"")
+    
+    sensor_data = sensor_data.sort_values('time')
+    end_index = int(len(sensor_data) * window_size)
+    end_data = sensor_data.iloc[-end_index:]
+    
+    X = end_data['time'].to_frame()
+    X['const'] = 1
+    y = end_data['value']
+    
+    model = OLS(y, X).fit()
+    slope = model.params['time']
+    
+    if slope < threshold:
+        return True
+    else:
+        return False","import pandas as pd
+import numpy as np
+
+def generate_synthetic_time_series(start_time=0, end_time=100, sample_size=100, start_value=100, slope=-0.1):
+    time = np.linspace(start_time, end_time, sample_size)
+    value = start_value - slope * time
+    df = pd.DataFrame(list(zip(time, value)), columns=['time', 'value'])
+    return df
+
+def detect_temporalbehavior(sensor_data, window_size=0.1, threshold=-0.1):
+    # code from previous response","Generate python code with single function that produce synthetic time series for above code. 
+                The name of function should be generate_synthetic_time_series with no compulsory
+                argument. Do not use underscore sign in argument name. The default value is initialized such that if data is used as input to 
+                detect_temporalbehavior, then the outcome is True. Do not include detect_temporalbehavior 
+                in response. 
+                ","You act as a Data Scientist and help to analyze a time series data. 
+A time series data is a sequence of real value observations captured 
+over regular time interval. The time dimension should be explicitily available in time series data. You will 
+write a python code to detect a given temporal behavior in input time series. 
+A time series can have several temporal behavior such as sudden increase, sudden drop, etc. We are only 
+interested to detect such pattern toward end of the time series.
+
+Your task is to generate a python code to detect the steady decrease temporal behavior toward the end of time series. 
+There may be multiple ways of detecting the steady decrease temporal behavior, such as time series analysis 
+approach (statsmodel based), statistical approach (moving average based) and machine learning approach (sklearn based). 
+Do not generate explanation for solution. User will provide a 
+sensor name that is attached to a particular asset or its component. 
+
+We are interested in detecting sudden increase in fuel level  sensor time series of Standby Generator's 
+Engine component using statistical approach. The occurrence check should be focused toward the end part of the 
+time series such as last 10% of the time series data. Do not provide example usage. Note that, if you do not
+know solution using statistical approach, then say I do not know.  
+
+The name of python function should be detect_temporalbehavior with sensor_data as a first complulsory
+argument. sensor_data is a panda dataframe that contains time as well as value. Other arguments 
+should have default value. The python function should always return True or False.
+There is only one function in the entire code and the entire code should be written inside a python inline 
+block, i.e, it start from ```python and end by ```.
+"
