@@ -1,12 +1,18 @@
 from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
 obj = RecipeAgent(name='Maximo')
+obj.set_asset_class(asset_class='plasma etch systems')
+obj.init_chat(round=2)
+
+'''
+obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='air handling unit')
 obj.init_chat(round=2)
 
 obj = RecipeAgent(name='Maximo')
 obj.set_asset_class(asset_class='Chiller')
 obj.init_chat(round=2)
+'''
 
 '''
 obj = RecipeAgent(name='Maximo')

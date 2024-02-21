@@ -1,0 +1,38 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is plasma etch systems,"
+
+The FMEA analysis for plasma etch systems highlights three critical components: the plasma generation chamber, gas delivery system, and power supply. The plasma generation chamber's electrode is susceptible to material degradation due to high-temperature plasma and reactive gases exposure, which can lead to significant downtime and require electrode replacement. The gas delivery system's supply line can experience gas leaks due to material fatigue, corrosion, or improper installation, posing safety hazards and disrupting plasma generation. The high voltage transformer in the power supply can suffer from electrical overstress due to overvoltage or overcurrent, leading to insulation failure and potential catastrophic failure or safety hazards. While some failure modes have medium detectability, regular inspections, performance monitoring, and pressure tests can help detect most failures, preventing significant downtime and ensuring safe and efficient plasma etch system operation. This FMEA analysis emphasizes the importance of proactive maintenance and regular inspections to ensure plasma etch system reliability and safety.","
+The plasma etch systems, which include the plasma generation chamber, gas delivery system, and power supply, are complex systems with various sensors measuring different parameters. The plasma generation chamber's electrode is particularly susceptible to failure due to high-temperature plasma and reactive gases exposure, leading to material degradation. Gas leaks in the supply line can occur due to material fatigue, corrosion, improper installation, or electrical overstress in the high voltage transformer of the power supply. Regular inspections, performance monitoring, and pressure tests are conducted to detect these failures, with varying degrees of effectiveness. The anomaly model will integrate with existing systems for comprehensive anomaly detection, focusing on these critical components and failure modes. It will be evaluated based on specific metrics, with considerations for computational resources, false positives/negatives, and regulatory requirements. The model's output will be in a specific format, and historical failure data will be used for training. The anomaly model will enhance proactive maintenance and regular inspections, improving safety protocols and overall system performance.","
+
+Sure, I'd be happy to help you with that. Here's a basic FMEA analysis for a plasma etch system:
+
+Asset Class: Plasma Etch Systems
+
+1. **Component:** Plasma Generation Chamber
+   - **Subcomponent:** Plasma Generation Electrode
+     - **Failure Mode:** Electrode Material Degradation
+       - **Failure Reason:** Exposure to high-temperature plasma and reactive gases
+         - **Failure Code:** PGE-001
+           - **Degradation Mechanism:** Thermal and chemical degradation of electrode material
+             - **Severity:** High (can cause significant downtime and require replacement of the electrode)
+             - **Ability to Detect:** Medium (Can be detected through regular inspections and performance monitoring, but may not be immediately apparent)
+
+2. **Component:** Gas Delivery System
+   - **Subcomponent:** Gas Supply Line
+     - **Failure Mode:** Gas Leak
+       - **Failure Reason:** Material fatigue, corrosion, or improper installation
+         - **Failure Code:** GDS-001
+           - **Degradation Mechanism:** Stress corrosion cracking, erosion, or vibration-induced fatigue
+             - **Severity:** High (Can cause disruption in plasma generation and potential safety hazards)
+             - **Ability to Detect:** High (Regular inspections and pressure tests can detect leaks)
+
+3. **Component:** Power Supply
+   - **Subcomponent:** High Voltage Transformer
+     - **Failure Mode:** Electrical Overstress
+       - **Failure Reason:** Overvoltage or overcurrent
+         - **Failure Code:** PWS-001
+           - **Degradation Mechanism:** Insulation failure due to electrical stress
+             - **Severity:** High (Can cause catastrophic failure and potential safety hazards)
+             - **Ability to Detect:** Medium (Can be detected through regular inspections and performance monitoring, but may not be immediately apparent)
+
+Please note that this is a simplified FMEA analysis and may not cover all possible failure modes and components of a plasma etch system. It's always recommended to conduct a detailed FMEA analysis for each specific system, taking into account the system's unique design, operating conditions, and maintenance practices."
