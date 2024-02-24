@@ -64,7 +64,9 @@ def call_QuestionUserfulClassifier(sentence):
     api_url = "https://bam-api.res.ibm.com"
     creds = Credentials(api_key, api_endpoint=api_url)
     print("\n------------- Example (Model Talk)-------------\n")
-    bob_params = TextGenerationParameters(decoding_method=DecodingMethod.GREEDY, max_new_tokens=25, temperature=1)
+    bob_params = TextGenerationParameters(decoding_method=DecodingMethod.GREEDY, 
+                                          max_new_tokens=25, 
+                                          temperature=1)
     client = Client(credentials=creds)
     q_response =  next(client.text.generation.create(model_id="flan-t5-xl-pt-VQ5QsUX4-2024-01-02-08-18-33",
                                                 inputs=[sentence],
@@ -72,7 +74,7 @@ def call_QuestionUserfulClassifier(sentence):
     q_gen = q_response.results[0].generated_text
     if '0' in q_gen:
         return 0
-    return 1        
+    return 1
 
 def filter_questions_using_TTR(questions, ttr_threshold=2):
     """_summary_
