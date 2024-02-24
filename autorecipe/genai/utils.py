@@ -2,23 +2,18 @@ from rouge_score import rouge_scorer
 import ray
 import numpy as np
 import nltk as nlp
-import matplotlib.pyplot as plt
 import re
 from nltk.probability import FreqDist
 import math
-from collections import Counter
 from genai.credentials import Credentials
 from genai.schema import (
     DecodingMethod,
-    LengthPenalty,
-    ModerationParameters,
-    ModerationStigma,
     TextGenerationParameters,
-    TextGenerationReturnOptions,
 )
 from genai.client import Client
 from datasketch import MinHashLSH, MinHash
 
+# common object for creating rouge score
 scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=False)
 
 @ray.remote
@@ -60,6 +55,7 @@ def get_TTR(questions):
 
 @ray.remote
 def call_QuestionUserfulClassifier(sentence):
+    # this is a pre-trained classifier to eliminate the question which are not useful
     api_key = "pak-GeJBIH1iVY5FuvvSjsc-BrQI_iOdFoJLLQXOzJ3zRuQ"
     api_url = "https://bam-api.res.ibm.com"
     creds = Credentials(api_key, api_endpoint=api_url)
