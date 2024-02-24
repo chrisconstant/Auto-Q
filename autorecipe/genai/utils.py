@@ -17,10 +17,13 @@ from genai.schema import (
     TextGenerationReturnOptions,
 )
 from genai.client import Client
+from datasketch import MinHashLSH, MinHash
+
+scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=False)
 
 @ray.remote
-def check_is_element_duplicate(element, element1, filter_threshold, element1_index):
-    scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=False)
+def check_is_element_duplicate(element, element1, filter_threshold, element1_index, scorer):
+    #scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=False)
     score = scorer.score(element, element1)
     if score["rougeL"].fmeasure >= filter_threshold:
         return (True, element1_index)
@@ -128,6 +131,16 @@ def filter_and_sort_questions(input_list, filter_threshold=0.7):
     # Sort the list by length
     sorted_list = sorted(input_list, key=len, reverse=True)
 
+    # order than - this is minhashing techniques, threshold is jaccard
+    num_perm = 128
+    lsh = MinHashLSH(threshold=0.6, num_perm=num_perm)
+    # indexing is completed
+    for i, string in enumerate(sorted_list):
+        minhash = MinHash(num_perm=num_perm)
+        for word in string.split():
+            minhash.update(word.encode('utf-8'))
+        lsh.insert(str(i), minhash)
+
     # Initialize the return set
     result_list = []
 
@@ -137,20 +150,46 @@ def filter_and_sort_questions(input_list, filter_threshold=0.7):
     # Iterate through the sorted list and add unique elements to the return set
     for element_index, element in enumerate(sorted_list):
 
+        # if we know it is duplicated
         if element_index in duplicate_id:
             continue
 
         # select the results
         result_list.append(element)
 
+        # find query which are similars
+        query_minhash = MinHash(num_perm=num_perm)
+        for word in element.split():
+            query_minhash.update(word.encode('utf-8'))
+        candidate_matches = lsh.query(query_minhash)
+
+        # its mostly same string
+        if len(candidate_matches) == 1:
+            continue
+
         # remove duplicate
         refs = []
+        for candidate_id in candidate_matches:
+            # we adoid same string
+            if int(candidate_id) != element_index:
+                refs.append(
+                    check_is_element_duplicate.remote(
+                        element, 
+                        sorted_list[int(candidate_id)], 
+                        filter_threshold, 
+                        int(candidate_id), 
+                        scorer
+                    )
+                )
+
+        '''
         for element1_index, element1 in enumerate(sorted_list[element_index:]):
             refs.append(
                 check_is_element_duplicate.remote(
-                    element, element1, filter_threshold, element_index + element1_index
+                    element, element1, filter_threshold, element_index + element1_index, scorer
                 )
             )
+        '''
 
         refs_responses = ray.get(refs)
         for item in refs_responses:
@@ -161,8 +200,8 @@ def filter_and_sort_questions(input_list, filter_threshold=0.7):
     return result_list
 
 @ray.remote
-def check_is_duplicate(element, reference_list, filter_threshold):
-    scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=False)
+def check_is_duplicate(element, reference_list, filter_threshold, scorer):
+    # scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=False)
     is_duplicate = False
     for _, another_element in enumerate(reference_list):
         score = scorer.score(element, another_element)
@@ -186,8 +225,32 @@ def filter_questions_using_reference(reference_list, input_list, filter_threshol
     result_list = []
     refs = []
 
+    # index the reference_list
+    num_perm = 128
+    lsh = MinHashLSH(threshold=0.6, num_perm=num_perm)
+    # indexing is completed
+    for i, string in enumerate(reference_list):
+        minhash = MinHash(num_perm=num_perm)
+        for word in string.split():
+            minhash.update(word.encode('utf-8'))
+        lsh.insert(str(i), minhash)
+
     for _, element in enumerate(input_list):
-        refs.append(check_is_duplicate.remote(element, reference_list, filter_threshold))
+        # find query which are similars
+        query_minhash = MinHash(num_perm=num_perm)
+        for word in element.split():
+            query_minhash.update(word.encode('utf-8'))
+        candidate_matches = lsh.query(query_minhash)
+
+        tmp_ref_list = []
+        for candidate_id in candidate_matches:
+            # we adoid same string
+            tmp_ref_list.append(reference_list[int(candidate_id)])
+
+        refs.append(check_is_duplicate.remote(element, 
+                                              tmp_ref_list, 
+                                              filter_threshold, 
+                                              scorer))
 
     refs_responses = ray.get(refs)
 
