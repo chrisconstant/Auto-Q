@@ -79,8 +79,7 @@ class GenAIInstructClient():
                             if result:
                                 result = result + chunk
                             else:
-                                result = chunk
-                        
+                                result = chunk                        
                     else:
                         result = self.llm.generate(
                             prompts=[
@@ -94,14 +93,15 @@ class GenAIInstructClient():
 
             if self.stream:
                 if result:
-                    a_dict = {"Answer": result.content.strip()}
-                    t_dict = chunk.generation_info['token_usage']
-                    self._update_tokens_usage(
-                        t_dict["prompt_tokens"],
-                        t_dict["completion_tokens"],
-                        t_dict["total_tokens"],
-                    )
-                    return result.content.strip()
+                    a_dict = {"Answer": result.strip()}
+                    if not isinstance(chunk, str):
+                        t_dict = chunk.generation_info['token_usage']
+                        self._update_tokens_usage(
+                            t_dict["prompt_tokens"],
+                            t_dict["completion_tokens"],
+                            t_dict["total_tokens"],
+                        )
+                    return result.strip()
                 else:
                     return ''
             else:
