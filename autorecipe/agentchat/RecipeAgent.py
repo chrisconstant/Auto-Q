@@ -92,7 +92,7 @@ class RecipeAgent:
 
     # configuration
     DEFAULT_CONFIG = {
-        "model": LLMsets[6],
+        "model": LLMsets[5],
         "params": {
             "decoding_method": DecodingMethod.GREEDY,
             "min_new_tokens": 200,
