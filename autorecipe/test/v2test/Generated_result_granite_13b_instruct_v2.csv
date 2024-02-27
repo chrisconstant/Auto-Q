@@ -1,0 +1,693 @@
+assetdescription,locationdescription,problemcode,taskdescription,0
+"DECK CRANE 2, AHC KBC PORT FWD","DECK CRANE 2, AHC KBC PORT FWD",CRK,"Work with NDT inspectors to carry out MPI Inspection on repaired area inside Crane Pedestal. 
+
+2 X inboard corner doubler plates on stiffener at transition area from square to Pedestal cylinder.
+
+Areas were left without paint for to allow for further inspection. If no indications noticed then paint can be applied.
+
+If indication recorded notify TSL for further investigation.
+
+NDT report to be uploaded to edocs and attached.","
+22. TRD, Thickness reduction, Reduction in thickness measurement / loss of material.
+1. BUR, Burned, Consumed/damaged/deformed because of overheating.
+3. DFM, Deformed, Not having the normal or natural shape or form.
+4. ELK, External leak, Accidentally lose or admit contents. Source of leak is visible.
+5. FRC, Fractured, Fractured or damaged and no longer in one piece.
+6. FTC, Failure to close, equipment does not close on demand.
+7. FTO, Failure to open, equipment does not open on demand.
+8. FTS, Failure to start/function on demand, the equipment does not start/function on demand.
+9. INL, Internal leak, Accidentally lose or admit contents. Source of leak is not visible.,
+10. LFS, Lubrication/Fluid Sampling, Unsatisfactory fluid/lubrication sample.
+11. MBU, Material build-up, Accumulation of foreign/external material.
+12. NOI, Noise, A sound that is loud and causes disturbance.
+13. PDE, Parameter deviation, A parameter is not controlled as set.
+14. PLU, Plugged, A constraint in flow conductor.
+15. PTF, Power/signal failure, Power or signal loss in electrical system.
+16. RUS, Rust, Build up of corrosion products.
+17. SAL, Spurious Alarm, which is described as Unexpected/false alarm.
+18. SLP, Slippage, Decrease of transmitted power in a mechanical system caused by slipping.
+19. STP, Does not stop on demand, equipment does not stop on demand.
+20. STU, Stuck, equipment does not move on demand.
+21. TEX, Loss of Explosion Protection (EX) Integrity, Loss of Explosion Protection (EX) Integrity.
+23. VIB, Fix Vibration, Vibration is higher that the established limit.
+
+"
+"IBOP, UPPER, TOP DRIVE, AUX WELL","IBOP, UPPER, TOP DRIVE, AUX WELL",CRK,Fit new crank to Upper IBOP,"
+{
+  ""1"": 1,
+  ""2"": 2,
+  ""3"": 3,
+  ""4"": 4,
+  ""5"": 5,
+  ""6"": 6,
+  ""7"": 7,
+  ""8"": 8,
+  ""9"": 9,
+  ""10"": 10,
+  ""11"": 11,
+  ""12"": 12,
+  ""13"": 13,
+  ""14"": 14,
+  ""15"": 15,
+  ""16"": 16,
+  ""17"": 17,
+  ""18"": 18,
+  ""19"": 19,
+  ""20"": 20,
+  ""21"": 21,
+  ""22"": 22,
+  ""23"": 23
+}
+
+"
+CRANE LIFTING APPLIANCES,CRANE LIFTING APPLIANCES,CRK,Oder Boom tip sheave to replace damage one on KBC 3 + 1spare,"
+[
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 1
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 2
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 3
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 4
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 5
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 6
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 7
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 8
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 9
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 10
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 11
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 12
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 13
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 14
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 15
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 16
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 17
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 18
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 19
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 20
+    },
+    {
+        ""failure code"": ""KBC3"",
+        ""rank"": 21
+    },
+    {
+        ""failure code"": ""KBC3"",
+"
+NOV CYBERBASE DRILLING CONTROL,DRILLING CONTROL,CRK,Replace defective joystick.,"
+{
+    ""1"": 1,
+    ""2"": 2,
+    ""3"": 3,
+    ""4"": 4,
+    ""5"": 5,
+    ""6"": 6,
+    ""7"": 7,
+    ""8"": 8,
+    ""9"": 9,
+    ""10"": 10,
+    ""11"": 11,
+    ""12"": 12,
+    ""13"": 13,
+    ""14"": 14,
+    ""15"": 15,
+    ""16"": 16,
+    ""17"": 17,
+    ""18"": 18,
+    ""19"": 19,
+    ""20"": 20,
+    ""21"": 21,
+    ""22"": 22,
+    ""23"": 23
+}
+
+"
+NOV SHAFFER BOP FRAME,LOWER BOP STACK 2,CRK,REMOVE OLD SLOP INDICATORS AND FIT NEW ONES.,"
+[
+    {
+        ""Failure code"": ""1"",
+        ""Rank"": 1
+    },
+    {
+        ""Failure code"": ""2"",
+        ""Rank"": 2
+    },
+    {
+        ""Failure code"": ""3"",
+        ""Rank"": 3
+    },
+    {
+        ""Failure code"": ""4"",
+        ""Rank"": 4
+    },
+    {
+        ""Failure code"": ""5"",
+        ""Rank"": 5
+    },
+    {
+        ""Failure code"": ""6"",
+        ""Rank"": 6
+    },
+    {
+        ""Failure code"": ""7"",
+        ""Rank"": 7
+    },
+    {
+        ""Failure code"": ""8"",
+        ""Rank"": 8
+    },
+    {
+        ""Failure code"": ""9"",
+        ""Rank"": 9
+    },
+    {
+        ""Failure code"": ""10"",
+        ""Rank"": 10
+    },
+    {
+        ""Failure code"": ""11"",
+        ""Rank"": 11
+    },
+    {
+        ""Failure code"": ""12"",
+        ""Rank"": 12
+    },
+    {
+        ""Failure code"": ""13"",
+        ""Rank"": 13
+    },
+    {
+        ""Failure code"": ""14"",
+        ""Rank"": 14
+    },
+    {
+        ""Failure code"": ""15"",
+        ""Rank"": 15
+    },
+    {
+        ""Failure code"": ""16"",
+        ""Rank"": 16
+    },
+    {
+        ""Failure code"": ""17"",
+        ""Rank"": 17
+    },
+    {
+        ""Failure code"": ""18"",
+        ""Rank"": 18
+    },
+    {
+        ""Failure code"": ""19"",
+        ""Rank"": 19
+    },
+    {
+        ""Failure code"": ""20"",
+        ""Rank"": 20
+    },
+    {
+        ""Failure code"": ""21"",
+        ""Rank"": 21
+    },
+    {
+        ""Failure code"": ""22"",
+        ""Rank"": 22
+    },
+    {
+        ""Failure code"": ""23"",
+        ""Rank"": 23
+    }
+]"
+NOV TDX 1250 TOP DRIVE - AUX WELL,"TOP DRIVE, AUX WELL",CRK,REPLACE JOINT CLAMP WITH BROKEN LOCK PIN.,"
+[
+    {
+        ""failure code"": ""1"",
+        ""rank"": 1
+    },
+    {
+        ""failure code"": ""2"",
+        ""rank"": 2
+    },
+    {
+        ""failure code"": ""3"",
+        ""rank"": 3
+    },
+    {
+        ""failure code"": ""4"",
+        ""rank"": 4
+    },
+    {
+        ""failure code"": ""5"",
+        ""rank"": 5
+    },
+    {
+        ""failure code"": ""6"",
+        ""rank"": 6
+    },
+    {
+        ""failure code"": ""7"",
+        ""rank"": 7
+    },
+    {
+        ""failure code"": ""8"",
+        ""rank"": 8
+    },
+    {
+        ""failure code"": ""9"",
+        ""rank"": 9
+    },
+    {
+        ""failure code"": ""10"",
+        ""rank"": 10
+    },
+    {
+        ""failure code"": ""11"",
+        ""rank"": 11
+    },
+    {
+        ""failure code"": ""12"",
+        ""rank"": 12
+    },
+    {
+        ""failure code"": ""13"",
+        ""rank"": 13
+    },
+    {
+        ""failure code"": ""14"",
+        ""rank"": 14
+    },
+    {
+        ""failure code"": ""15"",
+        ""rank"": 15
+    },
+    {
+        ""failure code"": ""16"",
+        ""rank"": 16
+    },
+    {
+        ""failure code"": ""17"",
+        ""rank"": 17
+    },
+    {
+        ""failure code"": ""18"",
+        ""rank"": 18
+    },
+    {
+        ""failure code"": ""19"",
+        ""rank"": 19
+    },
+    {
+        ""failure code"": ""20"",
+        ""rank"": 20
+    },
+    {
+        ""failure code"": ""21"",
+        ""rank"": 21
+    },
+    {
+        ""failure code"": ""22"",
+        ""rank"": 22
+    },
+    {
+        ""failure code"": ""23"",
+        ""rank"": 23
+    }
+]"
+CHOKE AND KILL MANIFOLD,"MANIFOLD, CHOKE & KILL",DFM,"Clean, inspect, rebuild and replace damaged parts on HP Grease pumps for Choke and Kill manifold.","
+[
+    {
+        ""Failure code"": ""1"",
+        ""Rank"": 1
+    },
+    {
+        ""Failure code"": ""2"",
+        ""Rank"": 2
+    },
+    {
+        ""Failure code"": ""3"",
+        ""Rank"": 3
+    },
+    {
+        ""Failure code"": ""4"",
+        ""Rank"": 4
+    },
+    {
+        ""Failure code"": ""5"",
+        ""Rank"": 5
+    },
+    {
+        ""Failure code"": ""6"",
+        ""Rank"": 6
+    },
+    {
+        ""Failure code"": ""7"",
+        ""Rank"": 7
+    },
+    {
+        ""Failure code"": ""8"",
+        ""Rank"": 8
+    },
+    {
+        ""Failure code"": ""9"",
+        ""Rank"": 9
+    },
+    {
+        ""Failure code"": ""10"",
+        ""Rank"": 10
+    },
+    {
+        ""Failure code"": ""11"",
+        ""Rank"": 11
+    },
+    {
+        ""Failure code"": ""12"",
+        ""Rank"": 12
+    },
+    {
+        ""Failure code"": ""13"",
+        ""Rank"": 13
+    },
+    {
+        ""Failure code"": ""14"",
+        ""Rank"": 14
+    },
+    {
+        ""Failure code"": ""15"",
+        ""Rank"": 15
+    },
+    {
+        ""Failure code"": ""16"",
+        ""Rank"": 16
+    },
+    {
+        ""Failure code"": ""17"",
+        ""Rank"": 17
+    },
+    {
+        ""Failure code"": ""18"",
+        ""Rank"": 18
+    },
+    {
+        ""Failure code"": ""19"",
+        ""Rank"": 19
+    },
+    {
+        ""Failure code"": ""20"",
+        ""Rank"": 20
+    },
+    {
+        ""Failure code"": ""21"",
+        ""Rank"": 21
+    },
+    {
+        ""Failure code"": ""22"",
+        ""Rank"": 22
+    },
+    {
+        ""Failure code"": ""23"",
+        ""Rank"": 23
+    }
+]"
+NOV 14-P-220 MUD PUMP,MUD PUMP 2,DFM,"Repair on mud pump 2 fluid end. 3 x seats, 6 x valves and 1 x piston","
+[
+    {
+        ""failure code"": ""1"",
+        ""rank"": 1
+    },
+    {
+        ""failure code"": ""2"",
+        ""rank"": 2
+    },
+    {
+        ""failure code"": ""3"",
+        ""rank"": 3
+    },
+    {
+        ""failure code"": ""4"",
+        ""rank"": 4
+    },
+    {
+        ""failure code"": ""5"",
+        ""rank"": 5
+    },
+    {
+        ""failure code"": ""6"",
+        ""rank"": 6
+    },
+    {
+        ""failure code"": ""7"",
+        ""rank"": 7
+    },
+    {
+        ""failure code"": ""8"",
+        ""rank"": 8
+    },
+    {
+        ""failure code"": ""9"",
+        ""rank"": 9
+    },
+    {
+        ""failure code"": ""10"",
+        ""rank"": 10
+    },
+    {
+        ""failure code"": ""11"",
+        ""rank"": 11
+    },
+    {
+        ""failure code"": ""12"",
+        ""rank"": 12
+    },
+    {
+        ""failure code"": ""13"",
+        ""rank"": 13
+    },
+    {
+        ""failure code"": ""14"",
+        ""rank"": 14
+    },
+    {
+        ""failure code"": ""15"",
+        ""rank"": 15
+    },
+    {
+        ""failure code"": ""16"",
+        ""rank"": 16
+    },
+    {
+        ""failure code"": ""17"",
+        ""rank"": 17
+    },
+    {
+        ""failure code"": ""18"",
+        ""rank"": 18
+    },
+    {
+        ""failure code"": ""19"",
+        ""rank"": 19
+    },
+    {
+        ""failure code"": ""20"",
+        ""rank"": 20
+    },
+    {
+        ""failure code"": ""21"",
+        ""rank"": 21
+    },
+    {
+        ""failure code"": ""22"",
+        ""rank"": 22
+    },
+    {
+        ""failure code"": ""23"",
+        ""rank"": 23
+    }
+]
+
+"
+NOV 14-P-220 MUD PUMP,MUD PUMP 3,DFM,Mud pump 3 fluid end inspection / repair,
+NOV HOCHANG HCP 350-10T-20M HELIDECK CRANE,HELIDECK CRANE,DFM,Change out helideck crane wire.,
+MUD BUCKET,"MUD SAVER BUCKET, MAIN WELL",DFM,Mud bucket seals replaced due to worn parts,
+NOV SHAFFER KILL LINE STAB,"STAB, KILL SIDE, BOP 2",DFM,REMOVE EXISTING DAMAGED KILL STAB SUB AND REPLACE WITH NEW ( IRT FROM LIBONGOS),
+NOV FINGERBOARD,"FINGER BOARD, UPPER",DFM,Replace damaged finger,
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, AUX WELL, HYDRARACKER",DFM,"REPLACE DEFECTIVE ELECTRICAL CABLE OF THE TAIL ARM.
+3D41B-IJB-216A-C01",
+NOV SHAFFER BOP FRAME,LOWER BOP STACK 1,DFM,"Inspected the choke stab and found SEAL, S-TYPE, 4.324ID X 4.924OD X 0.465THK position 6 Bill of Material for Item: 10694271-001 damaged",
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 3, KBC STBD AFT",DFM,REPLACE WIPER AND PERFORM FUNCTION TEST.,
+MHWIRTH BC01 BRIDGE RACKING CRANE (BRC),"BRIDGE RACKING CRANE (BRC), VPH",ELK,Replace load hold valve due to leaking,
+"NOV SHAFFER 18 3/4"" 10K BIG BOY ANNULAR","ANNULAR, UPPER, LMRP 1",ELK,"DUE TO RECENT CHAMBER TESTING FAILURE (OPEN SIDE), INSPECT UPPER ANNULAR COMPONENTS TO AND REPLACE REQUIRED SEALS + FIELD REPAIR IF REQUIRED.",
+MHWIRTH LOWER GUIDING ARM,"LOWER GUIDE ARM (UGA), VPH",ELK,Replace over center valve on the LGA jib tilt cylinder due to valve leaking.,
+NOV HPS-03 1000 TOP DRIVE,"TOP DRIVE, MAIN WELL",ELK,"Replace leaking cylinder, PORT FWD",
+"PIPEHANDLER, TOP DRIVE, MAIN WELL","PIPEHANDLER, TOP DRIVE, MAIN WELL",ELK,Change out seal from gripper cylinder due to oil leakage,
+NOV BELLYBOARD,"FINGER BOARD, LOWER",ELK,"replace 20 leaking air solenoid valves on lower fingerboard cabinets, due to leaking air",
+"CONNECTOR, WELLHEAD, H-4, 18.750-15000 PSI MSP, MODEL SHD, MODULAR DESIGN, FLANGE TOP W/ BX-164 ALLOY 625 RING GROOVE UP AND VX//VT ALLOY 625 RING GROOVE DOWN, W/ NUDGE PIN FEATURE, 27 IN DOG KIT","CONNECTOR, WELLHEAD, BOP 1",ELK,Rebuild leaking cylinder on BOP#1 WHC,
+MUD STANDPIPE MANIFOLD,"MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",ELK,replace seals on the valves,
+MUD BUCKET,"MUD SAVER BUCKET, MAIN WELL",ELK,"ICN#1900357 - GASKET, 6-5/8IN: 3 ea To replaced worn rubbers that were observed to be leaking.",
+NOV 14-P-220 MUD PUMP,MUD PUMP 4,ELK,Issue of parts for Mud Pump 4 repairs,
+TEST STUMP,"STUMP, TEST, BOP 1",ELK,Change out test stump cylinder,
+"PUMP, MUD CHARGE, MUD PUMP 2","PUMP, MUD CHARGE, MUD PUMP 2",ELK,Replace Mechanical Seal,
+"RISER, PUP JOINT ASSY, 15FT-HB","JOINT, PUP, RISER, MARINE RISER SYSTEM",ELK,Troubleshoot leak on choke line during riser run and pressure test,
+"PANEL, DIVERTER CONTROL SYSTEM","PANEL, DIVERTER CONTROL SYSTEM",ELK,Replace leaking slip joint packer air pressure regulator (R10) on diverter panel,
+MHWIRTH TPK 2200 MUD PUMP,MUD PUMP 3,ELK,replace swab on #3 mud pump,
+"CONNECTOR, 18-3/4"" DX-10, COMES WITH H4 VX/VT PROFILE","CONNECTOR, LMRP 1",ELK,REPLACE LMRP GASKET RETAIN HYDRAULIC CYLINDER THAT IS LEAKING DURING SOAK TEST,
+DRILLERS CABIN,DRILLERS CABIN,FRC,Replace door lock mechanism on Doghouse Aux side door.,
+NOV SHAFFER BOP HPU TRIPLEX PUMP,"PUMP, HPU TRIPLEX 1, BOP ONLINE, BOP CONTROL SYSTEMS SURFACE EQUIPMENT",FRC,Replace damaged o-ring on suction strainer basket lid,
+CAMERON ROV PANEL,"PANELS, ROV, BOP 1 CONTROL",FRC,Hot stab on flying lead has broken handle and needs to be replaced.,
+NOV FINGERBOARD,"FINGER BOARD, UPPER",FTC,Replace damaged finger due to not closing on demand.,
+NOV HYDRATONG ARN-270- AUX WELL,"IRON ROUGHNECK 2, AUX WELL, HYDRATONG",FTC,"we have intermittent on Upper clamp, checked and measured on the coil 28ohm, all seem good, Mech checked on pressure reading 59bar also good.
+it was different to pinpoint the problem.
+Finally the coil failed, we able to measure the 24vdc all the way to the HT tool, to the very last Jbox. able to measure 24V, but when check ohm, the coil is open on CLAMP function.
+replaced and tested all good",
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 3, KBC STBD AFT",FTC,"2 Position Switch Key Exchange. Function _ ""JOYSTICK ON"" / Troca do Switch Key de 2 PosiÃ§Ãµes. FunÃ§Ã£o _ ""JOYSTICK ON"".",
+"VALVE, AIR CONTROL, PORT OVERBOARD OPEN, DIVERTER CONTROL PANEL","VALVES & REGULATORS, PANEL, DIVERTER CONTROL SYSTEM",FTC,"Diverter overboard valve interlock function failure during function test.
+while closing the diverter packer the Port overboard valve remaing opened during the test and did not return to close position with the diverter packer selected to open",
+"IBOP, UPPER, TOP DRIVE","IBOP, UPPER, TOP DRIVE",FTC,"Change out IBOP on DDM VALVE, I-BOP (KELLY), 7-5/8IN",
+NOV HYDRATONG ARN-270,"IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",FTO,"342A 1-XV101
+LOWER CLAMP 011/0FF 
+Solenoid To be replaced",
+NOV FINGERBOARD,"FINGER BOARD, UPPER",FTO,Upper fingerboard casing row 25 slot 1 not working properly.,
+NOV FINGERBOARD,"FINGER BOARD, UPPER",FTO,Replace faulty salunda sensors on Fingerboard and Bellyboard,
+"RECEPTACLE, FEMALE, BLUE POD, BOP 1 CONTROL","RECEPTACLE, FEMALE, BLUE POD, BOP 1 CONTROL",FTO,"While splitting the LMRP from the BOP after EDS wet fire, the blue pod gripper failed to unlock and pulled the trailer ball out of the receptacle. Upon troubleshooting, we found the CCSV armature stuck which caused the gripper to remain locked.
+
+Repair trailer ball (shear pins) and repair CCSV.",
+NOV TDX 1250 TOP DRIVE MAIN WELL,"TOP DRIVE, MAIN WELL",FTO,Investigate and repair issue (fuse blown) with open signal on IBOP solenoid,
+NOV FINGERBOARD,"FINGER BOARD, UPPER",FTO,W/O Created to track Maintenance on Fingerboard April 2023 replacement. Spares and Labor hours should be completed and reported. On the end of de Month W/O must be closed and create new one,
+MUD LOW PRESSURE PIPING,MUD LP VALVE & PIPING SUCTION,FTO,"Troubleshooting the actutors Valves in MCS:
+  HV â€“ 08-146  ( Aberta, nao aceita comando ).
+  HV â€“ 08-128  ( Aberta todo tempo ). 
+  HV â€“ 08-132  ( Abre e Fecha somente Local ). - It is working
+ HV â€“ 08-96    ( Aberta todo tempo ). - Need to Replace the air manifold.
+  HV â€“ 08-94    ( Fica amarela na tela, nao abre nem fecha ao dar comendo ) - Need to Replace the air manifold.         
+  HV â€“ 08-92    ( Abre e Fecha somente Local ) - Butterfly Valve is hard to open or close even in manual.
+ HV â€“ 08-134  ( Abre e Fecha manualmente ) - Air Manifold or Valve Actuator is damage.
+  HV â€“ 08-99    - Test it is working remotely during command to open and close.
+          
+  Local:  Bombas de Transferencias de BRINE e BASEOIL 
+
+  HCVâ€”08-113  ( Valvula de porcentagem, nao abre ).
+  HV â€“ 08- 109   ( Abre e Fecha, fica todo tempo amarela no painel",
+NOV BELLYBOARD,"FINGER BOARD, LOWER",FTO,REPLACE PNEUMARIC CYLINDER AND PERFORMED FUNCTION TEST.,
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, AUX WELL, HYDRARACKER",FTS,AUX HR Upper Arm Guide Pipe Pusher Prox Adjustment,
+"DECK CRANE 4, KBC PORT AFT","DECK CRANE 4, KBC PORT AFT",FTS,Horn +4T-H09 faulty. To be replaced with new type supplied by Liebherr,
+NOV HYDRATONG MPT-200,"IRON ROUGHNECK 2, AUX WELL, HYDRATONG",FTS,During Inspection identifying the solenoid and valve does not work propelled need to be exchanged,
+"VALVES, PRESSURE RELIEF, MUD PUMP 1","VALVES, PRESSURE RELIEF, MUD PUMP 1",FTS,Replace faulty cooler on titan valve cabinet,
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 4, KBC PORT AFT",FTS,"Troubleshooting - to investigate no water supply for wipers - Requested quantity of pumps to attend all Cranes
+
+Equinor Item 22 - Crane and lifting verification 20.06.22 Finding 5 No water supply for wipers on KBC #1 and #4",
+LIEBHERR BOS 4200-100 DECK CRANE,DECK CRANE 2,FTS,Jason Engard TSL- Crane operators have made a list of deficiencies with cranes. The below issues will have to be addressed as time/parts/availability are allowed.,
+BOP/LMRP/XMAS TREE SKID,"SKID 4, XMAS TREE HANDLING SYSTEM",FTS,During trouble shooting it was found that the Port lock pin prox was not working.,
+MHWIRTH BB4410 PDPH CRANE,PIPE DECK PIPE HANDLING CRANE (PDPH),INL,"Entered by Z. Tuttle /ATSL
+Date: 10/26/21
+The knuckle jib is lowering slowly without valve output. The load holding relief valves may be bleeding by slowly.  It has leaked down both knuckled in and knuckled out.  See attached flow diagram",
+"HYDRAULIC POWER UNIT (HPU), DRAWWORKS MW AFT","HYDRAULIC POWER UNIT (HPU), DRAWWORKS MW AFT",INL,Remove accumulator and replace bladder,
+NOV 14-P-220 MUD PUMP,MUD PUMP 2,INL,Piston changed out on Cyl 3,
+"SYSTEM, TOP DRIVE TDX-1250","TOP DRIVE, MAIN WELL",INL,Replace main tdx hydraulic swivel per procedure provided by WTL,
+MUD STANDPIPE MANIFOLD,"MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",INL,"Open 4 1/16"" V/V 14 on main STP for inspection",
+NOV SSGD 1250 DRAWWORKS,"DRAWWORKS, MAIN WELL",LFS,MAINS DW HYD BRAKE TANK FILTRATION,
+"HYDRAULIC POWER UNIT (HPU), DRAWWORKS AW FWD","HYDRAULIC POWER UNIT (HPU), DRAWWORKS AW FWD",LFS,"Proceed as it follows within the TMSP report which is transcribed below:
+
+"" We recommend checking for damage in breathers, seals, possible sources of outside contamination and inspect the condition of relevant
+components. We also recommend evaluating the best moment, according to the on board conditions, to drain/dehydrate the
+compartment or replace the lubricant load and doing the filtering (microfiltration) of the system until obtaining the required
+cleanliness level (ISO 4406 17/15/12 or better)""",
+NOV OC1891 PDPH CRANE,PIPE DECK PIPE HANDLING CRANE (PDPH),LFS,"Proceed as it follows within the TMSP report which is transcribed below:
+
+"" We recommend checking the lubrication management plans to evaluate the relubrication of the component. We also recommend that when relubrication the equipment, check for wear points and external contamination""",
+NOV TDX 1250 TOP DRIVE,"TOP DRIVE, MAIN WELL",LFS,Replace MW TDX Gearbox oil and filter,
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",PDE,Lower travel gearbox running no pressure in the brake,
+"HPU UNIT, DECK CRANE 3, KBC STBD AFT","HPU UNIT, DECK CRANE 3, KBC STBD AFT",PDE,"Order for 5 new star delta timers for crane HPU pump motors for stock.
+stock item was used for crane No 3 motor No 2",
+"IRON ROUGHNECK, MPT-200 HYDRATONG, FOR 60-1/2IN RT","IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",PDE,During the operation we were informed that the main hydratong is not reaching the make up and brack out torque correctly,
+MHWIRTH TPK 2200 MUD PUMP,MUD PUMP 2,PDE,"Ryan - ATSL
+
+Derrickman called and reported Mud Pump B Local Discharge Pressure gauge is reading 0 with the pump running on the boost line.",
+NOV SHAFFER BOP CONTROL COMMON,BOP 1 CONTROL SYSTEM,PDE,"During trouble shooting of BOP1 Blue Pod it was found that PLC Program 
+had not been compiled. Due to this we did not compile during operations.
+See Email from BOP controls (unable to attach) Needs done from EWS terminal",
+"REGULATOR, HYDRAULIC SUPPLY REGULATOR, DIVERTER CONTROL PANEL","VALVES & REGULATORS, PANEL, DIVERTER CONTROL SYSTEM",PDE,"Diverter step down regulator sticking down after every function not returning to 3000 psi.
+Remove the regulator and rebuild it with the repair kit ICN 4801309  Loc: 91-D in the warehouse. 
+See the manual  Diverter Master Control Panel Page 4-57 of 96 for maintenance guide.",
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 1, KBC STBD FWD",PDE,Check intermittent problem of erratic speeds on winch lowering system,
+"TRANSMITTER, PRESSURE & TEMPERATURE, BOP 1 CONTROL","TRANSMITTER, PRESSURE & TEMPERATURE, BOP 1 CONTROL",PDE,Send in HPHT probe ( 20081691) (sn 219065 /  Stelllar s/n 1305942),
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",PDE,Troubleshoot and repair issues with MW HR upper trolley encoder counts being off from Lower.,
+CLOVER RISER TORQUE TOOL,"TOOL 2, RISER TORQUE, MARINE RISER SYSTEM",PDE,Hydraulic Regaulating valve on Riser torque tool failed. Pressure could not be adjusted. Replaced with ICN 1821554.,
+"VALVE, PRV, PILOT PRV, BOP 1 ACOUSTIC POD","VALVES, OTHER, ACOUSTIC POD, BOP 1 CONTROL",PDE,Replace Relief Valve on Acoustic Pod BOP#1,
+NOV SHAFFER ROV PANEL,"PANELS, ROV, LOWER BOP, BOP 2 CONTROL",PLU,Replace Visco Jet and Adapter for Acoustic Accumulator ROV pressure gauge.,
+NOV SHAFFER BOP HYDRAULIC POWER UNIT (HPU),"UNIT, HYDRAULIC POWER, BOP ONLINE, BOP CONTROL SYSTEMS SURFACE EQUIPMENT",PLU,Change out filters on HPU mixing unit,
+DRILL PIPE,DRILL PIPES,PLU,Repair Pup joints and spiral HWDP,
+NOV SHAFFER SUBSEA ELECTRONIC ASSEMBLY (SEA),"SEA, BLUE POD, BOP CONTROL, BOP 1 CONTROL",PTF,Investigate report of P/S failure alarm reported by SSS,
+DRILLING CONTROL CABINETS,DRILLING CONTROL CABINETS,PTF,Replace interface adapter/fiber ethernet TERM 1,
+NOV SSGD 1250 DRAWWORKS,"DRAWWORKS, MAIN WELL",PTF,Investigate encoder fault on MW DW D,
+DECK CRANE WIRES,"WIRES, DECK CRANE 2, AHC KBC PORT FWD",PTF,Horizon angle sensor 1 defect %W4.41.3.,
+MUD STANDPIPE MANIFOLD,"MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",PTF,Replace pressure transmitter STP #2 at Stand pipe Manifold Main Well,
+MHWIRTH 1899 IRON ROUGHNECK,"IRON ROUGHNECK, OFF CENTER",PTF,Alex Reyes- ET's have diagnosed several defective parts for SB HRN Cavotec remote. Parts are not in our inventory and will transfer from catalog. order QTY-2 of each.,
+CAMERON MUX CONTROL POD,"BLUE POD, BOP 1 CONTROL",PTF,Replace Hydrostatic Transducer for PTM #2,
+NOV HYDRATONG MPT-200,"IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",PTF,Replace Proxy Sensor of the MW Hydratong Mud Bucket Park Position,
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 1, KBC STBD FWD",PTF,Cable protection damage on crane 1 knuckle. install junctionbox on both sides of the knuckle and replace hose/cable temporary fix has been implemented.,
+NOV SHAFFER/KONGSBERG ACS500 ACOUSTIC CONTROL SYSTEM,"SYSTEM, ACOUSTIC, ELECTRICAL, BOP 2 CONTROL",PTF,Replace batteries for BOP 2 Acoustic Control Unit with new ICN:1923761,
+"DECK CRANE 4, KBC PORT AFT","DECK CRANE 4, KBC PORT AFT",PTF,Replace Complete Transitter - 4-2- mA signal into CAN module checked by simulation,
+NOV CYBERBASE DRILLING CONTROL,DRILLING CONTROL,STU,Replace sticky push button on Cyber chair C,
+"DOLLY, RETRACTABLE, TOP DRIVE, AUX WELL","DOLLY, RETRACTABLE, TOP DRIVE, AUX WELL",STU,Lock out equipment and stage tools required for pin extraction and install.,
+MPD HYDRAULIC POWER UNIT,"HYDRAULIC POWER UNIT (HPU), MPD",STU,Order new Directional Control Valves for the RCD HPU Service.,
+"NOV SHAFFER NXT 22"" BLIND SHEAR RAM","UPPER TRIPLE, UPPER BLIND SHEAR RAM (UBSR), BOP 2",TRD,ORDER SKID PLATE FOR BOP 2 UBSR CAVITY,
+"NOV SHAFFER NXT 14"" PIPE RAM","LOWER TRIPLE, UPPER PIPE RAM (UPR), BOP 2",TRD,ORDER SKID PLATE FOR BOP 2 UPR CAVITY,
+"PIPEHANDLER, TOP DRIVE, MAIN WELL","PIPEHANDLER, TOP DRIVE, MAIN WELL",TRD,Replace worn die on TJB,
+NOV 14-P-220 MUD PUMP,MUD PUMP 3,TRD,Replace 2 cap seals on MP # 3. ICN # 1502312,
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",TRD,replace pipe pusher roller due to severe wear. Worn half way through pin,
+MUD STANDPIPE MANIFOLD,"MUD STANDPIPE MANIFOLD, MUD PUMP ROOM, MUD SYSTEM PIPING",TRD,"Bleed line flange at 2-1/16"" valve washed out during drilling. The flange is between the valve and the pump discharge. It is located on the STBD mezz deck in the pump room. Flange has been temporarily repaired with ProPoxy 20.",
+NOV HYDRATONG MPT-200,"IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",TRD,MAIN HYDRATONG TROQUE CENTER BOLTS SPRING REPLACEMENT.,
+MHWIRTH LOWER GUIDING ARM,"LOWER GUIDE ARM (UGA), VPH",TRD,LGA arm is showing signs of play in the main pivot pin on the LGA. There are installed bushing that are most likely worn out. Bondura bolt must be removed and bushings replaced.,

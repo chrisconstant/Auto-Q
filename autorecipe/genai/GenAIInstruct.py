@@ -1,22 +1,18 @@
 from genai.credentials import Credentials
-from genai.schemas import GenerateParams
-from genai.schemas import ChatOptions, GenerateParams, ReturnOptions
-from genai.schemas.generate_params import HAPOptions, ModerationsOptions
-from genai.model import Model
-from langchain.schema import HumanMessage, SystemMessage, AIMessage
-from typing import Callable, Dict, List, Optional, Tuple, Union
-import re
-import json
+from genai.schema import TextGenerationParameters, TextGenerationReturnOptions
 import mlflow
+import socket
+import time
+from genai import Client, Credentials
 from genai.extensions.langchain import LangChainInterface
 import time
 import socket
-from genai.exceptions.genai_exception import GenAiException
+from genai import Client, Credentials
 
 UNKNOWN = "unknown"
 
 
-class GenAIInstructClient(Model):
+class GenAIInstructClient():
     def __init__(
         self,
         name,
@@ -27,14 +23,19 @@ class GenAIInstructClient(Model):
         credentials,
         system_message,
         question_message,
+        stream=False,
     ):
         self.name = name
         self.description = description
         self.skill = skill
-        self.client = LangChainInterface(
-            model=model,
-            params=GenerateParams(**params),
-            credentials=Credentials(**credentials),
+        ignored_key = 'moderations'
+        filtered_params = {key: value for key, value in params.items() if key != ignored_key}
+
+        self.llm = LangChainInterface(
+            client=Client(credentials=Credentials(**credentials)),
+            model_id=model,
+            parameters=TextGenerationParameters(**filtered_params),
+            moderations=params['moderations']
         )
         self.system_message = system_message
         self.question_message = question_message
@@ -47,6 +48,9 @@ class GenAIInstructClient(Model):
         # trial
         self._max_retries = 3
         self._retry_delay = 10
+
+        # stream
+        self.stream = stream
 
     def _update_tokens_usage(
         self, prompt_tokens=0, completion_tokens=0, total_tokens=0
@@ -62,37 +66,75 @@ class GenAIInstructClient(Model):
             q_dict = {"Question": messages}
             mlflow.log_dict(q_dict, "Question.json")
             result = None
+            chunk = None
             for _ in range(1, self._max_retries + 1):
                 try:
-                    if self.question_message:
-                        result = self.client.generate(
-                            prompts=[
-                                f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)."
-                            ]
-                        )
+                    if self.stream:
+                        result = ''
+                        if self.question_message:
+                            for chunk in self.llm.stream(
+                                input=[
+                                    f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)."
+                                ]
+                            ):
+                                if result:
+                                    result = result + chunk
+                                else:
+                                    result = chunk
+                        else:
+                            for chunk in self.llm.stream(
+                                input=[
+                                    f"System Prompt: {self.system_message} \n\n Question: {messages} Please use (Internal thought)."
+                                ]
+                            ):
+                                if result:
+                                    result = result + chunk
+                                else:
+                                    result = chunk
                     else:
-                        result = self.client.generate(
-                            prompts=[
-                                f"System Prompt: {self.system_message} \n\n Question: {messages}."
-                            ]
-                        )
+                        if self.question_message:
+                            result = self.llm.generate(
+                                prompts=[
+                                    f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)."
+                                ]
+                            )
+                        else:
+                            result = self.llm.generate(
+                                prompts=[
+                                    f"System Prompt: {self.system_message} \n\n Question: {messages} Please use (Internal thought)."
+                                ]
+                            )
                     break
-                except (OSError, socket.error, ConnectionResetError, Exception, GenAiException) as e:
+                except (OSError, socket.error, ConnectionResetError, Exception) as e:
                     print ('Error ....' + str(e))
                     time.sleep(self._retry_delay)
 
-            if result:
-                a_dict = {"Answer": result.generations[0][0].text}
-                t_dict = result.generations[0][0].generation_info["token_usage"]
-                self._update_tokens_usage(
-                    t_dict["prompt_tokens"],
-                    t_dict["completion_tokens"],
-                    t_dict["total_tokens"],
-                )
-                mlflow.log_dict(a_dict, "Answer.json")
-                return result.generations[0][0].text
+            if self.stream:
+                if result:
+                    a_dict = {"Answer": result.strip()}
+                    if not isinstance(chunk, str):
+                        t_dict = chunk.generation_info['token_usage']
+                        self._update_tokens_usage(
+                            t_dict["prompt_tokens"],
+                            t_dict["completion_tokens"],
+                            t_dict["total_tokens"],
+                        )
+                    return result.strip()
+                else:
+                    return ''
             else:
-                return ''
+                if result:
+                    a_dict = {"Answer": result.generations[0][0].text}
+                    t_dict = result.generations[0][0].generation_info["token_usage"]
+                    self._update_tokens_usage(
+                        t_dict["prompt_tokens"],
+                        t_dict["completion_tokens"],
+                        t_dict["total_tokens"],
+                    )
+                    mlflow.log_dict(a_dict, "Answer.json")
+                    return result.generations[0][0].text
+                else:
+                    return ''
 
     def print_token_usage(self):
         print(

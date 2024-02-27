@@ -1,18 +1,18 @@
 from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
 obj = RecipeAgent(name='Maximo')
-obj.set_asset_class(asset_class='Electrical Submersible Pump')
-obj.init_chat(round=1)
+obj.set_asset_class(asset_class='plasma etch systems')
+obj.init_chat(round=2)
 
 '''
 obj = RecipeAgent(name='Maximo')
-obj.set_asset_class(asset_class='wind turbine gearbox')
+obj.set_asset_class(asset_class='air handling unit')
 obj.init_chat(round=2)
 '''
 
 '''
 obj = RecipeAgent(name='Maximo')
-obj.set_asset_class(asset_class='standby generator')
+obj.set_asset_class(asset_class='Chiller')
 obj.init_chat(round=2)
 '''
 
@@ -209,3 +209,4 @@ obj.init_chat(round=2)
 #client = MlflowClient()
 #from mlflow import MlflowClient
 #obj.init_chat(message='The industrial asset class is Accumulator Hydraulic Bladder Type')
+'''

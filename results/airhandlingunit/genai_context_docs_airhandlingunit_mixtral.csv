@@ -1,0 +1,35 @@
+context_prompt,ds_context,question_context,sme_context
+The industrial asset class is air handling unit,"An air handling unit (AHU) is a critical component of an HVAC system, responsible for circulating and conditioning air in buildings. A Failure Mode and Effects Analysis (FMEA) of an AHU would include various components such as the air filter, blower motor, and condensate drain, each with their own potential failure modes, reasons, degradation mechanisms, severities, and abilities to detect. A clogged or dirty air filter can restrict airflow, causing the AHU to work harder and leading to increased energy consumption and potential failure of other components, with low detectability. A mechanical or electrical failure of the blower motor can prevent the AHU from circulating air, leading to a complete system failure, with medium detectability. A buildup of dirt, debris, or algae in the condensate drain can cause water to back up and damage other components of the AHU, with high detectability. Regular inspections and maintenance can help prevent these failures, ensuring the AHU operates efficiently and effectively.","The anomaly detection model for air handling units (AHU) aims to provide early warning of potential failures, reduce maintenance costs, and increase asset lifespan. The model is expected to automate the monitoring and alerting mechanisms currently in place, integrating seamlessly with existing maintenance and operations workflows. The model will process and store sensor data, which is collected at a certain frequency, and the volume and velocity of which will be considered in the development process. Previous attempts to develop an anomaly detection model for AHUs have been made, and the key learnings will be incorporated into the new model. The model will be maintained and updated by a designated team, who will have access to resources and support. The AHUs' environmental and operational conditions, regulatory and safety requirements, data privacy and security concerns, and specific performance metrics will be considered in the development process. The model will monitor the key components of the AHUs, including the air filter, blower motor, and condensate drain, and will consider their known interactions and dependencies. The model will also consider the specific model and age of the AHUs, the accuracy and reliability of the sensors, and the known seasonal or operational patterns in the failure rates. The consequences of undetected or untimely detection of failures in the AHUs, the typical frequency and duration of inspections and maintenance, and the impact of AHU failures on the overall HVAC system and building operations will also be considered.","An air handling unit (AHU) is a key component of an HVAC (heating, ventilation, and air conditioning) system. Its primary function is to regulate and circulate air as part of a heating, ventilating, and air-conditioning system. The AHU is responsible for:
+
+* Taking in fresh air from outdoors and/or recirculating air from inside the building
+* Filtering the air to remove particulates
+* Conditioning the air to maintain temperature and humidity levels
+* Distributing the air throughout the building through a network of ducts
+
+Here is an example of the type of FMEA analysis I would provide for an AHAC (Air Handling Air Conditioning) unit:
+
+Component: Air Filter
+Failure Mode: Clogged or Dirty Filter
+Failure Reason: Restriction of airflow due to buildup of dust and debris
+Failure Code: 2145
+Degradation Mechanism: Gradual buildup of dust and debris on the filter over time
+Severity: High - Restricted airflow can cause the AHU to work harder, leading to increased energy consumption and potential failure of other components.
+Ability to Detect: Low - Clogged filters may not show visible signs of failure and may not be easily detectable without regular inspection.
+
+Component: Blower Motor
+Failure Mode: Motor Failure
+Failure Reason: Mechanical failure due to wear and tear or electrical failure due to overloading
+Failure Code: 2146
+Degradation Mechanism: Gradual wear and tear of motor bearings and windings, or electrical failure due to overloading
+Severity: High - Motor failure can prevent the AHU from circulating air, leading to a complete system failure.
+Ability to Detect: Medium - Motor failure may be preceded by signs of decreased performance, such as increased noise or vibration, but may not be easily detectable without regular inspection.
+
+Component: Condensate Drain
+Failure Mode: Condensate Drain Clog
+Failure Reason: Buildup of dirt, debris, or algae in the condensate drain
+Failure Code: 2147
+Degradation Mechanism: Gradual buildup of dirt, debris, or algae in the condensate drain over time
+Severity: Medium - A clogged condensate drain can cause water to back up and damage other components of the AHU.
+Ability to Detect: High - A clogged condensate drain will typically cause water to back up and overflow, making it easily detectable.
+
+This is just a sample of the type of FMEA analysis I would provide for an AHU. The actual analysis would include a more detailed breakdown of each component, as well as a more comprehensive list of potential failure modes, reasons, codes, degradation mechanisms, severities, and abilities to detect."

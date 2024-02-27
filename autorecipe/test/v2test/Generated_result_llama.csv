@@ -1,0 +1,2085 @@
+assetdescription,locationdescription,problemcode,taskdescription,0
+"DECK CRANE 2, AHC KBC PORT FWD","DECK CRANE 2, AHC KBC PORT FWD",CRK,"Work with NDT inspectors to carry out MPI Inspection on repaired area inside Crane Pedestal. 
+
+2 X inboard corner doubler plates on stiffener at transition area from square to Pedestal cylinder.
+
+Areas were left without paint for to allow for further inspection. If no indications noticed then paint can be applied.
+
+If indication recorded notify TSL for further investigation.
+
+NDT report to be uploaded to edocs and attached.","failure_codes = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""MBU"", 3),
+    (""PDE"", 4),
+    (""PLU"", 5),
+    (""RUS"", 6),
+    (""SLP"", 7),
+    (""STP"", 8),
+    (""STU"", 9),
+    (""TEX"", 10),
+    (""TRD"", 11),
+    (""VIB"", 12),
+    (""BUR"", 13),
+    (""CRK"", 14),
+    (""DFM"", 15),
+    (""ELK"", 16),
+    (""FTC"", 17),
+    (""FTO"", 18),
+    (""FTS"", 19),
+    (""INL"", 20),
+    (""LFS"", 21),
+    (""NOI"", 22),
+    (""PBU"", 23)
+]"
+"IBOP, UPPER, TOP DRIVE, AUX WELL","IBOP, UPPER, TOP DRIVE, AUX WELL",CRK,Fit new crank to Upper IBOP,"failure_codes_ranking = [
+    (""CRK"", 1),
+    (""FRC"", 2),
+    (""DFM"", 3),
+    (""MBU"", 4),
+    (""PDE"", 5),
+    (""PLU"", 6),
+    (""PTF"", 7),
+    (""RUS"", 8),
+    (""SLP"", 9),
+    (""STU"", 10),
+    (""BUR"", 11),
+    (""ELK"", 12),
+    (""FTS"", 13),
+    (""INL"", 14),
+    (""LFS"", 15),
+    (""NOI"", 16),
+    (""SAL"", 17),
+    (""STP"", 18),
+    (""TEX"", 19),
+    (""TRD"", 20),
+    (""VIB"", 21),
+    (""FTO"", 22),
+    (""FTC"", 23)
+]"
+CRANE LIFTING APPLIANCES,CRANE LIFTING APPLIANCES,CRK,Oder Boom tip sheave to replace damage one on KBC 3 + 1spare,"Here's a Python list comprehension that generates a list of tuples, where each tuple contains a failure code and its associated rank, based on the work order description:
+
+failure_codes_ranking = [(FRC, 1), (BUR, 2), (CRK, 3), (DFM, 4), (ELK, 5), (FTS, 6), (INL, 7), (LFS, 8), (MBU, 9), (NOI, 10), (PDE, 11), (PLU, 12)]
+
+The ranking is based on the relevance of each failure code to the work order description, with FRC (Fractured) being the most relevant and PLU (Plugged) being the least relevant.
+
+Here's a dictionary that maps each failure code to its rank:
+
+failure_code_ranks = {
+    FRC: 1,
+    BUR: 2,
+    CRK: 3,
+    DFM: 4,
+    ELK: 5,
+    FTS: 6,
+    INL: 7,
+    LFS: 8,
+    MBU: 9,
+    NOI: 10,
+    PDE: 11,
+    PLU: 12
+}
+
+You can use this dictionary to look up the rank of each failure code. For example, the rank of FRC is 1, and the rank of PLU is 12."
+NOV CYBERBASE DRILLING CONTROL,DRILLING CONTROL,CRK,Replace defective joystick.,"failure_codes_ranking = [
+    (""FRC"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""FTS"", 4),
+    (""INL"", 5),
+    (""LFS"", 6),
+    (""MBU"", 7),
+    (""NOI"", 8),
+    (""PDE"", 9),
+    (""PLU"", 10),
+    (""PTF"", 11),
+    (""RUS"", 12),
+    (""SAL"", 13),
+    (""SLP"", 14),
+    (""STP"", 15),
+    (""STU"", 16),
+    (""TEX"", 17),
+    (""TRD"", 18),
+    (""VIB"", 19),
+    (""ELK"", 20),
+    (""FTC"", 21),
+    (""FTO"", 22),
+    (""PDE"", 23)
+]"
+NOV SHAFFER BOP FRAME,LOWER BOP STACK 2,CRK,REMOVE OLD SLOP INDICATORS AND FIT NEW ONES.,"failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FRC"", 5),
+    (""FTC"", 6),
+    (""FTO"", 7),
+    (""FTS"", 8),
+    (""INL"", 9),
+    (""LFS"", 10),
+    (""MBU"", 11),
+    (""NOI"", 12),
+    (""PDE"", 13),
+    (""PLU"", 14),
+    (""PTF"", 15),
+    (""RUS"", 16),
+    (""SAL"", 17),
+    (""SLP"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]
+
+# Sort the list in descending order of rank
+failure_codes.sort(key=lambda x: x[1], reverse=True)
+
+# Print the sorted list
+for code, rank in failure_codes:
+    print(f""{code}: {rank}"")"
+NOV TDX 1250 TOP DRIVE - AUX WELL,"TOP DRIVE, AUX WELL",CRK,REPLACE JOINT CLAMP WITH BROKEN LOCK PIN.,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of association with the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""MBU"", 3),
+    (""PTF"", 4),
+    (""RUS"", 5),
+    (""SLP"", 6),
+    (""STU"", 7),
+    (""TRD"", 8),
+    (""VIB"", 9),
+    (""FTS"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTO"", 15),
+    (""FTC"", 16),
+    (""LFS"", 17),
+    (""NOI"", 18),
+    (""PDE"", 19),
+    (""PLU"", 20),
+    (""PTE"", 21),
+    (""STE"", 22),
+    (""TEX"", 23)
+]
+
+This ranking is based on the likelihood of each failure code being associated with the work order description, asset description, and location. The top 10 failure codes in the list are the most likely to be associated, while the remaining 13 failure codes are less likely but still possible."
+CHOKE AND KILL MANIFOLD,"MANIFOLD, CHOKE & KILL",DFM,"Clean, inspect, rebuild and replace damaged parts on HP Grease pumps for Choke and Kill manifold.","work_order_description = ""Clean, inspect, rebuild and replace damaged parts on HP Grease pumps for Choke and Kill manifold.""
+
+failure_codes = [
+    ""BUR"",
+    ""CRK"",
+    ""DFM"",
+    ""ELK"",
+    ""INL"",
+    ""FTS"",
+    ""PDE"",
+    ""PLU"",
+    ""RUS"",
+    ""SAL"",
+    ""SLP"",
+    ""STP"",
+    ""STU"",
+    ""TEX"",
+    ""TRD"",
+    ""VIB"",
+    ""FTC"",
+    ""FTO"",
+    ""MBU"",
+    ""NOI"",
+    ""PLT"",
+    ""SLI"",
+    ""TST"",
+    ""TXI"",
+    ""UNS""
+]
+
+ranking = [(failure_code, rank) for failure_code in failure_codes for rank in range(1, 24)]
+
+# Sort the ranking based on the work order description
+sorted_ranking = sorted(ranking, key=lambda x: x[1], reverse=True)
+
+print(sorted_ranking)"
+NOV 14-P-220 MUD PUMP,MUD PUMP 2,DFM,"Repair on mud pump 2 fluid end. 3 x seats, 6 x valves and 1 x piston","failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FRC"", 5),
+    (""FTC"", 6),
+    (""FTO"", 7),
+    (""FTS"", 8),
+    (""INL"", 9),
+    (""LFS"", 10),
+    (""MBU"", 11),
+    (""NOI"", 12),
+    (""PDE"", 13),
+    (""PLU"", 14),
+    (""PTF"", 15),
+    (""RUS"", 16),
+    (""SAL"", 17),
+    (""SLP"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]"
+NOV 14-P-220 MUD PUMP,MUD PUMP 3,DFM,Mud pump 3 fluid end inspection / repair,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""PLU"", 3),
+    (""PTF"", 4),
+    (""RUS"", 5),
+    (""SLP"", 6),
+    (""STU"", 7),
+    (""TEX"", 8),
+    (""TRD"", 9),
+    (""BUR"", 10),
+    (""CRK"", 11),
+    (""DFM"", 12),
+    (""ELK"", 13),
+    (""FTC"", 14),
+    (""FTO"", 15),
+    (""FTS"", 16),
+    (""LFS"", 17),
+    (""MBU"", 18),
+    (""NOI"", 19),
+    (""PDE"", 20),
+    (""SAL"", 21),
+    (""STP"", 22),
+    (""STU"", 23)
+]
+
+This ranking is based on the assumption that the work order description, asset description, and location provide a high degree of relevance to the failure codes. The ranking is also based on the severity and likelihood of the failure codes, with the most severe and likely codes ranked higher.
+
+Note that this is just one possible ranking, and the actual ranking may vary depending on the specific context and requirements of the problem."
+NOV HOCHANG HCP 350-10T-20M HELIDECK CRANE,HELIDECK CRANE,DFM,Change out helideck crane wire.,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""LFS"", 3),
+    (""MBU"", 4),
+    (""PTF"", 5),
+    (""RUS"", 6),
+    (""SLP"", 7),
+    (""STU"", 8),
+    (""TEX"", 9),
+    (""VIB"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTC"", 15),
+    (""FTO"", 16),
+    (""FTS"", 17),
+    (""INL"", 18),
+    (""LFS"", 19),
+    (""MBU"", 20),
+    (""NOI"", 21),
+    (""PDE"", 22),
+    (""PLU"", 23)
+]
+
+This ranking is based on the assumption that the work order description, asset description, and location provided are the most important factors in determining the relevance of each failure code. The ranking is subjective and may vary depending on the specific context and requirements of the problem."
+MUD BUCKET,"MUD SAVER BUCKET, MAIN WELL",DFM,Mud bucket seals replaced due to worn parts,"Sure, here's a Python list comprehension that generates a list of tuples, where each tuple contains a failure code and its associated rank, based on the work order description, asset description, and location:
+```python
+failure_codes = [
+    (""MBU"", 1),  # Material build-up (Worn parts)
+    (""ELK"", 2),  # External leak (Leak)
+    (""FTC"", 3),  # Failure to close (Failure to close)
+    (""FTO"", 4),  # Failure to open (Failure to open)
+    (""NOI"", 5),  # Noise (Noise)
+    (""INL"", 6),  # Internal leak (Leak)
+    (""LFS"", 7),  # Lubrication/Fluid Sampling (Unsatisfactory fluid/lubrication sample)
+    (""PDE"", 8),  # Parameter deviation (Parameter deviation)
+    (""PLU"", 9),  # Plugged (Constraint in flow conductor)
+    (""PTF"", 10),  # Power/signal failure (Power or signal loss in electrical system)
+    (""RUS"", 11),  # Rust (Build up of corrosion products)
+    (""SAL"", 12),  # Spurious Alarm (Unexpected/false alarm)
+    (""SLP"", 13),  # Slippage (Decrease of transmitted power in a mechanical system caused by slipping)
+    (""STP"", 14),  # Does not stop on demand (Equipment does not stop on demand)
+    (""STU"", 15),  # Stuck (Equipment does not move on demand)
+    (""TEX"", 16),  # Loss of Explosion Protection (EX) Integrity (Loss of Explosion Protection (EX) Integrity)
+    (""TRD"", 17),  # Thickness reduction (Reduction in thickness measurement / loss of material)
+    (""VIB"", 18),  # Fix Vibration (Vibration is higher that the established limit)
+    (""BUR"", 19),  #"
+NOV SHAFFER KILL LINE STAB,"STAB, KILL SIDE, BOP 2",DFM,REMOVE EXISTING DAMAGED KILL STAB SUB AND REPLACE WITH NEW ( IRT FROM LIBONGOS),"failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FTS"", 5),
+    (""INL"", 6),
+    (""LFS"", 7),
+    (""MBU"", 8),
+    (""NOI"", 9),
+    (""PDE"", 10),
+    (""PLU"", 11),
+    (""PTF"", 12),
+    (""RUS"", 13),
+    (""SAL"", 14),
+    (""SLP"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""FTC"", 21),
+    (""FTO"", 22),
+    (""PRC"", 23)
+]"
+NOV FINGERBOARD,"FINGER BOARD, UPPER",DFM,Replace damaged finger,"failure_codes_ranking = [(code, rank) for code, rank in zip(failure_codes, ranks)]"
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, AUX WELL, HYDRARACKER",DFM,"REPLACE DEFECTIVE ELECTRICAL CABLE OF THE TAIL ARM.
+3D41B-IJB-216A-C01","ranking = [(failure_code, rank) for failure_code, rank in zip(failure_codes, ranks)]"
+NOV SHAFFER BOP FRAME,LOWER BOP STACK 1,DFM,"Inspected the choke stab and found SEAL, S-TYPE, 4.324ID X 4.924OD X 0.465THK position 6 Bill of Material for Item: 10694271-001 damaged","failure_codes_ranking = [(failure_code, rank) for failure_code, rank in enumerate(sorted(failure_codes, key=lambda x: x[1].startswith('F'))) if rank < 10]"
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 3, KBC STBD AFT",DFM,REPLACE WIPER AND PERFORM FUNCTION TEST.,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""LFS"", 5),
+    (""MBU"", 6),
+    (""NOI"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""RUS"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""SAL"", 16),
+    (""SLP"", 17),
+    (""STP"", 18),
+    (""STU"", 19),
+    (""TEX"", 20),
+    (""TRD"", 21),
+    (""VIB"", 22),
+    (""SLI"", 23)
+]
+
+In this ranking, the failure codes are ranked from 1 to 23, with 1 being the most likely and 23 being the least likely. The ranking is based on the work order description, asset description, and location, and takes into account the possible failure modes associated with each failure code."
+MHWIRTH BC01 BRIDGE RACKING CRANE (BRC),"BRIDGE RACKING CRANE (BRC), VPH",ELK,Replace load hold valve due to leaking,"failure_codes_ranking = [
+    (""ELK"", 1),
+    (""INL"", 2),
+    (""LFS"", 3),
+    (""MBU"", 4),
+    (""PLU"", 5),
+    (""FTS"", 6),
+    (""STP"", 7),
+    (""STU"", 8),
+    (""PDE"", 9),
+    (""RUS"", 10),
+    (""TEX"", 11),
+    (""TRD"", 12),
+    (""VIB"", 13),
+    (""FRC"", 14),
+    (""FTO"", 15),
+    (""SLP"", 16),
+    (""NOI"", 17),
+    (""PLT"", 18),
+    (""SAL"", 19),
+    (""SPK"", 20),
+    (""BUR"", 21),
+    (""CRK"", 22),
+    (""DFM"", 23)
+]"
+"NOV SHAFFER 18 3/4"" 10K BIG BOY ANNULAR","ANNULAR, UPPER, LMRP 1",ELK,"DUE TO RECENT CHAMBER TESTING FAILURE (OPEN SIDE), INSPECT UPPER ANNULAR COMPONENTS TO AND REPLACE REQUIRED SEALS + FIELD REPAIR IF REQUIRED.","failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FTS"", 5),
+    (""INL"", 6),
+    (""LFS"", 7),
+    (""MBU"", 8),
+    (""NOI"", 9),
+    (""PDE"", 10),
+    (""PLU"", 11),
+    (""PTF"", 12),
+    (""RUS"", 13),
+    (""SAL"", 14),
+    (""SLP"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""FTC"", 21),
+    (""FTO"", 22),
+    (""PRC"", 23)
+]"
+MHWIRTH LOWER GUIDING ARM,"LOWER GUIDE ARM (UGA), VPH",ELK,Replace over center valve on the LGA jib tilt cylinder due to valve leaking.,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_codes_ranking = [
+    (""ELK"", 1),
+    (""INL"", 2),
+    (""FRC"", 3),
+    (""FTS"", 4),
+    (""MBU"", 5),
+    (""PDE"", 6),
+    (""PLU"", 7),
+    (""RUS"", 8),
+    (""SLP"", 9),
+    (""STP"", 10),
+    (""STU"", 11),
+    (""TEX"", 12),
+    (""TRD"", 13),
+    (""VIB"", 14),
+    (""CRK"", 15),
+    (""DFM"", 16),
+    (""FTO"", 17),
+    (""LFS"", 18),
+    (""NOI"", 19),
+    (""PLT"", 20),
+    (""SAL"", 21),
+    (""SPK"", 22),
+    (""TRN"", 23)
+]
+
+The ranking is based on the relevance of each failure code to the work order description, asset description, and location. The top 10 failure codes are ranked based on their likelihood of being associated with the task, asset, and location. The remaining 13 failure codes are ranked lower, but still have a possibility of being associated with the task, asset, and location.
+
+Note that the ranking is not a hard and fast rule, and the actual relevance of each failure code can vary depending on the specifics of the task, asset, and location. The ranking is meant to provide a general guideline for prioritizing failure codes based on their potential relevance."
+NOV HPS-03 1000 TOP DRIVE,"TOP DRIVE, MAIN WELL",ELK,"Replace leaking cylinder, PORT FWD","failure_codes = [
+    (""ELK"", 1),
+    (""INL"", 2),
+    (""FRC"", 3),
+    (""FTS"", 4),
+    (""PTF"", 5),
+    (""RUS"", 6),
+    (""SLP"", 7),
+    (""STU"", 8),
+    (""TEX"", 9),
+    (""VIB"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""FTO"", 14),
+    (""LFS"", 15),
+    (""MBU"", 16),
+    (""NOI"", 17),
+    (""PDE"", 18),
+    (""PLU"", 19),
+    (""PTR"", 20),
+    (""SAL"", 21),
+    (""STP"", 22),
+    (""TRD"", 23)
+]"
+"PIPEHANDLER, TOP DRIVE, MAIN WELL","PIPEHANDLER, TOP DRIVE, MAIN WELL",ELK,Change out seal from gripper cylinder due to oil leakage,"Here's a list of tuples, where each tuple contains a failure code and its associated rank, generated using Python:
+
+[('ELK', 1), ('INL', 2), ('LFS', 3), ('MBU', 4), ('PDE', 5), ('PLU', 6), ('PTF', 7), ('RUS', 8), ('SLP', 9), ('STP', 10), ('STU', 11), ('TEX', 12),
+('BUR', 13), ('CRK', 14), ('DFM', 15), ('FRC', 16), ('FTO', 17), ('FTS', 18), ('SAL', 19), ('SPK', 20), ('TRD', 21), ('VIB', 22), ('NOI', 23)]
+
+The ranking is based on the likelihood of the failure code being associated with the work order description, asset description, and location. The ranks were assigned based on the relevance of each failure code to the given information, with 1 being the most relevant and 23 being the least relevant."
+NOV BELLYBOARD,"FINGER BOARD, LOWER",ELK,"replace 20 leaking air solenoid valves on lower fingerboard cabinets, due to leaking air","ranking = [(ELK, 1), (INL, 2), (FTS, 3), (PTF, 4), (MBU, 5),
+          (SLP, 6), (RUS, 7), (NOI, 8), (TEX, 9), (TRD, 10),
+          (BUR, 11), (CRK, 12), (DFM, 13), (FRC, 14), (FTO, 15),
+          (FTA, 16), (SAL, 17), (STP, 18), (STU, 19), (VIB, 20),
+          (PDE, 21), (PLU, 22), (LFS, 23)]"
+"CONNECTOR, WELLHEAD, H-4, 18.750-15000 PSI MSP, MODEL SHD, MODULAR DESIGN, FLANGE TOP W/ BX-164 ALLOY 625 RING GROOVE UP AND VX//VT ALLOY 625 RING GROOVE DOWN, W/ NUDGE PIN FEATURE, 27 IN DOG KIT","CONNECTOR, WELLHEAD, BOP 1",ELK,Rebuild leaking cylinder on BOP#1 WHC,"failure_codes_ranking = [
+    (""ELK"", 1),
+    (""INL"", 2),
+    (""FRC"", 3),
+    (""DFM"", 4),
+    (""CRK"", 5),
+    (""FTS"", 6),
+    (""STP"", 7),
+    (""STU"", 8),
+    (""RUS"", 9),
+    (""TRD"", 10),
+    (""BUR"", 11),
+    (""NOI"", 12),
+    (""PDE"", 13),
+    (""PLU"", 14),
+    (""PTF"", 15),
+    (""SAL"", 16),
+    (""SLP"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""MBU"", 21),
+    (""LFS"", 22),
+    (""FTC"", 23)
+]"
+MUD STANDPIPE MANIFOLD,"MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",ELK,replace seals on the valves,"failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FRC"", 1),
+    (""FTC"", 5),
+    (""FTO"", 6),
+    (""FTS"", 7),
+    (""INL"", 2),
+    (""LFS"", 8),
+    (""MBU"", 3),
+    (""NOI"", 9),
+    (""PDE"", 10),
+    (""PLU"", 4),
+    (""PTF"", 5),
+    (""RUS"", 6),
+    (""SAL"", 11),
+    (""SLP"", 7),
+    (""STU"", 8),
+    (""TEX"", 9),
+    (""TRD"", 10),
+    (""VIB"", 11),
+    (""INL"", 2),
+    (""FTS"", 7),
+    (""MBU"", 3),
+    (""PDE"", 10),
+    (""PLU"", 4),
+    (""RUS"", 6),
+    (""SAL"", 11),
+    (""SLP"", 7),
+    (""STU"", 8),
+    (""TEX"", 9),
+    (""TRD"", 10),
+    (""VIB"", 11)
+]"
+MUD BUCKET,"MUD SAVER BUCKET, MAIN WELL",ELK,"ICN#1900357 - GASKET, 6-5/8IN: 3 ea To replaced worn rubbers that were observed to be leaking.","failure_codes_ranking = [(failure_code, rank) for failure_code, rank in enumerate(sorted(failure_codes, key=lambda x: x[1].startswith('ELK')))]"
+NOV 14-P-220 MUD PUMP,MUD PUMP 4,ELK,Issue of parts for Mud Pump 4 repairs,"failure_codes_ranking = [(code, rank) for code, rank in enumerate(sorted(failure_codes, key=lambda x: x[1], reverse=True))]"
+TEST STUMP,"STUMP, TEST, BOP 1",ELK,Change out test stump cylinder,"Sure, here's a list of all 23 failure codes with their associated ranks, based on the work order description ""Change out test stump cylinder"":
+
+failure_codes_ranking = [
+    (""FRC"", 1),
+    (""STU"", 2),
+    (""INL"", 3),
+    (""LFS"", 4),
+    (""MBU"", 5),
+    (""PTF"", 6),
+    (""RUS"", 7),
+    (""SLP"", 8),
+    (""STP"", 9),
+    (""TRD"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTC"", 15),
+    (""FTO"", 16),
+    (""FTS"", 17),
+    (""INL"", 18),
+    (""NOI"", 19),
+    (""PDE"", 20),
+    (""PLU"", 21),
+    (""SAL"", 22),
+    (""TEX"", 23)
+]
+
+Please note that the ranking is based on the likelihood of the failure codes being associated with the work order description, asset description, and location. The ranking may vary depending on the specific context and requirements of the problem."
+"PUMP, MUD CHARGE, MUD PUMP 2","PUMP, MUD CHARGE, MUD PUMP 2",ELK,Replace Mechanical Seal,"failure_codes_ranking = [(failure_code, rank) for failure_code, rank in zip(failure_codes, ranks)]"
+"RISER, PUP JOINT ASSY, 15FT-HB","JOINT, PUP, RISER, MARINE RISER SYSTEM",ELK,Troubleshoot leak on choke line during riser run and pressure test,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the work order description:
+
+failure_code_ranking = [
+    (""ELK"", 1),
+    (""INL"", 2),
+    (""FTS"", 3),
+    (""PDE"", 4),
+    (""PLU"", 5),
+    (""RUS"", 6),
+    (""SLP"", 7),
+    (""FRC"", 8),
+    (""MBU"", 9),
+    (""VIB"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""FTO"", 14),
+    (""FTC"", 15),
+    (""LFS"", 16),
+    (""NOI"", 17),
+    (""PTE"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]
+
+This ranking is based on the likelihood of each failure code being associated with the work order description, with the most likely failure codes ranked first. The ranking is not a hard and fast rule, and the actual likelihood of each failure code may vary depending on the specific details of the task and the asset."
+"PANEL, DIVERTER CONTROL SYSTEM","PANEL, DIVERTER CONTROL SYSTEM",ELK,Replace leaking slip joint packer air pressure regulator (R10) on diverter panel,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_codes_ranking = [
+    (""ELK"", 1),
+    (""INL"", 2),
+    (""FTS"", 3),
+    (""PTF"", 4),
+    (""SLP"", 5),
+    (""MBU"", 6),
+    (""RUS"", 7),
+    (""FRC"", 8),
+    (""CRK"", 9),
+    (""TRD"", 10),
+    (""BUR"", 11),
+    (""NOI"", 12),
+    (""PDE"", 13),
+    (""PLU"", 14),
+    (""STP"", 15),
+    (""STU"", 16),
+    (""TEX"", 17),
+    (""VIB"", 18),
+    (""FTC"", 19),
+    (""FTO"", 20),
+    (""LFS"", 21),
+    (""SAL"", 22),
+    (""PTR"", 23)
+]
+
+This ranking is based on the assumption that the work order description, asset description, and location provided are the most important factors in determining the relevance of each failure code. The ranking can be adjusted based on additional information or context."
+MHWIRTH TPK 2200 MUD PUMP,MUD PUMP 3,ELK,replace swab on #3 mud pump,"failure_codes = [
+    (""FRC"", 1),
+    (""ELK"", 2),
+    (""INL"", 3),
+    (""STP"", 4),
+    (""STU"", 5),
+    (""PTF"", 6),
+    (""RUS"", 7),
+    (""MBU"", 8),
+    (""NOI"", 9),
+    (""TEX"", 10),
+    (""CRK"", 11),
+    (""DFM"", 12),
+    (""FTO"", 13),
+    (""FTS"", 14),
+    (""LFS"", 15),
+    (""PDE"", 16),
+    (""PLU"", 17),
+    (""SAL"", 18),
+    (""SLP"", 19),
+    (""TRD"", 20),
+    (""VIB"", 21),
+    (""BUR"", 22),
+    (""FTC"", 23)
+]"
+"CONNECTOR, 18-3/4"" DX-10, COMES WITH H4 VX/VT PROFILE","CONNECTOR, LMRP 1",ELK,REPLACE LMRP GASKET RETAIN HYDRAULIC CYLINDER THAT IS LEAKING DURING SOAK TEST,"Sure, here's a Python list of tuples with failure codes and their associated ranks based on the work order description:
+
+failure_codes_ranking = [
+    (""ELK"", 1),
+    (""INL"", 2),
+    (""FTS"", 3),
+    (""LFS"", 4),
+    (""MBU"", 5),
+    (""PDE"", 6),
+    (""PLU"", 7),
+    (""PTF"", 8),
+    (""RUS"", 9),
+    (""SLP"", 10),
+    (""STP"", 11),
+    (""STU"", 12),
+    (""TEX"", 13),
+    (""TRD"", 14),
+    (""VIB"", 15),
+    (""BUR"", 16),
+    (""CRK"", 17),
+    (""DFM"", 18),
+    (""FRC"", 19),
+    (""FTO"", 20),
+    (""PLA"", 21),
+    (""SAL"", 22),
+    (""SPM"", 23)
+]
+
+The ranking is based on the relevance of each failure code to the work order description, with the most relevant failure codes ranked higher. The ranks were assigned based on the frequency of the failure codes in the work order description and their potential impact on the task conducted."
+DRILLERS CABIN,DRILLERS CABIN,FRC,Replace door lock mechanism on Doghouse Aux side door.,"ranking = [(failure_code, rank) for failure_code, rank in enumerate(sorted(failure_codes, key=lambda x: x[1].startswith('FT')))]"
+NOV SHAFFER BOP HPU TRIPLEX PUMP,"PUMP, HPU TRIPLEX 1, BOP ONLINE, BOP CONTROL SYSTEMS SURFACE EQUIPMENT",FRC,Replace damaged o-ring on suction strainer basket lid,"ranking = [(FRC, 1), (CRK, 2), (DFM, 3), (ELK, 4), (INL, 5), (LFS, 6), (MBU, 7), (NOI, 8), (PDE, 9), (PLU, 10), (PTF, 11), (RUS, 12), (SAL, 13), (SLP, 14), (STP, 15), (STU, 16), (TEX, 17), (TRD, 18), (VIB, 19), (FTC, 20), (FTO, 21), (FTS, 22), (SLI, 23)]"
+CAMERON ROV PANEL,"PANELS, ROV, BOP 1 CONTROL",FRC,Hot stab on flying lead has broken handle and needs to be replaced.,"Sure, here's a Python list of tuples, where each tuple contains a failure code and its associated rank, generated based on the work order description, asset description, and location:
+
+[('FRC', 1), ('BUR', 2), ('CRK', 3), ('DFM', 4), ('FTS', 5), ('INL', 6), ('LFS', 7), ('MBU', 8), ('PDE', 9), ('RUS', 10),
+ ('SAL', 11), ('SLP', 12), ('STP', 13), ('STU', 14), ('TEX', 15), ('TRD', 16), ('VIB', 17), ('FTO', 18), ('FTU', 19), ('PLT', 20), ('PLU', 21), ('ELK', 22), ('NOI', 23)]
+
+The ranking is based on the likelihood of the failure code being associated with the work order description, asset description, and location. The top 10 failure codes are the most likely to be associated, while the remaining 13 failure codes are less likely but still possible."
+NOV FINGERBOARD,"FINGER BOARD, UPPER",FTC,Replace damaged finger due to not closing on demand.,"failure_codes = ['BUR', 'CRK', 'DFM', 'ELK', 'FRC', 'FTC', 'FTO', 'FTS', 'INL', 'LFS', 'MBU', 'NOI', 'PDE', 'PLU', 'PTF', 'RUS', 'SAL', 'SLP', 'STP', 'STU', 'TEX', 'TRD']
+ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+failure_code_ranking = [(failure_code, rank) for failure_code, rank in zip(failure_codes, ranks)]"
+NOV HYDRATONG ARN-270- AUX WELL,"IRON ROUGHNECK 2, AUX WELL, HYDRATONG",FTC,"we have intermittent on Upper clamp, checked and measured on the coil 28ohm, all seem good, Mech checked on pressure reading 59bar also good.
+it was different to pinpoint the problem.
+Finally the coil failed, we able to measure the 24vdc all the way to the HT tool, to the very last Jbox. able to measure 24V, but when check ohm, the coil is open on CLAMP function.
+replaced and tested all good","failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FRC"", 5),
+    (""FTC"", 6),
+    (""FTO"", 7),
+    (""FTS"", 8),
+    (""INL"", 9),
+    (""LFS"", 10),
+    (""MBU"", 11),
+    (""NOI"", 12),
+    (""PDE"", 13),
+    (""PLU"", 14),
+    (""PTF"", 15),
+    (""RUS"", 16),
+    (""SAL"", 17),
+    (""SLP"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]"
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 3, KBC STBD AFT",FTC,"2 Position Switch Key Exchange. Function _ ""JOYSTICK ON"" / Troca do Switch Key de 2 PosiÃ§Ãµes. FunÃ§Ã£o _ ""JOYSTICK ON"".","Here's a list of tuples, where each tuple contains a failure code and its associated rank, generated using Python:
+
+[('FTC', 1), ('FTO', 2), ('FTS', 3), ('INL', 4), ('LFS', 5), ('MBU', 6), ('NOI', 7), ('PDE', 8), ('PLU', 9), ('RUS', 10),
+('BUR', 11), ('CRK', 12), ('DFM', 13), ('ELK', 14), ('FRC', 15), ('STP', 16), ('STU', 17), ('TEX', 18), ('TRD', 19), ('VIB', 20), ('SAL', 21), ('SLP', 22), ('PTF', 23)]
+
+In this ranking, the failure codes are ranked based on their relevance to the work order description, asset description, and location. The top 10 failure codes are ranked from 1 to 10, while the remaining 13 failure codes are ranked from 11 to 23."
+"VALVE, AIR CONTROL, PORT OVERBOARD OPEN, DIVERTER CONTROL PANEL","VALVES & REGULATORS, PANEL, DIVERTER CONTROL SYSTEM",FTC,"Diverter overboard valve interlock function failure during function test.
+while closing the diverter packer the Port overboard valve remaing opened during the test and did not return to close position with the diverter packer selected to open","Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description:
+
+failure_code_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""PDE"", 5),
+    (""PLU"", 6),
+    (""PTF"", 7),
+    (""RUS"", 8),
+    (""SLP"", 9),
+    (""STU"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""LFS"", 16),
+    (""MBU"", 17),
+    (""NOI"", 18),
+    (""PTR"", 19),
+    (""SAL"", 20),
+    (""STP"", 21),
+    (""TEX"", 22),
+    (""TRD"", 23)
+]
+
+This ranking is based on the assumption that the failure codes that are most relevant to the work order description should have a lower rank, and those that are less relevant should have a higher rank. The ranking is subjective and can be adjusted based on additional information or context."
+"IBOP, UPPER, TOP DRIVE","IBOP, UPPER, TOP DRIVE",FTC,"Change out IBOP on DDM VALVE, I-BOP (KELLY), 7-5/8IN","Sure, here's a Python list of tuples ranking the 23 failure codes based on their relevance to the task, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""BUR"", 2),
+    (""CRK"", 3),
+    (""DFM"", 4),
+    (""ELK"", 5),
+    (""FTO"", 6),
+    (""FTS"", 7),
+    (""INL"", 8),
+    (""LFS"", 9),
+    (""MBU"", 10),
+    (""NOI"", 11),
+    (""PDE"", 12),
+    (""PLU"", 13),
+    (""PTF"", 14),
+    (""RUS"", 15),
+    (""SAL"", 16),
+    (""SLP"", 17),
+    (""STP"", 18),
+    (""STU"", 19),
+    (""TEX"", 20),
+    (""TRD"", 21),
+    (""VIB"", 22),
+    (""FTV"", 23)
+]
+
+In this ranking, the failure codes are ranked based on their relevance to the task, asset description, and location, with the most relevant failure codes ranked first. The ranking is not a definitive assessment, but rather a way to prioritize the failure codes based on the available information."
+NOV HYDRATONG ARN-270,"IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",FTO,"342A 1-XV101
+LOWER CLAMP 011/0FF 
+Solenoid To be replaced","failure_codes_ranking = [(code, rank) for code, rank in enumerate(sorted(failure_codes, key=lambda x: x[1], reverse=True))]"
+NOV FINGERBOARD,"FINGER BOARD, UPPER",FTO,Upper fingerboard casing row 25 slot 1 not working properly.,"ranking = [(failure_code, rank) for failure_code, rank in zip(failure_codes, range(1, 24))]"
+NOV FINGERBOARD,"FINGER BOARD, UPPER",FTO,Replace faulty salunda sensors on Fingerboard and Bellyboard,"Here's a list of tuples, where each tuple contains a failure code and its associated rank, generated using Python:
+
+[('FTC', 1), ('FTO', 2), ('FTS', 3), ('INL', 4), ('LFS', 5), ('MBU', 6), ('NOI', 7), ('PDE', 8), ('PLU', 9), ('PTF', 10), ('RUS', 11), ('SLP', 12), ('STP', 13), ('STU', 14), ('TEX', 15), ('TRD', 16), ('VIB', 17), ('BUR', 18), ('CRK', 19), ('DFM', 20), ('ELK', 21), ('FRC', 22), ('SAL', 23)]
+
+The ranking is based on the likelihood of the failure code being associated with the work order description, asset description, and location. The ranking is subjective and may vary depending on the specific context and data available."
+"RECEPTACLE, FEMALE, BLUE POD, BOP 1 CONTROL","RECEPTACLE, FEMALE, BLUE POD, BOP 1 CONTROL",FTO,"While splitting the LMRP from the BOP after EDS wet fire, the blue pod gripper failed to unlock and pulled the trailer ball out of the receptacle. Upon troubleshooting, we found the CCSV armature stuck which caused the gripper to remain locked.
+
+Repair trailer ball (shear pins) and repair CCSV.","Here's a list of tuples, where each tuple contains a failure code and its associated rank, generated using Python:
+
+[('FRC', 1), ('STU', 2), ('STP', 3), ('INL', 4), ('MBU', 5), ('PTF', 6), ('RUS', 7), ('SLP', 8), ('FTS', 9), ('TRD', 10),
+('BUR', 11), ('CRK', 12), ('DFM', 13), ('ELK', 14), ('FTO', 15), ('LFS', 16), ('NOI', 17), ('PDE', 18), ('PLU', 19), ('PTE', 20),
+('SAL', 21), ('SPK', 22), ('TEX', 23)]
+
+In this ranking, the failure codes are ranked based on their likelihood of occurrence, with the most likely failure code (FRC) given a rank of 1, and the least likely failure code (TEX) given a rank of 23. The ranks were determined based on the work order description, asset description, and location provided."
+NOV TDX 1250 TOP DRIVE MAIN WELL,"TOP DRIVE, MAIN WELL",FTO,Investigate and repair issue (fuse blown) with open signal on IBOP solenoid,"failure_codes = [
+    (""FTS"", 1),
+    (""PTF"", 2),
+    (""INL"", 3),
+    (""CRK"", 4),
+    (""FRC"", 5),
+    (""MBU"", 6),
+    (""SLP"", 7),
+    (""RUS"", 8),
+    (""NOI"", 9),
+    (""PDE"", 10),
+    (""ELK"", 11),
+    (""FTC"", 12),
+    (""FTO"", 13),
+    (""STP"", 14),
+    (""STU"", 15),
+    (""TEX"", 16),
+    (""TRD"", 17),
+    (""VIB"", 18),
+    (""SAL"", 19),
+    (""PLU"", 20),
+    (""LFS"", 21),
+    (""DFM"", 22),
+    (""BUR"", 23)
+]"
+NOV FINGERBOARD,"FINGER BOARD, UPPER",FTO,W/O Created to track Maintenance on Fingerboard April 2023 replacement. Spares and Labor hours should be completed and reported. On the end of de Month W/O must be closed and create new one,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the task, asset description, and location:
+
+failure_codes_ranking = [
+    (""FRC"", 1),
+    (""BUR"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FTS"", 5),
+    (""INL"", 6),
+    (""LFS"", 7),
+    (""MBU"", 8),
+    (""NOI"", 9),
+    (""PDE"", 10),
+    (""PLU"", 11),
+    (""PTF"", 12),
+    (""RUS"", 13),
+    (""SAL"", 14),
+    (""SLP"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""CRK"", 21),
+    (""FTO"", 22),
+    (""SLI"", 23)
+]
+
+In this ranking, the failure codes are ranked from 1 to 23, with the most likely failure code to be associated with the task, asset description, and location at the top of the list, and the least likely failure code at the bottom.
+
+Note that this ranking is based on the information provided in the work order description and may not reflect the actual likelihood of failure codes in the real-world maintenance process."
+MUD LOW PRESSURE PIPING,MUD LP VALVE & PIPING SUCTION,FTO,"Troubleshooting the actutors Valves in MCS:
+  HV â€“ 08-146  ( Aberta, nao aceita comando ).
+  HV â€“ 08-128  ( Aberta todo tempo ). 
+  HV â€“ 08-132  ( Abre e Fecha somente Local ). - It is working
+ HV â€“ 08-96    ( Aberta todo tempo ). - Need to Replace the air manifold.
+  HV â€“ 08-94    ( Fica amarela na tela, nao abre nem fecha ao dar comendo ) - Need to Replace the air manifold.         
+  HV â€“ 08-92    ( Abre e Fecha somente Local ) - Butterfly Valve is hard to open or close even in manual.
+ HV â€“ 08-134  ( Abre e Fecha manualmente ) - Air Manifold or Valve Actuator is damage.
+  HV â€“ 08-99    - Test it is working remotely during command to open and close.
+          
+  Local:  Bombas de Transferencias de BRINE e BASEOIL 
+
+  HCVâ€”08-113  ( Valvula de porcentagem, nao abre ).
+  HV â€“ 08- 109   ( Abre e Fecha, fica todo tempo amarela no painel","Sure, here's a list of tuples ranking the 23 failure codes based on their relevance to the task, asset description, and location:
+
+failure_code_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""LFS"", 5),
+    (""MBU"", 6),
+    (""NOI"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""RUS"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""SAL"", 21),
+    (""SLP"", 22),
+    (""PTF"", 23)
+]
+
+In this ranking, the top 10 failure codes are the most relevant to the task, asset description, and location, while the remaining 13 failure codes are less relevant but can still be considered for further analysis."
+NOV BELLYBOARD,"FINGER BOARD, LOWER",FTO,REPLACE PNEUMARIC CYLINDER AND PERFORMED FUNCTION TEST.,"failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FRC"", 5),
+    (""FTC"", 6),
+    (""FTO"", 7),
+    (""FTS"", 8),
+    (""INL"", 9),
+    (""LFS"", 10),
+    (""MBU"", 11),
+    (""NOI"", 12),
+    (""PDE"", 13),
+    (""PLU"", 14),
+    (""PTF"", 15),
+    (""RUS"", 16),
+    (""SAL"", 17),
+    (""SLP"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]"
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, AUX WELL, HYDRARACKER",FTS,AUX HR Upper Arm Guide Pipe Pusher Prox Adjustment,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FTS"", 1),
+    (""INL"", 2),
+    (""LFS"", 3),
+    (""MBU"", 4),
+    (""PDE"", 5),
+    (""PLU"", 6),
+    (""PTF"", 7),
+    (""RUS"", 8),
+    (""SLP"", 9),
+    (""STU"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""FTO"", 16),
+    (""FTU"", 17),
+    (""SAL"", 18),
+    (""SPK"", 19),
+    (""STP"", 20),
+    (""STU"", 21),
+    (""TEX"", 22),
+    (""TRD"", 23)
+]
+
+This ranking is based on the assumption that the failure codes that are most relevant to the work order description, asset description, and location should be ranked higher than the ones that are less relevant. The ranking is subjective and may vary depending on the specific context and requirements of the system."
+"DECK CRANE 4, KBC PORT AFT","DECK CRANE 4, KBC PORT AFT",FTS,Horn +4T-H09 faulty. To be replaced with new type supplied by Liebherr,"ranking = [(FRC, 1), (FTS, 2), (PTF, 3), (SLP, 4), (STU, 5), (TEX, 6), (TRD, 7), (VIB, 8),
+          (BUR, 9), (CRK, 10), (DFM, 11), (ELK, 12), (FTO, 13), (INL, 14), (LFS, 15), (MBU, 16),
+          (NOI, 17), (PDE, 18), (PLU, 19), (RUS, 20), (SAL, 21), (SPK, 22), (STP, 23)]"
+NOV HYDRATONG MPT-200,"IRON ROUGHNECK 2, AUX WELL, HYDRATONG",FTS,During Inspection identifying the solenoid and valve does not work propelled need to be exchanged,"Sure, here's a Python list of tuples with failure codes and their associated ranks based on the work order description:
+
+failure_codes_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""LFS"", 5),
+    (""MBU"", 6),
+    (""NOI"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""STP"", 10),
+    (""STU"", 11),
+    (""TEX"", 12),
+    (""TRD"", 13),
+    (""VIB"", 14),
+    (""BUR"", 15),
+    (""CRK"", 16),
+    (""DFM"", 17),
+    (""ELK"", 18),
+    (""FRC"", 19),
+    (""PTF"", 20),
+    (""RUS"", 21),
+    (""SAL"", 22),
+    (""SLP"", 23)
+]
+
+Please note that the ranking is based on the work order description provided and may not be the definitive ranking for all possible scenarios. The ranking can change depending on the specific context and requirements of the system."
+"VALVES, PRESSURE RELIEF, MUD PUMP 1","VALVES, PRESSURE RELIEF, MUD PUMP 1",FTS,Replace faulty cooler on titan valve cabinet,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the task, asset description, and location:
+
+failure_codes_ranking = [
+    (""FRC"", 1),
+    (""BUR"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FTS"", 5),
+    (""INL"", 6),
+    (""LFS"", 7),
+    (""MBU"", 8),
+    (""PDE"", 9),
+    (""RUS"", 10),
+    (""CRK"", 11),
+    (""FTU"", 12),
+    (""SAL"", 13),
+    (""SLP"", 14),
+    (""STP"", 15),
+    (""STU"", 16),
+    (""TEX"", 17),
+    (""TRD"", 18),
+    (""VIB"", 19),
+    (""NOI"", 20),
+    (""PLU"", 21),
+    (""PTF"", 22),
+    (""SLI"", 23)
+]
+
+This ranking is based on the assumption that the failure codes that are most closely related to the task, asset description, and location are the most likely to occur. The ranking can be adjusted based on additional information or data that may be available."
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 4, KBC PORT AFT",FTS,"Troubleshooting - to investigate no water supply for wipers - Requested quantity of pumps to attend all Cranes
+
+Equinor Item 22 - Crane and lifting verification 20.06.22 Finding 5 No water supply for wipers on KBC #1 and #4","Sure, here's a Python list of tuples that ranks all 23 failure codes based on their association with the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FTS"", 1),
+    (""INL"", 2),
+    (""LFS"", 3),
+    (""MBU"", 4),
+    (""PDE"", 5),
+    (""PLU"", 6),
+    (""PTF"", 7),
+    (""RUS"", 8),
+    (""SLP"", 9),
+    (""STU"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""FTC"", 16),
+    (""FTO"", 17),
+    (""INL"", 18),
+    (""LFS"", 19),
+    (""MBU"", 20),
+    (""PDE"", 21),
+    (""PLU"", 22),
+    (""PTF"", 23)
+]
+
+This ranking is based on the assumption that the work order description, asset description, and location provided are the most important factors in determining the likelihood of a failure code occurring. The ranking is subjective and may vary depending on the specific context and requirements of the problem."
+LIEBHERR BOS 4200-100 DECK CRANE,DECK CRANE 2,FTS,Jason Engard TSL- Crane operators have made a list of deficiencies with cranes. The below issues will have to be addressed as time/parts/availability are allowed.,"failure_codes = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""LFS"", 5),
+    (""MBU"", 6),
+    (""NOI"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""RUS"", 10),
+    (""SAL"", 11),
+    (""SLP"", 12),
+    (""STP"", 13),
+    (""STU"", 14),
+    (""TEX"", 15),
+    (""TRD"", 16),
+    (""VIB"", 17),
+    (""BUR"", 18),
+    (""CRK"", 19),
+    (""DFM"", 20),
+    (""ELK"", 21),
+    (""FRC"", 22),
+    (""PTF"", 23)
+]"
+BOP/LMRP/XMAS TREE SKID,"SKID 4, XMAS TREE HANDLING SYSTEM",FTS,During trouble shooting it was found that the Port lock pin prox was not working.,"failure_codes_ranking = [(failure_code, rank) for failure_code, rank in zip(failure_codes, range(1, 24))]"
+MHWIRTH BB4410 PDPH CRANE,PIPE DECK PIPE HANDLING CRANE (PDPH),INL,"Entered by Z. Tuttle /ATSL
+Date: 10/26/21
+The knuckle jib is lowering slowly without valve output. The load holding relief valves may be bleeding by slowly.  It has leaked down both knuckled in and knuckled out.  See attached flow diagram","Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the task, asset description, and location:
+
+failure_codes_ranking = [
+    (""FTS"", 1),
+    (""PDE"", 2),
+    (""INL"", 3),
+    (""LFS"", 4),
+    (""MBU"", 5),
+    (""SLP"", 6),
+    (""FRC"", 7),
+    (""RUS"", 8),
+    (""NOI"", 9),
+    (""TRD"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTU"", 15),
+    (""FTO"", 16),
+    (""PTF"", 17),
+    (""SAL"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]
+
+This ranking is based on the likelihood of each failure code being associated with the task, asset description, and location. The top 10 failure codes in the list are the most likely to be associated with the task, while the remaining 13 failure codes are less likely but still possible.
+
+Note that this ranking is just a rough estimate and may not reflect the actual likelihood of each failure code. The ranking can be adjusted based on additional information or data that is specific to the task, asset, and location."
+"HYDRAULIC POWER UNIT (HPU), DRAWWORKS MW AFT","HYDRAULIC POWER UNIT (HPU), DRAWWORKS MW AFT",INL,Remove accumulator and replace bladder,"Sure, here's a list of tuples ranking the 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+[('MBU', 1),
+ ('INL', 2),
+ ('FRC', 3),
+ ('DFM', 4),
+ ('ELK', 5),
+ ('FTS', 6),
+ ('LFS', 7),
+ ('STP', 8),
+ ('STU', 9),
+ ('TRD', 10),
+ ('BUR', 11),
+ ('CRK', 12),
+ ('FTO', 13),
+ ('PDE', 14),
+ ('PLU', 15),
+ ('PTF', 16),
+ ('RUS', 17),
+ ('SAL', 18),
+ ('SLP', 19),
+ ('TEX', 20),
+ ('THK', 21),
+ ('VIB', 22),
+ ('FTU', 23)]
+
+In this ranking, the failure codes are ranked based on their relevance to the work order description, asset description, and location. The top 10 failure codes are considered the most relevant, while the remaining 13 failure codes are considered less relevant but still potentially relevant.
+
+It's worth noting that this ranking is just one possible way to rank the failure codes based on the given information. The actual ranking may vary depending on the specific context and requirements of the system."
+NOV 14-P-220 MUD PUMP,MUD PUMP 2,INL,Piston changed out on Cyl 3,"failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FTS"", 5),
+    (""INL"", 6),
+    (""LFS"", 7),
+    (""MBU"", 8),
+    (""NOI"", 9),
+    (""PDE"", 10),
+    (""PLU"", 11),
+    (""PTF"", 12),
+    (""RUS"", 13),
+    (""SAL"", 14),
+    (""SLP"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""FTC"", 21),
+    (""FTO"", 22),
+    (""PRC"", 23)
+]"
+"SYSTEM, TOP DRIVE TDX-1250","TOP DRIVE, MAIN WELL",INL,Replace main tdx hydraulic swivel per procedure provided by WTL,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the task of replacing the main tdx hydraulic swivel per procedure provided by WTL:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""MBU"", 3),
+    (""PTF"", 4),
+    (""RUS"", 5),
+    (""SLP"", 6),
+    (""STU"", 7),
+    (""TEX"", 8),
+    (""TRD"", 9),
+    (""VIB"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTC"", 15),
+    (""FTO"", 16),
+    (""FTS"", 17),
+    (""INS"", 18),
+    (""LFS"", 19),
+    (""NOI"", 20),
+    (""PDE"", 21),
+    (""PLU"", 22),
+    (""SAL"", 23)
+]
+
+This ranking is based on the assumption that the failure codes that are most relevant to the task of replacing the main tdx hydraulic swivel per procedure provided by WTL are the ones that are most likely to be associated with the asset description (SYSTEM, TOP DRIVE TDX-1250) and the location (TOP DRIVE, MAIN WELL). The ranking is also influenced by the fact that the work order description mentions replacing the swivel, which implies that it may have been damaged or fractured beyond repair."
+MUD STANDPIPE MANIFOLD,"MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",INL,"Open 4 1/16"" V/V 14 on main STP for inspection","Here is a list of failure code rankings in Python:
+
+[('FTC', 1), ('FTO', 2), ('INL', 3), ('PLU', 4), ('PTF', 5), ('RUS', 6), ('SLP', 7), ('STU', 8), ('TEX', 9), ('VIB', 10), ('BUR', 11), ('CRK', 12), ('DFM', 13), ('ELK', 14), ('FRC', 15), ('LFS', 16), ('MBU', 17), ('NOI', 18), ('PDE', 19), ('SAL', 20), ('SLP', 21), ('STP', 22), ('TRD', 23)]
+
+In this list, each element is a tuple containing a failure code and its associated rank. The ranks were assigned based on the relevance of each failure code to the work order description, asset description, and location. The top 10 failure codes with the highest rank are:
+
+1. FTC - Failure to close (rank 1)
+2. FTO - Failure to open (rank 2)
+3. INL - Internal leak (rank 3)
+4. PLU - Plugged (rank 4)
+5. PTF - Power/signal failure (rank 5)
+6. RUS - Rust (rank 6)
+7. SLP - Slippage (rank 7)
+8. STU - Stuck (rank 8)
+9. TEX - Loss of Explosion Protection (EX) Integrity (rank 9)
+10. VIB - Fix Vibration (rank 10)
+
+The remaining 13 failure codes have lower ranks, but they could still be relevant in other contexts."
+NOV SSGD 1250 DRAWWORKS,"DRAWWORKS, MAIN WELL",LFS,MAINS DW HYD BRAKE TANK FILTRATION,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their association with the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""PLU"", 3),
+    (""PTF"", 4),
+    (""RUS"", 5),
+    (""SLP"", 6),
+    (""STU"", 7),
+    (""TEX"", 8),
+    (""TRD"", 9),
+    (""VIB"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTC"", 15),
+    (""FTO"", 16),
+    (""FTS"", 17),
+    (""LFS"", 18),
+    (""MBU"", 19),
+    (""NOI"", 20),
+    (""PDE"", 21),
+    (""SAL"", 22),
+    (""STP"", 23)
+]
+
+This ranking is based on the assumption that the work order description, ""MAINS DW HYD BRAKE TANK FILTRATION,"" and the asset description, ""NOV SSGD 1250 DRAWWORKS,"" are the most important factors in determining the likelihood of a failure code occurring. The ranking is subjective and may vary depending on the specific context and requirements of the problem."
+"HYDRAULIC POWER UNIT (HPU), DRAWWORKS AW FWD","HYDRAULIC POWER UNIT (HPU), DRAWWORKS AW FWD",LFS,"Proceed as it follows within the TMSP report which is transcribed below:
+
+"" We recommend checking for damage in breathers, seals, possible sources of outside contamination and inspect the condition of relevant
+components. We also recommend evaluating the best moment, according to the on board conditions, to drain/dehydrate the
+compartment or replace the lubricant load and doing the filtering (microfiltration) of the system until obtaining the required
+cleanliness level (ISO 4406 17/15/12 or better)""","failure_codes_ranking = [(INL, 1), (FTS, 2), (LFS, 3), (MBU, 4), (PDE, 5), (PLU, 6), (RUS, 7), (SLP, 8), (STU, 9), (TRD, 10)]"
+NOV OC1891 PDPH CRANE,PIPE DECK PIPE HANDLING CRANE (PDPH),LFS,"Proceed as it follows within the TMSP report which is transcribed below:
+
+"" We recommend checking the lubrication management plans to evaluate the relubrication of the component. We also recommend that when relubrication the equipment, check for wear points and external contamination""","failure_codes_ranking = [(LFS, 1), (MBU, 2), (INL, 3), (FTC, 4), (FTO, 5), (FTS, 6), (SLP, 7), (STU, 8), (TRD, 9), (VIB, 10),
+                      (BUR, 11), (CRK, 12), (DFM, 13), (ELK, 14), (FRC, 15), (PDE, 16), (PLU, 17), (PTF, 18), (RUS, 19), (SAL, 20),
+                      (TEX, 21), (THK, 22), (STP, 23)]"
+NOV TDX 1250 TOP DRIVE,"TOP DRIVE, MAIN WELL",LFS,Replace MW TDX Gearbox oil and filter,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the task, asset description, and location:
+
+failure_code_ranking = [
+    (""LFS"", 1),
+    (""MBU"", 2),
+    (""FRC"", 3),
+    (""INL"", 4),
+    (""PDE"", 5),
+    (""PLU"", 6),
+    (""PTF"", 7),
+    (""RUS"", 8),
+    (""SLP"", 9),
+    (""STU"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTC"", 15),
+    (""FTO"", 16),
+    (""FTS"", 17),
+    (""SAL"", 18),
+    (""TEX"", 19),
+    (""TRD"", 20),
+    (""VIB"", 21),
+    (""NOI"", 22),
+    (""STP"", 23)
+]
+
+This ranking can be used to prioritize the failure codes that are most likely to be associated with the task, asset description, and location."
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",PDE,Lower travel gearbox running no pressure in the brake,"Here's a Python list of tuples, where each tuple contains a failure code and its associated rank, generated using the provided work order description, asset description, and location:
+
+[('FRC', 1), ('FTS', 2), ('INL', 3), ('PDE', 4), ('PLU', 5), ('PTF', 6), ('RUS', 7), ('SLP', 8), ('STP', 9), ('STU', 10), ('TEX', 11), ('TRD', 12), ('VIB', 13), ('BUR', 14), ('CRK', 15), ('DFM', 16), ('ELK', 17), ('FTO', 18), ('LFS', 19), ('MBU', 20), ('NOI', 21), ('PBU', 22), ('SAL', 23)]
+
+The ranking is based on the likelihood of the failure codes associated with the work order description, asset description, and location. The top 10 failure codes with the highest rank are:
+
+1. FRC - Fractured (1)
+2. FTS - Failure to start/function on demand (2)
+3. INL - Internal leak (3)
+4. PDE - Parameter deviation (4)
+5. PLU - Plugged (5)
+6. PTF - Power/signal failure (6)
+7. RUS - Rust (7)
+8. SLP - Slippage (8)
+9. STP - Does not stop on demand (9)
+10. STU - Stuck (10)
+
+The remaining 13 failure codes have a lower rank, but they should still be considered in the analysis:
+
+11. TEX - Loss of Explosion Protection (EX) Integrity (11)
+12. TRD - Thickness reduction (12)
+13. VIB - Fix Vibration (13)
+14. BUR - Burned (14)
+15. CRK - Cracked (15)
+16. DFM - Deformed ("
+"HPU UNIT, DECK CRANE 3, KBC STBD AFT","HPU UNIT, DECK CRANE 3, KBC STBD AFT",PDE,"Order for 5 new star delta timers for crane HPU pump motors for stock.
+stock item was used for crane No 3 motor No 2","Sure, here's a list of tuples, where each tuple contains a failure code and its associated rank, generated using Python:
+
+[('FRC', 1), ('FTS', 2), ('INL', 3), ('LFS', 4), ('MBU', 5), ('PDE', 6), ('PLU', 7), ('PTF', 8), ('RUS', 9),
+ ('SAL', 10), ('SLP', 11), ('STP', 12), ('STU', 13), ('TEX', 14), ('TRD', 15), ('VIB', 16),
+ ('BUR', 17), ('CRK', 18), ('DFM', 19), ('ELK', 20), ('FTO', 21), ('NOI', 22), ('PDU', 23)]
+
+The ranking is based on the likelihood of the failure code being associated with the task, asset description, and location, with the highest rank being 1. Note that the ranking is not a definitive assessment, and the actual ranking may vary depending on the specific context and data available."
+"IRON ROUGHNECK, MPT-200 HYDRATONG, FOR 60-1/2IN RT","IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",PDE,During the operation we were informed that the main hydratong is not reaching the make up and brack out torque correctly,"ranking = [(failure_code, rank) for failure_code, rank in enumerate(sorted(failure_codes, key=lambda x: x[1].startswith('F')))]"
+MHWIRTH TPK 2200 MUD PUMP,MUD PUMP 2,PDE,"Ryan - ATSL
+
+Derrickman called and reported Mud Pump B Local Discharge Pressure gauge is reading 0 with the pump running on the boost line.","failure_codes_ranking = [
+    ('FTS', 1),  # Failure to start/function on demand
+    ('PDE', 2),  # Parameter deviation
+    ('PLU', 3),  # Plugged
+    ('PTF', 4),  # Power/signal failure
+    ('INL', 5),  # Internal leak
+    ('BUR', 6),  # Burned
+    ('CRK', 7),  # Cracked
+    ('DFM', 8),  # Deformed
+    ('ELK', 9),  # External leak
+    ('FRC', 10),  # Fractured
+    ('FTC', 11),  # Failure to close
+    ('FTO', 12),  # Failure to open
+    ('LFS', 13),  # Lubrication/Fluid Sampling
+    ('MBU', 14),  # Material build-up
+    ('NOI', 15),  # Noise
+    ('RUS', 16),  # Rust
+    ('STP', 17),  # Does not stop on demand
+    ('STU', 18),  # Stuck
+    ('TEX', 19),  # Loss of Explosion Protection (EX) Integrity
+    ('TRD', 20),  # Thickness reduction
+    ('VIB', 21),  # Fix Vibration
+    ('SAL', 22),  # Spurious Alarm
+    ('SLP', 23),  # Slippage
+]"
+NOV SHAFFER BOP CONTROL COMMON,BOP 1 CONTROL SYSTEM,PDE,"During trouble shooting of BOP1 Blue Pod it was found that PLC Program 
+had not been compiled. Due to this we did not compile during operations.
+See Email from BOP controls (unable to attach) Needs done from EWS terminal","Sure, here's a list of tuples ranking the 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FTS"", 1),
+    (""PDE"", 2),
+    (""PTF"", 3),
+    (""SLP"", 4),
+    (""STU"", 5),
+    (""TEX"", 6),
+    (""TRD"", 7),
+    (""VIB"", 8),
+    (""FRC"", 9),
+    (""INL"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTO"", 15),
+    (""FTC"", 16),
+    (""MBU"", 17),
+    (""NOI"", 18),
+    (""PLU"", 19),
+    (""RUS"", 20),
+    (""SAL"", 21),
+    (""STP"", 22),
+    (""TRU"", 23)
+]
+
+In this ranking, the failure codes are ranked based on their relevance to the work order description, with the most relevant failure codes ranked highest. The ranking is not a strict ordering, but rather a way to prioritize the failure codes based on their potential relevance to the task at hand."
+"REGULATOR, HYDRAULIC SUPPLY REGULATOR, DIVERTER CONTROL PANEL","VALVES & REGULATORS, PANEL, DIVERTER CONTROL SYSTEM",PDE,"Diverter step down regulator sticking down after every function not returning to 3000 psi.
+Remove the regulator and rebuild it with the repair kit ICN 4801309  Loc: 91-D in the warehouse. 
+See the manual  Diverter Master Control Panel Page 4-57 of 96 for maintenance guide.","failure_codes_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""LFS"", 5),
+    (""MBU"", 6),
+    (""NOI"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""RUS"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""SAL"", 21),
+    (""SLP"", 22),
+    (""PTF"", 23)
+]"
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 1, KBC STBD FWD",PDE,Check intermittent problem of erratic speeds on winch lowering system,"failure_codes = [
+    (""FTS"", 1),
+    (""SLP"", 2),
+    (""STU"", 3),
+    (""PTF"", 4),
+    (""RUS"", 5),
+    (""LFS"", 6),
+    (""MBU"", 7),
+    (""NOI"", 8),
+    (""PDE"", 9),
+    (""TRD"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""FTC"", 16),
+    (""FTO"", 17),
+    (""INL"", 18),
+    (""PBU"", 19),
+    (""SAL"", 20),
+    (""SPM"", 21),
+    (""STP"", 22),
+    (""STU"", 23)
+]"
+"TRANSMITTER, PRESSURE & TEMPERATURE, BOP 1 CONTROL","TRANSMITTER, PRESSURE & TEMPERATURE, BOP 1 CONTROL",PDE,Send in HPHT probe ( 20081691) (sn 219065 /  Stelllar s/n 1305942),"Sure, here's a list of tuples ranking the 23 failure codes based on their likelihood of being associated with the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""BUR"", 2),
+    (""CRK"", 3),
+    (""DFM"", 4),
+    (""ELK"", 5),
+    (""FTS"", 6),
+    (""INL"", 7),
+    (""LFS"", 8),
+    (""MBU"", 9),
+    (""PDE"", 10),
+    (""PLU"", 11),
+    (""PTF"", 12),
+    (""RUS"", 13),
+    (""SAL"", 14),
+    (""SLP"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""FTO"", 21),
+    (""SPK"", 22),
+    (""SLI"", 23)
+]
+
+Please note that this ranking is based on the information provided in the work order description and may not reflect the actual likelihood of failure codes associated with the asset and location."
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",PDE,Troubleshoot and repair issues with MW HR upper trolley encoder counts being off from Lower.,"Sure, here's a Python list of tuples with failure codes and their associated ranks, based on the work order description, asset description, and location:
+
+failure_codes_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""LFS"", 5),
+    (""MBU"", 6),
+    (""NOI"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""RUS"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""PTF"", 16),
+    (""SAL"", 17),
+    (""SLP"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]
+
+Note that the ranking is based on the likelihood of the failure code being associated with the work order description, asset description, and location. The ranking is not based on the severity of the failure code, but rather on the probability of it being the root cause of the issue."
+CLOVER RISER TORQUE TOOL,"TOOL 2, RISER TORQUE, MARINE RISER SYSTEM",PDE,Hydraulic Regaulating valve on Riser torque tool failed. Pressure could not be adjusted. Replaced with ICN 1821554.,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FTS"", 1),
+    (""PTF"", 2),
+    (""INL"", 3),
+    (""MBU"", 4),
+    (""FRC"", 5),
+    (""SLP"", 6),
+    (""RUS"", 7),
+    (""DFM"", 8),
+    (""LFS"", 9),
+    (""TRD"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""ELK"", 13),
+    (""FTO"", 14),
+    (""FTA"", 15),
+    (""PDE"", 16),
+    (""PLU"", 17),
+    (""STP"", 18),
+    (""STU"", 19),
+    (""TEX"", 20),
+    (""VIB"", 21),
+    (""SAL"", 22),
+    (""NOI"", 23)
+]
+
+In this ranking, the failure codes are ranked from 1 to 23, with the most relevant failure code (FTS) ranked first, and the least relevant failure code (NOI) ranked last. The ranking is based on the work order description, asset description, and location, and takes into account the possible causes of the problem and the likelihood of each failure code occurring in this scenario."
+"VALVE, PRV, PILOT PRV, BOP 1 ACOUSTIC POD","VALVES, OTHER, ACOUSTIC POD, BOP 1 CONTROL",PDE,Replace Relief Valve on Acoustic Pod BOP#1,"Here's a list of tuples, where each tuple contains a failure code and its associated rank, generated using Python:
+
+[('FRC', 1), ('BUR', 2), ('CRK', 3), ('ELK', 4), ('FTO', 5), ('INL', 6), ('LFS', 7), ('MBU', 8), ('NOI', 9), ('PDE', 10), ('PLU', 11), ('PTF', 12), ('RUS', 13), ('SAL', 14), ('SLP', 15), ('STP', 16), ('STU', 17), ('TEX', 18), ('TRD', 19), ('VIB', 20), ('FTS', 21), ('SLI', 22), ('TST', 23)]
+
+The ranking is based on the likelihood of the failure code occurring in the given asset and location, with the top 10 failure codes being:
+
+1. FRC - Fractured
+2. BUR - Burned
+3. CRK - Cracked
+4. ELK - External Leak
+5. FTO - Failure to Open
+6. INL - Internal Leak
+7. LFS - Lubrication/Fluid Sampling
+8. MBU - Material Build-up
+9. NOI - Noise
+10. PDE - Parameter Deviation
+
+The ranking is based on the analysis of the work order description, asset description, and location. The top 10 failure codes are the most likely to occur in the given asset and location, based on the task being performed and the environment in which the asset operates."
+NOV SHAFFER ROV PANEL,"PANELS, ROV, LOWER BOP, BOP 2 CONTROL",PLU,Replace Visco Jet and Adapter for Acoustic Accumulator ROV pressure gauge.,"Sure, here's a list of tuples ranking the 23 failure codes based on their likelihood of occurrence based on the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""LFS"", 3),
+    (""MBU"", 4),
+    (""NOI"", 5),
+    (""PDE"", 6),
+    (""PLU"", 7),
+    (""PTF"", 8),
+    (""RUS"", 9),
+    (""SLP"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTC"", 15),
+    (""FTO"", 16),
+    (""FTS"", 17),
+    (""INL"", 18),
+    (""LFS"", 19),
+    (""MBU"", 20),
+    (""NOI"", 21),
+    (""PDE"", 22),
+    (""PLU"", 23)
+]
+
+This ranking is based on the likelihood of the failure codes occurring based on the task, asset description, and location. The top 10 failure codes are ranked 1-10, while the remaining 13 failure codes are ranked 11-23. Note that this ranking is just one possible way to rank the failure codes and may vary based on specific circumstances and expert judgment."
+NOV SHAFFER BOP HYDRAULIC POWER UNIT (HPU),"UNIT, HYDRAULIC POWER, BOP ONLINE, BOP CONTROL SYSTEMS SURFACE EQUIPMENT",PLU,Change out filters on HPU mixing unit,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""LFS"", 3),
+    (""MBU"", 4),
+    (""PTF"", 5),
+    (""RUS"", 6),
+    (""SLP"", 7),
+    (""STU"", 8),
+    (""TEX"", 9),
+    (""BUR"", 10),
+    (""CRK"", 11),
+    (""DFM"", 12),
+    (""ELK"", 13),
+    (""FTC"", 14),
+    (""FTO"", 15),
+    (""FTS"", 16),
+    (""INL"", 17),
+    (""LFS"", 18),
+    (""MBU"", 19),
+    (""NOI"", 20),
+    (""PDE"", 21),
+    (""PLU"", 22),
+    (""SAL"", 23)
+]
+
+This ranking is based on the assumption that the work order description, asset description, and location provided are the most important factors in determining the relevance of each failure code. The ranking is subjective and may vary depending on the specific context and requirements of the problem."
+DRILL PIPE,DRILL PIPES,PLU,Repair Pup joints and spiral HWDP,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""INL"", 5),
+    (""LFS"", 6),
+    (""MBU"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""PTF"", 10),
+    (""RUS"", 11),
+    (""SAL"", 12),
+    (""SLP"", 13),
+    (""STP"", 14),
+    (""STU"", 15),
+    (""TEX"", 16),
+    (""TRD"", 17),
+    (""VIB"", 18),
+    (""FTC"", 19),
+    (""FTO"", 20),
+    (""FTS"", 21),
+    (""SLI"", 22),
+    (""NOI"", 23)
+]
+
+In this ranking, the failure codes are ranked based on their relevance to the work order description, asset description, and location. The top 5 failure codes (FRC, CRK, DFM, ELK, and INL) are considered the most relevant, followed by the next 5 failure codes (LFS, MBU, PDE, PLU, and PTF) which are considered somewhat relevant. The remaining failure codes are ranked lower based on their relevance to the work order description, asset description, and location.
+
+It's worth noting that the ranking of failure codes can vary depending on the specific context and requirements of the system. This ranking is just one possible way of ranking the failure codes based on their relevance to the work order description, asset description, and location."
+NOV SHAFFER SUBSEA ELECTRONIC ASSEMBLY (SEA),"SEA, BLUE POD, BOP CONTROL, BOP 1 CONTROL",PTF,Investigate report of P/S failure alarm reported by SSS,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the work order, asset description, and location:
+
+failure_codes_ranking = [
+    (""FTS"", 1),
+    (""PDE"", 2),
+    (""PLU"", 3),
+    (""PTF"", 4),
+    (""INL"", 5),
+    (""SLP"", 6),
+    (""FRC"", 7),
+    (""RUS"", 8),
+    (""TEX"", 9),
+    (""VIB"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTO"", 15),
+    (""FSO"", 16),
+    (""LFS"", 17),
+    (""MBU"", 18),
+    (""NOI"", 19),
+    (""STP"", 20),
+    (""STU"", 21),
+    (""TRD"", 22),
+    (""SAL"", 23)
+]
+
+This ranking is based on the likelihood of each failure code being associated with the work order, asset description, and location. The top 10 failure codes in the list are the most likely to be associated with this work order, while the remaining 13 failure codes are less likely but should still be considered."
+DRILLING CONTROL CABINETS,DRILLING CONTROL CABINETS,PTF,Replace interface adapter/fiber ethernet TERM 1,"rankings = [(failure_code, rank) for failure_code, rank in zip(failure_codes, sorted(range(23), key=lambda x: x.startswith('FT') or x.startswith('IN') or x.startswith('LF') or x.startswith('M') or x.startswith('P') or x.startswith('S') or x.startswith('T'), reverse=True))]"
+NOV SSGD 1250 DRAWWORKS,"DRAWWORKS, MAIN WELL",PTF,Investigate encoder fault on MW DW D,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their potential relevance to the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""PDE"", 4),
+    (""RUS"", 5),
+    (""BUR"", 6),
+    (""CRK"", 7),
+    (""DFM"", 8),
+    (""ELK"", 9),
+    (""FRC"", 10),
+    (""INL"", 11),
+    (""LFS"", 12),
+    (""MBU"", 13),
+    (""NOI"", 14),
+    (""PLU"", 15),
+    (""PTF"", 16),
+    (""SAL"", 17),
+    (""SLP"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]
+
+This ranking is based on the assumption that the work order description, asset description, and location provided are the only inputs used to determine the relevance of each failure code. In practice, additional information such as the asset's maintenance history, operating conditions, and environmental factors may also be considered when ranking failure codes."
+DECK CRANE WIRES,"WIRES, DECK CRANE 2, AHC KBC PORT FWD",PTF,Horizon angle sensor 1 defect %W4.41.3.,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_codes_ranking = [
+    (""FTC"", 1),
+    (""FTS"", 2),
+    (""PDE"", 3),
+    (""RUS"", 4),
+    (""SLP"", 5),
+    (""STU"", 6),
+    (""TEX"", 7),
+    (""TRD"", 8),
+    (""VIB"", 9),
+    (""BUR"", 10),
+    (""CRK"", 11),
+    (""DFM"", 12),
+    (""ELK"", 13),
+    (""FRC"", 14),
+    (""INL"", 15),
+    (""LFS"", 16),
+    (""MBU"", 17),
+    (""NOI"", 18),
+    (""PBU"", 19),
+    (""PLU"", 20),
+    (""PTF"", 21),
+    (""SAL"", 22),
+    (""STP"", 23)
+]
+
+This ranking is based on the assumption that the failure codes that are most relevant to the work order description, asset description, and location should be ranked higher than the ones that are less relevant.
+
+Here's a brief explanation of the ranking:
+
+1. FTC (Failure to close) - Highly relevant as it describes a situation where the horizon angle sensor does not close properly, which aligns with the work order description.
+2. FTS (Failure to start/function on demand) - Highly relevant as it describes a situation where the horizon angle sensor does not start or function properly when demanded, which could be related to the defect mentioned in the work order description.
+3. PDE (Parameter deviation) - Relevant as it describes a situation where a parameter is not controlled as set, which could be related to the defect in the horizon angle sensor.
+4. RUS (Rust) - Relevant as it describes a situation where there is a build-up of corrosion products, which could be related to the asset location, which is outdoors and exposed to the"
+MUD STANDPIPE MANIFOLD,"MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",PTF,Replace pressure transmitter STP #2 at Stand pipe Manifold Main Well,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their relevance to the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""LFS"", 5),
+    (""MBU"", 6),
+    (""NOI"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""RUS"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FRC"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""SAL"", 21),
+    (""SLP"", 22),
+    (""PTF"", 23)
+]
+
+In this ranking, the failure codes are ranked from 1 to 23, with the most relevant failure codes for the work order description, asset description, and location listed first. The ranking is based on the likelihood of the failure code occurring based on the information provided."
+MHWIRTH 1899 IRON ROUGHNECK,"IRON ROUGHNECK, OFF CENTER",PTF,Alex Reyes- ET's have diagnosed several defective parts for SB HRN Cavotec remote. Parts are not in our inventory and will transfer from catalog. order QTY-2 of each.,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of association with the task, asset, and location described in the work order:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""BUR"", 2),
+    (""CRK"", 3),
+    (""DFM"", 4),
+    (""INL"", 5),
+    (""LFS"", 6),
+    (""MBU"", 7),
+    (""PDE"", 8),
+    (""PLU"", 9),
+    (""RUS"", 10),
+    (""FTC"", 11),
+    (""FTO"", 12),
+    (""FTS"", 13),
+    (""SAL"", 14),
+    (""SLP"", 15),
+    (""STP"", 16),
+    (""STU"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""ELK"", 21),
+    (""NOI"", 22),
+    (""PTF"", 23)
+]
+
+In this ranking, the failure codes are ranked from 1 to 23, with 1 being the most likely to be associated with the task, asset, and location, and 23 being the least likely. Note that this ranking is based solely on the work order description provided and may not reflect the actual likelihood of failure codes in the field."
+CAMERON MUX CONTROL POD,"BLUE POD, BOP 1 CONTROL",PTF,Replace Hydrostatic Transducer for PTM #2,"failure_codes_ranking = [(failure_code, rank) for failure_code, rank in zip(failure_codes, [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23])]"
+NOV HYDRATONG MPT-200,"IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",PTF,Replace Proxy Sensor of the MW Hydratong Mud Bucket Park Position,"Sure, here's a list of all 23 failure codes with their associated ranks, based on their relevance to the work order description, asset description, and location:
+
+failure_codes_ranking = [
+    (""FTC"", 1),
+    (""FTO"", 2),
+    (""FTS"", 3),
+    (""INL"", 4),
+    (""LFS"", 5),
+    (""MBU"", 6),
+    (""PDE"", 7),
+    (""PLU"", 8),
+    (""RUS"", 9),
+    (""STP"", 10),
+    (""STU"", 11),
+    (""TEX"", 12),
+    (""TRD"", 13),
+    (""VIB"", 14),
+    (""BUR"", 15),
+    (""CRK"", 16),
+    (""DFM"", 17),
+    (""ELK"", 18),
+    (""FRC"", 19),
+    (""PTF"", 20),
+    (""SAL"", 21),
+    (""SLP"", 22),
+    (""TXE"", 23)
+]
+
+Please note that the ranking is subjective and may vary based on the specific context and requirements of the system. The ranking provided here is just one possible ordering of the failure codes, and it may need to be adjusted based on additional information or requirements."
+NOV OC3932KCE KNUCKLE BOOM CRANE,"DECK CRANE 1, KBC STBD FWD",PTF,Cable protection damage on crane 1 knuckle. install junctionbox on both sides of the knuckle and replace hose/cable temporary fix has been implemented.,"failure_codes = [
+    (""BUR"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""FRC"", 5),
+    (""FTS"", 6),
+    (""INL"", 7),
+    (""LFS"", 8),
+    (""MBU"", 9),
+    (""NOI"", 10),
+    (""PDE"", 11),
+    (""PLU"", 12),
+    (""PTF"", 13),
+    (""RUS"", 14),
+    (""SAL"", 15),
+    (""SLP"", 16),
+    (""STP"", 17),
+    (""STU"", 18),
+    (""TEX"", 19),
+    (""TRD"", 20),
+    (""VIB"", 21),
+    (""FTU"", 22),
+    (""FTO"", 23)
+]"
+NOV SHAFFER/KONGSBERG ACS500 ACOUSTIC CONTROL SYSTEM,"SYSTEM, ACOUSTIC, ELECTRICAL, BOP 2 CONTROL",PTF,Replace batteries for BOP 2 Acoustic Control Unit with new ICN:1923761,"failure_codes_ranking = [(code, rank) for code, rank in enumerate(failure_codes)]"
+"DECK CRANE 4, KBC PORT AFT","DECK CRANE 4, KBC PORT AFT",PTF,Replace Complete Transitter - 4-2- mA signal into CAN module checked by simulation,"Here's a Python list comprehension that generates a list of tuples, where each tuple contains a failure code and its associated rank, based on the work order description:
+
+failure_codes_ranking = [(FTS, 1), (PTF, 2), (SLP, 3), (RUS, 4), (MBU, 5), (INL, 6), (CRK, 7), (DFM, 8), (LFS, 9), (STP, 10), (STU, 11), (TEX, 12)]
+
+The ranking is based on the likelihood of the failure code being relevant to the task conducted on the DECK CRANE 4, KBC PORT AFT, given the work order description. The ranking is not based on the severity or impact of the failure code, but rather on how well it matches the task and asset information provided.
+
+Here's the list of all 23 failure codes, along with their full form and short descriptions, for reference:
+
+1. BUR, Burned, Consumed/damaged/deformed because of overheating.
+2. CRK, Cracked, Damaged and showing lines on the surface from having split without coming apart.
+3. DFM, Deformed, Not having the normal or natural shape or form.
+4. ELK, External leak, Accidentally lose or admit contents. Source of leak is visible.
+5. FRC, Fractured, Fractured or damaged and no longer in one piece.
+6. FTC, Failure to close, equipment does not close on demand.
+7. FTO, Failure to open, equipment does not open on demand.
+8. FTS, Failure to start/function on demand, the equipment does not start/function on demand.
+9. INL, Internal leak, Accidentally lose or admit contents. Source of leak is not visible.
+10. LFS, Lubrication/Fluid Sampling, Unsatisfactory fluid/lubrication sample.
+11. MBU, Material build-up, Accumulation of foreign/external material.
+12. NOI, Noise, A sound that is loud and causes disturb"
+NOV CYBERBASE DRILLING CONTROL,DRILLING CONTROL,STU,Replace sticky push button on Cyber chair C,"failure_codes_ranking = [
+    (""FTC"", 1),
+    (""STU"", 2),
+    (""INL"", 3),
+    (""MBU"", 4),
+    (""PTF"", 5),
+    (""FRC"", 6),
+    (""DFM"", 7),
+    (""ELK"", 8),
+    (""FTS"", 9),
+    (""LFS"", 10),
+    (""NOI"", 11),
+    (""PDE"", 12),
+    (""PLU"", 13),
+    (""RUS"", 14),
+    (""SAL"", 15),
+    (""SLP"", 16),
+    (""STP"", 17),
+    (""TEX"", 18),
+    (""TRD"", 19),
+    (""VIB"", 20),
+    (""CRK"", 21),
+    (""FTO"", 22),
+    (""PBU"", 23)
+]"
+"DOLLY, RETRACTABLE, TOP DRIVE, AUX WELL","DOLLY, RETRACTABLE, TOP DRIVE, AUX WELL",STU,Lock out equipment and stage tools required for pin extraction and install.,"Here's a list of tuples, where each tuple contains a failure code and its associated rank, generated using Python:
+
+[('FRC', 1), ('FTS', 2), ('INL', 3), ('LFS', 4), ('MBU', 5), ('NOI', 6), ('PDE', 7), ('PLU', 8), ('PTF', 9), ('RUS', 10), ('SAL', 11), ('SLP', 12), ('STP', 13), ('STU', 14), ('TEX', 15), ('TRD', 16), ('VIB', 17), ('CRK', 18), ('DFM', 19), ('ELK', 20), ('FTO', 21), ('PBU', 22), ('SLI', 23)]
+
+The ranking is based on the likelihood of the failure code being associated with the task, asset description, and location, with the highest rank being 1 and the lowest rank being 23. The ranking is subjective and may vary depending on the specific context and requirements of the problem."
+MPD HYDRAULIC POWER UNIT,"HYDRAULIC POWER UNIT (HPU), MPD",STU,Order new Directional Control Valves for the RCD HPU Service.,"Sure, here's a list of all 23 failure codes with their associated ranks, based on their relevance to the work order description, asset description, and location:
+
+failure_codes_ranking = [
+    (""FRC"", 1),
+    (""FTS"", 2),
+    (""INL"", 3),
+    (""LFS"", 4),
+    (""MBU"", 5),
+    (""PDE"", 6),
+    (""PLU"", 7),
+    (""PTF"", 8),
+    (""RUS"", 9),
+    (""SAL"", 10),
+    (""SLP"", 11),
+    (""STP"", 12),
+    (""STU"", 13),
+    (""TEX"", 14),
+    (""TRD"", 15),
+    (""VIB"", 16),
+    (""BUR"", 17),
+    (""CRK"", 18),
+    (""DFM"", 19),
+    (""ELK"", 20),
+    (""FTO"", 21),
+    (""NOI"", 22),
+    (""PLI"", 23)
+]
+
+Please note that the ranking is subjective and may vary based on the specific context and requirements of the system. The ranking provided here is just one possible way of ranking the failure codes based on their relevance to the work order description, asset description, and location."
+"NOV SHAFFER NXT 22"" BLIND SHEAR RAM","UPPER TRIPLE, UPPER BLIND SHEAR RAM (UBSR), BOP 2",TRD,ORDER SKID PLATE FOR BOP 2 UBSR CAVITY,"Sure, here's a list of all 23 failure codes with their associated ranks, based on the work order description and asset description:
+
+failure_codes_ranking = [
+    (""FRC"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""INL"", 5),
+    (""FTS"", 6),
+    (""PTF"", 7),
+    (""RUS"", 8),
+    (""SLP"", 9),
+    (""STP"", 10),
+    (""STU"", 11),
+    (""TEX"", 12),
+    (""TRD"", 13),
+    (""VIB"", 14),
+    (""MBU"", 15),
+    (""NOI"", 16),
+    (""PDE"", 17),
+    (""PLU"", 18),
+    (""FTU"", 19),
+    (""SAL"", 20),
+    (""LFS"", 21),
+    (""FTO"", 22),
+    (""BUR"", 23)
+]
+
+The ranking is based on the likelihood of the failure code being associated with the work order description and asset description. The top 10 failure codes are ranked highest, with FRC (Fractured) being the most likely failure code associated with this work order."
+"NOV SHAFFER NXT 14"" PIPE RAM","LOWER TRIPLE, UPPER PIPE RAM (UPR), BOP 2",TRD,ORDER SKID PLATE FOR BOP 2 UPR CAVITY,"Sure, here's a Python list of tuples that ranks all 23 failure codes based on their likelihood of being associated with the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""CRK"", 2),
+    (""DFM"", 3),
+    (""ELK"", 4),
+    (""PLU"", 5),
+    (""PTF"", 6),
+    (""RUS"", 7),
+    (""SLP"", 8),
+    (""STU"", 9),
+    (""TEX"", 10),
+    (""BUR"", 11),
+    (""INL"", 12),
+    (""LFS"", 13),
+    (""MBU"", 14),
+    (""NOI"", 15),
+    (""PDE"", 16),
+    (""TRD"", 17),
+    (""VIB"", 18),
+    (""FTC"", 19),
+    (""FTO"", 20),
+    (""FTS"", 21),
+    (""SAL"", 22),
+    (""STP"", 23)
+]
+
+This ranking is based on the likelihood of each failure code being associated with the work order description, asset description, and location. The top 10 failure codes in the list are the most likely to be associated with this work order, while the remaining 13 failure codes are less likely but still possible."
+"PIPEHANDLER, TOP DRIVE, MAIN WELL","PIPEHANDLER, TOP DRIVE, MAIN WELL",TRD,Replace worn die on TJB,"Sure, here's a Python list comprehension that generates a ranking for all 23 failure codes based on the work order description ""Replace worn die on TJB"":
+
+failure_code_ranking = [(DFM, 1), (FRC, 2), (FTC, 3), (FTO, 4), (FTS, 5), (INL, 6), (MBU, 7), (NOI, 8), (PDE, 9), (PLU, 10), (PTF, 11), (RUS, 12), (SAL, 13), (SLP, 14), (STP, 15), (STU, 16), (TEX, 17), (TRD, 18), (VIB, 19), (ELK, 20), (FTO, 21), (SPK, 22), (SHP, 23)]
+
+This ranking is based on the relevance of each failure code to the work order description, asset description, and location. The ranking is not a definitive assessment, and the actual ranking may vary depending on the specific context and requirements of the system."
+NOV 14-P-220 MUD PUMP,MUD PUMP 3,TRD,Replace 2 cap seals on MP # 3. ICN # 1502312,"Sure, here's a Python list of tuples with failure codes and their associated ranks, generated based on the information provided:
+
+failure_codes_ranking = [
+    (""FRC"", 1),
+    (""INL"", 2),
+    (""MBU"", 3),
+    (""PDE"", 4),
+    (""PLU"", 5),
+    (""RUS"", 6),
+    (""SLP"", 7),
+    (""STU"", 8),
+    (""TEX"", 9),
+    (""VIB"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""ELK"", 14),
+    (""FTC"", 15),
+    (""FTO"", 16),
+    (""FTS"", 17),
+    (""LFS"", 18),
+    (""NOI"", 19),
+    (""PTF"", 20),
+    (""SAL"", 21),
+    (""TRD"", 22),
+    (""TXE"", 23)
+]
+
+In this ranking, the failure codes are ranked based on their relevance to the task, asset description, and location, with the most relevant codes ranked higher. The ranks were assigned based on the information provided in the work order description and the failure codes' full forms and short descriptions."
+NOV HYDRARACKER IV VERTICAL PIPE HANDLER,"VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",TRD,replace pipe pusher roller due to severe wear. Worn half way through pin,"ranking = [(failure_code, rank) for failure_code, rank in zip(failure_codes, [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23])]"
+MUD STANDPIPE MANIFOLD,"MUD STANDPIPE MANIFOLD, MUD PUMP ROOM, MUD SYSTEM PIPING",TRD,"Bleed line flange at 2-1/16"" valve washed out during drilling. The flange is between the valve and the pump discharge. It is located on the STBD mezz deck in the pump room. Flange has been temporarily repaired with ProPoxy 20.","Sure, here's a Python list of tuples that ranks all 23 failure codes based on their association with the work order description, asset description, and location:
+
+failure_code_ranking = [
+    (""FRC"", 1),
+    (""ELK"", 2),
+    (""INL"", 3),
+    (""MBU"", 4),
+    (""PDE"", 5),
+    (""PLU"", 6),
+    (""PTF"", 7),
+    (""RUS"", 8),
+    (""SLP"", 9),
+    (""STU"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""DFM"", 13),
+    (""FTC"", 14),
+    (""FTO"", 15),
+    (""FTS"", 16),
+    (""INL"", 17),
+    (""LFS"", 18),
+    (""MUD"", 19),
+    (""NOI"", 20),
+    (""PDE"", 21),
+    (""SAL"", 22),
+    (""STP"", 23)
+]
+
+This ranking is based on the likelihood of each failure code being associated with the work order description, asset description, and location. The top 10 failure codes in the list are the most likely to be associated with the task, while the bottom 13 failure codes are less likely to be associated. Note that this ranking is just a suggestion and may not reflect the actual likelihood of each failure code. The final ranking should be determined by a domain expert who has access to additional information and context."
+NOV HYDRATONG MPT-200,"IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",TRD,MAIN HYDRATONG TROQUE CENTER BOLTS SPRING REPLACEMENT.,"failure_codes = [
+    (""BUR"", 1),
+    (""INL"", 2),
+    (""MBU"", 3),
+    (""PTF"", 4),
+    (""RUS"", 5),
+    (""SLP"", 6),
+    (""STU"", 7),
+    (""TEX"", 8),
+    (""TRD"", 9),
+    (""VIB"", 10),
+    (""CRK"", 11),
+    (""DFM"", 12),
+    (""ELK"", 13),
+    (""FTC"", 14),
+    (""FTO"", 15),
+    (""FTS"", 16),
+    (""LFS"", 17),
+    (""NOI"", 18),
+    (""PDE"", 19),
+    (""PLU"", 20),
+    (""SAL"", 21),
+    (""STP"", 22),
+    (""STU"", 23)
+]"
+MHWIRTH LOWER GUIDING ARM,"LOWER GUIDE ARM (UGA), VPH",TRD,LGA arm is showing signs of play in the main pivot pin on the LGA. There are installed bushing that are most likely worn out. Bondura bolt must be removed and bushings replaced.,"failure_codes = [
+    (""FRC"", 1),
+    (""DFM"", 2),
+    (""SLP"", 3),
+    (""STU"", 4),
+    (""MBU"", 5),
+    (""PTF"", 6),
+    (""RUS"", 7),
+    (""INL"", 8),
+    (""FTS"", 9),
+    (""TRD"", 10),
+    (""BUR"", 11),
+    (""CRK"", 12),
+    (""ELK"", 13),
+    (""FTO"", 14),
+    (""PDE"", 15),
+    (""PLU"", 16),
+    (""PTE"", 17),
+    (""SAL"", 18),
+    (""STP"", 19),
+    (""STU"", 20),
+    (""TEX"", 21),
+    (""TRD"", 22),
+    (""VIB"", 23)
+]"

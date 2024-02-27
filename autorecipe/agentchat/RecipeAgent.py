@@ -12,11 +12,16 @@ from autorecipe.genai.utils import (
 import pandas as pd
 from colorama import Fore, Style
 import uuid
-from genai.schemas import ChatOptions, GenerateParams, ReturnOptions
-from genai.schemas.generate_params import HAPOptions, ModerationsOptions
 from collections import OrderedDict
 import pandas as pd
 import difflib
+
+from genai.schema import (
+    DecodingMethod,
+    ModerationHAP,
+    ModerationParameters,
+    TextGenerationReturnOptions,
+)
 
 # have model specific configuration
 # QA does not need longer context to generate
@@ -80,7 +85,6 @@ class RecipeAgent:
         "meta-llama/llama-2-70b-chat",
         "google/flan-ul2",
         "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
-        "ibm/granite-20b-5lang-instruct-rc",
         "ibm/granite-13b-chat-v2",
         "ibm/granite-13b-labrador-rc"
     ]
@@ -89,20 +93,21 @@ class RecipeAgent:
     DEFAULT_CONFIG = {
         "model": LLMsets[3],
         "params": {
-            "decoding_method": "greedy",
-            "min_new_tokens": 100,
-            "max_new_tokens": 2000, # ,, 1500
+            "decoding_method": DecodingMethod.GREEDY,
+            "min_new_tokens": 200,
+            "max_new_tokens": 2000,  # 1500,
             "stop_sequences": ["(TOKENSTOP)","User:","USER:","Assistant:","ASSISTANT:"],
-            "stream": True,
-            "return_options": ReturnOptions(input_text=False, input_tokens=True),
-            "moderations": ModerationsOptions(
-                hap=HAPOptions(input=True, output=False, threshold=0.01)
+            #"stream": True,
+            "return_options": TextGenerationReturnOptions(input_text=False, input_tokens=True),
+            "moderations": ModerationParameters(
+                hap=ModerationHAP(input=True, output=False, threshold=0.01)
             ),
         },
         "creds": {
             "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
             "api_endpoint": "https://bam-api.res.ibm.com",
         },
+        "stream": True,
     }
 
 # Pump (Centrifugal)
