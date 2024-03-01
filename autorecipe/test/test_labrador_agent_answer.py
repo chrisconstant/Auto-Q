@@ -1,8 +1,3 @@
-import os
-
-from dotenv import load_dotenv
-from langchain.schema import HumanMessage, SystemMessage, AIMessage
-
 from genai.credentials import Credentials
 from genai.extensions.langchain import LangChainInterface
 from genai.extensions.langchain.chat_llm import LangChainChatInterface
@@ -224,15 +219,6 @@ df = pd.read_csv(
     "genai_questions_answer_sme_bank_ElectricalSubmersiblePump_granite.csv"
 )
 passages = list(df["answers"])
-
-SummaryMessage = """
-Please help me to generate FMEA documentation into a markdown format using the following passage. 
-If needed, you can use the table format inside of the markdown file. The output has two parts:
-1. It is the beginning part of the document. Please briefly introduce 
-the ESP, its components and subcomponents;
-2. The body part include the failure mode failure cause and failure impact of the 
-ESP based on given information.        
-"""
 
 components_ans = []
 failure_loc_ans = []

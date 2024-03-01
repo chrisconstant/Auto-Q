@@ -96,7 +96,7 @@ for mdl in LLMsets:
     experiment_name = "MyExperiment_" + str(uuid.uuid4())
     experiment_id = mlflow.create_experiment(experiment_name)
 
-    df = pd.read_csv('./Generated_result_granite_13b_chat_v2.csv')
+    df = pd.read_csv('./Generated_result_llama_2_70b_chat.csv')
     
     assetdescriptionLst = list(df['assetdescription'])
     locationdescriptionLst = list(df['locationdescription'])
@@ -158,7 +158,7 @@ for mdl in LLMsets:
 
     res = pd.DataFrame(parallel_returns)
     finalans = pd.concat([df,res], axis=1)
-    finalans.to_csv('topk_Generated_result_'+ mdl.split('/')[1].replace('-','_') + '.csv',index=False)
+    finalans.to_csv('lamma_topk_Generated_result_'+ mdl.split('/')[1].replace('-','_') + '.csv',index=False)
     #print (finalans)
 
     '''
