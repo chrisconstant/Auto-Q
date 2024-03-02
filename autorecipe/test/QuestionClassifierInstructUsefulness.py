@@ -1,8 +1,3 @@
-import os
-
-from dotenv import load_dotenv
-from langchain.schema import HumanMessage, SystemMessage, AIMessage
-
 from genai.credentials import Credentials
 from genai.extensions.langchain import LangChainInterface
 from genai.extensions.langchain.chat_llm import LangChainChatInterface

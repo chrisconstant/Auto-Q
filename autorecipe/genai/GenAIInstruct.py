@@ -72,19 +72,28 @@ class GenAIInstructClient():
                     if self.stream:
                         result = ''
                         if self.question_message:
+                            pprompt = ''
+                            if len(messages) > 0:
+                                pprompt = f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)."
+                            else:
+                                pprompt = f"System Prompt: {self.system_message}"
+                                
                             for chunk in self.llm.stream(
-                                input=[
-                                    f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)."
-                                ]
+                                input=[pprompt]
                             ):
                                 if result:
                                     result = result + chunk
                                 else:
                                     result = chunk
                         else:
+                            pprompt = ''
+                            if len(messages) > 0:
+                                pprompt = f"System Prompt: {self.system_message} \n\n Question: {messages} Please use (Internal thought)."
+                            else:
+                                pprompt = f"System Prompt: {self.system_message}"
                             for chunk in self.llm.stream(
                                 input=[
-                                    f"System Prompt: {self.system_message} \n\n Question: {messages} Please use (Internal thought)."
+                                    pprompt
                                 ]
                             ):
                                 if result:
@@ -93,15 +102,25 @@ class GenAIInstructClient():
                                     result = chunk
                     else:
                         if self.question_message:
+                            pprompt = ''
+                            if len(messages) > 0:
+                                pprompt = f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)." 
+                            else:
+                                pprompt = f"System Prompt: {self.system_message}"                                
                             result = self.llm.generate(
                                 prompts=[
-                                    f"System Prompt: {self.system_message} \n\n {self.question_message} \n\n Question: {messages} Please use (Internal thought)."
+                                    pprompt
                                 ]
                             )
                         else:
+                            pprompt = ''
+                            if len(messages) > 0:
+                                pprompt = f"System Prompt: {self.system_message} \n\n Question: {messages} Please use (Internal thought)."
+                            else:
+                                pprompt = f"System Prompt: {self.system_message}"
                             result = self.llm.generate(
                                 prompts=[
-                                    f"System Prompt: {self.system_message} \n\n Question: {messages} Please use (Internal thought)."
+                                    pprompt
                                 ]
                             )
                     break

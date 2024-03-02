@@ -1,8 +1,16 @@
-from genai.credentials import Credentials
 from genai.extensions.langchain import LangChainInterface
 from genai.extensions.langchain.chat_llm import LangChainChatInterface
-from genai.schemas import ChatOptions, GenerateParams, ReturnOptions
-from genai.schemas.generate_params import HAPOptions, ModerationsOptions
+from genai.credentials import Credentials
+import uuid
+
+from genai.schema import (
+    DecodingMethod,
+    ModerationHAP,
+    ModerationParameters,
+    TextGenerationReturnOptions,
+    TextGenerationParameters,
+)
+from autorecipe.genai.GenAIInstruct import GenAIInstructClient
 
 import re
 import json
@@ -21,11 +29,6 @@ def get_json(input_text):
         except json.JSONDecodeError:
             print("Failed to parse JSON object:")
     return parsed_json
-
-# make sure you have a .env file under genai root with
-# GENAI_KEY=<your-genai-key>
-api_key = "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg"
-api_endpoint = "https://bam-api.res.ibm.com"
 
 SMESystemPrompt = """
     You act as a subject matter expert who is expert in failure modes and effect analysis (FMEA) of asset or system 
@@ -185,33 +188,30 @@ LLMsets = [
     "ibm/granite-13b-instruct-v2",
     "meta-llama/llama-2-70b-chat",
     "google/flan-ul2",
-    "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
     "ibm/granite-13b-labrador-rc",
+    "ibm/granite-13b-chat-v2",
 ]
 
 # Is this question for Subject Matter Expert?
 # Is this question for Data Scientist?
 
-llm = LangChainInterface(
-    model=LLMsets[4],
-    credentials=Credentials(api_key, api_endpoint),
-    params=GenerateParams(
-        decoding_method="greedy",
-        max_new_tokens=2000,
-        min_new_tokens=10,
-        temperature=0.5,
-        top_k=50,
-        top_p=1,
-        stream=True,
-        stop_sequences=["(TOKENSTOP)", "User:", "USER:", "|user|"],
-        return_options=ReturnOptions(input_text=False, input_tokens=True),
-        moderations=ModerationsOptions(
-            # Threshold is set to very low level to flag everything (testing purposes)
-            # or set to True to enable HAP with default settings
-            hap=HAPOptions(input=True, output=False, threshold=0.01)
-        ),
+# make sure you have a .env file under genai root with
+# GENAI_KEY=<your-genai-key>
+credentials = {
+    "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
+    "api_endpoint": "https://bam-api.res.ibm.com",
+}
+
+params = {
+    "decoding_method": DecodingMethod.GREEDY,
+    "min_new_tokens": 200,
+    "max_new_tokens": 2000,  # 1500,
+    "stop_sequences": ["(TOKENSTOP)","User:","USER:","Assistant:","ASSISTANT:"],
+    "return_options": TextGenerationReturnOptions(input_text=False, input_tokens=True),
+    "moderations": ModerationParameters(
+        hap=ModerationHAP(input=True, output=False, threshold=0.01)
     ),
-)
+}
 
 import pandas as pd
 
@@ -223,19 +223,34 @@ passages = list(df["answers"])
 components_ans = []
 failure_loc_ans = []
 
+experiment_name = (
+    "MyExperiment_" + asset_class + "_" + str(uuid.uuid4())
+)
+import mlflow
+experiment_id = mlflow.create_experiment(experiment_name)
+
 for passage in passages:
     filled_template = ComponentExtractionTemplate.format(
         asset_class=asset_class, asset_description=asset_description, passage=passage
     )
-    result = llm.generate(prompts=[f"System Prompt: {filled_template}"])
-    result = result.generations[0][0].text
+    llm = GenAIInstructClient(name='AIClient',
+                    description='Test',
+                    skill='AAA',
+                    model=LLMsets[3],
+                    credentials=credentials,
+                    system_message=filled_template,
+                    question_message=None,
+                    stream=False,
+                    params=params,
+                    )
+    result = llm.create(context=None, messages='', experiment_id=experiment_id)
     result = result.split("I do not know")[0]
     result = result.split("I don")[0]
     result = result.split("Note: The ")[0]
     result = result.split("Please note ")[0]
     result = result.split("Note: ")[0]
     print("---------------------")
-    # print (passage)
+    print (passage)
     print(result.strip())
     try:
         #print(json.loads(result.strip()))
@@ -255,8 +270,17 @@ for passage in passages:
     filled_template = FailureModeTemplate.format(
         asset_class=asset_class, asset_description=asset_description, passage=passage
     )
-    result = llm.generate(prompts=[f"System Prompt: {filled_template}"])
-    result = result.generations[0][0].text
+    llm = GenAIInstructClient(name='AIClient',
+                    description='Test',
+                    skill='AAA',
+                    model=LLMsets[3],
+                    credentials=credentials,
+                    system_message=filled_template,
+                    question_message=None,
+                    stream=False,
+                    params=params,
+                    )
+    result = llm.create(context=None, messages='', experiment_id=experiment_id)
     result = result.split("I do not know")[0]
     result = result.split("I don")[0]
     result = result.split("Note: The ")[0]
