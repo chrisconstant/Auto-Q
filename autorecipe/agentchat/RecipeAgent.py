@@ -1145,7 +1145,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         # this is a context prompt (agenda)
         self.context_prompt_ = "The industrial asset class is " + self.asset_class
 
-        # 
+        # this is a common routine to get the detail information about given asset class
         tmp_asset_desc = get_asset_description(iteration=2, asset_class=self.asset_class)
         self.asset_description_ = tmp_asset_desc
 
@@ -1311,7 +1311,6 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             index=False,
         )
 
-
         df = pd.DataFrame(self.question_generation_track)
         df.to_csv(
             f"genai_questions_track_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
@@ -1332,3 +1331,22 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             f"genai_context_docs_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
             index=False,
         )
+
+        # also store the Agent Prompt
+        df = pd.DataFrame(
+            {
+                "SFAgent_prompt": [self.SFAgent.system_message],
+                "SMEAgent_prompt": [self.SMEAgent.system_message],
+                "SummarizeAgent_prompt": [self.SummarizeAgent.system_message],
+                "QuestionGeneratorAgent_prompt": [self.QuestionGeneratorAgent.system_message],
+                "QuestionClassifierAgent_prompt": [self.QuestionClassifierAgent.system_message],
+                "QEAgent_prompt": [self.QEAgent.system_message],
+                "REAgent_prompt": [self.REAgent.system_message],
+            }
+        )
+
+        df.to_csv(
+            f"genai_system_prompts_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+            index=False,
+        )
+

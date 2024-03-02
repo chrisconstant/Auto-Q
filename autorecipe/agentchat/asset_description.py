@@ -25,18 +25,18 @@ ASSET_LIST = [
     "Electrical submersible pump",
 ]
 
-
 LLMsets = [
-    #"thebloke/mixtral-8x7b-instruct-v0-1-gptq",
-    #"meta-llama/llama-2-70b-chat",
-    "ibm/granite-13b-labrador-rc",
+    "meta-llama/llama-2-70b-chat",
+    "ibm-mistralai/mixtral-8x7b-instruct-v01-q",
+    "mistralai/mixtral-8x7b-instruct-v0-1",
+    "ibm/granite-13b-chat-v2",
 ]
 
 final_ans = ""
 final_confidence = ""
 
 DEFAULT_CONFIG = {
-    "model": LLMsets[0],
+    "model": LLMsets[1],
     "params": {
         "decoding_method": DecodingMethod.GREEDY,
         "min_new_tokens": 200,
@@ -116,10 +116,10 @@ def get_asset_description(iteration=3, asset_class="Electrical submersible pump"
 
         if initstep:
             mdl = GenAIChatClient(
-                name="a",
-                description="b",
-                skill="c",
-                model=LLMsets[0],
+                name="ADesc",
+                description="Asset Description",
+                skill="Generate Asset Description",
+                model=LLMsets[3],
                 params=DEFAULT_CONFIG["params"],
                 system_message=SystemPrompt,
                 credentials=DEFAULT_CONFIG["creds"],
@@ -170,7 +170,12 @@ def get_asset_description(iteration=3, asset_class="Electrical submersible pump"
             )
     return answer
 
-"""    
-p_ans = get_asset_description(iteration=10, asset_class="Electrical submersible pump")
+"""
+p_ans = get_asset_description(iteration=2, asset_class="Electrical submersible pump")
+print (p_ans)
+"""
+
+"""
+p_ans = get_asset_description(iteration=2, asset_class="Electrical Substation Transformer")
 print (p_ans)
 """
