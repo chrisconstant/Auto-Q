@@ -1,8 +1,8 @@
 from autorecipe.agentchat.RecipeAgent import RecipeAgent
 
 obj = RecipeAgent(name='Maximo')
-obj.set_asset_class(asset_class='wind turbine')
-obj.init_chat(round=2)
+obj.set_asset_class(asset_class='Pulverizer - Coal - Roll Wheel Type')
+obj.init_chat(round=1)
 
 '''
 obj = RecipeAgent(name='Maximo')

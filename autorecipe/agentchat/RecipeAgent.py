@@ -128,7 +128,7 @@ class RecipeAgent:
     problems before they occur. FMEA focus on preventing defects, improving safety and reliability, and increasing 
     customer satisfaction. The method does not require complicated statistics only simple arithmetic. 
     FMEA considers each failure mode of every component from the least up to the greatest. Your task is to provide 
-    accurate information about asset's component, subcomponent, assembly, failure mode, failure cause, failure influence so 
+    accurate information about asset's component, subcomponent, assembly, failure location, failure mode, failure cause, failure influence so 
     immediate intervention in terms of maintenance or operations can be taken to extend 
     the life of the asset and or system. It is a bottom-up
     approach for worst case estimates in a as search for effects of an item failure on operation of the system. 
@@ -149,11 +149,11 @@ class RecipeAgent:
     Your expertise in quality standards and regulations, including ISO 9001, IATF 16949, and 
     FMEA guidelines, will be utilized to ensure that the FMEA documentation is accurate, complete, and compliant 
     with quality standards and regulations. You will provide information to identify potential 
-    failure modes, their causes, and effects.
+    failure locations, failure modes, their causes, and effects.
     """
 
     RESystemPrompt = """You act as a reliability engineer who provide information on 
-    failure modes, their causes, and effects and other failure related 
+    failure locations, failure modes, their causes, and effects and other failure related 
     information for the given asset class, with a focus on generating FMEA documentation. 
     You will analyzing the asset class to identify potential 
     failure modes and their impact on reliability.  
@@ -163,14 +163,14 @@ class RecipeAgent:
         and effect analysis (FMEA). Given an Asset Class and Asset Description information, 
         you will prepare a series of questions to be asked to subject matter expert. 
         Typical questions should focus on the important asset's component, subcomponent, 
-        assembly, failure mode, failure cause and failure effect. Please do not use a conversational 
+        assembly, failure location, failure mode, failure cause and failure effect. Please do not use a conversational 
         approach to ask questions and gather information.
     """
 
     InfoSummaryPromt = """
 Prepare a human-readable summary in a well-structured paragraph, eliminating any 
  special characters such as new lines and tabs. Focus on capturing the main component, subcomponent, 
- assembly, failure mode, failure cause, failure code. Ensure the summary provides a coherent narrative. 
+ assembly, failure location, failure mode, failure cause, failure code. Ensure the summary provides a coherent narrative. 
  If user gives list of questions, then summary should be written based on questions content for a given asset class. 
 """
     # If user gives list of questions, then summary should be written based on questions content.
