@@ -1,7 +1,12 @@
 from genai.extensions.langchain import LangChainInterface
 from genai.extensions.langchain.chat_llm import LangChainChatInterface
 from genai.credentials import Credentials
+from autorecipe.genai.GenAIInstruct import GenAIInstructClient
 import uuid
+import mlflow
+import re
+import json
+import pandas as pd
 
 from genai.schema import (
     DecodingMethod,
@@ -10,12 +15,10 @@ from genai.schema import (
     TextGenerationReturnOptions,
     TextGenerationParameters,
 )
-from autorecipe.genai.GenAIInstruct import GenAIInstructClient
-
-import re
-import json
 
 def get_json(input_text):
+    """
+    """
     pattern = r"\{(?:.|\n)*?\}"
 
     # Find all JSON objects in the input text using regular expression
@@ -98,10 +101,6 @@ MSMESystemPrompt = """
     User will provide a asset class or ask FMEA related question and you will provide descriptive FMEA 
     information by following above FMEA Procedure. 
     """
-
-asset_class = "Electrical Submersible Pump"
-asset_description = "An electrical submersible pump (ESP) is a type of pump used to extract oil or gas from underground reservoirs. It is a submersible pump that is designed to operate while submerged in the fluid. The ESP consists of several components, including a power section, a pump section, a cable, and sucker rods. The power section contains the motor, which converts electrical energy into mechanical energy. The pump section contains the pump, which is used to lift the fluid to the surface. The cable connects the power section to the pump section and carries the electrical energy to the pump. The sucker rods are used to connect the pump to the wellbore and are typically made of steel. The main components of an electrical submersible pump include the power section, the pump section, the cable, and the sucker rods. The power section typically includes a squirrel cage induction motor, which is designed to operate efficiently in high-torque, low-speed applications. The pump section typically includes a centrifugal pump, which is used to lift the fluid to the surface. The cable is typically made of high-voltage, low-resistance cable, which is designed to minimize power loss and maximize efficiency. The sucker rods are used to connect the pump to the wellbore and are typically made of steel."
-passage = "Your Passage Associated with the Asset"
 
 ComponentExtractionTemplate = """
 I am building FMEA documentation. I have provided an asset class and asset description and a passage associated with some 
@@ -187,13 +186,11 @@ given passage? Only return the answer in the format of a numbered list. If you d
 LLMsets = [
     "ibm/granite-13b-instruct-v2",
     "meta-llama/llama-2-70b-chat",
-    "google/flan-ul2",
-    "ibm/granite-13b-labrador-rc",
+    "mistralai/mixtral-8x7b-instruct-v0-1",
+    "ibm-mistralai/mixtral-8x7b-instruct-v01-q",
     "ibm/granite-13b-chat-v2",
+    "ibm/granite-13b-labrador-rc",
 ]
-
-# Is this question for Subject Matter Expert?
-# Is this question for Data Scientist?
 
 # make sure you have a .env file under genai root with
 # GENAI_KEY=<your-genai-key>
@@ -213,98 +210,117 @@ params = {
     ),
 }
 
-import pandas as pd
+def extract_results_from_response(
+        file="genai_questions_answer_sme_bank_ElectricalSubmersiblePump_granite.csv",
+        contextfile="context_question.csv",
+        model_id=4):
+    """_summary_
 
-df = pd.read_csv(
-    "genai_questions_answer_sme_bank_ElectricalSubmersiblePump_granite.csv"
-)
-passages = list(df["answers"])
+    :param file: _description_, defaults to "genai_questions_answer_sme_bank_ElectricalSubmersiblePump_granite.csv"
+    :type file: str, optional
+    :param contextfile: _description_, defaults to "context_question.csv"
+    :type contextfile: str, optional
+    :param model_id: _description_, defaults to 4
+    :type model_id: int, optional
+    """
 
-components_ans = []
-failure_loc_ans = []
+    df = pd.read_csv(file)
+    passages = list(df["answers"])
 
-experiment_name = (
-    "MyExperiment_" + asset_class + "_" + str(uuid.uuid4())
-)
-import mlflow
-experiment_id = mlflow.create_experiment(experiment_name)
+    components_ans = []
+    failure_loc_ans = []
 
-for passage in passages:
-    filled_template = ComponentExtractionTemplate.format(
-        asset_class=asset_class, asset_description=asset_description, passage=passage
+    contextDF = pd.read_csv(contextfile)
+    asset_class = list(contextDF['asset_class'])[0]
+    asset_description = list(contextDF['asset_description'])[0]
+    passage = "Your Passage Associated with the Asset"
+
+    experiment_name = (
+        "MyExperiment_" + asset_class + "_" + str(uuid.uuid4())
     )
-    llm = GenAIInstructClient(name='AIClient',
-                    description='Test',
-                    skill='AAA',
-                    model=LLMsets[3],
-                    credentials=credentials,
-                    system_message=filled_template,
-                    question_message=None,
-                    stream=False,
-                    params=params,
-                    )
-    result = llm.create(context=None, messages='', experiment_id=experiment_id)
-    result = result.split("I do not know")[0]
-    result = result.split("I don")[0]
-    result = result.split("Note: The ")[0]
-    result = result.split("Please note ")[0]
-    result = result.split("Note: ")[0]
-    print("---------------------")
-    print (passage)
-    print(result.strip())
-    try:
-        #print(json.loads(result.strip()))
-        ask = json.loads(result.strip())
-        components_ans.append(ask)
-    except:
-        ret_ans = get_json(result.strip())
-        if len(ret_ans) > 0:
-            components_ans.extend(ret_ans)
-        #print (ret_ans)
-    #break
+    experiment_id = mlflow.create_experiment(experiment_name)
 
-for item in components_ans:
-    print(item)
-    
-for passage in passages:
-    filled_template = FailureModeTemplate.format(
-        asset_class=asset_class, asset_description=asset_description, passage=passage
-    )
-    llm = GenAIInstructClient(name='AIClient',
-                    description='Test',
-                    skill='AAA',
-                    model=LLMsets[3],
-                    credentials=credentials,
-                    system_message=filled_template,
-                    question_message=None,
-                    stream=False,
-                    params=params,
-                    )
-    result = llm.create(context=None, messages='', experiment_id=experiment_id)
-    result = result.split("I do not know")[0]
-    result = result.split("I don")[0]
-    result = result.split("Note: The ")[0]
-    result = result.split("Please note ")[0]
-    result = result.split("Note: ")[0]
-    print("---------------------")
-    try:
-        print (result.strip())
-        print ('***************')
-        print(json.loads(result.strip()))
-        ask = json.loads(result.strip())
-        failure_loc_ans.append(ask)
-    except:
-        ret_ans = get_json(result.strip())
-        if len(ret_ans) > 0:
-            failure_loc_ans.extend(ret_ans)
+    for passage in passages:
+        filled_template = ComponentExtractionTemplate.format(
+            asset_class=asset_class, asset_description=asset_description, passage=passage
+        )
+        llm = GenAIInstructClient(name='AIClient',
+                        description='Test',
+                        skill='AAA',
+                        model=LLMsets[model_id],
+                        credentials=credentials,
+                        system_message=filled_template,
+                        question_message=None,
+                        stream=False,
+                        params=params,
+                        )
+        result = llm.create(context=None, messages='', experiment_id=experiment_id)
+        result = result.split("I do not know")[0]
+        result = result.split("I don")[0]
+        result = result.split("Note: The ")[0]
+        result = result.split("Please note ")[0]
+        result = result.split("Note: ")[0]
+        print("---------------------")
+        print (passage)
+        print(result.strip())
+        try:
+            #print(json.loads(result.strip()))
+            ask = json.loads(result.strip())
+            components_ans.append(ask)
+        except:
+            ret_ans = get_json(result.strip())
+            if len(ret_ans) > 0:
+                components_ans.extend(ret_ans)
+            #print (ret_ans)
+        #break
 
-for item in failure_loc_ans:
-    print (item)
+    """
+    for item in components_ans:
+        print(item)
+    """
 
-filename = "component_list.json"
-with open(filename, "w") as f:
-    json.dump(components_ans, f)
+    for passage in passages:
+        filled_template = FailureModeTemplate.format(
+            asset_class=asset_class, asset_description=asset_description, passage=passage
+        )
+        llm = GenAIInstructClient(name='AIClient',
+                        description='Test',
+                        skill='AAA',
+                        model=LLMsets[model_id],
+                        credentials=credentials,
+                        system_message=filled_template,
+                        question_message=None,
+                        stream=False,
+                        params=params,
+                        )
+        result = llm.create(context=None, messages='', experiment_id=experiment_id)
+        result = result.split("I do not know")[0]
+        result = result.split("I don")[0]
+        result = result.split("Note: The ")[0]
+        result = result.split("Please note ")[0]
+        result = result.split("Note: ")[0]
+        print("---------------------")
+        try:
+            print (result.strip())
+            print ('***************')
+            print(json.loads(result.strip()))
+            ask = json.loads(result.strip())
+            failure_loc_ans.append(ask)
+        except:
+            ret_ans = get_json(result.strip())
+            if len(ret_ans) > 0:
+                failure_loc_ans.extend(ret_ans)
 
-filename = "failure_list.json"
-with open(filename, "w") as f:
-    json.dump(failure_loc_ans, f)
+    """
+    for item in failure_loc_ans:
+        print (item)
+    """
+    model_initial = LLMsets[model_id].split("/")[1].split("-")[0]
+
+    filename = f"genai_component_list_{asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.json"
+    with open(filename, "w") as f:
+        json.dump(components_ans, f)
+
+    filename = f"genai_failure_list_{asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.json"
+    with open(filename, "w") as f:
+        json.dump(failure_loc_ans, f)

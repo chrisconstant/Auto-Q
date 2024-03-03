@@ -84,15 +84,15 @@ class RecipeAgent:
     LLMsets = [
         "ibm/granite-13b-instruct-v2",
         "meta-llama/llama-2-70b-chat",
-        "google/flan-ul2",
         "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
         "ibm/granite-13b-chat-v2",
-        "ibm/granite-13b-labrador-rc"
+        "ibm/granite-13b-labrador-rc",
+        "mistralai/mixtral-8x7b-instruct-v0-1",
     ]
 
     # configuration
     DEFAULT_CONFIG = {
-        "model": LLMsets[5],
+        "model": LLMsets[3],
         "params": {
             "decoding_method": DecodingMethod.GREEDY,
             "min_new_tokens": 200,
@@ -465,7 +465,7 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         #self.QEAgent.update_system_message(self.asset_class, self.asset_description_)
         #self.REAgent.update_system_message(self.asset_class, self.asset_description_)
 
-        # inform data scientist about the asset class
+        # inform SFAgent about the asset class
         # sfagent 
         sf_response = self.SFAgent.create(
             messages=[{"content": "Generate Questions.", "role": "user"}],
@@ -1325,6 +1325,8 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 "sme_context": [self.sme_response_],
                 "re_context": [self.re_response_],
                 "qe_context": [self.qe_response_],
+                "asset_description": [self.asset_description_],
+                "asset_class": [self.asset_class],
             }
         )
         df.to_csv(
