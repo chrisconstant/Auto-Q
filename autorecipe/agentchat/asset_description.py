@@ -36,7 +36,7 @@ final_ans = ""
 final_confidence = ""
 
 DEFAULT_CONFIG = {
-    "model": LLMsets[1],
+    "model": LLMsets[0],
     "params": {
         "decoding_method": DecodingMethod.GREEDY,
         "min_new_tokens": 200,
@@ -62,7 +62,7 @@ def drop_last_paragraph(ans):
         return '\n\n'.join(ans_split[:-1])
     return ans
 
-def get_asset_description(iteration=3, asset_class="Electrical submersible pump"):
+def get_asset_description(iteration=3, asset_class="Electrical submersible pump", model_id=3):
     """_summary_
 
     :param iteration: _description_, defaults to 10
@@ -119,7 +119,7 @@ def get_asset_description(iteration=3, asset_class="Electrical submersible pump"
                 name="ADesc",
                 description="Asset Description",
                 skill="Generate Asset Description",
-                model=LLMsets[3],
+                model=LLMsets[model_id],
                 params=DEFAULT_CONFIG["params"],
                 system_message=SystemPrompt,
                 credentials=DEFAULT_CONFIG["creds"],

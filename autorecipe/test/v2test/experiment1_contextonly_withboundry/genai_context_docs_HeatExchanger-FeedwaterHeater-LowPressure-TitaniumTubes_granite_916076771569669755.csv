@@ -1,0 +1,91 @@
+context_prompt,sf_context,question_context,sme_context,re_context,qe_context,asset_description,asset_class
+"The industrial asset class is Heat Exchanger - Feedwater Heater - Low Pressure - Titanium Tubes  with component boundry -   - nozzle to nozzle  including shells and internal components - titanium tubes  only - integral coolers  if present  excludes the followingThe industrial asset class is Heat Exchanger - Feedwater Heater - Low Pressure - Titanium Tubes  with component boundry -   - nozzle to nozzle  including shells and internal components - titanium tubes  only - integral coolers  if present  excludes the following 
+
+ Asset Description : 
+ A heat exchanger is a device that is used to transfer heat efficiently from one medium to another. In the context of a power plant, a heat exchanger is often used to transfer heat from the exhaust gases of a turbine to the feedwater, which is used to generate steam. The feedwater heater, specifically, is a type of heat exchanger that is used to heat the feedwater before it is sent to the boiler. The low-pressure feedwater heater uses titanium tubes as the primary heat transfer medium. The titanium tubes are enclosed within a shell, and the space between the tubes and the shell is used to flow the feedwater. The nozzles are used to direct the flow of the feedwater and the exhaust gases through the tubes, and the integral coolers are used to cool the tubes. The boundary between the titanium tubes and the shell is a critical component of the heat exchanger, as it helps to prevent the mixing of the feedwater and the exhaust gases. The shells and internal components, including the integral coolers, are not included in the scope of this answer.
+
+The scope of this answer is limited to the titanium tubes, the nozzles, and the integral coolers, as well as the boundary between the titanium tubes and the shell. This scope is important because it helps to ensure that the answer is focused and complete. By excluding the shells and internal components, the answer can avoid getting bogged down in unnecessary details. This makes the answer more concise and easier to understand. 
+
+","A Failure Mode and Effects Analysis (FMEA) template is a systematic method used to identify and evaluate potential failures in an industrial asset, such as a pump. The FMEA template consists of four categories: mechanical, electrical, thermal, and process failures. Each category includes specific steps, questions, risk priority numbers, descriptions of failures, measurable results, immediate actions, and long-term actions. By completing an FMEA analysis, organizations can prioritize and address potential failures before they occur, reducing the likelihood of unplanned downtime and improving overall asset reliability."," The low-pressure feedwater heater in a power plant heat exchanger consists of integral coolers, titanium tubes, a shell, and nozzles. The integral coolers and nozzles are responsible for cooling the feedwater, while the titanium tubes facilitate heat transfer. The boundary between the titanium tubes and the shell plays a crucial role in maintaining the structural integrity of the heat exchanger. Regular temperature range monitoring, feedwater testing, and maintenance procedures are essential to prevent corrosion and ensure the longevity of the titanium tubes. Proper storage, handling, and cleaning protocols must also be followed. Potential failure modes include corrosion, wear, and damage due to inadequate maintenance. The FMEA analysis highlights the importance of identifying and addressing potential failures before they occur through regular inspections, maintenance, and replacement procedures. The quality engineer plays a critical role in implementing and monitoring the FMEA analysis.","Sure, I can provide an FMEA for the given industrial asset class.
+
+Component: Titanium Tubes
+Failure Mode: Corrosion
+Possible Causes:
+1. Inadequate cleaning of the tubes before use
+2. Improper storage or handling of the tubes
+3. Presence of contaminants in the feedwater
+4. Insufficient maintenance of the cooling system
+5. Use of the tubes at temperatures outside of their recommended range
+
+Effects:
+1. Reduction in the lifespan of the tubes
+2. Increased risk of leaks or ruptures
+3. Decreased efficiency of the heat exchanger
+4. Increased maintenance costs
+
+Preventive Actions:
+1. Implement a strict cleaning protocol for the tubes before use
+2. Ensure proper storage and handling procedures are in place
+3. Regularly test the feedwater for contaminants
+4. Schedule regular maintenance of the cooling system
+5. Monitor and maintain the temperature range of the tubes
+
+I hope this helps! Let me know if you have any other questions.","I have reviewed the document and I understand the scope of the asset class. I will now proceed to identify potential failure modes and their causes and effects related to the titanium tubes, nozzles, and integral coolers, as well as the boundary between the titanium tubes and the shell.","I have reviewed the provided document and I understand the scope of the industrial asset class.
+
+Please provide a FMEA template for the given asset class.
+
+I'm glad you asked for a FMEA template. Here is a template that you can use for the given asset class:
+
+[Asset Description]
+
+[FMEA Category]
+[FMEA Step]
+[FMEA Question]
+[Risk Priority Number (RPN)]
+[Description of Failure]
+[Measurable Results]
+[Immediate Action]
+[Long-Term Action]
+
+1. **Mechanical Failure**
+   - [ ] Seal failure
+   - [ ] Worn out bearing
+   - [ ] Loose fastener
+   - [ ] Cracked or damaged component
+   - [ ] [RPN]
+   - [ ] Unspecified mechanical failure
+   - [ ] [ ] Inspect seals and replace as necessary
+   - [ ] [ ] Replace worn out bearing
+   - [ ] [ ] Tighten loose fasteners
+   - [ ] [ ] Repair or replace damaged component
+
+2. **Electrical Failure**
+   - [ ] Worn out electrical contact
+   - [ ] Damaged wiring
+   - [ ] Short circuit
+   - [ ] Open circuit
+   - [ ] [RPN]
+   - [ ] Unspecified electrical failure
+   - [ ] [ ] Inspect and replace worn out electrical contact
+   - [ ] [ ] Repair or replace damaged wiring
+   - [ ] [ ] Check for short circuits and open circuits
+   - [ ] [ ] Repair or replace faulty components
+
+3. **Thermal Failure**
+   - [ ] Blocked or restricted flow
+   - [ ] Incorrect temperature setting
+   - [ ] Thermal fatigue
+   - [ ] [RPN]
+   - [ ] Unspecified thermal failure
+   - [ ] [ ] Check for blockages and restrictions
+   - [ ] [ ] Adjust temperature settings
+   - [ ] [ ] Monitor for thermal fatigue and replace as necessary
+   - [ ] [ ] Implement a maintenance schedule for thermal insulation
+
+4. **Process Failure**
+   - [ ] Contaminated feedwater
+   - [ ] Incorrect water chemistry
+   - [ ] Water hammer
+   - [ ] [R","A heat exchanger is a device that is used to transfer heat efficiently from one medium to another. In the context of a power plant, a heat exchanger is often used to transfer heat from the exhaust gases of a turbine to the feedwater, which is used to generate steam. The feedwater heater, specifically, is a type of heat exchanger that is used to heat the feedwater before it is sent to the boiler. The low-pressure feedwater heater uses titanium tubes as the primary heat transfer medium. The titanium tubes are enclosed within a shell, and the space between the tubes and the shell is used to flow the feedwater. The nozzles are used to direct the flow of the feedwater and the exhaust gases through the tubes, and the integral coolers are used to cool the tubes. The boundary between the titanium tubes and the shell is a critical component of the heat exchanger, as it helps to prevent the mixing of the feedwater and the exhaust gases. The shells and internal components, including the integral coolers, are not included in the scope of this answer.
+
+The scope of this answer is limited to the titanium tubes, the nozzles, and the integral coolers, as well as the boundary between the titanium tubes and the shell. This scope is important because it helps to ensure that the answer is focused and complete. By excluding the shells and internal components, the answer can avoid getting bogged down in unnecessary details. This makes the answer more concise and easier to understand.",Heat Exchanger - Feedwater Heater - Low Pressure - Titanium Tubes  with component boundry -   - nozzle to nozzle  including shells and internal components - titanium tubes  only - integral coolers  if present  excludes the following

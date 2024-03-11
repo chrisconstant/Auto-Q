@@ -90,9 +90,11 @@ class RecipeAgent:
         "mistralai/mixtral-8x7b-instruct-v0-1",
     ]
 
+    model_id = 3
+
     # configuration
     DEFAULT_CONFIG = {
-        "model": LLMsets[3],
+        "model": LLMsets[model_id],
         "params": {
             "decoding_method": DecodingMethod.GREEDY,
             "min_new_tokens": 200,
@@ -1139,15 +1141,18 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self.DSAgent.print_token_usage()
         self.SMEAgent.print_token_usage()
 
-    def init_chat(self, round=2):
+    def init_chat(self, round=2, add_description=False):
         """_summary_"""
 
         # this is a context prompt (agenda)
         self.context_prompt_ = "The industrial asset class is " + self.asset_class
 
         # this is a common routine to get the detail information about given asset class
-        tmp_asset_desc = get_asset_description(iteration=2, asset_class=self.asset_class)
+        tmp_asset_desc = get_asset_description(iteration=2, asset_class=self.asset_class, model_id=self.model_id)
         self.asset_description_ = tmp_asset_desc
+
+        if add_description:
+            self.context_prompt_ += f"{self.context_prompt_} \n\n Asset Description : \n {self.asset_description_} \n\n"
 
         # setting the MLFLow experiments
         experiment_name = "MyExperiment_" + str(uuid.uuid4())
@@ -1256,66 +1261,92 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             print(
                 f"{Style.BRIGHT}{Fore.BLUE} Total questions : {len(merged_set)} >>> {Style.RESET_ALL}"
             )
+
         # this is a final step
-        df = pd.DataFrame(final_list, columns=["questions", "round"])
-        df.to_csv(
-            f"genai_questions_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
-            index=False,
-        )
+        if 'with component boundry' in self.asset_class:
+            tmp_asset_init = self.asset_class.split('with component boundry')[0]
+        else:
+             tmp_asset_init = self.asset_class
+        if round > 0:
+            df = pd.DataFrame(final_list, columns=["questions", "round"])
+            try:
+                df.to_csv(
+                    f"genai_questions_bank_{tmp_asset_init.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+                    index=False,
+                )
+            except:
+                pass
+        
+            df = pd.DataFrame(
+                {
+                    "questions": self.genai_questions_for_sme,
+                    "answers": self.genai_responses_from_sme,
+                    "round": self.genai_track_round_info_sme,
+                }
+            )
 
-        df = pd.DataFrame(
-            {
-                "questions": self.genai_questions_for_sme,
-                "answers": self.genai_responses_from_sme,
-                "round": self.genai_track_round_info_sme,
-            }
-        )
-        df.to_csv(
-            f"genai_questions_answer_sme_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
-            index=False,
-        )
+            try:
+                df.to_csv(
+                    f"genai_questions_answer_sme_bank_{tmp_asset_init.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+                    index=False,
+                )
+            except:
+                pass
 
-        df = pd.DataFrame(
-            {
-                "questions": self.genai_questions_for_sf,
-                "answers": self.genai_responses_from_sf,
-                "round": self.genai_track_round_info_sf,
-            }
-        )
-        df.to_csv(
-            f"genai_questions_answer_sf_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
-            index=False,
-        )
+            df = pd.DataFrame(
+                {
+                    "questions": self.genai_questions_for_sf,
+                    "answers": self.genai_responses_from_sf,
+                    "round": self.genai_track_round_info_sf,
+                }
+            )
+            try:
+                df.to_csv(
+                    f"genai_questions_answer_sf_bank_{tmp_asset_init.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+                    index=False,
+                )
+            except:
+                pass
 
-        df = pd.DataFrame(
-            {
-                "questions": self.genai_questions_for_re,
-                "answers": self.genai_responses_from_re,
-                "round": self.genai_track_round_info_re,
-            }
-        )
-        df.to_csv(
-            f"genai_questions_answer_re_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
-            index=False,
-        )
+            df = pd.DataFrame(
+                {
+                    "questions": self.genai_questions_for_re,
+                    "answers": self.genai_responses_from_re,
+                    "round": self.genai_track_round_info_re,
+                }
+            )
 
-        df = pd.DataFrame(
-            {
-                "questions": self.genai_questions_for_qe,
-                "answers": self.genai_responses_from_qe,
-                "round": self.genai_track_round_info_qe,
-            }
-        )
-        df.to_csv(
-            f"genai_questions_answer_qe_bank_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
-            index=False,
-        )
+            try:
+                df.to_csv(
+                    f"genai_questions_answer_re_bank_{tmp_asset_init.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+                    index=False,
+                )
+            except:
+                pass
 
-        df = pd.DataFrame(self.question_generation_track)
-        df.to_csv(
-            f"genai_questions_track_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
-            index=False,
-        )
+            df = pd.DataFrame(
+                {
+                    "questions": self.genai_questions_for_qe,
+                    "answers": self.genai_responses_from_qe,
+                    "round": self.genai_track_round_info_qe,
+                }
+            )
+            try:
+                df.to_csv(
+                    f"genai_questions_answer_qe_bank_{tmp_asset_init.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+                    index=False,
+                )
+            except:
+                pass
+
+            df = pd.DataFrame(self.question_generation_track)
+            try:
+                df.to_csv(
+                    f"genai_questions_track_{tmp_asset_init.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+                    index=False,
+                )
+            except:
+                pass
 
         df = pd.DataFrame(
             {
@@ -1329,10 +1360,13 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
                 "asset_class": [self.asset_class],
             }
         )
-        df.to_csv(
-            f"genai_context_docs_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
-            index=False,
-        )
+        try:
+            df.to_csv(
+                f"genai_context_docs_{tmp_asset_init.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+                index=False,
+            )
+        except:
+            pass
 
         # also store the Agent Prompt
         df = pd.DataFrame(
@@ -1347,8 +1381,10 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
             }
         )
 
-        df.to_csv(
-            f"genai_system_prompts_{self.asset_class.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
-            index=False,
-        )
-
+        try:
+            df.to_csv(
+                f"genai_system_prompts_{tmp_asset_init.replace(' ', '')}_{model_initial}_{experiment_id}.csv",
+                index=False,
+            )
+        except:
+            pass
