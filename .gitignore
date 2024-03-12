@@ -163,3 +163,5 @@ cython_debug/
 #.idea/
 
 **/mlruns/
+/autorecipe/test/v2test/experiment1_contextonly_withboundry/Granite/*.csv
+/autorecipe/test/v2test/experiment1_contextonly/Granite/*.csv

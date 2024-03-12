@@ -6,8 +6,6 @@ trial = list(gold_df["component_short_description"])
 dname = list(gold_df['component_boundry_for_short_description'])
 
 for index, item in enumerate(trial):
-    if 'Brown EPR' not in item:
-        continue
     try:
         asset_class = trial[index] + ', with component boundry - ' + dname[index]
     except:
