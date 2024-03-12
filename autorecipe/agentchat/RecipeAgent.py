@@ -287,8 +287,11 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         self,
         name: str,
         custom_config=None,
+        model_id=3,
     ):
         self.name = name
+        self.model_id = model_id
+        self.DEFAULT_CONFIG['model'] = self.LLMsets[model_id]
         self.genai_config = dict(self.DEFAULT_CONFIG)
         if custom_config:
             self.genai_config.update(custom_config)
@@ -328,8 +331,6 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
         )
 
         # agent 3
-        tmp_genai_config = dict(self.DEFAULT_CONFIG)
-        tmp_genai_config["params"]["min_new_tokens"] = 50
         self.SummarizeAgent = GenAIChatClient(
             name="Summarizer",
             description="Answer Summarizer",
