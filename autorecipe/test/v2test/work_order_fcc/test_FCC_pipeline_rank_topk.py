@@ -73,12 +73,14 @@ ray.init()
 #prompt = SystemPrompt.format(assetdescription=assetdescription, assetlocation=assetlocation, taskdescription=taskdescription)
 #print (prompt)
 
-LLMsets = ['meta-llama/llama-2-70b-chat',
-        'ibm/granite-13b-chat-v2',
-        'ibm/granite-13b-labrador-rc',
-        'ibm-mistralai/mixtral-8x7b-instruct-v01-q',
-        #'ibm/granite-13b-instruct-v2',
-        ]
+LLMsets = [
+    "ibm/granite-13b-instruct-v2",
+    "meta-llama/llama-2-70b-chat",
+    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+    "ibm/granite-13b-chat-v2",
+    "ibm/granite-13b-labrador-rc",
+    "mistralai/mixtral-8x7b-instruct-v0-1",
+]
 
 for mdl in LLMsets:
 

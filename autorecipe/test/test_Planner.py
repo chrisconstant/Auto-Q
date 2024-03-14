@@ -256,8 +256,12 @@ create new plan. Keep in mind that:
 # Think: We now try to be very specific.
 
 LLMsets = [
-    "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
-    #"meta-llama/llama-2-70b-chat",
+    "ibm/granite-13b-instruct-v2",
+    "meta-llama/llama-2-70b-chat",
+    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+    "ibm/granite-13b-chat-v2",
+    "ibm/granite-13b-labrador-rc",
+    "mistralai/mixtral-8x7b-instruct-v0-1",
 ]
 
 Recipes = ["calculate asset sustainability using environmental impact",

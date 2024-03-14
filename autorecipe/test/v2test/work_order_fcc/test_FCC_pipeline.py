@@ -58,9 +58,14 @@ FCodes = [("BUR","Burned, which is described as Consumed/damaged/deformed becaus
           ("VIB","Vibration, which is described as Vibration is higher that the established limit.")
 ] 
 
-LLMsets = ['ibm/granite-13b-chat-v2',
-        'meta-llama/llama-2-70b-chat',
-        'ibm-mistralai/mixtral-8x7b-instruct-v01-q']
+LLMsets = [
+    "ibm/granite-13b-instruct-v2",
+    "meta-llama/llama-2-70b-chat",
+    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+    "ibm/granite-13b-chat-v2",
+    "ibm/granite-13b-labrador-rc",
+    "mistralai/mixtral-8x7b-instruct-v0-1",
+]
 
 params = {
     "decoding_method": DecodingMethod.GREEDY,

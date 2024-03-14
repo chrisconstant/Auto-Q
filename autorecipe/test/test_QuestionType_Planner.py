@@ -83,8 +83,10 @@ create new plan. Keep in mind that:
 LLMsets = [
     "ibm/granite-13b-instruct-v2",
     "meta-llama/llama-2-70b-chat",
-    "google/flan-ul2",
-    "thebloke/mixtral-8x7b-instruct-v0-1-gptq",
+    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+    "ibm/granite-13b-chat-v2",
+    "ibm/granite-13b-labrador-rc",
+    "mistralai/mixtral-8x7b-instruct-v0-1",
 ]
 
 # Is this question for Subject Matter Expert?

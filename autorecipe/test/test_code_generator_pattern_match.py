@@ -97,10 +97,14 @@ for component in samaps.keys():
                 # Think: We now try to be very specific.
 
                 LLMsets = [
-                    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+                    "ibm/granite-13b-instruct-v2",
                     "meta-llama/llama-2-70b-chat",
+                    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+                    "ibm/granite-13b-chat-v2",
+                    "ibm/granite-13b-labrador-rc",
+                    "mistralai/mixtral-8x7b-instruct-v0-1",
                 ]
-
+                
                 creds = {
                     "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
                     "api_endpoint": "https://bam-api.res.ibm.com",

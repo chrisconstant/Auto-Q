@@ -56,11 +56,14 @@ Answer: The final answer is Subject Matter Expert. (TOKENSTOP)
 
 """
 
-LLMsets = ['ibm/granite-13b-instruct-v2',
-        'meta-llama/llama-2-70b-chat',
-        'google/flan-ul2',
-        'thebloke/mixtral-8x7b-instruct-v0-1-gptq']
-
+LLMsets = [
+    "ibm/granite-13b-instruct-v2",
+    "meta-llama/llama-2-70b-chat",
+    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+    "ibm/granite-13b-chat-v2",
+    "ibm/granite-13b-labrador-rc",
+    "mistralai/mixtral-8x7b-instruct-v0-1",
+]
 #Is this question for Subject Matter Expert?
 #Is this question for Data Scientist?
 
