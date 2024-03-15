@@ -87,7 +87,7 @@ Provide more comprehensive and accurate list of the specific components that can
     Only return the named entiry. Do not generate explanation or additional information or Note.""",
 ]
 
-ray.init()
+ray.init(n_cpus=8)
 
 @ray.remote
 def get_evaluation(asset_class, asset_class_result_file, gtruth):
