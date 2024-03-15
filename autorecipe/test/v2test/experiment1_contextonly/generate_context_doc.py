@@ -8,7 +8,7 @@ for item in trial:
     print ('processing ----' + item)
     item = item.replace('<','-')
     asset_class = item.replace('/', ' ').replace(',',' ')
-    obj = RecipeAgent(name="Maximo")
+    obj = RecipeAgent(name="Maximo", model_id=1)
     obj.set_asset_class(
         asset_class=asset_class,
     )

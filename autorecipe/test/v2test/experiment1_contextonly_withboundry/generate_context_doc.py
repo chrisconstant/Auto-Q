@@ -13,7 +13,7 @@ for index, item in enumerate(trial):
     asset_class = asset_class.replace('<','-')
     asset_class = asset_class.replace('/', ' ').replace(',',' ')
     print ('processing ----' + asset_class)
-    obj = RecipeAgent(name="Maximo")
+    obj = RecipeAgent(name="Maximo", model_id=1)
     obj.set_asset_class(
         asset_class=asset_class,
     )
