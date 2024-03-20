@@ -41,7 +41,7 @@ import os
 
 model_id = 3
 
-@ray.remote
+#@ray.remote
 def get_evaluation(model_id, asset_class, asset_class_result_file):
     '''
     '''
@@ -49,11 +49,15 @@ def get_evaluation(model_id, asset_class, asset_class_result_file):
     A = df.to_numpy()
     final_results = [asset_class]
     for i in range(A.shape[1]):
-        components_str, component_list = get_components(sample_assetclass, sample_assetdesc, model_id=model_id)
+        sample_assetdesc = A[0, i]
+        components_str, component_list = get_components(asset_class, sample_assetdesc, model_id=model_id)
+        print (component_list)
         failuremode_ans = get_failure_modes(components_str, model_id=model_id)
         failure_locations = get_failure_locations(failuremode_ans, model_id=model_id)
+        print (failure_locations)
         failure_locations.extend(component_list)
         final_results.append(failure_locations)
+        
     return final_results
 
 def get_csv_files(directory):
@@ -85,10 +89,13 @@ for item_index, item in enumerate(asset_classes):
     if notfound:
         pass
     else:
-        refs.append(get_evaluation.remote(model_id, item, filename))
+        print (item, filename)
+        A = get_evaluation(model_id, item, filename)
+        print (A)
+        #refs.append(get_evaluation.remote(model_id, item, filename))
 
-parallel_returns = ray.get(refs)
-print (parallel_returns)
+#parallel_returns = ray.get(refs)
+#print (parallel_returns)
 
 LLMsets = [
     "ibm/granite-13b-instruct-v2",
