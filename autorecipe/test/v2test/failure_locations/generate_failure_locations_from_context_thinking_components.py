@@ -249,5 +249,5 @@ def get_components(assetclass, assetdesc, model_id=3):
     components = extract_components(answer)
     return (answer, components)
 
-ans = get_components(sample_assetclass, sample_assetdesc, model_id=2)
-print (ans)
+#ans = get_components(sample_assetclass, sample_assetdesc, model_id=2)
+#print (ans)

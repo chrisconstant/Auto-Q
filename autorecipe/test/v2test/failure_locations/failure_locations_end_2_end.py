@@ -36,16 +36,25 @@ can impact system performance through potential failure modes such as.
 from generate_failure_locations_from_context_thinking_components import get_components
 from generate_failure_locations_from_context_thinking_failure_mode import get_failure_modes
 from generate_failure_locations_from_context_thinking_failure_location import get_failure_locations 
-model_id = 3
-
-def get_evaluation(model_id):
-    components_str, component_list = get_components(sample_assetclass, sample_assetdesc, model_id=model_id)
-    failuremode_ans = get_failure_modes(components_str, model_id=model_id)
-    failure_locations = get_failure_locations(failuremode_ans, model_id=model_id)
-
-    print (failure_locations)
 import pandas as pd
 import os
+
+model_id = 3
+
+@ray.remote
+def get_evaluation(model_id, asset_class, asset_class_result_file):
+    '''
+    '''
+    df = pd.read_csv(asset_class_result_file)
+    A = df.to_numpy()
+    final_results = [asset_class]
+    for i in range(A.shape[1]):
+        components_str, component_list = get_components(sample_assetclass, sample_assetdesc, model_id=model_id)
+        failuremode_ans = get_failure_modes(components_str, model_id=model_id)
+        failure_locations = get_failure_locations(failuremode_ans, model_id=model_id)
+        failure_locations.extend(component_list)
+        final_results.append(failure_locations)
+    return final_results
 
 def get_csv_files(directory):
     csv_files = []
@@ -76,9 +85,10 @@ for item_index, item in enumerate(asset_classes):
     if notfound:
         pass
     else:
-        refs.append(get_evaluation.remote(item, filename))
+        refs.append(get_evaluation.remote(model_id, item, filename))
 
 parallel_returns = ray.get(refs)
+print (parallel_returns)
 
 LLMsets = [
     "ibm/granite-13b-instruct-v2",
