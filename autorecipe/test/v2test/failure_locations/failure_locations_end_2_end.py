@@ -1,4 +1,5 @@
 import ray 
+from sentence_transformers import SentenceTransformer
 
 sample_assetclass = "CNC Robotic Containerization System"
 
@@ -36,29 +37,78 @@ can impact system performance through potential failure modes such as.
 from generate_failure_locations_from_context_thinking_components import get_components
 from generate_failure_locations_from_context_thinking_failure_mode import get_failure_modes
 from generate_failure_locations_from_context_thinking_failure_location import get_failure_locations 
+from validation import extract_things_from_string, calculate_precision, calculate_recall
+
 import pandas as pd
 import os
+
+"""
+'Documentation'
+'Records', 
+'Design Specifications'
+'Test Reports'
+'Maintenance Records'
+'Failures' (any thing that end with)
+'Other Components'
+(if present)
+Miscellaneous Components
+Other Components
+Hydraulic Cylinder - Seals' (space - space --> parent to child components)
+two words with (s) or (es) lemmanization
+Model Number
+Base
+SCADA Server/Client
+Miscellaneous Components
+Other Components
+"""
+
+cross_check_ans = [
+    "I apologize",
+    "I'm sorry",
+    "I am sorry",
+    "I don't understand",
+]
+
+def get_all_names(data):
+    all_names = []
+    all_subcomponents = []
+
+    for item in data:
+        all_names.append(item['name'])
+        all_subcomponents.extend(item['subcomponents'])
+
+    all_names.extend(all_subcomponents)
+    unique_names = list(set(all_names))
+    return unique_names
 
 model_id = 3
 
 #@ray.remote
-def get_evaluation(model_id, asset_class, asset_class_result_file):
+def get_evaluation(model_id, asset_class, asset_class_result_file, gtruth):
     '''
     '''
+    val_model = SentenceTransformer("all-mpnet-base-v2")
     df = pd.read_csv(asset_class_result_file)
     A = df.to_numpy()
-    final_results = [asset_class]
+    final_results = []
     for i in range(A.shape[1]):
+        print ('------------')
         sample_assetdesc = A[0, i]
         components_str, component_list = get_components(asset_class, sample_assetdesc, model_id=model_id)
-        print (component_list)
         failuremode_ans = get_failure_modes(components_str, model_id=model_id)
         failure_locations = get_failure_locations(failuremode_ans, model_id=model_id)
-        print (failure_locations)
         failure_locations.extend(component_list)
-        final_results.append(failure_locations)
-        
-    return final_results
+        results = get_all_names(failure_locations)
+        final_results.extend(results)
+        print (results)
+        print (calculate_precision(results, gtruth, val_model))
+        print (calculate_recall(results, gtruth, val_model))
+    print ('*------------')
+    print (final_results)
+    unique_names = list(set(final_results))
+    print (calculate_precision(unique_names, gtruth, val_model))
+    print (calculate_recall(unique_names, gtruth, val_model))
+    return unique_names
 
 def get_csv_files(directory):
     csv_files = []
@@ -72,6 +122,7 @@ csv_files_list = get_csv_files(directory_path)
 
 gold_df = pd.read_csv("./autoQ_val_data_input_for_experiments.csv")
 asset_classes = list(gold_df["component_short_description"])
+goldenset = gold_df["failure_locations"]
 
 refs = []
 for item_index, item in enumerate(asset_classes):
@@ -90,8 +141,12 @@ for item_index, item in enumerate(asset_classes):
         pass
     else:
         print (item, filename)
-        A = get_evaluation(model_id, item, filename)
-        print (A)
+        gtruth = extract_things_from_string(goldenset[item_index])
+        print (gtruth)
+        try:
+            A = get_evaluation(model_id, item, filename, gtruth)
+        except:
+            pass
         #refs.append(get_evaluation.remote(model_id, item, filename))
 
 #parallel_returns = ray.get(refs)
