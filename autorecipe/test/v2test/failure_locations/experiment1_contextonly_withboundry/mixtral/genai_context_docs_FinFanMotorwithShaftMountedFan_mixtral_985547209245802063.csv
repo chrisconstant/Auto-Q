@@ -1,0 +1,115 @@
+context_prompt,sf_context,question_context,sme_context,re_context,qe_context,asset_description,asset_class
+"The industrial asset class is Fin Fan Motor with Shaft Mounted Fan  with component boundry -   electric motor and motor shaft including the shaft mounted fan  all connected cables  at the motor itself  motor mounting and base  internal motor space heaters  if present  propeller fan  directly mounted on motor shaft  the following areThe industrial asset class is Fin Fan Motor with Shaft Mounted Fan  with component boundry -   electric motor and motor shaft including the shaft mounted fan  all connected cables  at the motor itself  motor mounting and base  internal motor space heaters  if present  propeller fan  directly mounted on motor shaft  the following are 
+
+ Asset Description : 
+ A Fin Fan Motor with Shaft Mounted Fan is an industrial motor that includes a fan directly mounted on the motor shaft, which is used to cool electrical equipment. The main components of this asset include the electric motor, motor shaft, shaft mounted fan, connecting cables, motor mounting and base, and internal motor space heaters (if present). The electric motor is the core component that converts electrical energy into mechanical energy, which drives the motor shaft. The motor shaft is a rotating rod that transmits the mechanical energy from the motor to the fan. The shaft mounted fan is a propeller fan that is directly attached to the motor shaft, which uses the mechanical energy from the motor to move air and cool the equipment. The connecting cables are the electrical wires that provide power to the motor, and are typically hard-wired to the motor itself. The motor mounting and base provide a stable and secure platform for the motor to operate on, and are typically bolted to the equipment or a nearby wall. 
+
+","
+The Fin Fan Motor with Shaft Mounted Fan has several potential failure locations, including the electric motor, motor shaft, shaft mounted fan, connecting cables, motor mounting and base, and internal motor space heaters (if present). Failure modes include motor winding failure due to overheating or insulation breakdown, motor shaft fracture or deformation, fan blade failure due to fatigue or impact, cable insulation failure or wire breakage, structural failure or deformation of the motor mounting and base, and heater failure or malfunction. Failure effects range from reduced motor efficiency and increased equipment temperatures to potential equipment failure and electrical hazards. Failure causes include poor insulation, high operating temperatures, voltage spikes, high loads, imbalanced forces, fatigue due to repeated use, foreign object damage, overloading, excessive vibration, and environmental factors such as moisture and temperature. The FMEA documentation should be regularly reviewed and updated to ensure accuracy and relevance, and it should be used in conjunction with other quality standards and regulations to ensure the safe and efficient operation of the Fin Fan Motor with Shaft Mounted Fan."," The Fin Fan Motor with Shaft Mounted Fan is an electric motor that is commonly used in industrial cooling systems. Failure modes in this type of motor can include issues with the motor shaft, such as wear and tear, misalignment, or failure, as well as problems with the fan blades, such as imbalance, damage, or failure. These failures can be caused by a variety of factors, including environmental conditions, mechanical stress, and electrical issues. The motor's design and manufacturing process, as well as industry standards and regulations, can also impact its failure modes and effects. Maintenance practices, such as regular inspections and tightening of mounting bolts, can help prevent failures and ensure optimal performance. Monitoring tools, such as temperature sensors and vibration analysis, can be used to detect potential failures before they occur. Previous failures have been attributed to issues such as motor winding failure, shaft misalignment, and heater element failure. Environmental factors, such as temperature, humidity, and corrosive substances, can also impact the motor's operation and reliability. The motor's insulation material and voltage requirements are also important considerations for preventing failure. The load on the motor and its components should be monitored and controlled to prevent excessive stress and failure. The FMEA documentation for the Fin Fan Motor with Shaft Mounted Fan should be regularly reviewed and updated to ensure that it remains accurate and up-to-date.","
+ Failure Modes and Effects Analysis (FMEA) for Fin Fan Motor with Shaft Mounted Fan:
+
+ Component: Electric Motor
+
+ Failure Mode 1: Motor Windings Failure
+
+* Description: The motor windings are the coils of wire that carry the electrical current and create the magnetic field that drives the motor. A failure in the motor windings can be caused by overheating, insulation failure, or a short circuit.
+* Effect: Motor failure, potential fire hazard, and damage to connected equipment.
+* Cause: Poor maintenance, excessive load, or manufacturing defects.
+* Mitigation: Regular inspections and maintenance, monitoring of motor temperature, and use of overload protection devices.
+
+ Failure Mode 2: Mechanical Failure
+
+* Description: The mechanical components of the motor, such as the bearings, rotor, and stator, can fail due to wear and tear, fatigue, or other mechanical issues.
+* Effect: Motor failure, vibration, noise, and damage to connected equipment.
+* Cause: Poor maintenance, excessive load, or design defects.
+* Mitigation: Regular inspections and maintenance, monitoring of motor vibration and noise, and use of high-quality components.
+
+ Component: Motor Shaft
+
+ Failure Mode 1: Shaft Failure
+
+* Description: The motor shaft can fail due to fatigue, corrosion, or other mechanical issues.
+* Effect: Motor failure, vibration, noise, and damage to connected equipment.
+* Cause: Poor maintenance, excessive load, or design defects.
+* Mitigation: Regular inspections and maintenance, monitoring of motor vibration and noise, and use of high-quality components.
+
+ Failure Mode 2: Shaft Misalignment
+
+* Description: The motor shaft can become misaligned due to wear and tear, poor installation, or other mechanical issues.
+* Effect: Vibration, noise, and damage to connected equipment.
+* Cause: Poor maintenance, poor installation, or design defects.
+* Mitigation: Regular inspections and maintenance, monitoring of motor vibration and noise, and use of high-quality components.
+
+ Component: Shaft Mounted Fan
+
+ Failure Mode 1: Fan Blade Fail","
+
+Failure Locations and Modes:
+
+1. Electric Motor:
+   * Failure Location: Stator or Rotor
+   * Failure Mode: Overheating, electrical imbalance, mechanical failure, or wear and tear
+   - Causes: Poor maintenance, excessive load, voltage imbalance, or insulation failure
+   - Effects: Reduced motor life, reduced equipment life, or complete motor failure
+
+2. Motor Shaft:
+   * Failure Location: Shaft or Bearings
+   * Failure Mode: Wear and tear, misalignment, or fatigue
+   - Causes: Poor maintenance, excessive load, or vibration
+   - Effects: Reduced equipment life, reduced motor life, or complete motor failure
+
+3. Shaft Mounted Fan:
+   * Failure Location: Fan Blades or Hub
+   * Failure Mode: Cracking, bending, or wear and tear
+   - Causes: Poor maintenance, excessive load, or vibration
+   - Effects: Reduced equipment life, reduced motor life, or complete motor failure
+
+4. Connecting Cables:
+   * Failure Location: Wires or Connectors
+   * Failure Mode: Wear and tear, corrosion, or insulation failure
+   - Causes: Poor maintenance, excessive load, or environmental factors
+   - Effects: Reduced motor life, reduced equipment life, or complete motor failure
+
+5. Motor Mounting and Base:
+   * Failure Location: Mounting Bolts or Base
+   * Failure Mode: Loosening, cracking, or deformation
+   - Causes: Poor maintenance, excessive load, or vibration
+   - Effects: Reduced equipment life, reduced motor life, or complete motor failure
+
+6. Internal Motor Space Heaters (if present):
+   * Failure Location: Heater Elements or Controls
+   * Failure Mode: Overheating, electrical failure, or mechanical failure
+   - Causes: Poor maintenance, excessive load, or environmental factors
+   - Effects: Reduced motor life, reduced equipment life, or complete motor failure
+
+Failure Related Information:
+
+* Regular maintenance is required to prevent failure of the Fin Fan Motor with Shaft Mounted Fan. This includes checking and tightening","
+Failure Locations:
+
+1. Electric Motor:
+	* Failure Mode: Motor windings failure due to overheating or insulation breakdown
+	* Failure Effect: Motor failure, leading to equipment overheating and potential shutdown
+	* Failure Cause: Poor insulation, high operating temperatures, or voltage spikes
+2. Motor Shaft:
+	* Failure Mode: Motor shaft fracture or deformation
+	* Failure Effect: Reduced motor efficiency, increased vibration, and potential motor failure
+	* Failure Cause: High loads, imbalanced forces, or fatigue due to repeated use
+3. Shaft Mounted Fan:
+	* Failure Mode: Fan blade failure due to fatigue or impact
+	* Failure Effect: Reduced cooling efficiency, increased equipment temperatures, and potential equipment failure
+	* Failure Cause: Foreign object damage, imbalanced forces, or high fan speeds
+4. Connecting Cables:
+	* Failure Mode: Cable insulation failure or wire breakage
+	* Failure Effect: Loss of power to the motor, or potential electrical hazards
+	* Failure Cause: Overloading, excessive vibration, or environmental factors (e.g. moisture, temperature)
+5. Motor Mounting and Base:
+	* Failure Mode: Structural failure or deformation
+	* Failure Effect: Increased vibration, reduced motor stability, and potential motor failure
+	* Failure Cause: Overloading, imbalanced forces, or fatigue due to repeated use
+6. Internal Motor Space Heaters (if present):
+	* Failure Mode: Heater failure or malfunction
+	* Failure Effect: Reduced motor efficiency, increased motor temperatures, and potential motor failure
+	* Failure Cause: Overloading, poor heater design, or environmental factors (e.g. moisture, temperature).
+
+The FMEA documentation should be regularly reviewed and updated to ensure that it remains accurate and relevant to the current operating conditions of the Fin Fan Motor with Shaft Mounted Fan. Additionally, the FMEA documentation should be used in conjunction with other quality standards and regulations, such as ISO 9001 and IATF 16949, to ensure that the Fin Fan Motor with","A Fin Fan Motor with Shaft Mounted Fan is an industrial motor that includes a fan directly mounted on the motor shaft, which is used to cool electrical equipment. The main components of this asset include the electric motor, motor shaft, shaft mounted fan, connecting cables, motor mounting and base, and internal motor space heaters (if present). The electric motor is the core component that converts electrical energy into mechanical energy, which drives the motor shaft. The motor shaft is a rotating rod that transmits the mechanical energy from the motor to the fan. The shaft mounted fan is a propeller fan that is directly attached to the motor shaft, which uses the mechanical energy from the motor to move air and cool the equipment. The connecting cables are the electrical wires that provide power to the motor, and are typically hard-wired to the motor itself. The motor mounting and base provide a stable and secure platform for the motor to operate on, and are typically bolted to the equipment or a nearby wall.",Fin Fan Motor with Shaft Mounted Fan  with component boundry -   electric motor and motor shaft including the shaft mounted fan  all connected cables  at the motor itself  motor mounting and base  internal motor space heaters  if present  propeller fan  directly mounted on motor shaft  the following are

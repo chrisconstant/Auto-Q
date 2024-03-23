@@ -1,0 +1,133 @@
+context_prompt,sf_context,question_context,sme_context,re_context,qe_context,asset_description,asset_class
+"The industrial asset class is Switchgear - Low Voltage  with component boundry -  - a single circuit breaker including breaker operating mechanism  main current components  arc chutes or arc quenching devices  and auxiliary switches and contacts. - cts -- pts (if present) - switchgear enclosure  busbar and insulation - control wiringThe industrial asset class is Switchgear - Low Voltage  with component boundry -  - a single circuit breaker including breaker operating mechanism  main current components  arc chutes or arc quenching devices  and auxiliary switches and contacts. - cts -- pts (if present) - switchgear enclosure  busbar and insulation - control wiring 
+
+ Asset Description : 
+ A low voltage switchgear is an assembly of electrical disconnecting devices, fuses, or circuit breakers used to control, protect, and isolate electrical equipment. A single circuit breaker, including its operating mechanism, is a key component of a low voltage switchgear. The main current components include the conductors and insulation that carry and protect the electrical current. Arc chutes or arc quenching devices are used to safely extinguish any electrical arcs that may occur during operation. Auxiliary switches and contacts provide additional control and signaling functions. Current transformers (CTs) and potential transformers (PTs), if present, are used to monitor and protect the electrical current and voltage, respectively.
+
+The switchgear enclosure provides protection for the internal components and may include provisions for mounting, grounding, and environmental protection. The busbar and insulation are critical components that provide a low-impedance path for the electrical current. The control wiring is used to remotely operate and monitor the switchgear.
+
+Additionally, low voltage switchgear may include protective relays, which are used to detect abnormal operating conditions and initiate corrective actions such as tripping the circuit breaker. The switchgear may also include a metering system to measure and record electrical parameters such as current, voltage, and power.
+
+The switchgear may also include a SCADA (Supervisory Control and Data Acquisition) system, which allows for remote monitoring and control of the switchgear. The SCADA system typically includes a human-machine interface (HMI), which provides operators with a visual representation of the switchgear's status and allows them to interact with the switchgear remotely. 
+
+"," The Low Voltage Switchgear is a critical electrical distribution asset that can experience various failure modes, leading to potential equipment damage or safety hazards. Failure in a single circuit breaker can occur in the operating mechanism, main current components, or arc chutes/arc quenching devices. Mechanical failure, lack of lubrication, wear and tear, aging, exposure to environmental factors, or overvoltage can cause these failures. Current Transformers (CTs) and Potential Transformers (PTs), if present, can fail to accurately measure electrical current or voltage due to mechanical failure, aging, or environmental factors. The switchgear enclosure can fail to provide adequate protection due to mechanical failure, aging, or environmental factors, exposing internal components to potential damage. The busbar and insulation can fail due to overloading, aging, or environmental factors, leading to electrical leakage or short circuit. Control wiring can also fail to operate correctly due to mechanical failure, aging, or environmental factors. Therefore, regular maintenance and inspection of the Low Voltage Switchgear are essential to ensure its safe and reliable operation."," The low voltage switchgear consists of various components including current transformers (CTs), potential transformers (PTs), arc chutes/arc quenching devices, auxiliary switches/contacts, current-carrying components, busbar and insulation, protective relays, switchgear enclosure, interlocking system, metering system, control wiring, and SCADA system. The failure modes of these components can be due to environmental conditions, safety protocols, maintenance and testing procedures, design and construction features, and aging mechanisms. The main current components, such as conductors and insulation, are regularly inspected and tested for integrity and damage. The switchgear enclosure is regularly inspected and maintained to ensure protection of internal components and prevention of safety hazards. The cleaning procedures and frequency for removing contamination from the switchgear and its components are also crucial. Environmental factors, such as temperature, humidity, and contamination, impact the failure rate of arc chutes or arc quenching devices, and can be mitigated through protective measures. The consequences of a failure in the human-machine interface (HMI), switchgear enclosure, metering system, control wiring, and SCADA system can be severe, and preventative measures should be taken. The recommended maintenance and inspection schedule for the low voltage switchgear includes regular testing of protective relays and metering systems, lubrication and wear inspection of the operating mechanism, and inspection and testing of main current components, auxiliary switches/contacts, and arc chutes/arc quenching devices. The aging mechanisms for the main current components should be mitigated to extend the switchgear's lifespan, and the expected wear and tear rate should be monitored to prevent failure."," Failure Modes and Effects Analysis (FMEA) for a Single Circuit Breaker in Low Voltage Switchgear:
+
+Component: Single Circuit Breaker (including operating mechanism, main current components, arc chutes/arc quenching devices, and auxiliary switches/contacts)
+
+Failure Mode 1: Failure of the operating mechanism
+
+* Failure cause: Wear and tear, lack of lubrication, or mechanical failure
+* Failure influence: Inability to operate the circuit breaker manually or automatically
+* Preemptive corrective action: Regular maintenance and lubrication of the operating mechanism, regular inspection for mechanical wear and failure
+
+Failure Mode 2: Failure of the main current components (conductors and insulation)
+
+* Failure cause: Overheating, overloading, or mechanical damage
+* Failure influence: Interruption of the electrical current, damage to other components, or safety hazards
+* Preemptive corrective action: Regular inspection and testing of the main current components, use of overcurrent protection devices, and regular maintenance of the insulation
+
+Failure Mode 3: Failure of the arc chutes/arc quenching devices
+
+* Failure cause: Wear and tear, mechanical failure, or contamination
+* Failure influence: Inability to safely extinguish electrical arcs, safety hazards
+* Preemptive corrective action: Regular inspection and maintenance of the arc chutes/arc quenching devices, regular cleaning to remove contamination
+
+Failure Mode 4: Failure of the auxiliary switches/contacts
+
+* Failure cause: Wear and tear, mechanical failure, or contamination
+* Failure influence: Inability to perform control and signaling functions, safety hazards
+* Preemptive corrective action: Regular inspection and maintenance of the auxiliary switches/contacts, regular cleaning to remove contamination
+
+Component: Switchgear Enclosure
+
+Failure Mode 1: Failure of the enclosure to provide protection
+
+* Failure cause: Mechanical failure, corrosion, or damage
+* Failure influence: Exposure of internal components to the environment, safety hazards
+* Preemptive corrective action: Regular inspection and maintenance of the enclosure, use of corrosion-resistant materials,","
+Failure Locations and Modes:
+
+1. Circuit Breaker:
+	* Failure to open or close due to mechanical or electrical issues
+	* Loss of proper latching due to worn or damaged components
+	* Improper trip unit operation due to worn or damaged contacts
+	* Failure of operating mechanism due to wear, corrosion, or damage
+	* Leakage or failure of current sensing components
+2. Main Current Components:
+	* Insulation failure due to aging, overheating, or contamination
+	* Conductor failure due to overloading, short-circuits, or mechanical damage
+	* Overheating due to increased current or poor ventilation
+3. Arc Chutes or Arc Quenching Devices:
+	* Failure to extinguish arcs due to wear, corrosion, or damage
+	* Leakage or failure of arc chute components
+	* Overheating due to increased arcing or poor ventilation
+4. Auxiliary Switches and Contacts:
+	* Failure to open or close due to mechanical or electrical issues
+	* Improper operation due to worn or damaged contacts
+	* Failure of switch mechanism due to wear, corrosion, or damage
+5. Current Transformers (CTs) and Potential Transformers (PTs):
+	* Failure to provide accurate current or voltage readings due to internal faults or contamination
+	* Open or short circuits due to insulation failure or mechanical damage
+6. Switchgear Enclosure:
+	* Failure of mounting or grounding components due to wear, corrosion, or damage
+	* Failure of environmental protection components due to wear, corrosion, or damage
+	* Leakage or failure of seals or gaskets
+7. Busbar and Insulation:
+	* Insulation failure due to aging, overheating, or contamination
+	* Conductor failure due to overloading, short-circuits, or mechanical damage
+	* Overheating due to increased current or poor ventilation
+8. Control Wiring:
+	* Failure of wiring due to wear, corrosion, or damage
+	* Open or short circuits due to insulation failure or mechanical damage
+	","
+Failure Mode and Effects Analysis (FMEA) for a Low Voltage Switchgear:
+
+1. Single Circuit Breaker:
+Failure Location: Operating Mechanism
+Failure Mode: Failure of the operating mechanism to operate correctly
+Cause: Wear and tear, lack of lubrication, or mechanical failure
+Effect: Inability to open or close the circuit breaker, leading to potential equipment damage or safety hazards
+
+Failure Location: Main Current Components
+Failure Mode: Insulation failure
+Cause: Aging, exposure to environmental factors, or overvoltage
+Effect: Electrical leakage or short circuit, leading to equipment damage or safety hazards
+
+Failure Location: Arc Chutes or Arc Quenching Devices
+Failure Mode: Failure to extinguish electrical arcs
+Cause: Wear and tear, mechanical failure, or improper design
+Effect: Potential equipment damage or safety hazards due to electrical arcs
+
+2. Current Transformers (CTs) and Potential Transformers (PTs) (if present)
+Failure Location: CTs or PTs
+Failure Mode: Failure to accurately measure electrical current or voltage
+Cause: Mechanical failure, aging, or environmental factors
+Effect: Inaccurate monitoring of electrical parameters, leading to potential equipment damage or safety hazards
+
+3. Switchgear Enclosure
+Failure Location: Enclosure
+Failure Mode: Failure to provide adequate protection
+Cause: Mechanical failure, aging, or environmental factors
+Effect: Exposure of internal components to environmental factors, leading to potential equipment damage or safety hazards
+
+4. Busbar and Insulation
+Failure Location: Busbar
+Failure Mode: Failure of the busbar to provide a low-impedance path for electrical current
+Cause: Overloading, aging, or environmental factors
+Effect: Electrical leakage or short circuit, leading to equipment damage or safety hazards
+
+Failure Location: Insulation
+Failure Mode: Failure of the insulation to protect electrical components
+Cause: Aging, exposure to environmental factors, or overvoltage
+Effect: Electrical leakage or short circuit, leading to equipment damage or safety hazards
+
+5. Control Wiring
+Failure Location: Control Wiring
+Failure Mode: Failure of the control wiring to operate correctly
+","A low voltage switchgear is an assembly of electrical disconnecting devices, fuses, or circuit breakers used to control, protect, and isolate electrical equipment. A single circuit breaker, including its operating mechanism, is a key component of a low voltage switchgear. The main current components include the conductors and insulation that carry and protect the electrical current. Arc chutes or arc quenching devices are used to safely extinguish any electrical arcs that may occur during operation. Auxiliary switches and contacts provide additional control and signaling functions. Current transformers (CTs) and potential transformers (PTs), if present, are used to monitor and protect the electrical current and voltage, respectively.
+
+The switchgear enclosure provides protection for the internal components and may include provisions for mounting, grounding, and environmental protection. The busbar and insulation are critical components that provide a low-impedance path for the electrical current. The control wiring is used to remotely operate and monitor the switchgear.
+
+Additionally, low voltage switchgear may include protective relays, which are used to detect abnormal operating conditions and initiate corrective actions such as tripping the circuit breaker. The switchgear may also include a metering system to measure and record electrical parameters such as current, voltage, and power.
+
+The switchgear may also include a SCADA (Supervisory Control and Data Acquisition) system, which allows for remote monitoring and control of the switchgear. The SCADA system typically includes a human-machine interface (HMI), which provides operators with a visual representation of the switchgear's status and allows them to interact with the switchgear remotely.",Switchgear - Low Voltage  with component boundry -  - a single circuit breaker including breaker operating mechanism  main current components  arc chutes or arc quenching devices  and auxiliary switches and contacts. - cts -- pts (if present) - switchgear enclosure  busbar and insulation - control wiring

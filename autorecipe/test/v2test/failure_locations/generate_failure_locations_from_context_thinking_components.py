@@ -54,7 +54,7 @@ creds = {
 LLMsets = [
     "ibm/granite-13b-instruct-v2",
     "meta-llama/llama-2-70b-chat",
-    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+    "ibm-mistralai/mixtral-8x7b-instruct-v01-q",
     "ibm/granite-13b-chat-v2",
     "ibm/granite-13b-labrador-rc",
     "mistralai/mixtral-8x7b-instruct-v0-1",
@@ -192,37 +192,21 @@ Answer: Here is the list of components and subcomponents.
 
 """
 
-sample_assetclass = "CNC Robotic Containerization System"
+sample_assetclass = "Battery Charger"
 
-sample_assetdesc = """The CNC Robotic Containerization System is a highly automated system used for sorting and placing various types of containers, boxes, and other 
-materials onto pre-designated pallets or bins for shipment. The system includes gantry robots, docking stations, system consoles, a control panel, 
-and a keyboard, each of which has the potential for failure. Failure modes for the gantry robots include reduced accuracy, reduced speed, failure 
-to move, incorrect movement, failure to pick up containers, and failure to place containers. Docking stations can fail to hold containers, pallets, or 
-bins, fail to release containers, pallets, or bins, or experience communication failures. System consoles can fail to provide real-time information, 
-fail to monitor or control operations, or fail to display information. The control panel can experience failures in the emergency stop pushbutton, 
-switches, starting or stopping the system, or interfacing with the computer. The keyboard can fail to interface with the computer, control operations, 
-or monitor operations. Failure effects include reduced efficiency, reduced productivity, increased downtime, increased labor costs, increased material 
-handling costs, increased risk of damage to containers, pallets, and bins, reduced safety, and increased risk of accidents."," The CNC Robotic 
-Containerization System is designed for precise placement of containers on pre-designated pallets or bins, with potential failure consequences 
-including misaligned containers and inefficient use of space. The system's software has potential failure modes such as bugs or glitches that 
-can impact customization and configuration, while the modular design allows for expansion and upgrades with potential failure modes including 
-compatibility issues and communication breakdowns. The system consoles have potential failure causes such as hardware issues that can affect 
-system monitoring and control, and the docking stations ensure stable platform use through mechanical components such as bearings and gears 
-that are prone to failure due to wear and tear or lack of maintenance. The keyboard plays a role in system control and monitoring, with potential failure 
-modes including malfunction or damage that can impact operation, and the emergency stop pushbutton and switches function to halt system operations in 
-case of emergency, with potential failure consequences including system damage or injury. The system handles container sorting through mechanical 
-and software components that are prone to failure due to wear and tear, lack of maintenance, or design issues, and safety and security measures are 
-in place for the emergency stop pushbutton and switches, including regular testing and maintenance. The system monitors and controls real-time information
- through software components that are prone to failure due to software bugs or design issues, and docking station failure modes include mechanical 
-failure or communication breakdown that can impact system performance. The gantry robots ensure safe handling and transportation through mechanical 
-components that are prone to failure due to wear and tear, lack of maintenance, or design issues, and coordination failure modes include communication 
-breakdown or mechanical failure that can impact system performance. The maintenance and inspection programs for the gantry robots and docking stations 
-include regular lubrication, inspection, and replacement of worn-out parts, and predictive maintenance programs use data analysis to predict and prevent 
-failures. The system consoles monitor and alert to failures through software components that are prone to failure due to software bugs or design issues, 
-and software updates and patches are managed through testing and validation procedures. The training and expertise required for maintaining and 
-troubleshooting the gantry robots and docking stations include knowledge of mechanical and software components, and procedures for responding to 
-failures include corrective actions and root cause analysis. The environmental conditions in which the system operates, such as temperature and humidity, 
-can impact system performance through potential failure modes such as.
+sample_assetdesc = """
+ Sure, here's a more comprehensive description of a Battery Charger asset and its components, including the component boundary of the battery charger input breakers:
+
+A battery charger is an industrial asset that is used to charge batteries for various applications such as backup power systems, electric vehicles, and renewable energy systems. The main components of a battery charger include the following:
+
+1. Input Breakers: These are electrical switches that control the flow of electrical current from the power source to the charger. They are designed to protect the charger and the battery from overcurrent and short-circuit conditions. The input breakers are an essential component of the battery charger asset, as they ensure the safe and reliable operation of the charger.
+2. DC-DC Converter: This component converts the input voltage and current from the power source to the required voltage and current for charging the battery. It is typically a high-efficiency converter that minimizes energy loss and heat generation. The DC-DC converter is a critical component of the battery charger, as it determines the charging voltage and current that are applied to the battery.
+3. Battery Interface: This component connects the charger to the battery and manages the flow of electrical current during charging and discharging. It also monitors the battery's state of charge, voltage, and temperature. The battery interface is a crucial component of the battery charger, as it ensures the safe and efficient transfer of electrical energy between the charger and the battery.
+4. Control and Monitoring System: This component manages the operation of the charger and monitors its performance. It receives input from sensors and sends output to actuators to control the charging process. It also provides alarm and warning signals in case of faults or abnormal conditions. The control and monitoring system is a vital component of the battery charger, as it ensures the safe and reliable operation of the charger and provides real-time monitoring of the charging process.
+5. Cooling System: This component is responsible for dissipating the heat generated by the charger during operation. It can be a fan, a heat sink, or a liquid cooling system, depending on the size and rating of the charger. The cooling system is an essential component of the battery charger, as it ensures the safe operation of the charger and prevents overheating, which can damage the charger's internal components.
+6. Housing and Enclosure: This component protects the charger's internal components from environmental factors such as dust, moisture, and mechanical stress. It also provides a safe and convenient way to install and maintain the charger. The housing and enclosure are important components of the battery charger, as they provide a protective barrier against environmental factors and ensure the safe operation of the charger.
+7. Electrical Interconnects: These components connect the charger to the power source, battery, and other peripheral devices. They are designed to handle the electrical current and voltage requirements of the charger and battery. The electrical interconnects are critical components of the battery charger, as they ensure the safe and efficient transfer of electrical energy between the charger and the power source and battery.
+8. Insulation and Grounding: These components ensure the safe operation of the charger by providing electrical insulation and grounding between the charger's internal components and the external environment. Proper insulation and grounding are essential for the safe operation of the charger and prevent electrical shock or damage to the charger's internal components. 
 """
 
 def get_components(assetclass, assetdesc, model_id=3):
@@ -245,9 +229,18 @@ def get_components(assetclass, assetdesc, model_id=3):
             experiment_id=experiment_id,
         )
 
-    answer = answer.split('\n\n')[0]
+    answer = answer.strip()
+    answer_split = answer.split('\n\n')
+    if len(answer_split) == 2:
+        if len(answer_split[0]) > len(answer_split[1]):
+            answer = answer_split[0]
+        else:
+            answer = answer_split[1]
+    else:
+        pass
+
     components = extract_components(answer)
     return (answer, components)
 
-#ans = get_components(sample_assetclass, sample_assetdesc, model_id=2)
+#ans = get_components(sample_assetclass, sample_assetdesc, model_id=1)
 #print (ans)

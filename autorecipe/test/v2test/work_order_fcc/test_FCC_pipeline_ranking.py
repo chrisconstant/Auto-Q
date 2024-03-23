@@ -84,7 +84,7 @@ ray.init()
 LLMsets = [
     "ibm/granite-13b-instruct-v2",
     "meta-llama/llama-2-70b-chat",
-    "ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+    "ibm-mistralai/mixtral-8x7b-instruct-v01-q",
     "ibm/granite-13b-chat-v2",
     "ibm/granite-13b-labrador-rc",
     "mistralai/mixtral-8x7b-instruct-v0-1",

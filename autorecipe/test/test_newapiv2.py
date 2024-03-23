@@ -43,7 +43,7 @@ api_key = "pak-KnqohFjgmJKou_eirLnIJMtbxdFzUYylnzScnLxVhY0"
 api_endpoint = "https://bam-api.res.ibm.com"
 
 llm = LangChainInterface(
-    model_id="ibm-mistralai/mixtral-8x7b-instruct-v0-1-q",
+    model_id="ibm-mistralai/mixtral-8x7b-instruct-v01-q",
     client=Client(credentials=Credentials(api_key, api_endpoint)),
     parameters=TextGenerationParameters(
         decoding_method=DecodingMethod.GREEDY,
