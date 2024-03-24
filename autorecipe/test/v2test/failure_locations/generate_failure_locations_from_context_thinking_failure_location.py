@@ -28,6 +28,9 @@ def extract_components(paragraph):
         elif current_component is not None and line.strip().startswith('+'):
             subcomponent_name = line.strip()[1:].strip()  # Remove the '+' sign
             current_component["subcomponents"].append(subcomponent_name)
+        elif current_component is not None and line.strip().startswith('*'):
+            subcomponent_name = line.strip()[1:].strip()  # Remove the '+' sign
+            current_component["subcomponents"].append(subcomponent_name)
 
     return components
 
@@ -53,28 +56,6 @@ LLMsets = [
     "mistralai/mixtral-8x7b-instruct-v0-1",
 ]
 
-model_id = 3
-DEFAULT_CONFIG = {
-    "model": LLMsets[model_id],
-    "params": {
-        "decoding_method": DecodingMethod.GREEDY,
-        "min_new_tokens": 200,
-        "max_new_tokens": 3000,  # 1500,
-        "stop_sequences": ["(TOKENSTOP)"],
-        "return_options": TextGenerationReturnOptions(
-            input_text=False, input_tokens=True
-        ),
-        "moderations": ModerationParameters(
-            hap=ModerationHAP(input=True, output=False, threshold=0.01)
-        ),
-    },
-    "creds": {
-        "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
-        "api_endpoint": "https://bam-api.res.ibm.com",
-    },
-    "stream": True,
-}
-
 load_dotenv()
 api_key = "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg"
 api_url = "https://bam-api.res.ibm.com"
@@ -90,6 +71,7 @@ failure locations. Include failure locations at component level, subcomponent le
 failure locations. Do not append component name to sub-component name.
 
 Failure Mode Description: In the following we provided a failure mode for each component and subcomponents.
+Note that components may have multiple possible failure modes and vary acorss components.
 
 1. Valve Chest:
         + BUR: Overheating of valve chest leading to burning and consumption of the material.
@@ -133,7 +115,7 @@ Failure Mode Description: In the following we provided a failure mode for each c
         + PTF: Power or signal failure due to electrical or mechanical issues with the positioner or actuator.
         + SAL: Spurious alarms due to electrical or mechanical issues with the positioner or actuator.
 
-Answer:
+Answer: Here are the failure locations from obtained using Failure Mode Description:
 
 1. Valve Chest
 	+ Valve Chest Body
@@ -195,7 +177,6 @@ params = {
 
 experiment_name = "MyExperiment_" + str(uuid.uuid4())
 experiment_id = mlflow.create_experiment(experiment_name)
-model_id = 3
 
 qpromt = """
 Question: Identify all components/subcomponents that are mentioned in Failure Mode Description and can be used 
@@ -204,10 +185,11 @@ failure locations. Include failure locations at component level, subcomponent le
 failure locations. Do not append component name to sub-component name.
 
 Failure Mode Description: In the following we provided a failure mode for each component and subcomponents.
+Note that components may have multiple possible failure modes and vary acorss components.
 
 {assetdesc}
 
-Answer:
+Answer: Here are the failure locations from obtained using Failure Mode Description:
 
 """
 
@@ -274,7 +256,8 @@ def get_failure_locations(assetdesc, model_id):
                                     params=params,
                                     credentials=creds,
                                     system_message=SystemPrompt,
-                                    stateful=False)
+                                    stateful=False,
+                                    stream=True)
 
     answer = tmpClient.create(
             context=None,
@@ -282,6 +265,16 @@ def get_failure_locations(assetdesc, model_id):
             experiment_id=experiment_id,
         )
 
-    answer = answer.split('\n\n')[0]
+    answer = answer.strip()
+    print (answer)
+    answer_split = answer.split('\n\n')
+    if len(answer_split) == 2:
+        if len(answer_split[0]) > len(answer_split[1]):
+            answer = answer_split[0]
+        else:
+            answer = answer_split[1]
+    else:
+        pass
+
     components = extract_components(answer)
     return components

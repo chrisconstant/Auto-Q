@@ -11,6 +11,7 @@ import socket
 import time
 from genai.exceptions import ApiNetworkException, ApiResponseException, ValidationError
 from genai import Client, Credentials
+from genai.extensions.langchain.utils import CustomAIMessageChunk
 
 UNKNOWN = "unknown"
 
@@ -86,6 +87,7 @@ class GenAIChatClient():
         system_message,
         stateful=True,
         post_process_text=False,
+        stream=False,
     ):
         self.name = name
         self.description = description
@@ -103,6 +105,7 @@ class GenAIChatClient():
         self.system_message = system_message
         self.stateful = stateful
         self.post_process_text = post_process_text
+        self.stream = stream
 
         # track the request in and request out
         self._prompt_tokens = 0
@@ -173,33 +176,51 @@ class GenAIChatClient():
                 else:
                     return ''
             else:
-                result = None
                 for _ in range(1, self._max_retries + 1):
+                    result = None
                     try:
-                        result = self.llm.generate(messages=messages)
-                        break
+                        if not self.stream:
+                            result = self.llm.generate(messages=messages)
+                            break
+                        else:
+                            #print (messages[0])
+                            for chunk in self.llm.stream(
+                                input=messages[0]
+                            ):
+                                #print (chunk)
+                                if result:
+                                    result = result + chunk
+                                else:
+                                    result = chunk
+                            break
                     except (OSError, socket.error, ConnectionResetError, Exception) as e:
                         print ('Error ....' + str(e))
                         time.sleep(self._retry_delay)
-                        
-                if result:
-                    if self.stateful:
-                        self._conversation_id = result.generations[0][0].generation_info[
-                            "meta"
-                        ]["conversation_id"]
-                    a_dict = {"Answer": result.generations[0][0].text}
-                    t_dict = result.generations[0][0].generation_info["token_usage"]
-                    self._update_tokens_usage(
-                        t_dict["prompt_tokens"],
-                        t_dict["completion_tokens"],
-                        t_dict["total_tokens"],
-                    )
-                    mlflow.log_dict(a_dict, "Answer.json")
-                    if self.post_process_text:
-                        return self.clean_user_assistant(result.generations[0][0].text)
-                    return result.generations[0][0].text
+
+                if self.stream:
+                    if isinstance(result, CustomAIMessageChunk):
+                        return result.content
+                    else:
+                        return ''
                 else:
-                    return ''
+                    if result:
+                        if self.stateful:
+                            self._conversation_id = result.generations[0][0].generation_info[
+                                "meta"
+                            ]["conversation_id"]
+                        a_dict = {"Answer": result.generations[0][0].text}
+                        t_dict = result.generations[0][0].generation_info["token_usage"]
+                        self._update_tokens_usage(
+                            t_dict["prompt_tokens"],
+                            t_dict["completion_tokens"],
+                            t_dict["total_tokens"],
+                        )
+                        mlflow.log_dict(a_dict, "Answer.json")
+                        if self.post_process_text:
+                            return self.clean_user_assistant(result.generations[0][0].text)
+                        return result.generations[0][0].text
+                    else:
+                        return ''
 
     def clean_user_assistant(self, text):
         lines = text.split("\n")

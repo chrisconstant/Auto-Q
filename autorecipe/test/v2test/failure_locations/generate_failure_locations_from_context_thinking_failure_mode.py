@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import uuid
 import mlflow
 import os
-import pandas as pd
 from genai.schema import (
     DecodingMethod,
     ModerationHAP,
@@ -100,7 +99,7 @@ Asset Description including components and its subcomponent:
 	+ Positioner Sensor: A sensor that detects the position of the valve and provides feedback to the positioner.
 	+ Positioner Controller: A controller that adjusts the actuator output to achieve the desired valve position.
 
-Answer: 
+Answer: Here are the failure modes for each component and subcomponents:
 
 1. Valve Chest:
 	+ BUR: Overheating of valve chest leading to burning and consumption of the material.
@@ -173,7 +172,8 @@ Asset Description including components and its subcomponent:
 
 {assetdesc}
 
-Answer:
+Answer: Here are the failure modes for each component and subcomponents:
+
 """
 
 sample_assetdesc = """
@@ -215,7 +215,8 @@ def get_failure_modes(assetdesc, model_id=3):
                                     params=params,
                                     credentials=creds,
                                     system_message=SystemPrompt,
-                                    stateful=False)
+                                    stateful=False,
+                                    stream=True)
 
     answer = tmpClient.create(
             context=None,

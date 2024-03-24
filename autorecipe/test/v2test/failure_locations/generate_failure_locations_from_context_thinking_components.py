@@ -19,7 +19,8 @@ def extract_components(text):
 
     # Regular expression to match component names and subcomponents
     component_pattern = re.compile(r'^\d+\.\s*(.*):$')
-    subcomponent_pattern = re.compile(r'^\s*\+\s*(.*):')
+    #subcomponent_pattern = re.compile(r'^\s*\+\s*(.*):')
+    subcomponent_pattern = re.compile(r'^\s*[\+\*]\s*(.*):')
 
     lines = text.split('\n')
     for line in lines:
@@ -59,28 +60,6 @@ LLMsets = [
     "ibm/granite-13b-labrador-rc",
     "mistralai/mixtral-8x7b-instruct-v0-1",
 ]
-
-model_id = 3
-DEFAULT_CONFIG = {
-    "model": LLMsets[model_id],
-    "params": {
-        "decoding_method": DecodingMethod.GREEDY,
-        "min_new_tokens": 200,
-        "max_new_tokens": 3000,  # 1500,
-        "stop_sequences": ["(TOKENSTOP)"],
-        "return_options": TextGenerationReturnOptions(
-            input_text=False, input_tokens=True
-        ),
-        "moderations": ModerationParameters(
-            hap=ModerationHAP(input=True, output=False, threshold=0.01)
-        ),
-    },
-    "creds": {
-        "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
-        "api_endpoint": "https://bam-api.res.ibm.com",
-    },
-    "stream": True,
-}
 
 load_dotenv()
 api_key = "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg"
@@ -221,7 +200,8 @@ def get_components(assetclass, assetdesc, model_id=3):
                                     params=params,
                                     credentials=creds,
                                     system_message=SystemPrompt,
-                                    stateful=False)
+                                    stateful=False,
+                                    stream=True)
 
     answer = tmpClient.create(
             context=None,
@@ -237,10 +217,8 @@ def get_components(assetclass, assetdesc, model_id=3):
         else:
             answer = answer_split[1]
     else:
+        # TBA
         pass
 
     components = extract_components(answer)
     return (answer, components)
-
-#ans = get_components(sample_assetclass, sample_assetdesc, model_id=1)
-#print (ans)

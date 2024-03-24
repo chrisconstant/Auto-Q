@@ -58,6 +58,8 @@ Miscellaneous Components
 Other Components
 National and International Standards
 FMEA
+Efficiency
+Installation
 
 """
 
@@ -81,8 +83,6 @@ def get_all_names(data):
     unique_names = list(set(all_names))
     return unique_names
 
-
-model_id = 1
 ray.init(num_cpus=8)
 
 @ray.remote
@@ -139,41 +139,10 @@ def get_csv_files(directory):
             csv_files.append(os.path.join(directory, filename))
     return csv_files
 
-
-directory_path = "./experiment1_contextonly_withboundry/lamma/"
-csv_files_list = get_csv_files(directory_path)
-
-gold_df = pd.read_csv("./autoQ_val_data_input_for_experiments.csv")
-asset_classes = list(gold_df["component_short_description"])
-goldenset = gold_df["failure_locations"]
-
-refs = []
-for item_index, item in enumerate(asset_classes):
-    item = item.replace("<", "-")
-    item = item.replace("/", " ").replace(",", " ")
-    item = item.replace(" ", "")
-    notfound = True
-    filename = ""
-    for name in csv_files_list:
-        if item in name:
-            notfound = False
-            filename = name
-            break
-
-    if notfound:
-        pass
-    else:
-        print(item, filename)
-        gtruth = extract_things_from_string(goldenset[item_index])
-        print(gtruth)
-        try:
-            refs.append(get_evaluation.remote(model_id, item, filename, gtruth))
-        except:
-            pass
-        # refs.append(get_evaluation.remote(model_id, item, filename))
-
-parallel_returns = ray.get(refs)
-# print (parallel_returns)
+directory_paths = [
+                   #("./experiment1_contextonly_withboundry/mixtral/",5),
+                   ("./experiment1_contextonly_withboundry/granite/",3),
+                   ("./experiment1_contextonly_withboundry/lamma/",1)]
 
 LLMsets = [
     "ibm/granite-13b-instruct-v2",
@@ -184,10 +153,47 @@ LLMsets = [
     "mistralai/mixtral-8x7b-instruct-v0-1",
 ]
 
-res = pd.DataFrame(parallel_returns)
-model_initial = LLMsets[model_id].split("/")[1].split("-")[0]
-directory_path = directory_path.replace("/", "").replace(".", "")
-res.to_csv(
-    f"autoQ_context_guided_pipeline_generated_result_{model_initial}_{directory_path}.csv",
-    index=False,
-)
+for directory_path, model_id in directory_paths:
+    # will repeat the 
+
+    csv_files_list = get_csv_files(directory_path)
+
+    gold_df = pd.read_csv("./autoQ_val_data_input_for_experiments.csv")
+    asset_classes = list(gold_df["component_short_description"])
+    goldenset = gold_df["failure_locations"]
+
+    refs = []
+    for item_index, item in enumerate(asset_classes):
+        item = item.replace("<", "-")
+        item = item.replace("/", " ").replace(",", " ")
+        item = item.replace(" ", "")
+        notfound = True
+        filename = ""
+        for name in csv_files_list:
+            if item in name:
+                notfound = False
+                filename = name
+                break
+
+        if notfound:
+            pass
+        else:
+            print(item, filename)
+            gtruth = extract_things_from_string(goldenset[item_index])
+            print(gtruth)
+            try:
+                refs.append(get_evaluation.remote(model_id, item, filename, gtruth))
+            except:
+                pass
+            # refs.append(get_evaluation.remote(model_id, item, filename))
+
+    parallel_returns = ray.get(refs)
+    # print (parallel_returns)
+
+    res = pd.DataFrame(parallel_returns)
+    model_initial = LLMsets[model_id].split("/")[1].split("-")[0]
+    directory_path = directory_path.replace("/", "").replace(".", "")
+    res.to_csv(
+        f"autoQ_context_guided_pipeline_generated_result_{model_initial}_{directory_path}.csv",
+        index=False,
+    )
