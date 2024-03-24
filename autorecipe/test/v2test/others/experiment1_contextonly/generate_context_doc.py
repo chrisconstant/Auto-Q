@@ -4,6 +4,9 @@ import pandas as pd
 gold_df = pd.read_csv("../autoQ_val_data_input_for_experiments.csv")
 trial = list(gold_df["component_short_description"])
 
+# for selection, models name : lamma, mystral, Granite
+model_ids = [1, 2, 3]
+
 for item in trial:
     print ('processing ----' + item)
     item = item.replace('<','-')
