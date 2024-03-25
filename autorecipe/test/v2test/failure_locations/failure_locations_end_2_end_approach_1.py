@@ -36,6 +36,12 @@ def get_lemmatized_components(components):
 """
 Hydraulic Cylinder - Seals  --->  Space - Space ---> component followed by sub-component
 Dust Cover, if present      ---> we should remove "if present"
+Note: Some devices will     ---> we should remove this part
+Rotor Cage - lamination support, i.e. spider  ---> this one also need
+Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges ---> includes (break)
+Enclosure (Cubicle & Breaker)  ---> ??
+Bearing Seals (all types)' ---> ??
+
 """
 
 """
@@ -140,7 +146,7 @@ def get_csv_files(directory):
     return csv_files
 
 directory_paths = [
-                   #("./experiment1_contextonly_withboundry/mixtral/",5),
+                   ("./experiment1_contextonly_withboundry/mixtral/",5),
                    ("./experiment1_contextonly_withboundry/granite/",3),
                    ("./experiment1_contextonly_withboundry/lamma/",1)]
 
