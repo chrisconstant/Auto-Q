@@ -242,6 +242,10 @@ class GenAIChatClient():
         if '1. ' not in chat_agent_response:
             if '* ' in chat_agent_response:
                 questions_start_index = chat_agent_response.find("* ")
+            elif '- ' in chat_agent_response:
+                questions_start_index = chat_agent_response.find("- ")
+            elif '+ ' in chat_agent_response:
+                questions_start_index = chat_agent_response.find("+ ")
 
         if "\n\n" in chat_agent_response:
             questions_end_index = chat_agent_response.rfind("\n\n") + 2

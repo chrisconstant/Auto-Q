@@ -103,7 +103,8 @@ Provide more comprehensive and accurate list of the specific components that can
     """Generate all the failure locations including specific components failure reported in previous two response as a list. Do not generate explanation 
     or additional information. """,
     """extract all named entity representing a component or a subcomponent or a part in the previous response. 
-    Only return the named entiry. Do not generate explanation or additional information or Note.""",
+    Generate answer in list and only return the named entiry without any additional description. 
+    Do not generate explanation or additional information or Note.""",
 ]
 
 ray.init(num_cpus=8)
@@ -176,6 +177,8 @@ def get_evaluation(model_id, asset_class, asset_class_result_file, gtruth):
                 ans = ans.split('I hope')[0]
             if 'INST:' in ans:
                 ans = ans.split('INST:')[0]
+            if 'The above list' in ans:
+                ans = ans.split('The above list')[0]
             ans = ans.strip()
 
             pans = ans.split('\n\n')
@@ -190,8 +193,18 @@ def get_evaluation(model_id, asset_class, asset_class_result_file, gtruth):
                 ans = ans # TBA
             
             ans = ans.strip()
+            ans = ans.replace('**','')
             print (ans)
             ans1 = mdl.extract_questions(ans)
+            if len(ans1) == 0:
+                print ('------------<<--->>-----------')
+                print (ans)
+                if 'The named entities are: ' in ans:
+                    ans1 = ans.split('The named entities are: ')[1].strip().split(',')
+                elif len(pans) > 1:
+                    ans1 = mdl.extract_questions(pans[1])
+                else:
+                    ans1 = mdl.extract_questions('\n\n'.join(pans))
             print ('--------------->>>>')
             print (ans1)
             unique_list = list(set(ans1))
@@ -203,6 +216,7 @@ def get_evaluation(model_id, asset_class, asset_class_result_file, gtruth):
                 "hope this helps",
                 "hope this information",
                 "hope that",
+                "they are",
                 "the following",
             ]
             for item in unique_list:
@@ -253,9 +267,10 @@ def get_evaluation(model_id, asset_class, asset_class_result_file, gtruth):
 
 
 directory_paths = [
-                   #("./experiment1_contextonly_withboundry/mixtral/",5),
-                   #("./experiment1_contextonly_withboundry/granite/",3),
-                   ("./experiment1_contextonly_withboundry/lamma/",1)]
+                   ("./experiment1_contextonly_withboundry/mixtral/",5),
+                   ("./experiment1_contextonly_withboundry/granite/",3),
+                   ("./experiment1_contextonly_withboundry/lamma/",1)
+                   ]
 
 
 for directory_path, model_id in directory_paths:
