@@ -104,27 +104,12 @@ def get_summaries(prompt):
             messages=[{"content": "Here is a readable Summary of Failure Locations:\n", "role": "user"}],
             experiment_id=experiment_id,
         )
-    print (answer.strip())
-
-    answer = tmpClient.create(
-            context=None,
-            messages=[{"content": "can you improve your answer by grouping the failure locations into some category?\n", "role": "user"}],
-            experiment_id=experiment_id,
-        )
-    print (answer.strip())
-
-    answer = tmpClient.create(
-            context=None,
-            messages=[{"content": "can you provide any thinking why these are the failure locations?\n", "role": "user"}],
-            experiment_id=experiment_id,
-        )
-    print (answer.strip())
 
     #"Did i miss any failure locations which is not captured in the Failure Locations?"
     #"can you improve your answer by grouping the failure locations into some category?"
     #"can you generate a redable summary of the above answer?"
-    "can you provide any thinking why these are the failure location?"
-    "generate list of failure locations"
+    #"can you provide any thinking why these are the failure location?"
+    #"generate list of failure locations"
 
     return answer.strip()
 
