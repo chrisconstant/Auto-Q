@@ -5,6 +5,7 @@
 
 
 import pandas as pd
+import ray
 
 from genai.client import Client
 from genai.credentials import Credentials
@@ -82,33 +83,40 @@ test_prompts = get_prompts(df_test)
 
 # In[68]:
 
+ray.init(num_cpus=8)
 
-def get_summaries(prompts):
-    all_results = []
-    for prompt in prompts:
-        results = client.text.generation.create(
-            model_id="mistralai/mixtral-8x7b-instruct-v0-1",
-            inputs=[prompt],
-            parameters=TextGenerationParameters(
-                return_options=TextGenerationReturnOptions(
-                    input_text=True,
-                ),
+@ray.remote
+def get_summaries(prompt):
+    results = client.text.generation.create(
+        model_id="mistralai/mixtral-8x7b-instruct-v0-1",
+        inputs=[prompt],
+        parameters=TextGenerationParameters(
+            return_options=TextGenerationReturnOptions(
+                input_text=True,
             ),
-        )
-        for response in results:
-            result = response.results[0]
-        all_results.append(result)
-    return all_results
+        ),
+    )
+    return results[0].results[0]
 
 
 # In[ ]:
 
-
-train_summaries = get_summaries(train_prompts)
+remote_call = []
+for pt in train_prompts:
+    remote_call.append(get_summaries.remote(pt))
+train_summaries = ray.get(remote_call)
 print('train generated')
-val_summaries = get_summaries(val_prompts)
+
+remote_call = []
+for pt in val_prompts:
+    remote_call.append(get_summaries.remote(pt))
+val_summaries = ray.get(remote_call)
 print('val generated')
-test_summaries = get_summaries(test_prompts)
+
+remote_call = []
+for pt in test_prompts:
+    remote_call.append(get_summaries.remote(pt))
+test_summaries = ray.get(remote_call)
 print('test generated')
 
 
