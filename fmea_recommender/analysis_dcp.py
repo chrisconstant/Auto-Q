@@ -125,23 +125,24 @@ def get_summaries(prompt):
 for model_id in [1, 2, 3]:
     model_initial = LLMsets[model_id].split("/")[1].split("-")[0]
 
-    remote_call = []
-    for pt in train_prompts:
-        remote_call.append(get_summaries.remote(pt))
-    train_summaries = ray.get(remote_call)
-    df_train["answer"] = train_summaries
-    df_train.to_csv("train_" + model_initial + ".csv")
+    if model_id != 1:
+        remote_call = []
+        for pt in train_prompts:
+            remote_call.append(get_summaries.remote(pt))
+        train_summaries = ray.get(remote_call)
+        df_train["answer"] = train_summaries
+        df_train.to_csv("train_" + model_initial + ".csv")
 
     remote_call = []
     for pt in val_prompts:
         remote_call.append(get_summaries.remote(pt))
     val_summaries = ray.get(remote_call)
-    df_val["answer"] = train_summaries
+    df_val["answer"] = val_summaries
     df_val.to_csv("val_" + model_initial + ".csv")
 
     remote_call = []
     for pt in test_prompts:
         remote_call.append(get_summaries.remote(pt))
     test_summaries = ray.get(remote_call)
-    df_test["answer"] = train_summaries
+    df_test["answer"] = test_summaries
     df_test.to_csv("test_" + model_initial + ".csv")
