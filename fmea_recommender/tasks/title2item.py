@@ -1,0 +1,17 @@
+title2item_template = [
+    "{}",
+    "I'm looking for this game: {}.",
+    "I want to find this game: {}.",
+    "I'm looking for a game called {}.",
+    "Search for this game: {}.",
+    "I'm trying to find this game: {}.",
+    "Please help me locate this game: {}.",
+    "Can you find this game for me: {}?",
+    "I'm in search of a game named {}.",
+    "Could you search for a game titled {}?",
+    "I need assistance finding this game: {}.",
+    "I'm interested in locating a game called {}.",
+    "Please look up this game for me: {}.",
+    "I'd like to locate the game {}.",
+    "Help me find this game, please: {}.",
+]
