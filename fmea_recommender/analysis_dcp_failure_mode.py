@@ -45,10 +45,40 @@ long_desc_col = "long_description"
 failure_loc_col = "failure_locations"
 
 template = """
-I have an industrial asset/equipments. Your task is to generate a redable one-line short 
-description for the industrial equipment including the equipment/component type.
+We give you the asset and the locations where the asset failed. You need to select failure codes from the 
+following lists that can cause the asset to fail at that location. Please also consider the 
+component/sub-component of asset.
+
+Here is a failure mode and its description:
+1. Burned, Consumed/damaged/deformed because of overheating.
+2. Cracked, Damaged and showing lines on the surface from having split without coming apart.
+3. Deformed, Not having the normal or natural shape or form.
+4. External leak, Accidentally lose or admit contents. Source of leak is visible.
+5. Fractured, Fractured or damaged and no longer in one piece.
+6. Failure to close, equipment does not close on demand.
+7. Failure to open, equipment does not open on demand.
+8. Failure to start/function on demand, the equipment does not start/function on demand.
+9. Internal leak, Accidentally lose or admit contents. Source of leak is not visible.,
+10. Lubrication/Fluid Sampling, Unsatisfactory fluid/lubrication sample.
+11. Material build-up, Accumulation of  foreign/external material.
+12. Noise, A sound that is loud and causes disturbance.
+13. Parameter deviation, A parameter is not controlled as set.
+14. Plugged, A constraint in flow conductor.
+15. Power/signal failure, Power or signal loss in electrical system.
+16. Rust, Build up of corrosion products.
+17. Spurious Alarm, which is described as Unexpected/false alarm.
+18. Slippage, Decrease of transmitted power in a mechanical system caused by slipping.
+19. Does not stop on demand, equipment does not stop on demand.
+20. Stuck, equipment does not move on demand.
+21. Loss of Explosion Protection (EX) Integrity, Loss of Explosion Protection (EX) Integrity.
+22. Thickness reduction, Reduction in thickness measurement / loss of material.
+23. Fix Vibration, Vibration is higher that the established limit.
+
+User has provided the following information: 
 
 Asset: {asset}
+
+Failure Locations: {failurelocation}
 
 """
 
@@ -58,8 +88,10 @@ def get_prompts(df):
     prompts = []
     for _, row in df.iterrows():
         asset = row[type_col]
+        failurelocation = row[failure_loc_col]
         prompt = template.format(
-            asset=asset
+            asset=asset,
+            failurelocation=failurelocation,
         )
         prompts.append(prompt)
     return prompts
@@ -86,7 +118,7 @@ def get_summaries(prompt):
         params=params,
         credentials=creds,
         system_message=prompt,
-        stateful=True,
+        stateful=False,
         stream=True,
     )
 
@@ -94,7 +126,7 @@ def get_summaries(prompt):
         context=None,
         messages=[
             {
-                "content": "Here is the description:\n",
+                "content": "Do not generate the additional information. Here is a failure mode for each location:\n",
                 "role": "user",
             }
         ],
@@ -107,30 +139,43 @@ def get_summaries(prompt):
     # "can you provide any thinking why these are the failure location?"
     # "generate list of failure locations"
 
-    print (answer.strip())
-    return answer.strip()
+    ans = answer.strip().lower()
 
+    final_ans = ''
+    string_to_check = ["Burned", "Cracked", "Deformed", "leak", "Fractured", 
+                       "Failure to close", "Failure to open", "Failure to start", 
+                       "function on demand", "Lubrication", "build-up", "Noise", 
+                       "deviation", "Plugged", "Power/signal failure", "Rust", 
+                       "Spurious Alarm", "Slippage", "Does not stop on demand", 
+                       "Stuck", "Loss of Explosion", "Thickness reduction", "Vibration"]
 
-for model_id in [2, 1, 3]:
+    for item in string_to_check:
+        if item.lower() in ans:
+            final_ans = final_ans + ', ' + item
+
+    print (final_ans)
+    return final_ans
+
+for model_id in [3]:
     model_initial = LLMsets[model_id].split("/")[1].split("-")[0]
 
     remote_call = []
     for pt in train_prompts:
         remote_call.append(get_summaries.remote(pt))
     train_summaries = ray.get(remote_call)
-    df_train["shortsummary"] = train_summaries
-    df_train.to_csv("short_summary_train_" + model_initial + ".csv")
+    df_train["failuremode"] = train_summaries
+    df_train.to_csv("failuremode_train_" + model_initial + ".csv")
 
     remote_call = []
     for pt in val_prompts:
         remote_call.append(get_summaries.remote(pt))
     val_summaries = ray.get(remote_call)
-    df_val["shortsummary"] = val_summaries
-    df_val.to_csv("short_summary_val_" + model_initial + ".csv")
-
+    df_val["failuremode"] = val_summaries
+    df_val.to_csv("failuremode_val_" + model_initial + ".csv")
+    
     remote_call = []
     for pt in test_prompts:
         remote_call.append(get_summaries.remote(pt))
     test_summaries = ray.get(remote_call)
-    df_test["shortsummary"] = test_summaries
-    df_test.to_csv("short_summary_test_" + model_initial + ".csv")
+    df_test["failuremode"] = test_summaries
+    df_test.to_csv("failuremode_test_" + model_initial + ".csv")
