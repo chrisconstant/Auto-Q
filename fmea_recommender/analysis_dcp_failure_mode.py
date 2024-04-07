@@ -159,7 +159,6 @@ def get_summaries(prompt):
 for model_id in [3]:
     model_initial = LLMsets[model_id].split("/")[1].split("-")[0]
 
-    '''
     remote_call = []
     for pt in train_prompts:
         remote_call.append(get_summaries.remote(pt))
@@ -173,7 +172,6 @@ for model_id in [3]:
     val_summaries = ray.get(remote_call)
     df_val["failuremode"] = val_summaries
     df_val.to_csv("failuremode_val_" + model_initial + ".csv")
-    '''
     
     remote_call = []
     for pt in test_prompts:
