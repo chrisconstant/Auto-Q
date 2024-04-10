@@ -1,0 +1,7 @@
+{
+{'label': , 'description', 'examples': [
+    {'equipment-category':'Rotating', 
+    'text':'False alarm faulty instrument indication',
+    'equipments': [CE, CO]}, 
+    {}]}
+}
