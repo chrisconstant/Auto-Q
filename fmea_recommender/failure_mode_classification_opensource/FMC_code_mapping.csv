@@ -1,0 +1,23 @@
+﻿description,code
+Leaking,ELK
+Structural deficiency,STD
+Other,OTH
+Low output,LOO
+Spurious stop,UST
+Contamination,CON
+Erratic output,ERO
+Electrical,ELE
+Failure to start on demand,FTS
+Vibration,VIB
+Fail to open,FTO
+Fail to close,FTC
+Noise,NOI
+Plugged / choked,PLU
+Overheating,OHE
+Breakdown,BRD
+Failure to stop on demand,STP
+Failure to rotate,FRO
+High output,HIO
+Abnormal instrument reading,AIR
+Fail to function,FTI
+Minor in-service problems,SER
