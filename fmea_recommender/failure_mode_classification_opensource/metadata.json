@@ -1,0 +1,90 @@
+[
+    {
+        "description": "Leaking",
+        "label": "ELK"
+    },
+    {
+        "description": "Structural deficiency",
+        "label": "STD"
+    },
+    {
+        "description": "Other",
+        "label": "OTH"
+    },
+    {
+        "description": "Low output",
+        "label": "LOO"
+    },
+    {
+        "description": "Spurious stop",
+        "label": "UST"
+    },
+    {
+        "description": "Contamination",
+        "label": "CON"
+    },
+    {
+        "description": "Erratic output",
+        "label": "ERO"
+    },
+    {
+        "description": "Electrical",
+        "label": "ELE"
+    },
+    {
+        "description": "Failure to start on demand",
+        "label": "FTS"
+    },
+    {
+        "description": "Vibration",
+        "label": "VIB"
+    },
+    {
+        "description": "Fail to open",
+        "label": "FTO"
+    },
+    {
+        "description": "Fail to close",
+        "label": "FTC"
+    },
+    {
+        "description": "Noise",
+        "label": "NOI"
+    },
+    {
+        "description": "Plugged / choked",
+        "label": "PLU"
+    },
+    {
+        "description": "Overheating",
+        "label": "OHE"
+    },
+    {
+        "description": "Breakdown",
+        "label": "BRD"
+    },
+    {
+        "description": "Failure to stop on demand",
+        "label": "STP"
+    },
+    {
+        "description": "Failure to rotate",
+        "label": "FRO"
+    },
+    {
+        "description": "High output",
+        "label": "HIO"
+    },
+    {
+        "description": "Abnormal instrument reading",
+        "label": "AIR"
+    },
+    {
+        "description": "Fail to function",
+        "label": "FTI"
+    },
+    {
+        "description": "Minor in-service problems",
+        "label": "SER"
+    }
+]
