@@ -1,0 +1,250 @@
+[
+    {
+        "input": "ejected",
+        "output": "SER"
+    },
+    {
+        "input": "sticking shu",
+        "output": "FTI"
+    },
+    {
+        "input": "not turning",
+        "output": "PLU"
+    },
+    {
+        "input": "has failed",
+        "output": "BRD"
+    },
+    {
+        "input": "needs fitting",
+        "output": "SER"
+    },
+    {
+        "input": "runs for a while and trip",
+        "output": "ELE"
+    },
+    {
+        "input": "very stiff to operate",
+        "output": "FTI"
+    },
+    {
+        "input": "requires rebuild",
+        "output": "SER"
+    },
+    {
+        "input": "has no equipment earth",
+        "output": "ELE"
+    },
+    {
+        "input": "require tighteninginspecti",
+        "output": "SER"
+    },
+    {
+        "input": "does not work",
+        "output": "BRD"
+    },
+    {
+        "input": "runs continuously",
+        "output": "STP"
+    },
+    {
+        "input": "severe corrosion",
+        "output": "STD"
+    },
+    {
+        "input": "contamination",
+        "output": "CON"
+    },
+    {
+        "input": "doesnt trip",
+        "output": "ELE"
+    },
+    {
+        "input": "ripped",
+        "output": "STD"
+    },
+    {
+        "input": "unserviceable not in",
+        "output": "BRD"
+    },
+    {
+        "input": "cant be adjusted",
+        "output": "FTI"
+    },
+    {
+        "input": "worn",
+        "output": "STD"
+    },
+    {
+        "input": "misalignment",
+        "output": "SER"
+    },
+    {
+        "input": "switched o",
+        "output": "UST"
+    },
+    {
+        "input": "to be torqued",
+        "output": "SER"
+    },
+    {
+        "input": "sped up",
+        "output": "HIO"
+    },
+    {
+        "input": "unable to pump",
+        "output": "LOO"
+    },
+    {
+        "input": "spillage",
+        "output": "ELK"
+    },
+    {
+        "input": "spraying out slurry",
+        "output": "ELK"
+    },
+    {
+        "input": "jammed open",
+        "output": "PLU"
+    },
+    {
+        "input": "no pump",
+        "output": "PLU"
+    },
+    {
+        "input": "not truning",
+        "output": "PLU"
+    },
+    {
+        "input": "unable to tighten",
+        "output": "SER"
+    },
+    {
+        "input": "burnt",
+        "output": "OHE"
+    },
+    {
+        "input": "hot joint",
+        "output": "OHE"
+    },
+    {
+        "input": "burst",
+        "output": "BRD"
+    },
+    {
+        "input": "pumping fault",
+        "output": "LOO"
+    },
+    {
+        "input": "not controlling",
+        "output": "SER"
+    },
+    {
+        "input": "surging cutting in and out",
+        "output": "ELE"
+    },
+    {
+        "input": "failed electrical",
+        "output": "ELE"
+    },
+    {
+        "input": "loose tighten",
+        "output": "SER"
+    },
+    {
+        "input": "high earth reading",
+        "output": "AIR"
+    },
+    {
+        "input": "cavitating",
+        "output": "ERO"
+    },
+    {
+        "input": "requires repack",
+        "output": "SER"
+    },
+    {
+        "input": "needs support",
+        "output": "SER"
+    },
+    {
+        "input": "needs maintenance",
+        "output": "SER"
+    },
+    {
+        "input": "not spinning",
+        "output": "SER"
+    },
+    {
+        "input": "dont activate",
+        "output": "FTS"
+    },
+    {
+        "input": "unserviceable b feluwa",
+        "output": "BRD"
+    },
+    {
+        "input": "no power",
+        "output": "ELE"
+    },
+    {
+        "input": "requires cleaning",
+        "output": "SER"
+    },
+    {
+        "input": "doesnt work",
+        "output": "BRD"
+    },
+    {
+        "input": "vibrationlubealignment",
+        "output": "VIB"
+    },
+    {
+        "input": "blockage",
+        "output": "PLU"
+    },
+    {
+        "input": "ongoing issue",
+        "output": "OTH"
+    },
+    {
+        "input": "poorly supported",
+        "output": "SER"
+    },
+    {
+        "input": "rocking around",
+        "output": "VIB"
+    },
+    {
+        "input": "siezeddescale",
+        "output": "BRD"
+    },
+    {
+        "input": "dropped",
+        "output": "SER"
+    },
+    {
+        "input": "spraying",
+        "output": "ELK"
+    },
+    {
+        "input": "not covered",
+        "output": "SER"
+    },
+    {
+        "input": "hot jointfurn",
+        "output": "OHE"
+    },
+    {
+        "input": "running dry",
+        "output": "OTH"
+    },
+    {
+        "input": "smoking up",
+        "output": "OHE"
+    },
+    {
+        "input": "jammed",
+        "output": "PLU"
+    }
+]
