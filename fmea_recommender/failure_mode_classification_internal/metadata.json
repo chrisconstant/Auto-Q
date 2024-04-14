@@ -4,19 +4,6 @@
         "description": "Burned",
         "longdescription": "Consumed/damaged/deformed because of overheating",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     },
     {
@@ -932,19 +919,6 @@
         "description": "Material build-up",
         "longdescription": "Accumulation of  foreign/external material ",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     },
     {
@@ -952,19 +926,6 @@
         "description": "Noise",
         "longdescription": "A sound that is loud and causes disturbance",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     },
     {
@@ -1318,19 +1279,6 @@
         "description": "Rust",
         "longdescription": "Build up of corrosion products",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     },
     {
@@ -1338,19 +1286,6 @@
         "description": "Spurious Alarm",
         "longdescription": "Unexpected/false alarm",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     },
     {
@@ -1358,19 +1293,6 @@
         "description": "Slippage",
         "longdescription": "Decrease of transmitted power in a mechanical system caused by slipping",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     },
     {
@@ -1378,19 +1300,6 @@
         "description": "Does not stop on demand",
         "longdescription": "The equipment does not stop on demand",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     },
     {
@@ -1444,19 +1353,6 @@
         "description": "Loss of Explosion Protection (EX) Integrity",
         "longdescription": "Loss of Explosion Protection (EX) Integrity",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     },
     {
@@ -1575,19 +1471,6 @@
         "description": "Vibration",
         "longdescription": "Vibration is higher that the established limit",
         "examples": [
-            {
-                "workorderdescription": NaN,
-                "persongroup": NaN,
-                "crewworkgroup": NaN,
-                "assetnumer": NaN,
-                "assetdescription": NaN,
-                "location": NaN,
-                "locationdescription": NaN,
-                "workordertype": NaN,
-                "siteid": NaN,
-                "taskid": NaN,
-                "workordertaskdescription": NaN
-            }
         ]
     }
 ]
