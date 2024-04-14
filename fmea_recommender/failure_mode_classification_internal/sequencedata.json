@@ -1,0 +1,1602 @@
+[
+    {
+        "input": {
+            "workorderdescription": "BOP#1  Blue pod Can # 2 Power supply fault",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10911706",
+            "assetdescription": "NOV SHAFFER SUBSEA ELECTRONIC ASSEMBLY (SEA)",
+            "location": "332.BCS1.111",
+            "locationdescription": "SEA, BLUE POD, BOP CONTROL, BOP 1 CONTROL",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Investigate report of P/S failure alarm reported by SSS"
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "BRC- Replace lift cylinder hold valve",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1026334",
+            "assetdescription": "MHWIRTH BC01 BRIDGE RACKING CRANE (BRC)",
+            "location": "341.PRS1.110",
+            "locationdescription": "BRIDGE RACKING CRANE (BRC), VPH",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Replace load hold valve due to leaking"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace interface adapter/fiber ethernet",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10911287",
+            "assetdescription": "DRILLING CONTROL CABINETS",
+            "location": "311.DC1.400",
+            "locationdescription": "DRILLING CONTROL CABINETS",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Replace interface adapter/fiber ethernet TERM 1"
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "AUX HR Pipe Pusher Prox Adjustment",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ESV",
+            "assetnumer": "C1023262",
+            "assetdescription": "NOV HYDRARACKER IV VERTICAL PIPE HANDLER",
+            "location": "341.PRS2",
+            "locationdescription": "VERTICAL PIPE HANDLER, AUX WELL, HYDRARACKER",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "AUX HR Upper Arm Guide Pipe Pusher Prox Adjustment"
+        },
+        "output": "FTS"
+    },
+    {
+        "input": {
+            "workorderdescription": "TECH- Lower travel brake failure",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C10915626",
+            "assetdescription": "NOV HYDRARACKER IV VERTICAL PIPE HANDLER",
+            "location": "341.PRS1",
+            "locationdescription": "VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Lower travel gearbox running no pressure in the brake"
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "Crane # 4 Horn (+4T-H09) to be replaced",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10911979",
+            "assetdescription": "DECK CRANE 4, KBC PORT AFT",
+            "location": "361.DCR4",
+            "locationdescription": "DECK CRANE 4, KBC PORT AFT",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Horn +4T-H09 faulty. To be replaced with new type supplied by Liebherr"
+        },
+        "output": "FTS"
+    },
+    {
+        "input": {
+            "workorderdescription": "Cranes star delta timers Replaced on No 3",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELE",
+            "assetnumer": "C1023322",
+            "assetdescription": "HPU UNIT, DECK CRANE 3, KBC STBD AFT",
+            "location": "361.DCR3.100",
+            "locationdescription": "HPU UNIT, DECK CRANE 3, KBC STBD AFT",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Order for 5 new star delta timers for crane HPU pump motors for stock.\r\nstock item was used for crane No 3 motor No 2"
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "WTJ-MCH-PDBC - LAM VALVE UPPER CLAMP MAIN HYDRATONG",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MSV",
+            "assetnumer": "C1019756",
+            "assetdescription": "IRON ROUGHNECK, MPT-200 HYDRATONG, FOR 60-1/2IN RT",
+            "location": "342.HRN1",
+            "locationdescription": "IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "During the operation we were informed that the main hydratong is not reaching the make up and brack out torque correctly"
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "HP Grease Pump - Repair choke and kill manifold grease pump",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C1046354",
+            "assetdescription": "CHOKE AND KILL MANIFOLD",
+            "location": "336.CK1",
+            "locationdescription": "MANIFOLD, CHOKE & KILL",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Clean, inspect, rebuild and replace damaged parts on HP Grease pumps for Choke and Kill manifold."
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "Mud pump #2 repair",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1046035",
+            "assetdescription": "NOV 14-P-220 MUD PUMP",
+            "location": "325.MP2",
+            "locationdescription": "MUD PUMP 2",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Repair on mud pump 2 fluid end. 3 x seats, 6 x valves and 1 x piston"
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "PDPH Crane- Knuckle Jib lowering slowly without valve output",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1026384",
+            "assetdescription": "MHWIRTH BB4410 PDPH CRANE",
+            "location": "361.PDPH1",
+            "locationdescription": "PIPE DECK PIPE HANDLING CRANE (PDPH)",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Entered by Z. Tuttle /ATSL\r\nDate: 10/26/21\r\nThe knuckle jib is lowering slowly without valve output. The load holding relief valves may be bleeding by slowly.  It has leaked down both knuckled in and knuckled out.  See attached flow diagram"
+        },
+        "output": "INL"
+    },
+    {
+        "input": {
+            "workorderdescription": "Mud Pump B - Local Discharge Pressure Gauge - Failed",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1025971",
+            "assetdescription": "MHWIRTH TPK 2200 MUD PUMP",
+            "location": "325.MP2",
+            "locationdescription": "MUD PUMP 2",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Ryan - ATSL\r\n\r\nDerrickman called and reported Mud Pump B Local Discharge Pressure gauge is reading 0 with the pump running on the boost line."
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "Mud pump 3 repair",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1046043",
+            "assetdescription": "NOV 14-P-220 MUD PUMP",
+            "location": "325.MP3",
+            "locationdescription": "MUD PUMP 3",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Mud pump 3 fluid end inspection / repair"
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "Change out helideck crane wire.",
+            "persongroup": "MARINE",
+            "crewworkgroup": "MSL",
+            "assetnumer": "C1023347",
+            "assetdescription": "NOV HOCHANG HCP 350-10T-20M HELIDECK CRANE",
+            "location": "361.HCR1",
+            "locationdescription": "HELIDECK CRANE",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Change out helideck crane wire."
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace faulty encoder on MW DW Motor D",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C1019143",
+            "assetdescription": "NOV SSGD 1250 DRAWWORKS",
+            "location": "312.DW1",
+            "locationdescription": "DRAWWORKS, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "Investigate encoder fault on MW DW D"
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "BOP#1 UPPER ANNULAR INSPECTION AND REPAIR",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C10915419",
+            "assetdescription": "NOV SHAFFER 18 3/4\" 10K BIG BOY ANNULAR",
+            "location": "331.LMRP1.600",
+            "locationdescription": "ANNULAR, UPPER, LMRP 1",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "DUE TO RECENT CHAMBER TESTING FAILURE (OPEN SIDE), INSPECT UPPER ANNULAR COMPONENTS TO AND REPLACE REQUIRED SEALS + FIELD REPAIR IF REQUIRED."
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "BOP Software Save and Compile at End of Well. Test Connection on BOP#1 and BOP#2",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELE",
+            "assetnumer": "C10911702",
+            "assetdescription": "NOV SHAFFER BOP CONTROL COMMON",
+            "location": "332.BCS1",
+            "locationdescription": "BOP 1 CONTROL SYSTEM",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "During trouble shooting of BOP1 Blue Pod it was found that PLC Program \r\nhad not been compiled. Due to this we did not compile during operations.\r\nSee Email from BOP controls (unable to attach) Needs done from EWS terminal"
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace Inclination sensor crane 4 as Yoke",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10911956",
+            "assetdescription": "DECK CRANE WIRES",
+            "location": "361.DCR2.230",
+            "locationdescription": "WIRES, DECK CRANE 2, AHC KBC PORT FWD",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Horizon angle sensor 1 defect %W4.41.3."
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "Diverter step down regulator sticking down after every function not returning to 3000 psi.",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C11080751",
+            "assetdescription": "REGULATOR, HYDRAULIC SUPPLY REGULATOR, DIVERTER CONTROL PANEL",
+            "location": "334.DIV1.411",
+            "locationdescription": "VALVES & REGULATORS, PANEL, DIVERTER CONTROL SYSTEM",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "Diverter step down regulator sticking down after every function not returning to 3000 psi.\r\nRemove the regulator and rebuild it with the repair kit ICN 4801309  Loc: 91-D in the warehouse. \r\nSee the manual  Diverter Master Control Panel Page 4-57 of 96 for maintenance guide."
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace Over Center Valve On LGA",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1026335",
+            "assetdescription": "MHWIRTH LOWER GUIDING ARM",
+            "location": "341.PRS1.120",
+            "locationdescription": "LOWER GUIDE ARM (UGA), VPH",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Replace over center valve on the LGA jib tilt cylinder due to valve leaking."
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Main T/D, replace leaking thread compensator cylinder",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MSV",
+            "assetnumer": "C1045834",
+            "assetdescription": "NOV HPS-03 1000 TOP DRIVE",
+            "location": "313.TD1",
+            "locationdescription": "TOP DRIVE, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Replace leaking cylinder, PORT FWD"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "5 7/8 mud bucket seals required for main side",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1046400",
+            "assetdescription": "MUD BUCKET",
+            "location": "342.MBK1",
+            "locationdescription": "MUD SAVER BUCKET, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Mud bucket seals replaced due to worn parts"
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "Erratic winch lowering problem at STBD FWD crane (KBC1)",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "HYT",
+            "assetnumer": "C1046427",
+            "assetdescription": "NOV OC3932KCE KNUCKLE BOOM CRANE",
+            "location": "361.DCR1",
+            "locationdescription": "DECK CRANE 1, KBC STBD FWD",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Check intermittent problem of erratic speeds on winch lowering system"
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "Main TDX (PH 150) - Replace seal from gripper cylinder",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1019198",
+            "assetdescription": "PIPEHANDLER, TOP DRIVE, MAIN WELL",
+            "location": "313.TD1.300",
+            "locationdescription": "PIPEHANDLER, TOP DRIVE, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "Change out seal from gripper cylinder due to oil leakage"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace Standpipe #2 Pressure transmitter on Main Well",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10915295",
+            "assetdescription": "MUD STANDPIPE MANIFOLD",
+            "location": "325.MPIP2.100",
+            "locationdescription": "MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Replace pressure transmitter STP #2 at Stand pipe Manifold Main Well"
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace 20  leaking fingerboard air solenoid valves $5,772.40",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1018148",
+            "assetdescription": "NOV BELLYBOARD",
+            "location": "341.FB2",
+            "locationdescription": "FINGER BOARD, LOWER",
+            "workordertype": "CM",
+            "siteid": 2317,
+            "taskid": 10,
+            "workordertaskdescription": "replace 20 leaking air solenoid valves on lower fingerboard cabinets, due to leaking air"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Rebuild leaking cylinder on BOP#1 WHC",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C11101968",
+            "assetdescription": "CONNECTOR, WELLHEAD, H-4, 18.750-15000 PSI MSP, MODEL SHD, MODULAR DESIGN, FLANGE TOP W/ BX-164 ALLOY 625 RING GROOVE UP AND VX//VT ALLOY 625 RING GROOVE DOWN, W/ NUDGE PIN FEATURE, 27 IN DOG KIT",
+            "location": "331.BOP1.400",
+            "locationdescription": "CONNECTOR, WELLHEAD, BOP 1",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Rebuild leaking cylinder on BOP#1 WHC"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "BOP#2 KILL LINE MALE STAB SUB REPLACEMENT",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C10954456",
+            "assetdescription": "NOV SHAFFER KILL LINE STAB",
+            "location": "331.BOP2.120",
+            "locationdescription": "STAB, KILL SIDE, BOP 2",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "REMOVE EXISTING DAMAGED KILL STAB SUB AND REPLACE WITH NEW ( IRT FROM LIBONGOS)"
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "Standpipe manifold maintenance",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1019418",
+            "assetdescription": "MUD STANDPIPE MANIFOLD",
+            "location": "325.MPIP2.100",
+            "locationdescription": "MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "replace seals on the valves"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Send in HPHT removed from BOP 1 for repair and upgrade ($25,500)",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C1017908",
+            "assetdescription": "TRANSMITTER, PRESSURE & TEMPERATURE, BOP 1 CONTROL",
+            "location": "332.BCS1.410",
+            "locationdescription": "TRANSMITTER, PRESSURE & TEMPERATURE, BOP 1 CONTROL",
+            "workordertype": "CM",
+            "siteid": 2317,
+            "taskid": 10,
+            "workordertaskdescription": "Send in HPHT probe ( 20081691) (sn 219065 /  Stelllar s/n 1305942)"
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace Fingerboard Drill Pipe Latch",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C10911904",
+            "assetdescription": "NOV FINGERBOARD",
+            "location": "341.FB1",
+            "locationdescription": "FINGER BOARD, UPPER",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Replace damaged finger"
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "CAVOTEC- SB HRN REMOTE",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C1026340",
+            "assetdescription": "MHWIRTH 1899 IRON ROUGHNECK",
+            "location": "342.HRN2",
+            "locationdescription": "IRON ROUGHNECK, OFF CENTER",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Alex Reyes- ET's have diagnosed several defective parts for SB HRN Cavotec remote. Parts are not in our inventory and will transfer from catalog. order QTY-2 of each."
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "Repair leaking aft accumulator on Main Drawworks HPU",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MSV",
+            "assetnumer": "C1045798",
+            "assetdescription": "HYDRAULIC POWER UNIT (HPU), DRAWWORKS MW AFT",
+            "location": "312.DW1.300",
+            "locationdescription": "HYDRAULIC POWER UNIT (HPU), DRAWWORKS MW AFT",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Remove accumulator and replace bladder"
+        },
+        "output": "INL"
+    },
+    {
+        "input": {
+            "workorderdescription": "REPLACE ELECTRICAL CABLE FOR AW HR TAIL ARM",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ESV",
+            "assetnumer": "C1021588",
+            "assetdescription": "NOV HYDRARACKER IV VERTICAL PIPE HANDLER",
+            "location": "341.PRS2",
+            "locationdescription": "VERTICAL PIPE HANDLER, AUX WELL, HYDRARACKER",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "REPLACE DEFECTIVE ELECTRICAL CABLE OF THE TAIL ARM.\r\n3D41B-IJB-216A-C01"
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace PTM 2, Hydrostatic PT",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C1026116",
+            "assetdescription": "CAMERON MUX CONTROL POD",
+            "location": "332.BCS1.100",
+            "locationdescription": "BLUE POD, BOP 1 CONTROL",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Replace Hydrostatic Transducer for PTM #2"
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "WTJ-MCH-AUX HYDRATONG WATER BOOSTER",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MSV",
+            "assetnumer": "C1019757",
+            "assetdescription": "NOV HYDRATONG MPT-200",
+            "location": "342.HRN2",
+            "locationdescription": "IRON ROUGHNECK 2, AUX WELL, HYDRATONG",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "During Inspection identifying the solenoid and valve does not work propelled need to be exchanged"
+        },
+        "output": "FTS"
+    },
+    {
+        "input": {
+            "workorderdescription": "Troubleshoot Main HR upper Trolley encoder issues",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C1018151",
+            "assetdescription": "NOV HYDRARACKER IV VERTICAL PIPE HANDLER",
+            "location": "341.PRS1",
+            "locationdescription": "VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",
+            "workordertype": "CM",
+            "siteid": 2317,
+            "taskid": 10,
+            "workordertaskdescription": "Troubleshoot and repair issues with MW HR upper trolley encoder counts being off from Lower."
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "MP 2 cyl 3 piston change",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1046035",
+            "assetdescription": "NOV 14-P-220 MUD PUMP",
+            "location": "325.MP2",
+            "locationdescription": "MUD PUMP 2",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Piston changed out on Cyl 3"
+        },
+        "output": "INL"
+    },
+    {
+        "input": {
+            "workorderdescription": "LMRP #1 Stabs inspection and service",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C1021080",
+            "assetdescription": "NOV SHAFFER BOP FRAME",
+            "location": "331.BOP1",
+            "locationdescription": "LOWER BOP STACK 1",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "Inspected the choke stab and found SEAL, S-TYPE, 4.324ID X 4.924OD X 0.465THK position 6 Bill of Material for Item: 10694271-001 damaged"
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "ICN#1900357 - GASKET, 6-5/8IN: 3 ea",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1046400",
+            "assetdescription": "MUD BUCKET",
+            "location": "342.MBK1",
+            "locationdescription": "MUD SAVER BUCKET, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "ICN#1900357 - GASKET, 6-5/8IN: 3 ea To replaced worn rubbers that were observed to be leaking."
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Mud Pump 4 Repairs",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1046051",
+            "assetdescription": "NOV 14-P-220 MUD PUMP",
+            "location": "325.MP4",
+            "locationdescription": "MUD PUMP 4",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Issue of parts for Mud Pump 4 repairs"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "TROUBLESHOOTING/REPLACE BOP TEST STUMP CYLINDER PORT SIDE",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C10915400",
+            "assetdescription": "TEST STUMP",
+            "location": "331.BOP1.700",
+            "locationdescription": "STUMP, TEST, BOP 1",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Change out test stump cylinder"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "MP#2 \u00e2\u20ac\u201c Charge Pump 2 \u00e2\u20ac\u201c B \u00e2\u20ac\u201c Mechanical Seal Replacement",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1020998",
+            "assetdescription": "PUMP, MUD CHARGE, MUD PUMP 2",
+            "location": "325.MP2.210",
+            "locationdescription": "PUMP, MUD CHARGE, MUD PUMP 2",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 20,
+            "workordertaskdescription": "Replace Mechanical Seal"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Mud Pump Titan Valve Controller Panel",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C1019387",
+            "assetdescription": "VALVES, PRESSURE RELIEF, MUD PUMP 1",
+            "location": "325.MP1.510",
+            "locationdescription": "VALVES, PRESSURE RELIEF, MUD PUMP 1",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "Replace faulty cooler on titan valve cabinet"
+        },
+        "output": "FTS"
+    },
+    {
+        "input": {
+            "workorderdescription": "Equinor Item 22 - Crane and lifting verification 20.06.22 Finding 5 No water supply for wipers on KBC #1 and #4",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELE",
+            "assetnumer": "C1021660",
+            "assetdescription": "NOV OC3932KCE KNUCKLE BOOM CRANE",
+            "location": "361.DCR4",
+            "locationdescription": "DECK CRANE 4, KBC PORT AFT",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "Troubleshooting - to investigate no water supply for wipers - Requested quantity of pumps to attend all Cranes\r\n\r\nEquinor Item 22 - Crane and lifting verification 20.06.22 Finding 5 No water supply for wipers on KBC #1 and #4"
+        },
+        "output": "FTS"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace Proxy Sensor of the MW Hydratong Mud Bucket Park Position",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ESV",
+            "assetnumer": "C1021591",
+            "assetdescription": "NOV HYDRATONG MPT-200",
+            "location": "342.HRN1",
+            "locationdescription": "IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "Replace Proxy Sensor of the MW Hydratong Mud Bucket Park Position"
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "MCH - REPLACE  WIPER ON THE KBC#3",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1023321",
+            "assetdescription": "NOV OC3932KCE KNUCKLE BOOM CRANE",
+            "location": "361.DCR3",
+            "locationdescription": "DECK CRANE 3, KBC STBD AFT",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "REPLACE WIPER AND PERFORM FUNCTION TEST."
+        },
+        "output": "DFM"
+    },
+    {
+        "input": {
+            "workorderdescription": "STBD Crane FLM Deficiencies- Electrical",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C1026370",
+            "assetdescription": "LIEBHERR BOS 4200-100 DECK CRANE",
+            "location": "361.DCR2",
+            "locationdescription": "DECK CRANE 2",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Jason Engard TSL- Crane operators have made a list of deficiencies with cranes. The below issues will have to be addressed as time/parts/availability are allowed."
+        },
+        "output": "FTS"
+    },
+    {
+        "input": {
+            "workorderdescription": "XMAS TREE TROLLEY - Port lock pin Proximity switch to replace",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10912026",
+            "assetdescription": "BOP/LMRP/XMAS TREE SKID",
+            "location": "364.XHS1",
+            "locationdescription": "SKID 4, XMAS TREE HANDLING SYSTEM",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "During trouble shooting it was found that the Port lock pin prox was not working."
+        },
+        "output": "FTS"
+    },
+    {
+        "input": {
+            "workorderdescription": "Riser Torque Tool - Replace Regualting Valve",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C1046345",
+            "assetdescription": "CLOVER RISER TORQUE TOOL",
+            "location": "335.RIS1.720",
+            "locationdescription": "TOOL 2, RISER TORQUE, MARINE RISER SYSTEM",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Hydraulic Regaulating valve on Riser torque tool failed. Pressure could not be adjusted. Replaced with ICN 1821554."
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "Main TDX Hyd. Swivel Replacement",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "HYT",
+            "assetnumer": "C1017429",
+            "assetdescription": "SYSTEM, TOP DRIVE TDX-1250",
+            "location": "313.TD1",
+            "locationdescription": "TOP DRIVE, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2317,
+            "taskid": 10,
+            "workordertaskdescription": "Replace main tdx hydraulic swivel per procedure provided by WTL"
+        },
+        "output": "INL"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace Relief Valve on Acoustic Pod BOP#1",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C11083724",
+            "assetdescription": "VALVE, PRV, PILOT PRV, BOP 1 ACOUSTIC POD",
+            "location": "332.BCS1.621.6",
+            "locationdescription": "VALVES, OTHER, ACOUSTIC POD, BOP 1 CONTROL",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Replace Relief Valve on Acoustic Pod BOP#1"
+        },
+        "output": "PDE"
+    },
+    {
+        "input": {
+            "workorderdescription": "Crane 1 knuckle cable protection damage",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELE",
+            "assetnumer": "C1023293",
+            "assetdescription": "NOV OC3932KCE KNUCKLE BOOM CRANE",
+            "location": "361.DCR1",
+            "locationdescription": "DECK CRANE 1, KBC STBD FWD",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Cable protection damage on crane 1 knuckle. install junctionbox on both sides of the knuckle and replace hose/cable temporary fix has been implemented."
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "Perform repairs on BOP 1 choke jumper hose- DAL788 riser run",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C10943407",
+            "assetdescription": "RISER, PUP JOINT ASSY, 15FT-HB",
+            "location": "335.RIS1.130",
+            "locationdescription": "JOINT, PUP, RISER, MARINE RISER SYSTEM",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Troubleshoot leak on choke line during riser run and pressure test"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "BOP 2 Acoustics: Replace batteries in SCUs",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10933868",
+            "assetdescription": "NOV SHAFFER/KONGSBERG ACS500 ACOUSTIC CONTROL SYSTEM",
+            "location": "332.BCS2.610",
+            "locationdescription": "SYSTEM, ACOUSTIC, ELECTRICAL, BOP 2 CONTROL",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Replace batteries for BOP 2 Acoustic Control Unit with new ICN:1923761"
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace slip joint packer air regulator (R10) on diverter panel",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C10915549",
+            "assetdescription": "PANEL, DIVERTER CONTROL SYSTEM",
+            "location": "334.DIV1.410",
+            "locationdescription": "PANEL, DIVERTER CONTROL SYSTEM",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Replace leaking slip joint packer air pressure regulator (R10) on diverter panel"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Inspection of 4 1/16 main STP V/V 14",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1046064",
+            "assetdescription": "MUD STANDPIPE MANIFOLD",
+            "location": "325.MPIP2.100",
+            "locationdescription": "MUD STANDPIPE MANIFOLD, MAIN WELL, MUD SYSTEM PIPING",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Open 4 1/16\" V/V 14 on main STP for inspection"
+        },
+        "output": "INL"
+    },
+    {
+        "input": {
+            "workorderdescription": "change swab on mud #3",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1025979",
+            "assetdescription": "MHWIRTH TPK 2200 MUD PUMP",
+            "location": "325.MP3",
+            "locationdescription": "MUD PUMP 3",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "replace swab on #3 mud pump"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Knuckle Angle encoder for crane 4 replacement",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10915699",
+            "assetdescription": "DECK CRANE 4, KBC PORT AFT",
+            "location": "361.DCR4",
+            "locationdescription": "DECK CRANE 4, KBC PORT AFT",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Replace Complete Transitter - 4-2- mA signal into CAN module checked by simulation"
+        },
+        "output": "PTF"
+    },
+    {
+        "input": {
+            "workorderdescription": "REPLACE LMRP GASKET RETAIN HYDRAULIC CYLINDER",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C1021188",
+            "assetdescription": "CONNECTOR, 18-3/4\" DX-10, COMES WITH H4 VX/VT PROFILE",
+            "location": "331.LMRP1.100",
+            "locationdescription": "CONNECTOR, LMRP 1",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "REPLACE LMRP GASKET RETAIN HYDRAULIC CYLINDER THAT IS LEAKING DURING SOAK TEST"
+        },
+        "output": "ELK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace damaged Doghouse  door lock Aux side",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C10911284",
+            "assetdescription": "DRILLERS CABIN",
+            "location": "311.DC1.100",
+            "locationdescription": "DRILLERS CABIN",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Replace door lock mechanism on Doghouse Aux side door."
+        },
+        "output": "FRC"
+    },
+    {
+        "input": {
+            "workorderdescription": "MW Hydratong Lower Clamp Open / Close not opening",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10911910",
+            "assetdescription": "NOV HYDRATONG ARN-270",
+            "location": "342.HRN1",
+            "locationdescription": "IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "342A 1-XV101\r\nLOWER CLAMP 011/0FF \r\nSolenoid To be replaced"
+        },
+        "output": "FTO"
+    },
+    {
+        "input": {
+            "workorderdescription": "ORDER SKID PLATES FOR BOP 2 (UBSR)",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C10933786",
+            "assetdescription": "NOV SHAFFER NXT 22\" BLIND SHEAR RAM",
+            "location": "331.BOP2.310",
+            "locationdescription": "UPPER TRIPLE, UPPER BLIND SHEAR RAM (UBSR), BOP 2",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "ORDER SKID PLATE FOR BOP 2 UBSR CAVITY"
+        },
+        "output": "TRD"
+    },
+    {
+        "input": {
+            "workorderdescription": "ORDER SKID PLATES FOR BOP 2 (UPPER PIPE RAM)",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C10933801",
+            "assetdescription": "NOV SHAFFER NXT 14\" PIPE RAM",
+            "location": "331.BOP2.340",
+            "locationdescription": "LOWER TRIPLE, UPPER PIPE RAM (UPR), BOP 2",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "ORDER SKID PLATE FOR BOP 2 UPR CAVITY"
+        },
+        "output": "TRD"
+    },
+    {
+        "input": {
+            "workorderdescription": "*FOLLLOW UP, MPI* 12M AHC KNUCKLE BOOM CRANE MARINE INSPECTION",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "TSL",
+            "assetnumer": "C10911951",
+            "assetdescription": "DECK CRANE 2, AHC KBC PORT FWD",
+            "location": "361.DCR2",
+            "locationdescription": "DECK CRANE 2, AHC KBC PORT FWD",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Work with NDT inspectors to carry out MPI Inspection on repaired area inside Crane Pedestal. \r\n\r\n2 X inboard corner doubler plates on stiffener at transition area from square to Pedestal cylinder.\r\n\r\nAreas were left without paint for to allow for further inspection. If no indications noticed then paint can be applied.\r\n\r\nIf indication recorded notify TSL for further investigation.\r\n\r\nNDT report to be uploaded to edocs and attached."
+        },
+        "output": "CRK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace damaged finger on upper fingerboard",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C10911904",
+            "assetdescription": "NOV FINGERBOARD",
+            "location": "341.FB1",
+            "locationdescription": "FINGER BOARD, UPPER",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Replace damaged finger due to not closing on demand."
+        },
+        "output": "FTC"
+    },
+    {
+        "input": {
+            "workorderdescription": "Change out Visco Jet, High pressure & Adapter body on Acoustic Acc ROV gauge",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C10933884",
+            "assetdescription": "NOV SHAFFER ROV PANEL",
+            "location": "332.BCS2.920",
+            "locationdescription": "PANELS, ROV, LOWER BOP, BOP 2 CONTROL",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Replace Visco Jet and Adapter for Acoustic Accumulator ROV pressure gauge."
+        },
+        "output": "PLU"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace IBOP operating crank.",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C10911357",
+            "assetdescription": "IBOP, UPPER, TOP DRIVE, AUX WELL",
+            "location": "313.TD2.210",
+            "locationdescription": "IBOP, UPPER, TOP DRIVE, AUX WELL",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Fit new crank to Upper IBOP"
+        },
+        "output": "CRK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace push button on Cyberspace C chair",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10911283",
+            "assetdescription": "NOV CYBERBASE DRILLING CONTROL",
+            "location": "311.DC1",
+            "locationdescription": "DRILLING CONTROL",
+            "workordertype": "CM",
+            "siteid": 1010,
+            "taskid": 10,
+            "workordertaskdescription": "Replace sticky push button on Cyber chair C"
+        },
+        "output": "STU"
+    },
+    {
+        "input": {
+            "workorderdescription": "KBC 3 SHEAVE DAMAGE- ORDERING NEW SHEAVE FOR INSTALL",
+            "persongroup": "MARINE",
+            "crewworkgroup": "MSL",
+            "assetnumer": "C10915714",
+            "assetdescription": "CRANE LIFTING APPLIANCES",
+            "location": "361.MLA1",
+            "locationdescription": "CRANE LIFTING APPLIANCES",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Oder Boom tip sheave to replace damage one on KBC 3 + 1spare"
+        },
+        "output": "CRK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Aux HT Faulty Soln valve Upper Clamp",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10915631",
+            "assetdescription": "NOV HYDRATONG ARN-270- AUX WELL",
+            "location": "342.HRN2",
+            "locationdescription": "IRON ROUGHNECK 2, AUX WELL, HYDRATONG",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "we have intermittent on Upper clamp, checked and measured on the coil 28ohm, all seem good, Mech checked on pressure reading 59bar also good.\r\nit was different to pinpoint the problem.\r\nFinally the coil failed, we able to measure the 24vdc all the way to the HT tool, to the very last Jbox. able to measure 24V, but when check ohm, the coil is open on CLAMP function.\r\nreplaced and tested all good"
+        },
+        "output": "FTC"
+    },
+    {
+        "input": {
+            "workorderdescription": "To replace defective joystick from Cyber Base A Main Well.",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10915003",
+            "assetdescription": "NOV CYBERBASE DRILLING CONTROL",
+            "location": "311.DC1",
+            "locationdescription": "DRILLING CONTROL",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Replace defective joystick."
+        },
+        "output": "CRK"
+    },
+    {
+        "input": {
+            "workorderdescription": "REPLACEMENT OF BULLSEYE ON BOP #2",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C10954454",
+            "assetdescription": "NOV SHAFFER BOP FRAME",
+            "location": "331.BOP2",
+            "locationdescription": "LOWER BOP STACK 2",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "REMOVE OLD SLOP INDICATORS AND FIT NEW ONES."
+        },
+        "output": "CRK"
+    },
+    {
+        "input": {
+            "workorderdescription": "Upper fingerboard casing stand",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C10915624",
+            "assetdescription": "NOV FINGERBOARD",
+            "location": "341.FB1",
+            "locationdescription": "FINGER BOARD, UPPER",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Upper fingerboard casing row 25 slot 1 not working properly."
+        },
+        "output": "FTO"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace Faulty Salunda Sensors",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C10915624",
+            "assetdescription": "NOV FINGERBOARD",
+            "location": "341.FB1",
+            "locationdescription": "FINGER BOARD, UPPER",
+            "workordertype": "CM",
+            "siteid": 1020,
+            "taskid": 10,
+            "workordertaskdescription": "Replace faulty salunda sensors on Fingerboard and Bellyboard"
+        },
+        "output": "FTO"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace dies on Main TDS Tool Joint Breaker",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "DRL",
+            "assetnumer": "C1045839",
+            "assetdescription": "PIPEHANDLER, TOP DRIVE, MAIN WELL",
+            "location": "313.TD1.300",
+            "locationdescription": "PIPEHANDLER, TOP DRIVE, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Replace worn die on TJB"
+        },
+        "output": "TRD"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace 2 cap seals on MP # 3. ICN # 1502312",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "TLP",
+            "assetnumer": "C1046043",
+            "assetdescription": "NOV 14-P-220 MUD PUMP",
+            "location": "325.MP3",
+            "locationdescription": "MUD PUMP 3",
+            "workordertype": "CM",
+            "siteid": 2290,
+            "taskid": 10,
+            "workordertaskdescription": "Replace 2 cap seals on MP # 3. ICN # 1502312"
+        },
+        "output": "TRD"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace hydraracker guide head pipe pusher roller",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1018151",
+            "assetdescription": "NOV HYDRARACKER IV VERTICAL PIPE HANDLER",
+            "location": "341.PRS1",
+            "locationdescription": "VERTICAL PIPE HANDLER, MAIN WELL, HYDRARACKER",
+            "workordertype": "CM",
+            "siteid": 2317,
+            "taskid": 10,
+            "workordertaskdescription": "replace pipe pusher roller due to severe wear. Worn half way through pin"
+        },
+        "output": "TRD"
+    },
+    {
+        "input": {
+            "workorderdescription": "M&M: Replace washed out HP Mud Pump #4 bleed line flange",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "TSL",
+            "assetnumer": "C1040408",
+            "assetdescription": "MUD STANDPIPE MANIFOLD",
+            "location": "325.MPIP2.300",
+            "locationdescription": "MUD STANDPIPE MANIFOLD, MUD PUMP ROOM, MUD SYSTEM PIPING",
+            "workordertype": "CM",
+            "siteid": 2317,
+            "taskid": 10,
+            "workordertaskdescription": "Bleed line flange at 2-1/16\" valve washed out during drilling. The flange is between the valve and the pump discharge. It is located on the STBD mezz deck in the pump room. Flange has been temporarily repaired with ProPoxy 20."
+        },
+        "output": "TRD"
+    },
+    {
+        "input": {
+            "workorderdescription": "BOP1 Blue Pod Receptacle Assembly",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C1017880",
+            "assetdescription": "RECEPTACLE, FEMALE, BLUE POD, BOP 1 CONTROL",
+            "location": "332.BCS1.127",
+            "locationdescription": "RECEPTACLE, FEMALE, BLUE POD, BOP 1 CONTROL",
+            "workordertype": "CM",
+            "siteid": 2317,
+            "taskid": 10,
+            "workordertaskdescription": "While splitting the LMRP from the BOP after EDS wet fire, the blue pod gripper failed to unlock and pulled the trailer ball out of the receptacle. Upon troubleshooting, we found the CCSV armature stuck which caused the gripper to remain locked.\r\n\r\nRepair trailer ball (shear pins) and repair CCSV."
+        },
+        "output": "FTO"
+    },
+    {
+        "input": {
+            "workorderdescription": "Pull, Inspect, Re-Install Retract Cylinder Hinge Pins Aux Dolly",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1019217",
+            "assetdescription": "DOLLY, RETRACTABLE, TOP DRIVE, AUX WELL",
+            "location": "313.TD2.800",
+            "locationdescription": "DOLLY, RETRACTABLE, TOP DRIVE, AUX WELL",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "Lock out equipment and stage tools required for pin extraction and install."
+        },
+        "output": "STU"
+    },
+    {
+        "input": {
+            "workorderdescription": "Repair IBOP solenoid valve main TDX",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ESV",
+            "assetnumer": "C1019193",
+            "assetdescription": "NOV TDX 1250 TOP DRIVE MAIN WELL",
+            "location": "313.TD1",
+            "locationdescription": "TOP DRIVE, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "Investigate and repair issue (fuse blown) with open signal on IBOP solenoid"
+        },
+        "output": "FTO"
+    },
+    {
+        "input": {
+            "workorderdescription": "Maintenance & Repairs on Lower Fingerboard - May/2023",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1019750",
+            "assetdescription": "NOV FINGERBOARD",
+            "location": "341.FB1",
+            "locationdescription": "FINGER BOARD, UPPER",
+            "workordertype": "CM",
+            "siteid": 2318,
+            "taskid": 10,
+            "workordertaskdescription": "W/O Created to track Maintenance on Fingerboard April 2023 replacement. Spares and Labor hours should be completed and reported. On the end of de Month W/O must be closed and create new one"
+        },
+        "output": "FTO"
+    },
+    {
+        "input": {
+            "workorderdescription": "MAIN HYDRATONG TORQUE CENTER BOLTS SPRING REPLACEMENT- CASSETE B",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MSV",
+            "assetnumer": "C1021591",
+            "assetdescription": "NOV HYDRATONG MPT-200",
+            "location": "342.HRN1",
+            "locationdescription": "IRON ROUGHNECK 1, MAIN WELL, HYDRATONG",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "MAIN HYDRATONG TROQUE CENTER BOLTS SPRING REPLACEMENT."
+        },
+        "output": "TRD"
+    },
+    {
+        "input": {
+            "workorderdescription": "HPU TRIPLEX PUMP 1 SUCTION STRAINER LID O-RING DAMAGED",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C1021386",
+            "assetdescription": "NOV SHAFFER BOP HPU TRIPLEX PUMP",
+            "location": "332.BCSS1.210",
+            "locationdescription": "PUMP, HPU TRIPLEX 1, BOP ONLINE, BOP CONTROL SYSTEMS SURFACE EQUIPMENT",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "Replace damaged o-ring on suction strainer basket lid"
+        },
+        "output": "FRC"
+    },
+    {
+        "input": {
+            "workorderdescription": "MAINS DW HYD BRAKE TANK FILTRATION",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MSV",
+            "assetnumer": "C1020749",
+            "assetdescription": "NOV SSGD 1250 DRAWWORKS",
+            "location": "312.DW1",
+            "locationdescription": "DRAWWORKS, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "MAINS DW HYD BRAKE TANK FILTRATION"
+        },
+        "output": "LFS"
+    },
+    {
+        "input": {
+            "workorderdescription": "2 Position Switch Key Exchange. Function _ \"JOYSTICK ON\" / Troca do Switch Key de 2 Posi\u00c3\u00a7\u00c3\u00b5es. Fun\u00c3\u00a7\u00c3\u00a3o _ \"JOYSTICK ON\"",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELE",
+            "assetnumer": "C1021647",
+            "assetdescription": "NOV OC3932KCE KNUCKLE BOOM CRANE",
+            "location": "361.DCR3",
+            "locationdescription": "DECK CRANE 3, KBC STBD AFT",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "2 Position Switch Key Exchange. Function _ \"JOYSTICK ON\" / Troca do Switch Key de 2 Posi\u00c3\u00a7\u00c3\u00b5es. Fun\u00c3\u00a7\u00c3\u00a3o _ \"JOYSTICK ON\"."
+        },
+        "output": "FTC"
+    },
+    {
+        "input": {
+            "workorderdescription": "Diverter overboard valve interlock function failure during function test",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSS",
+            "assetnumer": "C11080699",
+            "assetdescription": "VALVE, AIR CONTROL, PORT OVERBOARD OPEN, DIVERTER CONTROL PANEL",
+            "location": "334.DIV1.411",
+            "locationdescription": "VALVES & REGULATORS, PANEL, DIVERTER CONTROL SYSTEM",
+            "workordertype": "CM",
+            "siteid": 2321,
+            "taskid": 10,
+            "workordertaskdescription": "Diverter overboard valve interlock function failure during function test.\r\nwhile closing the diverter packer the Port overboard valve remaing opened during the test and did not return to close position with the diverter packer selected to open"
+        },
+        "output": "FTC"
+    },
+    {
+        "input": {
+            "workorderdescription": "Directional Control Valve for RCD HPU Service",
+            "persongroup": "MPD",
+            "crewworkgroup": "MPD",
+            "assetnumer": "C1023194",
+            "assetdescription": "MPD HYDRAULIC POWER UNIT",
+            "location": "339.MPD1.1100",
+            "locationdescription": "HYDRAULIC POWER UNIT (HPU), MPD",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Order new Directional Control Valves for the RCD HPU Service."
+        },
+        "output": "STU"
+    },
+    {
+        "input": {
+            "workorderdescription": "Drawworks FWD - TSMP Hydraulic Power unit  analysis report - January 2023 / CM tracking report.",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "ATSL",
+            "assetnumer": "C1022612",
+            "assetdescription": "HYDRAULIC POWER UNIT (HPU), DRAWWORKS AW FWD",
+            "location": "312.DW2.300",
+            "locationdescription": "HYDRAULIC POWER UNIT (HPU), DRAWWORKS AW FWD",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Proceed as it follows within the TMSP report which is transcribed below:\r\n\r\n\" We recommend checking for damage in breathers, seals, possible sources of outside contamination and inspect the condition of relevant\r\ncomponents. We also recommend evaluating the best moment, according to the on board conditions, to drain/dehydrate the\r\ncompartment or replace the lubricant load and doing the filtering (microfiltration) of the system until obtaining the required\r\ncleanliness level (ISO 4406 17/15/12 or better)\""
+        },
+        "output": "LFS"
+    },
+    {
+        "input": {
+            "workorderdescription": "Pipe handling crane - TSMP Bearing grease  analysis report - January 2023 / CM tracking report.",
+            "persongroup": "MARINE",
+            "crewworkgroup": "MSL",
+            "assetnumer": "C1023353",
+            "assetdescription": "NOV OC1891 PDPH CRANE",
+            "location": "361.PDPH1",
+            "locationdescription": "PIPE DECK PIPE HANDLING CRANE (PDPH)",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Proceed as it follows within the TMSP report which is transcribed below:\r\n\r\n\" We recommend checking the lubrication management plans to evaluate the relubrication of the component. We also recommend that when relubrication the equipment, check for wear points and external contamination\""
+        },
+        "output": "LFS"
+    },
+    {
+        "input": {
+            "workorderdescription": "MCH - AW TOP DRIVE GEAR OIL AND FILTER CHANGE",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "ATSL",
+            "assetnumer": "C1022629",
+            "assetdescription": "NOV TDX 1250 TOP DRIVE",
+            "location": "313.TD1",
+            "locationdescription": "TOP DRIVE, MAIN WELL",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Replace MW TDX Gearbox oil and filter"
+        },
+        "output": "LFS"
+    },
+    {
+        "input": {
+            "workorderdescription": "MCS - Troubleshooting and repair Valve Actuator for Mud Transfer",
+            "persongroup": "ELECTRICAL",
+            "crewworkgroup": "ELT",
+            "assetnumer": "C1022858",
+            "assetdescription": "MUD LOW PRESSURE PIPING",
+            "location": "325.MPIP3",
+            "locationdescription": "MUD LP VALVE & PIPING SUCTION",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Troubleshooting the actutors Valves in MCS:\r\n  HV \u00e2\u20ac\u201c 08-146  ( Aberta, nao aceita comando ).\r\n  HV \u00e2\u20ac\u201c 08-128  ( Aberta todo tempo ). \r\n  HV \u00e2\u20ac\u201c 08-132  ( Abre e Fecha somente Local ). - It is working\r\n HV \u00e2\u20ac\u201c 08-96    ( Aberta todo tempo ). - Need to Replace the air manifold.\r\n  HV \u00e2\u20ac\u201c 08-94    ( Fica amarela na tela, nao abre nem fecha ao dar comendo ) - Need to Replace the air manifold.         \r\n  HV \u00e2\u20ac\u201c 08-92    ( Abre e Fecha somente Local ) - Butterfly Valve is hard to open or close even in manual.\r\n HV \u00e2\u20ac\u201c 08-134  ( Abre e Fecha manualmente ) - Air Manifold or Valve Actuator is damage.\r\n  HV \u00e2\u20ac\u201c 08-99    - Test it is working remotely during command to open and close.\r\n          \r\n  Local:  Bombas de Transferencias de BRINE e BASEOIL \r\n\r\n  HCV\u00e2\u20ac\u201d08-113  ( Valvula de porcentagem, nao abre ).\r\n  HV \u00e2\u20ac\u201c 08- 109   ( Abre e Fecha, fica todo tempo amarela no painel"
+        },
+        "output": "FTO"
+    },
+    {
+        "input": {
+            "workorderdescription": "MCH - TDX - JOINT CLAMPS REPLACE",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1022642",
+            "assetdescription": "NOV TDX 1250 TOP DRIVE - AUX WELL",
+            "location": "313.TD2",
+            "locationdescription": "TOP DRIVE, AUX WELL",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "REPLACE JOINT CLAMP WITH BROKEN LOCK PIN."
+        },
+        "output": "CRK"
+    },
+    {
+        "input": {
+            "workorderdescription": "SSE- Change out filter on HPU mixing system",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C1023067",
+            "assetdescription": "NOV SHAFFER BOP HYDRAULIC POWER UNIT (HPU)",
+            "location": "332.BCSS1.200",
+            "locationdescription": "UNIT, HYDRAULIC POWER, BOP ONLINE, BOP CONTROL SYSTEMS SURFACE EQUIPMENT",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "Change out filters on HPU mixing unit"
+        },
+        "output": "PLU"
+    },
+    {
+        "input": {
+            "workorderdescription": "MCH - REPLACED PNEUMATIC CYLINDER ON UPPER / LOWER FINGERBOARD.",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1023260",
+            "assetdescription": "NOV BELLYBOARD",
+            "location": "341.FB2",
+            "locationdescription": "FINGER BOARD, LOWER",
+            "workordertype": "CM",
+            "siteid": 2326,
+            "taskid": 10,
+            "workordertaskdescription": "REPLACE PNEUMARIC CYLINDER AND PERFORMED FUNCTION TEST."
+        },
+        "output": "FTO"
+    },
+    {
+        "input": {
+            "workorderdescription": "Repair 10', 15', and 20' 6 5/8\" PUP Repair 5', (2) 10', and 15' 5\" pups Repair 9, 6 5/8 HWDP",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "DSL",
+            "assetnumer": "C1026353",
+            "assetdescription": "DRILL PIPE",
+            "location": "351",
+            "locationdescription": "DRILL PIPES",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Repair Pup joints and spiral HWDP"
+        },
+        "output": "PLU"
+    },
+    {
+        "input": {
+            "workorderdescription": "Repair ROV Hotstab",
+            "persongroup": "WELL CONTROL",
+            "crewworkgroup": "SSE",
+            "assetnumer": "C1026199",
+            "assetdescription": "CAMERON ROV PANEL",
+            "location": "332.BCS1.900",
+            "locationdescription": "PANELS, ROV, BOP 1 CONTROL",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Hot stab on flying lead has broken handle and needs to be replaced."
+        },
+        "output": "FRC"
+    },
+    {
+        "input": {
+            "workorderdescription": "Replace Bushings & Heel Pin in LGA",
+            "persongroup": "MECHANICAL",
+            "crewworkgroup": "MCH",
+            "assetnumer": "C1026335",
+            "assetdescription": "MHWIRTH LOWER GUIDING ARM",
+            "location": "341.PRS1.120",
+            "locationdescription": "LOWER GUIDE ARM (UGA), VPH",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "LGA arm is showing signs of play in the main pivot pin on the LGA. There are installed bushing that are most likely worn out. Bondura bolt must be removed and bushings replaced."
+        },
+        "output": "TRD"
+    },
+    {
+        "input": {
+            "workorderdescription": "Change out IBOP on DDM VALVE, I-BOP (KELLY), 7-5/8IN",
+            "persongroup": "DRILLING",
+            "crewworkgroup": "DSL",
+            "assetnumer": "C1025791",
+            "assetdescription": "IBOP, UPPER, TOP DRIVE",
+            "location": "313.TD1.210",
+            "locationdescription": "IBOP, UPPER, TOP DRIVE",
+            "workordertype": "CM",
+            "siteid": 2330,
+            "taskid": 10,
+            "workordertaskdescription": "Change out IBOP on DDM VALVE, I-BOP (KELLY), 7-5/8IN"
+        },
+        "output": "FTC"
+    }
+]
