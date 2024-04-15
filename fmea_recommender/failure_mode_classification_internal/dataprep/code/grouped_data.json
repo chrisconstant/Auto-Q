@@ -4,6 +4,19 @@
         "description": "Burned",
         "longdescription": "Consumed/damaged/deformed because of overheating",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     },
     {
@@ -88,6 +101,19 @@
                 "siteid": 2326.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "REPLACE JOINT CLAMP WITH BROKEN LOCK PIN."
+            },
+            {
+                "workorderdescription": "Cracked",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Damaged and showing lines on the surface from having split without coming apart"
             }
         ]
     },
@@ -238,6 +264,19 @@
                 "siteid": 2318.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "Purchase and install missing door control manifold plugs on EPR doors"
+            },
+            {
+                "workorderdescription": "Deformed",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Not having the normal or natural shape or form"
             }
         ]
     },
@@ -466,6 +505,19 @@
                 "siteid": 1010.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "REPLACE THE KILL HOSE AND PUT ALL INFO AGAIST THIS WO.\r\n\r\nPICS AND SN FROM NEW HOSE MUST BE ADDED"
+            },
+            {
+                "workorderdescription": "External leak",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Accidentally lose or admit contents.  Source of leak is visible."
             }
         ]
     },
@@ -512,6 +564,19 @@
                 "siteid": 2330.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "Hot stab on flying lead has broken handle and needs to be replaced."
+            },
+            {
+                "workorderdescription": "Fractured",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Fractured or damaged and no longer in one piece "
             }
         ]
     },
@@ -584,6 +649,19 @@
                 "siteid": 2330.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "Change out IBOP on DDM VALVE, I-BOP (KELLY), 7-5/8IN"
+            },
+            {
+                "workorderdescription": "Failure to close",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "The equipment does not close on demand"
             }
         ]
     },
@@ -695,6 +773,19 @@
                 "siteid": 2326.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "REPLACE PNEUMARIC CYLINDER AND PERFORMED FUNCTION TEST."
+            },
+            {
+                "workorderdescription": "Failure to open",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "The equipment does not open on demand"
             }
         ]
     },
@@ -780,6 +871,19 @@
                 "siteid": 1020.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "AD reported that Aux Hydratong  was not doing the make-up function. Required to check proper full calibration."
+            },
+            {
+                "workorderdescription": "Failure to start/function on demand",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "The equipment does not start, function on demand"
             }
         ]
     },
@@ -852,6 +956,19 @@
                 "siteid": 1010.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "Rebuild gate valve on Choke Manifold  #43\r\nPN# 51014166 SN# EE01C07001-0005-1\r\nSIZE: 2 - 1/16\" - 10Kpsi"
+            },
+            {
+                "workorderdescription": "Internal leak",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Accidentally lose or admit contents.  Source of leak is not visible."
             }
         ]
     },
@@ -911,6 +1028,19 @@
                 "siteid": 2326.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "Replace MW TDX Gearbox oil and filter"
+            },
+            {
+                "workorderdescription": "Lubrication/Fluid Sampling",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Unsatisfactory fluid, lubrication sample"
             }
         ]
     },
@@ -919,6 +1049,19 @@
         "description": "Material build-up",
         "longdescription": "Accumulation of  foreign/external material ",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     },
     {
@@ -926,6 +1069,19 @@
         "description": "Noise",
         "longdescription": "A sound that is loud and causes disturbance",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     },
     {
@@ -1088,6 +1244,19 @@
                 "siteid": 2290.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "WARNING!\r\nThe equipment inspection performed contains a value deviating from the system defined limits for the connected meter reading.\r\n\t\r\nACTION:\r\nVerify the registered value is correct.  If the value is not correct or routine maintenance can resolve the deviation, make the necessary corrections.\r\nIf the registered value is correct and beyond routine maintenance, it is mandatory to contact Technical Services with the findings and review the immediate actions required."
+            },
+            {
+                "workorderdescription": "Parameter deviation",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "A parameter is not controlled as set"
             }
         ]
     },
@@ -1134,6 +1303,19 @@
                 "siteid": 2330.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "Repair Pup joints and spiral HWDP"
+            },
+            {
+                "workorderdescription": "Plugged",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "A constraint in flow conductor"
             }
         ]
     },
@@ -1271,6 +1453,19 @@
                 "siteid": 1020.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "Replace Pressure transmitter N161 - Clamp pressure transmitter on TDX Aux"
+            },
+            {
+                "workorderdescription": "Power/signal failure",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Power or signal loss in electrical system"
             }
         ]
     },
@@ -1279,6 +1474,19 @@
         "description": "Rust",
         "longdescription": "Build up of corrosion products",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     },
     {
@@ -1286,6 +1494,19 @@
         "description": "Spurious Alarm",
         "longdescription": "Unexpected/false alarm",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     },
     {
@@ -1293,6 +1514,19 @@
         "description": "Slippage",
         "longdescription": "Decrease of transmitted power in a mechanical system caused by slipping",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     },
     {
@@ -1300,6 +1534,19 @@
         "description": "Does not stop on demand",
         "longdescription": "The equipment does not stop on demand",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     },
     {
@@ -1345,6 +1592,19 @@
                 "siteid": 2326.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "Order new Directional Control Valves for the RCD HPU Service."
+            },
+            {
+                "workorderdescription": "Stuck",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Unable to move"
             }
         ]
     },
@@ -1353,6 +1613,19 @@
         "description": "Loss of Explosion Protection (EX) Integrity",
         "longdescription": "Loss of Explosion Protection (EX) Integrity",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     },
     {
@@ -1463,6 +1736,19 @@
                 "siteid": 2330.0,
                 "taskid": 10.0,
                 "workordertaskdescription": "LGA arm is showing signs of play in the main pivot pin on the LGA. There are installed bushing that are most likely worn out. Bondura bolt must be removed and bushings replaced."
+            },
+            {
+                "workorderdescription": "Thickness reduction",
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": "Reduction in thickness measurement ,  loss of material"
             }
         ]
     },
@@ -1471,6 +1757,19 @@
         "description": "Vibration",
         "longdescription": "Vibration is higher that the established limit",
         "examples": [
+            {
+                "workorderdescription": NaN,
+                "persongroup": NaN,
+                "crewworkgroup": NaN,
+                "assetnumer": NaN,
+                "assetdescription": NaN,
+                "location": NaN,
+                "locationdescription": NaN,
+                "workordertype": NaN,
+                "siteid": NaN,
+                "taskid": NaN,
+                "workordertaskdescription": NaN
+            }
         ]
     }
 ]

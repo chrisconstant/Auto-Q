@@ -1,0 +1,69 @@
+workordertext,description,label
+inefficient,Plugged / choked,PLU
+hole,Structural deficiency,STD
+stopped,Spurious stop,UST
+failing to open fully,Fail to open,FTO
+stopped communicatiing,Spurious stop,UST
+gone,Minor in-service problems,SER
+has high earth resistance,Electrical,ELE
+unserviceable su,Breakdown,BRD
+leak excessivly,Leaking,ELK
+unable to get running,Failure to start on demand,FTS
+flickering anytime,Erratic output,ERO
+needs descale,Minor in-service problems,SER
+spilling,Leaking,ELK
+not square,Minor in-service problems,SER
+rocking voilently,Vibration,VIB
+burnt off,Overheating,OHE
+twisted,Fail to function,FTI
+keeps tripping on start up,Electrical,ELE
+unsecure,Minor in-service problems,SER
+not pumping away,Plugged / choked,PLU
+siezedjammed,Breakdown,BRD
+no output,Plugged / choked,PLU
+faulted,Electrical,ELE
+burn,Overheating,OHE
+smoking hot,Overheating,OHE
+issue,Other,OTH
+erroded,Structural deficiency,STD
+leak out,Leaking,ELK
+detaching,Minor in-service problems,SER
+passing slurry,Leaking,ELK
+leak u,Leaking,ELK
+low pressure,Plugged / choked,PLU
+not reading,Abnormal instrument reading,AIR
+wornblocked,Structural deficiency,STD
+require replacing,Breakdown,BRD
+not starting in sequence,Failure to start on demand,FTS
+requires descale,Minor in-service problems,SER
+feedback,Electrical,ELE
+misaligned,Minor in-service problems,SER
+unable to increase,Low output,LOO
+defect,Structural deficiency,STD
+constantly tripping,Electrical,ELE
+excesively worn,Structural deficiency,STD
+need change,Breakdown,BRD
+not readingfalse,Abnormal instrument reading,AIR
+snaped off,Structural deficiency,STD
+requires de scale,Minor in-service problems,SER
+not holding,Leaking,ELK
+badly worn,Structural deficiency,STD
+deformed,Structural deficiency,STD
+tripping instantly,Electrical,ELE
+not maintaining pressure,Plugged / choked,PLU
+needs tuning,Minor in-service problems,SER
+moving a lot,Vibration,VIB
+stops during operation,Spurious stop,UST
+missing hold down,Minor in-service problems,SER
+will not fully close,Fail to function,FTI
+will not reset,Failure to start on demand,FTS
+flooding,Leaking,ELK
+need marking up,Minor in-service problems,SER
+not in sequence,Electrical,ELE
+stiff to turn,Fail to function,FTI
+contanimated,Contamination,CON
+wont close,Fail to close,FTC
+gear not spining,Failure to rotate,FRO
+eng will not shut down,Failure to stop on demand,STP
+output high,High output,HIO
+air cond. making heaps of noise.,Noise,NOI

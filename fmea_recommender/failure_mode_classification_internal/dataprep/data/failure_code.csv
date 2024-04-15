@@ -1,0 +1,24 @@
+label,description,longdescription
+BUR,Burned,Consumed/damaged/deformed because of overheating
+CRK,Cracked,Damaged and showing lines on the surface from having split without coming apart
+DFM,Deformed,Not having the normal or natural shape or form
+ELK,External leak,Accidentally lose or admit contents.  Source of leak is visible.
+FRC,Fractured,Fractured or damaged and no longer in one piece 
+FTC,Failure to close,The equipment does not close on demand
+FTO,Failure to open,The equipment does not open on demand
+FTS,Failure to start/function on demand,The equipment does not start/function on demand
+INL,Internal leak,Accidentally lose or admit contents.  Source of leak is not visible.
+LFS,Lubrication/Fluid Sampling,Unsatisfactory fluid/lubrication sample
+MBU,Material build-up,Accumulation of  foreign/external material 
+NOI,Noise,A sound that is loud and causes disturbance
+PDE,Parameter deviation,A parameter is not controlled as set
+PLU,Plugged,A constraint in flow conductor
+PTF,Power/signal failure,Power or signal loss in electrical system
+RUS,Rust,Build up of corrosion products
+SAL,Spurious Alarm,Unexpected/false alarm
+SLP,Slippage,Decrease of transmitted power in a mechanical system caused by slipping
+STP,Does not stop on demand,The equipment does not stop on demand
+STU,Stuck,Unable to move
+TEX,Loss of Explosion Protection (EX) Integrity,Loss of Explosion Protection (EX) Integrity
+TRD,Thickness reduction,Reduction in thickness measurement / loss of material
+VIB,Vibration,Vibration is higher that the established limit

@@ -1,0 +1,503 @@
+workordertext,description,label
+falure,Breakdown,BRD
+unserviceable dpr 1,Breakdown,BRD
+bogged,Plugged / choked,PLU
+spaying slurry,Leaking,ELK
+fell of,Minor in-service problems,SER
+no pressure output,Plugged / choked,PLU
+damageblockage,Structural deficiency,STD
+squeeling,Noise,NOI
+requires repacking,Minor in-service problems,SER
+no starting issue,Failure to start on demand,FTS
+shaking,Vibration,VIB
+blow,Minor in-service problems,SER
+need a descale,Minor in-service problems,SER
+over heating,Overheating,OHE
+vibrationcheck,Vibration,VIB
+vibration issue,Vibration,VIB
+not open,Minor in-service problems,SER
+sticking,Fail to function,FTI
+seized shut,Breakdown,BRD
+blocked,Plugged / choked,PLU
+not working,Breakdown,BRD
+not energising,Low output,LOO
+power issue,Electrical,ELE
+needs repairing,Structural deficiency,STD
+not performing,Breakdown,BRD
+wont run and,Failure to start on demand,FTS
+boil out,Overheating,OHE
+not supplying,Plugged / choked,PLU
+spilled,Leaking,ELK
+stuck in,Fail to function,FTI
+leak exponentially,Leaking,ELK
+not keeping up,Low output,LOO
+pumping issue,Low output,LOO
+leak slurry,Leaking,ELK
+us,Breakdown,BRD
+requires attention,Minor in-service problems,SER
+does not stop,Failure to stop on demand,STP
+noisy sce,Noise,NOI
+twisting,Fail to function,FTI
+needs to be extended,Minor in-service problems,SER
+lost its packing,Leaking,ELK
+rusted through,Structural deficiency,STD
+needs to be held down,Minor in-service problems,SER
+flow issue,Plugged / choked,PLU
+degraded,Structural deficiency,STD
+wont pump floc,Breakdown,BRD
+leakspray,Leaking,ELK
+wont run in,Failure to start on demand,FTS
+needs repacked,Minor in-service problems,SER
+passing excessively,Leaking,ELK
+blocking,Plugged / choked,PLU
+not engaging,Failure to start on demand,FTS
+shredded,Structural deficiency,STD
+noise,Noise,NOI
+blown out,Minor in-service problems,SER
+needs replacing,Breakdown,BRD
+not running,Breakdown,BRD
+leak when shut,Leaking,ELK
+fall off,Minor in-service problems,SER
+not being pumped away,Plugged / choked,PLU
+scaled up,Minor in-service problems,SER
+fallen off,Minor in-service problems,SER
+broke away,Breakdown,BRD
+cannot run in,Failure to start on demand,FTS
+not pumping enough,Plugged / choked,PLU
+not stopping,Failure to stop on demand,STP
+unable to shu,Failure to stop on demand,STP
+failed internaly,Breakdown,BRD
+not there,Minor in-service problems,SER
+inefficiant,Plugged / choked,PLU
+no reading,Abnormal instrument reading,AIR
+will not start in,Failure to start on demand,FTS
+been running hot,Overheating,OHE
+fallen out,Minor in-service problems,SER
+leak on,Leaking,ELK
+to be removed,Breakdown,BRD
+unsupported,Minor in-service problems,SER
+giving false reading,Abnormal instrument reading,AIR
+leak in two place,Leaking,ELK
+not reaching flow,Plugged / choked,PLU
+wont turn,Failure to start on demand,FTS
+not able to open,Minor in-service problems,SER
+need straighting,Minor in-service problems,SER
+hot liquid,Overheating,OHE
+fell apart,Minor in-service problems,SER
+fail again,Breakdown,BRD
+needs to be replaced,Breakdown,BRD
+underperforming,Low output,LOO
+corroded close out,Structural deficiency,STD
+not kicking in,Failure to start on demand,FTS
+needs to be descaled,Minor in-service problems,SER
+over flowed,Leaking,ELK
+non operational,Breakdown,BRD
+running fault,Other,OTH
+unable to run,Failure to start on demand,FTS
+come adrift,Minor in-service problems,SER
+stiff,Fail to function,FTI
+not high enough,Low output,LOO
+broken off,Breakdown,BRD
+snapped,Structural deficiency,STD
+shorted out,Electrical,ELE
+running when sump empty,Other,OTH
+faul,Electrical,ELE
+has a hole on,Structural deficiency,STD
+will not trip,Electrical,ELE
+failing to start,Failure to start on demand,FTS
+needs adjusting,Minor in-service problems,SER
+sheared,Structural deficiency,STD
+failed,Breakdown,BRD
+no guarding,Minor in-service problems,SER
+unresponsive,Failure to start on demand,FTS
+no sightglass,Minor in-service problems,SER
+not connected,Minor in-service problems,SER
+unserviceable and line,Breakdown,BRD
+keeps triping,Electrical,ELE
+coming out,Minor in-service problems,SER
+requires handle,Minor in-service problems,SER
+low flow,Plugged / choked,PLU
+split,Structural deficiency,STD
+fail to start,Failure to start on demand,FTS
+wont reset,Failure to start on demand,FTS
+hard to close,Fail to close,FTC
+hole in suction,Structural deficiency,STD
+worn through,Structural deficiency,STD
+passingleaking,Leaking,ELK
+not opening,Minor in-service problems,SER
+jammedseized,Plugged / choked,PLU
+damage,Structural deficiency,STD
+passing on,Leaking,ELK
+weak,Other,OTH
+viberating,Vibration,VIB
+static earth resistance,Electrical,ELE
+needs to be rebuilt,Minor in-service problems,SER
+needs supporting,Minor in-service problems,SER
+wont work,Failure to start on demand,FTS
+wornbelt,Structural deficiency,STD
+not attached corroded,Minor in-service problems,SER
+keeps tripping,Electrical,ELE
+weeping,Leaking,ELK
+badly rusted,Structural deficiency,STD
+bad vibration,Vibration,VIB
+fire,Overheating,OHE
+faulting,Electrical,ELE
+contaminating condensate,Contamination,CON
+too fast,High output,HIO
+low viscosity,Contamination,CON
+not closing,Minor in-service problems,SER
+require adjusting,Minor in-service problems,SER
+sound,Noise,NOI
+bent,Minor in-service problems,SER
+corrosion on,Structural deficiency,STD
+doesnt operate,Breakdown,BRD
+seized open,Breakdown,BRD
+excessive stopstart,Erratic output,ERO
+needs replaceing,Breakdown,BRD
+hot thermography,Overheating,OHE
+erratic,Erratic output,ERO
+false high level,Abnormal instrument reading,AIR
+will not shut,Fail to function,FTI
+lagging,Low output,LOO
+blew off,Minor in-service problems,SER
+no fill,Minor in-service problems,SER
+needs packing,Minor in-service problems,SER
+wont pump,Breakdown,BRD
+badly corrod,Structural deficiency,STD
+surging,Electrical,ELE
+false reading,Abnormal instrument reading,AIR
+not pumping enough to get,Plugged / choked,PLU
+not draining,Plugged / choked,PLU
+not wo,Breakdown,BRD
+not charging,Electrical,ELE
+locked,Failure to rotate,FRO
+not moving,Plugged / choked,PLU
+milky,Contamination,CON
+require tightening,Minor in-service problems,SER
+siezed,Breakdown,BRD
+no pressure,Plugged / choked,PLU
+disconnected,Breakdown,BRD
+coming adrift,Minor in-service problems,SER
+ruptured,Structural deficiency,STD
+not pumpung,Plugged / choked,PLU
+leakhose,Leaking,ELK
+cracked,Structural deficiency,STD
+broken loose,Breakdown,BRD
+failing,Breakdown,BRD
+looseworn,Minor in-service problems,SER
+alarming eratically,Abnormal instrument reading,AIR
+are not operational,Breakdown,BRD
+no static,Abnormal instrument reading,AIR
+siezed shut,Breakdown,BRD
+running too slow,Low output,LOO
+rusty,Structural deficiency,STD
+needs modifying,Minor in-service problems,SER
+died,Breakdown,BRD
+smoking,Overheating,OHE
+pulling very high,High output,HIO
+blowin,Minor in-service problems,SER
+not stopping at,Failure to stop on demand,STP
+not operational,Breakdown,BRD
+seizedbogged,Breakdown,BRD
+usversicol,Breakdown,BRD
+static,Electrical,ELE
+does not trip,Electrical,ELE
+needs alignment,Minor in-service problems,SER
+contaimination,Contamination,CON
+burst again,Breakdown,BRD
+smoke,Overheating,OHE
+losing,Minor in-service problems,SER
+no belt,Minor in-service problems,SER
+needs tightened,Minor in-service problems,SER
+not turning restriction,Plugged / choked,PLU
+no signal,Abnormal instrument reading,AIR
+emulsified,Contamination,CON
+alarming vibration,Vibration,VIB
+needs patched up,Minor in-service problems,SER
+blew off top of,Minor in-service problems,SER
+badly corroded in,Structural deficiency,STD
+perished,Breakdown,BRD
+need calibration,Abnormal instrument reading,AIR
+jammed in place,Plugged / choked,PLU
+collapsed,Breakdown,BRD
+requires slotting,Minor in-service problems,SER
+fault finding,Electrical,ELE
+reading inaccurate,Abnormal instrument reading,AIR
+sucked in,Other,OTH
+come loose,Minor in-service problems,SER
+no phase,Electrical,ELE
+bore tripping,Electrical,ELE
+spill to ground,Electrical,ELE
+reading high,Abnormal instrument reading,AIR
+rusted away,Structural deficiency,STD
+needs a repack,Minor in-service problems,SER
+fried,Breakdown,BRD
+no speed control,Abnormal instrument reading,AIR
+seized breakdown,Breakdown,BRD
+needs replacement,Breakdown,BRD
+not workin,Breakdown,BRD
+require investigating,Minor in-service problems,SER
+passing when closed,Leaking,ELK
+not operating,Breakdown,BRD
+crack,Structural deficiency,STD
+stopped pumping,Spurious stop,UST
+not pumping issue,Plugged / choked,PLU
+vibration,Vibration,VIB
+no flow,Plugged / choked,PLU
+restricted,Low output,LOO
+high vibration,Vibration,VIB
+unserviceable no contol,Breakdown,BRD
+slippery,Minor in-service problems,SER
+no seal,Minor in-service problems,SER
+leak underflow,Leaking,ELK
+blockedseized,Plugged / choked,PLU
+broken near,Breakdown,BRD
+faulty earth,Electrical,ELE
+not maintaining,Plugged / choked,PLU
+wont rotate,Failure to start on demand,FTS
+not efficient,Low output,LOO
+will not start,Failure to start on demand,FTS
+contamination trip,Contamination,CON
+not working on,Breakdown,BRD
+blown out at,Minor in-service problems,SER
+trips out,Electrical,ELE
+struggling,Low output,LOO
+slow,Low output,LOO
+keeps on tripping,Electrical,ELE
+reading stuck,Abnormal instrument reading,AIR
+not pumping,Plugged / choked,PLU
+torn,Structural deficiency,STD
+cutting in and out,Erratic output,ERO
+leakhole,Leaking,ELK
+come free of,Minor in-service problems,SER
+contaminated,Contamination,CON
+not pumpingeast,Plugged / choked,PLU
+no oil movement,Plugged / choked,PLU
+cold,Other,OTH
+problem,Other,OTH
+keeps tripping at start,Electrical,ELE
+severely corroded,Structural deficiency,STD
+needs repack,Minor in-service problems,SER
+not secure,Minor in-service problems,SER
+missing on,Minor in-service problems,SER
+require changing,Minor in-service problems,SER
+have smoked up,Overheating,OHE
+rusted of,Structural deficiency,STD
+relieving too early,Leaking,ELK
+missing blank,Minor in-service problems,SER
+will not restart,Failure to start on demand,FTS
+needs repacking,Minor in-service problems,SER
+high amp,Abnormal instrument reading,AIR
+weaping,Leaking,ELK
+burnt out,Overheating,OHE
+blowen,Minor in-service problems,SER
+adrift,Minor in-service problems,SER
+seizes at time,Breakdown,BRD
+may burst,Structural deficiency,STD
+sparaying,Leaking,ELK
+tripping straight away,Electrical,ELE
+has a split in,Structural deficiency,STD
+corrodedstripped,Structural deficiency,STD
+buggered,Breakdown,BRD
+seized,Breakdown,BRD
+pot in backward,Minor in-service problems,SER
+fault,Electrical,ELE
+will not pump,Breakdown,BRD
+tripping in,Electrical,ELE
+requires replacing,Minor in-service problems,SER
+continually tripping,Electrical,ELE
+no run indication,Abnormal instrument reading,AIR
+running hot,Overheating,OHE
+poor,Fail to function,FTI
+keeps tripping out,Electrical,ELE
+playing up,Erratic output,ERO
+not providing pressure,Plugged / choked,PLU
+not starting,Failure to start on demand,FTS
+sheared off,Structural deficiency,STD
+not puming,Plugged / choked,PLU
+corroding,Structural deficiency,STD
+spraying out of,Leaking,ELK
+badly corroded,Structural deficiency,STD
+requires clean,Minor in-service problems,SER
+holedinspect,Structural deficiency,STD
+no earth,Electrical,ELE
+missingloose,Minor in-service problems,SER
+siezing on,Breakdown,BRD
+keeps kicking in,Failure to stop on demand,STP
+not efficiant,Low output,LOO
+sheered,Structural deficiency,STD
+incorrect orientation,Minor in-service problems,SER
+worn out,Structural deficiency,STD
+signal error,Abnormal instrument reading,AIR
+earth fault,Electrical,ELE
+unserviceable pump,Breakdown,BRD
+not attached,Minor in-service problems,SER
+leaked out,Leaking,ELK
+shorting out,Electrical,ELE
+tripping on overload,Electrical,ELE
+broken,Breakdown,BRD
+heavy corrosion,Structural deficiency,STD
+unable to reach,Low output,LOO
+wont open,Fail to function,FTI
+lealing,Leaking,ELK
+needs another row,Minor in-service problems,SER
+down to earth,Electrical,ELE
+very corroded,Structural deficiency,STD
+will not start after flushing,Failure to start on demand,FTS
+slurry spraying out,Leaking,ELK
+badly corr,Structural deficiency,STD
+covered,Minor in-service problems,SER
+requires a descale,Minor in-service problems,SER
+starting to crack,Structural deficiency,STD
+crack in transition,Structural deficiency,STD
+constantly losing,Leaking,ELK
+continually trips out,Electrical,ELE
+dirty,Minor in-service problems,SER
+worn again,Structural deficiency,STD
+broke,Breakdown,BRD
+needs to be flushed,Minor in-service problems,SER
+rusted off,Structural deficiency,STD
+stopped working,Spurious stop,UST
+stuck,Fail to function,FTI
+appears loose,Minor in-service problems,SER
+very high vibration,Vibration,VIB
+cannot start,Failure to start on demand,FTS
+not secured,Minor in-service problems,SER
+holed,Structural deficiency,STD
+jammed closed,Plugged / choked,PLU
+tripping cause,Electrical,ELE
+coroded,Structural deficiency,STD
+needs to be dismantled,Minor in-service problems,SER
+missing off,Minor in-service problems,SER
+knocking,Noise,NOI
+slipping,Minor in-service problems,SER
+tripping on,Electrical,ELE
+caught in suction,Minor in-service problems,SER
+defect notice,Structural deficiency,STD
+will not stay running,Spurious stop,UST
+come off,Minor in-service problems,SER
+tripped out,Electrical,ELE
+not accurate,Abnormal instrument reading,AIR
+loose,Minor in-service problems,SER
+has crack,Structural deficiency,STD
+congested,Plugged / choked,PLU
+shows offline while running in field,Abnormal instrument reading,AIR
+showing signs of failure,Other,OTH
+passing,Leaking,ELK
+broken electrical,Breakdown,BRD
+spraying out,Leaking,ELK
+needs freeing up,Plugged / choked,PLU
+wont start,Failure to start on demand,FTS
+high earth resistance,Abnormal instrument reading,AIR
+pumping at high out put,High output,HIO
+pinholed,Minor in-service problems,SER
+poor flow,Low output,LOO
+slipped off,Minor in-service problems,SER
+faulty,Electrical,ELE
+needs scope,Minor in-service problems,SER
+colapsed,Breakdown,BRD
+will not run,Breakdown,BRD
+exposed,Minor in-service problems,SER
+losing signal,Electrical,ELE
+misaligning,Minor in-service problems,SER
+out of position,Minor in-service problems,SER
+need replacing,Breakdown,BRD
+not running in,Fail to function,FTI
+has split,Structural deficiency,STD
+snapped off,Structural deficiency,STD
+noisyvibrating,Noise,NOI
+filled,Leaking,ELK
+fail,Breakdown,BRD
+fails to open in sequence,Fail to open,FTO
+looseness,Minor in-service problems,SER
+too high,High output,HIO
+blowing,Minor in-service problems,SER
+running when empty,Other,OTH
+hot,Overheating,OHE
+fluctuates at high rate,Erratic output,ERO
+not reading right,Abnormal instrument reading,AIR
+sitting on hot,Overheating,OHE
+not able to maintain level,Plugged / choked,PLU
+dislodged,Minor in-service problems,SER
+turning in reverse,Fail to function,FTI
+no out put,Plugged / choked,PLU
+leaky,Leaking,ELK
+tripping out on run up,Electrical,ELE
+need replaceing,Breakdown,BRD
+not pump,Plugged / choked,PLU
+will not run in,Breakdown,BRD
+needs rebuild,Breakdown,BRD
+leakingreplace,Leaking,ELK
+stopped abruptly,Spurious stop,UST
+brittle,Structural deficiency,STD
+needs securing,Minor in-service problems,SER
+dented,Structural deficiency,STD
+vibrationlaser,Vibration,VIB
+inconsistant flow,Plugged / choked,PLU
+needs re build,Breakdown,BRD
+unserviceable please replace,Breakdown,BRD
+not connectedblanked,Minor in-service problems,SER
+earthing,Electrical,ELE
+no indication,Minor in-service problems,SER
+stripped,Structural deficiency,STD
+needs inspecting,Minor in-service problems,SER
+snaped,Structural deficiency,STD
+didnt trip,Electrical,ELE
+blow out,Minor in-service problems,SER
+unserviceable leak sulphur,Breakdown,BRD
+tripping issue,Electrical,ELE
+unable to reset,Failure to stop on demand,STP
+need modifying,Minor in-service problems,SER
+tripping out,Electrical,ELE
+requires topupstop,Minor in-service problems,SER
+dragged,Minor in-service problems,SER
+not performingpumping,Breakdown,BRD
+getting jammed,Plugged / choked,PLU
+failed restest,Failure to start on demand,FTS
+starting issue,Failure to start on demand,FTS
+wrong range,Abnormal instrument reading,AIR
+may be failing,Fail to function,FTI
+stretched,Minor in-service problems,SER
+does dont pump at,Plugged / choked,PLU
+stuck in open position,Fail to function,FTI
+seize,Breakdown,BRD
+hole in,Structural deficiency,STD
+snappedplugged,Structural deficiency,STD
+consumeing,Leaking,ELK
+keeps vibrating shut,Vibration,VIB
+not able to pump,Plugged / choked,PLU
+needs a descale,Minor in-service problems,SER
+passing u,Leaking,ELK
+out of adjustment,Minor in-service problems,SER
+failure,Breakdown,BRD
+needs reset,Electrical,ELE
+rupture,Structural deficiency,STD
+vibrating,Vibration,VIB
+rubbing,Vibration,VIB
+leakingneed,Leaking,ELK
+playingup,Erratic output,ERO
+broken into,Breakdown,BRD
+doesnt pump to,Plugged / choked,PLU
+corrosion,Structural deficiency,STD
+squealing,Noise,NOI
+noyt pumping,Breakdown,BRD
+fault tripping,Electrical,ELE
+needs to be repacked,Minor in-service problems,SER
+will not turn,Fail to function,FTI
+grinding,Noise,NOI
+rusted,Structural deficiency,STD
+trips on overload,Electrical,ELE
+stopping,Spurious stop,UST
+split in two place,Structural deficiency,STD
+hanging,Other,OTH
+needs fixing,Minor in-service problems,SER
+detached,Minor in-service problems,SER
+brokenmissing,Breakdown,BRD
+need repacking,Minor in-service problems,SER
+wont pump to,Breakdown,BRD
+sce fault,Fail to function,FTI
+wont run,Failure to start on demand,FTS
+requires modifying,Minor in-service problems,SER
+requires replacement,Minor in-service problems,SER
+triped,Electrical,ELE
+stopping randomly,Spurious stop,UST
