@@ -1,0 +1,63 @@
+{"user_id": 0, "item_id": "AIR", "neg_ids": ["FTS", "INL", "FTC", "ELU"], "query": "Class description include: abnormal instrument reading.", "pos": ["AIR"], "neg": ["FTS", "INL", "FTC", "ELU"]}
+{"user_id": 1, "item_id": "ELP", "neg_ids": ["ELU", "POW", "FTS", "FTD"], "query": "external leakage - process medium", "pos": ["ELP"], "neg": ["ELU", "POW", "FTS", "FTD"]}
+{"user_id": 2, "item_id": "ELU", "neg_ids": ["UNK", "SPO", "FRO", "DOP"], "query": "Find a class label for me based on the label description: external leakage - utility medium.", "pos": ["ELU"], "neg": ["UNK", "SPO", "FRO", "DOP"]}
+{"user_id": 3, "item_id": "ERO", "neg_ids": ["PTF", "PDE", "FWR", "CLW"], "query": "erratic output", "pos": ["ERO"], "neg": ["PTF", "PDE", "FWR", "CLW"]}
+{"user_id": 4, "item_id": "FCO", "neg_ids": ["SLL", "FTI", "PTF", "VLO"], "query": "Recommend a class label for me based on label description: failure to connect.", "pos": ["FCO"], "neg": ["SLL", "FTI", "PTF", "VLO"]}
+{"user_id": 5, "item_id": "FCU", "neg_ids": ["FTL", "INL", "NOI", "FWR"], "query": "failure to cut", "pos": ["FCU"], "neg": ["FTL", "INL", "NOI", "FWR"]}
+{"user_id": 6, "item_id": "FTC", "neg_ids": ["SLL", "STP", "BRD", "CLW"], "query": "failure to close on demand", "pos": ["FTC"], "neg": ["SLL", "STP", "BRD", "CLW"]}
+{"user_id": 7, "item_id": "FTD", "neg_ids": ["FCO", "UST", "POD", "STU"], "query": "failure to disconnect", "pos": ["FTD"], "neg": ["FCO", "UST", "POD", "STU"]}
+{"user_id": 8, "item_id": "FTF", "neg_ids": ["OHE", "PLU", "ELF", "FTC"], "query": "Given the following label description failure to function on demand, predict the most possible associated class label?", "pos": ["FTF"], "neg": ["OHE", "PLU", "ELF", "FTC"]}
+{"user_id": 9, "item_id": "FTO", "neg_ids": ["FTI", "HTF", "FTF", "STD"], "query": "failure to open on demand", "pos": ["FTO"], "neg": ["FTI", "HTF", "FTF", "STD"]}
+{"user_id": 10, "item_id": "FTS", "neg_ids": ["FCU", "ELU", "FRO", "STP"], "query": "Recommend a class label for me based on label description: failure to start on demand.", "pos": ["FTS"], "neg": ["FCU", "ELU", "FRO", "STP"]}
+{"user_id": 11, "item_id": "HIO", "neg_ids": ["MOF", "ELP", "POD", "FOF"], "query": "I have the following label description: high output", "pos": ["HIO"], "neg": ["MOF", "ELP", "POD", "FOF"]}
+{"user_id": 12, "item_id": "INL", "neg_ids": ["UNK", "SBU", "LOB", "UNK"], "query": "internal leakage", "pos": ["INL"], "neg": ["UNK", "SBU", "LOB", "UNK"]}
+{"user_id": 13, "item_id": "LCP", "neg_ids": ["MOF", "SET", "SBU", "ILU"], "query": "leakage in closed position", "pos": ["LCP"], "neg": ["MOF", "SET", "SBU", "ILU"]}
+{"user_id": 14, "item_id": "LOO", "neg_ids": ["SER", "ELF", "FTC", "FOV"], "query": "low output", "pos": ["LOO"], "neg": ["SER", "ELF", "FTC", "FOV"]}
+{"user_id": 15, "item_id": "NOI", "neg_ids": ["ERO", "HIO", "SHH", "FTL"], "query": "Find a class label for me based on the label description: noise.", "pos": ["NOI"], "neg": ["ERO", "HIO", "SHH", "FTL"]}
+{"user_id": 16, "item_id": "OHE", "neg_ids": ["PLU", "LOO", "POW", "UST"], "query": "overheating", "pos": ["OHE"], "neg": ["PLU", "LOO", "POW", "UST"]}
+{"user_id": 17, "item_id": "OTH", "neg_ids": ["ERO", "BRD", "FTC", "FTS"], "query": "Class description include: other.", "pos": ["OTH"], "neg": ["ERO", "BRD", "FTC", "FTS"]}
+{"user_id": 18, "item_id": "PLU", "neg_ids": ["FOF", "HIO", "AIR", "STD"], "query": "Class description include: plugged / choked.", "pos": ["PLU"], "neg": ["FOF", "HIO", "AIR", "STD"]}
+{"user_id": 19, "item_id": "POD", "neg_ids": ["FTO", "VLO", "SET", "FRO"], "query": "Find a class label for me based on the label description: loss of functions on both pods.", "pos": ["POD"], "neg": ["FTO", "VLO", "SET", "FRO"]}
+{"user_id": 20, "item_id": "SET", "neg_ids": ["PTF", "HIO", "UNK", "PLU"], "query": "Class description include: failure to set / retrieve.", "pos": ["SET"], "neg": ["PTF", "HIO", "UNK", "PLU"]}
+{"user_id": 21, "item_id": "SER", "neg_ids": ["VIB", "ELU", "STP", "UBU"], "query": "Find a class label for me based on the label description: minor in - service problems.", "pos": ["SER"], "neg": ["VIB", "ELU", "STP", "UBU"]}
+{"user_id": 22, "item_id": "SPO", "neg_ids": ["IHT", "DOP", "FTD", "FTI"], "query": "spurious operation", "pos": ["SPO"], "neg": ["IHT", "DOP", "FTD", "FTI"]}
+{"user_id": 23, "item_id": "STD", "neg_ids": ["UNK", "ILU", "ELP", "HTF"], "query": "structural deficiency", "pos": ["STD"], "neg": ["UNK", "ILU", "ELP", "HTF"]}
+{"user_id": 24, "item_id": "STP", "neg_ids": ["FTR", "AIR", "FTC", "FTS"], "query": "failure to stop on demand", "pos": ["STP"], "neg": ["FTR", "AIR", "FTC", "FTS"]}
+{"user_id": 25, "item_id": "UNK", "neg_ids": ["POW", "LOA", "CLW", "FOV"], "query": "unknown", "pos": ["UNK"], "neg": ["POW", "LOA", "CLW", "FOV"]}
+{"user_id": 26, "item_id": "VIB", "neg_ids": ["MOF", "SET", "FTI", "FOF"], "query": "Class description include: vibration.", "pos": ["VIB"], "neg": ["MOF", "SET", "FTI", "FOF"]}
+{"user_id": 27, "item_id": "BRD", "neg_ids": ["FOF", "POW", "POW", "FTS"], "query": "Recommend a class label for me based on label description: breakdown.", "pos": ["BRD"], "neg": ["FOF", "POW", "POW", "FTS"]}
+{"user_id": 28, "item_id": "DOP", "neg_ids": ["FCO", "IHT", "PDE", "LBP"], "query": "delayed operation", "pos": ["DOP"], "neg": ["FCO", "IHT", "PDE", "LBP"]}
+{"user_id": 29, "item_id": "FRO", "neg_ids": ["VLO", "PLU", "OHE", "FCO"], "query": "failure to rotate", "pos": ["FRO"], "neg": ["VLO", "PLU", "OHE", "FCO"]}
+{"user_id": 30, "item_id": "FTL", "neg_ids": ["FTF", "FTO", "FTF", "SHH"], "query": "Given the following label description failure to lock / unlock, predict the most possible associated class label?", "pos": ["FTL"], "neg": ["FTF", "FTO", "FTF", "SHH"]}
+{"user_id": 31, "item_id": "IHT", "neg_ids": ["INL", "STU", "FWR", "FOV"], "query": "Class description include: insufficient heat transfer.", "pos": ["IHT"], "neg": ["INL", "STU", "FWR", "FOV"]}
+{"user_id": 32, "item_id": "LBP", "neg_ids": ["PTF", "SBU", "FWR", "SLP"], "query": "Recommend a class label for me based on label description: low oil supply pressure.", "pos": ["LBP"], "neg": ["PTF", "SBU", "FWR", "SLP"]}
+{"user_id": 33, "item_id": "PDE", "neg_ids": ["VLO", "UBU", "SLL", "UST"], "query": "Given the following label description parameter deviation, predict the most possible associated class label?", "pos": ["PDE"], "neg": ["VLO", "UBU", "SLL", "UST"]}
+{"user_id": 34, "item_id": "POW", "neg_ids": ["STD", "LOB", "SET", "WCL"], "query": "Recommend a class label for me based on label description: insufficient power.", "pos": ["POW"], "neg": ["STD", "LOB", "SET", "WCL"]}
+{"user_id": 35, "item_id": "PTF", "neg_ids": ["HIO", "LOB", "ELU", "VLO"], "query": "power / signal transmission failure", "pos": ["PTF"], "neg": ["HIO", "LOB", "ELU", "VLO"]}
+{"user_id": 36, "item_id": "UST", "neg_ids": ["LCP", "FTC", "FCU", "PDE"], "query": "spurious stop", "pos": ["UST"], "neg": ["LCP", "FTC", "FCU", "PDE"]}
+{"user_id": 37, "item_id": "FOF", "neg_ids": ["WCL", "FTC", "DOP", "HIO"], "query": "Class description include: faulty output frequency.", "pos": ["FOF"], "neg": ["WCL", "FTC", "DOP", "HIO"]}
+{"user_id": 38, "item_id": "FOV", "neg_ids": ["PDE", "FTO", "WCL", "PDE"], "query": "Recommend a class label for me based on label description: faulty output voltage.", "pos": ["FOV"], "neg": ["PDE", "FTO", "WCL", "PDE"]}
+{"user_id": 39, "item_id": "FTI", "neg_ids": ["FTP", "STP", "ILU", "CSF"], "query": "I have the following label description: failure to function as intended", "pos": ["FTI"], "neg": ["FTP", "STP", "ILU", "CSF"]}
+{"user_id": 40, "item_id": "FTR", "neg_ids": ["STP", "VIB", "DOP", "NOI"], "query": "failure to regulate", "pos": ["FTR"], "neg": ["STP", "VIB", "DOP", "NOI"]}
+{"user_id": 41, "item_id": "FLP", "neg_ids": ["INL", "FTD", "FOV", "STU"], "query": "failure in lightning protection system", "pos": ["FLP"], "neg": ["INL", "FTD", "FOV", "STU"]}
+{"user_id": 42, "item_id": "LOA", "neg_ids": ["WCL", "ELU", "ELP", "POD"], "query": "load drop", "pos": ["LOA"], "neg": ["WCL", "ELU", "ELP", "POD"]}
+{"user_id": 43, "item_id": "LOB", "neg_ids": ["HTF", "SLP", "SLL", "VLO"], "query": "Given the following label description loss of buoyancy, predict the most possible associated class label?", "pos": ["LOB"], "neg": ["HTF", "SLP", "SLL", "VLO"]}
+{"user_id": 44, "item_id": "MOF", "neg_ids": ["FCU", "SPO", "UBU", "FLP"], "query": "mooring failure", "pos": ["MOF"], "neg": ["FCU", "SPO", "UBU", "FLP"]}
+{"user_id": 45, "item_id": "SBU", "neg_ids": ["FTO", "SER", "UNK", "FLP"], "query": "sludge build - up", "pos": ["SBU"], "neg": ["FTO", "SER", "UNK", "FLP"]}
+{"user_id": 46, "item_id": "SLP", "neg_ids": ["SBU", "LOO", "FTI", "FOF"], "query": "Class description include: slippage.", "pos": ["SLP"], "neg": ["SBU", "LOO", "FTI", "FOF"]}
+{"user_id": 47, "item_id": "ELF", "neg_ids": ["CLW", "FRO", "FTP", "SPO"], "query": "Given the following label description external leakage - fuel, predict the most possible associated class label?", "pos": ["ELF"], "neg": ["CLW", "FRO", "FTP", "SPO"]}
+{"user_id": 48, "item_id": "FTP", "neg_ids": ["UNK", "POW", "BRD", "SER"], "query": "Class description include: failure to function on demand.", "pos": ["FTP"], "neg": ["UNK", "POW", "BRD", "SER"]}
+{"user_id": 49, "item_id": "NOO", "neg_ids": ["INL", "STP", "FCO", "LOB"], "query": "Find a class label for me based on the label description: no output.", "pos": ["NOO"], "neg": ["INL", "STP", "FCO", "LOB"]}
+{"user_id": 50, "item_id": "SHH", "neg_ids": ["ELP", "STU", "ILU", "STD"], "query": "Given the following label description spurious high alarm level, predict the most possible associated class label?", "pos": ["SHH"], "neg": ["ELP", "STU", "ILU", "STD"]}
+{"user_id": 51, "item_id": "SLL", "neg_ids": ["VLO", "FOV", "FTS", "NOO"], "query": "Given the following label description spurious low alarm level, predict the most possible associated class label?", "pos": ["SLL"], "neg": ["VLO", "FOV", "FTS", "NOO"]}
+{"user_id": 52, "item_id": "VLO", "neg_ids": ["MOF", "STP", "SLL", "PTF"], "query": "very low output", "pos": ["VLO"], "neg": ["MOF", "STP", "SLL", "PTF"]}
+{"user_id": 53, "item_id": "CSF", "neg_ids": ["UNK", "VIB", "FTO", "UST"], "query": "control / signal failure", "pos": ["CSF"], "neg": ["UNK", "VIB", "FTO", "UST"]}
+{"user_id": 54, "item_id": "HTF", "neg_ids": ["FCO", "ELP", "NOO", "DOP"], "query": "heating failure", "pos": ["HTF"], "neg": ["FCO", "ELP", "NOO", "DOP"]}
+{"user_id": 55, "item_id": "ILP", "neg_ids": ["CLW", "OHE", "OHE", "PLU"], "query": "Find a class label for me based on the label description: internal leakage process medium.", "pos": ["ILP"], "neg": ["CLW", "OHE", "OHE", "PLU"]}
+{"user_id": 56, "item_id": "ILU", "neg_ids": ["PLU", "FCU", "FTD", "PLU"], "query": "internal leakage utility medium", "pos": ["ILU"], "neg": ["PLU", "FCU", "FTD", "PLU"]}
+{"user_id": 57, "item_id": "UBU", "neg_ids": ["ELU", "SLL", "PTF", "FOV"], "query": "Class description include: global buckling.", "pos": ["UBU"], "neg": ["ELU", "SLL", "PTF", "FOV"]}
+{"user_id": 58, "item_id": "CLW", "neg_ids": ["FCU", "STU", "FWR", "PCL"], "query": "control - line - to - well communication", "pos": ["CLW"], "neg": ["FCU", "STU", "FWR", "PCL"]}
+{"user_id": 59, "item_id": "PCL", "neg_ids": ["NOI", "OHE", "CLW", "LOB"], "query": "Find a class label for me based on the label description: premature closure.", "pos": ["PCL"], "neg": ["NOI", "OHE", "CLW", "LOB"]}
+{"user_id": 60, "item_id": "WCL", "neg_ids": ["INL", "FRO", "FRO", "FWR"], "query": "well - to - control - line communication", "pos": ["WCL"], "neg": ["INL", "FRO", "FRO", "FWR"]}
+{"user_id": 61, "item_id": "FWR", "neg_ids": ["ERO", "POD", "FTO", "FTR"], "query": "Recommend a class label for me based on label description: failure while running.", "pos": ["FWR"], "neg": ["ERO", "POD", "FTO", "FTR"]}
+{"user_id": 62, "item_id": "STU", "neg_ids": ["PCL", "UST", "VLO", "LOA"], "query": "stuck", "pos": ["STU"], "neg": ["PCL", "UST", "VLO", "LOA"]}

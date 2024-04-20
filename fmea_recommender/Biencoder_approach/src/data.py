@@ -9,11 +9,11 @@ import datasets
 from torch.utils.data import Dataset
 from transformers import DataCollatorWithPadding
 from transformers import PreTrainedTokenizer, BatchEncoding
-from arguments import DataArguments
-
+from .argument import DataArguments
 
 class TrainDatasetForEmbedding(Dataset):
     def __init__(self, args: DataArguments, tokenizer: PreTrainedTokenizer):
+        print (args.train_data)
         if os.path.isdir(args.train_data):
             train_datasets = []
             for file in os.listdir(args.train_data):
