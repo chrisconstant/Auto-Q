@@ -13,7 +13,6 @@ from transformers import (
     set_seed,
 )
 
-
 def main():
     parser = HfArgumentParser((DataArguments, ModelArguments, TrainingArguments))
     data_args, model_args, training_args = parser.parse_args_into_dataclasses()
