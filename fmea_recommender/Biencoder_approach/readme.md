@@ -5,5 +5,5 @@ python data_process.py --in_seq_data sss --in_meta_data ../../failure_mode_class
 ```
 
 ```
-python main.py --data_cache_dir hf_data --train_data ./preprocess/description2label --train_group_size 2 --query_max_len 512 --passage_max_len 128 --max_example_num_per_dataset 5 --has_template False --model_name_or_path intfloat/e5-large-v2 --cache_dir hf_cache --sentence_pooling_method mean --normlized True --flash_attn_2_enabled False --torch_dtype auto --output_dir hf_output
+python main.py --data_cache_dir hf_data --train_data ./preprocess/experimentdata --train_group_size 2 --query_max_len 512 --passage_max_len 128 --max_example_num_per_dataset 5 --has_template False --model_name_or_path intfloat/e5-large-v2 --cache_dir hf_cache --sentence_pooling_method mean --normlized True --flash_attn_2_enabled False --torch_dtype auto --output_dir hf_output
 ```
