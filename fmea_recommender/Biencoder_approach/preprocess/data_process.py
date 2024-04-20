@@ -36,7 +36,12 @@ def gen_description2label(itemid2label, itemid2description, args):
     with open(args.out_description2label, 'w') as f:
         
         for index in range(len(itemid2label)):
-            template = "{}"
+
+            if random.random() < 0.5:
+                template = "{}"
+            else:
+                template = random.choice(description2label_template)
+
             query = ''
 
             query += itemid2description[index]
