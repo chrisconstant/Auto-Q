@@ -1,0 +1,63 @@
+{"user_id": 0, "item_id": "AIR", "neg_ids": ["UST", "SBU", "BRD", "FCU"], "query": "abnormal instrument reading", "pos": ["AIR"], "neg": ["UST", "SBU", "BRD", "FCU"]}
+{"user_id": 1, "item_id": "ELP", "neg_ids": ["FCO", "SET", "SBU", "FWR"], "query": "external leakage - process medium", "pos": ["ELP"], "neg": ["FCO", "SET", "SBU", "FWR"]}
+{"user_id": 2, "item_id": "ELU", "neg_ids": ["WCL", "HTF", "UST", "UBU"], "query": "external leakage - utility medium", "pos": ["ELU"], "neg": ["WCL", "HTF", "UST", "UBU"]}
+{"user_id": 3, "item_id": "ERO", "neg_ids": ["LBP", "HTF", "LCP", "ILU"], "query": "erratic output", "pos": ["ERO"], "neg": ["LBP", "HTF", "LCP", "ILU"]}
+{"user_id": 4, "item_id": "FCO", "neg_ids": ["INL", "SER", "BRD", "NOO"], "query": "failure to connect", "pos": ["FCO"], "neg": ["INL", "SER", "BRD", "NOO"]}
+{"user_id": 5, "item_id": "FCU", "neg_ids": ["SER", "FWR", "OHE", "ILP"], "query": "failure to cut", "pos": ["FCU"], "neg": ["SER", "FWR", "OHE", "ILP"]}
+{"user_id": 6, "item_id": "FTC", "neg_ids": ["FTL", "SHH", "ILP", "HTF"], "query": "failure to close on demand", "pos": ["FTC"], "neg": ["FTL", "SHH", "ILP", "HTF"]}
+{"user_id": 7, "item_id": "FTD", "neg_ids": ["UBU", "SER", "LOA", "LBP"], "query": "failure to disconnect", "pos": ["FTD"], "neg": ["UBU", "SER", "LOA", "LBP"]}
+{"user_id": 8, "item_id": "FTF", "neg_ids": ["UNK", "FOV", "ELU", "LBP"], "query": "failure to function on demand", "pos": ["FTF"], "neg": ["UNK", "FOV", "ELU", "LBP"]}
+{"user_id": 9, "item_id": "FTO", "neg_ids": ["FLP", "FCU", "FTF", "SLL"], "query": "failure to open on demand", "pos": ["FTO"], "neg": ["FLP", "FCU", "FTF", "SLL"]}
+{"user_id": 10, "item_id": "FTS", "neg_ids": ["CSF", "FCO", "ILP", "FTI"], "query": "failure to start on demand", "pos": ["FTS"], "neg": ["CSF", "FCO", "ILP", "FTI"]}
+{"user_id": 11, "item_id": "HIO", "neg_ids": ["ELF", "FCU", "LBP", "STD"], "query": "high output", "pos": ["HIO"], "neg": ["ELF", "FCU", "LBP", "STD"]}
+{"user_id": 12, "item_id": "INL", "neg_ids": ["CSF", "OTH", "STP", "HIO"], "query": "internal leakage", "pos": ["INL"], "neg": ["CSF", "OTH", "STP", "HIO"]}
+{"user_id": 13, "item_id": "LCP", "neg_ids": ["BRD", "LOA", "LOA", "FRO"], "query": "leakage in closed position", "pos": ["LCP"], "neg": ["BRD", "LOA", "LOA", "FRO"]}
+{"user_id": 14, "item_id": "LOO", "neg_ids": ["FTD", "HIO", "ELF", "UBU"], "query": "low output", "pos": ["LOO"], "neg": ["FTD", "HIO", "ELF", "UBU"]}
+{"user_id": 15, "item_id": "NOI", "neg_ids": ["STD", "VLO", "ELP", "POW"], "query": "noise", "pos": ["NOI"], "neg": ["STD", "VLO", "ELP", "POW"]}
+{"user_id": 16, "item_id": "OHE", "neg_ids": ["MOF", "LCP", "FTO", "WCL"], "query": "overheating", "pos": ["OHE"], "neg": ["MOF", "LCP", "FTO", "WCL"]}
+{"user_id": 17, "item_id": "OTH", "neg_ids": ["STP", "ILP", "ILU", "SET"], "query": "other", "pos": ["OTH"], "neg": ["STP", "ILP", "ILU", "SET"]}
+{"user_id": 18, "item_id": "PLU", "neg_ids": ["IHT", "UBU", "LBP", "DOP"], "query": "plugged / choked", "pos": ["PLU"], "neg": ["IHT", "UBU", "LBP", "DOP"]}
+{"user_id": 19, "item_id": "POD", "neg_ids": ["OHE", "FTC", "CSF", "LOO"], "query": "loss of functions on both pods", "pos": ["POD"], "neg": ["OHE", "FTC", "CSF", "LOO"]}
+{"user_id": 20, "item_id": "SET", "neg_ids": ["UST", "POD", "FWR", "ELF"], "query": "failure to set / retrieve", "pos": ["SET"], "neg": ["UST", "POD", "FWR", "ELF"]}
+{"user_id": 21, "item_id": "SER", "neg_ids": ["LBP", "AIR", "HTF", "ERO"], "query": "minor in - service problems", "pos": ["SER"], "neg": ["LBP", "AIR", "HTF", "ERO"]}
+{"user_id": 22, "item_id": "SPO", "neg_ids": ["FTO", "POW", "FTI", "FTF"], "query": "spurious operation", "pos": ["SPO"], "neg": ["FTO", "POW", "FTI", "FTF"]}
+{"user_id": 23, "item_id": "STD", "neg_ids": ["FTO", "STP", "ELU", "ILU"], "query": "structural deficiency", "pos": ["STD"], "neg": ["FTO", "STP", "ELU", "ILU"]}
+{"user_id": 24, "item_id": "STP", "neg_ids": ["NOO", "SPO", "PCL", "POW"], "query": "failure to stop on demand", "pos": ["STP"], "neg": ["NOO", "SPO", "PCL", "POW"]}
+{"user_id": 25, "item_id": "UNK", "neg_ids": ["PLU", "POD", "ELP", "ELU"], "query": "unknown", "pos": ["UNK"], "neg": ["PLU", "POD", "ELP", "ELU"]}
+{"user_id": 26, "item_id": "VIB", "neg_ids": ["STP", "VLO", "ERO", "IHT"], "query": "vibration", "pos": ["VIB"], "neg": ["STP", "VLO", "ERO", "IHT"]}
+{"user_id": 27, "item_id": "BRD", "neg_ids": ["NOO", "UNK", "STD", "FTP"], "query": "breakdown", "pos": ["BRD"], "neg": ["NOO", "UNK", "STD", "FTP"]}
+{"user_id": 28, "item_id": "DOP", "neg_ids": ["CLW", "FTI", "PDE", "SER"], "query": "delayed operation", "pos": ["DOP"], "neg": ["CLW", "FTI", "PDE", "SER"]}
+{"user_id": 29, "item_id": "FRO", "neg_ids": ["FLP", "OTH", "ELF", "PTF"], "query": "failure to rotate", "pos": ["FRO"], "neg": ["FLP", "OTH", "ELF", "PTF"]}
+{"user_id": 30, "item_id": "FTL", "neg_ids": ["FTR", "PCL", "FLP", "HIO"], "query": "failure to lock / unlock", "pos": ["FTL"], "neg": ["FTR", "PCL", "FLP", "HIO"]}
+{"user_id": 31, "item_id": "IHT", "neg_ids": ["FCU", "SLP", "HTF", "FTS"], "query": "insufficient heat transfer", "pos": ["IHT"], "neg": ["FCU", "SLP", "HTF", "FTS"]}
+{"user_id": 32, "item_id": "LBP", "neg_ids": ["INL", "STD", "FTO", "FTF"], "query": "low oil supply pressure", "pos": ["LBP"], "neg": ["INL", "STD", "FTO", "FTF"]}
+{"user_id": 33, "item_id": "PDE", "neg_ids": ["FTC", "FLP", "NOI", "SBU"], "query": "parameter deviation", "pos": ["PDE"], "neg": ["FTC", "FLP", "NOI", "SBU"]}
+{"user_id": 34, "item_id": "POW", "neg_ids": ["ELF", "FOV", "ERO", "SET"], "query": "insufficient power", "pos": ["POW"], "neg": ["ELF", "FOV", "ERO", "SET"]}
+{"user_id": 35, "item_id": "PTF", "neg_ids": ["FOF", "SLL", "LOO", "IHT"], "query": "power / signal transmission failure", "pos": ["PTF"], "neg": ["FOF", "SLL", "LOO", "IHT"]}
+{"user_id": 36, "item_id": "UST", "neg_ids": ["PTF", "POW", "SPO", "DOP"], "query": "spurious stop", "pos": ["UST"], "neg": ["PTF", "POW", "SPO", "DOP"]}
+{"user_id": 37, "item_id": "FOF", "neg_ids": ["AIR", "OTH", "NOI", "HTF"], "query": "faulty output frequency", "pos": ["FOF"], "neg": ["AIR", "OTH", "NOI", "HTF"]}
+{"user_id": 38, "item_id": "FOV", "neg_ids": ["IHT", "UST", "ILU", "FTD"], "query": "faulty output voltage", "pos": ["FOV"], "neg": ["IHT", "UST", "ILU", "FTD"]}
+{"user_id": 39, "item_id": "FTI", "neg_ids": ["FTD", "FTS", "IHT", "POW"], "query": "failure to function as intended", "pos": ["FTI"], "neg": ["FTD", "FTS", "IHT", "POW"]}
+{"user_id": 40, "item_id": "FTR", "neg_ids": ["FTP", "SER", "ILP", "SET"], "query": "failure to regulate", "pos": ["FTR"], "neg": ["FTP", "SER", "ILP", "SET"]}
+{"user_id": 41, "item_id": "FLP", "neg_ids": ["OTH", "FCU", "NOO", "FCO"], "query": "failure in lightning protection system", "pos": ["FLP"], "neg": ["OTH", "FCU", "NOO", "FCO"]}
+{"user_id": 42, "item_id": "LOA", "neg_ids": ["LCP", "POW", "DOP", "UBU"], "query": "load drop", "pos": ["LOA"], "neg": ["LCP", "POW", "DOP", "UBU"]}
+{"user_id": 43, "item_id": "LOB", "neg_ids": ["LBP", "LOA", "FOV", "VLO"], "query": "loss of buoyancy", "pos": ["LOB"], "neg": ["LBP", "LOA", "FOV", "VLO"]}
+{"user_id": 44, "item_id": "MOF", "neg_ids": ["OTH", "UBU", "SET", "CSF"], "query": "mooring failure", "pos": ["MOF"], "neg": ["OTH", "UBU", "SET", "CSF"]}
+{"user_id": 45, "item_id": "SBU", "neg_ids": ["FTL", "STD", "STD", "CLW"], "query": "sludge build - up", "pos": ["SBU"], "neg": ["FTL", "STD", "STD", "CLW"]}
+{"user_id": 46, "item_id": "SLP", "neg_ids": ["FTF", "SBU", "SET", "FOV"], "query": "slippage", "pos": ["SLP"], "neg": ["FTF", "SBU", "SET", "FOV"]}
+{"user_id": 47, "item_id": "ELF", "neg_ids": ["FTD", "LOO", "CLW", "UBU"], "query": "external leakage - fuel", "pos": ["ELF"], "neg": ["FTD", "LOO", "CLW", "UBU"]}
+{"user_id": 48, "item_id": "FTP", "neg_ids": ["FTO", "FOF", "STP", "SPO"], "query": "failure to function on demand", "pos": ["FTP"], "neg": ["FTO", "FOF", "STP", "SPO"]}
+{"user_id": 49, "item_id": "NOO", "neg_ids": ["FTD", "FTL", "FOF", "VIB"], "query": "no output", "pos": ["NOO"], "neg": ["FTD", "FTL", "FOF", "VIB"]}
+{"user_id": 50, "item_id": "SHH", "neg_ids": ["AIR", "PCL", "FWR", "ELP"], "query": "spurious high alarm level", "pos": ["SHH"], "neg": ["AIR", "PCL", "FWR", "ELP"]}
+{"user_id": 51, "item_id": "SLL", "neg_ids": ["NOI", "ILP", "PDE", "FTR"], "query": "spurious low alarm level", "pos": ["SLL"], "neg": ["NOI", "ILP", "PDE", "FTR"]}
+{"user_id": 52, "item_id": "VLO", "neg_ids": ["ERO", "FCO", "FTP", "VIB"], "query": "very low output", "pos": ["VLO"], "neg": ["ERO", "FCO", "FTP", "VIB"]}
+{"user_id": 53, "item_id": "CSF", "neg_ids": ["SHH", "BRD", "LOO", "FTO"], "query": "control / signal failure", "pos": ["CSF"], "neg": ["SHH", "BRD", "LOO", "FTO"]}
+{"user_id": 54, "item_id": "HTF", "neg_ids": ["FTO", "PLU", "OHE", "BRD"], "query": "heating failure", "pos": ["HTF"], "neg": ["FTO", "PLU", "OHE", "BRD"]}
+{"user_id": 55, "item_id": "ILP", "neg_ids": ["STU", "FLP", "VIB", "NOI"], "query": "internal leakage process medium", "pos": ["ILP"], "neg": ["STU", "FLP", "VIB", "NOI"]}
+{"user_id": 56, "item_id": "ILU", "neg_ids": ["SET", "OHE", "STU", "LOB"], "query": "internal leakage utility medium", "pos": ["ILU"], "neg": ["SET", "OHE", "STU", "LOB"]}
+{"user_id": 57, "item_id": "UBU", "neg_ids": ["FCO", "FTC", "FTS", "SPO"], "query": "global buckling", "pos": ["UBU"], "neg": ["FCO", "FTC", "FTS", "SPO"]}
+{"user_id": 58, "item_id": "CLW", "neg_ids": ["MOF", "AIR", "BRD", "FTF"], "query": "control - line - to - well communication", "pos": ["CLW"], "neg": ["MOF", "AIR", "BRD", "FTF"]}
+{"user_id": 59, "item_id": "PCL", "neg_ids": ["FTI", "ELF", "DOP", "SLL"], "query": "premature closure", "pos": ["PCL"], "neg": ["FTI", "ELF", "DOP", "SLL"]}
+{"user_id": 60, "item_id": "WCL", "neg_ids": ["FTF", "DOP", "CLW", "IHT"], "query": "well - to - control - line communication", "pos": ["WCL"], "neg": ["FTF", "DOP", "CLW", "IHT"]}
+{"user_id": 61, "item_id": "FWR", "neg_ids": ["LBP", "ERO", "ELP", "FOV"], "query": "failure while running", "pos": ["FWR"], "neg": ["LBP", "ERO", "ELP", "FOV"]}
+{"user_id": 62, "item_id": "STU", "neg_ids": ["FTI", "FOF", "CLW", "FTD"], "query": "stuck", "pos": ["STU"], "neg": ["FTI", "FOF", "CLW", "FTD"]}
