@@ -165,3 +165,7 @@ cython_debug/
 **/mlruns/
 /autorecipe/test/v2test/experiment1_contextonly_withboundry/Granite/*.csv
 /autorecipe/test/v2test/experiment1_contextonly/Granite/*.csv
+
+/autorecipe/fmea_recommender/Biencoder_approach/hf_cache
+/autorecipe/fmea_recommender/Biencoder_approach/hf_data
+/autorecipe/fmea_recommender/Biencoder_approach/hf_output

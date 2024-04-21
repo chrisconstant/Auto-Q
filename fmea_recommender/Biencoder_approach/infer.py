@@ -28,7 +28,8 @@ def gen_retrieval_result(
     with open(item_embedding_prompt_path, "r", encoding="utf-8") as f:
         for line in f:
             line = json.loads(line.strip())
-            itemid2title.append(line["title"])
+            itemid2title.append(line["label"])
+    print (itemid2title)
 
     os.makedirs(os.path.dirname(answer_file), exist_ok=True)
     fd = open(answer_file, "w", encoding="utf-8")
@@ -46,7 +47,7 @@ def gen_retrieval_result(
         )
         scores = [(index, score) for index, score in enumerate(scores) if index != 0]
         top_itemids = sorted(scores, key=lambda x: -x[1])[:topk]
-        data = {"result": [(x[0], itemid2title[x[0]][1]) for x in top_itemids]}
+        data = {"result": [(x[0], itemid2title[x[0]]) for x in top_itemids]}
         fd.write(json.dumps(data, ensure_ascii=False) + "\n")
     fd.close()
 
@@ -101,12 +102,10 @@ if __name__ == "__main__":
     item_embedding_path = os.path.join(cache_dir, "item_embedding.pkl")
     user_embedding_path = os.path.join(cache_dir, "user_embedding.pkl")
 
-    if accelerator.is_main_process:
-        os.makedirs(cache_dir, exist_ok=True)
-        get_item_text(
-            args.in_meta_data, save_item_prompt_path=item_embedding_prompt_path
-        )
-    accelerator.wait_for_everyone()
+    os.makedirs(cache_dir, exist_ok=True)
+    get_item_text(
+        args.in_meta_data, save_item_prompt_path=item_embedding_prompt_path
+    )
 
     print("infer item embedding")
     run_model_embedding(
@@ -136,11 +135,10 @@ if __name__ == "__main__":
         qorp="query",
     )
 
-    if accelerator.is_main_process:
-        gen_retrieval_result(
-            item_embedding_prompt_path,
-            args.answer_file,
-            args.topk,
-            item_embedding_path,
-            user_embedding_path,
-        )
+    gen_retrieval_result(
+        item_embedding_prompt_path,
+        args.answer_file,
+        args.topk,
+        item_embedding_path,
+        user_embedding_path,
+    )
