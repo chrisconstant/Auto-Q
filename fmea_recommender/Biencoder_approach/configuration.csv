@@ -1,0 +1,5 @@
+﻿Num,MODEl_NAME_OR_PATH,SENTENCE_POOLING_METHOD,TORCH_TYPE,BF16,FLASH_ATTN_2_ENABLED,TRAIN_GROUP_SIZE,PEFT_MODEL_NAME,HAS_TEMPLATE
+1,intfloat/e5-large-v2,mean,None,FALSE,FALSE,8,None,FALSE
+2,bert-large-uncased,mean,None,FALSE,FALSE,8,None,FALSE
+3,BAAI/bge-large-en-v1.5,cls,None,FALSE,FALSE,8,None,FALSE
+4,meta-llama/Llama-2-7b-hf,last,bfloat16,TRUE,TRUE,2,castorini/repllama-v1-7b-lora-passage,TRUE

@@ -1,7 +1,9 @@
 import os
-import logger
+import logging
 import torch
 from transformers.trainer import Trainer
+from typing import Optional, List
+logger = logging.getLogger(__name__)
 
 
 class BiTrainer(Trainer):

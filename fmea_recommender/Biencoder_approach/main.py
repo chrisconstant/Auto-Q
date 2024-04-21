@@ -5,13 +5,17 @@ from src.argument import (
 )
 import logging
 from transformers import AutoConfig, AutoTokenizer
-from src.data import TrainDatasetForEmbedding
-
+from src.data import TrainDatasetForEmbedding, EmbedCollator
+import logging
+import os
+from pathlib import Path
 logger = logging.getLogger(__name__)
 from transformers import (
     HfArgumentParser,
     set_seed,
 )
+from src.model import BiEncoderModel
+from src.trainer import BiTrainer
 
 def main():
     parser = HfArgumentParser((DataArguments, ModelArguments, TrainingArguments))
@@ -47,10 +51,60 @@ def main():
         padding_side='left' if "Llama" in model_args.model_name_or_path else 'right',
         truncation_side='right',
     )
+    if "Llama" in model_args.model_name_or_path:
+        tokenizer.pad_token = tokenizer.unk_token
+    config = AutoConfig.from_pretrained(
+        model_args.config_name if model_args.config_name else model_args.model_name_or_path,
+        cache_dir=model_args.cache_dir,
+    )
+    config._flash_attn_2_enabled = model_args.flash_attn_2_enabled
+    logger.info('Config: %s', config)
+
+    model = BiEncoderModel(model_name=model_args.model_name_or_path,
+                           normlized=model_args.normlized,
+                           sentence_pooling_method=model_args.sentence_pooling_method,
+                           negatives_cross_device=training_args.negatives_cross_device,
+                           temperature=training_args.temperature,
+                           peft_model_name=model_args.peft_model_name,
+                           config=config,
+                           model_args=model_args,)
+
+    if training_args.fix_position_embedding:
+        for k, v in model.named_parameters():
+            if "position_embeddings" in k:
+                logging.info(f"Freeze the parameters for {k}")
+                v.requires_grad = False
 
     train_dataset = TrainDatasetForEmbedding(args=data_args, tokenizer=tokenizer)
-    query, passages = train_dataset[2]
-    print (query, passages)
+
+    truncation_strategy = True
+    padding_strategy = 'max_length'
+
+    trainer = BiTrainer(
+        model=model,
+        args=training_args,
+        train_dataset=train_dataset,
+        data_collator=EmbedCollator(
+            tokenizer,
+            query_max_len=data_args.query_max_len,
+            passage_max_len=data_args.passage_max_len,
+            truncation_strategy=truncation_strategy,
+            padding_strategy=padding_strategy,
+            has_template=data_args.has_template,
+        ),
+        tokenizer=tokenizer
+    )
+
+    Path(training_args.output_dir).mkdir(parents=True, exist_ok=True)
+
+    # Training
+    trainer.train()
+    trainer.save_model()
+    # For convenience, we also re-save the tokenizer to the same directory,
+    # so that you can share your model easily on huggingface.co/models =)
+    if trainer.is_world_process_zero():
+        tokenizer.save_pretrained(training_args.output_dir)
+
 
 if __name__ == "__main__":
     main()
