@@ -1,7 +1,7 @@
 #### Code - 
 
 ```
-python data_process.py --in_seq_data sss --in_meta_data ../../failure_mode_classification_iso/metadata.json --out_directory experiment --model_path_or_name intfloat/e5-large-v2 --out_description2label description2label --neg_num 4
+python data_process.py --in_seq_data sss --in_meta_data ../../failure_mode_classification_iso/metadata.json --out_directory experimentdata --model_path_or_name intfloat/e5-large-v2 --out_description2label description2label --neg_num 7 --out_example2label example2label 
 ```
 
 ```
@@ -10,4 +10,8 @@ python main.py --data_cache_dir hf_data --train_data ./preprocess/experimentdata
 
 ```
 python infer.py --in_meta_data ../failure_mode_classification_iso/metadata.json --user_embedding_prompt_path ./modelinput/testinput.json --model_path_or_name ./hf_output --answer_file ./modeloutput/output.json --topk 5 --query_max_len 512 --passage_max_len 128 --sentence_pooling_method cls --torch_dtype auto
+```
+
+```
+python infer.py --in_meta_data ../failure_mode_classification_iso/metadata.json --user_embedding_prompt_path ./modelinput/testinput.json --model_path_or_name intfloat/e5-large-v2 --answer_file ./modeloutput/output.json --topk 5 --query_max_len 512 --passage_max_len 128 --sentence_pooling_method cls --torch_dtype auto
 ```
