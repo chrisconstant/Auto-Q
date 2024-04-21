@@ -9,5 +9,5 @@ python main.py --data_cache_dir hf_data --train_data ./preprocess/experimentdata
 ```
 
 ```
-python infer.py --in_meta_data ../../failure_mode_classification_iso/metadata.json --user_embedding_prompt_path ./modelinput/testinput.json --model_path_or_name ./hf_output --answer_file ./modeloutput --topk 5 --query_max_len 512 --passage_max_len 128 --sentence_pooling_method cls --normlized True --has_template False --peft_model_name None --torch_dtype auto
+python infer.py --in_meta_data ../failure_mode_classification_iso/metadata.json --user_embedding_prompt_path ./modelinput/testinput.json --model_path_or_name ./hf_output --answer_file ./modeloutput/output.json --topk 5 --query_max_len 512 --passage_max_len 128 --sentence_pooling_method cls --torch_dtype auto
 ```
