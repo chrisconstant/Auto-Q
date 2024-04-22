@@ -54,5 +54,18 @@ example2components_template = [
     "What components are prone to experiencing the problem of {}?",
 ]
 
+example_equipment_component2label_template = [
+    "I want to find a class label with the following description: {0} for an equipment category {1}. These are the components of equipment that experience the given failure : {2}.",
+    "Find a class label that describes a type of equipment failure that affects the {1} category of equipment. The failure is characterized by {0}, and the components that are typically affected are {2}",
+    "I'm looking for a class label that corresponds to a specific equipment failure mode. The description is {0}, and it impacts the {1} category of equipment. The components of the equipment that are affected by this failure are {2}",
+    "find a class label that describes a failure mode that occurs in the {1} category of equipment. The failure is described as {0}, and the affected components are {2}",
+    "Could you help me find a class label for an equipment category failure? The description is: {0} for the equipment category {1}. The components that usually experience this failure are: {2}.",
+    "I'm looking for a class label that represents a type of equipment failure in the {1} category. The failure is defined by: {0}, and the components that are typically affected are: {2}",
+    "I need assistance in finding a class label for a specific equipment failure mode. The failure mode is: {0}, and it affects the {1} category of equipment. The components that are impacted by this failure are: {2}",
+    "Can you help me find a class label for a failure mode in the {1} category of equipment? The failure is described as: {0}, and the affected components are: {2}.",
+    "Find class label for {0} in equipment category {1}; affected components: {2}",
+    "Class label for {1} equipment category failure: {0}, affected components: {2}."
+]
+
 # You have given a failure mode description: Leakage in closed position. You need to generate 10 reformulation of the given description.
 # can you use this for additional reformulation: "sample": "Both pods are not functioning as desired", "asset_name": "drilling_equipment", "components": ["Subsea blowout preventers (BOP)"]
