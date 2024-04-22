@@ -169,6 +169,5 @@ cython_debug/
 **/hf_cache/
 **/hf_data/
 **/hf_output/
-**/modelinput/
 **/modeloutput/
 **/wandb/
