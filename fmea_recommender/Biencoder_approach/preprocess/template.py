@@ -67,5 +67,9 @@ example_equipment_component2label_template = [
     "Class label for {1} equipment category failure: {0}, affected components: {2}."
 ]
 
+example2description = [
+    
+]
+
 # You have given a failure mode description: Leakage in closed position. You need to generate 10 reformulation of the given description.
 # can you use this for additional reformulation: "sample": "Both pods are not functioning as desired", "asset_name": "drilling_equipment", "components": ["Subsea blowout preventers (BOP)"]
