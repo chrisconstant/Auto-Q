@@ -68,6 +68,26 @@ example_equipment_component2label_template = [
 ]
 
 example2description = [
+
+]
+
+equipmentcategory2equipmentsclass = [
+
+]
+
+equipmentsclass2type = [
+
+]
+
+equipmentunit2subunit = [
+
+]
+
+subunits2Maintainableitems = [
+
+]
+
+equipmentspecificdata = [
     
 ]
 
