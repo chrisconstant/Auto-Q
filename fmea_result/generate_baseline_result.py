@@ -25,9 +25,14 @@ exp_conf = {
 
 all_llm_models = [
     {
-        "name" : "ibm/granite-13b-chat-v2",
-        "prompt_func" : "build_labrador_prompt_dfs",
-        "output_parser" : "output_parser_llama2"
+        "name": "ibm/granite-13b-chat-v2",
+        "prompt_func": "build_labrador_prompt_dfs",
+        "output_parser": "output_parser_llama2",
+    },
+    {
+        "name" : "ibm/granite-13b-instruct-v2",
+        "prompt_func" : "build_instruct_prompt_dfsp",
+        "output_parser" : "output_parser_instruct"
     }
 ]
 

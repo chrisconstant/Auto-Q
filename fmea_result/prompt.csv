@@ -1,0 +1,900 @@
+prompts
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Battery - NICAD.
+Output: ['Electrolyte', 'Inter Cell and Inter Tier Connectors and Hardware and Battery Cable Connectors', 'Jar & Lid', 'Plates', 'Posts', 'Rack', 'Vent or Flame Arrestor'].
+
+Input: Battery - Inverter.
+Output: ['Capacitors, Commutation and Other Filled', 'Capacitors, Electrolytic', 'Fuse holder', 'Input / Output Filter Choke and Commutating Chokes', 'Input Fuse', 'Maintenance Bypass Switch', 'Metering Instruments (e.g. voltmeter, frequency meter, status lights)', 'Muffin fans', 'Power Semiconductor Components', 'Printed Circuit Boards (Firing circuit, Oscillator, Alarm, Sync, Metering circuits)', 'Static Switch', 'Transformer'].
+
+Input: Rectifier Bank/Charger_Switch Mode.
+Output: ['Cooling Fans', 'Interconnecting Communication Cables', 'Interconnecting Power Cables', 'Rack and Backplane (including AC breakers)', 'Rectifier Module (including PLC, semiconductors, transformer, etc)', 'System Control Monitor (including dry contacts, circuit boards, alarms, etc)'].
+
+Now please complete this example:
+Input: Battery - Charger.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Bumper - Spring.
+Output: ['Bolting', 'Bumper Head and Bracket', 'Mounting Bracket', 'Safety Cables', 'Spring', 'Spring Plunger', 'Stationary Cylinder'].
+
+Input: Bumper - Solid.
+Output: ['Bolting', 'Bumper Head and Bracket', 'Mounting Bracket', 'Safety Cables', 'Spring', 'Spring Plunger', 'Stationary Cylinder'].
+
+Input: FLEX - Pump - Horizontal - Mechanical Seal Non-Oil Bath - T4 Diesel Driven.
+Output: ['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Head', 'Diesel - Cylinder Liners', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Emission Control - DPF (Diesel Particulate Filter)', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Injector Nozzle & Valve', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - NOx Control Unit', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - SCR Catalyst', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Silencer', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing & Hoses', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Heat Tracing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Insulation', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Fluid', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Pump', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Breather', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Drain Plug', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Filter and Strainer', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater Valve', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Level Float', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Temperature Control Valve & Sensor', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Filter - Fuel (Pre-Fuel & Final)', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Diesel - Filter - Lube Oil', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler', 'Diesel - PTO (present; not normally used in this application and is not expected to affect normal operation)', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Water Pump', 'Diesel - Wiring Harness', 'Diesel-Pump - Coupling - Elastomeric Element', 'Pump - Bearing Seals - Lip', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Casing', 'Pump - Casing Drain or Stop Valve', 'Pump - Casing and Internals, if present', 'Pump - Check Valve - Disk Arm (if present)', 'Pump - Check Valve - Hinge Pin (if present)', 'Pump - Check Valve - Rubber Flapper (if present)', 'Pump - Check Valve - Seat Failure (Body or Disk)', 'Pump - Connections and Piping', 'Pump - Discharge and Suction Connections', 'Pump - Gaskets and O-Rings', 'Pump - Impeller and Wear Rings', 'Pump - Lubrication - Grease', 'Pump - Priming System', 'Pump - Seal - Mechanical Non-Oil Bath Type (process or seal water wetted)', 'Pump - Shaft', 'Skid - Diesel and Pump Base Plate or Frame', 'Trailer - Bed, Frame, and Lifting Lugs', 'Trailer - Electric Brakes', 'Trailer - Electric Lights', 'Trailer - Hitch or Coupling', 'Trailer - Hydraulic Brakes', 'Trailer - Levelers', 'Trailer - Suspension', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Now please complete this example:
+Input: Bumper - Hydraulic.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Cable - Buried Power - Jacketed - TR-XLP.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield', 'Cable - neutral (concentric or taped only)', 'Cable - outer jacket', 'Splices', 'Terminations'].
+
+Input: Cable - Buried Power - Jacketed - Butyl.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield', 'Cable - neutral (concentric or taped only)', 'Cable - outer jacket', 'Splices', 'Terminations'].
+
+Input: Cable - Buried Power - Jacketed - XLP-HMWPE.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield', 'Cable - neutral (concentric or taped only)', 'Cable - outer jacket', 'Splices', 'Terminations'].
+
+Now please complete this example:
+Input: Cable - Buried Power - Jacketed - EPR-DR.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Cable - Buried Power - Unjacketed - TR-XLP.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield', 'Cable - neutral (concentric or taped only)', 'Splices', 'Terminations'].
+
+Input: Cable - Buried Power - Unjacketed - Butyl.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield', 'Cable - neutral (concentric or taped only)', 'Splices', 'Terminations'].
+
+Input: Cable - Buried Power - Unjacketed - XLP-HMWPE.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield', 'Cable - neutral (concentric or taped only)', 'Splices', 'Terminations'].
+
+Now please complete this example:
+Input: Cable - Buried Power - Unjacketed - EPR-DF.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Cable - Plant - 5-15kV - Black EPR - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (polymer tape)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations - outdoor'].
+
+Input: Cable - Plant - 5kV - Black EPR - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - outer jacket', 'Terminations - dry'].
+
+Input: Cable - Plant - 5-15kV - Black EPR - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (polymer tape)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations - dry'].
+
+Now please complete this example:
+Input: Cable - Plant - 5kV - Black EPR - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Cable - Plant - 5-15kV - Brown EPR - Discharge Resistant - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (extruded polymer)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations - dry'].
+
+Input: Cable - Plant - 5kV - Brown EPR - Discharge Resistant - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - outer jacket', 'Terminations - outdoor'].
+
+Input: Cable - Plant - 5kV - Pink EPR - Discharge Free - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - outer jacket', 'Terminations'].
+
+Now please complete this example:
+Input: Cable - Plant - 5kV - Brown EPR - Discharge Resistant - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Cable - Plant - 5kV - Butyl - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - outer jacket', 'Terminations - dry'].
+
+Input: Cable - Plant - 5-15kV - Butyl - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (polymer tape)', 'Cable - neutral (concentric or taped only)', 'Cable - outer jacket', 'Terminations'].
+
+Input: Cable - Plant - 5-15kV - XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (extruded or taped polymer)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations'].
+
+Now please complete this example:
+Input: Cable - Plant - 5-15kV - Butyl - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Cable - Plant - 5-15kV - XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (extruded or taped polymer)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations - outdoor'].
+
+Input: Cable - Plant - 5-15kV - TR-XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (extruded polymer)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations'].
+
+Input: Cable - Plant - 5-15kV - XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (extruded or taped polymer)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations'].
+
+Now please complete this example:
+Input: Cable - Plant - 5-15kV - TR-XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Material Handling - Conveyor - Rollers and Frame.
+Output: ['Idler Rollers', 'Powered Rollers', 'Roller Positioning and Speed Sensor', 'Support Frame and Structure', 'Thrust Rollers', 'Wiring (Powered Rollers and Position Sensors)'].
+
+Input: Material Handling - Conveyor - Belt Type with AC Motor Drive.
+Output: ['Anti-static brush (main belt)', 'Conveyor frame, belt skirting, mounting, and cover', 'Drive pulleys and belts', 'Emergency stop', 'Holdback (main belt) - grease filled', 'Holdback (main belt) - oil filled', 'Lubrication', 'Main belt', 'Misalignment switch (main belt)', 'Motor bearing shaft seal', 'Motor bearings - rolling element (radial only)', 'Motor endbells or bearing housings', 'Motor external fan & cover', 'Motor frame, enclosure, and mounting', 'Motor leads and electrical connections', 'Motor or machine grounding wire', 'Motor rotor bars and shorting rings (cast type)', 'Motor shaft', 'Motor space heaters, if present', 'Motor stator laminations', 'Motor stator winding blocking, bracing, wedges, and ties', 'Motor stator windings', 'Pulley bearings (main belt)', 'Pulleys (main belt)', 'Rollers and guides (main belt)', 'Rollers and guides (main belt) - other', 'Rollers and guides (main belt) - static steering', 'Scale, if present', 'Scrapers or belt cleaners  (main belt), if present', 'Speed switch (main belt)', 'Steering device or power trainer (main belt), if present'].
+
+Input: Material Handling - Conveyor - Belt Type with AC Gear Motor Drive.
+Output: ['Anti-static brush (main belt)', 'Conveyor frame, belt skirting, mounting, and cover', 'Drive chain', 'Drive sprockets', 'Emergency stop', 'Gearbox - gaskets', 'Gearbox - gears', 'Gearbox - oil breather', 'Gearbox bearings - rolling element (radial and thrust)', 'Holdback (main belt) - grease filled', 'Holdback (main belt) - oil filled', 'Lubrication - grease', 'Lubrication - oil', 'Main belt', 'Misalignment switch (main belt)', 'Motor and Gearbox bearing shaft seals', 'Motor and Gearbox frame, enclosure, mounting, housing, or gear case', 'Motor bearings - rolling element (radial only)', 'Motor external fan & cover', 'Motor leads and electrical connections', 'Motor or machine grounding wire', 'Motor output shaft', 'Motor rotor bars and shorting rings (cast type)', 'Motor space heaters, if present', 'Motor stator laminations', 'Motor stator winding blocking, bracing, wedges, and ties', 'Motor stator windings', 'Product scale, if present', 'Pulley bearings (main belt)', 'Pulleys (main belt)', 'Rollers and guides (main belt)', 'Rollers and guides (main belt) - other', 'Rollers and guides (main belt) - static steering', 'Scrapers or belt cleaners  (main belt), if present', 'Speed switch (main belt)', 'Steering device or power trainer (main belt), if present'].
+
+Now please complete this example:
+Input: CNC Robotic Containerization System.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Compressor - Centrifugal.
+Output: ['Bearings', 'Bull Gear Shaft seal', 'Bull/Pinion gears', 'Control relays', 'Controller cabinet vent fan', 'Controller cabinet vent filter', 'Coupling', 'Demister', 'Diffusers', 'Discharge check valve', 'Drain Traps', 'Electronic controller', 'Fasteners/ Hardware', 'Gaskets', 'Impellers', 'Inlet Air Filters, Element Type', 'Inlet Throttle Valve (Guide Vane type)', 'Inlet Throttle/ Blow off or Bypass control valve (Actuator Diaphragm type)', 'Inlet nozzle', 'Inter & After Coolers', 'Lube oil cooler', 'Lube oil filter', 'Lube oil immersion heaters, if present', 'Lube oil suction strainer', 'Main lube oil pump - shaft driven', 'Oil line orifices', 'Oil pressure control valve', 'Oil temperature control valve (AMOT type)', 'Pinion Shaft seals (air and oil)', 'Prelube pump - motor driven', 'Pressure and temperature transducers, vibration probes', 'Solenoid valve', 'Valve position transducer'].
+
+Input: Pump - Vacuum - Liquid Ring.
+Output: ['Air Filters, Element Type, if present', 'Bearing housing seals', 'Bearings or Bushings', 'Check Valves', 'Electronic/ Electrical Devices (Transmitters, Temperature control valves, Level / Flow / Thermocouples', 'Fasteners / Hardware', 'Float Valve', 'Gaskets', 'Mechanical shaft seal, if present', 'Oil', 'Orifice', 'Packing shaft seal, if present', 'Pressure Switches', 'Pressure switches', 'Pump Internal Casing, including inlet and outlet flanges', 'Rotor, Cone, and Lobe', 'Seal Water Tank', 'Solenoid valves', 'Strainer, if present'].
+
+Input: Compressor - Rotary Screw.
+Output: ['Balance Piston', 'Bearings', 'Bull Gear', 'Coupling', 'Fasteners/ Hardware', 'Gaskets, O-rings & Packing', 'Inlet Air Filters, Element Type', 'Inlet Throttle Valve', 'Inter & After Coolers, Tube sheets & baffles', 'Inter & After Coolers, Tubes', 'LP & HP Elements', 'Lubrication', 'Oil filter', 'Oil lines', 'Oil pump', 'Oil suction screens', 'Shaft seal', 'Sight glass', 'Traps', 'Unloader'].
+
+Now please complete this example:
+Input: Compressor & Pump - Rotary, Liquid Ring.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Pump - Chemical Injection - Double Diaphragm Type.
+Output: ['Bleeder/Degassing Valve', 'Hydraulic Make-up Valve, if present', 'Leak Detection Circuit Gauge', 'Motor - Bearing Grease Seals', 'Motor - Bearings - Rolling Element', 'Motor - External Fan and Cover', 'Motor - Frame', 'Motor - Leads and Electrical Connections', 'Motor - Lubrication - Grease', 'Motor - Rotor bars and shorting rings (cast type)', 'Motor - Stator Windings', 'Motor Electrical Ground', 'Over Pressurization Relief Valve', 'Pulsation Dampener', 'Pulsation Dampener Gauge', 'Pulsation Dampener Schrader Valve', 'Pump Bearings - Rolling Element', 'Pump Casing with Head', 'Pump Diaphragm - Teflon', 'Pump Dip Stick', 'Pump Drive Shaft Oil Seal', 'Pump Oil', 'Pump Piston Effective Stroke Collar (Control Sleeve)', 'Pump Piston or Plunger', 'Pump Piston or Plunger Lip Seal', 'Pump Rotating Assembly (worm gear, eccentric)', 'Pump Rotating Assembly (worm gear, eccentric, crank)', 'Pump and Motor Base (C Face)', 'Pump-Motor Coupling - Spline Type', 'Pump-Motor Fasteners', 'Pump-Motor Gasket and O-Rings', 'Suction Strainer', 'Suction and Discharge Check Valves'].
+
+Input: Coupling - Gear Type - Continuously Lubricated.
+Output: ['Cover gasket or o-ring', 'Fasteners', 'Gear teeth', 'Oil breather cap'].
+
+Input: Coupling - Elastomeric Type - Doughnut or Block.
+Output: ['Elastomeric element', 'Elastomeric fasteners', 'Hub', 'Hub fasteners'].
+
+Now please complete this example:
+Input: Coupling - Disc or Diaphragm Type.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Coupling - Elastomeric Type - Doughnut or Block.
+Output: ['Elastomeric element', 'Elastomeric fasteners', 'Hub', 'Hub fasteners'].
+
+Input: Coupling - Elastomeric Type - Jaw or Spider Insert.
+Output: ['Hub', 'Hub set screws', 'Jaw or Spider'].
+
+Input: Coupling - Elastomeric Type - Tire.
+Output: ['Elastomeric element', 'Hub', 'Hub fasteners'].
+
+Now please complete this example:
+Input: Coupling - Elastomeric Type - Pin and Bush.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: I&C - Pressure Switch - Bourdon or Bellows.
+Output: ['Electrical switch', 'Gaskets and O-rings', 'Sensing device - Bourdon tube or bellows', 'Sensing line and tube fittings', 'Snubber, if present', 'Wiring and Connections'].
+
+Input: I&C - Temperature Switch - Electronic Types.
+Output: ['Circuit board', 'Electrical switch', 'Electrolytic capacitors', 'Electromechanical switch', 'Electronic circuit', 'Mechanical linkage', 'Micro switch', 'Sensing device (Other types)', 'Sensing device - RTD', 'Sensing device - Thermistor', 'Thermowell'].
+
+Input: I&C - Flow - Level Switch Only - Thermal Comparison.
+Output: ['Digital Display', 'Gasket', 'Heater Element', 'Housing', 'Microprocessor', 'Push Buttons', 'RTD (Reference or Active)', 'Relays', 'Terminals', 'Thermowells', 'Timers'].
+
+Now please complete this example:
+Input: I&C - Temperature Switch - Bourdon or Bellows.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Switchgear - Motor Control Center - Starter Bucket with Control Switch.
+Output: ['Aux relay, if present', 'Bus Stabs', 'Contactor', 'Control Fuse', 'Control Fuse Block', 'Control Switch', 'Control transformer', 'Interbucket wiring, cables, and connectors', 'Load wiring', 'Lubricant - contactor, bus stabs, and molded case breaker', 'Manual disconnect switch', 'Molded case breaker', 'Terminal strips'].
+
+Input: Switchgear - Motor Control_Starter Panel.
+Output: ['Contactor/starter', 'Control Fuse', 'Electrical devices, includes control transformer, fuse block, switches, and secondary disconnects', 'Enclosure', 'Lubricant - contactor/starter/molded case breaker', 'Manual disconnect switch', 'Molded case breaker', 'Terminal strips', 'Wiring, cables, and connectors'].
+
+Input: Switchgear - Motor Control Centers.
+Output: ['Bucket Manual Operating Mechanism', 'Bus Stabs', 'Cables, lugs, and power leads', 'Cables, lugs, power leads, bus, raceway, and housing', 'Contactor or starter aux contacts', 'Contactor or starter operating mechanism', 'Contactor or starter overload trips', 'Contactor or starter primary contacts', 'Electrical devices, includes control wiring and transformer, fuse block, switches, and secondary disconnects', 'Enclosure', 'Lubricant (bucket manual operating mechanism)', 'Molded Case Breaker auxiliary devices', 'Molded Case Breaker operating mechanism', 'Molded Case Breaker overcurrent trips', 'Molded Case Breaker primary contacts', 'Molded Case Breaker undervoltage or shunt trip coils', 'Shutter Assembly (if present)'].
+
+Now please complete this example:
+Input: Switchgear - Motor Control Center - Starter Bucket.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Diesel Engine - Tier 2 - Non-Road Engine.
+Output: ['Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Head', 'Diesel - Cylinder Liners', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Line Clamps', 'Diesel - Filter - Inlet Air (Element Type)', 'Diesel - Filters - Fuel', 'Diesel - Filters - Oil', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler', 'Diesel - PTO (if present)', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Voltage regulator, if present', 'Diesel - Water Pump', 'Diesel - Wiring Harness'].
+
+Input: Diesel Engine - Interim Tier 4 DPF/DOC.
+Output: ['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Blower screen (if present)', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Head', 'Diesel - Cylinder Liners', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst)', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Exhaust Line Clamps', 'Diesel - Filter - Fuel (Pre-Fuel & Final)', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Diesel - Filter- Turbocharger Lube Oil (if present)', 'Diesel - Filters - Oil', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler', 'Diesel - PTO (if present)', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger (All Types)', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Diesel - Turbocharger (WGT Types) (if present)', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Turbocharger Oil Lines (rigid or flexible)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Voltage regulator, if present', 'Diesel - Water Pump', 'Diesel - Wiring Harness'].
+
+Input: Diesel Engine - Tier 3 DPF/DOC.
+Output: ['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Blower screen (if present)', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Head', 'Diesel - Cylinder Liners', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst)', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Exhaust Line Clamps', 'Diesel - Filter - Fuel (Pre-Fuel & Final)', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Diesel - Filter- Turbocharger Lube Oil (if present)', 'Diesel - Filters - Oil', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler', 'Diesel - PTO (if present)', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger (All Types)', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Diesel - Turbocharger (WGT Types) (if present)', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Turbocharger Oil Lines (rigid or flexible)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Voltage regulator, if present', 'Diesel - Water Pump', 'Diesel - Wiring Harness'].
+
+Now please complete this example:
+Input: Diesel Engine - Tier 4.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Air Dryer - Heated.
+Output: ['After Filter - Cartridge Type', 'Blower', 'Blower Intake Filter', 'Blower motor', 'Cartridge valves, for PPC or PALL dryers with Mark I controllers', 'Control / Pilot Airline Filters - large housing types', 'Control / Pilot Airline Filters - small, plastic housing types', 'Delta P Gauges, when used for alarm and control', 'Desiccant - Activated Alumina, Silica Gel, Molecular Sieve', 'Desiccant Moisture Indicator', 'Desiccant Retention Screens', 'Drain Trap Strainer', 'Electro-Mechanical cam type timer', 'Electronic/Electrical Devices: Dew point sensors, Energy management', 'Electronic/Electrical Devices: Timers, Power Supply', 'External Electrical Heater Elements', 'Heater Contactor', 'Internal Electrical Heater Elements', 'Manual Bypass Isolation Valves', 'Manual Isolation Valves', 'Manual Purge Adjustment Valves', 'Muffler, if present', 'Orifice, if present', 'Outlet Check Valves', 'Pneumatic Switching Valves (purge, inlet, outlet, exhaust) - Poppet, Butterfly, Diaphragm, Shuttle, Ball, and Plug', 'Pre-Filter - Cartridge Type', 'Pre-Filter - Cartridge Type - lubricated', 'Pre-Filter - Cartridge Type - mist eliminator', 'Pre-Filter - Cartridge Type - oil free', 'Pre-filter Drain Traps', 'Pressure Control Valves, if present', 'Pressure Switches', 'Pulleys and Belts', 'Purge Check Valves', 'Safety Relief Valves', 'Solenoid valve', 'Temperature Switches / Thermostat', 'Towers'].
+
+Input: Air Dryer - Unheated.
+Output: ['After Filter - Cartridge Type', 'Cartridge valves, for PPC or PALL dryers with PSA controllers', 'Check Valves', 'Control / Pilot Airline Filters - large housing types', 'Control / Pilot Airline Filters - small, plastic housing types', 'Delta P Gauges, when used for alarm and control', 'Desiccant - Activated Alumina', 'Desiccant Moisture Indicator', 'Desiccant Retention Screens', 'Drain Trap Strainer', 'Electromechanical Cam Type Timer', 'Electronic/Electrical Devices: Dew Point Sensors, Energy Management Controls', 'Electronic/Electrical Devices: Timers, Power Supply', 'Manual Bypass Isolation Valves', 'Manual Isolation Valves', 'Manual Purge Adjustment Valves', 'Muffler', 'Orifice', 'Pneumatic Switching Valves (purge, inlet, outlet, exhaust) - Poppet, Butterfly, Diaphragm, Shuttle, Ball, and Plug', 'Pre-Filter - Cartridge Type', 'Pre-filter Drain Traps', 'Pressure Control Valves', 'Pressure Switches', 'Safety Relief Valves', 'Solenoid valve', 'Towers'].
+
+Input: Heating Coil - Steam Type.
+Output: ['Actuator', 'Connections', 'Controller, Sensor, and Transmitter', 'Controller, Sensor, and Transmitters', 'Piping', 'Pressure Regulator', 'Solenoid Valve', 'Steam Heating Coils', 'Wiring'].
+
+Now please complete this example:
+Input: Air Dryer - Heat Of Compression Drum Type.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: I&C - Fan - Muffin Type.
+Output: ['Blades', 'Filters, if present', 'Motor bearing', 'Motor windings'].
+
+Input: Fan - Blower Type.
+Output: ['Blower', 'Blower Intake Filter', 'Blower motor', 'Electrical Power Cord and Plug, if present', 'Pulleys and Belts', 'Wiring', 'Wiring Connectors and Connections'].
+
+Input: Turbine - Terry - Solid Wheel - HPCI Type.
+Output: ['Auxiliary Oil Pump', 'Auxiliary Oil Pump Motor', 'Bearing Pedestals', 'Control Valves', 'EG Type Governor Control System Electronic Components: EG-M Control Box and Ramp Generator Signal Converter', 'EG Type Governor Control System Hydraulic Components: EG-R Hydraulic Actuator', 'EG Type Governor Control System Hydraulic Components: Oil Relay Assembly', 'Exhaust Line Rupture Disk', 'Hydraulic Stop Valve', 'Hydraulic Stop Valve - Actuator', 'Mechanical Hydraulic Overspeed Trip Assembly', 'Oil', 'Oil Coolers', 'Oil Filter', 'Oil Filter Transfer Valve', 'Oil Supply Piping, Flex Hoses, Fittings, Flanges, Sight Glass, and Gaskets', 'Oil System', 'Remote Trip Solenoid Valve', 'Shaft Driven Oil Pump', 'Sliding Foot', 'Speed pickup and sensor', 'Steam Inlet and Exhaust Drain Systems', 'Steam Jets and Reversing Chamber', 'Turbine Gland Case', 'Turbine Journal Bearings', 'Turbine Shaft', 'Turbine Shaft Oil Seal', 'Turbine Shaft Steam Seal', 'Turbine Steam Ring and Exhaust Casing', 'Turbine Thrust Bearings', 'Turbine Wheel'].
+
+Now please complete this example:
+Input: Fan - ID or FD - Axial.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: I&C - Fan - Muffin Type.
+Output: ['Blades', 'Filters, if present', 'Motor bearing', 'Motor windings'].
+
+Input: Fan - Blower Type.
+Output: ['Blower', 'Blower Intake Filter', 'Blower motor', 'Electrical Power Cord and Plug, if present', 'Pulleys and Belts', 'Wiring', 'Wiring Connectors and Connections'].
+
+Input: Compressor - Centrifugal.
+Output: ['Bearings', 'Bull Gear Shaft seal', 'Bull/Pinion gears', 'Control relays', 'Controller cabinet vent fan', 'Controller cabinet vent filter', 'Coupling', 'Demister', 'Diffusers', 'Discharge check valve', 'Drain Traps', 'Electronic controller', 'Fasteners/ Hardware', 'Gaskets', 'Impellers', 'Inlet Air Filters, Element Type', 'Inlet Throttle Valve (Guide Vane type)', 'Inlet Throttle/ Blow off or Bypass control valve (Actuator Diaphragm type)', 'Inlet nozzle', 'Inter & After Coolers', 'Lube oil cooler', 'Lube oil filter', 'Lube oil immersion heaters, if present', 'Lube oil suction strainer', 'Main lube oil pump - shaft driven', 'Oil line orifices', 'Oil pressure control valve', 'Oil temperature control valve (AMOT type)', 'Pinion Shaft seals (air and oil)', 'Prelube pump - motor driven', 'Pressure and temperature transducers, vibration probes', 'Solenoid valve', 'Valve position transducer'].
+
+Now please complete this example:
+Input: Fan - ID or FD - Centrifugal.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Fin Fan Motor with Actuator Controlled Fan Pitch.
+Output: ['Actuator, Pneumatic', 'Belts', 'Belts or sheaves', 'Controller', 'Fan Bearings', 'Geared Propeller', 'Geared Propeller Blade to Valve Stem Connection', 'Limit Switches', 'Motor Bearing Grease Seals', 'Motor Bearings - Antifriction', 'Motor Endbells or Bearing Housings', 'Motor External Fan', 'Motor Frame, Enclosure, and Motor/Fan Mounting', 'Motor Gaskets', 'Motor Heaters', 'Motor Leads and Electrical Connections', 'Motor Machine Fits - All', 'Motor Rotor bars and shorting rings (cast type)', 'Motor Shaft', 'Motor Stator Laminations', 'Motor Stator Windings', 'Pressure Regulator', 'Valve stem'].
+
+Input: Fan - Propeller Type - Low Voltage 115_230V Horizontal TE Motor.
+Output: ['Bearing Grease Seals - Lip or Wiping Type, if present', 'Bearings - Rolling Element', 'Capacitor - Start and/or Run', 'Endbells or Bearing Housings', 'Fan - Propeller type', 'Frame and Covers', 'Grease Fittings (e.g. Zirc Type), if present', 'Leads and Electrical Connections', 'Louvers', 'Louvers or Screen', 'Lubrication - Grease', 'Motor Lead Termination Board', 'Motor Protector Switch - Bimetallic/Klixon Type  Overload', 'Motor Winding Switch - Start then Run', 'Mounting Brackets and Assembly', 'Rotor Bars and Shorting Rings (cast type)', 'Shaft', 'Stator Windings and Insulation System'].
+
+Input: Fin Fan Pneumatic Actuator For Pitch Control.
+Output: ['Actuator, Pneumatic', 'Controller', 'Geared Propeller Blade to Valve Stem Connection', 'Limit Switches', 'Pressure Regulator', 'Valve stem'].
+
+Now please complete this example:
+Input: Fin Fan Motor with Belt Driven Fan.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Fin Fan Motor with Actuator Controlled Fan Pitch.
+Output: ['Actuator, Pneumatic', 'Belts', 'Belts or sheaves', 'Controller', 'Fan Bearings', 'Geared Propeller', 'Geared Propeller Blade to Valve Stem Connection', 'Limit Switches', 'Motor Bearing Grease Seals', 'Motor Bearings - Antifriction', 'Motor Endbells or Bearing Housings', 'Motor External Fan', 'Motor Frame, Enclosure, and Motor/Fan Mounting', 'Motor Gaskets', 'Motor Heaters', 'Motor Leads and Electrical Connections', 'Motor Machine Fits - All', 'Motor Rotor bars and shorting rings (cast type)', 'Motor Shaft', 'Motor Stator Laminations', 'Motor Stator Windings', 'Pressure Regulator', 'Valve stem'].
+
+Input: Fan - Propeller Type - Low Voltage 230_460V Horizontal TE Motor.
+Output: ['Bearing Grease Seals - Lip or Wiping Type, if present', 'Bearings - Rolling Element', 'Capacitor - Start and/or Run', 'Endbells or Bearing Housings', 'Fan - Propeller type', 'Frame and Covers', 'Grease Fittings (e.g. Zirc Type), if present', 'Leads and Electrical Connections', 'Louvers', 'Louvers or Screen', 'Lubrication - Grease', 'Motor Lead Termination Board', 'Motor Protector Switch - Bimetallic/Klixon Type  Overload', 'Motor Winding Switch - Start then Run', 'Mounting Brackets and Assembly', 'Rotor Bars and Shorting Rings (cast type)', 'Shaft', 'Stator Windings and Insulation System'].
+
+Input: Fan - Propeller Type - Low Voltage 115_230V Horizontal TE Motor.
+Output: ['Bearing Grease Seals - Lip or Wiping Type, if present', 'Bearings - Rolling Element', 'Capacitor - Start and/or Run', 'Endbells or Bearing Housings', 'Fan - Propeller type', 'Frame and Covers', 'Grease Fittings (e.g. Zirc Type), if present', 'Leads and Electrical Connections', 'Louvers', 'Louvers or Screen', 'Lubrication - Grease', 'Motor Lead Termination Board', 'Motor Protector Switch - Bimetallic/Klixon Type  Overload', 'Motor Winding Switch - Start then Run', 'Mounting Brackets and Assembly', 'Rotor Bars and Shorting Rings (cast type)', 'Shaft', 'Stator Windings and Insulation System'].
+
+Now please complete this example:
+Input: Fin Fan Motor with Shaft Mounted Fan.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Filter - Liquid - Cartridge Single Type.
+Output: ['Filter'].
+
+Input: Filter - Liquid - Cartridge Duplex Type.
+Output: ['Delta P Gauges', 'Filter', 'Oil Filter Transfer Valve'].
+
+Input: Filter - Air - Media Type.
+Output: ['Filter housing', 'Filters, Media Type (paper, fiberglass, metallic)'].
+
+Now please complete this example:
+Input: Filter - Air - Cartridge Type.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - T3 EGR Diesel Driven.
+Output: ['Compressor - Air Tank', 'Compressor - Air Tank Drain Valve or Trap', 'Compressor - Bearings - Rolling Element', 'Compressor - Bull Gear', 'Compressor - Fasteners and Hardware', 'Compressor - Fluid (oil) - Lubricating and Cooling', 'Compressor - Fluid (oil) Cooler - Tube Sheets & Fins', 'Compressor - Fluid (oil) Lines', 'Compressor - Fluid (oil) Temperature Bypass Valve', 'Compressor - Fluid (oil) filter', 'Compressor - Gaskets and O-rings', 'Compressor - Inlet Air Filter (Element Type)', 'Compressor - Pressure Regulator', 'Compressor - Safety Relief Valve', 'Compressor - Screw Elements', 'Compressor - Shaft Seals', 'Compressor - Unloader', 'Diesel -  Filter- Turbocharger Lube Oil (if present)', 'Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger, if present', 'Diesel - Belts, Sheaves, and Idler', 'Diesel - Cam Follower Roller, if present', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Compressor Control Panel (e.g. sensors, solenoids, relays, meters, switches, fuses, lights, wiring)', 'Diesel - Compressor Coupling - Elastomeric element', 'Diesel - Compressor Coupling - Elastomeric fasteners', 'Diesel - Compressor Coupling - Hub', 'Diesel - Compressor Coupling - Hub fasteners', 'Diesel - Compressor Wiring Harness', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater, if present', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Liners', 'Diesel - Cylinder head', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Filter - Inlet Air (Element Type)', 'Diesel - Filters - Fuel', 'Diesel - Filters - Oil', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Pump, High Pressure', 'Diesel - Fuel Pump, Transfer (Lift)', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer, if present', 'Diesel - Fuel-Water Separator Element, if present', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type )', 'Diesel - Head Gasket', 'Diesel - Hydraulic Lifter, if present', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device, if present', 'Diesel - Lube Oil Pump', 'Diesel - Muffler', 'Diesel - Oil Cooler', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Fan Variable Clutch, if present', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger (All Types)', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Diesel - Turbocharger (WGT Types) (if present)', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Turbocharger Oil Lines (rigid or flexible)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Water Pump', 'Diesel - Wiring Harness', 'Diesel and Compressor Base Plate or Frame', 'Trailer - Electric Lights', 'Trailer - Electric Lights and Wiring', 'Trailer - Enclosure , Doors and Latches', 'Trailer - Enclosure - Door Springs', 'Trailer - Frame', 'Trailer - Hitch or Coupling', 'Trailer - Leveler (Jack Stand)', 'Trailer - Suspension', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Input: FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - T3 NET Diesel Driven.
+Output: ['Compressor - Air Tank', 'Compressor - Air Tank Drain Valve or Trap', 'Compressor - Bearings - Rolling Element', 'Compressor - Bull Gear', 'Compressor - Fasteners and Hardware', 'Compressor - Fluid (oil) - Lubricating and Cooling', 'Compressor - Fluid (oil) Cooler - Tube Sheets & Fins', 'Compressor - Fluid (oil) Lines', 'Compressor - Fluid (oil) Temperature Bypass Valve', 'Compressor - Fluid (oil) filter', 'Compressor - Gaskets and O-rings', 'Compressor - Inlet Air Filter (Element Type)', 'Compressor - Pressure Regulator', 'Compressor - Safety Relief Valve', 'Compressor - Screw Elements', 'Compressor - Shaft Seals', 'Compressor - Unloader', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger, if present', 'Diesel - Belts, Sheaves, and Idler', 'Diesel - Cam Follower Roller, if present', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Compressor Control Panel (e.g. sensors, solenoids, relays, meters, switches, fuses, lights, wiring)', 'Diesel - Compressor Coupling - Elastomeric element', 'Diesel - Compressor Coupling - Elastomeric fasteners', 'Diesel - Compressor Coupling - Hub', 'Diesel - Compressor Coupling - Hub fasteners', 'Diesel - Compressor Wiring Harness', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater, if present', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Liners', 'Diesel - Cylinder head', 'Diesel - Digital Controls or ECU', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Filters', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Pump, High Pressure', 'Diesel - Fuel Pump, Transfer (Lift)', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer, if present', 'Diesel - Fuel-Water Separator Element, if present', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type )', 'Diesel - Head Gasket', 'Diesel - Hydraulic Lifter, if present', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Inlet Air Filters (Element Type)', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device, if present', 'Diesel - Lube Oil Pump', 'Diesel - Muffler', 'Diesel - Oil Cooler', 'Diesel - Oil Filters', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Fan Variable Clutch, if present', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger', 'Diesel - Turbocharger Oil Lines (rigid or flexible)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Water Pump', 'Diesel and Compressor Base Plate or Frame', 'Trailer - Electric Lights', 'Trailer - Electric Lights and Wiring', 'Trailer - Enclosure , Doors and Latches', 'Trailer - Enclosure - Door Springs', 'Trailer - Frame', 'Trailer - Hitch or Coupling', 'Trailer - Leveler (Jack Stand)', 'Trailer - Suspension', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Now please complete this example:
+Input: FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - T4 Diesel Driven.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: FLEX - Pump - Horizontal - Mechanical Seal Non-Oil Bath - T3 DPF/DOC Diesel Driven.
+Output: ['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Liners', 'Diesel - Cylinder head', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst) (if present)', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler (if present)', 'Diesel - Exhaust Gas Recirculation (EGR) Valve (if present)', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Filters', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type )', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Inlet Air Filters (Element Type)', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler and Silencer', 'Diesel - Oil Filters', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Fan Variable Clutch', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger (All Types)', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Diesel - Turbocharger (WGT Types) (if present)', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Turbocharger Lube Oil Filter (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Water Pump', 'Diesel - Wiring Harness', 'Diesel-Pump - Coupling - Elastomeric Element', 'Pump - Bearing Seals - Lip', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Check Valve - Disk Arm (if present)', 'Pump - Check Valve - Hinge Pin (if present)', 'Pump - Check Valve - Rubber Flapper (if present)', 'Pump - Check Valve - Seat Failure (Body or Disk)', 'Pump - Connections and Piping', 'Pump - Discharge and Suction Connections', 'Pump - Gaskets and O-Rings', 'Pump - Impeller', 'Pump - Lubrication - Grease', 'Pump - Priming System', 'Pump - Seal - Mechanical Non-Oil Bath Type (process or seal water wetted)', 'Pump - Shaft', 'Pump Casing', 'Skid - Diesel and Pump Base Plate or Frame', 'Trailer - Bed, Frame, and Lifting Lugs', 'Trailer - Electric Brakes', 'Trailer - Electric Lights', 'Trailer - Hitch or Coupling', 'Trailer - Hydraulic Brakes', 'Trailer - Levelers', 'Trailer - Suspension', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Input: FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - IT4 DPF/DOC Diesel Driven.
+Output: ['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Liners', 'Diesel - Cylinder head', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst)', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Filters', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type )', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Inlet Air Filters (Element Type)', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler and Silencer', 'Diesel - Oil Filters', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Fan Variable Clutch', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger (All Types)', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Diesel - Turbocharger (WGT Types)', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Turbocharger Lube Oil Filter (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Water Pump', 'Diesel - Wiring Harness', 'Pump - Bearing Seals - Lip', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Check Valve - Disk Arm (if present)', 'Pump - Check Valve - Hinge Pin (if present)', 'Pump - Check Valve - Rubber Flapper (if present)', 'Pump - Check Valve - Seat Failure (Body or Disk)', 'Pump - Connections and Piping', 'Pump - Coupling - Elastomeric Element', 'Pump - Discharge and Suction Connections', 'Pump - Gaskets and O-Rings', 'Pump - Impeller', 'Pump - Lubrication - Grease', 'Pump - Priming System', 'Pump - Seal - Mechanical Oil Bath Type', 'Pump - Shaft', 'Pump Casing', 'Skid - Diesel and Pump Base Plate or Frame', 'Trailer - Bed, Frame, and Lifting Lugs', 'Trailer - Electric Brakes', 'Trailer - Electric Lights', 'Trailer - Hitch or Coupling', 'Trailer - Hydraulic Brakes', 'Trailer - Levelers', 'Trailer - Suspension', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Now please complete this example:
+Input: FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - T3 DPF/DOC Diesel Driven.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: FLEX - Pump - Horizontal - Mechanical Seal Non-Oil Bath - T4 Diesel Driven.
+Output: ['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Head', 'Diesel - Cylinder Liners', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Emission Control - DPF (Diesel Particulate Filter)', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Injector Nozzle & Valve', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - NOx Control Unit', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - SCR Catalyst', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Silencer', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing & Hoses', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Heat Tracing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Insulation', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Fluid', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Pump', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Breather', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Drain Plug', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Filter and Strainer', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater Valve', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Level Float', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Temperature Control Valve & Sensor', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Filter - Fuel (Pre-Fuel & Final)', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Diesel - Filter - Lube Oil', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler', 'Diesel - PTO (present; not normally used in this application and is not expected to affect normal operation)', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Water Pump', 'Diesel - Wiring Harness', 'Diesel-Pump - Coupling - Elastomeric Element', 'Pump - Bearing Seals - Lip', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Casing', 'Pump - Casing Drain or Stop Valve', 'Pump - Casing and Internals, if present', 'Pump - Check Valve - Disk Arm (if present)', 'Pump - Check Valve - Hinge Pin (if present)', 'Pump - Check Valve - Rubber Flapper (if present)', 'Pump - Check Valve - Seat Failure (Body or Disk)', 'Pump - Connections and Piping', 'Pump - Discharge and Suction Connections', 'Pump - Gaskets and O-Rings', 'Pump - Impeller and Wear Rings', 'Pump - Lubrication - Grease', 'Pump - Priming System', 'Pump - Seal - Mechanical Non-Oil Bath Type (process or seal water wetted)', 'Pump - Shaft', 'Skid - Diesel and Pump Base Plate or Frame', 'Trailer - Bed, Frame, and Lifting Lugs', 'Trailer - Electric Brakes', 'Trailer - Electric Lights', 'Trailer - Hitch or Coupling', 'Trailer - Hydraulic Brakes', 'Trailer - Levelers', 'Trailer - Suspension', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Now please complete this example:
+Input: FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - T4 Diesel Driven.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: FLEX - Pump - Horizontal - Packing Seal - T4 Diesel Driven.
+Output: ['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Head', 'Diesel - Cylinder Liners', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Emission Control - DPF (Diesel Particulate Filter)', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Injector Nozzle & Valve', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - NOx Control Unit', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - SCR Catalyst', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Silencer', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing & Hoses', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Heat Tracing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Insulation', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Fluid', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Pump', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Breather', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Drain Plug', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Filter and Strainer', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater Valve', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Level Float', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Temperature Control Valve & Sensor', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Filter - Fuel (Pre-Fuel & Final)', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Diesel - Filter - Lube Oil', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler', 'Diesel - PTO (present; not normally used in this application and is not expected to affect normal operation)', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Water Pump', 'Diesel - Wiring Harness', 'Diesel-Pump - Coupling - Elastomeric Element', 'Pump - Bearing Seals - Lip', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Check Valve - Disk Arm (if present)', 'Pump - Check Valve - Hinge Pin (if present)', 'Pump - Check Valve - Rubber Flapper (if present)', 'Pump - Check Valve - Seat Failure (Body or Disk)', 'Pump - Connections and Piping', 'Pump - Discharge and Suction Connections', 'Pump - Gaskets and O-Rings', 'Pump - Impeller', 'Pump - Lubrication - Grease', 'Pump - Priming System', 'Pump - Seal - Packing', 'Pump - Shaft', 'Pump Casing', 'Skid - Diesel and Pump Base Plate or Frame', 'Trailer - Bed, Frame, and Lifting Lugs', 'Trailer - Electric Brakes', 'Trailer - Electric Lights', 'Trailer - Hitch or Coupling', 'Trailer - Hydraulic Brakes', 'Trailer - Levelers', 'Trailer - Suspension', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Now please complete this example:
+Input: FLEX - Pump - Horizontal - Packing Seal - T3 DPF/DOC Diesel Driven.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: FLEX - Pump - LP - Packing Seal - Direct Drive - T3 DPF/DOC Diesel Driven.
+Output: ['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery (start power)', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Head', 'Diesel - Cylinder Liners', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst)', 'Diesel - Engine Mounts', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Springs', 'Diesel - Engine Valve Stem', 'Diesel - Engine Valve Train', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Filter - Fuel', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Diesel - Filter - Lube Oil', 'Diesel - Fly Wheel', 'Diesel - Fuel', 'Diesel - Fuel Hoses', 'Diesel - Fuel Lines', 'Diesel - Fuel Tank', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Head Gasket', 'Diesel - High Pressure Fuel Pump', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Injector Tubing', 'Diesel - Injectors', 'Diesel - Linkages and Controls', 'Diesel - Lube Oil', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Lube Oil Pump', 'Diesel - Muffler and Silencer', 'Diesel - PTO (present; not normally used in this application)', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Pistons', 'Diesel - Push Rods', 'Diesel - Radiator', 'Diesel - Radiator Cap', 'Diesel - Radiator Fan', 'Diesel - Radiator Hoses', 'Diesel - Radiator Tubing', 'Diesel - Starter', 'Diesel - Thermostat', 'Diesel - Timing Gears (if present)', 'Diesel - Turbocharger (All Types)', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Diesel - Turbocharger (WGT Types)', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Turbocharger Lube Oil Filter (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Water Pump', 'Diesel - Wiring Harness', 'Diesel-Pump - Coupling - Fasteners', 'Diesel-Pump - Coupling - Grease', 'Diesel-Pump - Coupling - Grid', 'Diesel-Pump - Coupling - Grid, Serrations or Grooves', 'Diesel-Pump - Coupling - Sleeve Gasket or O-ring, if present', 'Pump - Bearing Lubrication - Grease', 'Pump - Bearing Seals - Lip', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Casing', 'Pump - Casing Drain or Stop Valve, if present', 'Pump - Casing and Internals', 'Pump - Connections and Piping', 'Pump - Discharge Valves', 'Pump - Discharge and Suction Headers', 'Pump - Gaskets and O-Rings', 'Pump - Impeller and Wear Rings', 'Pump - Priming System', 'Pump - Seal - Packing', 'Pump - Shaft', 'Skid - Diesel and Pump Base Plate or Frame', 'Trailer - Battery (Tow power)', 'Trailer - Bed, Frame, and Lifting Lugs', 'Trailer - Electric Brakes', 'Trailer - Electric Brakes and Wiring', 'Trailer - Electric Lights', 'Trailer - Enclosures - Panels/Control Boxes, including hinges, gaskets, handles', 'Trailer - Hitch or Coupling', 'Trailer - Jack & Stand', 'Trailer - Levelers', 'Trailer - Suspension', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheel Rims'].
+
+Now please complete this example:
+Input: FLEX - Pump - LP - Packing Seal - Direct Drive - IT4 DPF/DOC Diesel Driven.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Gearbox - Worm Gear Type with Oil Cooler.
+Output: ['Bearings - Rolling Element (radial and thrust)', 'Bolting', 'Casing', 'Casing or Housing', 'Dip Stick Tube, if present', 'External Oil Piping', 'Gaskets', 'Oil', 'Oil  Breather', 'Oil Cooler (Internal or External)', 'Oil Filter, if present', 'Oil Gear Pump', 'Oil line (external), if present', 'Oil line (suction only), if present', 'Pressure relief valve, if present', 'Rim Shaft', 'Shaft oil seals', 'Sump oil heater, if present', 'Worm Rim Gear', 'Worm Shaft'].
+
+Input: Gearbox - Standard.
+Output: ['Bearings - Rolling Element', 'Bolting', 'Casing or Housing', 'Gaskets', 'Gears', 'Oil', 'Oil  Breather', 'Oil line (external), if present', 'Oil line (suction only), if present', 'Oil seals', 'Pressure relief valve, if present', 'Sump oil heater, if present'].
+
+Input: Coupling - Gear Type - Continuously Lubricated.
+Output: ['Cover gasket or o-ring', 'Fasteners', 'Gear teeth', 'Oil breather cap'].
+
+Now please complete this example:
+Input: Gearbox - Worm Gear Type.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Main Generator - 3600RPM - Smooth Rotor - Water Air Cooled.
+Output: ['Air Coolers (water cooled)', 'Air Coolers - Filters', 'Bearing Insulation', 'Bearing Oil Deflectors (labyrinth type)', 'Couplings', 'Frame, End Shields, and Mounting', 'Generator Bushings - high voltage, neutral', 'Generator Cables - high voltage, neutral', 'Generator Iso-phase connections', 'Journal Bearings', 'Piping & Connections', 'Rotor - Fan', 'Rotor - Forging', 'Rotor - Journal', 'Rotor - Retaining rings', 'Rotor - Surfaces, wedges, and retaining rings', 'Rotor - Winding', 'Rotor Collector Brushes', 'Rotor Collector Rings', 'Stator - Bars Inside Slots', 'Stator - Core', 'Stator - End Winding and Connections', 'Turbine Supervisory Instrumentation -  Bearing & Winding RTDs, Thermocouples, Vibration probes', 'Turbine Supervisory Instrumentation -  Flux probes', 'Turbine Supervisory Instrumentation - Generator Condition Monitor'].
+
+Input: Main Generator - 1800RPM - Water Cooled.
+Output: ['End Shields', 'Frame, Enclosure, and Mounting', 'Generator Bearing hydrogen seals', 'Generator Bearing oil deflectors or labyrinth seals', 'Generator Bearings (journal)', 'Generator Bushings - high voltage, neutral', 'Generator Iso-phase connections', 'Generator Shaft Current Insulation, e.g. on bearings, seals', 'Generator to LP Coupling', 'Hydrogen Coolers', 'Piping & Connections, e.g. Teflon tubes, seal oil and hydrogen connections, stator cooling water plumbing, O-rings', 'Rotor - Fan', 'Rotor - Forging', 'Rotor - Journal', 'Rotor - Retaining rings / Zone Rings', 'Rotor - Retaining rings / Zone Rings - 18-5 type only', 'Rotor - Surfaces, wedges, retaining rings', 'Rotor - Winding', 'Stator - Bars Inside Slots', 'Stator - Core', 'Stator - End Winding', 'Turbine Supervisory Instrumentation -  Bearing & winding RTDs, Thermocouples, Vibration probes', 'Turbine Supervisory Instrumentation -  Flux probes', 'Turbine Supervisory Instrumentation -  Generator Monitoring (e.g. hydrogen purity, dew point)'].
+
+Input: Main Generator - 1800RPM - Hydrogen Cooled.
+Output: ['End Shields', 'Frame, Enclosure, and Mounting', 'Generator Bearing hydrogen seals', 'Generator Bearing oil deflectors or labyrinth seals', 'Generator Bearings (journal)', 'Generator Bushings - high voltage, neutral', 'Generator Iso-phase connections', 'Generator Shaft Current Insulation, e.g. on bearings, seals', 'Generator to LP Coupling', 'Hydrogen Coolers', 'Piping & Connections, e.g. Teflon tubes, seal oil and hydrogen connections, O-rings', 'Rotor - Fan', 'Rotor - Forging', 'Rotor - Journal', 'Rotor - Retaining rings / Zone Rings', 'Rotor - Retaining rings / Zone Rings - 18-5 type only', 'Rotor - Surfaces, wedges, retaining rings', 'Rotor - Winding', 'Stator - Bars Inside Slots', 'Stator - Core', 'Stator - End Winding', 'Turbine Supervisory Instrumentation -  Bearing & winding RTDs, Thermocouples, Vibration probes', 'Turbine Supervisory Instrumentation -  Flux probes', 'Turbine Supervisory Instrumentation -  Generator Monitoring (e.g. hydrogen purity, dew point)'].
+
+Now please complete this example:
+Input: Main Generator - 3600RPM - Smooth Rotor - Air Cooled.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Gas Turbine - Fuel Gas - Gas Purge Valve and Actuator.
+Output: ['Actuator', 'Actuator Limit Switch', 'Air Actuator Body', 'Air Actuator Diaphragm', 'Air Actuator Diaphragm Spring', 'Air Actuator Piston and Rings', 'Air Actuator Stem', 'Air Actuator Tubing', 'Ball', 'Elastomer Internals', 'Gasket', 'Packing', 'Packing Spring', 'Piston Actuator O-ring', 'Position Indicator', 'Rack and Pinion (Piston type AOV only)', 'Seat', 'Solenoid Valve', 'Solenoid Valve Elastomer Internals', 'Stem', 'Stem Bushing', 'Stem O-ring', 'Valve Body'].
+
+Input: Gas Turbine - Fuel Gas - Gas Splitter Valve and Actuator.
+Output: ['Actuator', 'Displacement Transducer (LVDT)', 'Elastomer Internals', 'Gasket', 'Hydraulic Actuator - Body', 'Hydraulic Actuator - Cylinder', 'Hydraulic Actuator - O-ring', 'Hydraulic Actuator - Piston and Rings', 'Hydraulic Actuator Body', 'Hydraulic Actuator Cylinder', 'Hydraulic Actuator O-ring', 'Hydraulic Actuator Piston and Rings', 'Hydraulic Actuator Rod End Seal', 'Hydraulic Actuator Servo Mechanism', 'Hydraulic Actuator Servo Mechanism Filter', 'Hydraulic Actuator Stem', 'Hydraulic Actuator Tubing', 'Ported Plug', 'Stem', 'Stem Bushing', 'Stem O-ring', 'Upper or Lower Seat Rings', 'Valve Body'].
+
+Input: Gas Turbine - Fuel Gas - Emergency Shutdown Valve and Actuator.
+Output: ['Actuator', 'Ball', 'Elastomer Internals', 'Gas Actuator Body', 'Gas Actuator Piston', 'Gas Actuator Piston Spring', 'Gas Actuator Piston and Rings', 'Gas Actuator Stem', 'Gas Actuator Tubing', 'Gasket', 'Pilot Gas Desiccant', 'Pilot Gas Filter', 'Pressure Transmitter - Diode', 'Pressure Transmitter - Internal wiring and connections', 'Pressure Transmitter - Sensing Lines', 'Pressure Transmitter Electronics', 'Seat', 'Sensing lines and associated components.', 'Solenoid', 'Stem', 'Stem Bushing', 'Stem O-ring', 'Valve Body'].
+
+Now please complete this example:
+Input: Gas Turbine - Fuel Gas - Gas Control Valve and Actuator.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Gas Turbine - HRSG - Duct Burner - Gas Pressure Control Valve.
+Output: ['Actuator', 'Coupling: Direct', 'Digital Valve Controller (DVC)', 'Packing', 'Pneumatic Tubing', 'Pressure Regulator', 'Valve Guides', 'Valve Seat', 'Valve Stem'].
+
+Input: Gas Turbine - HRSG - Deaerator.
+Output: ['DA Connection Piping', 'DA Inlet and Surrounding Shell Area', 'DA Internal Hardware: Baffle, Diffuser, Partition & Support Plates, Tie Rods, Spacers, Shroud, Seal End Plates, Impingement Plates, and Air Off-take Systems', 'DA Manways', 'DA Shell', 'DA Trays or Partitions'].
+
+Input: Gas Turbine - HRSG - Attemperator.
+Output: ['Attemperator - Control Valve Stacked Disc, if present', 'Attemperator - Header Ring, if present', 'Attemperator - Liner', 'Attemperator - Spray Nozzles', 'Attemperator - Spray Nozzles - Spring Type, if present', 'Attemperator - Steam Pipe Attachment', 'Attemperator - Steam Pipe Flange', 'Attemperator - Strainer', 'Attemperator - Water Pipe Attachment', 'Attemperator - Water Pipe Flange'].
+
+Now please complete this example:
+Input: Gas Turbine - HRSG - Duct Burner - Main Gas Isolation Valve and Actuator.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Gas Turbine - HRSG - LP Section - Horizontal 3 Stage.
+Output: ['Instrumentation - LP Drum Level', 'Instrumentation - LP Drum Pressure Gauge', 'Instrumentation - LP Pressure Sensing', 'Instrumentation - LP Steam Flow', 'Instrumentation - LP Temperature', 'LP Drum  - Level Sight Glass', 'LP Drum - Belly Plate', 'LP Drum - Belly Plate Fasteners (Strongbacks)', 'LP Drum - Chevron Spray Nozzles', 'LP Drum - Chevrons', 'LP Drum - Cyclone Separators and Baffles', 'LP Drum - End Cap', 'LP Drum - Internal Chemical Feed Pipe', 'LP Drum - Liner', 'LP Drum - Manway', 'LP Drum - Manway Flange', 'LP Drum - Manway Hinge', 'LP Drum - Manway Seal', 'LP Drum - Shell', 'LP Drum - Shell Penetrations', 'LP Drum - Support', 'LP Drum - Support Fasteners (Strongbacks)', 'LP Drum - Vortex Eliminator', 'LP Gas Baffles', 'LP Header', 'LP Header - Downcomer', 'LP Intermittent Blowdown Piping', 'LP Steam Sampler', 'LP Tube', 'LP Tube Supports', 'LP Valves - Drain and Vent', 'LP Valves - Drain and Vent Piping', 'Safety Relief Valve - Adjustment Nut', 'Safety Relief Valve - Bellows', 'Safety Relief Valve - Blow Down Rings', 'Safety Relief Valve - Body and Flanges', 'Safety Relief Valve - Fasteners', 'Safety Relief Valve - Flange Face', 'Safety Relief Valve - Inlet Gasket', 'Safety Relief Valve - Nozzle Disk Interface', 'Safety Relief Valve - Plug to Stem Connection', 'Safety Relief Valve - Seat', 'Safety Relief Valve - Silencer', 'Safety Relief Valve - Spindle', 'Safety Relief Valve - Spring', 'Safety Relief Valve - Telltale Drain'].
+
+Input: Gas Turbine - HRSG - IP & Reheat Section - Horizontal 3 Stage.
+Output: ['Attemperator - Control Valve Stacked Disc, if present', 'Attemperator - Header Ring, if present', 'Attemperator - Liner', 'Attemperator - Spray Nozzles', 'Attemperator - Spray Nozzles - Spring Type, if present', 'Attemperator - Steam Pipe Attachment', 'Attemperator - Steam Pipe Flange', 'Attemperator - Strainer', 'Attemperator - Water Pipe Attachment', 'Attemperator - Water Pipe Flange', 'Feedwater Heater - Acoustic Baffles', 'Feedwater Heater - Gas Baffles', 'Feedwater Heater - Header', 'Feedwater Heater - Tube', 'Feedwater Heater - Tube Supports', 'Feedwater Heater Valves - Drain and Vent', 'HP Intermittent or Continuous Blowdown Piping', 'IP Acoustic Baffles', 'IP Drum - Belly Plate', 'IP Drum - Belly Plate Fasteners (Strongbacks)', 'IP Drum - Belly Plate Fasteners (strongbacks)', 'IP Drum - Blowdown Piping', 'IP Drum - Chevrons', 'IP Drum - Cyclone Separators and Baffles', 'IP Drum - End Cap', 'IP Drum - Internal Chemical Feed Pipe', 'IP Drum - Internal Feedwater Pipe', 'IP Drum - Internal Surface Blowdown Pipe', 'IP Drum - Level Sight Glass', 'IP Drum - Liner', 'IP Drum - Manway', 'IP Drum - Manway Flange', 'IP Drum - Manway Hinge', 'IP Drum - Manway Seal', 'IP Drum - Scrubbers', 'IP Drum - Shell', 'IP Drum - Shell Penetrations', 'IP Drum - Steam Dry Pipe', 'IP Drum - Support', 'IP Drum - Support Fasteners (Strongbacks)', 'IP Drum - Vortex Eliminator', 'IP Gas Baffles', 'IP Header', 'IP Header - Downcomer', 'IP Intermittent or Continuous Blowdown Piping', 'IP Steam Sampler', 'IP Tube', 'IP Tube Supports', 'IP Valves - Drain and Vent', 'IP Valves - Drain and Vent Piping', 'Instrumentation - Feedwater Heater Temperature', 'Instrumentation - IP Drum Level', 'Instrumentation - IP Drum Pressure Gauge', 'Instrumentation - IP Pressure Sensing', 'Instrumentation - IP Steam Flow', 'Instrumentation - IP Temperature', 'Instrumentation - Reheat Temperature', 'LP Acoustic Baffles', 'LP Gas Baffles', 'LP Intermittent or Continuous Blowdown Piping', 'LP Steam Sampler', 'LP Tube', 'LP Valves - Drain and Vent', 'LP Valves - Drain and Vent Piping', 'Reheat Acoustic Baffles', 'Reheat Gas Baffles', 'Reheat Header', 'Reheat Header - Downcomer', 'Reheat Tube', 'Reheat Tube Supports', 'Reheat Valves - Drain and Vent', 'Reheat Valves - Drain and Vent Piping', 'Safety Relief Valve - Adjustment Nut', 'Safety Relief Valve - Bellows', 'Safety Relief Valve - Blow Down Rings', 'Safety Relief Valve - Body and Flanges', 'Safety Relief Valve - Fasteners', 'Safety Relief Valve - Flange', 'Safety Relief Valve - Nozzle Disk Interface', 'Safety Relief Valve - Plug to Stem Connection', 'Safety Relief Valve - Seat', 'Safety Relief Valve - Silencer', 'Safety Relief Valve - Spindle', 'Safety Relief Valve - Spring', 'Safety Relief Valve - Steam Side Gasket', 'Safety Relief Valve - Telltale Drain'].
+
+Input: Gas Turbine - HRSG - Deaerator.
+Output: ['DA Connection Piping', 'DA Inlet and Surrounding Shell Area', 'DA Internal Hardware: Baffle, Diffuser, Partition & Support Plates, Tie Rods, Spacers, Shroud, Seal End Plates, Impingement Plates, and Air Off-take Systems', 'DA Manways', 'DA Shell', 'DA Trays or Partitions'].
+
+Now please complete this example:
+Input: Gas Turbine - HRSG - HP Section - Horizontal 3 Stage.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Gas Turbine - Lube Oil - AC & DC Seal Oil Pump.
+Output: ['AC Motor -  Bearing Seal', 'AC Motor -  Bearings: Rolling element', 'AC Motor -  Cast Rotor: Rotor bars and shorting rings', 'AC Motor -  End Bell Fits', 'AC Motor -  External Cooling Fan and Cover', 'AC Motor -  Frame and Enclosure', 'AC Motor -  Gaskets', 'AC Motor -  Leads and Electrical Connections', 'AC Motor -  Shaft', 'AC Motor -  Space Heaters', 'AC Motor -  Stator - Windings', 'DC Motor -  Armature', 'DC Motor -  Armature - Windings', 'DC Motor -  Bearing Seal', 'DC Motor -  Bearings: Rolling element', 'DC Motor -  Brush Rigging', 'DC Motor -  Brushes', 'DC Motor -  External Cooling Fan and Cover', 'DC Motor -  Frame and Enclosure', 'DC Motor -  Gaskets', 'DC Motor -  Leads and Electrical Connections', 'DC Motor -  Machine Fits', 'DC Motor -  Rotor - Commutator', 'DC Motor -  Shaft', 'DC Motor -  Space Heaters', 'DC Motor -  Stator - Windings', 'Instrumentation - Indication and Alarm with separate sensors, if present', 'Pressure Gauge', 'Pressure Switch - Elastomers, gaskets, and O-rings', 'Pressure Switch - Electrical switch', 'Pressure Switch - Sensing device', 'Pressure Switch - Sensing line and tube fittings', 'Pressure Transmitter - Electronics', 'Pump -  Bearing - Thrust (grease lubricated)', 'Pump -  Bearing - Thrust (oil lubricated)', 'Pump -  Bearing Oil Supply Line, if present', 'Pump -  Bearing Retainers', 'Pump -  Bearings - Sleeve', 'Pump -  Column Piping', 'Pump -  Discharge Head', 'Pump -  Gaskets', 'Pump -  Impeller', 'Pump -  Mechanical Seal', 'Pump -  Motor Coupling', 'Pump -  Motor Mount', 'Pump -  Shaft', 'Pump -  Shaft Sleeve', 'Pump -  Suction Screen', 'Pump -  Wear rings'].
+
+Input: Gas Turbine - Lube Oil - DC Oil Pump.
+Output: ['DC Motor -  Armature', 'DC Motor -  Armature - Windings', 'DC Motor -  Bearing Seal', 'DC Motor -  Bearings: Rolling element', 'DC Motor -  Brush Rigging', 'DC Motor -  Brushes', 'DC Motor -  External Cooling Fan and Cover', 'DC Motor -  Frame and Enclosure', 'DC Motor -  Gaskets', 'DC Motor -  Leads and Electrical Connections', 'DC Motor -  Machine Fits', 'DC Motor -  Rotor - Commutator', 'DC Motor -  Shaft', 'DC Motor -  Space Heaters', 'DC Motor -  Stator - Windings', 'Instrumentation - Indication and Alarm with separate sensors, if present', 'Pressure Gauge', 'Pressure Switch - Elastomers, gaskets, and O-rings', 'Pressure Switch - Electrical switch', 'Pressure Switch - Sensing device', 'Pressure Switch - Sensing line and tube fittings', 'Pressure Transmitter - Electronics', 'Pump -  Bearing - Thrust (grease lubricated)', 'Pump -  Bearing - Thrust (oil lubricated)', 'Pump -  Bearing Oil Supply Line, if present', 'Pump -  Bearing Retainers', 'Pump -  Bearings - Sleeve', 'Pump -  Column Piping', 'Pump -  Discharge Head', 'Pump -  Gaskets', 'Pump -  Impeller', 'Pump -  Mechanical Seal', 'Pump -  Motor Coupling', 'Pump -  Motor Mount', 'Pump -  Shaft', 'Pump -  Shaft Sleeve', 'Pump -  Suction Screen', 'Pump -  Wear rings'].
+
+Input: Gas Turbine - Lube Oil - Oil Supply.
+Output: ['Discharge Check Valves - Lube Oil Pumps', 'Filter - Duplex Type', 'Indication and Alarm for Temperature, Pressure, Flow, and Level', 'Lube Oil', 'Mist Eliminator (Vapor Extractor) Discharge Check Valve', 'Mist Eliminator (Vapor Extractor) Fan and Motor', 'Mist Eliminator (Vapor Extractor) Manual Discharge Valve', 'Piping Bolted Flanged Joints', 'Piping and Tubing', 'Piping and Tubing - Flex Hose', 'Piping and Tubing - Heat Tracing, if present', 'Piping and Tubing - Orifice', 'Piping and Tubing Supports - Hangers, Clamps, etc.', 'Pressure Regulator', 'Pressure Switch', 'Tank', 'Tank Fill Access Hatch', 'Tank Ground (Earth) Connection', 'Tank Immersion Heaters', 'Tank Oil Level Indicator', 'Tank Strainer, if present', 'Three-way Transfer Valve - Duplex Type', 'Valves - Manual  (Lube Oil drain, bleed, block, isolation, priming, and vent)', 'Valves - Manual (Lube Oil drain, bleed, block, isolation, priming, and vent)'].
+
+Now please complete this example:
+Input: Gas Turbine - Lube Oil - AC Oil Pump.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: HVAC - Expansion Joint - Fabric Type.
+Output: ['Expansion Joint - Fabric type (Fabric, Belt, Vulcanized Material)', 'Fasteners', 'Flange Connection (Expansion Joint to Duct or Other Structure)', 'Gasket, if present', 'Support Frame, Structure, Platforms, Stairs, Walkways, and Hand Rails'].
+
+Input: Pipe - Expansion Joint.
+Output: ['Bolted Fasteners', 'Expansion Joint', 'Expansion Joint to Flange Connection', 'Flanges', 'Gaskets'].
+
+Input: HVAC - Air Handling Equipment.
+Output: ['Actuator, Electric', 'Actuator, ElectroHydraulic', 'Actuator, Pneumatic', 'Actuator, Refrigerant', 'Agastat Type Timer Switches', 'Belts or sheaves', 'Condensate Traps', 'Condenser Coil', 'Controllers, Sensors, and Transmitters', 'Damper Bearings', 'Damper Blade to Control Shaft Connection', 'Damper Linkage', 'Damper Seal', 'Electric Heating Coils', 'Electrostatic Precipitators', 'Fan Bearings', 'Fan, Centrifugal', 'Fan, Propeller', 'Fan, Vane Axial', 'Filter, Control Air Supply', 'Filters, Media Type', 'Liquid Coil, Cooling & Heating', 'Pressure Regulators', 'Solenoid Valves', 'Steam Heating Coils', 'Switches'].
+
+Now please complete this example:
+Input: HVAC - Expansion Joint - Metal Type.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Heat Exchanger - Feedwater Heater - High Pressure - Titanium Tube.
+Output: ['Closure Devices: Channel Partitions, Partition Covers, Manways, Reversing Chambers, Flanges', 'Inlet Nozzle and Surrounding Shell Area', 'Internal Hardware: Baffle, Diffuser, Partition & Support Plates, Tie Rods, Spacers, Shroud, Seal End Plates, Impingement Plates, and Air Off-take Systems', 'Plugs', 'Plugs - Elastomeric only if present', 'Tube Joint, Rolled', 'Tube Joint, Welded', 'Tube Sheets', 'Tubes - Titanium'].
+
+Input: Heat Exchanger - Feedwater Heater - Low Pressure - Copper Alloy Tubes.
+Output: ['Closure Devices: Channel Partitions, Partition Covers, Manways, Reversing Chambers, Flanges', 'Inlet Nozzle and Surrounding Shell Area', 'Internal Hardware: Baffle, Diffuser, Partition & Support Plates, Tie Rods, Spacers, Shroud, Seal End Plates, Impingement Plates, and Air Off-take Systems', 'Plugs', 'Plugs - Elastomeric only if present', 'Tube Joint, Rolled', 'Tube Joint, Welded', 'Tube Sheets', 'Tubes - Copper Alloy', 'Tubes - Copper Alloy (Brass only)'].
+
+Input: Heat Exchanger - Feedwater Heater - High Pressure - Copper Alloy Tubes.
+Output: ['Closure Devices: Channel Partitions, Partition Covers, Manways, Reversing Chambers, Flanges', 'Inlet Nozzle and Surrounding Shell Area', 'Internal Hardware: Baffle, Diffuser, Partition & Support Plates, Tie Rods, Spacers, Shroud, Seal End Plates, Impingement Plates, and Air Off-take Systems', 'Plugs', 'Plugs - Elastomeric only if present', 'Tube Joint, Rolled', 'Tube Joint, Welded', 'Tube Sheets', 'Tubes - Copper Alloy', 'Tubes - Copper Alloy (Brass only)'].
+
+Now please complete this example:
+Input: Heat Exchanger - Feedwater Heater - Low Pressure - Titanium Tubes.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: I&C - Flow - Level Switch Only - Thermal Comparison.
+Output: ['Digital Display', 'Gasket', 'Heater Element', 'Housing', 'Microprocessor', 'Push Buttons', 'RTD (Reference or Active)', 'Relays', 'Terminals', 'Thermowells', 'Timers'].
+
+Input: I&C - Temperature Switch - Electronic Types.
+Output: ['Circuit board', 'Electrical switch', 'Electrolytic capacitors', 'Electromechanical switch', 'Electronic circuit', 'Mechanical linkage', 'Micro switch', 'Sensing device (Other types)', 'Sensing device - RTD', 'Sensing device - Thermistor', 'Thermowell'].
+
+Input: I&C - Pressure Switch.
+Output: ['Diaphragm pressure boundary', 'Elastomers (diaphragms, gaskets, and O-rings)', 'Electrical switch', 'Inline process snubber', 'Mechanical linkage', 'Mechanical linkage (Bourdon tube)', 'Mechanical linkage (DPIS meter movement)', 'Mercury switch', 'Micro switch', 'Sensing device', 'Sensing device (Bellows)', 'Sensing device (Bourdon tube)', 'Sensing device (Diaphragm)', 'Sensing device (dp Bellows)', 'Sensing device (dp Diaphragm) and/or linkage', 'Sensing line and tube fittings', 'Weather proof cover'].
+
+Now please complete this example:
+Input: I&C - Flow - Level Switch - Thermal Electronic.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: I&C - Temperature Switch - Electronic Types.
+Output: ['Circuit board', 'Electrical switch', 'Electrolytic capacitors', 'Electromechanical switch', 'Electronic circuit', 'Mechanical linkage', 'Micro switch', 'Sensing device (Other types)', 'Sensing device - RTD', 'Sensing device - Thermistor', 'Thermowell'].
+
+Input: I&C - Flow - Level Switch Only - Thermal Comparison.
+Output: ['Digital Display', 'Gasket', 'Heater Element', 'Housing', 'Microprocessor', 'Push Buttons', 'RTD (Reference or Active)', 'Relays', 'Terminals', 'Thermowells', 'Timers'].
+
+Input: I&C - Temperature Transmitter.
+Output: ['Elastomers', 'External junction box wiring and connections', 'Housing', 'Instrument Indicating Gauges or Readouts', 'Internal Power Supply', 'Internal wiring and connections', 'Mechanical linkage, if present', 'Micro switch', 'Sensing lines and associated components, e.g. condensate pot, sealed reference legs, bellows, manifold, root and isolation valves', 'Sensor, e.g. pH probe, wet bulb, capacitance cell, Bourdon tube, Piezo electric, strain gauge', 'Thermowell', 'Transmitter Electronics'].
+
+Now please complete this example:
+Input: I&C - Temperature Switch - Non-Electronic Types.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Distribution Lightning Arrestor - Silicon Carbide.
+Output: ['Animal guard', 'Connection - ground', 'Connection - primary', 'Porcelain', 'Semiconducting Stack'].
+
+Input: Distribution Circuit Breaker Vacuum - 1kV to 34kV.
+Output: ['Bus Stabs (Breaker)', 'Close and Trip Solenoids', 'Electrical Devices (micro switches, aux. switches, secondary disconnects, local control handle, fuse blocks, aux. relays, charging motor, heaters)', 'Lubricant', 'Main Current and Insulation', 'Main current contacts', 'Operating Mechanism', 'Racking Mechanism and Shutter Assembly', 'Vacuum Bottle'].
+
+Input: Distribution Circuit Breaker Oil Filled - 1kV to 34kV.
+Output: ['Aux/AB Switch', 'Cabinet heater', 'Close and Trip Coils', 'Close and Trip Solenoids', 'Dash pots', 'Door Gasket', 'Fuse', 'Grading Resistors', 'Hydraulic Mechanism - Accumulator', 'Hydraulic Mechanism - Check Valve', 'Hydraulic Mechanism - Motor', 'Hydraulic Mechanism - Pump', 'Hydraulic Mechanism - Tubing, Fittings, gauges', 'Interrupter', 'Lift Rod and Guides', 'Linkage', 'Oil', 'Oil Filled Bushings', 'Pneumatic Mechanism - Air Compressor', 'Pneumatic Mechanism - Alarms and Switches', 'Pneumatic Mechanism - Motor', 'Pneumatic Mechanism - Receiver Tank', 'Pneumatic Mechanism - Tubing, Fittings, gauges', 'Tail Spring, shock absorber', 'Tank', 'Tank Liner', 'Thermostat', 'Wiring'].
+
+Now please complete this example:
+Input: Distribution Lightning Arrestor - MOV.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Load Tap Changer - Substation - Vacuum Bottle Oil Immersed - OLTC.
+Output: ['Control - Analog or Electronic type', 'Control - Microprocessor type', 'Control - Relay - Balance Beam type', 'Control - Selsen switch', 'Electrical Connections', 'Hardware or Fasteners', 'Internal wiring', 'Interrupter - Contacts', 'LTC Tank', 'LTC Tank Breather', 'Limit or Reversing Switch Contact', 'Motor Operator', 'Oil (mineral)', 'Oil Filter, if present', 'Oil Level Alarms', 'Operations Counter', 'Pipes, Tubing, Fittings, Gaskets, and Valves', 'Position Indicator or Drag hand', 'Pressure Relief Valve', 'Separator or Switch Board', 'Shorting Resistors or Reactors', 'Vacuum Bottle', 'Vacuum Bottle Pressure Sensor\n\n Pressure Sensor'].
+
+Input: Load Tap Changer - Power Station - Oil Immersed Contacts - OLTC.
+Output: ['Contacts', 'Control - Analog or Electronic type', 'Control - Microprocessor type', 'Control - Relay - Balance Beam type', 'Control - Selsen switch', 'Electrical Connections', 'Hardware or Fasteners', 'Internal wiring', 'LTC Tank', 'LTC Tank Breather', 'Limit or Reversing Switch Contact', 'Motor Operator', 'Oil (mineral)', 'Oil Filter, if present', 'Oil Level Alarms', 'Operations Counter', 'Pipes, Tubing, Fittings, Gaskets, and Valves', 'Position Indicator or Drag hand', 'Pressure Relief Valve', 'Separator or Switch Board', 'Shorting Resistors or Reactors'].
+
+Input: Distribution Recloser - Oil Filled - Vacuum Bottle.
+Output: ['Animal Guards', 'Aux/AB Switch', 'Battery', 'Battery Charger', 'Bushings - Solid', 'Cabinet heater', 'Capacitor Trip', 'Close and Trip Coils', 'Close and Trip Solenoids', 'Conductor - primary', 'Controller', 'Current Transformer', 'Fuse - control', 'Lift Rod and Guides', 'Linkage', 'Main current contacts', 'Oil', 'Tank', 'Tank Liner', 'Thermostat', 'Vacuum Bottle', 'Wiring - control'].
+
+Now please complete this example:
+Input: Load Tap Changer - Power Station - Vacuum Bottle Oil Immersed - OLTC.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Load Tap Changer - Power Station - Oil Immersed Contacts - OLTC.
+Output: ['Contacts', 'Control - Analog or Electronic type', 'Control - Microprocessor type', 'Control - Relay - Balance Beam type', 'Control - Selsen switch', 'Electrical Connections', 'Hardware or Fasteners', 'Internal wiring', 'LTC Tank', 'LTC Tank Breather', 'Limit or Reversing Switch Contact', 'Motor Operator', 'Oil (mineral)', 'Oil Filter, if present', 'Oil Level Alarms', 'Operations Counter', 'Pipes, Tubing, Fittings, Gaskets, and Valves', 'Position Indicator or Drag hand', 'Pressure Relief Valve', 'Separator or Switch Board', 'Shorting Resistors or Reactors'].
+
+Input: Load Tap Changer - Substation - Vacuum Bottle Oil Immersed - OLTC.
+Output: ['Control - Analog or Electronic type', 'Control - Microprocessor type', 'Control - Relay - Balance Beam type', 'Control - Selsen switch', 'Electrical Connections', 'Hardware or Fasteners', 'Internal wiring', 'Interrupter - Contacts', 'LTC Tank', 'LTC Tank Breather', 'Limit or Reversing Switch Contact', 'Motor Operator', 'Oil (mineral)', 'Oil Filter, if present', 'Oil Level Alarms', 'Operations Counter', 'Pipes, Tubing, Fittings, Gaskets, and Valves', 'Position Indicator or Drag hand', 'Pressure Relief Valve', 'Separator or Switch Board', 'Shorting Resistors or Reactors', 'Vacuum Bottle', 'Vacuum Bottle Pressure Sensor\n\n Pressure Sensor'].
+
+Input: Transformer - Station Load Center Oil Fill Bushing.
+Output: ['Alarms', 'Core', 'Electrical Connections', 'Gaskets', 'Oil Filled Bushings', 'Tank', 'Temperature Gauges', 'Transformer Oil (mineral)', 'Valves', 'Windings'].
+
+Now please complete this example:
+Input: Load Tap Changer - Substation - Oil Immersed Contacts - OLTC.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Motor - Low Voltage - 600V - Vertical Hollow Shaft - TEFC - Oil/Grease Lubed.
+Output: ['Anti-rotation Device', 'Bearing Grease/Oil Seals', 'Bearing Lubrication Delivery & Drain Tubes', 'Bearing Oil Fill, Breather Caps & Sight Glass Vents', 'Bearings - Antifriction (Guide)', 'Bearings - Antifriction (Thrust)', 'Detectors (alarm, temperature, vibration), if present', 'Endbells or Bearing Housings', 'Fan - External', 'Frame, Enclosure, and Mounting', 'Gaskets', 'Lubrication - Grease', 'Lubrication - Oil', 'Machine Fits', 'Motor Leads and Electrical Connections', 'Pump Shaft Coupling', 'Rotor Fans and Hardware', 'Rotor bars and shorting rings (cast type)', 'Shaft', 'Space Heaters', 'Stator Laminations', 'Stator Winding - Blocking, Bracing, and Wedges', 'Stator Windings'].
+
+Input: Motor - Low Voltage - 600V - Vertical Solid Shaft - TEFC - Oil/Grease Lubed.
+Output: ['Anti-rotation Device', 'Bearing Grease/Oil Seals', 'Bearing Lubrication Delivery & Drain Tubes', 'Bearing Oil Fill, Breather Caps & Sight Glass Vents', 'Bearings - Antifriction (Guide)', 'Bearings - Antifriction (Thrust)', 'Detectors (alarm, temperature, vibration), if present', 'Endbells or Bearing Housings', 'Fan - External', 'Frame, Enclosure, and Mounting', 'Gaskets', 'Lubrication - Grease', 'Lubrication - Oil', 'Machine Fits', 'Motor Leads and Electrical Connections', 'Rotor Fans and Hardware', 'Rotor bars and shorting rings (cast type)', 'Shaft', 'Space Heaters', 'Stator Laminations', 'Stator Winding - Blocking, Bracing, and Wedges', 'Stator Windings'].
+
+Input: Motor - Low Voltage - 600V - Vertical Hollow Shaft - TEFC - Grease Lubed.
+Output: ['Anti-rotation Device', 'Bearing Grease Seals', 'Bearing Lubrication Delivery & Drain Tubes', 'Bearings - Antifriction (Guide)', 'Bearings - Antifriction (Thrust)', 'Detectors (alarm, temperature, vibration), if present', 'Endbells or Bearing Housings', 'Fan - External', 'Frame, Enclosure, and Mounting', 'Gaskets', 'Lubrication - Grease', 'Machine Fits', 'Motor Leads and Electrical Connections', 'Pump Shaft Coupling', 'Rotor Fans and Hardware', 'Rotor bars and shorting rings (cast type)', 'Shaft', 'Space Heaters', 'Stator Laminations', 'Stator Winding - Blocking, Bracing, and Wedges', 'Stator Windings'].
+
+Now please complete this example:
+Input: Motor - Low Voltage - 600V - Vertical Hollow Shaft - WP - Oil/Grease Lubed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Motor - Low Voltage - 230_600V Horizontal WP with Filters - Rolling Element Grease Lubed.
+Output: ['Air Deflectors or Baffles', 'Air Filters', 'Bearing Grease Seals (e.g. slinger, wiping, INPRO)', 'Bearings - Rolling Element', 'Detectors, if present (alarm, winding and bearing temperature, or vibration)', 'Endbells or Bearing Housings', 'Frame', 'Gasket or O-ring (e.g. connection or lead box covers)', 'Grease fittings, if present', 'Lubrication - Grease', 'Motor Leads and Electrical Connections', 'Motor or Winding Heaters, if present', 'Rotor - Poured or Cast Type (bars and shorting rings)', 'Rotor Mounted Fan', 'Shaft', 'Stator Core', 'Stator Winding - Surge rings and wedges (Form wound motors, only)', 'Stator Winding Blocking, Bracing, or Wedges', 'Stator Windings or Coils'].
+
+Input: Motor - Low Voltage - 115_230V Horizontal TE - Rolling Element Grease Lubed.
+Output: ['Bearing Grease Seals - Lip or Wiping Type, if present', 'Bearings - Rolling Element', 'Capacitor - Start and/or Run', 'Endbells or Bearing Housings', 'Frame and Covers', 'Grease Fittings (e.g. Zirc Type), if present', 'Leads and Electrical Connections', 'Lubrication - Grease', 'Motor Lead Termination Board', 'Motor Protector Switch - Bimetallic/Klixon Type  Overload', 'Motor Winding Switch - Start then Run', 'Rotor Bars and Shorting Rings (cast type)', 'Shaft', 'Stator Windings and Insulation System'].
+
+Input: Motor - Low Voltage - 230_600V Horizontal TE - Rolling Element Grease Lubed.
+Output: ['Bearing Grease Seals (e.g. slinger, wiping, INPRO)', 'Bearings - Rolling Element', 'Detectors, if present (alarm, winding and bearing temperature, or vibration)', 'Endbells or Bearing Housings', 'Frame', 'Gaskets (e.g. connection or lead box covers)', 'Grease fittings, if present', 'Lubrication - Grease', 'Motor Leads and Electrical Connections', 'Motor or Winding Heaters, if present', 'Rotor - Poured or Cast Type (bars and shorting rings)', 'Shaft', 'Stator Core', 'Stator Winding - Blocking, Bracing, or Wedges', 'Stator Windings or Coils'].
+
+Now please complete this example:
+Input: Motor  Medium Voltage <15Kv  Horizontal  Filters  Rolling Element  Grease Lubed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Motor - Medium Voltage <15Kv - Horizontal - Filters - Sleeve Bearing - Oil Lubed.
+Output: ['Baffles', 'Bearing Insulation (External)', 'Bearing Insulation (Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Filters - Air coolers', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Oil', 'Machine Fits', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Oil Slinger Rings', 'Oil slinger Rings - two piece design', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-spider design)', 'Rotor Fans and Hardware', 'Rotor Fans with interference fit design', 'Rotor Laminations', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Rotor Spider - spider to shaft interference fit  design', 'Shaft', 'Space Heater wiring', 'Space Heaters', 'Stator Laminations', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Surge Capacitors', 'Winding Electrical Connections - brazed'].
+
+Input: Motor - Medium Voltage <15Kv - Horizontal - TEFC - Rolling Element - Oil Lubed.
+Output: ['Baffles', 'Bearing Insulation (External)', 'Bearing Insulation (Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Rolling Element', 'Breather Caps & Sight Glass Vents', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Oil', 'Machine Fits', 'Motor External Fan and Cover', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-spider design)', 'Rotor Fans and Hardware', 'Rotor Fans with interference fit design', 'Rotor Laminations', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Rotor Spider - spider to shaft interference fit  design', 'Shaft', 'Space Heater wiring', 'Space Heaters', 'Stator Laminations', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Surge Capacitors', 'Winding Electrical Connections - brazed'].
+
+Input: Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Rolling Element - Oil Lubed.
+Output: ['Baffles', 'Bearing Insulation (External)', 'Bearing Insulation (Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Rolling Element', 'Breather Caps & Sight Glass Vents', 'Filters - Air coolers', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Oil', 'Machine Fits', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-spider design)', 'Rotor Fans and Hardware', 'Rotor Fans with interference fit design', 'Rotor Laminations', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Rotor Spider - spider to shaft interference fit  design', 'Shaft', 'Space Heater wiring', 'Space Heaters', 'Stator Laminations', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Surge Capacitors', 'Winding Electrical Connections - brazed'].
+
+Now please complete this example:
+Input: Motor - Medium Voltage <15Kv - Horizontal - Filters - Rolling Element - Oil Lubed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Ball Guide - Oil Lubed.
+Output: ['Baffles', 'Bearing Insulation (External)', 'Bearing Insulation (Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Rolling Element', 'Bearings - Self equalizing tilting pad type', 'Breather Caps & Sight Glass Vents', 'Filters - Air coolers', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Oil', 'Machine Fits', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-spider design)', 'Rotor Fans and Hardware', 'Rotor Fans with interference fit design', 'Rotor Laminations', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Rotor Spider - spider to shaft interference fit  design', 'Shaft', 'Space Heater wiring', 'Space Heaters', 'Stator Laminations', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Surge Capacitors', 'Winding Electrical Connections - brazed'].
+
+Input: Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Sleeve Guide - Oil Lubed.
+Output: ['Baffles', 'Bearing Insulation (External)', 'Bearing Insulation (Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Self equalizing tilting pad type', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Filters - Air coolers', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Oil', 'Machine Fits', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-spider design)', 'Rotor Fans and Hardware', 'Rotor Fans with interference fit design', 'Rotor Laminations', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Rotor Spider - spider to shaft interference fit  design', 'Shaft', 'Space Heater wiring', 'Space Heaters', 'Stator Laminations', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Surge Capacitors', 'Winding Electrical Connections - brazed'].
+
+Input: Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Rolling Element - Oil/Grease Lubed.
+Output: ['Baffles', 'Bearing Insulation (External)', 'Bearing Insulation (Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Rolling Element', 'Breather Caps & Sight Glass Vents', 'Filters - Air coolers', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Grease', 'Lubrication - Oil', 'Machine Fits', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-spider design)', 'Rotor Fans and Hardware', 'Rotor Fans with interference fit design', 'Rotor Laminations', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Rotor Spider - spider to shaft interference fit  design', 'Shaft', 'Space Heater wiring', 'Space Heaters', 'Stator Laminations', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Surge Capacitors', 'Winding Electrical Connections - brazed'].
+
+Now please complete this example:
+Input: Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Ball Guide - Oil/Grease Lubed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Radial-Sleeve Bearings-Oil Lubed.
+Output: ['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Antifriction (radial and thrust)', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Wear Rings and surfaces'].
+
+Input: Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Sleeve Bearings-Oil Lubed.
+Output: ['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Wear Rings and surfaces'].
+
+Input: Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Radial-Sleeve Bearings-Oil Lubed.
+Output: ['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Antifriction (radial and thrust)', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Packing', 'Shaft', 'Stuffing Box Flange to Horizontal Joint', 'Wear Rings and surfaces'].
+
+Now please complete this example:
+Input: Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Radial Bearings-Oil Lubed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Radial-Sleeve Bearings-Oil Lubed.
+Output: ['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Antifriction (radial and thrust)', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Packing', 'Shaft', 'Stuffing Box Flange to Horizontal Joint', 'Wear Rings and surfaces'].
+
+Input: Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Sleeve Bearings-Oil Lubed.
+Output: ['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Packing', 'Shaft', 'Stuffing Box Flange to Horizontal Joint', 'Wear Rings and surfaces'].
+
+Input: Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Radial-Sleeve Bearings-Oil Lubed.
+Output: ['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Antifriction (radial and thrust)', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Wear Rings and surfaces'].
+
+Now please complete this example:
+Input: Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Radial Bearings-Oil Lubed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Mechanical Seal - Rolling Element Bearings - Grease Lubed.
+Output: ['Bearing Seals - Lip', ""Bearing Temperature RTD's, if present"", 'Bearing Vibration Probes, if present', 'Bearings - Rolling Element (radial and thrust)', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Lubrication - Grease', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller'].
+
+Input: Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Packing Seal - Rolling Element Bearings - Oil Lubed.
+Output: ['Automatic Oilers', 'Bearing Seals - Labyrinth and/or Lip', ""Bearing Temperature RTD's, if present"", 'Bearing Vibration Probes, if present', 'Bearings - Rolling Element (radial and thrust)', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Integral Bearing Cooler, if present', 'Lube Oil', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Packing', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller'].
+
+Input: Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Mechanical Seal - Rolling Element Bearings - Oil Lubed.
+Output: ['Automatic Oilers', 'Bearing Seals - Labyrinth and/or Lip', ""Bearing Temperature RTD's, if present"", 'Bearing Vibration Probes, if present', 'Bearings - Rolling Element (radial and thrust)', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Integral Bearing Cooler, if present', 'Lube Oil', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller'].
+
+Now please complete this example:
+Input: Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Packing Seal - Rolling Element Bearings - Grease Lubed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Pump - Horizontal - Single Stage - Single Suction - Close Couple End Suction Type - Mechanical Seal.
+Output: ['Connections & Piping', 'Coupler - Motor-Pump, if present', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller'].
+
+Input: Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Packing Seal - Sleeve Bearings_Oil Lubed.
+Output: ['Automatic Oilers, if present', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', 'Bearing Temperature Probes', 'Bearing Vibration Probes', 'Bearings - sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Lube Oil', 'Lube Oil Bearing Metering Orifice', 'Lube Oil Cooling Heat Exchanger', 'Lube Oil System (self-contained)', 'Pump Base Plate and Foundation', 'Pump Casing', 'Pump Casing and Closure', 'Seal - Fixed Breakdown Bushing, if present', 'Seal - Packing', 'Shaft', 'Wear Rings and surfaces'].
+
+Input: Pump - Horizontal - Single Stage - Double Suction - Axially Split Case - Mechanical Seal - Sleeve Bearings_Oil Lubed.
+Output: ['Automatic Oilers, if present', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', 'Bearing Temperature Probes', 'Bearing Vibration Probes', 'Bearings - sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Lube Oil', 'Lube Oil Bearing Metering Orifice', 'Lube Oil Cooling Heat Exchanger', 'Lube Oil System (self-contained)', 'Pump Base Plate and Foundation', 'Pump Casing', 'Pump Casing and Closure', 'Seal - Fixed Breakdown Bushing', 'Seal - Mechanical', 'Shaft', 'Wear Rings and surfaces'].
+
+Now please complete this example:
+Input: Pump - Horizontal - Single Stage - Single Suction - Close Couple End Suction Type - Packing Seal.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Pump - Horizontal - Screw PDP LO Type - Engine Driven.
+Output: ['Bearing - Antifriction', 'Bearings - Sleeve', 'Casing with Head', 'Gaskets', 'Integral Relief Valve - Adjusting Screw', 'Integral Relief Valve - Body', 'Integral Relief Valve - Body Drain', 'Integral Relief Valve - Gaskets', 'Integral Relief Valve - Poppet Disk', 'Integral Relief Valve - Spring', 'Integral Relief Valve - Spring Guide', 'Mechanical Seal', 'Rotating Assembly (driven and idler spindles)', 'Spindle Screws (driven and idler)'].
+
+Input: Pump - Vertical - Deep Draft - Axial Flow.
+Output: ['Bearing Retainers & Spiders', 'Bearings - Sleeve (process or bearing lube water fluid lubricated)', 'Cathodic Protection, if present', 'Column Piping', 'Discharge Bowl and Liner', 'Discharge Head and Motor Mount', 'Gaskets, O-Rings', 'Impeller', 'Line Shaft Coupling', 'Mechanical Seal', 'Packing', 'Pump / Motor Coupling', 'Pump Base and Mounting', 'Shaft', 'Suction Bell'].
+
+Input: Pump - Horizontal - Single Stage - Single Suction - Close Couple End Suction Type - Mechanical Seal.
+Output: ['Connections & Piping', 'Coupler - Motor-Pump, if present', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller'].
+
+Now please complete this example:
+Input: Pump - Vertical - Close Coupled.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Pump - Vertical - Deep Draft - Axial Flow.
+Output: ['Bearing Retainers & Spiders', 'Bearings - Sleeve (process or bearing lube water fluid lubricated)', 'Cathodic Protection, if present', 'Column Piping', 'Discharge Bowl and Liner', 'Discharge Head and Motor Mount', 'Gaskets, O-Rings', 'Impeller', 'Line Shaft Coupling', 'Mechanical Seal', 'Packing', 'Pump / Motor Coupling', 'Pump Base and Mounting', 'Shaft', 'Suction Bell'].
+
+Input: FLEX - Pump - Horizontal - Axial Split Case_Mechanical Seal - LV Motor Driven.
+Output: ['Motor - Bearing Grease Seals (e.g. slinger, wiping, INPRO)', 'Motor - Bearings - Rolling Element', 'Motor - Endbells or Bearing Housings', 'Motor - External Fan and Cover', 'Motor - Frame', 'Motor - Gaskets (e.g. connection or lead box covers)', 'Motor - Leads and Electrical Connections', 'Motor - Lubrication - Grease', 'Motor - Rotor bars and shorting rings (cast type)', 'Motor - Shaft', 'Motor - Space Heaters', 'Motor - Stator Windings', 'Motor-Pump - Coupling - Fasteners', 'Motor-Pump - Coupling - Grease', 'Motor-Pump - Coupling - Grid', 'Motor-Pump - Coupling - Grid, Serrations or Grooves', 'Motor-Pump - Coupling - Sleeve Gasket or O-ring, if present', 'Pump - Bearing Seals - Lip', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Casing', 'Pump - Casing Gasket or Seal', 'Pump - Check Valve - Disk Arm, if present', 'Pump - Check Valve - Hinge Pin, if present', 'Pump - Check Valve - Rubber Flapper, if present', 'Pump - Check Valve - Seat Failure (Body or Disk), if present', 'Pump - Connections and Piping', 'Pump - Discharge and Suction Connections', 'Pump - Gaskets and O-Rings', 'Pump - Impeller(s) and Wear Rings', 'Pump - Lubrication - Grease', 'Pump - Priming System, if present', 'Pump - Seal - Mechanical Non-Oil Bath Type (process or seal water wetted)', 'Pump - Shaft', 'Skid -Motor and Pump Base Plate or Frame', 'Trailer - Bed, Frame, and Lifting Lugs', 'Trailer - Hitch or Coupling', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Input: FLEX - Pump - Horizontal - Axial Split Case_Packing Seal - LV Motor Driven.
+Output: ['Motor - Bearing Grease Seals (e.g. slinger, wiping, INPRO)', 'Motor - Bearings - Rolling Element', 'Motor - Endbells or Bearing Housings', 'Motor - External Fan and Cover', 'Motor - Frame', 'Motor - Gaskets (e.g. connection or lead box covers)', 'Motor - Leads and Electrical Connections', 'Motor - Lubrication - Grease', 'Motor - Rotor bars and shorting rings (cast type)', 'Motor - Shaft', 'Motor - Space Heaters', 'Motor - Stator Windings', 'Motor-Pump - Coupling - Fasteners', 'Motor-Pump - Coupling - Grease', 'Motor-Pump - Coupling - Grid', 'Motor-Pump - Coupling - Grid, Serrations or Grooves', 'Motor-Pump - Coupling - Sleeve Gasket or O-ring, if present', 'Pump - Bearing Seals - Lip', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Casing', 'Pump - Casing Gasket or Seal', 'Pump - Check Valve - Disk Arm, if present', 'Pump - Check Valve - Hinge Pin, if present', 'Pump - Check Valve - Rubber Flapper, if present', 'Pump - Check Valve - Seat Failure (Body or Disk), if present', 'Pump - Connections and Piping', 'Pump - Discharge and Suction Connections', 'Pump - Gaskets and O-Rings', 'Pump - Impeller(s) and Wear Rings', 'Pump - Lubrication - Grease', 'Pump - Priming System, if present', 'Pump - Seal - Packing', 'Pump - Shaft', 'Skid -Motor and Pump Base Plate or Frame', 'Trailer - Bed, Frame, and Lifting Lugs', 'Trailer - Hitch or Coupling', 'Trailer - Tires', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims'].
+
+Now please complete this example:
+Input: Pump - Vertical - Deep Draft - Radial Flow - Product Lubed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Poles_Wood_Distribution_SoPine_CCA.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Input: Poles_Wood_Distribution_DFir_ACZA.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Input: Poles_Wood_Distribution_DFir_Penta.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Now please complete this example:
+Input: Poles_Wood_Distribution_WRCedar_CCA.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Poles_Wood_Transmission_WRCedar_Penta.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Input: Poles_Wood_Transmission_SoPine_CCA.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Input: Poles_Wood_Transmission_DFir_Penta.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Now please complete this example:
+Input: Poles_Wood_Transmission_SoPine_Penta.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Poles_Wood_Transmission_DFir_Creosote.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Input: Poles_Wood_Transmission_DFir_Penta.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Input: Poles_Wood_Transmission_WRCedar_Creosote.
+Output: ['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'].
+
+Now please complete this example:
+Input: Poles_Wood_Transmission and Attachments_DFir_Creosote.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Cable - Plant - Splice - 5-15kV.
+Output: ['Splices'].
+
+Input: Cable - Plant - 5-35kV - Brown EPR - Discharge Resistant - Jacketed-Shielded - Underground - wet cable, outdoor/dry termination, wet splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (extruded polymer)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Splices', 'Terminations - outdoor or dry'].
+
+Input: Cable - Plant - 5-15kV - Brown EPR - Discharge Resistant - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice.
+Output: ['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (extruded polymer)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations - outdoor'].
+
+Now please complete this example:
+Input: Power - Festoon Cable.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Solar Array - Photovoltaic - Sun Tracking.
+Output: ['Array Positioner Counter Balance', 'Array Positioner Gear Set', 'Array Positioner Lead or Jack Screw & Ball Nut', 'Array Positioner Limit Switches', 'Array Positioner Motor, Coupling, & Brake', 'Array Positioner Positioning and Speed Control Resolver', 'Array Positioner Tachometer', 'Circuit Breakers', 'Earth or Ground Connections', 'Lightning or Surge Arrestors', 'Power Cables, Control Wiring,  and Connections', 'Solar Controller  (including relays, PLC, circuit boards, alarms, etc)', 'Solar Controller Cabinet', 'Solar Panel (Module)', 'Solar Panel Supporting Structure (the array frame, stanchion, mounting, and base)'].
+
+Input: Power System - Solar-Photovoltaic - Sun Tracking.
+Output: ['Array Positioner Counter Balance', 'Array Positioner Gear Set', 'Array Positioner Lead or Jack Screw & Ball Nut', 'Array Positioner Limit Switches', 'Array Positioner Motor, Coupling, & Brake', 'Array Positioner Positioning and Speed Control Resolver', 'Array Positioner Tachometer', 'Battery - Cabinet or Rack', 'Battery - Case', 'Battery - Group Bar (Collector)', 'Battery - Inter Cell and Inter Tier Connectors & Hardware & Battery Cable Connectors', 'Battery - Plates', 'Battery - Posts', 'Battery - Pressure Relief Valve', 'Battery Charger, Inverter/Converter, Regulator and Rectifier - Interconnecting Communication Cables', 'Battery Charger, Inverter/Converter, Regulator and Rectifier - Interconnecting Power Cables', 'Battery Charger, Inverter/Converter, Regulator and Rectifier - Module (including PLC, semiconductors, transformer, etc)', 'Battery Charger, Inverter/Converter, Regulator and Rectifier - Rack and Backplane (including AC breakers)', 'Circuit Breakers', 'Connections to Battery Charger, Inverter,  and Primary Distribution', 'Earth or Ground Connections', 'Enclosure', 'Enclosure Cooling Fans or A/C', 'Lightning or Surge Arrestors', 'Power Cables, Control Wiring, and Connections', 'Solar Controller  (including relays, PLC, circuit boards, alarms, etc)', 'Solar Panel (Module)', 'Solar Panel Supporting Structure (the array frame, stanchion, mounting, and base)'].
+
+Input: I&C - Panel Meters - General Type.
+Output: ['Metering Instruments (e.g. voltmeter, ammeter)', 'Wiring'].
+
+Now please complete this example:
+Input: Solar Array - Photovoltaic - Large Fixed.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Distribution Recloser - Oil Filled - Vacuum Bottle.
+Output: ['Animal Guards', 'Aux/AB Switch', 'Battery', 'Battery Charger', 'Bushings - Solid', 'Cabinet heater', 'Capacitor Trip', 'Close and Trip Coils', 'Close and Trip Solenoids', 'Conductor - primary', 'Controller', 'Current Transformer', 'Fuse - control', 'Lift Rod and Guides', 'Linkage', 'Main current contacts', 'Oil', 'Tank', 'Tank Liner', 'Thermostat', 'Vacuum Bottle', 'Wiring - control'].
+
+Input: Distribution Recloser - Oil Filled.
+Output: ['Animal Guards', 'Aux/AB Switch', 'Battery', 'Battery Charger', 'Bushings - Solid', 'Cabinet heater', 'Capacitor Trip', 'Close and Trip Coils', 'Close and Trip Solenoids', 'Conductor - primary', 'Controller', 'Current Transformer', 'Fuse - control', 'Interrupter', 'Lift Rod and Guides', 'Linkage', 'Oil', 'Oil/Hydraulic Pump Piston', 'Tank', 'Tank Liner', 'Thermostat', 'Wiring - control'].
+
+Input: Distribution Recloser - Solid Dielectric.
+Output: ['Animal Guards, if present', 'Aux/AB Switch', 'Battery', 'Battery Charger', 'Bushing Interrupter Unit', 'Cabinet heater', 'Close and Trip Coils', 'Close and Trip Solenoids', 'Conductor - primary', 'Controller', 'Current Transformer', 'Fuse - control', 'Linkage', 'Main current contacts', 'Operating Rods', 'Thermostat', 'Wiring - control'].
+
+Now please complete this example:
+Input: Distribution Recloser - SF6 Filled - Vacuum Bottle.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Relay - Control - Electromechanical - Energized - Low Cycle.
+Output: ['Coil', 'Contacts', 'Mechanical Assembly', 'Wiring, crimps, and terminations'].
+
+Input: Relay - Control - Electromechanical - Energized - High Cycle.
+Output: ['Coil', 'Contacts', 'Mechanical Assembly', 'Wiring, crimps, and terminations'].
+
+Input: Relay - Electro-Pneumatic Timing - DC Coil.
+Output: ['Coil - DC', 'Contacts', 'Cover', 'Plunger and Bellows Assembly', 'Springs (contact pressure)', 'Terminations'].
+
+Now please complete this example:
+Input: Relay - Control - Electromechanical - DC coil - De-Energized.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Relay - Motor Protection and Management - Microprocessor - Remotely Monitored.
+Output: ['Cabinet or Enclosure', 'Cabinet or Enclosure - Cabinet Filter, if present', 'Cabinet or Enclosure - Door Latching Device', 'Cabinet or Enclosure - Door Seal or Gasket', 'Cabinet or Enclosure -Cabinet Cooling Fan, if present', 'Cabinet or General Wiring, Cables and Connections', 'Relay - Programmable Controller and  Monitoring Interface'].
+
+Input: Relay - Protective - System Protection (Line-Feeder-Bus-Transformer) - Microprocessor - Un-Monitored.
+Output: ['Cabinet or Enclosure', 'Cabinet or Enclosure - Cabinet Filter, if present', 'Cabinet or Enclosure - Door Latching Device', 'Cabinet or Enclosure - Door Seal or Gasket', 'Cabinet or Enclosure -Cabinet Cooling Fan, if present', 'Cabinet or General Wiring, Cables and Connections', 'Relay - Programmable Controller and  Monitoring Interface'].
+
+Input: Relay - Protective - System Protection (Line-Feeder-Bus-Transformer) - Microprocessor - Remotely Monitored.
+Output: ['Cabinet or Enclosure', 'Cabinet or Enclosure - Cabinet Filter, if present', 'Cabinet or Enclosure - Door Latching Device', 'Cabinet or Enclosure - Door Seal or Gasket', 'Cabinet or Enclosure -Cabinet Cooling Fan, if present', 'Cabinet or General Wiring, Cables and Connections', 'Relay - Programmable Controller and  Monitoring Interface'].
+
+Now please complete this example:
+Input: Relay - Motor Protection and Management - Microprocessor - Un-Monitored.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Relay - Protective - Electromechanical.
+Output: ['Coils', 'Contacts', 'Cup Type Assembly', 'Electrolytic Capacitors', 'Hinge Type Assembly or Target', 'Induction Disk Assembly', 'Plunger Type Assembly', 'Wiring'].
+
+Input: Relay - Control - Electromechanical - Energized - High Cycle.
+Output: ['Coil', 'Contacts', 'Mechanical Assembly', 'Wiring, crimps, and terminations'].
+
+Input: Relay - Control - Electromechanical - Energized - Low Cycle.
+Output: ['Coil', 'Contacts', 'Mechanical Assembly', 'Wiring, crimps, and terminations'].
+
+Now please complete this example:
+Input: Relay - Overspeed Protection - Electronic_V0.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Heat Exchanger - General Tube Type.
+Output: ['Channel and Partition Plate, and Nozzle', 'Closure Devices Channel Partitions, Manways, Reversing Chambers, and Flange', 'Internal Hardware; including: Baffle Plates, Support Plates, Tie Rods, Spacers, Diffusers Plates, and Impingement Plates', 'Plugs', 'Plugs - elastomeric if present', 'Shell Gaskets (removable tube bundles)', 'Shell, Inlet and Outlet Nozzles', 'Tube Joint', 'Tube Sheets', 'Tubes (all)', 'Tubes - Copper Alloy', 'Tubes - Copper Alloy (Brass only)', 'Tubes - Stainless Steel', 'Tubes - Titanium'].
+
+Input: Valve - Weir Type - Air Operated.
+Output: ['Accumulator Air Line Check Valve, if present', 'Accumulators, if present', 'Actuator Body', 'Actuator Bushing(s), if present', 'Actuator Diaphragm', 'Actuator Gasket', 'Actuator Manual Operator', 'Actuator Shaft or Stem', 'Actuator Spring', 'Bonnet', 'Check Valve - air supply line', 'Coupling', 'Filter Regulator (air line)', 'Limit Switches - lever type', 'Mechanical fasteners or hardware', 'Piping Flange Gaskets, if present', 'Pneumatic Tubing and Flex Hoses (if present)', 'SOV Coil', 'SOV Diaphragm', 'SOV O-Rings', 'SOV Plunger', 'SOV Valve Seat', 'SOV Wiring, Insulation, or Connectors', 'Valve Body', 'Valve Body Gasket', 'Valve Diaphragm', 'Valve Seat', 'Valve Stem O-rings', 'Valve Stem or Shaft'].
+
+Input: Fluid Drive - Scoop Tube Type.
+Output: ['Auxiliary oil pump and motor', 'Bearing housing', 'Bearing temperature sensor and indicator', 'Bearings - Antifriction', 'Bearings - Kingsbury type, if present', 'Bearings - Sleeve', 'Bolting and hardware', 'Breather Caps', 'Chain driven oil pump drive, if present', 'Connection Couplings (gear type)', 'Fusible Plug', 'Housing', 'Machine Fits', 'Oil', 'Oil Piping & Connections', 'Oil cooler', 'Oil filter', 'Oil heater', 'Oil heater thermostat', 'Oil piping check valves', 'Oil pressure regulators - Lube oil or working oil', 'Runner', 'Scoop tube', 'Scoop tube actuator - VEHS', 'Seals and sealings', 'Shaft', 'Shaft Labyrinth Seals', 'Shaft Lip Seals', 'Shaft driven oil pump', 'Shaft seals', 'Sight Glass'].
+
+Now please complete this example:
+Input: Water Intake Screen - Traveling Type.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Switchgear - Power and Control Panel.
+Output: ['Circuit breakers', 'Control fuse', 'Electrical devices: includes control transformer, fuse block, switches, and secondary disconnects', 'Enclosure', 'Line filter', 'Main circuit breaker', 'Manual disconnect switch', 'Phase reversal or loss detection relay', 'Status lights', 'Surge protector', 'Terminal strips', 'Wiring, cables, and connectors'].
+
+Input: Switchgear - Low Voltage - Breaker only.
+Output: ['Bus Stabs (Breaker to Bus)', 'Current Transformer (CT)', 'Electrical Devices (micro switches, aux. switches, secondary disconnects, fuse blocks, aux. relays, charging motor, heaters) Note: Some devices will be mounted on the breaker cart and some are mounted to the cubicle panel.', 'Lubricant (Breaker moving parts)', 'Main Current, Arc Quench, and Insulation', 'Operating Mechanism', 'Racking Mechanism (Breaker)'].
+
+Input: Switchgear - Medium Voltage - 1kV to 15kV - Breaker only.
+Output: ['Bus Stabs', 'Electrical Devices (micro switches, aux. switches, secondary disconnects, local control handle, fuse blocks, aux. relays, charging motor, heaters)', 'Lubricant', 'Main Current, Arc Quench, and Insulation', 'Operating Mechanism'].
+
+Now please complete this example:
+Input: Switchgear - Circuit Breaker Panel.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Switchgear - Low Voltage - Breaker only.
+Output: ['Bus Stabs (Breaker to Bus)', 'Current Transformer (CT)', 'Electrical Devices (micro switches, aux. switches, secondary disconnects, fuse blocks, aux. relays, charging motor, heaters) Note: Some devices will be mounted on the breaker cart and some are mounted to the cubicle panel.', 'Lubricant (Breaker moving parts)', 'Main Current, Arc Quench, and Insulation', 'Operating Mechanism', 'Racking Mechanism (Breaker)'].
+
+Input: Switchgear - Medium Voltage - 1kV to 15kV.
+Output: ['Bus Stabs', 'Electrical Devices (micro switches, aux. switches, secondary disconnects, local control handle, fuse blocks, aux. relays, charging motor, heaters)', 'Enclosure', 'Lubricant', 'Main Current, Arc Quench, and Insulation', 'Operating Mechanism', 'Racking Mechanism and Shutter Assembly'].
+
+Input: Switchgear - Medium Voltage - 1kV to 15kV - Cubicle & Bus.
+Output: ['Bus Stabs', 'Enclosure', 'Lubricant', 'Racking Mechanism and Shutter Assembly'].
+
+Now please complete this example:
+Input: Switchgear - Low Voltage.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Switchgear - Medium Voltage - 1kV to 15kV - Vacuum Bottle Type - Breaker only.
+Output: ['Breaker Stabs', 'Close and Trip Solenoid', 'Control Circuit  - Rectifier Module', 'Control Circuit - Transformer', 'Control Circuit and Auxiliary Electrical Devices (microswitches, auxiliary switches, secondary disconnects, local control handle, control fuses and fuse blocks, auxiliary relays, wiring, cabinet heaters, indicating lights)', 'Fuses (main)', 'Ground wiring and connections', 'Hardware and fasteners', 'Lubricant', 'Operating Mechanism (e.g. mechanical parts associated with opening, closing and tripping levels, arms, pivots, linkages, latches, pawls, springs, etc.)', 'Vacuum Bottle or Interrupter'].
+
+Input: Switchgear - Medium Voltage - 1kV to 15kV.
+Output: ['Bus Stabs', 'Electrical Devices (micro switches, aux. switches, secondary disconnects, local control handle, fuse blocks, aux. relays, charging motor, heaters)', 'Enclosure', 'Lubricant', 'Main Current, Arc Quench, and Insulation', 'Operating Mechanism', 'Racking Mechanism and Shutter Assembly'].
+
+Input: Switchgear - Medium Voltage - 1kV to 15kV - Breaker only.
+Output: ['Bus Stabs', 'Electrical Devices (micro switches, aux. switches, secondary disconnects, local control handle, fuse blocks, aux. relays, charging motor, heaters)', 'Lubricant', 'Main Current, Arc Quench, and Insulation', 'Operating Mechanism'].
+
+Now please complete this example:
+Input: Switchgear - Medium Voltage - 1kV to 15kV - Vacuum Bottle Type.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: I&C - Switch - Limit Type.
+Output: ['Actuator arm', 'Limit Switch', 'Wiring'].
+
+Input: I&C - Vibration & Shock Switch - Static Type.
+Output: ['Contacts', 'Contacts - Leaf Elements', 'Gasket', 'Housing', 'Magnet', 'Reset Push Button', 'Tension/Sensitivity Spring', 'Tension/Sensitivity Spring Adjustment Assembly', 'View Glass'].
+
+Input: I&C - Pressure Switch - Bourdon or Bellows.
+Output: ['Electrical switch', 'Gaskets and O-rings', 'Sensing device - Bourdon tube or bellows', 'Sensing line and tube fittings', 'Snubber, if present', 'Wiring and Connections'].
+
+Now please complete this example:
+Input: Switch - Large Mechanical Limit Type.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Main Turbine - 3600RPM - HP.
+Output: ['Front Standard - Control rotor (impeller, shaft, steady rest bearing, grounding shoes), if present', 'Front Standard - Quill shaft', 'Front Standard - Shaft-driven pump impeller wear rings, if present', 'Front Standard - Shaft-driven pump impeller, if present', 'HP Bearings (journal and thrust)', 'HP Bearings (journal only)', 'HP Blade Root', 'HP Blade Roots', 'HP Blades', 'HP Blades Covers', 'HP Casing diaphragm and gland fits', 'HP Casing horizontal/vertical joints', 'HP Casing insulation, all types', 'HP Casing piping bolted joint flanges', 'HP Casing pressure instruments', 'HP Couplings', 'HP Diaphragms', 'HP Heat Groove', 'HP Journals', 'HP Packing land', 'HP Rotor Body - wheel and disk', 'HP Rotor Bore', 'HP blade tip seal strips', 'HP equalizer valve', 'HP gib/centering keys', 'HP nozzle blocks', 'HP oil deflectors', 'HP oil seals', 'Standard - sliding feet', 'Turbine Supervisory Instrumentation -  Bearing Metal Temperature Detector (RTD)', 'Turbine Supervisory Instrumentation -  Exhaust Hood steam Temperature indicators', 'Turbine Supervisory Instrumentation -  Last Stage Bucket Temperature', 'Turbine Supervisory Instrumentation -  Position switches and indicators, Casing differential and expansion', 'Turbine Supervisory Instrumentation -  Shell temperature indicators', 'Turbine Supervisory Instrumentation -  Shell, Lube oil, and Steam pressures and temperatures', 'Turbine Supervisory Instrumentation -  Vibration probes - shaft rider and non-contacting'].
+
+Input: Main Turbine - 1800RPM - LP.
+Output: ['LP Bearing Oil Overflow Drains', 'LP Bearings (journals)', 'LP Blade Attachment pins', 'LP Blade Root', 'LP Blades', 'LP Blades Covers', 'LP Casing access covers', 'LP Casing diaphragm and gland fits', 'LP Casing horizontal/vertical joints', 'LP Casing piping bolted joint flanges', 'LP Casing piping bolted joint flanges (internal and external)', 'LP Casing temperature instruments', 'LP Coupling cover', 'LP Couplings', 'LP Dovetail/Blade Attachment', 'LP Exhaust Hood Sprays', 'LP Journals', 'LP Lift/Jacking Pumps', 'LP Rotor Bore, if present', 'LP Rupture disk', 'LP Wheel/Disk', 'LP blade tip packing', 'LP end gland packing/steam seals', 'LP gib/centering keys', 'LP horizontal joint', 'LP inner shell bolting shield', 'LP oil deflectors', 'LP oil seals', 'LP sliding feet, if present', 'LP stationary diaphragms/blade ring packing', 'LP stationary diaphragms/blade rings', 'Performance piping', 'Supervisory Instrumentation -  Bearing Metal Temperature Detector (RTD)', 'Supervisory Instrumentation -  Exhaust Hood steam Temperature indicators', 'Supervisory Instrumentation -  Last Stage Bucket Temperature', 'Supervisory Instrumentation -  Shell temperature indicators', 'Supervisory Instrumentation -  Vibration probes - shaft rider and non-contacting', 'Turning gear'].
+
+Input: Main Turbine - 3600RPM - LP.
+Output: ['LP Bearing Oil Overflow Drains', 'LP Bearings (journal)', 'LP Blade Attachment pins', 'LP Blade Root', 'LP Blades', 'LP Blades Covers', 'LP Casing access covers', 'LP Casing diaphragm and gland fits', 'LP Casing horizontal/vertical joints', 'LP Casing piping bolted joint flanges', 'LP Casing piping bolted joint flanges (internal and external)', 'LP Casing temperature instruments', 'LP Coupling cover', 'LP Couplings', 'LP Dovetail/Blade Attachment', 'LP Exhaust Hood Sprays', 'LP Journals', 'LP Lift/Jacking Pumps', 'LP Rotor Bore, if present', 'LP Rupture disk', 'LP Turning gear', 'LP Wheel/Disk', 'LP blade tip packing', 'LP end gland packing/steam seals', 'LP gib/centering keys', 'LP horizontal joint', 'LP inner shell bolting shield', 'LP oil deflectors', 'LP oil seals', 'LP sliding feet, if present', 'LP stationary diaphragms/blade ring packing', 'LP stationary diaphragms/blade rings', 'Performance piping', 'Turbine Supervisory Instrumentation -  Bearing Metal Temperature Detector (RTD)', 'Turbine Supervisory Instrumentation -  Exhaust Hood steam Temperature indicators', 'Turbine Supervisory Instrumentation -  Last Stage Bucket Temperature', 'Turbine Supervisory Instrumentation -  Position switches and indicators, Casing differential and expansion', 'Turbine Supervisory Instrumentation -  Shell temperature indicators', 'Turbine Supervisory Instrumentation -  Shell, Lube oil, and Steam pressures and temperatures', 'Turbine Supervisory Instrumentation -  Vibration probes - shaft rider and non-contacting'].
+
+Now please complete this example:
+Input: Main Turbine - 1800RPM - HP.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Main Turbine Lube Oil AC Bearing Oil Pump and Motor.
+Output: ['Motor Bearing Seal', 'Motor Bearings: Antifriction', 'Motor Cast Rotor: Rotor bars and shorting rings', 'Motor Cooling Fan', 'Motor Frame and Enclosure', 'Motor Gaskets', 'Motor Leads and Electrical Connections', 'Motor Machine Fits', 'Motor Shaft', 'Motor Space Heaters', 'Motor Stator - Windings', 'Pump / Motor Coupling', 'Pump / Motor Mount', 'Pump Bearing Oil Supply Line', 'Pump Bearing Retainers', 'Pump Bearings - Sleeve', 'Pump Bearings - Thrust', 'Pump Casing Vent', 'Pump Column Piping', 'Pump Discharge Head', 'Pump Gaskets', 'Pump Impeller', 'Pump Mechanical Seal', 'Pump Shaft', 'Pump Suction Strainer', 'Pump Wear rings'].
+
+Input: Main Turbine Lube Oil Bearing Oil Lift Pump and Motor.
+Output: ['Discharge Piping Ball Check Valve', 'Discharge piping and flex lines', 'LP Lift/Jacking Pumps', 'Motor Bearings', 'Motor Cooling Fan', 'Motor Leads and Electrical Connections', 'Motor Stator - Windings', 'Oil Supply Piping', 'Pressure Switch', 'Pump Suction Strainer', 'Pump and Motor Base', 'Pump and Motor Coupling'].
+
+Input: Gas Turbine - Lube Oil - AC & DC Seal Oil Pump.
+Output: ['AC Motor -  Bearing Seal', 'AC Motor -  Bearings: Rolling element', 'AC Motor -  Cast Rotor: Rotor bars and shorting rings', 'AC Motor -  End Bell Fits', 'AC Motor -  External Cooling Fan and Cover', 'AC Motor -  Frame and Enclosure', 'AC Motor -  Gaskets', 'AC Motor -  Leads and Electrical Connections', 'AC Motor -  Shaft', 'AC Motor -  Space Heaters', 'AC Motor -  Stator - Windings', 'DC Motor -  Armature', 'DC Motor -  Armature - Windings', 'DC Motor -  Bearing Seal', 'DC Motor -  Bearings: Rolling element', 'DC Motor -  Brush Rigging', 'DC Motor -  Brushes', 'DC Motor -  External Cooling Fan and Cover', 'DC Motor -  Frame and Enclosure', 'DC Motor -  Gaskets', 'DC Motor -  Leads and Electrical Connections', 'DC Motor -  Machine Fits', 'DC Motor -  Rotor - Commutator', 'DC Motor -  Shaft', 'DC Motor -  Space Heaters', 'DC Motor -  Stator - Windings', 'Instrumentation - Indication and Alarm with separate sensors, if present', 'Pressure Gauge', 'Pressure Switch - Elastomers, gaskets, and O-rings', 'Pressure Switch - Electrical switch', 'Pressure Switch - Sensing device', 'Pressure Switch - Sensing line and tube fittings', 'Pressure Transmitter - Electronics', 'Pump -  Bearing - Thrust (grease lubricated)', 'Pump -  Bearing - Thrust (oil lubricated)', 'Pump -  Bearing Oil Supply Line, if present', 'Pump -  Bearing Retainers', 'Pump -  Bearings - Sleeve', 'Pump -  Column Piping', 'Pump -  Discharge Head', 'Pump -  Gaskets', 'Pump -  Impeller', 'Pump -  Mechanical Seal', 'Pump -  Motor Coupling', 'Pump -  Motor Mount', 'Pump -  Shaft', 'Pump -  Shaft Sleeve', 'Pump -  Suction Screen', 'Pump -  Wear rings'].
+
+Now please complete this example:
+Input: Main Turbine Lube Oil AC Aux_Startup Oil Pump and Motor.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Transformer - Station Aux_Startup - LTC.
+Output: ['Core', 'Desiccant', 'Electrical Connections', 'Fans', 'Fin and Tube Coolers', 'Gas Blanket Systems', 'Gaskets', 'Level Alarms', 'Lightning/Surge Arrestors', 'Load Tap Changer', 'Oil Filled Bushings', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Solid Bushings', 'Sudden Pressure Relay', 'Tank', 'Temperature Gauges', 'Transformer Oil (mineral)', 'Valves', 'Windings'].
+
+Input: Transformer - Power Station Auxiliary or Startup with OLTC.
+Output: ['Buchholtz Gas Volume Relay, if present', 'Bushings - Oil Filled', 'Bushings - Solid', 'Conservator Tank, if present', 'Control Cabinet', 'Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated', 'Core', 'Desiccant', 'Electrical Connections', 'Fans and Motors', 'Gas Blanket Systems', 'Gaskets', 'Gauge - Pressure', 'Gauge - Temperature', 'Level Alarms', 'Lightning or Surge Arrestors (Metal oxide varistor type)', 'Load Tap Changer - Contacts', 'Load Tap Changer - Control - Analog or Electronic type', 'Load Tap Changer - Control - Microprocessor type', 'Load Tap Changer - Control - Relay - Balance Beam type', 'Load Tap Changer - Control - Selsen switch', 'Load Tap Changer - Electrical Connections', 'Load Tap Changer - Hardware or Fasteners', 'Load Tap Changer - Internal wiring', 'Load Tap Changer - Limit or Reversing Switch Contact', 'Load Tap Changer - Motor Operator', 'Load Tap Changer - Oil (mineral)', 'Load Tap Changer - Oil Filter, if present', 'Load Tap Changer - Oil Level Alarms', 'Load Tap Changer - Operations Counter', 'Load Tap Changer - Pipes, Tubing, Fittings, Gaskets, and Valves', 'Load Tap Changer - Position Indicator or Drag hand', 'Load Tap Changer - Pressure Relief Valve', 'Load Tap Changer - Separator or Switch Board', 'Load Tap Changer - Shorting Resistors or Reactors', 'Load Tap Changer - Tank', 'Load Tap Changer - Tank Breather', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Sudden Pressure Relay', 'Transformer Oil (mineral)', 'Transformer Tank', 'Valves - Manual', 'Windings'].
+
+Input: Transformer - Power Station Auxiliary or Startup with De-Energized DETC.
+Output: ['Buchholtz Gas Volume Relay, if present', 'Bushings - Oil Filled', 'Bushings - Solid', 'Conservator Tank, if present', 'Control Cabinet', 'Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated', 'Core', 'De-Energized Tap Changer - Contacts', 'De-Energized Tap Changer - Electrical Connections', 'De-Energized Tap Changer - Hardware or Fasteners', 'De-Energized Tap Changer - Operator', 'De-Energized Tap Changer - Position Indicator', 'Desiccant', 'Electrical Connections', 'Fans and Motors', 'Gas Blanket Systems', 'Gaskets', 'Gauge - Pressure', 'Gauge - Temperature', 'Level Alarms', 'Lightning or Surge Arrestors (Metal oxide varistor type)', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Sudden Pressure Relay', 'Transformer Oil (mineral)', 'Transformer Tank', 'Valves - Manual', 'Windings'].
+
+Now please complete this example:
+Input: Transformer - Station Aux_Startup - No LTC.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Transformer - Current - CT -  >15kV.
+Output: ['Current Transformer', 'Electrical Wiring and Connections'].
+
+Input: Transformer - Potential - PT.
+Output: ['Cabinet', 'Fuse clips', 'Potential Transformers', 'Wiring'].
+
+Input: Transformer - Substation - LTC.
+Output: ['Core', 'Desiccant', 'Electrical Connections', 'Fans', 'Fin and Tube Coolers', 'Gas Blanket Systems', 'Gaskets', 'Level Alarms', 'Lightning/Surge Arrestors', 'Load Tap Changer', 'Oil Filled Bushings', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Solid Bushings', 'Sudden Pressure Relay', 'Tank', 'Temperature Gauges', 'Transformer Oil (mineral)', 'Valves', 'Windings'].
+
+Now please complete this example:
+Input: Transformer - Current - CT - <15kV.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Transformer - Current - CT -  >15kV.
+Output: ['Current Transformer', 'Electrical Wiring and Connections'].
+
+Input: Transformer - Potential - PT.
+Output: ['Cabinet', 'Fuse clips', 'Potential Transformers', 'Wiring'].
+
+Input: Transformer - Power Station Load Center - Dry-Type.
+Output: ['Alarms', 'Bushings - Solid', 'Core', 'Electrical Connections', 'Lightning or Surge Arrestors (Metal oxide varistor type)', 'Transformer Enclosure Cooling Fan, if present', 'Transformer Enclosure with doors and penetrations', 'Windings'].
+
+Now please complete this example:
+Input: Transformer - Lighting.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Transformer - Power Station Auxiliary or Startup with De-Energized DETC.
+Output: ['Buchholtz Gas Volume Relay, if present', 'Bushings - Oil Filled', 'Bushings - Solid', 'Conservator Tank, if present', 'Control Cabinet', 'Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated', 'Core', 'De-Energized Tap Changer - Contacts', 'De-Energized Tap Changer - Electrical Connections', 'De-Energized Tap Changer - Hardware or Fasteners', 'De-Energized Tap Changer - Operator', 'De-Energized Tap Changer - Position Indicator', 'Desiccant', 'Electrical Connections', 'Fans and Motors', 'Gas Blanket Systems', 'Gaskets', 'Gauge - Pressure', 'Gauge - Temperature', 'Level Alarms', 'Lightning or Surge Arrestors (Metal oxide varistor type)', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Sudden Pressure Relay', 'Transformer Oil (mineral)', 'Transformer Tank', 'Valves - Manual', 'Windings'].
+
+Input: Transformer - Power Station Main or GSU with De-Energized DETC.
+Output: ['Buchholtz Gas Volume Relay, if present', 'Bushings - Oil Filled', 'Bushings - Solid', 'Conservator Tank, if present', 'Control Cabinet', 'Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated', 'Core', 'De-Energized Tap Changer - Contacts', 'De-Energized Tap Changer - Electrical Connections', 'De-Energized Tap Changer - Hardware or Fasteners', 'De-Energized Tap Changer - Operator', 'De-Energized Tap Changer - Position Indicator', 'Desiccant', 'Electrical Connections', 'Fans and Motors', 'Gas Blanket Systems', 'Gaskets', 'Gauge - Pressure', 'Gauge - Temperature', 'Level Alarms', 'Lightning or Surge Arrestors (Metal oxide varistor type)', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Sudden Pressure Relay', 'Transformer Oil (mineral)', 'Transformer Tank', 'Valves - Manual', 'Windings'].
+
+Input: Transformer - Substation - No LTC.
+Output: ['Core', 'Desiccant', 'Electrical Connections', 'Fans', 'Fin and Tube Coolers', 'Gas Blanket Systems', 'Gaskets', 'Level Alarms', 'Lightning/Surge Arrestors', 'No Load Tap Changer', 'Oil Filled Bushings', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Solid Bushings', 'Sudden Pressure Relay', 'Tank', 'Temperature Gauges', 'Transformer Oil (mineral)', 'Valves', 'Windings'].
+
+Now please complete this example:
+Input: Transformer - Substation with De-Energized DETC.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Valve - Power Operated Relief - Solenoid Actuated.
+Output: ['Body Drains and Vents', 'Coil', 'Diaphragms', 'Gasket', 'I&C components', 'O-Rings', 'Plug', 'Reed Switches', 'Seats and Trim', 'Springs', 'Stem', 'Wiring, Insulation, and Connectors'].
+
+Input: Valve - Pressure Relief - Spring Actuated.
+Output: ['Adjustment Nut', 'Bellows', 'Blow Down Rings', 'Body Drains', 'Body and Flanges', 'Fasteners', 'Gasket', 'Nozzle Disk Interface', 'Plug to Stem Connection', 'Spring', 'Stem'].
+
+Input: Valve - Steam Turbine - Steam Control Valve Balanced Type using a Single-Acting Actuator.
+Output: ['Control Valve Balance Chamber', 'Control Valve Bushing', 'Control Valve Disk', 'Control Valve Disk Main Seating Surface', 'Control Valve Stem', 'Control Valve Stem Packing Gland', 'Flow Equalizer', 'Valve Body', 'Valve Body - Control Valve Seat', 'Valve Body - Head Gasket', 'Valve Body - Head Gasket Fit', 'Valve Body - Insulation', 'Valve Body - Pressure Seal Head Stud and Nuts'].
+
+Now please complete this example:
+Input: Valve - Electro-Hydraulic Servo.
+Output: "
+"You are an expert in asset management. The identification of failure locations is essential to ensuring the good performance and availability of your equipment. The examples below show equipment and their failure locations.
+Input: Valve - Steam Turbine - Steam Control Valve Balanced Type using a Single-Acting Actuator.
+Output: ['Control Valve Balance Chamber', 'Control Valve Bushing', 'Control Valve Disk', 'Control Valve Disk Main Seating Surface', 'Control Valve Stem', 'Control Valve Stem Packing Gland', 'Flow Equalizer', 'Valve Body', 'Valve Body - Control Valve Seat', 'Valve Body - Head Gasket', 'Valve Body - Head Gasket Fit', 'Valve Body - Insulation', 'Valve Body - Pressure Seal Head Stud and Nuts'].
+
+Input: Valve - Steam Turbine - Combined Steam Stop & Control Valve with Unbalanced Stop Valve using a Single-Acting Control Valve Actuator.
+Output: ['Control Valve Balance Chamber', 'Control Valve Bushing', 'Control Valve Bushing Back Seat', 'Control Valve Disk', 'Control Valve Disk Equalizing Seat', 'Control Valve Disk Main Seating Surface', 'Control Valve Stem', 'Control Valve Stem Back Seat', 'Control Valve to Actuator Coupling', 'Stop Valve Bushing Back Seat', 'Stop Valve Bushings', 'Stop Valve Disk', 'Stop Valve Disk Main Seat', 'Stop Valve Disk Main Seating \n\nSurface', 'Stop Valve Pressure Seal Head', 'Stop Valve Stem', 'Stop Valve Stem Back Seat', 'Stop Valve Stem to Actuator Coupling', 'Strainer', 'Valve Body', 'Valve Body - Control and Stop Valve Seat', 'Valve Body - Control and Stop Valve Seat - Bolts', 'Valve Body - Control and Stop Valve Seat - Gasket', 'Valve Body - Control and Stop Valve Seat - Gasket Fit', 'Valve Body - Insulation', 'Valve Body - Leak-off Gasket', 'Valve Body - Leak-off Gasket Fit', 'Valve Body - Lower Head Gasket', 'Valve Body - Penetration and Leak-off and drain line', 'Valve Body - Upper Head Gasket', 'Valve Body - Upper Head Gasket Fit', 'Valve Body - Upper Pressure Seal Head Stud and Nuts'].
+
+Input: Valve - Steam Turbine - Combined Steam Stop & Control Valve with Unbalanced Stop Valve using a Double-Acting Control Valve Actuator.
+Output: ['Control Valve Balance Chamber', 'Control Valve Bushing', 'Control Valve Bushing Back Seat', 'Control Valve Crosshead to Actuator Coupling', 'Control Valve Disk', 'Control Valve Disk Equalizing Seat', 'Control Valve Disk Main Seating Surface', 'Control Valve Stem', 'Control Valve Stem Back Seat', 'Control Valve Stem Crosshead', 'Control Valve Stem Crosshead Spring', 'Stop Valve Bushing Back Seat', 'Stop Valve Bushings', 'Stop Valve Disk', 'Stop Valve Disk Main Seat', 'Stop Valve Disk Main Seating \n\nSurface', 'Stop Valve Pressure Seal Head', 'Stop Valve Stem', 'Stop Valve Stem Back Seat', 'Stop Valve Stem to Actuator Coupling', 'Stop Valve Strainer (Steam Side)', 'Valve Body', 'Valve Body - Control and Stop Valve Seat', 'Valve Body - Control and Stop Valve Seat - Bolts', 'Valve Body - Control and Stop Valve Seat - Gasket', 'Valve Body - Control and Stop Valve Seat - Gasket Fit', 'Valve Body - Insulation', 'Valve Body - Leak-off Gasket', 'Valve Body - Leak-off Gasket Fit', 'Valve Body - Lower Head Gasket', 'Valve Body - Penetration and Leak-off and Drain Line', 'Valve Body - Upper Head Gasket', 'Valve Body - Upper Head Gasket Fit', 'Valve Body - Upper Pressure Seal Head Stud and Nuts'].
+
+Now please complete this example:
+Input: Valve - Steam Turbine - Steam Stop Valve Balanced Type using a Single-Acting Actuator.
+Output: "

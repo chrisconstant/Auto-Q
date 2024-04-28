@@ -8,7 +8,7 @@ def sort_components(components):
     return str(list_components)
 
 def build_all_prompts(
-    sds, best_k_matches, dynamic_shots_cfg, prompt_method, permutation
+    sds, best_k_matches, dynamic_shots_cfg, prompt_method, permutation, step_1_context_data_list
 ):
     """Build and gather all prompts into a list."""
     all_prompts = []
@@ -28,8 +28,16 @@ def build_all_prompts(
                 gold_sds, gold_flss, permutation
             )
         val_sd = sds[cnt]
-        prompt = prompt_method(gold_sds, gold_flss, val_sd)
+        if step_1_context_data_list:
+            prompt = prompt_method(gold_sds, gold_flss, val_sd, step_1_context_data_list[cnt])
+        else:
+            prompt = prompt_method(gold_sds, gold_flss, val_sd)
         all_prompts.append(prompt)
+    
+    import pandas as pd
+    X = pd.DataFrame(all_prompts)
+    X.columns = ['prompts']
+    X.to_csv('prompt.csv',index=False)
     return all_prompts
 
 def generate_components(
@@ -41,12 +49,13 @@ def generate_components(
     output_parser,
     max_num_egs_in_prompt=4,
     permutation=None,
+    step_1_context_data_list=None,
 ):
     """Input: sds - A list of long descriptions.
     Output: For each inputted long description, a list of failure locations."""
     best_k_matches = ps.get_related_examples(sds, dynamic_shots_cfg, max_num_egs_in_prompt)
     all_prompts = build_all_prompts(
-        sds, best_k_matches, dynamic_shots_cfg, prompt_method, permutation
+        sds, best_k_matches, dynamic_shots_cfg, prompt_method, permutation, step_1_context_data_list
     )
     responses = list(
         bam_config['client'].text.generation.create(
@@ -89,7 +98,7 @@ def output_parser_instruct(raw_text):
 #####################################################################################################
 
 
-def build_instruct_prompt_dfsp(gold_sds, gold_flss, val_sd):
+def build_instruct_prompt_dfsp(gold_sds, gold_flss, val_sd, asset_context=None):
     """Build prompt for instruction tuned models."""
 
     # - Introduction
@@ -111,6 +120,8 @@ def build_instruct_prompt_dfsp(gold_sds, gold_flss, val_sd):
     #- Instruction 
     prompt += "Now please complete this example:\n"
     prompt += "Input: {}.\n".format(val_sd)
+    if asset_context:
+        prompt += "Equipment Additional Description: {}\n".format(asset_context)
     prompt += "Output: "
     return prompt
 
@@ -148,7 +159,7 @@ def build_mixtral_dialogue_prompt_dfs(gold_sds, gold_lds, val_sd):
     return prompt
 
 
-def build_labrador_prompt_dfs(gold_lds, gold_flss, val_ld):
+def build_labrador_prompt_dfs(gold_lds, gold_flss, val_ld, asset_context=None):
     """New Step 1 Prompt."""
     prompt = "<|system|>\n"
     prompt += """You are an expert in asset management. """
@@ -178,9 +189,11 @@ def build_labrador_prompt_dfs(gold_lds, gold_flss, val_ld):
         ):  # KL: Stop prompt from getting too big...make this smarter...
             prompt = prev_prompt
             break
-    prompt += "\n<|user|> The examples represent important known failure locations for asset related to your task. If there's anything missing in the previous examples add it to the response.\n"
+    prompt += "\n The examples represent important known failure locations for asset related to your task. If there's anything missing in the previous examples add it to the response.\n"
     prompt += "Question: Generate failure locations for the following equipment.\n"
     prompt += "Text: Equipment Description: {}\n".format(val_ld)
+    if asset_context:
+        prompt += "Equipment Additional Description: {}\n".format(asset_context)
     prompt += "Answer:\n<|assistant|>\n"
 
     return prompt
