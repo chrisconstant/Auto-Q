@@ -189,7 +189,7 @@ def extract_things_from_string(text):
     fls = re.findall("(\{|\[)(.*?)(\}|\])", text)
     fls = fls[0][1].split("', '")
     fls = [fl.replace("'", "") for fl in fls]
-
+    print (fls)
     return fls
 
 
