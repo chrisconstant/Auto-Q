@@ -20,7 +20,7 @@
         ]
     },
     {
-        "Equipment Category": "Electircal",
+        "Equipment Category": "Electrical",
         "Equipment Class": [
             "Frequency converters",
             "Power cables and terminations (topside/ onshore)",
@@ -130,7 +130,7 @@
         ]
     },
     {
-        "Equipment Category": "Well Completion ",
+        "Equipment Category": "Well Completion",
         "Equipment Class": [
             "Downhole safety valves",
             "Downhole well completion",
