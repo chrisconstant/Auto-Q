@@ -21,7 +21,26 @@ instruction = (
 queries = [
     instruction + " " + item for item in querys
 ]
+q_reps = l2v.encode(queries)
 
+# passing the results
+q_reps_norm = torch.nn.functional.normalize(q_reps, p=2, dim=1)
+d_reps_norm = torch.nn.functional.normalize(d_reps, p=2, dim=1)
+cos_sim = torch.mm(q_reps_norm, d_reps_norm.transpose(0, 1))
+
+top_values, top_indices = torch.topk(cos_sim, k=3, dim=1)
+
+print (top_values)
+print (top_indices)
+
+df = pd.read_csv('./data/all_ids_deduplicated_val_short_desc_to_failure_locations.csv')
+querys = list(df['TypeData.GenCompType'])
+instruction = (
+    "Given an industrial equipment, retrieve similar equipment:"
+)
+queries = [
+    instruction + " " + item for item in querys
+]
 q_reps = l2v.encode(queries)
 
 # passing the results
