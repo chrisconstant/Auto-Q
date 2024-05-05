@@ -15,12 +15,12 @@ sets = [
 ]
 
 models = [
-    {'mdl': "McGill-NLP/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp",
+    {'mdl': "McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp",
      'peft_model_name_or_path': "McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-unsup-simcse",
      'mode': 'Mistral_7B_Instruct_v2_mntp_unsup_simcse',
      'type': 'LLM2vec'
      },
-    {'mdl': "McGill-NLP/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp",
+    {'mdl': "McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp",
      'peft_model_name_or_path': "McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-supervised",
      'mode': 'Mistral_7B_Instruct_v2_mntp_supervised',
      'type': 'LLM2vec'
