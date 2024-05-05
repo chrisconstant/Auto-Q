@@ -73,7 +73,7 @@ for db in sets:
             # Concatenate DataFrames horizontally (along columns)
             df_merged = pd.concat([df_values, df_indices], axis=1)
             df_merged.to_csv(prefixmatch + ".csv", index=False)
-        elif db['type'] == 'ST':
+        elif mdl['type'] == 'ST':
             sentence_model = SentenceTransformer(mdl['mdl'])
             prefixmatch = mdl['mode'] + '_' + db['mode']
 
