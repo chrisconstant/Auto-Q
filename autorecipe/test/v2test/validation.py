@@ -361,8 +361,14 @@ def calculate_rouge_score_wrapper_lists(row,
     """The rouge metrics should be one of ['rouge1', 'rouge2', 'rougeL', 'rougeLsum'].
     cand_vals - a list of candidate values.
     gold_column - a string representation of a list"""
+
+
     cand_vals = row[candidate_column]
-    gold_vals = extract_things_from_string(row[gold_column])
+    if isinstance(row[gold_column], str):
+        gold_vals = extract_things_from_string(row[candidate_column])
+    else:
+        gold_vals = row[candidate_column]
+    #gold_vals = extract_things_from_string(row[gold_column])
     # Sort lists (in-place)
     cand_vals.sort()
     gold_vals.sort()

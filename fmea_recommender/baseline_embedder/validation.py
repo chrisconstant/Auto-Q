@@ -144,6 +144,10 @@ def calculate_precision(cand_list, gold_list, validation_model, threshold=0.7):
                     already_matched_gold.add(gold_match)
                 break
 
+    print (already_matched_gold)
+    print (gold_list)
+    print (cand_list)
+    print ('----------------')
     precision = len(already_matched_gold) / len(set(cand_list))
     return precision
 
@@ -182,6 +186,7 @@ def calculate_recall(cand_list, gold_list, validation_model, threshold=0.7):
                     already_matched_cand.add(cand_match)
                 break
 
+    print (already_matched_cand)
     recall = len(already_matched_cand) / len(set(gold_list))
     return recall
 
@@ -333,13 +338,6 @@ def calculate_metrics(df, val_model, candidate_col):
         axis=1,
     )
 
-    for rm in ["rouge1", "rouge2", 'rougeL', 'rougeLsum']:
-        df[rm + "_" + candidate_col] =\
-        df.apply(lambda row: calculate_rouge_score_wrapper_lists(\
-                                            row,
-                                            candidate_column = candidate_col,
-                                            gold_column='gold_failure_locations',
-                                            rouge_metric=rm), axis=1)
     return df
 
 
