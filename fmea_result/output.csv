@@ -1,0 +1,828 @@
+TypeData.CompTypeID,short_descriptions,gold_failure_locations,"dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)","dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)_raw","prec_dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)","rec_dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)","f1_dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)","rouge1_dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)","rouge2_dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)","rougeL_dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)","rougeLsum_dfsp_autoqfls_granite-13b-chat-v2_(0, 1, 2)","dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)","dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)_raw","prec_dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)","rec_dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)","f1_dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)","rouge1_dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)","rouge2_dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)","rougeL_dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)","rougeLsum_dfsp_autoqfls_granite-13b-instruct-v2_(0, 1, 2)"
+BATT_CHGR_1,Battery - Charger,"['Power Semiconductor Components', 'Metering Instruments (e.g. voltmeter, ammeter, status lights, ground detectors)', 'Timer', 'Input Fuse', 'Fuse holder', 'Muffin fans', 'Printed Circuit Boards (Firing circuit, Alarm, Auxiliary circuits, Current limit)', 'Transformer', 'Capacitors, Electrolytic', 'Capacitors, Oil Filled', 'Filter Choke', 'Float and Equalize Potentiometers and Switches']","['Capacitor Failure: A capacitor may fail due to issues with the dielectric material, internal construction, or connections.', 'Communication Failures: The communication subsystem may fail due to issues with the wiring, connectors, or semiconductor devices.', 'Control and Monitoring Failures: The control and monitoring system may fail due to issues with the microcontroller, sensors, or communication components.', 'Diode Failure: A diode may fail due to issues with the semiconductor material, doping, or contacts.', 'Inductor Failure: An inductor may fail due to issues with the core, windings, or insulation.', 'Power Supply Failures: The power supply may fail due to issues with the transformer, capacitor, or inductor.', 'Protection Failures: The protection system may fail due to issues with the fuses, circuit breakers, or relays.', 'Relay Failure: A relay may fail', 'Semiconductor Failure: A semiconductor may fail due to issues with the crystal structure, impurities, or contacts.', 'Transformer Failure: A transformer may fail due to issues with the core, windings, or insulation.']","Sure! Here are some potential failure locations for that equipment:
+* Power Supply Failures: The power supply may fail due to issues with the transformer, capacitor, or inductor.
+* Control and Monitoring Failures: The control and monitoring system may fail due to issues with the microcontroller, sensors, or communication components.
+* Communication Failures: The communication subsystem may fail due to issues with the wiring, connectors, or semiconductor devices.
+* Protection Failures: The protection system may fail due to issues with the fuses, circuit breakers, or relays.
+* Capacitor Failure: A capacitor may fail due to issues with the dielectric material, internal construction, or connections.
+* Transformer Failure: A transformer may fail due to issues with the core, windings, or insulation.
+* Inductor Failure: An inductor may fail due to issues with the core, windings, or insulation.
+* Diode Failure: A diode may fail due to issues with the semiconductor material, doping, or contacts.
+* Semiconductor Failure: A semiconductor may fail due to issues with the crystal structure, impurities, or contacts.
+* Relay Failure: A relay may fail",0.0,0.0,0.0,0.06965174129353234,0.0,0.04975124378109452,0.04975124378109452,"['Capacitor', 'Circuit Board', 'Communication', 'Control and Monitoring', 'Diode', 'Inductor', 'Protection', 'Relay', 'Semiconductor', 'Sensor', 'Transformer']","['Circuit Board', 'Relay', 'Sensor', 'Diode', 'Semiconductor', 'Inductor', 'Transformer', 'Capacitor', 'Control and Monitoring', 'Communication', 'Protection']
+
+",0.09090909090909091,0.08333333333333333,0.08695652173913043,0.13793103448275862,0.0,0.10344827586206896,0.10344827586206896
+Bumper_1_V0,Bumper - Hydraulic,"['Separator Piston', 'Hydraulic Cylinder', 'Safety Cables', 'Dust Cover, if present', 'Hydraulic Cylinder - Seals', 'Bumper Head and Bracket', 'Plunger', 'Plunger Sealing Ball', 'Metering Pin', 'Metering Orifice']","['Control system', 'Hydraulic cylinders', 'Hydraulic fluid reservoir']","Sure! Here are some potential failure locations for that equipment:
+* Hydraulic fluid reservoir
+* Hydraulic cylinders
+* Control system",0.3333333333333333,0.1,0.15384615384615383,0.125,0.0,0.125,0.125,"['Drive', 'Filters, Hydraulics - Pump', 'Gaskets, Hydraulics - Pump', 'Hydraulics - Pump', 'Sealing, Hydraulics - Pump', 'Shaft, Hydraulics - Pump', 'Valves, Hydraulics - Pump']","['Hydraulics - Pump', 'Valves'], ['Hydraulics - Pump', 'Sealing'], ['Hydraulics - Pump', 'Filters'], ['Hydraulics - Pump', 'Gaskets'], ['Hydraulics - Pump', 'Shaft'], ['Hydraulics - Pump', 'Drive']
+
+",0.14285714285714285,0.1,0.11764705882352941,0.046511627906976744,0.0,0.046511627906976744,0.046511627906976744
+CBL_Power_Buried_3,Cable - Buried Power - Jacketed - EPR-DR,"['Cable - neutral (concentric or taped only)', 'Terminations', 'Cable - conductor', 'Cable - outer jacket', 'Splices', 'Cable - insulation', 'Cable - insulation shield']","['Copper conductor', 'Insulation material', 'Jacket', 'Terminations']","Sure! Here are some potential failure locations for that equipment:
+* Insulation material
+* Jacket
+* Copper conductor
+* Terminations",0.75,0.42857142857142855,0.5454545454545454,0.3333333333333333,0.0,0.3333333333333333,0.3333333333333333,"['Copper Conductor', 'Insulation', 'Jacket', 'Terminations']","['Insulation', 'Jacket', 'Copper Conductor', 'Terminations']
+
+",0.75,0.42857142857142855,0.5454545454545454,0.3478260869565218,0.0,0.3478260869565218,0.3478260869565218
+CBL_Power_Buried_8,Cable - Buried Power - Unjacketed - EPR-DF,"['Cable - neutral (concentric or taped only)', 'Terminations', 'Cable - conductor', 'Splices', 'Cable - insulation', 'Cable - insulation shield']","['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield']","Sure! Here are some potential failure locations for that equipment:
+* Cable - conductor
+* Cable - insulation
+* Cable - insulation shield",1.0,0.5,0.6666666666666666,0.6363636363636364,0.6,0.6363636363636364,0.6363636363636364,"['Conductor', 'Insulation', 'Sheath']","['Conductor', 'Insulation', 'Sheath']
+
+",0.3333333333333333,0.16666666666666666,0.2222222222222222,0.2222222222222222,0.0,0.2222222222222222,0.2222222222222222
+CBL_PWR_PLT_BLK_EPR_DuctNS_2,"Cable - Plant - 5kV - Black EPR - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice","['Terminations - outdoor', 'Cable - insulation', 'Cable - conductor', 'Cable - outer jacket']","['Cable - conductor', 'Cable - insulation', 'Cable - outer jacket']","Sure! Here are some potential failure locations for that equipment:
+* Cable - conductor
+* Cable - insulation
+* Cable - outer jacket",1.0,0.75,0.8571428571428571,0.8750000000000001,0.8571428571428571,0.8750000000000001,0.8750000000000001,"['Cable - conductor', 'Cable - insulation', 'Cable - outer jacket', 'Cable - taped metal shield', 'NoSplice', 'Terminations - outdoor']","['Cable - conductor', 'Cable - insulation', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations - outdoor', 'NoSplice']
+
+",0.6666666666666666,1.0,0.8,0.782608695652174,0.6666666666666667,0.782608695652174,0.782608695652174
+CBL_PWR_PLT_BRN_EPR_DR_DuctNS_1,"Cable - Plant - 5kV - Brown EPR - Discharge Resistant - Jacketed-Non-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice","['Terminations - dry', 'Cable - insulation', 'Cable - conductor', 'Cable - outer jacket']","['Armor', 'Cable - conductor', 'Cable - insulation', 'Cable - outer jacket']","Sure! Here are some potential failure locations for that equipment:
+* Cable - conductor
+* Cable - insulation
+* Cable - outer jacket
+* Armor",0.75,0.75,0.75,0.823529411764706,0.7999999999999999,0.823529411764706,0.823529411764706,"['armor', 'conductor', 'insulation', 'jacket']","['conductor', 'insulation', 'jacket', 'armor']
+
+",0.25,0.25,0.25,0.46153846153846156,0.0,0.46153846153846156,0.46153846153846156
+CBL_PWR_PLT_BUTYL_Duct_1,"Cable - Plant - 5-15kV - Butyl - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, dry termination, no splice","['Cable - neutral (concentric or taped only)', 'Terminations', 'Cable - conductor', 'Cable - outer jacket', 'Cable - insulation', 'Cable - insulation shield (polymer tape)', 'Cable - insulation shield (cotton tape)']","['Cable - Butyl jacket', 'Cable - Outer jacket', 'Cable - Shielding (braid and foil)', 'Cable - conductor', 'Cable - insulation', 'Terminations']","Sure! Based on the additional description provided, here are some potential failure locations for that equipment:
+* Cable - conductor
+* Cable - insulation
+* Cable - Butyl jacket
+* Cable - Shielding (braid and foil)
+* Cable - Outer jacket
+* Terminations",0.8333333333333334,0.7142857142857143,0.7692307692307692,0.5,0.26315789473684204,0.3,0.3,"['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (opolymer tape)', 'Cable - neutral (concentric or taped only)', 'Cable - outer jacket', 'Terminations']","['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (opolymer tape)', 'Cable - neutral (concentric or taped only)', 'Cable - outer jacket', 'Terminations']
+
+",1.0,1.0,1.0,0.9583333333333334,0.9130434782608695,0.9583333333333334,0.9583333333333334
+CBL_PWR_PLT_TR_XLPE_Duct_2,"Cable - Plant - 5-15kV - TR-XLPE - Jacketed-Shielded - Duct/Conduit/Tray - wet/dry cable, outdoor termination, no splice","['Cable - insulation shield (extruded polymer)', 'Cable - conductor', 'Cable - outer jacket', 'Terminations - outdoor', 'Cable - insulation', 'Cable - taped metal shield']","['Cable - conductor', 'Cable - insulation', 'Cable - insulation shield (cotton tape)', 'Cable - insulation shield (extruded or taped polymer)', 'Cable - outer jacket', 'Cable - taped metal shield', 'Terminations - outdoor']","Sure! Here are some potential failure locations for that equipment:
+* Cable - conductor
+* Cable - insulation
+* Cable - insulation shield (cotton tape)
+* Cable - insulation shield (extruded or taped polymer)
+* Cable - outer jacket
+* Cable - taped metal shield
+* Terminations - outdoor",0.8571428571428571,1.0,0.923076923076923,0.8372093023255813,0.7804878048780487,0.8372093023255813,0.8372093023255813,"['5-15kV', 'Cable', 'Duct/conduit/tray', 'Jacketted-shielded', 'No splice', 'Outdoor termination', 'Plant', 'TR-XLPE', 'Wet/dry cable']","['Cable', 'Plant', '5-15kV', 'TR-XLPE', 'Jacketted-shielded', 'Duct/conduit/tray', 'Wet/dry cable', 'Outdoor termination', 'No splice']
+
+",0.1111111111111111,0.16666666666666666,0.13333333333333333,0.16666666666666666,0.0,0.1111111111111111,0.1111111111111111
+CNC_ContainerStacker_1,CNC Robotic Containerization System,"['Robot 1 & 2 Main Conveyor  (powered roller, driver card, idler rollers, O-ring drive belts, photo eyes/reflectors, 24 VDC power supplies, tray/tub lift, stop plates, right angle cross transfer belts, valve block, Main Control Power 1/2)', 'Docking Stations - Container present photo sensors', 'Gantry robot 1 & 2 (axis 1-4 motor/gearbox, belts, counterbalance air tank & counterbalance cylinder, hard stops, lubricators, z axis arm)', 'Remote Conveyor Control Station', 'System Console Cabinet (computer, UPS, hard drive module, monitor/keyboard, printer, External I/O interface cards, fans, filter)', 'Scanners (interface and trigger photo eyes)', 'External Corporate Information System - I/O 24 VDC Power Supplies', 'E-Stop switches and pull cord', 'External Corporate Information System - I/O bridge assembly', 'Safety barrier light curtain', 'Warning/status light and horn', 'Gripper Assembly  (fingers, regulators, sensors, air valves and solenoids, containment plate, pressure switch, shelf lowering mechanical)', 'Serial measurement box (batteries, brake release)', 'Power Distribution Panel (transformer, 24 VDC power supply, relays, fuses, I/O module, main disconnect and etc)', 'Power wiring with connectors', 'Pneumatic Panel (lockout valves, regulator, filter)', 'Safety frame (fence, 4 gate entry boxes)', 'Safety interlocks & Lexan door w/interlock', 'Control wiring with connectors', 'Robot Interface box', 'Container storage stand']","['Cooler', 'Coupling', 'Gearbox', 'Instrument Loop', 'Lubrication Oil Pump']","* Cooler
+* Coupling
+* Gearbox
+* Lubrication Oil Pump
+* Instrument Loop",0.0,0.0,0.0,0.009661835748792272,0.0,0.009661835748792272,0.009661835748792272,"['Cooler', 'Coupling', 'Electric Circuit', 'Filter', 'Gearbox', 'Instrument Loop', 'Lubrication Oil Pump', 'Motor', 'Pressure Sensor', 'Temperature Sensor', 'Valve']","['Cooler', 'Coupling', 'Gearbox', 'Lubrication Oil Pump', 'Instrument Loop', 'Motor', 'Valve', 'Filter', 'Pressure Sensor', 'Temperature Sensor', 'Electric Circuit']
+
+",0.0,0.0,0.0,0.0462962962962963,0.0,0.027777777777777773,0.027777777777777773
+COMP_Air_2,"Compressor & Pump - Rotary, Liquid Ring","['Traps', 'Orifice', 'Bearings or Bushings', 'Fasteners / Hardware', 'Solenoids', 'Gaskets', 'Speed Reducer', 'Lubrication', 'Pressure Control Valve', 'Pump Internal Casing, including inlet and outlet flanges', 'Seal Water Heat Exchanger', 'Air Filters, Element Type', 'Check Valves', 'Strainer', 'Packing shaft seal', 'Dole Flow Control Valve, if present', 'Float Valve', 'Mechanical shaft seal', 'Rotor, Cone, and Lobe', 'Bearing housing seals, if present', 'Electronic/ Electrical Devices (Transmitters, Temperature control valves, Level / Flow / Pressure switches, Thermocouples', 'Moisture Separator Tank', 'Seal Water Recirculation Pump & Motor']","['Balancing piston', 'Bearings', 'Bull gear', 'Camshaft(s)', 'Casings', 'Clutch assembly', 'Connecting rods', 'Conrod(s)', 'Counterweights', 'Crankshaft', 'Dryer', 'Fan(s), cooling system', 'Flange gasket(s)', 'Flywheel', 'Housing(s), various types', 'Journal bearing(s)', 'Lead screws', 'Lifter(s)', 'Manifold(s)', 'Mounted bearings', 'Nose cone(s)', 'Pistons', 'Rings', 'Rod(s)', 'Scroll(s)', 'Spring(s)', 'Suction diffuser', 'Thrust washer(s)']","* Balancing piston
+* Bearings
+* Bull gear
+* Camshaft(s)
+* Casings
+* Clutch assembly
+* Conrod(s)
+* Connecting rods
+* Counterweights
+* Crankshaft
+* Dryer
+* Fan(s), cooling system
+* Flange gasket(s)
+* Flywheel
+* Housing(s), various types
+* Journal bearing(s)
+* Lead screws
+* Lifter(s)
+* Manifold(s)
+* Mounted bearings
+* Nose cone(s)
+* Pistons
+* Rings
+* Rod(s)
+* Scroll(s)
+* Spring(s)
+* Suction diffuser
+* Thrust washer(s)",0.03571428571428571,0.043478260869565216,0.0392156862745098,0.06015037593984963,0.0,0.04511278195488722,0.04511278195488722,"['', 'Bearings']","[' Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', 'Bearings', '",0.5,0.043478260869565216,0.08,0.025641025641025647,0.0,0.025641025641025647,0.025641025641025647
+CPLG_RBR_1,Coupling - Disc or Diaphragm Type,"['Fasteners', 'Disc pack or diaphragm']","['Disc or diaphragm', 'Fasteners', 'Hub', 'Sealing system']","Sure! Here are some potential failure locations for that equipment:
+* Disc or diaphragm
+* Hub
+* Fasteners
+* Sealing system",0.5,1.0,0.6666666666666666,0.6666666666666666,0.4,0.6666666666666666,0.6666666666666666,"['Disc or diaphragm', 'Fasteners', 'Grease fitting', 'Hub', 'Pressure relief valve.']","['Disc or diaphragm', ' Hub', 'Fasteners', 'Grease fitting', 'Pressure relief valve'].
+
+",0.4,1.0,0.5714285714285715,0.5333333333333333,0.30769230769230765,0.5333333333333333,0.5333333333333333
+CPLG_RBR_6_V0,Coupling - Elastomeric Type - Pin and Bush,"['Coupling half', 'Elastomeric element- bush or cone ring', 'Pins', 'Hub fasteners', 'Elastomeric element - bush or cone ring']","['Bush', 'Elastomeric element', 'Pin']","Sure! Here are some potential failure locations for that equipment:
+* Elastomeric element
+* Pin
+* Bush",0.3333333333333333,0.2,0.25,0.2857142857142857,0.10526315789473684,0.2857142857142857,0.2857142857142857,"['Axle', 'Bush', 'Elastomeric element', 'Hub', 'Hub fasteners, Elastic member', 'Pin', 'Spindle', 'Tire', 'Wheel']","['Elastomeric element', 'Pin', 'Bush', ' Hub', 'Hub fasteners'], ['Elastic member', 'Axle', 'Wheel', 'Spindle', 'Tire']
+
+",0.2222222222222222,0.4,0.2857142857142857,0.33333333333333337,0.14285714285714288,0.33333333333333337,0.33333333333333337
+DG_IC_TSW_2,I&C - Temperature Switch - Bourdon or Bellows,"['Bulb sensing device capillary, if present', 'Sensing device - Bourdon tube or bellows', 'Wiring and Connections', 'Bellows', 'Electrical switch', 'Mechanical adjustment assembly', 'Bulb sensing device']","['Bourdon tube or bellows', 'Electrical contacts', 'Electrical wiring and connections', 'Housing', 'Spring']","1. Electrical contacts
+2. Bourdon tube or bellows
+3. Spring
+4. Housing
+5. Electrical wiring and connections",0.4,0.2857142857142857,0.3333333333333333,0.4444444444444444,0.29411764705882354,0.38888888888888895,0.38888888888888895,"['Circuit board', 'Electrical switch', 'Electrolytic capacitors', 'Electromechanical switch', 'Electronic circuit', 'Mechanical linkage', 'Microswitch', 'Sensing device (other types)', 'Sensing device - RTD', 'Sensing device - Thermistor', 'Thermowell']","['Circuit board', 'Electrical switch', 'Electrolytic capacitors', 'Electromechanical switch', 'Electronic circuit', 'Mechanical linkage', 'Microswitch', 'Sensing device (other types)', 'Sensing device - RTD', 'Sensing device - Thermistor', 'Thermowell']
+
+",0.09090909090909091,0.14285714285714285,0.1111111111111111,0.375,0.17391304347826086,0.25,0.25
+DG_SWGR_MCC_Starter_1,Switchgear - Motor Control Center - Starter Bucket,"['Terminal strips', 'Control Fuse Block', 'Control transformer', 'Interbucket wiring, cables, and connectors', 'Manual disconnect switch', 'Molded case breaker', 'Aux relay, if present', 'Bus Stabs', 'Load wiring', 'Contactor', 'Lubricant - contactor, bus stabs, and molded case breaker', 'Control Fuse']","['Bucket Manual Operating Mechanism', 'Bus Stabs', 'Cables, lugs, and power leads', 'Cables, lugs, power leads, bus, raceway, and housing', 'Contactor or starter aux contacts', 'Contactor or starter operating mechanism', 'Contactor or starter overload trips', 'Contactor or starter primary contacts', 'Electrical devices, includes control wiring and transformer, fuse block, switches, and secondary disconnects', 'Enclosure', 'Lubricant (bucket manual operating mechanism)', 'Molded Case Breaker auxiliary devices', 'Molded Case Breaker operating mechanism', 'Molded Case Breaker overcurrent trips', 'Molded Case Breaker primary contacts', 'Molded Case Breaker undervoltage or shunt trip coils']","Sure! Here are some potential failure locations for that equipment:
+* Bucket Manual Operating Mechanism
+* Bus Stabs
+* Cables, lugs, and power leads
+* Cables, lugs, power leads, bus, raceway, and housing
+* Contactor or starter aux contacts
+* Contactor or starter operating mechanism
+* Contactor or starter overload trips
+* Contactor or starter primary contacts
+* Electrical devices, includes control wiring and transformer, fuse block, switches, and secondary disconnects
+* Enclosure
+* Lubricant (bucket manual operating mechanism)
+* Molded Case Breaker auxiliary devices
+* Molded Case Breaker operating mechanism
+* Molded Case Breaker overcurrent trips
+* Molded Case Breaker primary contacts
+* Molded Case Breaker undervoltage or shunt trip coils",0.125,0.16666666666666666,0.14285714285714288,0.3577235772357724,0.09917355371900827,0.22764227642276427,0.22764227642276427,"['Auxiliary Relay', 'Bus Bars', 'Contactors', 'Fuses', 'Fusible Links', 'Main Breakers', 'Other Components, Circuit Breaker', 'Overload Protection', 'Primary Contacts', 'Relays', 'Secondary Disconnects', 'Sensors', 'Switches', 'Timers', 'Transformers']","['Auxiliary Relay', 'Bus Bars', 'Contactors', 'Fusible Links', 'Main Breakers', 'Overload Protection', 'Primary Contacts', 'Secondary Disconnects', 'Switches', 'Transformers', 'Other Components'], ['Circuit Breaker', 'Fuses', 'Relays', 'Timers', 'Sensors']
+
+",0.13333333333333333,0.16666666666666666,0.14814814814814814,0.0967741935483871,0.0,0.0967741935483871,0.0967741935483871
+Diesel_Engine_T4_V0,Diesel Engine - Tier 4,"['Diesel - Cam Follower Roller (if present)', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - NOx Control Unit', 'Diesel - Cylinder Head', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Lube Oil Pump', 'Diesel - Filters - Oil', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Level Float', 'Diesel - Timing Gears (if present)', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Water Pump', 'Diesel - Fuel Hoses', 'Diesel - Radiator Fan', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Silencer', 'Diesel - Lube Oil', 'Diesel - Engine Mounts', 'Diesel - Head Gasket', 'Diesel - Radiator Hoses', 'Diesel - Radiator', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Heat Tracing', 'Diesel - Fuel', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Starter', 'Diesel - Air Box', 'Diesel - Turbocharger', 'Diesel - Battery', 'Diesel - Belts and Sheaves', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Diesel - After Cooler', 'Diesel - Battery Charger', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Breather', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Injector Tubing', 'Diesel - Piston Wrist Pin Bearings', 'Diesel - Radiator Cap', 'Diesel - Alternator and Diodes', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Insulation', 'Diesel - Crankcase Air Breathers', 'Diesel - Filter - Fuel (Pre-Fuel & Final)', 'Diesel - Engine Valve Seats', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Temperature Control Valve & Sensor', 'Diesel - Voltage regulator, if present', 'Diesel - Engine Valve Stem', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Engine Valve Springs', 'Diesel - Pistons', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater Valve', 'Diesel - Linkages and Controls', 'Diesel - Exhaust Line Clamps', 'Diesel - Fuel Tank', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - PTO (Power Take-Off, if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing & Hoses', 'Diesel - Fly Wheel', 'Diesel - Thermostat', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Injector Nozzle & Valve', 'Diesel - Coolant', 'Diesel - Connecting Rod', 'Diesel - Fuel Lines', 'Diesel - Injectors', 'Diesel - Wiring Harness', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater', 'Diesel - Engine Valve Train', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - SCR Catalyst', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Pump', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Cylinder Liners', 'Diesel - Push Rods', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Drain Plug', 'Diesel - Blower screen (if present)', 'Diesel - Emission Control - DPF (Diesel Particulate Filter)', 'Diesel - Muffler', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Filter and Strainer', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Radiator Tubing', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Coolant or Block Heater', 'Diesel - High Pressure Fuel Pump', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Fluid', 'Diesel - Fuel-Water Separator Element', 'Diesel - Digital Controls or ECU', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank']","['Camshaft**: Can suffer from wear, scoring, or warping. Regular checks and timely replacements can help mitigate risks associated with these conditions.', 'Connecting rod**: Can fail due to fatigue, wear, or material defects. Inspections and replacement may be needed based on condition monitoring results.', 'Crankshaft**: May experience fatigue, crack propagation, or bearing surface issues. Routine inspections and repairs are recommended to prevent catastrophic s.', 'Cylinder liner**: Commonly fails due to wear, scoring, or damage from debris. Regular inspections and replacement may be necessary depending on usage and maintenance history.', 'Piston**: Fails due to wear, scuffing, or scoring. Replacement is typically required when these conditions are detected.', 'Turbocharger**: Issues with bearings, seals, or variable geometry mechanisms can result in turbocharger degradation. Preventive maintenance programs should include regular inspections and timely', 'Valves**: Face sealing problems, stem sealing issues, or valve guide wear can lead to valve train malfunctions. Proactive maintenance and timely component replacements can minimize these concerns.']","Sure! Here are the failure locations for the given equipment:
+
+* **Cylinder liner**: Commonly fails due to wear, scoring, or damage from debris. Regular inspections and replacement may be necessary depending on usage and maintenance history.
+* **Piston**: Fails due to wear, scuffing, or scoring. Replacement is typically required when these conditions are detected.
+* **Connecting rod**: Can fail due to fatigue, wear, or material defects. Inspections and replacement may be needed based on condition monitoring results.
+* **Crankshaft**: May experience fatigue, crack propagation, or bearing surface issues. Routine inspections and repairs are recommended to prevent catastrophic failures.
+* **Camshaft**: Can suffer from wear, scoring, or warping. Regular checks and timely replacements can help mitigate risks associated with these conditions.
+* **Valves**: Face sealing problems, stem sealing issues, or valve guide wear can lead to valve train malfunctions. Proactive maintenance and timely component replacements can minimize these concerns.
+* **Turbocharger**: Issues with bearings, seals, or variable geometry mechanisms can result in turbocharger degradation. Preventive maintenance programs should include regular inspections and timely",0.0,0.0,0.0,0.08372093023255815,0.0062208398133748065,0.0496124031007752,0.0496124031007752,"['Camshaft', 'Connecting Rod', 'Crankshaft', 'Cylinder Head', 'Engine Block', 'Piston Rings', 'Turbocharger', 'Valves']","['Cylinder Head', 'Piston Rings', 'Valves', 'Turbocharger', 'Camshaft', 'Crankshaft', 'Connecting Rod', 'Engine Block']
+
+",0.375,0.034482758620689655,0.06315789473684211,0.04382470119521912,0.008,0.035856573705179286,0.035856573705179286
+Dryer_Air_2,Air Dryer - Heat Of Compression Drum Type,"['Desiccant Wheel - Activated Alumina, Molecular Sieve', 'Regenerative Air Cooler Water Lines', 'Drum Gear Box', 'Manometer', 'Safety Relief Valves', 'Inlet Air Demister', 'Drum Drive Motor Coupling', 'Drum Sector Seals', 'Drum Lip Seal', 'Manual Isolation Valves', 'Vessel', 'Hot Air Strainer', 'Desiccant Moisture Indicator', 'Drain Trap Assembly', 'Manual Throttle Valves', 'Manual Bypass Isolation Valves', 'Drum Drive Motor']","['Actuator', 'Connections', 'Controller, Sensor, and Transmitter']","Sure! Here are some potential failure locations for that equipment:
+* Actuator
+* Connections
+* Controller, Sensor, and Transmitter",0.0,0.0,0.0,0.0,0.0,0.0,0.0,"['Compressor', 'Condenser', 'Drains', 'Evaporator', 'Expansion Valve', 'Heat Exchanger']","['Compressor', 'Condenser', 'Expansion Valve', 'Evaporator', 'Heat Exchanger', 'Drains']
+
+",0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Fan_Large_1,Fan - ID or FD - Axial,"['Hydraulic oil filter', 'Oil pump and motor', 'Hydraulic oil pump and motor', 'Bearings - Sleeve', 'Bearing temperature sensor and indicator', 'Machine Fits (blades to housing)', 'Blade positioning servo', 'Oil heater', 'Silencers', 'Damper or inlet vanes', 'Oil cooler', 'Pedestal', 'Breather Caps & Sight Glass Vents', 'Oil metering orifice', 'Bearing - Sleeve - oil slinger rings', 'Hydraulic oil', 'Drive Couplings (gear type)', 'Seal air fan and motor', 'Oil Piping & Connections', 'Fan rotor', 'Blade Bearing Seals', 'Shaft', 'Shaft Bearing Seals (Antifriction)', 'Inlet Vane to Control Shaft Connection', 'Shaft Bearing Seals (Sleeve)', 'Housing', 'Oil', 'Shaft Bearings - Antifriction', 'Hydraulic oil cooler', 'Oil filter']","['Bearing housing: Enclosures the bearings and provides support for the fan.', 'Bearing: Located at each end of the shaft, supports the rotating mass and allows for lubrication.', 'Blade assembly: Consists of individual blades attached to the rotor disk.', 'Drive train: Comprises gears, pulleys, and belts that transmit power from the electric motor to the rotor disk.', 'Electric motor: Provides rotational force to turn the fan blades.', 'Housing: Contains and protects internal components while also providing structural integrity.', 'Inlet guide vanes: Adjustably mounted static components located inside the fan casing, directing airflow into the fan.', 'Outlet guide vane: Fixed static component located outside the fan casing, directing airflow out of the fan.']","Sure! Based on the given equipment description and standard, here are more detailed failure locations for the axial fan:
+
+* Blade assembly: Consists of individual blades attached to the rotor disk.
+* Bearing: Located at each end of the shaft, supports the rotating mass and allows for lubrication.
+* Bearing housing: Enclosures the bearings and provides support for the fan.
+* Drive train: Comprises gears, pulleys, and belts that transmit power from the electric motor to the rotor disk.
+* Electric motor: Provides rotational force to turn the fan blades.
+* Housing: Contains and protects internal components while also providing structural integrity.
+* Inlet guide vanes: Adjustably mounted static components located inside the fan casing, directing airflow into the fan.
+* Outlet guide vane: Fixed static component located outside the fan casing, directing airflow out of the fan.",0.0,0.0,0.0,0.22439024390243903,0.0,0.11707317073170731,0.11707317073170731,"['Drive train', 'Electric motor', 'Housing', 'Inlet guide vane', 'Outlet guide vane']","['Drive train', 'Electric motor', ' Housing', 'Inlet guide vane', 'Outlet guide vane']
+
+",0.4,0.06666666666666667,0.1142857142857143,0.09523809523809525,0.0,0.07619047619047618,0.07619047619047618
+Fan_Large_2,Fan - ID or FD - Centrifugal,"['Oil pump and motor', 'Bearings - Sleeve', 'Bearing temperature sensor and indicator', 'Turning gear, if present', 'Oil heater', 'Damper or inlet vanes', 'Oil cooler', 'Silencers, if present', 'Oil metering orifice', 'Breather Caps & Sight Glass Vents', 'Bearing - Sleeve - oil slinger rings', 'Fan wheel', 'Shaft Bearing Seals', 'Drive Couplings (gear type)', 'Oil Piping & Connections', 'Shaft', 'Inlet Vane to Control Shaft Connection', 'Bearing pedestal', 'Housing', 'Oil', 'Oil filter', 'Machine Fit (wheel to housing)']",[],"Blade(s), Impeller hub, Motor bearing, Motor windings, Housing flange",1.0,0.0,0.0,0.0,0.0,0.0,0.0,"['Blade', 'Housing flange', 'Impeller hub', 'Motor bearing', 'Motor windings']","['Blade', 'Impeller hub', 'Motor bearing', 'Motor windings', 'Housing flange']
+
+",0.0,0.0,0.0,0.07692307692307691,0.0,0.07692307692307691,0.07692307692307691
+FanandMotor_Fin_2,Fin Fan Motor with Belt Driven Fan,"['Motor External Fan', 'Belts', 'Motor Bearings - Antifriction', 'Belts or sheaves', 'Motor Heaters', 'Motor Shaft', 'Motor Gaskets', 'Motor Leads and Electrical Connections', 'Motor Stator Laminations', 'Motor Endbells or Bearing Housings', 'Fan - Propeller type', 'Motor Stator Windings', 'Fan Bearings', 'Motor Rotor bars and shorting rings (cast type)', 'Motor Frame, Enclosure, and Motor/Fan Mounting', 'Motor Machine Fits - All', 'Motor Bearing Grease Seals']","['Belt tensioner', 'Belt(s)', 'Bucket elevator frame', 'Conveyor pulley lagging', 'Drive motors', 'Idlers', 'Jaw crusher toggle plate', 'Knife gate valve']","Sure! Here are some potential failure locations for that equipment:
+* Belt tensioner
+* Belt(s)
+* Bucket elevator frame
+* Conveyor pulley lagging
+* Drive motors
+* Idlers
+* Jaw crusher toggle plate
+* Knife gate valve",0.125,0.058823529411764705,0.07999999999999999,0.025,0.0,0.025,0.025,"['Actuator, Pneumatic', 'Controller', 'Drive Belts', 'Drive Motors', 'Fans', 'Gears', 'Guards', 'Housing', 'Motors', 'Pulleys', 'Sheaves', 'Transmission', 'Wheel Hubs']","['Actuator, Pneumatic', ' Controller', 'Drive Belts', 'Drive Motors', 'Fans', 'Gears', 'Guards', 'Housing', 'Motors', 'Pulleys', 'Sheaves', 'Transmission', 'Wheel Hubs']
+
+",0.0,0.0,0.0,0.05194805194805195,0.0,0.05194805194805195,0.05194805194805195
+FanandMotor_Fin_3,Fin Fan Motor with Shaft Mounted Fan,"['Motor External Fan', 'Motor Bearings - Antifriction', 'Motor Frame, Enclosure, and Fan/Motor Mounting', 'Motor Heaters', 'Motor Shaft', 'Motor Gaskets', 'Motor Leads and Electrical Connections', 'Motor Stator Laminations', 'Fan - Propeller type', 'Motor Stator Windings', 'Motor Rotor bars and shorting rings (cast type)', 'Motor Machine Fits - All', 'Motor Bearing Grease Seals']","['Bearing system (e.g., oil lubrication, seals, bearings)', 'Cooling system (e.g., pumps, fans, coolant circulation)', 'Drive train and coupling mechanisms', 'Fan (e.g., blades, hub, bearings)', 'Housing and mounts (e.g., welds, fasteners, vibration isolation)', 'Motor (e.g., windings, insulation, bearings)', 'Power supply and control system (e.g., voltage regulators, motor starters, sensors, programmable logic controllers [PLCs])']","Sure! Based on the additional description provided, here are some potential failure locations for the Fin Fan Motor with Shaft Mounted Fan:
+
+* Motor (e.g., windings, insulation, bearings)
+* Fan (e.g., blades, hub, bearings)
+* Cooling system (e.g., pumps, fans, coolant circulation)
+* Power supply and control system (e.g., voltage regulators, motor starters, sensors, programmable logic controllers [PLCs])
+* Bearing system (e.g., oil lubrication, seals, bearings)
+* Housing and mounts (e.g., welds, fasteners, vibration isolation)
+* Drive train and coupling mechanisms",0.0,0.0,0.0,0.1869158878504673,0.0,0.16822429906542055,0.16822429906542055,"['Actuator, Pneumatic', 'Belts', 'Belts or Sheaves', 'Controller', 'Fan Bearings', 'Geared Propeller', 'Geared Propeller Blade to Valve Stem Connection', 'Limit Switches', 'Motor Bearing Grease Seals', 'Motor Bearings - Antifriction', 'Motor Endbells or Bearing Housings', 'Motor External Fan', 'Motor Frame, Enclosure, and Motor/Fan Mounting', 'Motor Gaskets', 'Motor Heaters', 'Motor Leads and Electrical Connections', 'Motor Machine Fits - All', 'Motor Rotor bars and shorting rings (cast type)', 'Motor Shaft', 'Motor Stator Laminations', 'Motor Stator Windings', 'Pressure Regulator', 'Valve stem']","['Actuator, Pneumatic', 'Belts', 'Belts or Sheaves', ' Controller', 'Fan Bearings', 'Geared Propeller', 'Geared Propeller Blade to Valve Stem Connection', 'Limit Switches', 'Motor Bearing Grease Seals', 'Motor Bearings - Antifriction', 'Motor Endbells or Bearing Housings', 'Motor External Fan', 'Motor Frame, Enclosure, and Motor/Fan Mounting', 'Motor Gaskets', 'Motor Heaters', 'Motor Leads and Electrical Connections', 'Motor Machine Fits - All', 'Motor Rotor bars and shorting rings (cast type)', 'Motor Shaft', 'Motor Stator Laminations', 'Motor Stator Windings', 'Pressure Regulator', 'Valve stem']
+
+",0.5217391304347826,0.9230769230769231,0.6666666666666667,0.7741935483870968,0.6885245901639344,0.7580645161290323,0.7580645161290323
+Filter_Air_1,Filter - Air - Cartridge Type,"['Filter housing', 'Filter - cartridge or element type']","['Filter housing', 'Filters, Media Type (cartridge type)']","Sure! Here are some potential failure locations for that equipment:
+* Filter housing
+* Filters, Media Type (cartridge type)",1.0,1.0,1.0,0.5714285714285714,0.16666666666666666,0.42857142857142855,0.42857142857142855,"['Cartridge', 'Control System', 'Drain', 'Housing', 'Pressure gauge', 'Valves']","['Cartridge', 'Housing', 'Drain', 'Pressure gauge', 'Valves', 'Control System']
+
+",0.0,0.0,0.0,0.26666666666666666,0.0,0.26666666666666666,0.26666666666666666
+FLEX_COMP_PORT_GenUse_SCREW_T4_Diesel_V0,FLEX or FLEX SUPPORT - Air Compressor - Portable General Use - T4 Diesel Driven,"['Diesel - Cam Follower Roller (if present)', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - NOx Control Unit', 'Diesel - Cylinder Head', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Lube Oil Pump', 'Diesel - Filters - Oil', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Level Float', 'Diesel - Compressor Coupling - Elastomeric fasteners', 'Diesel - Timing Gears (if present)', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Water Pump', 'Diesel - Fuel Hoses', 'Diesel - Radiator Fan', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Silencer', 'Diesel - Lube Oil', 'Trailer - Tires', 'Diesel - Engine Mounts', 'Compressor - Air Tank Drain Valve or Trap', 'Diesel - Head Gasket', 'Diesel - Radiator Hoses', 'Diesel - Radiator', 'Compressor - Fluid (oil) filter', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Heat Tracing', 'Diesel - Fuel', 'Diesel - Compressor Coupling - Hub fasteners', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Starter', 'Compressor - Air Tank', 'Diesel - Air Box', 'Diesel - Turbocharger', 'Diesel - Battery', 'Diesel - Belts and Sheaves', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Compressor - Fluid (oil) - Lubricating and Cooling', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims', 'Diesel - After Cooler', 'Diesel - Battery Charger', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Breather', 'Compressor - Fluid (oil) Temperature Bypass Valve', 'Diesel - Compressor Coupling - Hub', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Injector Tubing', 'Trailer - Hitch or Coupling', 'Diesel - Piston Wrist Pin Bearings', 'Trailer - Suspension', 'Diesel - Radiator Cap', 'Diesel - Alternator and Diodes', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Insulation', 'Diesel - Compressor Coupling - Elastomeric element', 'Diesel - Crankcase Air Breathers', 'Diesel - Filter - Fuel (Pre-Fuel & Final)', 'Diesel - Engine Valve Seats', 'Compressor - Unloader', 'Diesel - Compressor Control Panel (e.g. sensors, solenoids, relays, meters, switches, fuses, lights, wiring)', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Temperature Control Valve & Sensor', 'Diesel - Engine Valve Stem', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Engine Valve Springs', 'Diesel - Pistons', 'Diesel - Lube Oil Pressure Control Device', 'Compressor - Fasteners and Hardware', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater Valve', 'Diesel - Linkages and Controls', 'Diesel - Fuel Tank', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Compressor Wiring Harness', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing & Hoses', 'Trailer - Frame', 'Compressor - Bull Gear', 'Diesel - Fly Wheel', 'Diesel - Thermostat', 'Compressor - Shaft Seals', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Injector Nozzle & Valve', 'Compressor - Inlet Air Filter (Element Type)', 'Diesel - Connecting Rod', 'Compressor - Fluid (oil) Cooler - Tube Sheets & Fins', 'Diesel - Coolant', 'Diesel - Fuel Lines', 'Diesel - Injectors', 'Compressor - Safety Relief Valve', 'Diesel - Wiring Harness', 'Compressor - Gaskets and O-rings', 'Compressor - Fluid (oil) Lines', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - SCR Catalyst', 'Diesel - Engine Valve Train', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Pump', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Cylinder Liners', 'Trailer - Electric Lights', 'Compressor - Screw Elements', 'Diesel - Push Rods', 'Trailer - Enclosure - Door Springs', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Drain Plug', 'Diesel and Compressor Base Plate or Frame', 'Compressor - Pressure Regulator', 'Diesel - Emission Control - DPF (Diesel Particulate Filter)', 'Diesel - Muffler', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Filter and Strainer', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Radiator Tubing', 'Trailer - Leveler (Jack Stand)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Coolant or Block Heater', 'Diesel - High Pressure Fuel Pump', 'Trailer - Electric Lights and Wiring', 'Diesel - Vibration Damper or Harmonic Balancer', 'Trailer - Enclosure , Doors and Latches', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Fluid', 'Diesel - Fuel-Water Separator Element', 'Diesel - PTO (present; not normally used in this application and is not expected to affect normal operation)', 'Diesel - Digital Controls or ECU', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank', 'Compressor - Bearings - Rolling Element']","['Cooler', 'Coupling', 'Gearbox', 'Instrument loop', 'Lubrication oil pump']","Sure! Here are some potential failure locations for that equipment:
+
+1. Cooler
+2. Coupling
+3. Gearbox
+4. Lubrication oil pump
+5. Instrument loop",0.2,0.008403361344537815,0.016129032258064516,0.012326656394453005,0.003091190108191654,0.012326656394453005,0.012326656394453005,"['Circuit', 'Cooler', 'Coupling', 'Gearbox', 'Pressure sensor', 'Temperature sensor', 'Valve']","['Cooler', 'Coupling', 'Gearbox', 'Valve', 'Pressure sensor', 'Temperature sensor', 'Circuit']
+
+",0.0,0.0,0.0,0.02153846153846154,0.0,0.015384615384615385,0.015384615384615385
+FLEX_PMP_HORZ_OilBathSeal_T3DPF_Diesel_V0,FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - T3 DPF/DOC Diesel Driven,"['Diesel - Cam Follower Roller (if present)', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Check Valve - Seat Failure (Body or Disk)', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Lube Oil Pump', 'Pump - Priming System', 'Diesel - Timing Gears (if present)', 'Pump - Discharge and Suction Connections', 'Pump - Seal - Mechanical Oil Bath Type', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Water Pump', 'Diesel - Fuel Hoses', 'Diesel - Radiator Fan', 'Trailer - Bed, Frame, and Lifting Lugs', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type )', 'Diesel - Cylinder head', 'Diesel - Lube Oil', 'Trailer - Tires', 'Diesel - Engine Mounts', 'Diesel - Radiator Fan Variable Clutch', 'Diesel - Head Gasket', 'Diesel - Radiator Hoses', 'Diesel - Radiator', 'Diesel - Fuel', 'Diesel - Fuel Filters', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Starter', 'Pump - Impeller', 'Diesel - Air Box', 'Skid - Diesel and Pump Base Plate or Frame', 'Pump - Check Valve - Hinge Pin (if present)', 'Diesel - Battery', 'Diesel - Belts and Sheaves', 'Trailer - Wheel Bearings', 'Pump Casing', 'Trailer - Wheels Rims', 'Diesel - After Cooler', 'Diesel - Battery Charger', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Diesel - Oil Filters', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Injector Tubing', 'Trailer - Hitch or Coupling', 'Diesel - Piston Wrist Pin Bearings', 'Trailer - Suspension', 'Diesel - Radiator Cap', 'Diesel - Alternator and Diodes', 'Diesel-Pump - Coupling - Elastomeric Element', 'Diesel - Crankcase Air Breathers', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Stem', 'Diesel - Turbocharger Lube Oil Filter (if present)', 'Diesel - Turbocharger (WGT Types) (if present)', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Engine Valve Springs', 'Diesel - Pistons', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Linkages and Controls', 'Diesel - Fuel Tank', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)', 'Diesel - Muffler and Silencer', 'Diesel - Fly Wheel', 'Diesel - Thermostat', 'Pump - Check Valve - Disk Arm (if present)', 'Pump - Gaskets and O-Rings', 'Trailer - Hydraulic Brakes', 'Diesel - Coolant', 'Diesel - Connecting Rod', 'Diesel - Fuel Lines', 'Diesel - Turbocharger (All Types)', 'Diesel - Injectors', 'Diesel - Wiring Harness', 'Diesel - Engine Valve Train', 'Diesel - Cylinder Liners', 'Trailer - Electric Lights', 'Diesel - Push Rods', 'Pump - Lubrication - Grease', 'Pump - Shaft', 'Trailer - Levelers', 'Diesel - Inlet Air Filters (Element Type)', 'Trailer - Electric Brakes', 'Pump - Connections and Piping', 'Pump - Bearing Seals - Lip', 'Diesel - Radiator Tubing', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Pump - Check Valve - Rubber Flapper (if present)', 'Diesel - Coolant or Block Heater', 'Diesel - High Pressure Fuel Pump', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Exhaust Gas Recirculation (EGR) Valve (if present)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst) (if present)', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Digital Controls or ECU']","['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Liners', 'Diesel - Cylinder head', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst']","Sure! Here are some potential failure locations for that equipment:
+* Diesel - After Cooler
+* Diesel - Air Box
+* Diesel - Alternator and Diodes
+* Diesel - Battery
+* Diesel - Battery Charger
+* Diesel - Belts and Sheaves
+* Diesel - Cam Follower Roller (if present)
+* Diesel - Camshaft, Lobes, and Bushings
+* Diesel - Connecting Rod
+* Diesel - Coolant
+* Diesel - Coolant or Block Heater
+* Diesel - Crankcase Air Breathers
+* Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)
+* Diesel - Cylinder Liners
+* Diesel - Cylinder head
+* Diesel - Digital Controls or ECU
+* Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)
+* Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst",1.0,0.1875,0.3157894736842105,0.33528265107212474,0.33268101761252444,0.33528265107212474,0.33528265107212474,"['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Liners', 'Diesel - Cylinder head', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst)', 'Diesel - Engine Mounts']","['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Liners', 'Diesel - Cylinder head', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst)', 'Diesel - Engine Mounts",1.0,0.19791666666666666,0.33043478260869563,0.3449612403100775,0.33852140077821014,0.3449612403100775,0.3449612403100775
+FLEX_PMP_HORZ_OilBathSeal_T4_Diesel_V0,FLEX - Pump - Horizontal - Oil Bath Mechanical Seal - T4 Diesel Driven,"['Diesel - Cam Follower Roller (if present)', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - NOx Control Unit', 'Diesel - Cylinder Head', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Check Valve - Seat Failure (Body or Disk)', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Lube Oil Pump', 'Diesel - Filter - Lube Oil', 'Pump - Priming System', 'Pump - Impeller and Wear Ring', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Level Float', 'Diesel - Timing Gears (if present)', 'Pump - Discharge and Suction Connections', 'Pump - Seal - Mechanical Oil Bath Type', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Water Pump', 'Diesel - Fuel Hoses', 'Diesel - Radiator Fan', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Silencer', 'Trailer - Bed, Frame, and Lifting Lugs', 'Diesel - Lube Oil', 'Trailer - Tires', 'Diesel - Engine Mounts', 'Diesel - Head Gasket', 'Diesel - Radiator Hoses', 'Diesel - Radiator', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Heat Tracing', 'Diesel - Fuel', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Starter', 'Diesel - Air Box', 'Skid - Diesel and Pump Base Plate or Frame', 'Pump - Check Valve - Hinge Pin (if present)', 'Diesel - Turbocharger', 'Diesel - Battery', 'Diesel - Belts and Sheaves', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Trailer - Wheel Bearings', 'Trailer - Wheels Rims', 'Diesel - After Cooler', 'Diesel - Battery Charger', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Breather', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Injector Tubing', 'Trailer - Hitch or Coupling', 'Diesel - Piston Wrist Pin Bearings', 'Trailer - Suspension', 'Diesel - Radiator Cap', 'Diesel - Alternator and Diodes', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing Insulation', 'Diesel-Pump - Coupling - Elastomeric Element', 'Diesel - Crankcase Air Breathers', 'Diesel - Filter - Fuel (Pre-Fuel & Final)', 'Diesel - Engine Valve Seats', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Temperature Control Valve & Sensor', 'Diesel - Engine Valve Stem', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Engine Valve Springs', 'Diesel - Pistons', 'Pump - Casing Drain or Stop Valve, if present', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater Valve', 'Diesel - Linkages and Controls', 'Diesel - Fuel Tank', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Tubing & Hoses', 'Diesel - Fly Wheel', 'Diesel - Thermostat', 'Pump - Check Valve - Disk Arm (if present)', 'Pump - Casing and Internals', 'Pump - Gaskets and O-Rings', 'Trailer - Hydraulic Brakes', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Injector Nozzle & Valve', 'Diesel - Coolant', 'Diesel - Connecting Rod', 'Diesel - Fuel Lines', 'Diesel - Injectors', 'Diesel - Wiring Harness', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Heater', 'Diesel - Engine Valve Train', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - SCR Catalyst', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Pump', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Cylinder Liners', 'Trailer - Electric Lights', 'Diesel - Push Rods', 'Pump - Lubrication - Grease', 'Pump - Shaft', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Drain Plug', 'Trailer - Levelers', 'Trailer - Electric Brakes', 'Diesel - Emission Control - DPF (Diesel Particulate Filter)', 'Diesel - Muffler', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Pump - Connections and Piping', 'Pump - Bearing Seals - Lip', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank Filter and Strainer', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Radiator Tubing', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Pump - Check Valve - Rubber Flapper (if present)', 'Diesel - Coolant or Block Heater', 'Diesel - High Pressure Fuel Pump', 'Diesel - Vibration Damper or Harmonic Balancer', 'Pump - Casing', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Fluid', 'Diesel - Fuel-Water Separator Element', 'Diesel - PTO (present; not normally used in this application and is not expected to affect normal operation)', 'Diesel - Digital Controls or ECU', 'Diesel - Emission Control - SCR (Selective Catalytic Reduction) - Urea/DEF Tank']","['Diesel - After Cooler', 'Diesel - Air Box', 'Diesel - Alternator and Diodes', 'Diesel - Battery', 'Diesel - Battery Charger', 'Diesel - Belts and Sheaves', 'Diesel - Cam Follower Roller (if present)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Connecting Rod', 'Diesel - Coolant', 'Diesel - Coolant or Block Heater', 'Diesel - Crankcase Air Breathers', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Cylinder Head', 'Diesel - Cylinder Liners', 'Diesel - Digital Controls or ECU', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Emission Control - DPF (Diesel Particulate Filter)']","Sure! Here are some potential failure locations for that equipment:
+* Diesel - After Cooler
+* Diesel - Air Box
+* Diesel - Alternator and Diodes
+* Diesel - Battery
+* Diesel - Battery Charger
+* Diesel - Belts and Sheaves
+* Diesel - Cam Follower Roller (if present)
+* Diesel - Camshaft, Lobes, and Bushings
+* Diesel - Connecting Rod
+* Diesel - Coolant
+* Diesel - Coolant or Block Heater
+* Diesel - Crankcase Air Breathers
+* Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)
+* Diesel - Cylinder Head
+* Diesel - Cylinder Liners
+* Diesel - Digital Controls or ECU
+* Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)
+* Diesel - Emission Control - DPF (Diesel Particulate Filter)",1.0,0.1592920353982301,0.2748091603053435,0.24929178470254956,0.24715909090909088,0.24929178470254956,0.24929178470254956,"['Bearing Block', 'Impeller', 'Mechanical Seal', 'Pump Casing']","['Mechanical Seal', 'Bearing Block', 'Impeller', 'Pump Casing']",0.25,0.008849557522123894,0.017094017094017092,0.022400000000000003,0.0032102728731942215,0.012799999999999999,0.012799999999999999
+FLEX_PMP_HORZ_PackingSeal_T3DPF_Diesel_V0,FLEX - Pump - Horizontal - Packing Seal - T3 DPF/DOC Diesel Driven,"['Diesel - Cam Follower Roller (if present)', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Pump - Check Valve - Seat Failure (Body or Disk)', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Lube Oil Pump', 'Pump - Priming System', 'Diesel - Timing Gears (if present)', 'Pump - Discharge and Suction Connections', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Water Pump', 'Diesel - Fuel Hoses', 'Diesel - Radiator Fan', 'Trailer - Bed, Frame, and Lifting Lugs', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type )', 'Diesel - Cylinder head', 'Diesel - Lube Oil', 'Trailer - Tires', 'Diesel - Engine Mounts', 'Diesel - Radiator Fan Variable Clutch', 'Diesel - Head Gasket', 'Diesel - Radiator Hoses', 'Diesel - Radiator', 'Diesel - Fuel', 'Diesel - Fuel Filters', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Starter', 'Pump - Impeller', 'Diesel - Air Box', 'Skid - Diesel and Pump Base Plate or Frame', 'Pump - Check Valve - Hinge Pin (if present)', 'Diesel - Battery', 'Diesel - Belts and Sheaves', 'Trailer - Wheel Bearings', 'Pump Casing', 'Trailer - Wheels Rims', 'Diesel - After Cooler', 'Diesel - Battery Charger', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Diesel - Oil Filters', 'Pump - Seal - Packing', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Injector Tubing', 'Trailer - Hitch or Coupling', 'Diesel - Piston Wrist Pin Bearings', 'Trailer - Suspension', 'Diesel - Radiator Cap', 'Diesel - Alternator and Diodes', 'Diesel-Pump - Coupling - Elastomeric Element', 'Diesel - Crankcase Air Breathers', 'Diesel - Engine Valve Seats', 'Diesel - Engine Valve Stem', 'Diesel - Turbocharger Lube Oil Filter (if present)', 'Diesel - Turbocharger (WGT Types) (if present)', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Engine Valve Springs', 'Diesel - Pistons', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Linkages and Controls', 'Diesel - Fuel Tank', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Electrical Devices (e.g. sensors, solenoids, relays, meters, switches, fuses, lights)', 'Diesel - Muffler and Silencer', 'Diesel - Fly Wheel', 'Diesel - Thermostat', 'Pump - Check Valve - Disk Arm (if present)', 'Pump - Gaskets and O-Rings', 'Trailer - Hydraulic Brakes', 'Diesel - Coolant', 'Diesel - Connecting Rod', 'Diesel - Fuel Lines', 'Diesel - Turbocharger (All Types)', 'Diesel - Injectors', 'Diesel - Wiring Harness', 'Diesel - Engine Valve Train', 'Diesel - Cylinder Liners', 'Trailer - Electric Lights', 'Diesel - Push Rods', 'Pump - Lubrication - Grease', 'Pump - Shaft', 'Trailer - Levelers', 'Diesel - Inlet Air Filters (Element Type)', 'Trailer - Electric Brakes', 'Pump - Connections and Piping', 'Pump - Bearing Seals - Lip', 'Diesel - Radiator Tubing', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Pump - Check Valve - Rubber Flapper (if present)', 'Diesel - Coolant or Block Heater', 'Diesel - High Pressure Fuel Pump', 'Diesel - Vibration Damper or Harmonic Balancer', 'Diesel - Exhaust Gas Recirculation (EGR) Valve (if present)', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst) (if present)', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler (if present)', 'Diesel - Fuel-Water Separator Element', 'Diesel - Digital Controls or ECU']","['Diesel - After Treatment System - DOC (Diesel Oxidation Catalyst), particularly its catalyst coating or substrate', 'Diesel - After Treatment System - DPF (Diesel Particulate Filter), especially its electrodes, honeycomb structure, or fiber mat', 'Diesel - After Treatment System - EGR (Exhaust Gas Recirculation) System - specifically the cooler, valve, hoses, and connections', 'Diesel - After Treatment System - SCR (Selective Catalytic Reduction) System - mainly the injector nozzle, dosing module, mixer, and catalyst', 'Diesel - Filtration - fuel', 'Diesel - Gearbox - planetary gears, sun gear, ring gear, pinion shaft, bearings, and synchronizers', 'Diesel - Instrument Loop - wiring harness, connectors, and sensors', 'Diesel - Instrumentation - sensors, transmitters, indicators, controllers, and alarms', 'Diesel - Lubrication Oil Pump - casing, seals, drive belt, and bearings', 'Diesel - Motor - stator, rotor, windings, insulation, and bearing']","Sure! Based on the additional description you've provided, here are more detailed potential failure locations for that equipment:
+* Diesel - After Treatment System - DPF (Diesel Particulate Filter), especially its electrodes, honeycomb structure, or fiber mat
+* Diesel - After Treatment System - DOC (Diesel Oxidation Catalyst), particularly its catalyst coating or substrate
+* Diesel - After Treatment System - SCR (Selective Catalytic Reduction) System - mainly the injector nozzle, dosing module, mixer, and catalyst
+* Diesel - After Treatment System - EGR (Exhaust Gas Recirculation) System - specifically the cooler, valve, hoses, and connections
+* Diesel - Instrument Loop - wiring harness, connectors, and sensors
+* Diesel - Motor - stator, rotor, windings, insulation, and bearing
+* Diesel - Gearbox - planetary gears, sun gear, ring gear, pinion shaft, bearings, and synchronizers
+* Diesel - Lubrication Oil Pump - casing, seals, drive belt, and bearings
+* Diesel - Instrumentation - sensors, transmitters, indicators, controllers, and alarms
+* Diesel - Filtration - fuel",0.8,0.09375,0.16783216783216784,0.19330855018587362,0.048507462686567165,0.12639405204460966,0.12639405204460966,"['After Treatment System', 'Condition monitoring System', 'Cooling System', 'Drive System', 'Electrical System', 'Fire Protection System', 'Lubricating System', 'Maintenance System', 'Measurement And control System', 'Network infrastructure System', 'Operator interface System', 'Power Generation System', 'Sealing System', 'Security System', 'Starting System', 'Structural System', 'User Documentation']","['After Treatment System', 'Cooling System', 'Lubricating System', 'Sealing System', 'Drive System', 'Measurement And control System', 'Starting System', 'Electrical System', 'Power Generation System', 'Fire Protection System', 'Structural System', 'Condition monitoring System', 'Maintenance System', 'Operator interface System', 'Network infrastructure System', 'Security System', 'User Documentation']",0.058823529411764705,0.010416666666666666,0.017699115044247787,0.02145922746781116,0.0,0.02145922746781116,0.02145922746781116
+FLEX_PMP_LP_Packing_DirectDrv_IT4DPF_Diesel_V0,FLEX - Pump - LP - Packing Seal - Direct Drive - IT4 DPF/DOC Diesel Driven,"['Diesel - Cam Follower Roller (if present)', 'Diesel - Cylinder Head', 'Diesel-Pump - Coupling - Grease', 'Pump - Bearings - Rolling Element (Radial and Thrust)', 'Diesel - Hydraulic Lifter (if present)', 'Diesel - Lube Oil Pump', 'Pump - Impeller and Wear Rings', 'Diesel - Filter - Lube Oil', 'Trailer - Electric Brakes and Wiring', 'Pump - Priming System', 'Diesel - Timing Gears (if present)', 'Diesel - Fuel Tank Breather or Vent', 'Diesel - Water Pump', 'Diesel - Fuel Hoses', 'Diesel - Radiator Fan', 'Trailer - Bed, Frame, and Lifting Lugs', 'Diesel - Lube Oil', 'Trailer - Tires', 'Diesel - Engine Mounts', 'Pump - Discharge and Suction Headers', 'Diesel - Head Gasket', 'Diesel - Radiator Hoses', 'Diesel - Radiator', 'Diesel - Fuel', 'Diesel-Pump - Coupling - Sleeve Gasket or O-ring, if present', 'Diesel - Turbocharger Exhaust Flex Hoses', 'Diesel - Starter', 'Trailer - Enclosures - Panels/Control Boxes, including hinges, gaskets, handles', 'Diesel - Air Box', 'Skid - Diesel and Pump Base Plate or Frame', 'Diesel-Pump - Coupling - Grid, Serrations or Grooves', 'Trailer - Wheel Bearings', 'Diesel - Belts and Sheaves', 'Diesel - Filter - Inlet Air (Element or Cartridge Type)', 'Diesel - After Cooler', 'Diesel - Battery Charger', 'Diesel - Turbocharger (VGT Types) - Vane Angle Control and Linkage', 'Pump - Seal - Packing', 'Diesel - Crankshaft Bearings (Main, Thrust, and Connecting rod)', 'Diesel - Injector Tubing', 'Trailer - Hitch or Coupling', 'Diesel - Piston Wrist Pin Bearings', 'Trailer - Suspension', 'Diesel - Radiator Cap', 'Diesel - Alternator and Diodes', 'Diesel - PTO (present; not normally used in this application)', 'Diesel - Crankcase Air Breathers', 'Diesel - Engine Valve Seats', 'Diesel - Turbocharger (WGT Types)', 'Diesel - Engine Valve Stem', 'Diesel - Electrical Devices (e.g. sensors, circuit breakers, solenoids, relays, meters, switches, fuses, push buttons, microprocessors, digital displays)', 'Diesel - Filter - Fuel', 'Diesel - Turbocharger Lube Oil Filter (if present)', 'Diesel - Turbocharger Exhaust Inlet Screen (if present)', 'Diesel - Engine Valve Springs', 'Diesel - Pistons', 'Pump - Casing Drain or Stop Valve, if present', 'Diesel - Lube Oil Pressure Control Device', 'Diesel - Linkages and Controls', 'Diesel - Fuel Tank', 'Diesel - Gaskets, Seals, and O-rings (Internal and External Elastomer Type)', 'Diesel - Camshaft, Lobes, and Bushings', 'Diesel - Muffler and Silencer', 'Diesel - Fly Wheel', 'Diesel - Thermostat', 'Pump - Casing and Internals', 'Pump - Gaskets and O-Rings', 'Diesel - Coolant', 'Diesel - Connecting Rod', 'Diesel - Fuel Lines', 'Diesel - Turbocharger (All Types)', 'Diesel - Injectors', 'Diesel - Wiring Harness', 'Diesel - Engine Valve Train', 'Trailer - Jack & Stand', 'Pump - Bearing Lubrication - Grease', 'Diesel - Exhaust Gas Recirculation (EGR) Valve', 'Diesel - Cylinder Liners', 'Trailer - Electric Lights', 'Pump - Discharge Valves', 'Diesel - Push Rods', 'Pump - Shaft', 'Trailer - Battery (Tow power)', 'Trailer - Levelers', 'Trailer - Electric Brakes', 'Trailer - Wheel Rims', 'Diesel-Pump - Coupling - Grid', 'Diesel - Exhaust Gas Recirculation (EGR) Cooler', 'Pump - Connections and Piping', 'Pump - Bearing Seals - Lip', 'Diesel - Emission Control - DPF/DOC (Diesel Particulate Filter - Diesel Oxidation Catalyst)', 'Diesel - Radiator Tubing', 'Diesel - Fuel Tank Strainer (if present)', 'Diesel - Battery (start power)', 'Diesel - Valve Train - Rocker Arms with Rollers', 'Diesel - Coolant or Block Heater', 'Diesel - High Pressure Fuel Pump', 'Diesel - Vibration Damper or Harmonic Balancer', 'Pump - Casing', 'Diesel - Fuel-Water Separator Element', 'Diesel - Digital Controls or ECU', 'Diesel-Pump - Coupling - Fasteners']","['Control and Monitoring System', 'Cooling Subunit', 'Direct Drive Mechanism', 'Electric Circuit', 'Filter', 'IT4 DPF DOC Diesel Driven engine', 'Instrument Loop', 'Lubrication Subunit', 'Motor', 'Packing Seal', 'Pressure Sensor', 'Temperature Sensor', 'Valve']","Sure! Based on the additional description provided, here are some potential failure locations for that equipment:
+1. Instrument Loop
+2. Motor
+3. Valve
+4. Filter
+5. Pressure Sensor
+6. Temperature Sensor
+7. Electric Circuit
+8. Lubrication Subunit
+9. Cooling Subunit
+10. Control and Monitoring System
+11. Packing Seal
+12. Direct Drive Mechanism
+13. IT4 DPF DOC Diesel Driven engine",0.07692307692307693,0.00980392156862745,0.017391304347826087,0.06085192697768764,0.012219959266802445,0.03245436105476674,0.03245436105476674,"['Circuit', 'Direct Drive', 'Filter', 'Flex Pump', 'Gearbox', 'Instrument Loop', 'Lubrication Oil Pump', 'Motor', 'Pressure Sensor', 'Temperature Sensor', 'Valve']","['Flex Pump', 'Direct Drive', 'Gearbox', 'Lubrication Oil Pump', ' Instrument Loop', 'Motor', 'Valve', 'Filter', 'Pressure Sensor', 'Temperature Sensor', 'Circuit']",0.09090909090909091,0.00980392156862745,0.01769911504424779,0.037422037422037424,0.0041753653444676405,0.029106029106029108,0.029106029106029108
+Gearbox_Worm_2_V0,Gearbox - Worm Gear Type,"['Gaskets', 'Casing', 'Casing or Housing', 'Oil', 'External Oil Piping', 'Bolting', 'Oil line (suction only), if present', 'Worm Rim Gear', 'Worm Shaft', 'Rim Shaft', 'Sump oil heater, if present', 'Shaft oil seals', 'Oil  Breather', 'Bearings - Rolling Element (radial and thrust)', 'Oil Gear Pump', 'Dip Stick Tube, if present', 'Oil Filter, if present']","['Bearing', 'Input Shaft', 'Output Shaft', 'Spacer', 'Worm Gear', 'Worm Wheel']","* Worm Gear
+* Worm Wheel
+* Spacer
+* Bearing
+* Input Shaft
+* Output Shaft",0.3333333333333333,0.11764705882352941,0.1739130434782609,0.1639344262295082,0.03389830508474577,0.1639344262295082,0.1639344262295082,"['Bearings - Rolling Element', 'Bolting', 'Casing', 'Casing or Housing', 'Dip Stick Tube, if present', 'External Oil Piping', 'Gaskets', 'Oil', 'Oil Breather', 'Oil Cooler ( Internal or External)', 'Oil Filter, if present', 'Oil Gear Pump', 'Oil Line ( Suction Only) , if present', 'Oil Line ( external) , if present', 'Pressure Relief Valve, if present', 'Rim Shaft', 'Shaft Oil Seals', 'Sump Oil Heater, if present', 'worms Rim Gear', 'worms Shaft']","['Bearings - Rolling Element', 'Bolting', 'Casing', 'Casing or Housing', 'Dip Stick Tube, if present', 'External Oil Piping', 'Gaskets', 'Oil', 'Oil Breather', 'Oil Cooler ( Internal or External)', 'Oil Filter, if present', 'Oil Gear Pump', 'Oil Line ( external) , if present', 'Oil Line ( Suction Only) , if present', 'Pressure Relief Valve, if present', 'Rim Shaft', 'Shaft Oil Seals', 'Sump Oil Heater, if present', ' worms Rim Gear', 'worms Shaft']
+
+",0.85,1.0,0.9189189189189189,0.8070175438596492,0.75,0.8070175438596492,0.8070175438596492
+GEN_3600_SmoothRotor_AirCooled_V0,Main Generator - 3600RPM - Smooth Rotor - Air Cooled,"['Bearing Oil Deflectors (labyrinth type)', 'Turbine Supervisory Instrumentation - Generator Condition Monitor', 'Turbine Supervisory Instrumentation -  Bearing & Winding RTDs, Thermocouples, Vibration probes', 'Air Filters', 'Turbine Supervisory Instrumentation -  Flux probes', 'Stator - Bars Inside Slots', 'Couplings', 'Piping & Connections', 'Generator Cables - high voltage, neutral', 'Rotor Collector Brushes', 'Frame, End Shields, and Mounting', 'Bearing Insulation', 'Rotor - Journal', 'Rotor - Forging', 'Generator Iso-phase connections', 'Rotor - Surfaces, wedges, and retaining rings', 'Rotor - Fan', 'Rotor Collector Rings', 'Rotor - Winding', 'Generator Bushings - high voltage, neutral', 'Stator - End Winding and Connections', 'Journal Bearings', 'Stator - Core', 'Rotor - Retaining rings']","['Base frame', 'Bearings - Bearing races, rolling elements, or lubrication', 'Cooling system - Air intake, cooling fins, or fan', 'Rotor - Rotor bars, insulation, or cooling channels', 'Stator - Copper windings, insulation, or magnets', 'Windings - Insulation, copper wires, or terminations']","Sure! Here are some potential failure locations for that equipment:
+* Base frame
+* Stator - Copper windings, insulation, or magnets
+* Rotor - Rotor bars, insulation, or cooling channels
+* Windings - Insulation, copper wires, or terminations
+* Bearings - Bearing races, rolling elements, or lubrication
+* Cooling system - Air intake, cooling fins, or fan",0.0,0.0,0.0,0.1626016260162602,0.016528925619834708,0.11382113821138211,0.11382113821138211,"['Base Frame', 'Bearings', 'Cooling System', 'Rotor', 'Stator', 'Windings']","['Base Frame', 'Stator', 'Rotor', 'Windings', 'Bearings', 'Cooling System']
+
+",0.3333333333333333,0.08333333333333333,0.13333333333333333,0.08421052631578949,0.0,0.08421052631578949,0.08421052631578949
+GT_Fuel_Gas_GasControlValve&Actuator_V0,Gas Turbine - Fuel Gas - Gas Control Valve and Actuator,"['Hydraulic Actuator - Stem', 'Elastomer Internals', 'Air Actuator Piston and Rings', 'Hydraulic Actuator - Cylinder', 'Stem Bushing', 'Hydraulic Actuator - Body', 'Stem O-ring', 'Hydraulic Actuator - Rod End Seal', 'Air Actuator Stem', 'Air Actuator Flex Hose', 'Gasket', 'Hydraulic Actuator Flex Hose', 'Actuator', 'Hydraulic Actuator - Servo Mechanism', 'Air Actuator Body', 'Valve Body', 'Disc', 'Seat', 'Displacement Transducer (LVDT)', 'Air Actuator Diaphragm', 'Hydraulic Actuator - Servo Mechanism Filter', 'Hydraulic Actuator - O-ring', 'Hydraulic Actuator - Piston and Rings', 'Air Actuator Diaphragm Spring', 'Stem']","['Actuator', 'Associated Piping', 'Control Valve', 'Control and Monitoring System', 'Fittings', 'Lubrication and Cooling System']","Sure! Here are some potential failure locations for that equipment:
+* Control Valve
+* Actuator
+* Associated Piping
+* Fittings
+* Control and Monitoring System
+* Lubrication and Cooling System",0.16666666666666666,0.04,0.06451612903225806,0.0898876404494382,0.0,0.06741573033707865,0.06741573033707865,"['Actuator', 'Conditioned Air Filtration System', 'Conditioned Air Filtration Systems', 'Control Valve', 'Coolers', 'Filters', 'Flow Meter', 'Flow Meters', 'Flow meters', 'Fuel Gas Conditioner, Actuator', 'Fuel Gas Conditioners', 'Fuel Gas Controllers', 'Fuel Gas Flow Switches', 'Fuel Gas Regulators', 'Fuel Gas Solenoid Valves', 'Fuel Gas Valves', 'Fuel Gas Valves And Actu', 'Fuel Gas Valves And Actuators', 'Lubricators', 'Manifold Absolute Pressure Transducers', 'Manifolds Absolute Pressure Transducers', 'Pipes', 'Pipework', 'Shutoff Valves']","['Actuator', 'Control Valve', 'Flow Meter', 'Manifold Absolute Pressure Transducers', 'Pipework', 'Filters', ' Lubricators', 'Coolers', 'Shutoff Valves', 'Fuel Gas Conditioner'], ['Actuator', 'Flow Meters', 'Manifolds Absolute Pressure Transducers', 'Pipes', 'Filters', 'Lubricators', 'Coolers', 'Shutoff Valves', 'Conditioned Air Filtration System', 'Fuel Gas Conditioner'], ['Actuator', 'Flow meters', 'Manifolds Absolute Pressure Transducers', 'Pipes', 'Filters', 'Lubricators', 'Coolers', 'Shutoff Valves', 'Conditioned Air Filtration Systems', 'Fuel Gas Conditioners', 'Fuel Gas Controllers', 'Fuel Gas Flow Switches', 'Fuel Gas Regulators', 'Fuel Gas Solenoid Valves', 'Fuel Gas Valves', 'Fuel Gas Valves And Actuators', 'Fuel Gas Valves And Actuators', 'Fuel Gas Valves And Actuators', 'Fuel Gas Valves And Actu",0.041666666666666664,0.04,0.04081632653061224,0.09929078014184398,0.0,0.0851063829787234,0.0851063829787234
+GT_HRSG_DuctBurner_MainGasIsoValve&Actuator_V0,Gas Turbine - HRSG - Duct Burner - Main Gas Isolation Valve and Actuator,"['Elastomer Internals', 'Air Actuator Spring', 'Stem O-ring', 'Stem Bushing', 'Actuator O-ring', 'Air Actuator Stem', 'Rack and Pinion', 'Gasket', 'Solenoid Valve Elastomer Internals', 'Solenoid Valve', 'Ball', 'Actuator', 'Air Actuator Body', 'Valve Body', 'Position Indicator', 'Actuator Limit Switch', 'Packing Spring', 'Seat', 'Packing', 'Air Actuator Tubing', 'Stem']","['Actuator', 'Associated Piping and Connections', 'Main Gas Isolation Valve']","Sure! Here are some potential failure locations for that equipment:
+* Main Gas Isolation Valve
+* Actuator
+* Associated Piping and Connections",0.3333333333333333,0.047619047619047616,0.08333333333333333,0.10909090909090909,0.0,0.10909090909090909,0.10909090909090909,"['Actuator', 'Isolator Valve', 'Isolator Valve Cover Plate', 'Isolator Valve Dust Cover Plate', 'Isolator Valve Dust Guard Plate', 'Isolator Valve Dust Plug Plate', 'Isolator Valve Dust Plug Plate - Spring Retaining Ring', 'Isolator Valve Dust Plug Plate - Spring Retaining Ring, Isolator Valve Mounting Pad', 'Isolator Valve Dust Shield Plate', 'Isolator Valve Mounting Bracket', 'Isolator Valve Mounting Pad', 'Main Gas Line']","['Isolator Valve', 'Actuator', 'Main Gas Line', 'Isolator Valve Mounting Bracket', 'Isolator Valve Mounting Pad', 'Isolator Valve Cover Plate', 'Isolator Valve Dust Cover Plate', 'Isolator Valve Dust Guard Plate', 'Isolator Valve Dust Shield Plate', 'Isolator Valve Dust Plug Plate', 'Isolator Valve Dust Plug Plate - Spring Retaining Ring'], ['Isolator Valve Mounting Pad', 'Isolator Valve Cover Plate', 'Isolator Valve Dust Cover Plate', 'Isolator Valve Dust Guard Plate', 'Isolator Valve Dust Shield Plate', 'Isolator Valve Dust Plug Plate', 'Isolator Valve Dust Plug Plate - Spring Retaining Ring']
+
+",0.08333333333333333,0.047619047619047616,0.060606060606060615,0.15384615384615385,0.0,0.11538461538461538,0.11538461538461538
+GT_HRSG_HP_Horz3stg_V0,Gas Turbine - HRSG - HP Section - Horizontal 3 Stage,"['Safety Relief Valve - Spring', 'Attemperator - Strainer', 'HP Drum - Manway', 'Safety Relief Valve - Telltale Drain', 'Attemperator - Spray Nozzles - Spring Type, if present', 'Attemperator - Steam Pipe Flange', 'HP Drum - Internal Chemical Feed Pipe', 'HP Valves - Drain and Vent - (Non-CSEF Material)', 'HP Gas Baffles', 'Safety Relief Valve - Seat', 'Safety Relief Valve - Flange Face', 'HP Tube Supports', 'Safety Relief Valve - Bellows', 'Safety Relief Valve - Plug to Stem Connection', 'HP Drum - Manway Flange', 'Safety Relief Valve - Inlet Gasket', 'HP Tube - steam (superheater)', 'HP Drum - Support Fasteners (Strongbacks)', 'Safety Relief Valve - Adjustment Nut', 'HP Drum - Internal Surface Blowdown Pipe', 'HP Drum - Liner', 'Safety Relief Valve - Silencer', 'HP Drum - Steam Dry Pipe', 'HP Valves - Drain and Vent for Steam Service (CSEF Material)', 'HP Drum - Cyclone Separators and Baffles', 'Safety Relief Valve - Nozzle Disk Interface', 'Attemperator - Water Pipe Flange', 'HP Drum - Belly Plate', 'HP Header - Water (Economizer and Evaporator)', 'HP Drum - Scrubbers', 'Instrumentation - HP Steam Flow', 'Attemperator - Water Pipe Attachment', 'Attemperator - Header Ring, if present', 'Instrumentation - HP Temperature', 'HP Intermittent Blowdown Piping', 'HP Drum - Chevrons', 'HP Drum - Vortex Eliminator', 'Safety Relief Valve - Fasteners', 'Attemperator - Control Valve Stacked Disc, if present', 'Instrumentation - HP Drum Pressure Gauge', 'Attemperator - Spray Nozzles', 'Attemperator - Liner', 'HP Drum - Level Sight Glass', 'Instrumentation - HP Drum Level', 'Attemperator - Steam Pipe Attachment', 'HP Header - Downcomer (steam and water)', 'HP Drum - End Cap', 'HP Drum - Support', 'Safety Relief Valve - Blow Down Rings', 'Safety Relief Valve - Steam Side Gasket', 'HP Drum - Manway Hinge', 'HP Drum - Manway Seal', 'HP Drum - Shell', 'HP Header - Steam (Superheater)', 'Safety Relief Valve - Spindle', 'HP Drum - Belly Plate Fasteners (Strongbacks)', 'Instrumentation - HP Pressure Sensing', 'HP Drum - Shell Penetrations', 'HP Steam Sampler', 'HP Tube - Water (Economizer and Evaporator)', 'HP Tube - Steam (Superheater)', 'Safety Relief Valve - Body and Flanges']","['', 'Casings - Corrosion Damage', 'Casings - Fatigue Failure', 'Casings - Hydrostatic Lock', 'Casings - Material Weakness', 'Compressor Stages - Balancing Issues', 'Compressor Stages - Coolant Leakage', 'Compressor Stages - Coupling Failure', 'Compressor Stages - Groove Wear', 'Compressor Stages - Main Shaft Failure', 'Compressor Stages - Misalignment', 'Compressor Stages - Oil Leakage', 'Compressor Stages - Rotating Blade Damaging', 'Compressor Stages - Stationary Vane Damage', 'Compressor Stages - Thrust Bearings Failure', 'Compressor Stages - Vibration Damage', 'Lubrication System - Oil Contamination', 'Turbine Blades - Balance Unbalance', 'Turbine Blades - Case Wear', 'Turbine Blades - Groove Wear', 'Turbine Blades - Thermal Expansion Cracks', 'Turbine Blades - Tip Clearance Loss', 'Turbine Blades - Yaw Drive Failure']","Sure! Here are some potential failure locations for that equipment:
+* Compressor Stages - Rotating Blade Damaging
+* Compressor Stages - Stationary Vane Damage
+* Compressor Stages - Groove Wear
+* Compressor Stages - Balancing Issues
+* Compressor Stages - Oil Leakage
+* Compressor Stages - Coolant Leakage
+* Compressor Stages - Vibration Damage
+* Compressor Stages - Misalignment
+* Compressor Stages - Coupling Failure
+* Compressor Stages - Thrust Bearings Failure
+* Compressor Stages - Main Shaft Failure
+* Turbine Blades - Tip Clearance Loss
+* Turbine Blades - Groove Wear
+* Turbine Blades - Balance Unbalance
+* Turbine Blades - Yaw Drive Failure
+* Turbine Blades - Case Wear
+* Turbine Blades - Thermal Expansion Cracks
+* Casings - Corrosion Damage
+* Casings - Fatigue Failure
+* Casings - Material Weakness
+* Casings - Hydrostatic Lock
+* Lubrication System - Oil Contamination
+*",0.0,0.0,0.0,0.005361930294906166,0.0,0.005361930294906166,0.005361930294906166,"['Average Exit Velocity', 'Country Of Origin', 'Cycle Time', 'Exhaust Heat Transfer Area', 'Exit Temp.', 'Flow Path', 'Inlet Heat Transfer Area', 'Installation Date', 'Installed Horsepower', 'Isolating Class', 'Last Abnormal Operation Date', 'Last Critical Repair Date', 'Last Major Repair Date', 'Last Minor Repair Date', 'Last Normal Operation Date', 'Last Overhaul Date', 'Last Serviced Date', 'Last Shutdown Cause', 'Last Shutdown Reason', 'Maintenance Interval', 'Manufacturer', 'Mass Flow Through Rotor', 'Mean Effective Pressure', 'Model Number', 'Nameplate Rating', 'Next Scheduled Abnormal Operation Due Date', 'Next Scheduled Critical Repair Due Date', 'Next Scheduled Maintenance Due Date', 'Next Scheduled Major Repair Due Date', 'Next Scheduled Minor Repair Due Date', 'Next Scheduled Normal Operation Due Date', 'Next Scheduled Shut', 'Next Scheduled Shutdown Reason', 'Number Of Stages', 'Outlet Heat Transfer Area', 'Overall Diameter', 'Removal Date', 'Rotor Diameter', 'Speed', 'Type']","['Installed Horsepower', 'Nameplate Rating', 'Type', 'Number Of Stages', 'Overall Diameter', 'Rotor Diameter', 'Speed', 'Flow Path', 'Exhaust Heat Transfer Area', 'Inlet Heat Transfer Area', 'Outlet Heat Transfer Area', 'Mass Flow Through Rotor', 'Average Exit Velocity', 'Exit Temp.', 'Cycle Time', 'Mean Effective Pressure', 'Isolating Class', 'Manufacturer', 'Model Number', 'Country Of Origin', 'Installation Date', 'Removal Date', 'Last Serviced Date', 'Maintenance Interval', 'Last Overhaul Date', 'Next Scheduled Maintenance Due Date', 'Last Major Repair Date', 'Next Scheduled Major Repair Due Date', 'Last Minor Repair Date', 'Next Scheduled Minor Repair Due Date', 'Last Critical Repair Date', 'Next Scheduled Critical Repair Due Date', 'Last Normal Operation Date', 'Next Scheduled Normal Operation Due Date', 'Last Abnormal Operation Date', 'Next Scheduled Abnormal Operation Due Date', 'Last Shutdown Reason', 'Next Scheduled Shutdown Reason', 'Last Shutdown Cause', 'Next Scheduled Shut",0.0,0.0,0.0,0.019417475728155338,0.0,0.009708737864077669,0.009708737864077669
+GT_LubeOil_PumpAC_V0,Gas Turbine - Lube Oil - AC Oil Pump,"['Motor -  Shaft', 'Instrumentation - Indication and Alarm with separate sensors, if present', 'Pump -  Bearing Retainers', 'Pressure Switch', 'Pressure Transmitter', 'Motor -  Space Heaters', 'Pump -  Bearing - Thrust (grease lubricated)', 'Motor -  Gaskets', 'Motor -  Bearings: Rolling element', 'Motor -  End Bell Fits', 'Pump -  Bearing - Thrust (oil lubricated)', 'Pump -  Motor Coupling', 'Pressure Gauge', 'Motor -  Frame and Enclosure', 'Pump -  Motor Mount', 'Pump -  Shaft', 'Pump -  Bearing Oil Supply Line, if present', 'Pump -  Wear rings', 'Motor -  External Cooling Fan and Cover', 'Motor -  Cast Rotor: Rotor bars and shorting rings', 'Pump -  Impeller', 'Motor -  Bearing Seal', 'Pump -  Suction Screen', 'Pump -  Mechanical Seal', 'Motor -  Leads and Electrical Connections', 'Pump -  Shaft Sleeve', 'Pump -  Gaskets', 'Motor -  Stator - Windings', 'Pump -  Bearings - Sleeve', 'Pump -  Discharge Head', 'Pump -  Column Piping']","['AC Motor -  Bearing Seal', 'AC Motor -  Bearings: Rolling element', 'AC Motor -  Cast Rotor: Rotor bars and shorting rings', 'AC Motor -  End Bell Fits', 'AC Motor -  External Cooling Fan and Cover', 'AC Motor -  Frame and Enclosure', 'AC Motor -  Gaskets', 'AC Motor -  Leads and Electrical Connections', 'AC Motor -  Shaft', 'AC Motor -  Space Heaters', 'AC Motor -  Stator - Windings', 'DC Motor -  Armature', 'DC Motor -  Armature - Windings', 'DC Motor -  Bearing Seal', 'DC Motor -  Bearings: Rolling element', 'DC Motor -  Brush Rigging', 'DC Motor -  Brushes', 'DC Motor -  External Cooling Fan and Cover', 'DC Motor -  Frame and Enclosure', 'DC Motor -  Gaskets', 'DC Motor -  Leads and Electrical Connections', 'DC Motor -  Machine Fits', 'DC Motor -  Rotor']","Sure! Here are some potential failure locations for that equipment:
+* AC Motor -  Bearing Seal
+* AC Motor -  Bearings: Rolling element
+* AC Motor -  Cast Rotor: Rotor bars and shorting rings
+* AC Motor -  End Bell Fits
+* AC Motor -  External Cooling Fan and Cover
+* AC Motor -  Frame and Enclosure
+* AC Motor -  Gaskets
+* AC Motor -  Leads and Electrical Connections
+* AC Motor -  Shaft
+* AC Motor -  Space Heaters
+* AC Motor -  Stator - Windings
+* DC Motor -  Armature
+* DC Motor -  Armature - Windings
+* DC Motor -  Bearing Seal
+* DC Motor -  Bearings: Rolling element
+* DC Motor -  Brush Rigging
+* DC Motor -  Brushes
+* DC Motor -  External Cooling Fan and Cover
+* DC Motor -  Frame and Enclosure
+* DC Motor -  Gaskets
+* DC Motor -  Leads and Electrical Connections
+* DC Motor -  Machine Fits
+* DC Motor -  Rotor",0.4782608695652174,0.3548387096774194,0.40740740740740744,0.46788990825688076,0.3055555555555555,0.44954128440366975,0.44954128440366975,"['AC Motor -   Frame and Enclosure', 'AC Motor -  Gaskets', 'AC Motor -  Leads and Electrical Connections', 'AC Motor -  Shaft', 'AC Motor -  Space Heaters', 'AC Motor -  Stator - Windings', 'DC Motor -   Armature', 'DC Motor -  Armature - Windings', 'DC Motor -  Bearing Seal', 'DC Motor -  Bearings: Rolling element', 'DC Motor -  Brush Rigging', 'DC Motor -  Brushes', 'DC Motor -  external Cooling Fan and Cover', 'DC Motor -  frame and enclosure', 'DC Motor -  gaskets', 'DC Motor -  leads and electrical connections', 'DC Motor -  machine fits', 'DC Motor -  rotor - commutator', 'DC Motor -  shaft', 'DC Motor -  space heaters', 'DC Motor -  stator - windings', 'instrumentation - indication and alarm with separate sensors, if present', 'pressure gauge', 'pressure switch', 'pressure switch - elastomers, gaskets, and o-rings', 'pressure switch - electrical switch']","['AC Motor -   Frame and Enclosure', 'AC Motor -  Gaskets', 'AC Motor -  Leads and Electrical Connections', 'AC Motor -  Shaft', 'AC Motor -  Space Heaters', 'AC Motor -  Stator - Windings', 'DC Motor -   Armature', 'DC Motor -  Armature - Windings', 'DC Motor -  Bearing Seal', 'DC Motor -  Bearings: Rolling element', 'DC Motor -  Brush Rigging', 'DC Motor -  Brushes', 'DC Motor -  external Cooling Fan and Cover', 'DC Motor -  frame and enclosure', 'DC Motor -  gaskets', 'DC Motor -  leads and electrical connections', 'DC Motor -  machine fits', 'DC Motor -  rotor - commutator', 'DC Motor -  shaft', 'DC Motor -  space heaters', 'DC Motor -  stator - windings', 'instrumentation - indication and alarm with separate sensors, if present', 'pressure gauge', 'pressure switch - elastomers, gaskets, and o-rings', 'pressure switch - electrical switch', 'pressure switch",0.46153846153846156,0.3870967741935484,0.42105263157894735,0.5,0.3153153153153153,0.375,0.375
+HVAC_Expansion_Joint_Metal_1_V0,HVAC - Expansion Joint - Metal Type,"['Flange Connection (joint to duct)', 'Support Frame, Structure, Platforms, Stairs, Walkways, and Hand Rails', 'Expansion Joint (metallic)', 'Gasket', 'Fasteners']","['Expansion Joint - Metal Type (Bellows, Slide Plates, Seals, Support Structures)']","Sure! Here are some potential failure locations for that equipment:
+* Expansion Joint - Metal Type (Bellows, Slide Plates, Seals, Support Structures)",1.0,0.2,0.33333333333333337,0.20689655172413793,0.07407407407407407,0.20689655172413793,0.20689655172413793,"['Expansion bellows', 'Seals', 'Slide plates', 'Support structures']","['Expansion bellows', 'Slide plates', 'Seals', 'Support structures']
+
+",0.0,0.0,0.0,0.15384615384615385,0.0,0.15384615384615385,0.15384615384615385
+HX_FWH_LP_3_V0,Heat Exchanger - Feedwater Heater - Low Pressure - Titanium Tubes,"['Tubes', 'Tube Joint, Welded', 'Closure Devices: Channel Partitions, Partition Covers, Manways, Reversing Chambers, Flanges', 'Internal Hardware: Baffle, Diffuser, Partition & Support Plates, Tie Rods, Spacers, Shroud, Seal End Plates, Impingement Plates, and Air Off-take Systems', 'Tube Sheets', 'Tube Joint, Rolled', 'Inlet Nozzle and Surrounding Shell Area']","['Closure Devices: Channel Partitions, Partition Covers, Manways, Reversing Chambers, Flanges', 'Inlet Nozzle and Surrounding Shell Area', 'Internal Hardware: Baffle, Diffuser, Partition & Support Plates, Tie Rods, Spacers, Shroud, Seal End Plates, Impingement Plates, and Air Off-take Systems', 'Plugs']","Sure! Here are some potential failure locations for that equipment:
+* Closure Devices: Channel Partitions, Partition Covers, Manways, Reversing Chambers, Flanges
+* Inlet Nozzle and Surrounding Shell Area
+* Internal Hardware: Baffle, Diffuser, Partition & Support Plates, Tie Rods, Spacers, Shroud, Seal End Plates, Impingement Plates, and Air Off-take Systems
+* Plugs",0.75,0.42857142857142855,0.5454545454545454,0.8809523809523809,0.8780487804878049,0.8809523809523809,0.8809523809523809,['Heat Exchanger - Feedwater Heater - Low Pressure - Titanium Tubes'],"['Heat Exchanger - Feedwater Heater - Low Pressure - Titanium Tubes']
+
+",0.0,0.0,0.0,0.03703703703703704,0.0,0.03703703703703704,0.03703703703703704
+IC_Flow_Level_SW_ThermElect_V0,I&C - Flow - Level Switch - Thermal Electronic,"['Digital Display', 'Timers', 'Relays', 'Housing', 'Gasket', 'Thermowells', 'Terminals', 'Push Buttons', 'Microprocessor', 'Heater Element', 'RTD (Reference or Active)']",[],"Sure! Here are the failure locations for the specified equipment:
+Sensor: Thermistor, Pyrometer, wiring;
+Transmitter: Signal processing IC, power supply IC, wiring;
+Receiver: Amplifier IC, filter IC, signal processing IC.",1.0,0.0,0.0,0.0,0.0,0.0,0.0,['Flow - Level Switch - Thermal Electronic'],"['Flow - Level Switch - Thermal Electronic']
+
+",0.0,0.0,0.0,0.0,0.0,0.0,0.0
+IC_TSW_1_V4,I&C - Temperature Switch - Non-Electronic Types,"['Electromechanical switch', 'Sensing device diaphragm/piston', 'Mechanical linkage', 'Electrical switch', 'Thermowell', 'Sensing device (Other types)', 'Sensing device Expansion bellows', 'Sensing device (Temperature bulb and capillary)', 'Micro switch', 'Mercury switch']","['Any internal wiring or connections within the Temperature Switch', 'Components like the thermostat, switch, and their associated wiring or connectors', 'Other components responsible for sensing and controlling the temperature', 'Particular parts inside the Temperature Switch itself, although these are generally not separated out as individual s since the entire assembly is usually replaced when one fails.', 'Temperature sensor', 'Thermostat', 'Wires and associated connectors within the Temperature Sensor Subsystem']","Sure! Based on the additional description provided, here are the potential failure locations for the Temperature Switch:
+1. Temperature sensor
+2. Thermostat
+3. Other components responsible for sensing and controlling the temperature
+4. Wires and associated connectors within the Temperature Sensor Subsystem
+5. Any internal wiring or connections within the Temperature Switch
+6. Components like the thermostat, switch, and their associated wiring or connectors
+7. Particular parts inside the Temperature Switch itself, although these are generally not separated out as individual failures since the entire assembly is usually replaced when one fails.",0.14285714285714285,0.1,0.11764705882352941,0.14432989690721648,0.0,0.12371134020618557,0.12371134020618557,"['Switch', 'Temperature Sensor', 'parts', 'thermostat', 'wiring and connectors']","['Temperature Sensor', 'thermostat', 'Switch', 'wiring and connectors', 'parts']
+
+",0.2,0.1,0.13333333333333333,0.16216216216216217,0.0,0.16216216216216217,0.16216216216216217
+LA_Dist_1,Distribution Lightning Arrestor - MOV,"['Semiconducting Stack', 'Animal guard', 'Connection - primary', 'Connection - ground', 'Polymer']","['Grounding Rods', 'High-Voltage Terminals', 'Lightning Arrestor Element', 'Test Ports']","Sure! Here are some potential failure locations for that equipment:
+* Lightning Arrestor Element
+* High-Voltage Terminals
+* Grounding Rods
+* Test Ports",0.0,0.0,0.0,0.0,0.0,0.0,0.0,"['Grounding Rods', 'High-Voltage Terminals', 'Lightning arrestor element', 'Test Ports']","['Lightning arrestor element', 'High-Voltage Terminals', 'Grounding Rods', 'Test Ports']
+
+",0.0,0.0,0.0,0.0,0.0,0.0,0.0
+LTC_PLT_2_V0,Load Tap Changer - Power Station - Vacuum Bottle Oil Immersed - OLTC,"['Control - Analog or Electronic type', 'Control - Microprocessor type', 'LTC Tank', 'Separator or Switch Board', 'Vacuum Bottle Pressure Sensor\n\n Pressure Sensor', 'Oil Filter, if present', 'Limit or Reversing Switch Contact', 'Internal wiring', 'Oil (mineral)', 'Operations Counter', 'Hardware or Fasteners', 'Electrical Connections', 'Position Indicator or Drag hand', 'Pressure Relief Valve', 'Shorting Resistors or Reactors', 'Control - Selsen switch', 'Oil Level Alarms', 'Motor Operator', 'LTC Tank Breather', 'Pipes, Tubing, Fittings, Gaskets, and Valves', 'Control - Relay - Balance Beam type', 'Vacuum Bottle', 'Interrupter - Contacts']","['Oil-immersed design', 'Tap changer mechanism components', 'Vacuum bottle']","Sure! Here are some potential failure locations for that equipment:
+* Tap changer mechanism components
+* Vacuum bottle
+* Oil-immersed design",0.3333333333333333,0.043478260869565216,0.07692307692307691,0.06741573033707865,0.022988505747126433,0.06741573033707865,0.06741573033707865,"['', 'Circuit Breaker', 'Distribution Transformer', 'Generators', 'Load Tap Changer', 'Motors', 'OLTC Control Cabinet', 'Power Plant', 'Protection relay', 'Substation', 'Switches', 'Switchgear', 'Transformer', 'Transformers', 'feeder breaker', 'fuses', 'generators', 'recloser', 'transformers']","['Load Tap Changer', 'Substation', 'OLTC Control Cabinet', 'Switchgear', 'Transformer', 'Distribution Transformer', 'Power Plant', 'Circuit Breaker', 'Protection relay', ' recloser', ' feeder breaker', 'fuses', ' Motors', ' Transformers', 'Switches', 'Transformers', 'Generators', ' transformers', 'generators', 'transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', 'generators', ' transformers', '",0.0,0.0,0.0,0.03738317757009346,0.0,0.03738317757009346,0.03738317757009346
+LTC_Sub_1_V2,Load Tap Changer - Substation - Oil Immersed Contacts - OLTC,"['Control - Analog or Electronic type', 'Control - Microprocessor type', 'LTC Tank', 'Separator or Switch Board', 'Oil Filter, if present', 'Limit or Reversing Switch Contact', 'Internal wiring', 'Oil (mineral)', 'Operations Counter', 'Hardware or Fasteners', 'Electrical Connections', 'Pressure Relief Valve', 'Shorting Resistors or Reactors', 'Control - Selsen switch', 'Oil Level Alarms', 'Motor Operator', 'LTC Tank Breather', 'Pipes, Tubing, Fittings, Gaskets, and Valves', 'Position Indicator  or  Drag hand', 'Contacts', 'Control - Relay - Balance Beam type']","['Contacts', 'Cooling system', 'Insulation system', 'Protection system', 'Tap changer']","Sure! Here are some potential failure locations for that equipment:
+* Tap changer
+* Insulation system
+* Contacts
+* Cooling system
+* Protection system",0.2,0.047619047619047616,0.07692307692307693,0.02564102564102564,0.0,0.02564102564102564,0.02564102564102564,"['Load Tap Changer', 'OLTC', 'Substation']","['Load Tap Changer', 'Substation', 'OLTC']
+
+",0.0,0.0,0.0,0.0,0.0,0.0,0.0
+MTR_LVVert_4_V2,Motor - Low Voltage - 600V - Vertical Hollow Shaft - WP - Oil/Grease Lubed,"['Bearing Lubrication Delivery & Drain Tubes', 'Bearing Oil Fill, Breather Caps & Sight Glass Vents', 'Stator Laminations', 'Frame, Enclosure, and Mounting', 'Endbells or Bearing Housings', 'Bearings - Antifriction (Thrust)', 'Gaskets', 'Lubrication - Grease', 'Stator Windings', 'Bearings - Antifriction (Guide)', 'Air Baffle Plates', 'Detectors (alarm, temperature, vibration), if present', 'Pump Shaft Coupling', 'Rotor bars and shorting rings (cast type)', 'Stator Winding - Blocking, Bracing, and Wedges', 'Rotor Fans and Hardware', 'Shaft', 'Space Heaters', 'Bearing Grease/Oil Seals', 'Anti-rotation Device', 'Lubrication - Oil', 'Machine Fits', 'Motor Leads and Electrical Connections']","['Anti-rotation device', 'Bearing grease seals', 'Bearing lubrication delivery & drain tubes', 'Bearings - antifriction (guide)', 'Bearings - antifriction (thrust)', 'Detectors (alarm, temperature, vibration), if present', 'Endbells or bearing housings', 'Fan - external', 'Frame, enclosure, and mounting', 'Gaskets', 'Lubrication - grease', 'Machine fits', 'Motor leads and electrical connections', 'Pump shaft coupling', 'Rotor bars and shorting rings (cast type)', 'Rotor fans and hardware', 'Shaft']","* Anti-rotation device
+* Bearing grease seals
+* Bearing lubrication delivery & drain tubes
+* Bearings - antifriction (guide)
+* Bearings - antifriction (thrust)
+* Detectors (alarm, temperature, vibration), if present
+* Endbells or bearing housings
+* Fan - external
+* Frame, enclosure, and mounting
+* Gaskets
+* Lubrication - grease
+* Machine fits
+* Motor leads and electrical connections
+* Pump shaft coupling
+* Rotor fans and hardware
+* Rotor bars and shorting rings (cast type)
+* Shaft",0.9411764705882353,0.6956521739130435,0.7999999999999999,0.8000000000000002,0.7101449275362319,0.7428571428571429,0.7428571428571429,"['Anti- rotation Device', 'Bearing Grease Seals', 'Bearing Lubrication Delivery & Drain Tubes', 'Bearings - Antifriction ( Guide)', 'Bearings - Antifriction ( Thrust)', 'Detectors (alarm, temperature, vibration), if present', 'Endbells or Bearing Housings', 'Fan - External', 'Frame, Enclosure, and Mounting', 'Gaskets', 'Lubrication - Grease', 'Machine Fits', 'Motor Leads and Electrical Connections', 'Pump Shaft Coupling', 'Rotor Fans and Hardware', 'Rotor bars and shorting rings ( cast type)', 'Shaft', 'Space Heaters', 'Stator Laminations', 'Stator Winding - Blocking, Bracing, and Wedges', 'Stator Windings']","['Anti- rotation Device', 'Bearing Grease Seals', 'Bearing Lubrication Delivery & Drain Tubes', 'Bearings - Antifriction ( Guide)', 'Bearings - Antifriction ( Thrust)', 'Detectors (alarm, temperature, vibration), if present', 'Endbells or Bearing Housings', ' Fan - External', ' Frame, Enclosure, and Mounting', 'Gaskets', 'Lubrication - Grease', 'Machine Fits', 'Motor Leads and Electrical Connections', 'Pump Shaft Coupling', 'Rotor Fans and Hardware', 'Rotor bars and shorting rings ( cast type)', 'Shaft', 'Space Heaters', 'Stator Laminations', 'Stator Winding - Blocking, Bracing, and Wedges', 'Stator Windings']
+
+",0.9523809523809523,0.8695652173913043,0.909090909090909,0.8947368421052632,0.84,0.8947368421052632,0.8947368421052632
+MTR_MVHorz_1_V3,Motor  Medium Voltage <15Kv  Horizontal  Filters  Rolling Element  Grease Lubed,"['Rotor Laminations', 'Bearing Insulation (Internal)', 'Stator Laminations', 'Frame, Enclosure, and Mounting', 'Rotor Fans with interference fit design', 'Bearing Seals (all types)', 'Lubrication - Grease', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Gaskets - general', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Rotor Bars and Shorting Rings', 'Motor Lead Electrical Connections - crimped lugs', 'Rotor Spider - spider to shaft interference fit  design', 'Space Heater wiring', 'Motor Leads', 'Bearing Insulation (External)', 'Winding Electrical Connections - brazed', 'Bearings - Rolling Element', 'Rotor Cage - lamination support, i.e. spider', 'Bearing Seals (contact type)', 'Baffles', 'Rotor Fans and Hardware', 'Bearing and Winding Temperature and Vibration probes', 'Rotor Cage - solid lamination design (non-spider design)', 'Filters - Air coolers', 'Shaft', 'Space Heaters', 'Surge Capacitors', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Machine Fits']","['Bearing Grease Seals (e.g. slinger, wiping, INPRO)', 'Bearings - Rolling Element', 'Cage-Type Cage', 'Connection Boxes or Enclosures', 'Contactor(s) or Circuit Breaker(s)', 'Drive Train Components (e.g. pulleys, belts, gears)', 'Field Winding - Armature Vanes or Slot Liners', 'Filter Elements or Cartridges', 'Flange or Base Plate', 'Gearbox or Transmission', 'Grounding Electrodes or Bonding Layers', 'Housing or Cabinet', 'Insulation Materials or Systems', 'Journal Bearings - Outer Raceway', 'Main Bearings - Inner and Outer Races', 'Motor Leads and Electrical Connectors', 'Paint or Coatings on External Surfaces', 'Regulator or Variable Frequency Drive']","Sure! Here are some potential failure locations for that medium voltage horizontal motor:
+* Bearing Grease Seals (e.g. slinger, wiping, INPRO)
+* Bearings - Rolling Element
+* Cage-Type Cage
+* Connection Boxes or Enclosures
+* Contactor(s) or Circuit Breaker(s)
+* Drive Train Components (e.g. pulleys, belts, gears)
+* Field Winding - Armature Vanes or Slot Liners
+* Filter Elements or Cartridges
+* Flange or Base Plate
+* Gearbox or Transmission
+* Grounding Electrodes or Bonding Layers
+* Housing or Cabinet
+* Insulation Materials or Systems
+* Journal Bearings - Outer Raceway
+* Main Bearings - Inner and Outer Races
+* Motor Leads and Electrical Connectors
+* Paint or Coatings on External Surfaces
+* Regulator or Variable Frequency Drive",0.16666666666666666,0.1,0.125,0.17592592592592593,0.028037383177570093,0.09259259259259257,0.09259259259259257,"['Air Deflectors or Baffles', 'Air Filters', 'Bearing Grease Seals (e.g. slinger, wiping, INPRO)', 'Bearings - Rolling Element', 'Detectors, if present (alarm, winding and bearing temperature, or vibration)', 'Endbells or Bearing Housings', 'Frame', 'Gasket or O-Ring (e.g. connection or lead box covers)', 'Grease fittings, if present', 'Lubrication - Grease', 'Motor Leads and Electrical Connections', 'Motor or Winding Heaters, if present', 'Rotor - Pours or Cast Type (bars and shorting rings)', 'Shaft', 'Stator Core', 'Stator Winding - Surge Rings and Wedges (form wound motors, only)', 'Stator Winding Blocking, Bracing, or Wedges', 'Stator Windings or Coils']","['Air Deflectors or Baffles', 'Air Filters', 'Bearing Grease Seals (e.g. slinger, wiping, INPRO)', 'Bearings - Rolling Element', 'Detectors, if present (alarm, winding and bearing temperature, or vibration)', 'Endbells or Bearing Housings', ' Frame', 'Gasket or O-Ring (e.g. connection or lead box covers)', 'Grease fittings, if present', 'Lubrication - Grease', 'Motor Leads and Electrical Connections', 'Motor or Winding Heaters, if present', 'Rotor - Pours or Cast Type (bars and shorting rings)', 'Shaft', 'Stator Core', 'Stator Winding - Surge Rings and Wedges (form wound motors, only)', 'Stator Winding Blocking, Bracing, or Wedges', 'Stator Windings or Coils']
+
+",0.4444444444444444,0.26666666666666666,0.33333333333333337,0.4,0.10091743119266056,0.22727272727272727,0.22727272727272727
+MTR_MVHorz_2_V3,Motor - Medium Voltage <15Kv - Horizontal - Filters - Rolling Element - Oil Lubed,"['Rotor Laminations', 'Bearing Insulation (Internal)', 'Stator Laminations', 'Frame, Enclosure, and Mounting', 'Rotor Fans with interference fit design', 'Bearing Seals (all types)', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Piping & Connections', 'Gaskets - general', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Rotor Bars and Shorting Rings', 'Motor Lead Electrical Connections - crimped lugs', 'Rotor Spider - spider to shaft interference fit  design', 'Breather Caps & Sight Glass Vents', 'Space Heater wiring', 'Motor Leads', 'Bearing Insulation (External)', 'Bearing Metering Orifice', 'Winding Electrical Connections - brazed', 'Bearings - Rolling Element', 'Rotor Cage - lamination support, i.e. spider', 'Bearing Seals (contact type)', 'Baffles', 'Internal Cooling Coil - Bearing Cooling Water', 'Rotor Fans and Hardware', 'Bearing and Winding Temperature and Vibration probes', 'Rotor Cage - solid lamination design (non-spider design)', 'Filters - Air coolers', 'Shaft', 'Space Heaters', 'Surge Capacitors', 'Lubrication - Oil', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Machine Fits', 'Bearing Seals (non-contact type)']","['Baffles', 'Bearing Insulation (External)', 'Bearing Insulation (Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Rolling Element', 'Breather Caps & Sight Glass Vents', 'Filters - Air coolers', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Oil']","* Baffles
+* Bearing Insulation (External)
+* Bearing Insulation (Internal)
+* Bearing Metering Orifice
+* Bearing Seals (all types)
+* Bearing Seals (contact type)
+* Bearing Seals (non-contact type)
+* Bearing and Winding Temperature and Vibration probes
+* Bearings - Rolling Element
+* Breather Caps & Sight Glass Vents
+* Filters - Air coolers
+* Frame, Enclosure, and Mounting
+* Gaskets - general
+* Internal Cooling Coil - Bearing Cooling Water
+* Lubrication - Oil",1.0,0.42857142857142855,0.6,0.5392156862745098,0.5346534653465346,0.5392156862745098,0.5392156862745098,"['Baffles', 'Bearing Insulation ( Internal)', 'Bearing Insulation (external)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Rolling Element', 'Breather Caps & Sight Glass Vents', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Oil', 'Machine Fits', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-spider design)', 'Rotor Fans and Hardware', 'Rotor Fans with interference fit design', 'Rotor Laminations', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Rotor Spider - integral']","['Baffles', 'Bearing Insulation (external)', 'Bearing Insulation ( Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Rolling Element', 'Breather Caps & Sight Glass Vents', ' Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Oil', 'Machine Fits', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-spider design)', 'Rotor Fans and Hardware', 'Rotor Fans with interference fit design', 'Rotor Laminations', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Rotor Spider - integral",0.9615384615384616,0.7142857142857143,0.819672131147541,0.8359375,0.8267716535433071,0.8203124999999999,0.8203124999999999
+MTR_MVVert_8_V0,Motor - Medium Voltage <15Kv - Vertical - Solid Shaft - Tilt Pad - Ball Guide - Oil/Grease Lubed,"['Rotor Laminations', 'Bearing Insulation (Internal)', 'Stator Laminations', 'Frame, Enclosure, and Mounting', 'Rotor Fans with interference fit design', 'Bearing Seals (all types)', 'Rotor Spider - integral design where spider arms are welded to shaft', 'Piping & Connections', 'Gaskets - general', 'Stator Windings, includes Blocking, Bracing, Tying, Surge rings, Wedges', 'Rotor Bars and Shorting Rings', 'Motor Lead Electrical Connections - crimped lugs', 'Rotor Spider - spider to shaft interference fit  design', 'Breather Caps & Sight Glass Vents', 'Space Heater wiring', 'Motor Leads', 'Bearing Insulation (External)', 'Bearing Metering Orifice', 'Winding Electrical Connections - brazed', 'Bearings - Rolling Element', 'Rotor Cage - lamination support, i.e. spider', 'Bearing Seals (contact type)', 'Baffles', 'Internal Cooling Coil - Bearing Cooling Water', 'Rotor Fans and Hardware', 'Bearing and Winding Temperature and Vibration probes', 'Rotor Cage - solid lamination design (non-spider design)', 'Filters - Air coolers', 'Shaft', 'Space Heaters', 'Surge Capacitors', 'Lubrication - Oil', 'Rotor Retaining Rings (predominantly on 2-pole motors)', 'Machine Fits', 'Bearings - Self equalizing tilting pad type', 'Bearing Seals (non-contact type)']","['Baffles', 'Bearing Insulation (External)', 'Bearing Insulation (Internal)', 'Bearing Metering Orifice', 'Bearing Seals (all types)', 'Bearing Seals (contact type)', 'Bearing Seals (non-contact type)', 'Bearing and Winding Temperature and Vibration probes', 'Bearings - Rolling Element', 'Bearings - Self equalizing tilting pad type', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Filters - Air coolers', 'Frame, Enclosure, and Mounting', 'Gaskets - general', 'Internal Cooling Coil - Bearing Cooling Water', 'Lubrication - Grease', 'Lubrication - Oil', 'Machine Fits', 'Motor Lead Electrical Connections - crimped lugs', 'Motor Leads', 'Piping & Connections', 'Rotor Bars and Shorting Rings', 'Rotor Cage - lamination support, i.e. spider', 'Rotor Cage - solid lamination design (non-']","Sure! Here are some potential failure locations for that equipment:
+* Baffles
+* Bearing Insulation (External)
+* Bearing Insulation (Internal)
+* Bearing Metering Orifice
+* Bearing Seals (all types)
+* Bearing Seals (contact type)
+* Bearing Seals (non-contact type)
+* Bearing and Winding Temperature and Vibration probes
+* Bearings - Rolling Element
+* Bearings - Self equalizing tilting pad type
+* Bearings - Sleeve
+* Breather Caps & Sight Glass Vents
+* Filters - Air coolers
+* Frame, Enclosure, and Mounting
+* Gaskets - general
+* Internal Cooling Coil - Bearing Cooling Water
+* Lubrication - Grease
+* Lubrication - Oil
+* Machine Fits
+* Motor Lead Electrical Connections - crimped lugs
+* Motor Leads
+* Piping & Connections
+* Rotor Bars and Shorting Rings
+* Rotor Cage - lamination support, i.e. spider
+* Rotor Cage - solid lamination design (non-",0.92,0.6388888888888888,0.7540983606557377,0.728,0.717741935483871,0.728,0.728,"['Bearings', 'Control System', 'Cooling System', 'Electric Circuit', 'Insulation System']","['Bearings', 'Electric Circuit', 'Insulation System', 'Cooling System', 'Control System']
+
+",0.0,0.0,0.0,0.03658536585365854,0.0,0.024390243902439025,0.024390243902439025
+PMP_HORZ_2A_V0,Pump - Horizontal - Multistage - Axially Split Case - Mechanical Seal - Radial Bearings-Oil Lubed,"['Connections & Piping', 'Bearings - Antifriction (radial and thrust)', 'Automatic Oilers', 'Pump Base Plate and Foundation', 'Lube Oil Metering Orifice', 'Pump Casing', 'Lube Oil', 'Impellers', 'Breather Caps & Sight Glass Vents', ""Bearing Temperature RTD's"", 'Bearing Seals - Labyrinth', 'Seal - Mechanical', 'Shaft', 'Lube Oil System', 'Gaskets & O-Rings', 'Wear Rings and surfaces', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Discharge and Suction Flanges', 'Balancing Device', 'Diffusers, Volutes & Channel Rings']","['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Radial', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Wear Rings and surfaces']","Sure! Here are some potential failure locations for that equipment:
+* Automatic Oilers
+* Balancing Device
+* Bearing Oil Slinger Ring
+* Bearing Seals - Labyrinth
+* Bearing Temperature RTD's
+* Bearings - Radial
+* Breather Caps & Sight Glass Vents
+* Connections & Piping
+* Diffusers, Volutes & Channel Rings
+* Discharge and Suction Flanges
+* Gaskets & O-Rings
+* Impellers
+* Lube Oil
+* Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler
+* Lube Oil Metering Orifice
+* Lube Oil System
+* Pump Base Plate and Foundation
+* Pump Casing
+* Seal - Mechanical
+* Shaft
+* Wear Rings and surfaces",0.8571428571428571,1.0,0.923076923076923,0.9253731343283583,0.8333333333333334,0.8507462686567164,0.8507462686567164,"['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth, ""Bearing Temperature RTDs"", Bearings - Antifriction (radial and thrust)', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Wear Rings and surfaces']","['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Antifriction (radial and thrust)', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', ' Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Wear Rings and surfaces']
+
+",0.9,1.0,0.9473684210526316,0.9565217391304348,0.8823529411764706,0.8695652173913043,0.8695652173913043
+PMP_HORZ_2G_V0,Pump - Horizontal - Multistage - Axially Split Case - Packing Seal - Radial Bearings-Oil Lubed,"['Connections & Piping', 'Bearings - Antifriction (radial and thrust)', 'Seal - Packing', 'Automatic Oilers', 'Pump Base Plate and Foundation', 'Lube Oil Metering Orifice', 'Pump Casing', 'Lube Oil', 'Impellers', 'Breather Caps & Sight Glass Vents', ""Bearing Temperature RTD's"", 'Bearing Seals - Labyrinth', 'Shaft', 'Lube Oil System', 'Gaskets & O-Rings', 'Wear Rings and surfaces', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Stuffing Box Flange to Horizontal Joint', 'Discharge and Suction Flanges', 'Balancing Device', 'Diffusers, Volutes & Channel Rings']","['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Radial', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System']","Sure! Here are some potential failure locations for that equipment:
+* Automatic Oilers
+* Balancing Device
+* Bearing Oil Slinger Ring
+* Bearing Seals - Labyrinth
+* Bearing Temperature RTD's
+* Bearings - Radial
+* Breather Caps & Sight Glass Vents
+* Connections & Piping
+* Diffusers, Volutes & Channel Rings
+* Discharge and Suction Flanges
+* Gaskets & O-Rings
+* Impellers
+* Lube Oil
+* Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler
+* Lube Oil Metering Orifice
+* Lube Oil System",0.8125,0.6842105263157895,0.742857142857143,0.761904761904762,0.6612903225806451,0.6825396825396824,0.6825396825396824,"['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth, ""Bearing Temperature RTDs"", Bearings - Antifriction (radial and thrust)', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Packing', 'Shaft', 'Stuffing Box Flange toHorizontal Joint', 'Wear Rings and surfaces']","['Automatic Oilers', 'Balancing Device', 'Bearing Oil Slinger Ring', 'Bearing Seals - Labyrinth', ""Bearing Temperature RTD's"", 'Bearings - Antifriction (radial and thrust)', 'Bearings - Sleeve', 'Breather Caps & Sight Glass Vents', ' Connections & Piping', 'Diffusers, Volutes & Channel Rings', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impellers', 'Lube Oil', 'Lube Oil Cooling Heat Exchanger or Internal Bearing Cooler', 'Lube Oil Metering Orifice', 'Lube Oil System', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Packing', 'Shaft', 'Stuffing Box Flange toHorizontal Joint', 'Wear Rings and surfaces']
+
+",0.9047619047619048,1.0,0.9500000000000001,0.9395973154362416,0.8571428571428571,0.8590604026845637,0.8590604026845637
+PMP_HORZ_4D_V0,Pump - Horizontal - Single Stage - Single Suction - Volute Casing Type - Packing Seal - Rolling Element Bearings - Grease Lubed,"['Connections & Piping', 'Gaskets & O-Rings', 'Lubrication - Grease', 'Bearing Vibration Probes, if present', 'Seal - Packing', 'Bearing Seals - Lip', ""Bearing Temperature RTD's, if present"", 'Discharge and Suction Flanges', 'Impeller', 'Wear Ring, if closed impeller', 'Pump Base Plate and Foundation', 'Shaft', 'Stuffing or Seal Box', 'Bearings - Rolling Element (radial and thrust)', 'Pump Casing', 'Breather Caps & Sight Glass Vents']","['Automatic Oilers', 'Bearing Seals - Labyrinth and/or Lip', ""Bearing Temperature RTD's, if present"", 'Bearing Vibration Probes, if present', 'Bearings - Rolling Element (radial and thrust)', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Integral Bearing Cooler, if present']","Sure! Here are some potential failure locations for that equipment:
+* Automatic Oilers
+* Bearing Seals - Labyrinth and/or Lip
+* Bearing Temperature RTD's, if present
+* Bearing Vibration Probes, if present
+* Bearings - Rolling Element (radial and thrust)
+* Breather Caps & Sight Glass Vents
+* Connections & Piping
+* Discharge and Suction Flanges
+* Gaskets & O-Rings
+* Impeller
+* Integral Bearing Cooler, if present",0.5454545454545454,0.42857142857142855,0.4799999999999999,0.7200000000000001,0.5510204081632653,0.6,0.6,"['Automatic Oilers', 'Bearing Seals - Labyrinth and/or Lip, ""Bearing Temperature RTDs, if present"", Bearing Vibration Probes, if present', 'Bearings - Rolling Element (radial and thrust)', 'Breather Caps & Sight Glass Vents', 'Connections & Piping', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Integral Bearing Cooler, if present', 'Lube Oil', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller']","['Automatic Oilers', 'Bearing Seals - Labyrinth and/or Lip', ""Bearing Temperature RTD's, if present"", 'Bearing Vibration Probes, if present', 'Bearings - Rolling Element (radial and thrust)', 'Breather Caps & Sight Glass Vents', ' Connections & Piping', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', ' Integral Bearing Cooler, if present', 'Lube Oil', 'Pump Base Plate and Foundation', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller']
+
+",0.75,0.8571428571428571,0.7999999999999999,0.8666666666666666,0.7627118644067796,0.8,0.8
+PMP_HORZ_6B_V0,Pump - Horizontal - Single Stage - Single Suction - Close Couple End Suction Type - Packing Seal,"['Connections & Piping', 'Gaskets & O-Rings', 'Seal - Packing', 'Discharge and Suction Flanges', 'Impeller', 'Wear Ring, if closed impeller', 'Coupler - Motor-Pump, if present', 'Stuffing or Seal Box', 'Pump Casing', 'Shaft']","['Connections & Piping', 'Coupler - Motor-Pump', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Pump Casing', 'Seal - Packing', 'Shaft']","Sure! Here are some potential failure locations for that equipment:
+* Connections & Piping
+* Coupler - Motor-Pump
+* Discharge and Suction Flanges
+* Gaskets & O-Rings
+* Impeller
+* Pump Casing
+* Seal - Packing
+* Shaft",1.0,0.8,0.888888888888889,0.7659574468085107,0.7111111111111111,0.7659574468085107,0.7659574468085107,"['Connections & Piping', 'Coupler - Motor-Pump, if present', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller']","[' Connections & Piping', 'Coupler - Motor-Pump, if present', 'Discharge and Suction Flanges', 'Gaskets & O-Rings', 'Impeller', 'Pump Casing', 'Seal - Mechanical', 'Shaft', 'Stuffing or Seal Box', 'Wear Ring, if closed impeller']
+
+",0.9,0.9,0.9,0.9655172413793104,0.9285714285714286,0.9655172413793104,0.9655172413793104
+PMP_VERT_1,Pump - Vertical - Close Coupled,"['Casing and Cover', 'Bearings - Antifriction', 'Impeller', 'Mechanical Seal', 'Gaskets, O-Rings', 'Motor Support Stand', 'Packing', 'Wear rings', 'Pump Base and Mounting', 'Shaft']","['Diffuser', 'Impeller', 'Mechanical seal', 'Motor', 'Volute']","1. Mechanical seal
+2. Motor
+3. Impeller
+4. Diffuser
+5. Volute",0.4,0.2,0.26666666666666666,0.28571428571428575,0.23076923076923073,0.28571428571428575,0.28571428571428575,"['Base Plate', 'Control System', 'Diffuser', 'Mechanical Seal', 'Motor', 'Shaft', 'Suction And Discharge Ports', 'Volute', 'Wear Rings', 'Wear Rings, Base Plate']","['Base Plate', 'Control System', 'Motor', 'Diffuser', 'Volute', 'Mechanical Seal', 'Shaft', 'Suction And Discharge Ports', 'Wear Rings'], ['Base Plate', 'Control System', 'Motor', 'Diffuser', 'Volute', 'Mechanical Seal', 'Shaft', 'Suction And Discharge Ports', 'Wear Rings']
+
+",0.3,0.3,0.3,0.4285714285714286,0.15,0.28571428571428564,0.28571428571428564
+PMP_VERT_4_V2,Pump - Vertical - Deep Draft - Radial Flow - Product Lubed,"['Suction Strainer', 'Cathodic Protection, if present', 'Column Piping', 'Impeller', 'Bearing Retainers & Spiders', 'Mechanical Seal', 'Bowls', 'Gaskets, O-Rings', 'Bearings - Sleeve', 'Line Shaft Coupling', 'Packing', 'Shaft', 'Discharge Head and Motor Mount', 'Wear rings', 'Pump Base and Mounting', 'Pump / Motor Coupling']","['Associated seals or bearings', 'Bearing housing', 'Impeller', 'Volute casing']","* Impeller
+* Volute casing
+* Bearing housing
+* Associated seals or bearings",0.25,0.0625,0.1,0.125,0.0,0.08333333333333333,0.08333333333333333,"['Bearing', 'Bearing Housing', 'Casing', 'Lip Seal', 'Lubricant Cooler', 'Lubricant Filter', 'Lubricant Pump', 'Lubricant Reservoir', 'Product Lubrication System', 'Rotating Shaft', 'Seal', 'Shaft Seal', 'Volute casing']","['Volute casing', 'Bearing Housing', 'Seal', 'Lip Seal', 'Bearing', 'Rotating Shaft', 'Casing', 'Shaft Seal', 'Product Lubrication System', 'Lubricant Reservoir', 'Lubricant Pump', 'Lubricant Filter', 'Lubricant Cooler']
+
+",0.0,0.0,0.0,0.15873015873015872,0.0,0.12698412698412698,0.12698412698412698
+Pole_Wood_7,Poles_Wood_Distribution_WRCedar_CCA,"['Pole mid-section', 'Pole top (top 12 to 18 inches)', 'Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)']","['Control and monitoring systems', 'Drive motors and gears', 'Hydraulic cylinders and pumps', 'Structural components']","Sure! Here are some potential failure locations for that equipment class:
+* Hydraulic cylinders and pumps
+* Drive motors and gears
+* Control and monitoring systems
+* Structural components",0.0,0.0,0.0,0.0,0.0,0.0,0.0,"['Control system', 'Drive motor', 'Hydraulic cylinder', 'Structural component.']","['Drive motor', 'Hydraulic cylinder', 'Control system', 'Structural component'].
+
+",0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Pole_Wood_15,Poles_Wood_Transmission_SoPine_Penta,"['Pole mid-section', 'Pole top (top 12 to 18 inches)', 'Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)']","['Connections between conductors and transformers', 'Control systems and sensors', 'Grounding wires/connections at the base of the pole', 'Insulator strings on the pole top', 'Joints between crossarms and insulator strings']","Sure! Here are some potential failure locations for that equipment:
+* Grounding wires/connections at the base of the pole
+* Insulator strings on the pole top
+* Joints between crossarms and insulator strings
+* Connections between conductors and transformers
+* Control systems and sensors",0.0,0.0,0.0,0.11538461538461538,0.04,0.11538461538461538,0.11538461538461538,"['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)']","['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)']
+
+",1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Pole_Wood_Attachments_1,Poles_Wood_Transmission and Attachments_DFir_Creosote,"['Pole Ground line (+3 inches downward)', 'Pole Ground line (+7 feet to +3 inches)', 'Insulators', 'Hardware', 'Pole mid-section', 'Soil erosion', 'Pole top (top 12 to 18 inches)', 'Crossarms and Braces', 'Trash Rack', 'Conductor (line)', 'Pole Jacking']","['Crossarms (for Poles\\_Wood\\_Transmission equipment)', 'Drill flange/collar connection points (for Attachments\\_DFir\\_Creosote equipment)', 'Insulators (for Poles\\_Wood\\_Transmission equipment)', 'Other related components (for both Poles\\_Wood\\_Transmission and Attachments\\_DFir\\_Creosote equipment)', 'Pole wood (for Poles\\_Wood\\_Transmission equipment)']","Sure! Here are some potential failure locations for those equipments:
+
+* Pole wood (for Poles\_Wood\_Transmission equipment)
+* Crossarms (for Poles\_Wood\_Transmission equipment)
+* Insulators (for Poles\_Wood\_Transmission equipment)
+* Drill flange/collar connection points (for Attachments\_DFir\_Creosote equipment)
+* Other related components (for both Poles\_Wood\_Transmission and Attachments\_DFir\_Creosote equipment)",0.2,0.09090909090909091,0.12500000000000003,0.10126582278481013,0.0,0.0759493670886076,0.0759493670886076,"['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Insulator', 'Other.', 'Pole mid-section', 'Pole top (top 12 to 18 inches), Crossarm']","['Ground line (+3 inches downward)', 'Ground line (+7 feet to +3 inches)', 'Pole mid-section', 'Pole top (top 12 to 18 inches)'], ['Crossarm', 'Insulator', 'Other'].
+
+",0.8333333333333334,0.45454545454545453,0.5882352941176471,0.7096774193548386,0.6333333333333333,0.7096774193548386,0.7096774193548386
+Power_Festoon_V0,Power - Festoon Cable,"['Shock Cord', 'Festoon Power Cable (Electrical)', 'Heat Shields (Flexible Fabric - Snaps Around Cable)', 'Structural Elements', 'Tow Cable (Wire Rope) Anchor Clamps and Pin', 'Tow Trolleys', 'Bolted Fasteners', 'Festoon Power Cable Guard', 'Structural Track Beam Hinge points, if present', 'Festoon Power Cable Separators or Organizers', 'Pins (Tow Cable and Shock Cord Attachment)', 'Structural Welds', 'Bushings', 'Track Beam', 'Bumper (Rubber or Urethane)', 'Tow Cable (Wire Rope)']","['Insulation Failure', 'Support Failure', 'Wear and Tear', 'Wire Break']","1. Insulation Failure
+2. Wire Break
+3. Support Failure
+4. Wear and Tear",0.0,0.0,0.0,0.0547945205479452,0.0,0.0547945205479452,0.0547945205479452,"['Insulation Subsystem', 'Support Subsystem', 'Wiring Subsystem']","['Insulation Subsystem', 'Support Subsystem', 'Wiring Subsystem']
+
+",0.0,0.0,0.0,0.0,0.0,0.0,0.0
+PowerSystem_Solar_Array_PV_1_V0,Solar Array - Photovoltaic - Large Fixed,"['Earth Connections', 'Non-Load Breakers', 'Load Breakers', 'Solar Panel (Module)', 'Solar Controller Cabinet', 'Power Cables and Connections', 'Lightning or Surge Arrestors', 'Solar Controller  (including dry contacts, circuit boards, alarms, etc)', 'Solar Panel Supporting Structure (the array frame)', 'Solar Controller (including dry contacts, circuit boards, alarms, etc)']","['Electrical wiring: The wiring that collects and transmits the generated electricity to the power grid or an inverter, which may fail due to insulation damage, short circuits, or incorrect installation.', 'Inverter: The device that converts the direct current (DC) generated by the solar panels into alternating current (AC) suitable for most residential and commercial applications, which may fail due to internal component , overheating, or power surges.', 'Mounting structure: The supporting frame or rack that holds the solar panels in place, which may fail due to material fatigue, corrosion, or improper installation.', 'Solar panels: Individual photovoltaic cells or modules that may fail due to manufacturing defects, damage, or wear and tear.']","Sure! Here are some potential failure locations for that equipment:
+* Solar panels: Individual photovoltaic cells or modules that may fail due to manufacturing defects, damage, or wear and tear.
+* Mounting structure: The supporting frame or rack that holds the solar panels in place, which may fail due to material fatigue, corrosion, or improper installation.
+* Electrical wiring: The wiring that collects and transmits the generated electricity to the power grid or an inverter, which may fail due to insulation damage, short circuits, or incorrect installation.
+* Inverter: The device that converts the direct current (DC) generated by the solar panels into alternating current (AC) suitable for most residential and commercial applications, which may fail due to internal component failure, overheating, or power surges.",0.25,0.1,0.14285714285714288,0.12820512820512822,0.012987012987012988,0.06410256410256411,0.06410256410256411,"['Electrical wiring', 'Inverter', 'Monitoring system', 'Mounting structure']","['Mounting structure', 'Electrical wiring', 'Inverter', 'Monitoring system']
+
+",0.0,0.0,0.0,0.03773584905660378,0.0,0.03773584905660378,0.03773584905660378
+RC_Dist_3,Distribution Recloser - SF6 Filled - Vacuum Bottle,"['Tank', 'Thermostat', 'Conductor - primary', 'Cabinet heater', 'Main current contacts', 'Wiring - control', 'Operating Rods', 'Linkage', 'Fuse - control', 'Close and Trip Solenoids', 'Animal Guards, if present', 'Current Transformer', 'Bushings - Solid', 'Battery', 'Controller', 'Aux/AB Switch', 'Close and Trip Coils', 'Battery Charger', 'SF6 gas']","['Animal Guards', 'Auxiliary switch(es)', 'Battery bank', 'Battery charger', 'Bushing interrupter unit', 'Cable terminations', 'Closing springs', 'Conductors (primary and secondary)', 'Contactor coils', 'Cupro-beryllium oxide insulator', 'Drive mechanism', 'Enclosure heating elements', 'Field terminal assembly', 'Flange gasket', 'Gas pressure regulator', 'High-voltage bushings', 'Hydraulic cylinder(s)', 'Interrupting units', 'Load tap changer', 'Main contact carriers', 'Main insulating washers', 'Motorized valve', 'Outdoor enclosure', 'Pressure relief valves', 'Regulator valve', 'Sensor(s)', 'Spring retainers', 'Strain gauges', 'Vacuum interrupters', 'Water separator']","Sure! Here are some potential failure locations for that equipment:
+* Animal Guards
+* Auxiliary switch(es)
+* Battery bank
+* Battery charger
+* Bushing interrupter unit
+* Cable terminations
+* Closing springs
+* Contactor coils
+* Conductors (primary and secondary)
+* Cupro-beryllium oxide insulator
+* Drive mechanism
+* Enclosure heating elements
+* Field terminal assembly
+* Flange gasket
+* Gas pressure regulator
+* High-voltage bushings
+* Hydraulic cylinder(s)
+* Interrupting units
+* Load tap changer
+* Main contact carriers
+* Main insulating washers
+* Motorized valve
+* Outdoor enclosure
+* Pressure relief valves
+* Regulator valve
+* Sensor(s)
+* Spring retainers
+* Strain gauges
+* Vacuum interrupters
+* Water separator",0.1,0.15789473684210525,0.12244897959183673,0.20689655172413796,0.03508771929824561,0.15517241379310345,0.15517241379310345,"['Animal Guards', 'Auxiliary AB switch', 'batteries', 'battery chargers', 'bushes - solid', 'cabinet heaters', 'capacitors', 'close and trip coils', 'close and trip solenoids', 'conductor - primary', 'controllers', 'current transformers', 'fuses - control', 'linkages', 'main current contacts', 'operating rods', 'thermostats', 'trip', 'wiring - control']","['Animal Guards', 'Auxiliary AB switch', 'batteries', 'battery chargers', 'bushes - solid', 'cabinet heaters', 'capacitors', 'trip', 'close and trip coils', 'close and trip solenoids', 'conductor - primary', 'controllers', 'current transformers', 'fuses - control', 'linkages', 'main current contacts', 'operating rods', 'thermostats', 'wiring - control']
+
+",0.8421052631578947,0.8421052631578947,0.8421052631578947,0.6582278481012659,0.44155844155844154,0.6582278481012659,0.6582278481012659
+RLY_CTL_EM3_DCD_V0,Relay - Control - Electromechanical - DC coil - De-Energized,"['Contacts', 'Coils - DC, normally de-energized', 'Mechanical Assembly - latch mechanism', 'Relay socket', 'Wiring and terminations', 'Mechanical Assembly - rotary or solenoid armatures', 'Mechanical Assembly']","['Armature', 'Base', 'Coil - DC', 'Contacts', 'Switch']","Sure! Here are the potential failure locations for the given equipment description:
+
+* Coil - DC
+* Armature
+* Switch
+* Contacts
+* Base",0.4,0.2857142857142857,0.3333333333333333,0.13793103448275862,0.0,0.13793103448275862,0.13793103448275862,"['Armature', 'Base', 'Contactors', 'Switch']","['Armature', 'Switch', 'Contactors', 'Base']
+
+",0.0,0.0,0.0,0.0,0.0,0.0,0.0
+RLY_MTR_PROT_1b_V0,Relay - Motor Protection and Management - Microprocessor - Un-Monitored,"['Cabinet or Enclosure - Cabinet Filter, if present', 'Cabinet or Enclosure - Door Seal or Gasket', 'Cabinet or General Wiring, Cables and Connections', 'Relay - Programmable Controller and  Monitoring Interface', 'Cabinet or Enclosure -Cabinet Cooling Fan, if present', 'Cabinet or Enclosure - Door Latching Device', 'Cabinet or Enclosure']","['Cabinet or Enclosure', 'Cabinet or Enclosure - Cabinet Filter, if present', 'Cabinet or Enclosure - Door Latching Device', 'Cabinet or Enclosure - Door Seal or Gasket', 'Cabinet or Enclosure -Cabinet Cooling Fan, if present']","Sure! Here are some potential failure locations for that equipment:
+* Cabinet or Enclosure
+* Cabinet or Enclosure - Cabinet Filter, if present
+* Cabinet or Enclosure - Door Latching Device
+* Cabinet or Enclosure - Door Seal or Gasket
+* Cabinet or Enclosure -Cabinet Cooling Fan, if present",1.0,0.7142857142857143,0.8333333333333333,0.8266666666666667,0.8219178082191781,0.8266666666666667,0.8266666666666667,"['Cabinet or Enclosure', 'Cabinet or Enclosure - Cabinet Filter, if present', 'Cabinet or Enclosure - Door Latching Device', 'Cabinet or Enclosure - Door Seal or Gasket', 'Cabinet or Enclosure -Cabinet Cooling Fan, if present', 'Cabinet or General Wiring, Cables and Connections', 'Relay - Programmable Controller and  Monitoring Interface.']","['Cabinet or Enclosure', 'Cabinet or Enclosure - Cabinet Filter, if present', 'Cabinet or Enclosure - Door Latching Device', 'Cabinet or Enclosure - Door Seal or Gasket', 'Cabinet or Enclosure -Cabinet Cooling Fan, if present', 'Cabinet or General Wiring, Cables and Connections', 'Relay - Programmable Controller and  Monitoring Interface'].
+
+",1.0,1.0,1.0,1.0,1.0,1.0,1.0
+RLY_Overspeed_Protection_Elect_V0,Relay - Overspeed Protection - Electronic_V0,"['Magnetic Speed Pickup', 'Relays', 'Module (Power Supply, Speed Control, Supervisory)', 'Terminals', 'Gasket (Mounting and Door)', 'Push Buttons', 'Digital Displays', 'Case with Door']","['Environmental factors (temperature, humidity, contaminants, etc.) affecting the overall functionality of the device.', 'Microcontroller or programmable logic controller (PLC) communication interfaces (connection issues, compatibility problems, etc.)', 'Overload detection circuits (faulty components, incorrect settings, etc.)', 'Power supply unit (PSU) or battery backup system (inadequate power, voltage fluctuations, etc.)', 'Relay contacts ( to make/break contact)', 'Sensor(s) or actuator(s) (malfunctioning, damaged, or incorrectly calibrated)', 'Wires, terminals, or connectors (loose connection, corrosion, etc.)']","Sure! Based on the given text, here are the potential failure locations for the Relay - Overspeed Protection - Electronic\_V0:
+1. Relay contacts (failure to make/break contact)
+2. Wires, terminals, or connectors (loose connection, corrosion, etc.)
+3. Sensor(s) or actuator(s) (malfunctioning, damaged, or incorrectly calibrated)
+4. Microcontroller or programmable logic controller (PLC) communication interfaces (connection issues, compatibility problems, etc.)
+5. Power supply unit (PSU) or battery backup system (inadequate power, voltage fluctuations, etc.)
+6. Overload detection circuits (faulty components, incorrect settings, etc.)
+7. Environmental factors (temperature, humidity, contaminants, etc.) affecting the overall functionality of the device.",0.0,0.0,0.0,0.06451612903225806,0.02197802197802198,0.06451612903225806,0.06451612903225806,"['Relay', 'contacts', 'wiring', 'wiring, relay']","['Relay', ' contacts', 'wiring'], ['relay', 'contacts', 'wiring']
+
+",0.25,0.125,0.16666666666666666,0.0,0.0,0.0,0.0
+SCR_TRAV_1,Water Intake Screen - Traveling Type,"['Splash housings - painted steel, if present', 'Screen wash - Sensing lines', 'Trash rack', 'TWS - Footshaft bearing (Bronze, i.e. oil impregnated brass bushing)', 'TWS - Footshaft', 'TWS - Baskets (painted carbon steel frame)', 'Pneumatic instruments', 'Splash housings - fiberglass, if present', 'TWS - Carrier chain/linkages', 'DP switch', 'TWS - Drive Coupling (rubber insert type)', 'TWS - Single Speed Fluid Drive', 'TWS - Head shaft bearing, bronze bushing (i.e. oil impregnated brass)', 'TWS - Guide rails and support steel', 'TWS - Motor', 'Screen wash - Lines', 'Splash housings - stainless steel, if present', 'Screen wash - Nozzles', 'Screen wash - Strainer - Seal or gasket', 'TWS - Drive Coupling (gear type)', 'TWS - Headshaft Carrier Chain Sprockets (wear rim style)', 'Screen wash - Strainer', 'Screen wash - Strainer - Housing', 'TWS - Headshaft Carrier Chain Sprockets', 'TWS - Drive Coupling (flex spring type)', 'TWS - Basket bolting', 'TWS - Drive shear pin', 'TWS - Footshaft bearings,  life extension style (Stellite), if present', 'TWS - Head shaft', 'TWS - Baskets (painted carbon steel frame, stainless mesh)', 'TWS - Gear reducer', 'TWS - Headshaft Drive Sprocket', 'Control Cabinet - Timer, bi-stable switch, and other electronic devices', 'TWS - Footshaft Carrier Chain Sprockets', 'Screen wash - Strainer - Self Cleaning', 'TWS - Head shaft bearing, life extension style (e.g. Thordon elastomeric thermosetting resin type, ceramics, sealed roller ), if present', 'TWS - Drive chain or belt']","['Water Intake Screen Cleaning System', 'Water Intake Screen Deck', 'Water Intake Screen Drive Motor', 'Water Intake Screen Frame', 'Water Intake Screen Traveling Mechanism']","Sure! Here are some potential failure locations for that equipment:
+* Water Intake Screen Frame
+* Water Intake Screen Deck
+* Water Intake Screen Traveling Mechanism
+* Water Intake Screen Drive Motor
+* Water Intake Screen Cleaning System",0.0,0.0,0.0,0.08071748878923767,0.0,0.04484304932735426,0.04484304932735426,"['Water Intake Screen Cleaning System', 'Water Intake Screen Deck', 'Water Intake Screen Drive Motor', 'Water Intake Screen Frame', 'Water Intake Screen Traveling Mechanism']","['Water Intake Screen Frame', 'Water Intake Screen Deck', 'Water Intake Screen Traveling Mechanism', 'Water Intake Screen Drive Motor', 'Water Intake Screen Cleaning System']
+
+",0.0,0.0,0.0,0.08071748878923767,0.0,0.04484304932735426,0.04484304932735426
+SWGR_CBPanel_1,Switchgear - Circuit Breaker Panel,"['Wiring, cables, and connectors', 'Surge protectors', 'Circuit breakers', 'Enclosure', 'Terminal trips', 'Main circuit breaker']","['Busbar system', 'Circuit breakers', 'Current transformers (CTs)', 'Protective relays', 'Voltage transformers (VTs)']","Sure! Here are the potential failure locations for the Switchgear - Circuit Breaker Panel based on my knowledge and expertise:
+
+* Circuit breakers
+* Protective relays
+* Current transformers (CTs)
+* Voltage transformers (VTs)
+* Busbar system",0.2,0.16666666666666666,0.1818181818181818,0.15384615384615383,0.08333333333333334,0.15384615384615383,0.15384615384615383,"['Busbar system', 'Circuit breakers', 'Current transformers (CTs)', 'Protective relays', 'Voltage transformers (VTs)']","['Circuit breakers', ' Protective relays', 'Current transformers (CTs)', 'Voltage transformers (VTs)', 'Busbar system']
+
+",0.2,0.16666666666666666,0.1818181818181818,0.15384615384615383,0.08333333333333334,0.15384615384615383,0.15384615384615383
+SWGR_LV_1_V4,Switchgear - Low Voltage,"['Electrical Devices (micro switches, aux. switches, secondary disconnects, fuse blocks, aux. relays, charging motor, heaters) Note: Some devices will be mounted on the breaker cart and some are mounted to the cubicle panel.', 'Racking Mechanism and Shutter Assembly (Cubicle)', 'Bus Stabs (Breaker to Bus)', 'Operating Mechanism', 'Racking Mechanism (Breaker)', 'Current or Potential Transformer (CT/PT)', 'Bus Stabs (Bus to Breaker)', 'Main Current, Arc Quench, and Insulation', 'Lubricant (Breaker moving parts)', 'Enclosure (Cubicle & Breaker)']","['Circuit breaker', 'Fuse', 'Load break switch', 'Monitoring and control unit', 'Protective relay', 'Relay']","Sure! Here are some potential failure locations for that equipment:
+* Circuit breaker
+* Load break switch
+* Fuse
+* Relay
+* Protective relay
+* Monitoring and control unit",0.0,0.0,0.0,0.06976744186046512,0.0,0.06976744186046512,0.06976744186046512,"['Circuit breaker', 'Fuse', 'Load break switch', 'Monitoring and control unit', 'Protective relay', 'Relay']","['Circuit breaker', 'Load break switch', 'Fuse', 'Relay', 'Protective relay', 'Monitoring and control unit']
+
+",0.0,0.0,0.0,0.06976744186046512,0.0,0.06976744186046512,0.06976744186046512
+SWGR_MV_3_V0,Switchgear - Medium Voltage - 1kV to 15kV - Vacuum Bottle Type,"['Operating Mechanism (e.g. mechanical parts associated with opening, closing and tripping levels, arms, pivots, linkages, latches, pawls, springs, etc.)', 'Control Circuit and Auxiliary Electrical Devices - Starter and Cubicle (microswitches, auxiliary switches, secondary disconnects, local control handle, control fuses and fuse blocks, auxiliary relays, wiring, cabinet heaters, indicating lights)', 'Bus - Stabs (bus, starter or breaker)', 'Enclosure - including doors, panels, and partitions', 'Fuses (main)', 'Ground wiring and connections', 'Hardware and fasteners', 'Vacuum Bottle or Interrupter', 'Control Circuit  - Rectifier Module', 'Lubricant (all moving parts in starter or breaker, racking mechanism, shutter assembly)', 'Racking Mechanism and Shutter Assembly', 'Bus - Supports, Isolation Bushings and Standoffs', 'Close and Trip Solenoid', 'Control Circuit - Transformer', 'Bus - Bus Bar, Cable Connections, Supports, Isolation Bushings and Standoffs']","['Busbars', 'Circuit Breakers', 'Load Break Switches', 'Vacuum Bottles']","Sure! Here are some potential failure locations for that equipment:
+* Vacuum Bottles
+* Circuit Breakers
+* Load Break Switches
+* Busbars",0.0,0.0,0.0,0.04761904761904762,0.0,0.04761904761904762,0.04761904761904762,"['Breaker Stabs', 'Close and Trip Solenoid', 'Control Circuit  - Rectifier Module', 'Control Circuit - Transformer', 'Control Circuit and Auxiliary Electrical Devices (microswitches,auxiliary switches,secondary disconnects,local control handle,control fusesandfuse blocks,auxiliary relays,wiring,cabinet heaters,indicating lights)', 'Fuses(main)', 'Ground wiring and connections', 'Hardware and fasteners', 'Lubricant', 'Operating Mechanism (e.g.mechanical parts associtaedwith opening,closing and trippping levels,arms,pivots,linkages,latches,pawls,springs, etc.)', 'Vacuum Bottle or Interrupter']","['Breaker Stabs', 'Close and Trip Solenoid', ' Control Circuit  - Rectifier Module', 'Control Circuit - Transformer', 'Control Circuit and Auxiliary Electrical Devices (microswitches,auxiliary switches,secondary disconnects,local control handle,control fusesandfuse blocks,auxiliary relays,wiring,cabinet heaters,indicating lights)', 'Fuses(main)', 'Ground wiring and connections', 'Hardware and fasteners', 'Lubricant', ' Operating Mechanism (e.g.mechanical parts associtaedwith opening,closing and trippping levels,arms,pivots,linkages,latches,pawls,springs, etc.)', 'Vacuum Bottle or Interrupter']
+
+",0.9090909090909091,0.6666666666666666,0.7692307692307692,0.7127659574468086,0.6129032258064516,0.7021276595744681,0.7021276595744681
+SwitchLimit_2_V0,Switch - Large Mechanical Limit Type,"['Switch', 'Steel roller', 'Wiring', 'Actuator arm']","['Contacts (may fail due to corrosion, arcing, or poor electrical connections)', 'Enclosure (may fail due to rust, impact, or inadequate sealing)', 'Handle (may fail due to wear, damage, or incorrect usage)', 'Mechanical mechanism (may fail due to wear, damage, or lack of lubrication)']","Sure! Here are some potential failure locations for that equipment:
+1. Handle (may fail due to wear, damage, or incorrect usage)
+2. Mechanical mechanism (may fail due to wear, damage, or lack of lubrication)
+3. Contacts (may fail due to corrosion, arcing, or poor electrical connections)
+4. Enclosure (may fail due to rust, impact, or inadequate sealing)",0.0,0.0,0.0,0.0,0.0,0.0,0.0,"['Contactors', 'Enclosure.', 'Handle', 'Mechanical Mechanism']","[' Handle', 'Mechanical Mechanism', 'Contactors', 'Enclosure'].
+
+",0.0,0.0,0.0,0.0,0.0,0.0,0.0
+TURB_1800_1,Main Turbine - 1800RPM - HP,"['HP Bearings (journal and thrust)', 'HP Casing pressure instruments', 'HP Journals', 'HP sliding feet', 'HP stationary diaphragms/blade ring packing', 'HP oil seals', 'HP Wheel/Disk', 'HP Blades', 'HP equalizer line', 'HP gib/centering keys', 'HP nozzle blocks', 'Front Standard Shaft-driven pump impeller, if present', 'HP Blades Covers', 'Supervisory Instrumentation -  Bearing Metal Temperature Detector (RTD)', 'HP Casing horizontal/vertical joints', 'HP Casing insulation, all types', 'HP Casing diaphragm and gland fits', 'HP oil deflectors', 'HP Bearings (journals only)', 'HP blade tip packing', 'HP Couplings', 'Supervisory Instrumentation -  Shell temperature indicators', 'Front Standard Stub/Quill shaft', 'HP Rotor Bore', 'HP end gland packing/steam seals', 'HP stationary diaphragms/blade rings', 'HP Casing piping bolted joint flanges', 'Supervisory Instrumentation -  Vibration probes - shaft rider and non-contacting', 'HP Casing access covers', 'HP Blade Root', 'HP Dovetail/Blade Attachment', 'HP horizontal joint']","['', 'Front Standard - Control rotor (impeller, shaft, steady rest bearing, grounding shoes), if present', 'Front Standard - Quill shaft', 'Front Standard - Shaft-driven pump impeller wear rings, if present', 'Front Standard - Shaft-driven pump impeller, if present', 'HP Bearings (journal and thrust)', 'HP Bearings (journal only)', 'HP Blade Root', 'HP Blade Roots', 'HP Blades', 'HP Blades Covers', 'HP Casing diaphragm and gland fits', 'HP Casing horizontal/vertical joints', 'HP Casing insulation, all types', 'HP Casing piping bolted joint flanges', 'HP Casing pressure instruments', 'HP Couplings', 'HP Diaphragms', 'HP Heat Groove', 'HP Journals', 'HP Packing land', 'HP Rotor Body - wheel and disk', 'HP Rotor Bore', 'HP blade tip seal strips', 'HP equalizer valve', 'HP gib/centering keys', 'HP nozzle blocks', 'HP oil deflectors', 'HP oil seals']","Sure! Here are some potential failure locations for that equipment:
+* Front Standard - Control rotor (impeller, shaft, steady rest bearing, grounding shoes), if present
+* Front Standard - Quill shaft
+* Front Standard - Shaft-driven pump impeller wear rings, if present
+* Front Standard - Shaft-driven pump impeller, if present
+* HP Bearings (journal and thrust)
+* HP Bearings (journal only)
+* HP Blade Root
+* HP Blade Roots
+* HP Blades
+* HP Blades Covers
+* HP Casing diaphragm and gland fits
+* HP Casing horizontal/vertical joints
+* HP Casing insulation, all types
+* HP Casing piping bolted joint flanges
+* HP Casing pressure instruments
+* HP Couplings
+* HP Diaphragms
+* HP Heat Groove
+* HP Journals
+* HP Packing land
+* HP Rotor Body - wheel and disk
+* HP Rotor Bore
+* HP blade tip seal strips
+* HP equalizer valve
+* HP gib/centering keys
+* HP nozzle blocks
+* HP oil deflectors
+* HP oil seals
+*",0.7241379310344828,0.65625,0.6885245901639345,0.7126436781609194,0.5714285714285714,0.6130268199233717,0.6130268199233717,"['Air Filter', 'Axles', 'Back Cover', 'Belts', 'Body Panels', 'Brakes', 'Camshaft', 'Clutch', 'Compressor Discharge Valve', 'Compressor Suction Valve', 'Condenser Air Preheat Valve', 'Cooling Tower Inlet Valve', 'Cooling Tower Outlet Valve', 'Crankshaft', 'Cylinder Head', 'Doors', 'Electrical Wiring', 'Engine Block', 'Exhaust Manifolds', 'Filters', 'Fire Protection', 'Front Cover', 'Gasket', 'Glass', 'Heating And Cooling Systems', 'Hoses', 'Ignition Wire', 'Intake Manifold', 'Interior Parts', 'Lighting', 'Mirrors', 'Oil Filter', 'Paint', 'Piston Rod', 'Plumbing', 'Roof', 'Seal Ring', 'Security', 'Shroud', 'Spark Plug', 'Steering Components', 'Suspension Components', 'Throttle Body', 'Timing Chain', 'Trim', 'Turbocharger', 'Valves', 'Water Pump', 'Windows']","[' Front Cover', 'Back Cover', 'Shroud', 'Cooling Tower Inlet Valve', ' Cooling Tower Outlet Valve', 'Condenser Air Preheat Valve', 'Compressor Discharge Valve', 'Compressor Suction Valve', 'Gasket', 'Seal Ring', 'Oil Filter', 'Air Filter', 'Spark Plug', 'Ignition Wire', 'Cylinder Head', 'Piston Rod', 'Engine Block', 'Crankshaft', 'Camshaft', 'Timing Chain', 'Water Pump', 'Turbocharger', 'Throttle Body', 'Intake Manifold', 'Exhaust Manifolds', 'Valves', 'Filters', 'Belts', 'Hoses', 'Clutch', 'Steering Components', 'Suspension Components', 'Brakes', 'Axles', 'Body Panels', 'Paint', 'Glass', 'Roof', 'Doors', 'Windows', 'Mirrors', 'Trim', 'Interior Parts', 'Lighting', 'Electrical Wiring', 'Plumbing', 'Heating And Cooling Systems', 'Fire Protection', 'Security",0.0,0.0,0.0,0.044642857142857144,0.0,0.03571428571428571,0.03571428571428571
+TURB_LOPM_1,Main Turbine Lube Oil AC Aux_Startup Oil Pump and Motor,"['Pump Impeller', 'Motor Cast Rotor: Rotor bars and shorting rings', 'Motor Space Heaters', 'Pump / Motor Coupling', 'Pump / Motor Mount', 'Pump Mechanical Seal', 'Pump Wear rings', 'Motor Cooling Fan', 'Pump Bearing Oil Supply Line', 'Pump Gaskets', 'Pump Bearings - Thrust', 'Motor Bearing Seal', 'Motor Frame and Enclosure', 'Motor Shaft', 'Pump Casing Vent', 'Motor Stator - Windings', 'Pump Discharge Head', 'Pump Bearing Retainers', 'Pump Shaft', 'Motor Gaskets', 'Motor Leads and Electrical Connections', 'Motor Machine Fits', 'Pump Suction Strainer', 'Pump Bearings - Sleeve', 'Pump Column Piping', 'Motor Bearings: Antifriction']","['Filters: Clogged or damaged', 'Motor windings, insulation, and bearings', 'Piping: Leaks, corrosion, and wear', 'Pump casing, impeller, bearings, and seals']","Sure! Here are some potential failure locations for that equipment:
+* Pump casing, impeller, bearings, and seals
+* Motor windings, insulation, and bearings
+* Piping: Leaks, corrosion, and wear
+* Filters: Clogged or damaged",0.25,0.038461538461538464,0.06666666666666668,0.23300970873786409,0.019801980198019802,0.11650485436893204,0.11650485436893204,"['Motor', 'Pump', 'associated piping and filters']","['Pump', 'Motor', 'associated piping and filters']
+
+",0.3333333333333333,0.038461538461538464,0.06896551724137931,0.0898876404494382,0.0,0.06741573033707865,0.06741573033707865
+TX_Aux_1,Transformer - Station Aux_Startup - No LTC,"['Tank', 'Pump', 'Transformer Oil (mineral)', 'Valves', 'Core', 'Lightning/Surge Arrestors', 'Desiccant', 'Sudden Pressure Relay', 'Gaskets', 'Solid Bushings', 'Electrical Connections', 'Windings', 'Temperature Gauges', 'Pressure Relief Valve', 'No Load Tap Changer', 'Level Alarms', 'Pump Motor', 'Oil Filled Bushings', 'Fin and Tube Coolers', 'Gas Blanket Systems', 'Fans']","['Buchholtz Gas Volume Relay, if present', 'Bushings - Oil Filled', 'Bushings - Solid', 'Conservator Tank, if present', 'Control Cabinet', 'Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated', 'Core', 'De-Energized Tap Changer - Contacts', 'De-Energized Tap Changer - Electrical Connections', 'De-Energized Tap Changer - Hardware or Fasteners', 'De-Energized Tap Changer - Operator', 'De-Energized Tap Changer - Position Indicator', 'Desiccant', 'Electrical Connections', 'Fans and Motors', 'Gas Blanket Systems', 'Gaskets', 'Gauge - Pressure', 'Gauge - Temperature', 'Level Alarms', 'Lightning or Surge Arrestors (Metal oxide varistor type)', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Sudden Pressure Relay']","Sure! Here are some potential failure locations for that equipment:
+* Buchholtz Gas Volume Relay, if present
+* Bushings - Oil Filled
+* Bushings - Solid
+* Conservator Tank, if present
+* Control Cabinet
+* Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated
+* Core
+* De-Energized Tap Changer - Contacts
+* De-Energized Tap Changer - Electrical Connections
+* De-Energized Tap Changer - Hardware or Fasteners
+* De-Energized Tap Changer - Operator
+* De-Energized Tap Changer - Position Indicator
+* Desiccant
+* Electrical Connections
+* Fans and Motors
+* Gas Blanket Systems
+* Gaskets
+* Gauge - Pressure
+* Gauge - Temperature
+* Level Alarms
+* Lightning or Surge Arrestors (Metal oxide varistor type)
+* Pressure Relief Valve
+* Pump
+* Pump Motor
+* Sudden Pressure Relay",0.6,0.7142857142857143,0.6521739130434783,0.5294117647058824,0.3134328358208955,0.3529411764705882,0.3529411764705882,"['Core', 'Desiccant', 'Electrical Connections', 'Fans', 'Fin and Tube Coolers', 'Gas Blanket Systems', 'Gaskets', 'Level Alarms', 'Lightning/Surge Arrestors', 'Load Tap Changer', 'Oil Filled Bushings', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Solid Bushings', 'Sudden Pressure Relay', 'Tank', 'Temperature Gauges', 'Transformer Oil (mineral)', 'Valves', 'Windings']","['Core', 'Desiccant', 'Electrical Connections', 'Fans', 'Fin and Tube Coolers', 'Gas Blanket Systems', 'Gaskets', 'Level Alarms', 'Lightning/Surge Arrestors', ' Load Tap Changer', 'Oil Filled Bushings', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Solid Bushings', ' Sudden Pressure Relay', 'Tank', 'Temperature Gauges', 'Transformer Oil (mineral)', 'Valves', 'Windings']
+
+",1.0,1.0,1.0,0.9885057471264368,0.9647058823529412,0.9885057471264368,0.9885057471264368
+TX_CT_1,Transformer - Current - CT - <15kV,"['Current Transformer', 'Electrical Wiring and Connections']","['Connection Failure: At the joints between the wires, terminals, or connectors', 'Core Failure: Due to aging, overheating, or external impact', 'Environmental Factors: Moisture, dust, dirt, or contaminants that could lead to corrosion or insulation breakdown', 'Insulation Failure: Between the windings and the core, or between different parts of the winding', 'Operational Issues: Overloading, voltage surges, or incorrect operating conditions that could stress the transformer and accelerate', 'Winding Failure: Due to manufacturing defects, damage during installation, or age-related degradation']","Sure! Based on the additional description provided, here are some potential failure locations for the Transformer - Current - CT - <15kV:
+1. Insulation Failure: Between the windings and the core, or between different parts of the winding
+2. Core Failure: Due to aging, overheating, or external impact
+3. Winding Failure: Due to manufacturing defects, damage during installation, or age-related degradation
+4. Connection Failure: At the joints between the wires, terminals, or connectors
+5. Environmental Factors: Moisture, dust, dirt, or contaminants that could lead to corrosion or insulation breakdown
+6. Operational Issues: Overloading, voltage surges, or incorrect operating conditions that could stress the transformer and accelerate failure",0.0,0.0,0.0,0.04705882352941176,0.0,0.04705882352941176,0.04705882352941176,"['Connections', 'Core', 'Insulation System', 'Windings']","['Insulation System', 'Core', 'Windings', 'Connections']
+
+",0.0,0.0,0.0,0.1818181818181818,0.0,0.1818181818181818,0.1818181818181818
+TX_Light_1,Transformer - Lighting,"['Transformer', 'Wiring, cables, and connectors', 'Enclosure']","['Connections Failure', 'Cooling Failure', 'Core Failure', 'Insulation Failure', 'Winding Failure']","1. Core Failure
+2. Winding Failure
+3. Insulation Failure
+4. Cooling Failure
+5. Connections Failure",0.0,0.0,0.0,0.0,0.0,0.0,0.0,"['Busbars', 'Connectors', 'Cooling Fans', 'Core', 'Enclosures', 'Insulation', 'Primary Winding', 'Secondary Winding']","['Cooling Fans', 'Insulation', 'Primary Winding', 'Secondary Winding', 'Core', 'Connectors', 'Enclosures', 'Busbars']
+
+",0.25,0.6666666666666666,0.36363636363636365,0.11764705882352942,0.0,0.11764705882352942,0.11764705882352942
+TX_Sub_1a_V0,Transformer - Substation with De-Energized DETC,"['Pump', 'Transformer Oil (mineral)', 'Core', 'Fans and Motors', 'Gauge - Temperature', 'Bushings - Oil Filled', 'Lightning or Surge Arrestors (Metal oxide varistor type)', 'Desiccant', 'Sudden Pressure Relay', 'Gaskets', 'Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated', 'Gauge - Pressure', 'De-Energized Tap Changer - Electrical Connections', 'Electrical Connections', 'De-Energized Tap Changer - Hardware or Fasteners', 'De-Energized Tap Changer - Operator', 'Windings', 'Pressure Relief Valve', 'Bushings - Solid', 'De-Energized Tap Changer - Contacts', 'Control Cabinet', 'Level Alarms', 'Transformer Tank', 'Valves - Manual', 'Pump Motor', 'Gas Blanket Systems', 'De-Energized Tap Changer - Position Indicator']","['Buchholtz Gas Volume Relay, if present', 'Bushings - Oil Filled', 'Bushings - Solid', 'Conservator Tank, if present', 'Control Cabinet', 'Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated', 'Core', 'De-Energized Tap Changer - Contacts', 'De-Energized Tap Changer - Electrical Connections', 'De-Energized Tap Changer - Hardware or Fasteners', 'De-Energized Tap Changer - Operator', 'De-Energized Tap Changer - Position Indicator', 'Desiccant', 'Electrical Connections', 'Fans and Motors', 'Gas Blanket Systems', 'Gaskets', 'Gauge - Pressure', 'Gauge - Temperature', 'Level Alarms', 'Lightning or Surge Arrestors (Metal oxide varistor type)', 'Pressure Relief Valve', 'Pump', 'Pump Motor', 'Sudden Pressure Relay', 'Transformer Oil (mineral)']","Sure! Here are some potential failure locations for that equipment:
+* Buchholtz Gas Volume Relay, if present
+* Bushings - Oil Filled
+* Bushings - Solid
+* Conservator Tank, if present
+* Control Cabinet
+* Coolers - Fin and Tube or Radiators - both types are minimally OFAF rated
+* Core
+* De-Energized Tap Changer - Contacts
+* De-Energized Tap Changer - Electrical Connections
+* De-Energized Tap Changer - Hardware or Fasteners
+* De-Energized Tap Changer - Operator
+* De-Energized Tap Changer - Position Indicator
+* Desiccant
+* Electrical Connections
+* Fans and Motors
+* Gas Blanket Systems
+* Gaskets
+* Gauge - Pressure
+* Gauge - Temperature
+* Level Alarms
+* Lightning or Surge Arrestors (Metal oxide varistor type)
+* Pressure Relief Valve
+* Pump
+* Pump Motor
+* Sudden Pressure Relay
+* Transformer Oil (mineral)",0.9230769230769231,0.8888888888888888,0.9056603773584906,0.9297297297297298,0.907103825136612,0.918918918918919,0.918918918918919,"['Bushings', 'Circuit Breaker', 'Cooling System', 'Core', 'Filter', 'Insulation', 'Voltage Regulator', 'Winding']","['Core', 'Insulation', 'Bushings', 'Cooling System', 'Winding', 'Circuit Breaker', 'Voltage Regulator', 'Filter']
+
+",0.375,0.1111111111111111,0.17142857142857143,0.039603960396039604,0.0,0.039603960396039604,0.039603960396039604
+VLV_Electro_HYD_Servo_V0,Valve - Electro-Hydraulic Servo,"['Piping and Tubing', 'Servo Valve', 'Wiring, Cables, and Connections']","['Control Valve Balance Chamber', 'Control Valve Bushing', 'Control Valve Disk', 'Control Valve Disk Main Seating Surface', 'Control Valve Stem', 'Control Valve Stem Packing Gland', 'Flow Equalizer', 'Valve Body', 'Valve Body - Control Valve Seat', 'Valve Body - Head Gasket', 'Valve Body - Head Gasket Fit', 'Valve Body - Insulation', 'Valve Body - Pressure Seal Head Stud and Nuts']","Sure! Here are some potential failure locations for that equipment:
+* Control Valve Balance Chamber
+* Control Valve Bushing
+* Control Valve Disk
+* Control Valve Disk Main Seating Surface
+* Control Valve Stem
+* Control Valve Stem Packing Gland
+* Flow Equalizer
+* Valve Body
+* Valve Body - Control Valve Seat
+* Valve Body - Head Gasket
+* Valve Body - Head Gasket Fit
+* Valve Body - Insulation
+* Valve Body - Pressure Seal Head Stud and Nuts",0.0,0.0,0.0,0.06451612903225806,0.0,0.06451612903225806,0.06451612903225806,"['Actuator', 'Electric Components', 'Hydraulic Components', 'Seal', 'Valve body']","['Valve body', 'Actuator', 'Seal', 'Hydraulic Components', 'Electric Components']
+
+",0.0,0.0,0.0,0.11764705882352941,0.0,0.11764705882352941,0.11764705882352941
+VLV_TURB_STM_STOP_VLV_BalType_forSnglActACTUATOR_V0,Valve - Steam Turbine - Steam Stop Valve Balanced Type using a Single-Acting Actuator,"['Stop Valve Disk - Bypass Seat', 'Stop Valve Balance Chamber', 'Stop Valve Disk', 'Stop Valve Stem', 'Valve Body - Pressure Seal Head Stud and Nuts', 'Valve Body - Stop Valve Seat', 'Stop Valve Disk Main Seating Surface', 'Strainer', 'Valve Body - Head Gasket Fit', 'Valve Body - Head Gasket', 'Stop Valve Stem - Bypass Disk', 'Valve Body', 'Valve Body - Insulation', 'Stop Valve Bushing', 'Stop Valve Disk - Bypass Bushing', 'Stop Valve Stem Packing Gland']","['Valve Body - Control Valve Seat', 'Valve Body - Head Gasket', 'Valve Body - Insulation', 'Valve Body - Pressure Seal Head Stud and Nuts']","Sure! Here are some potential failure locations for that equipment:
+* Valve Body - Control Valve Seat
+* Valve Body - Head Gasket
+* Valve Body - Insulation
+* Valve Body - Pressure Seal Head Stud and Nuts",1.0,0.25,0.4,0.4367816091954023,0.3764705882352941,0.41379310344827586,0.41379310344827586,"['Actuator Coupling', 'Valve Body', 'Valve Seal', 'Valve Stem']","['Valve Body', 'Valve Stem', 'Valve Seal', 'Actuator Coupling']
+
+",0.5,0.125,0.2,0.16,0.0821917808219178,0.13333333333333333,0.13333333333333333
