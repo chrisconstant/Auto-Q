@@ -3,13 +3,13 @@ import torch
 from llm2vec import LLM2Vec
 
 l2v = LLM2Vec.from_pretrained(
-    "McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp",
-    peft_model_name_or_path="McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-unsup-simcse",
+    "McGill-NLP/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp",
+    peft_model_name_or_path="McGill-NLP/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp-supervised",
     device_map="cuda" if torch.cuda.is_available() else "cpu",
     torch_dtype=torch.bfloat16,
 )
 
-prefixmatch = 'Mistral_unsup_simcse'
+prefixmatch = 'MetaLlama3_sup'
 
 df = pd.read_csv(
     "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv"

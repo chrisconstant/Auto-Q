@@ -1,20 +1,72 @@
-Downloading shards:   0%|          | 0/3 [00:00<?, ?it/s]Downloading shards:  33%|███▎      | 1/3 [00:00<00:00,  4.47it/s]Downloading shards:  67%|██████▋   | 2/3 [00:00<00:00,  2.83it/s]Downloading shards: 100%|██████████| 3/3 [00:00<00:00,  4.31it/s]
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.60s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.94s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.80s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.81s/it]
-Batches:   0%|          | 0/18 [00:00<?, ?it/s]Batches:   6%|▌         | 1/18 [00:00<00:08,  1.96it/s]Batches:  11%|█         | 2/18 [00:00<00:05,  3.14it/s]Batches:  17%|█▋        | 3/18 [00:00<00:03,  4.21it/s]Batches:  22%|██▏       | 4/18 [00:00<00:02,  5.10it/s]Batches:  28%|██▊       | 5/18 [00:01<00:02,  5.82it/s]Batches:  33%|███▎      | 6/18 [00:01<00:01,  6.52it/s]Batches:  39%|███▉      | 7/18 [00:01<00:01,  7.12it/s]Batches:  44%|████▍     | 8/18 [00:01<00:01,  7.72it/s]Batches:  50%|█████     | 9/18 [00:01<00:01,  8.18it/s]Batches:  56%|█████▌    | 10/18 [00:01<00:00,  8.49it/s]Batches:  61%|██████    | 11/18 [00:01<00:00,  8.84it/s]Batches:  72%|███████▏  | 13/18 [00:01<00:00,  9.79it/s]Batches:  83%|████████▎ | 15/18 [00:02<00:00, 10.36it/s]Batches:  94%|█████████▍| 17/18 [00:02<00:00, 11.00it/s]Batches: 100%|██████████| 18/18 [00:02<00:00,  7.70it/s]
-Batches:   0%|          | 0/3 [00:00<?, ?it/s]Batches:  33%|███▎      | 1/3 [00:00<00:00,  4.79it/s]Batches:  67%|██████▋   | 2/3 [00:00<00:00,  6.38it/s]Batches: 100%|██████████| 3/3 [00:00<00:00,  7.83it/s]
-Batches:   0%|          | 0/3 [00:00<?, ?it/s]Batches:  33%|███▎      | 1/3 [00:00<00:00,  4.63it/s]Batches:  67%|██████▋   | 2/3 [00:00<00:00,  6.28it/s]Batches: 100%|██████████| 3/3 [00:00<00:00,  7.68it/s]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Traceback (most recent call last):
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/utils/_errors.py", line 304, in hf_raise_for_status
+    response.raise_for_status()
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/transformers/utils/hub.py", line 398, in cached_file
+    resolved_file = hf_hub_download(
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1403, in hf_hub_download
+    raise head_call_error
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1261, in hf_hub_download
+    metadata = get_hf_file_metadata(
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1667, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 385, in _request_wrapper
+    response = _request_wrapper(
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 409, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/huggingface_hub/utils/_errors.py", line 321, in hf_raise_for_status
+    raise GatedRepoError(message, response) from e
+huggingface_hub.utils._errors.GatedRepoError: 403 Client Error. (Request ID: Root=1-6636eaaf-5b156d4a071c627a2ca7610d;2e67b4df-44dd-40ce-a33d-dd3742e135a2)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json.
+Access to model meta-llama/Meta-Llama-3-8B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct to ask for access.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/u/modelfactory/AutoQA/fmea_recommender/baseline_embedder/get_embedding_result.py", line 5, in <module>
+    l2v = LLM2Vec.from_pretrained(
+  File "/u/modelfactory/llm2vec/llm2vec/llm2vec.py", line 96, in from_pretrained
+    model = model_class.from_pretrained(base_model_name_or_path, **kwargs)
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3122, in from_pretrained
+    config, model_kwargs = cls.config_class.from_pretrained(
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/transformers/configuration_utils.py", line 602, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/transformers/configuration_utils.py", line 631, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/transformers/configuration_utils.py", line 686, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/u/modelfactory/.conda/envs/lab/lib/python3.10/site-packages/transformers/utils/hub.py", line 416, in cached_file
+    raise EnvironmentError(
+OSError: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct.
+403 Client Error. (Request ID: Root=1-6636eaaf-5b156d4a071c627a2ca7610d;2e67b4df-44dd-40ce-a33d-dd3742e135a2)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json.
+Access to model meta-llama/Meta-Llama-3-8B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct to ask for access.
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@cccxc599.pok.ibm.com>
-Subject: Job 3716995: <python3.10 get_embedding_result.py> in cluster <cccCluster> Done
+Subject: Job 3717042: <python3.10 get_embedding_result.py> in cluster <cccCluster> Exited
 
-Job <python3.10 get_embedding_result.py> was submitted from host <cccxl016> by user <modelfactory> in cluster <cccCluster> at Sat May  4 21:52:05 2024
-Job was executed on host(s) <8*cccxc599>, in queue <nonstandard>, as user <modelfactory> in cluster <cccCluster> at Sat May  4 21:52:02 2024
+Job <python3.10 get_embedding_result.py> was submitted from host <cccxl016> by user <modelfactory> in cluster <cccCluster> at Sat May  4 22:10:43 2024
+Job was executed on host(s) <8*cccxc599>, in queue <nonstandard>, as user <modelfactory> in cluster <cccCluster> at Sat May  4 22:10:42 2024
 </u/modelfactory> was used as the home directory.
 </u/modelfactory/AutoQA/fmea_recommender/baseline_embedder> was used as the working directory.
-Started at Sat May  4 21:52:02 2024
-Terminated at Sat May  4 21:52:26 2024
-Results reported at Sat May  4 21:52:26 2024
+Started at Sat May  4 22:10:42 2024
+Terminated at Sat May  4 22:10:52 2024
+Results reported at Sat May  4 22:10:52 2024
 
 Your job looked like:
 
@@ -23,20 +75,20 @@ Your job looked like:
 python3.10 get_embedding_result.py
 ------------------------------------------------------------
 
-Successfully completed.
+Exited with exit code 1.
 
 Resource usage summary:
 
-    CPU time :                                   32.63 sec.
-    Max Memory :                                 2145 MB
-    Average Memory :                             1778.67 MB
+    CPU time :                                   4.27 sec.
+    Max Memory :                                 311 MB
+    Average Memory :                             233.50 MB
     Total Requested Memory :                     394240.00 MB
-    Delta Memory :                               392095.00 MB
+    Delta Memory :                               393929.00 MB
     Max Swap :                                   -
     Max Processes :                              3
-    Max Threads :                                31
-    Run time :                                   22 sec.
-    Turnaround time :                            21 sec.
+    Max Threads :                                14
+    Run time :                                   9 sec.
+    Turnaround time :                            9 sec.
 
 The output (if any) is above this job summary.
 
