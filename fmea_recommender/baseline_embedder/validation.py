@@ -125,16 +125,16 @@ def calculate_precision(cand_list, gold_list, validation_model, threshold=0.7):
     Output:
         precision - the fraction of things from the cand_list that are contained in the gold_list
     """
-    if len(cand_list) == 0 and len(gold_list) == 0:
+    # Edge cases.
+    if len(cand_list) == 0: # FP = 0, so precision is 1.
         return 1.0
-    elif len(cand_list) == 0:
-        return 0.0  # This is a but "opinionated", but if we generate an empty list, we are reporting this as precision 0.
-    elif len(gold_list) == 0:
+    elif len(cand_list) > 0 and len(gold_list) == 0:
         return 0.0
 
     top_k_matches, top_k_scores = list_comparison_scores(
         cand_list, gold_list, validation_model
     )
+
     already_matched_gold = set()
     for cnt, _ in enumerate(cand_list):
         for rank, gold_idx in enumerate(top_k_matches[cnt]):
@@ -160,12 +160,16 @@ def calculate_recall(cand_list, gold_list, validation_model, threshold=0.7):
         recall - the fraction of things from the gold_list that are contained in the cand_list
     """
 
-    if len(cand_list) == 0 and len(gold_list) == 0:
-        return 1.0
-    elif len(cand_list) == 0:
-        return 0.0
-    elif len(gold_list) == 0:
+    # Edge Cases
+    if len(gold_list) == 0:     # No TPs (e.g., no components)
+        # We could return 1.0 here, but since we are more interested overall recall across all examples
+        # its best to simply not consider these cases when calculating average recall. 
+        # Pandas aggregation functions such as mean ignore NAN values.
         return math.nan
+    elif len(cand_list) == 0 and len(gold_list) > 0:
+        # We found no TPs (e.g., no components)
+        return 0.0
+
     top_k_matches, top_k_scores = list_comparison_scores(
         gold_list, cand_list, validation_model
     )
@@ -181,12 +185,13 @@ def calculate_recall(cand_list, gold_list, validation_model, threshold=0.7):
     recall = len(already_matched_cand) / len(set(gold_list))
     return recall
 
-
 def extract_things_from_string(text):
-    fls = re.findall("\{(.*?)\}", text)
-    fls = fls[0].split("', '")
+    fls = re.findall("(\{|\[)(.*?)(\}|\])", text)
+    fls = fls[0][1].split("', '")
     fls = [fl.replace("'", "") for fl in fls]
+
     return fls
+
 
 
 def parse_failure_locations(row, gold_column="gold_failure_locations"):
@@ -197,7 +202,11 @@ def parse_failure_locations(row, gold_column="gold_failure_locations"):
 def calculate_precision_wrapper(
     row, val_model, candidate_column, gold_column="gold_failure_locations"
 ):
-    cand_vals = row[candidate_column]
+    if isinstance(row[candidate_column], str):
+        cand_vals = extract_things_from_string(row[candidate_column])
+    else:
+        cand_vals = row[candidate_column]
+
     if isinstance(row[gold_column], str):
         gold_vals = extract_things_from_string(row[gold_column])
     else:
@@ -222,11 +231,13 @@ def calculate_f1(prec, recall):
 def calculate_f1_wrapper(row, precision_column, recall_column):
     return calculate_f1(row[precision_column], row[recall_column])
 
-
 def calculate_recall_wrapper(
     row, val_model, candidate_column, gold_column="gold_failure_locations"
 ):
-    cand_vals = row[candidate_column]
+    if isinstance(row[candidate_column], str):
+        cand_vals = extract_things_from_string(row[candidate_column])
+    else:
+        cand_vals = row[candidate_column]
 
     if isinstance(row[gold_column], str):
         gold_vals = extract_things_from_string(row[gold_column])
@@ -312,6 +323,7 @@ def calculate_metrics(df, val_model, candidate_col):
         ),
         axis=1,
     )
+
     df["f1_" + candidate_col] = df.apply(
         lambda row: calculate_f1_wrapper(
             row,
@@ -321,13 +333,6 @@ def calculate_metrics(df, val_model, candidate_col):
         axis=1,
     )
 
-    for rm in ["rouge1", "rouge2", 'rougeL', 'rougeLsum']:
-        df[rm + "_" + candidate_col] =\
-        df.apply(lambda row: calculate_rouge_score_wrapper_lists(\
-                                            row,
-                                            candidate_column = candidate_col,
-                                            gold_column='gold_failure_locations',
-                                            rouge_metric=rm), axis=1)
     return df
 
 
@@ -361,14 +366,8 @@ def calculate_rouge_score_wrapper_lists(row,
     """The rouge metrics should be one of ['rouge1', 'rouge2', 'rougeL', 'rougeLsum'].
     cand_vals - a list of candidate values.
     gold_column - a string representation of a list"""
-
-
     cand_vals = row[candidate_column]
-    if isinstance(row[gold_column], str):
-        gold_vals = extract_things_from_string(row[candidate_column])
-    else:
-        gold_vals = row[candidate_column]
-    #gold_vals = extract_things_from_string(row[gold_column])
+    gold_vals = extract_things_from_string(row[gold_column])
     # Sort lists (in-place)
     cand_vals.sort()
     gold_vals.sort()
@@ -400,10 +399,18 @@ def get_recall_results(df):
     return table, plot
 
 def get_f1_results(df):
-    """Get the mean recall of each model."""
+    """Get the mean F1 of each model."""
     summary = df.describe()
     summary_recall = summary[summary.columns[summary.columns.str.startswith('f1')]]
     table = summary_recall.iloc[1:].sort_values(by='mean', axis='columns', ascending=False)
     ax = summary_recall.loc[['mean', 'min', '25%', '50%', '75%', 'max']].plot(kind='line', title="F1")
     plot = ax.legend(loc='center left', bbox_to_anchor=(1.0, 0.4))
     return table, plot
+
+
+def calculate_overall_f1(df, cand_col_name):
+    prec = df['prec_'+ cand_col_name ].mean()
+    rec = df['rec_'+ cand_col_name ].mean()
+
+    f1 = calculate_f1(prec, rec)
+    return f1

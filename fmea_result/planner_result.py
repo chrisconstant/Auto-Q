@@ -854,15 +854,11 @@ def get_iso_asset_description(model_id=2):
     
     return ans
 
-"""
-p_ans = get_description(model_id=6)
+p_ans = get_description(model_id=3)
 print (p_ans)
-"""
 
-"""
 p_ans = get_iso_asset_description(model_id=3)
 print (p_ans)
-"""
 
 """
 p_ans = get_asset_description(

@@ -3,15 +3,17 @@
         "Equipment unit": "Combustion engines",
         "Subunit": [
             {
-                "name": "Start control",
+                "name": "Start system",
                 "Maintainable items": [
+                    "Start energy (battery, air)",
                     "Starting unit",
                     "Start control"
                 ]
             },
             {
-                "name": "Valves",
+                "name": "Combustion engine unit",
                 "Maintainable items": [
+                    "Air inlet",
                     "Ignition system",
                     "Turbocharger",
                     "Fuel pumps",
@@ -29,8 +31,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit",
                     "Internal power supply",
                     "Monitoring",
@@ -42,8 +45,9 @@
                 ]
             },
             {
-                "name": "Temperature-control sensor",
+                "name": "Lubrication system",
                 "Maintainable items": [
+                    "Reservoir",
                     "Pump",
                     "Motor",
                     "Filter",
@@ -54,8 +58,9 @@
                 ]
             },
             {
-                "name": "Temperature-control sensor",
+                "name": "Cooling system",
                 "Maintainable items": [
+                    "Heat exchanger",
                     "Fan",
                     "Motor",
                     "Filter",
@@ -66,8 +71,9 @@
                 ]
             },
             {
-                "name": "Flange joints",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Hood",
                     "Flange joints"
                 ]
             }
@@ -77,8 +83,9 @@
         "Equipment unit": "Compressors",
         "Subunit": [
             {
-                "name": "Seals",
+                "name": "Power  transmission",
                 "Maintainable items": [
+                    "Gearbox/ variable drive Bearings",
                     "Belt/sheave",
                     "Coupling to the driver",
                     "Coupling to the driven unit",
@@ -87,8 +94,9 @@
                 ]
             },
             {
-                "name": "Packing",
+                "name": "Compressor",
                 "Maintainable items": [
+                    "Casing",
                     "Rotor with impellers Balance piston",
                     "Interstage seals",
                     "Radial bearing",
@@ -103,8 +111,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device Control unit",
                     "Cables and junction boxes",
                     "Internal power supply",
                     "Monitoring",
@@ -116,8 +125,9 @@
                 ]
             },
             {
-                "name": "Lube oil",
+                "name": "Lubrication  system",
                 "Maintainable items": [
+                    "Oil tank with ",
                     "heating system Pump",
                     "Motor",
                     "Check valves",
@@ -129,8 +139,9 @@
                 ]
             },
             {
-                "name": "Scrubber",
+                "name": "Shaft seal  system",
                 "Maintainable items": [
+                    "Oil tank with heating Reservoir",
                     "Pump",
                     "Motor",
                     "Gear",
@@ -143,8 +154,9 @@
                 ]
             },
             {
-                "name": "Magnetic-bearing control system Flange joints",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Base frame",
                     "Piping, pipe support and bellows Control valves",
                     "Isolation valves Check valves",
                     "Coolers",
@@ -159,8 +171,9 @@
         "Equipment unit": "Electric generators",
         "Subunit": [
             {
-                "name": "Coupling to driven unit Belt/sheave",
+                "name": "Power transmission",
                 "Maintainable items": [
+                    "Gearbox",
                     "Radial bearing",
                     "Thrust bearing Seals",
                     "Lubrication",
@@ -169,8 +182,9 @@
                 ]
             },
             {
-                "name": "Cabling and junction boxes",
+                "name": "Electric generator",
                 "Maintainable items": [
+                    "Stator",
                     "Rotor",
                     "Radial bearing",
                     "Thrust bearing Excitation",
@@ -178,8 +192,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit (e.g. AVR)",
                     "Internal power supply Monitoring",
                     "Sensors",
@@ -190,8 +205,9 @@
                 ]
             },
             {
-                "name": "Oil",
+                "name": "Lubrication system",
                 "Maintainable items": [
+                    "Reservoir",
                     "Pump",
                     "Motor",
                     "Filter",
@@ -201,8 +217,9 @@
                 ]
             },
             {
-                "name": "Pump",
+                "name": "Cooling system",
                 "Maintainable items": [
+                    "Heat exchanger",
                     "Fan",
                     "Motor",
                     "Filter",
@@ -212,8 +229,9 @@
                 ]
             },
             {
-                "name": "Neutral grounding resistors (NGRs)",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Hood",
                     "Purge air",
                     "Neutral grounding resistors (NGRs)"
                 ]
@@ -224,8 +242,9 @@
         "Equipment unit": "Electric motors",
         "Subunit": [
             {
-                "name": "Thrust bearing",
+                "name": "Electric motor",
                 "Maintainable items": [
+                    "Stator",
                     "Rotor",
                     "Excitation",
                     "Radial bearing",
@@ -233,8 +252,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit",
                     "Internal power supply Monitoring",
                     "Sensors",
@@ -245,8 +265,9 @@
                 ]
             },
             {
-                "name": "Oil",
+                "name": "Lubrication system",
                 "Maintainable items": [
+                    "Reservoir",
                     "Pump",
                     "Motor",
                     "Filter",
@@ -256,8 +277,9 @@
                 ]
             },
             {
-                "name": "Fan",
+                "name": "Cooling system",
                 "Maintainable items": [
+                    "Heat exchanger",
                     "Filter",
                     "Valves",
                     "Piping",
@@ -268,7 +290,9 @@
             },
             {
                 "name": "Miscellaneous",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Hood"
+                ]
             }
         ]
     },
@@ -276,7 +300,7 @@
         "Equipment unit": "Gas turbines",
         "Subunit": [
             {
-                "name": "Wires",
+                "name": "Starting system",
                 "Maintainable items": [
                     "Starting motor",
                     "Start control",
@@ -300,7 +324,7 @@
                 ]
             },
             {
-                "name": "Fuel properties measurement",
+                "name": "Air intake",
                 "Maintainable items": [
                     "Air cooling",
                     "Anti-icing",
@@ -320,7 +344,7 @@
                 ]
             },
             {
-                "name": "Wires",
+                "name": "Combustion system",
                 "Maintainable items": [
                     "Combustor",
                     "Fuel nozzles",
@@ -335,7 +359,7 @@
                 ]
             },
             {
-                "name": "Tank(s)/ Storage",
+                "name": "Compressor",
                 "Maintainable items": [
                     "Rotor",
                     "Stator",
@@ -358,7 +382,7 @@
                 ]
             },
             {
-                "name": "Casing",
+                "name": "Power turbine HP turbine",
                 "Maintainable items": [
                     "Rotor",
                     "Stator",
@@ -376,17 +400,16 @@
                 ]
             },
             {
-                "name": "Waste heat recovery unit",
+                "name": "Control and monitoring",
                 "Maintainable items": [
                     "Control unit",
-                    "Sensorsa",
+                    "Sensors",
                     "Wires",
                     "Actuating devices",
                     "Monitoring",
                     "Valves",
                     "Internal power supply",
                     "Seals",
-                    "\u2014",
                     "Exhaust",
                     "Diffuser Exhaust collector",
                     "Compensator/ bellows Ducting Emission monitoring Silencer",
@@ -395,16 +418,94 @@
                 ]
             },
             {
-                "name": "ter-wash system",
+                "name": "Miscellaneous",
                 "Maintainable items": [
-                    "Miscel laneous",
                     "Enclosure",
                     "Hood",
                     "Purge air",
                     "Flange joints",
                     "Ventilation fan",
-                    "Wa-",
-                    "ter-wash system"
+                    "Water-wash system"
+                ]
+            },
+            {
+                "name": "Exhaust",
+                "Maintainable items": [
+                    "Diffuser Exhaust collector",
+                    "Compensator/ bellows Ducting Emission monitoring Silencer",
+                    "Thrust bearing Valves",
+                    "Waste heat recovery unit"
+                ]
+            },
+            {
+                "name": "Accessory drive",
+                "Maintainable items": [
+                    "Gearbox",
+                    "Bearing",
+                    "Seals",
+                    "Casing"
+                ]
+            },
+            {
+                "name": "Fire and gas protection",
+                "Maintainable items": [
+                    "Control unit",
+                    "Pipes",
+                    "Valves",
+                    "Sensors",
+                    "Wires",
+                    "Tank(s)/ Storage"
+                ]
+            },
+            {
+                "name": "Water/Steam injectionb",
+                "Maintainable items": [
+                    "Pump(s)",
+                    "Piping",
+                    "Valves",
+                    "Filter(s)",
+                    "Seals",
+                    "Wires"
+                ]
+            },
+            {
+                "name": "Fuel system",
+                "Maintainable items": [
+                    "Pump(s)",
+                    "Piping",
+                    "Valves",
+                    "Filter(s)",
+                    "Seals",
+                    "Wires"
+                ]
+            },
+            {
+                "name": "Accessory drive",
+                "Maintainable items": [
+                    "Fuel control",
+                    "Piping",
+                    "Valves",
+                    "Seals",
+                    "Pump(s)/Gas compressor",
+                    "Filter(s)/Separators",
+                    "Wires",
+                    "Fuel properties measurement"
+                ]
+            },
+            {
+                "name": "Lubrication system",
+                "Maintainable items": [
+                    "Heater",
+                    "Reservoir(s)",
+                    "Pump(s)",
+                    "Motor",
+                    "Filter",
+                    "Temperature control Valves",
+                    "Piping",
+                    "Oil cooler",
+                    "Oil",
+                    "Sensors",
+                    "Wires"
                 ]
             }
         ]
@@ -413,8 +514,9 @@
         "Equipment unit": "Pumps",
         "Subunit": [
             {
-                "name": "Coupling to driven unit Belt/sheave",
+                "name": "Power transmission",
                 "Maintainable items": [
+                    "Gearbox/ variable drive",
                     "Bearing",
                     "Seals",
                     "Coupling to driver",
@@ -422,8 +524,9 @@
                 ]
             },
             {
-                "name": "Diaphragm",
+                "name": "Pump unit",
                 "Maintainable items": [
+                    "Support",
                     "Casing",
                     "Impeller",
                     "Shaft",
@@ -438,115 +541,7 @@
                 ]
             },
             {
-                "name": "Seals",
-                "Maintainable items": [
-                    "Control unit",
-                    "Internal power supply Monitoring",
-                    "Sensors",
-                    "Valves",
-                    "Wiring",
-                    "Piping",
-                    "Seals"
-                ]
-            },
-            {
-                "name": "Seals",
-                "Maintainable items": [
-                    "Pump",
-                    "Motor",
-                    "Filter",
-                    "Cooler Valves",
-                    "Piping",
-                    "Oil",
-                    "Seals"
-                ]
-            },
-            {
-                "name": "Flange joints",
-                "Maintainable items": [
-                    "Cooling/heating system",
-                    "Cyclone separator",
-                    "Pulsation damper",
-                    "Flange joints"
-                ]
-            }
-        ]
-    },
-    {
-        "Equipment unit": "Steam turbines",
-        "Subunit": [
-            {
-                "name": "Thrust bearing",
-                "Maintainable items": [
-                    "Radial bearing",
-                    "Rotor",
-                    "Seals",
-                    "Stator/casing",
-                    "Steam reg. valves",
-                    "Thrust bearing"
-                ]
-            },
-            {
-                "name": "Vacuum pump",
-                "Maintainable items": [
-                    "Reg. pump",
-                    "Vacuum pump"
-                ]
-            },
-            {
-                "name": "Pump",
-                "Maintainable items": [
-                    "Pump"
-                ]
-            },
-            {
-                "name": "Valves",
-                "Maintainable items": [
-                    "Filter",
-                    "Oil",
-                    "Oil seal pump",
-                    "Piping",
-                    "Pump",
-                    "Motor",
-                    "Reservoir",
-                    "Valves"
-                ]
-            },
-            {
-                "name": "Seals",
-                "Maintainable items": [
-                    "Internal power supply Monitoring",
-                    "Sensors",
-                    "Valves",
-                    "Wiring",
-                    "Piping",
-                    "Seals"
-                ]
-            },
-            {
-                "name": "Miscellaneous",
-                "Maintainable items": []
-            }
-        ]
-    },
-    {
-        "Equipment unit": "Turbo expanders",
-        "Subunit": [
-            {
-                "name": "Piping",
-                "Maintainable items": [
-                    "Rotor w/impellers Inlet vanes",
-                    "Casing",
-                    "Radial bearing",
-                    "Thrust bearing",
-                    "Seals",
-                    "Inlet screen",
-                    "Valves",
-                    "Piping"
-                ]
-            },
-            {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
                     "Actuating device",
                     "Control unit",
@@ -559,7 +554,125 @@
                 ]
             },
             {
-                "name": "Oil",
+                "name": "Lubrication system",
+                "Maintainable items": [
+                    "Reservoir",
+                    "Pump",
+                    "Motor",
+                    "Filter",
+                    "Cooler Valves",
+                    "Piping",
+                    "Oil",
+                    "Seals"
+                ]
+            },
+            {
+                "name": "Miscellaneous",
+                "Maintainable items": [
+                    "Purge air",
+                    "Cooling/heating system",
+                    "Cyclone separator",
+                    "Pulsation damper",
+                    "Flange joints"
+                ]
+            }
+        ]
+    },
+    {
+        "Equipment unit": "Steam turbines",
+        "Subunit": [
+            {
+                "name": "Power turbine",
+                "Maintainable items": [
+                    "Piping",
+                    "Radial bearing",
+                    "Rotor",
+                    "Seals",
+                    "Stator/casing",
+                    "Steam reg. valves",
+                    "Thrust bearing"
+                ]
+            },
+            {
+                "name": "Condenser",
+                "Maintainable items": [
+                    "Condenser",
+                    "Reg. pump",
+                    "Vacuum pump"
+                ]
+            },
+            {
+                "name": "Regulating system",
+                "Maintainable items": [
+                    "Filter",
+                    "Pump"
+                ]
+            },
+            {
+                "name": "Lubrication system",
+                "Maintainable items": [
+                    "Cooler",
+                    "Filter",
+                    "Oil",
+                    "Oil seal pump",
+                    "Piping",
+                    "Pump",
+                    "Motor",
+                    "Reservoir",
+                    "Valves"
+                ]
+            },
+            {
+                "name": "Control and monitoring",
+                "Maintainable items": [
+                    "Actuating device Control unit",
+                    "Internal power supply Monitoring",
+                    "Sensors",
+                    "Valves",
+                    "Wiring",
+                    "Piping",
+                    "Seals"
+                ]
+            },
+            {
+                "name": "Miscellaneous",
+                "Maintainable items": [
+                    "Cranking system Hood"
+                ]
+            }
+        ]
+    },
+    {
+        "Equipment unit": "Turbo expanders",
+        "Subunit": [
+            {
+                "name": "Expander turbine",
+                "Maintainable items": [
+                    "Rotor w/impellers Inlet vanes",
+                    "Casing",
+                    "Radial bearing",
+                    "Thrust bearing",
+                    "Seals",
+                    "Inlet screen",
+                    "Valves",
+                    "Piping"
+                ]
+            },
+            {
+                "name": "Control and monitoring",
+                "Maintainable items": [
+                    "Actuating device",
+                    "Control unit",
+                    "Internal power supply Monitoring",
+                    "Sensors",
+                    "Valves",
+                    "Wiring",
+                    "Piping",
+                    "Seals"
+                ]
+            },
+            {
+                "name": "Lubrication system",
                 "Maintainable items": [
                     "Reservoir",
                     "Pump",
@@ -571,14 +684,14 @@
                 ]
             },
             {
-                "name": "Seal gas",
+                "name": "Shaft seal system",
                 "Maintainable items": [
                     "Seal-gas equipment",
                     "Seal gas"
                 ]
             },
             {
-                "name": "Others",
+                "name": "Miscellaneous",
                 "Maintainable items": [
                     "Others"
                 ]
@@ -589,8 +702,9 @@
         "Equipment unit": "Cranes",
         "Subunit": [
             {
-                "name": "Crane frame",
+                "name": "Crane structure",
                 "Maintainable items": [
+                    "A-frame/ king",
                     "Drivers cabin",
                     "Engine room",
                     "Pedestal",
@@ -598,8 +712,9 @@
                 ]
             },
             {
-                "name": "Boom stop cylinder",
+                "name": "Boom system",
                 "Maintainable items": [
+                    "Boom",
                     "Boom bearing",
                     "Hydraulic cylinder",
                     "Luffing winch Luffing wire",
@@ -608,23 +723,26 @@
                 ]
             },
             {
-                "name": "Shock damper",
+                "name": "Hoist system",
                 "Maintainable items": [
+                    "Hoist winch",
                     "Hoist sheaves Hook",
                     "Lifting wire",
                     "Shock damper"
                 ]
             },
             {
-                "name": "Slew pinion",
+                "name": "Swing system",
                 "Maintainable items": [
+                    "Slew bearing Slew ring",
                     "Slew motor",
                     "Slew pinion"
                 ]
             },
             {
-                "name": "Hydraulic oil",
+                "name": "Power system",
                 "Maintainable items": [
+                    "Hydraulic pumps",
                     "Electric engine",
                     "Diesel engine",
                     "Proportional valves",
@@ -634,8 +752,9 @@
                 ]
             },
             {
-                "name": "Load indicator",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "PC/PLS",
                     "Control valves",
                     "Internal power supply Amplifiers",
                     "Joysticks",
@@ -644,7 +763,9 @@
             },
             {
                 "name": "Miscellaneous",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Others"
+                ]
             }
         ]
     },
@@ -652,24 +773,27 @@
         "Equipment unit": "Heat exchangers",
         "Subunit": [
             {
-                "name": "Piping",
+                "name": "External",
                 "Maintainable items": [
+                    "Support",
                     "Body/shell",
                     "Valves",
                     "Piping"
                 ]
             },
             {
-                "name": "Seals (gaskets)",
+                "name": "Internal",
                 "Maintainable items": [
+                    "Body/shell",
                     "Tubes",
                     "Plates",
                     "Seals (gaskets)"
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit",
                     "Internal power supply",
                     "Monitoring",
@@ -681,8 +805,9 @@
                 ]
             },
             {
-                "name": "Motor",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Fan",
                     "Motor"
                 ]
             }
@@ -692,23 +817,26 @@
         "Equipment unit": "Heaters and boilers",
         "Subunit": [
             {
-                "name": "Reflux coil/ condenser",
+                "name": "Column",
                 "Maintainable items": [
+                    "Body/shell",
                     "Packing",
                     "Reflux coil/ condenser"
                 ]
             },
             {
-                "name": "Valves",
+                "name": "Externals",
                 "Maintainable items": [
+                    "Body/shell",
                     "Piping",
                     "Support",
                     "Valves"
                 ]
             },
             {
-                "name": "Support",
+                "name": "Internals",
                 "Maintainable items": [
+                    "Body/shell",
                     "Burner",
                     "Firetube",
                     "Exhaust stack",
@@ -717,8 +845,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit",
                     "Internal power supply Monitoring Sensors",
                     "Valves",
@@ -729,7 +858,9 @@
             },
             {
                 "name": "Miscellaneous",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Draft fan/motor Others"
+                ]
             }
         ]
     },
@@ -737,16 +868,18 @@
         "Equipment unit": "Pressure vessels",
         "Subunit": [
             {
-                "name": "Support",
+                "name": "External items",
                 "Maintainable items": [
+                    "Body/Shell",
                     "Valves",
                     "Piping",
                     "Support"
                 ]
             },
             {
-                "name": "Coil",
+                "name": "Internal items",
                 "Maintainable items": [
+                    "Body/Shell",
                     "Cyclones",
                     "Hydrocyclone liners",
                     "Plates, trays, vanes, pads Nozzle",
@@ -758,8 +891,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit",
                     "Internal power supply",
                     "Monitoring",
@@ -772,7 +906,9 @@
             },
             {
                 "name": "Miscellaneous",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Others"
+                ]
             }
         ]
     },
@@ -780,8 +916,9 @@
         "Equipment unit": "Piping",
         "Subunit": [
             {
-                "name": "Seals/gaskets",
+                "name": "Pipe",
                 "Maintainable items": [
+                    "Fastener/bolts",
                     "Fitting",
                     "Flange",
                     "Header",
@@ -792,8 +929,9 @@
                 ]
             },
             {
-                "name": "Accessories",
+                "name": "Valve",
                 "Maintainable items": [
+                    "Valve body",
                     "Valve seals",
                     "Actuator",
                     "Bonnet",
@@ -801,8 +939,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit",
                     "Internal power supply Monitoring",
                     "Sensors",
@@ -813,8 +952,9 @@
                 ]
             },
             {
-                "name": "Others",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Pipe support",
                     "Others"
                 ]
             }
@@ -824,8 +964,9 @@
         "Equipment unit": "Winches",
         "Subunit": [
             {
-                "name": "Wire",
+                "name": "Winch",
                 "Maintainable items": [
+                    "Bearing",
                     "Chain",
                     "Drum",
                     "Lubrication",
@@ -838,16 +979,18 @@
                 ]
             },
             {
-                "name": "Shaft",
+                "name": "Power transmission",
                 "Maintainable items": [
+                    "Bearing",
                     "Coupling",
                     "Gear",
                     "Shaft"
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit",
                     "Internal power supply Monitoring",
                     "Sensors",
@@ -858,8 +1001,9 @@
                 ]
             },
             {
-                "name": "Others",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Hood",
                     "Others"
                 ]
             }
@@ -869,8 +1013,9 @@
         "Equipment unit": "Turrets",
         "Subunit": [
             {
-                "name": "Turning and locking system",
+                "name": "Turret",
                 "Maintainable items": [
+                    "Bearing-roller",
                     "Bearing-slide",
                     "Bearing-wheel",
                     "Structure",
@@ -878,8 +1023,9 @@
                 ]
             },
             {
-                "name": "Wire",
+                "name": "Mooring",
                 "Maintainable items": [
+                    "Anchor",
                     "Buoy",
                     "Chain",
                     "Synthetic rope",
@@ -889,16 +1035,15 @@
                 ]
             },
             {
-                "name": NaN,
-                "Maintainable items": []
-            },
-            {
                 "name": "Riser and umbilical termination",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Bend-restrictor lock Hang-off"
+                ]
             },
             {
-                "name": "Ventilation",
+                "name": "Utility systems",
                 "Maintainable items": [
+                    "Ballast system",
                     "Bilge system",
                     "Lock buoy/ship system a Power system",
                     "Pull-in",
@@ -911,8 +1056,9 @@
         "Equipment unit": "Swivels",
         "Subunit": [
             {
-                "name": "Brushes",
+                "name": "Swivel",
                 "Maintainable items": [
+                    "Dynamic seals",
                     "Bearing",
                     "Liquid barrier system",
                     "Bolting (incl. both structural and pressure connections)",
@@ -921,8 +1067,9 @@
                 ]
             },
             {
-                "name": "Common items",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Tensioners",
                     "Common items"
                 ]
             }
@@ -932,8 +1079,9 @@
         "Equipment unit": "Storage tanks",
         "Subunit": [
             {
-                "name": "Foundation",
+                "name": "Tank structure",
                 "Maintainable items": [
+                    "Shell (or sidewalls) Roof",
                     "Bottom",
                     "Nozzles",
                     "Manholes",
@@ -942,8 +1090,9 @@
                 ]
             },
             {
-                "name": "Secondary containment d",
+                "name": "External",
                 "Maintainable items": [
+                    "Bottom drain",
                     "Roof drain",
                     "Seal",
                     "Platform",
@@ -951,12 +1100,13 @@
                     "Stairway",
                     "Ladder",
                     "Centring and anti-rotation device",
-                    "Secondary containment d"
+                    "Secondary containment"
                 ]
             },
             {
-                "name": "Swing line",
+                "name": "Internal",
                 "Maintainable items": [
+                    "Heaters",
                     "Cathodic protection",
                     "Nozzles",
                     "Piping",
@@ -964,16 +1114,18 @@
                 ]
             },
             {
-                "name": "Flame arrester",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Sensors",
                     "Piping",
                     "Open vent",
                     "Flame arrester"
                 ]
             },
             {
-                "name": "Others",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Mixers",
                     "Fire-fighting system",
                     "Lightning protection system",
                     "Others"
@@ -985,7 +1137,7 @@
         "Equipment unit": "UPS",
         "Subunit": [
             {
-                "name": "Connection/ socket Instrument",
+                "name": "Battery unit",
                 "Maintainable items": [
                     "Battery breaker Battery bank",
                     "Cabling",
@@ -994,7 +1146,7 @@
                 ]
             },
             {
-                "name": "Static switch",
+                "name": "Bypass unit",
                 "Maintainable items": [
                     "Bypass switch",
                     "Bypass transformer",
@@ -1004,7 +1156,7 @@
                 ]
             },
             {
-                "name": "Inverter transformer",
+                "name": "Inverter unit",
                 "Maintainable items": [
                     "Bypass switch",
                     "Cabling",
@@ -1016,8 +1168,9 @@
                 ]
             },
             {
-                "name": "Rectifier transformer",
+                "name": "Rectifier unit",
                 "Maintainable items": [
+                    "DC supply",
                     "Cabling",
                     "Contactor feeder",
                     "Fuse(s)",
@@ -1028,7 +1181,7 @@
                 ]
             },
             {
-                "name": "Insulation monitoring device",
+                "name": "Control and monitoring",
                 "Maintainable items": [
                     "Control unit",
                     "Internal power supply Monitoring",
@@ -1038,7 +1191,7 @@
                 ]
             },
             {
-                "name": "Others",
+                "name": "Miscellaneous",
                 "Maintainable items": [
                     "Cabinet",
                     "Insulation",
@@ -1052,8 +1205,9 @@
         "Equipment unit": "Power transformers a",
         "Subunit": [
             {
-                "name": "Outer tank",
+                "name": "Transformer unit",
                 "Maintainable items": [
+                    "Oil",
                     "Tank",
                     "Windings",
                     "Fan",
@@ -1066,8 +1220,9 @@
                 ]
             },
             {
-                "name": "Current transformers",
+                "name": "Monitoring system",
                 "Maintainable items": [
+                    "Bucholz relay",
                     "Level indicator",
                     "Thermometer",
                     "Relief valve",
@@ -1076,8 +1231,9 @@
                 ]
             },
             {
-                "name": "(NGRs)",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Bushing insulators",
                     "Terminal blocks",
                     "Connectors",
                     "Wiring",
@@ -1086,8 +1242,7 @@
                     "Silica-gel device",
                     "Dampers",
                     "Penetrator",
-                    "Neutral grounding resistors ",
-                    "(NGRs)"
+                    "Neutral grounding resistors (NGRs)"
                 ]
             }
         ]
@@ -1096,21 +1251,23 @@
         "Equipment unit": "Switchgear",
         "Subunit": [
             {
-                "name": "Busbar g",
+                "name": "Main power circuits",
                 "Maintainable items": [
+                    "Circuit breaker",
                     "Cable termination",
                     "Current transformers",
                     "Voltage transformers",
                     "Disconnectors",
                     "Earthing switch",
                     "Motor starters (contactor)",
-                    "Actuator d",
-                    "Busbar g"
+                    "Actuator",
+                    "Busbar"
                 ]
             },
             {
-                "name": "Wiring",
+                "name": "Control protection and monitoring",
                 "Maintainable items": [
+                    "Metering",
                     "Protection relay and interlock",
                     "Control power supply",
                     "Miniature circuit breakers (MCB)",
@@ -1124,10 +1281,11 @@
                 ]
             },
             {
-                "name": "Enclosure f (cabinet)",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Interface cabinet",
                     "Cooling",
-                    "Enclosure f (cabinet)"
+                    "Enclosure (cabinet)"
                 ]
             }
         ]
@@ -1136,8 +1294,9 @@
         "Equipment unit": "Frequency converters",
         "Subunit": [
             {
-                "name": "Input transformer",
+                "name": "Input stage",
                 "Maintainable items": [
+                    "Rectifiers",
                     "Protective devices",
                     "Internal circuit breaker or disconnector Harmonic filter",
                     "Commutating reactor",
@@ -1145,8 +1304,9 @@
                 ]
             },
             {
-                "name": "Fuses",
+                "name": "DC bus",
                 "Maintainable items": [
+                    "Capacitors",
                     "Inductors",
                     "Charging circuits",
                     "Brake choppers",
@@ -1155,15 +1315,17 @@
                 ]
             },
             {
-                "name": "Power cell",
+                "name": "Output stage",
                 "Maintainable items": [
+                    "Inverter",
                     "Output filters",
                     "Power cell"
                 ]
             },
             {
-                "name": "Miniature circuit breakers/fuses Isolation switch",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Monitoring",
                     "Control unit",
                     "Internal power",
                     "Supply",
@@ -1175,8 +1337,9 @@
                 ]
             },
             {
-                "name": "Louver",
+                "name": "Cooling system",
                 "Maintainable items": [
+                    "Heat exchanger",
                     "Filter",
                     "Motor",
                     "Piping",
@@ -1188,8 +1351,9 @@
                 ]
             },
             {
-                "name": "Bypass contactor",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Heaters",
                     "Enclosure fixtures and fittings",
                     "Excitation circuits",
                     "Bypass contactor"
@@ -1201,23 +1365,27 @@
         "Equipment unit": "Fire and gas detectors",
         "Subunit": [
             {
-                "name": "Mounting socket",
+                "name": "Sensor",
                 "Maintainable items": [
+                    "Cabling",
                     "Cover",
                     "Detector (incl. head and associated electronics)",
                     "Mounting socket"
                 ]
             },
             {
-                "name": "Display",
+                "name": "Interface unit",
                 "Maintainable items": [
+                    "Cabinet",
                     "Control card",
                     "Display"
                 ]
             },
             {
                 "name": "Miscellaneous",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Others"
+                ]
             }
         ]
     },
@@ -1225,14 +1393,16 @@
         "Equipment unit": "Input devices",
         "Subunit": [
             {
-                "name": "Conditioning (electronics)",
+                "name": "Sensor and electronics",
                 "Maintainable items": [
+                    "Sensing element",
                     "Conditioning (electronics)"
                 ]
             },
             {
-                "name": "Others",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Cabling",
                     "Piping",
                     "Others"
                 ]
@@ -1243,56 +1413,60 @@
         "Equipment unit": "Control logic units",
         "Subunit": [
             {
-                "name": "Connection unit",
+                "name": "Analog input cards",
                 "Maintainable items": [
+                    "Input card",
                     "Connection unit"
                 ]
             },
             {
-                "name": "tion unit (X-wiring)",
+                "name": "Digital input cards",
                 "Maintainable items": [
-                    "Connec-",
-                    "tion unit (X-wiring)"
+                    "Input card",
+                    "Connection unit (X-wiring)"
                 ]
             },
             {
-                "name": "Relay",
+                "name": "Analog output cards",
                 "Maintainable items": [
-                    "Connec-",
-                    "tion unit ",
-                    "(X-wiring)",
+                    "Output card",
+                    "Connection unit (X-wiring)",
                     "Relay"
                 ]
             },
             {
-                "name": "Relay",
+                "name": "Digital output cards",
                 "Maintainable items": [
-                    "Connec-",
-                    "tion unit ",
-                    "(X-wiring)",
+                    "Output card",
+                    "Connection unit (X-wiring)",
                     "Relay"
                 ]
             },
             {
-                "name": "Watchdog/ diagnostic Software",
+                "name": "Logic solver",
                 "Maintainable items": [
-                    "Random ",
-                    "access ",
-                    "memory (RAM)",
+                    "Central processor unit (CPU)",
+                    "Random access memory (RAM)",
                     "Watchdog/ diagnostic Software"
                 ]
             },
             {
                 "name": "System bus",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "No subdivision"
+                ]
             },
             {
                 "name": "Power supply",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "No subdivision"
+                ]
             },
             {
                 "name": "Miscellaneous",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Galvanic barriers Others"
+                ]
             }
         ]
     },
@@ -1300,8 +1474,9 @@
         "Equipment unit": "Valves",
         "Subunit": [
             {
-                "name": "Stem",
+                "name": "Valves",
                 "Maintainable items": [
+                    "Valve body",
                     "Bonnet",
                     "Flange joints",
                     "Seat rings",
@@ -1312,8 +1487,9 @@
                 ]
             },
             {
-                "name": "Travel stop",
+                "name": "Actuator",
                 "Maintainable items": [
+                    "Diaphragm",
                     "Spring",
                     "Case",
                     "Piston",
@@ -1325,8 +1501,9 @@
                 ]
             },
             {
-                "name": "Limit switch",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Wiring",
                     "Indicator",
                     "Instrument, general",
                     "Instrument, position",
@@ -1339,8 +1516,9 @@
                 ]
             },
             {
-                "name": "Others",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Accumulator",
                     "Others"
                 ]
             }
@@ -1350,8 +1528,9 @@
         "Equipment unit": "Nozzles",
         "Subunit": [
             {
-                "name": "Solder",
+                "name": "Nozzle",
                 "Maintainable items": [
+                    "Fusible bulb",
                     "Nozzle body with internals Nozzle head",
                     "Protective coating",
                     "Screen",
@@ -1359,14 +1538,17 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Mounting assembly",
                 "Maintainable items": [
+                    "Mounting connector",
                     "Seals"
                 ]
             },
             {
                 "name": "Miscellaneous",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Others"
+                ]
             }
         ]
     },
@@ -1374,8 +1556,9 @@
         "Equipment unit": "Lifeboats",
         "Subunit": [
             {
-                "name": "Doors/Hatches",
+                "name": "Main structure",
                 "Maintainable items": [
+                    "Hull",
                     "Innerliner",
                     "Superstructure",
                     "Seat/Seat belts",
@@ -1384,8 +1567,9 @@
                 ]
             },
             {
-                "name": "Waterjet",
+                "name": "Propulsion",
                 "Maintainable items": [
+                    "Engine Gear box/ transmission Propeller shaft",
                     "Propeller",
                     "Steering nozzle",
                     "Steering system",
@@ -1393,17 +1577,19 @@
                 ]
             },
             {
-                "name": "Hydrostatic interlock system e Limit switches f",
+                "name": "Control and monitoring",
                 "Maintainable items": [
-                    "Control panel d",
+                    "Air regulator",
+                    "Control panel",
                     "Lifeboat release hook",
                     "Lifeboat release panel",
                     "Hydrostatic interlock system e Limit switches f"
                 ]
             },
             {
-                "name": "Skid arrangement h",
+                "name": "Launch/ Release",
                 "Maintainable items": [
+                    "Davit structure",
                     "Davit winch/gear/ motor",
                     "Davit wire",
                     "Davit winch HPU",
@@ -1414,8 +1600,9 @@
                 ]
             },
             {
-                "name": "Emergency equipment",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Communication systems",
                     "Electrical system incl. lights and navigation",
                     "Deluge pump/ piping/nozzles Air cylinder",
                     "Battery charger",
@@ -1429,14 +1616,14 @@
         "Equipment unit": "Subsea production control",
         "Subunit": [
             {
-                "name": "No breakdown",
+                "name": "Chemical ",
                 "Maintainable items": [
-                    "(topside)",
+                    "Injection (topside)",
                     "No breakdown"
                 ]
             },
             {
-                "name": "bilical-termination unit (TUTU)",
+                "name": "Dynamic umbilical",
                 "Maintainable items": [
                     "Bend restrictor",
                     "Buoyancy device",
@@ -1446,14 +1633,12 @@
                     "Fibre-optic line",
                     "Sheath/ armour",
                     "Stabilizer",
-                    "Tension- and motion- compen-",
-                    "sation equilibrium",
-                    "Topside um-",
-                    "bilical-termination unit (TUTU)"
+                    "Tension and motion compensation equilibrium",
+                    "Topside umbilical-termination unit (TUTU)"
                 ]
             },
             {
-                "name": "Topside umbilical-termination unit (TUTU)",
+                "name": "Static umbilical",
                 "Maintainable items": [
                     "Bend restrictor",
                     "Hydraulic/ chemical line",
@@ -1465,46 +1650,44 @@
                 ]
             },
             {
-                "name": "No breakdown",
+                "name": "Electric- power unit (topside)",
                 "Maintainable items": [
                     "No breakdown"
                 ]
             },
             {
-                "name": "No breakdown",
+                "name": "Hydraulic- power unit (topside)",
                 "Maintainable items": [
                     "No breakdown"
                 ]
             },
             {
-                "name": "No breakdown",
+                "name": "Master control (topside)",
                 "Maintainable items": [
                     "No breakdown"
                 ]
             },
             {
-                "name": "IWIS g",
+                "name": "Subsea control module f",
                 "Maintainable items": [
                     "Accumulator subsea",
                     "Module base plate",
                     "Chemical inj. coupling",
-                    "Fibre-optic connector d Filter",
+                    "Fibre-optic connector Filter",
                     "Hydraulic coupling",
                     "LV power/ signal connector",
                     "Subsea electronic module",
-                    "Directional ",
-                    "Control Valve ",
-                    "(DCV)",
-                    "IWIS g"
+                    "Directional Control Valve (DCV)",
+                    "IWIS"
                 ]
             },
             {
-                "name": "Subsea cabling IWIS g",
+                "name": "Subsea distr. module",
                 "Maintainable items": [
                     "Accumulator subsea",
                     "Subsea bypass panel",
                     "Chemical inj. coupling",
-                    "Fibre-optic connector d",
+                    "Fibre-optic connector",
                     "Fibre-optic jumper",
                     "Hose",
                     "Hydraulic/ chemical line",
@@ -1512,11 +1695,11 @@
                     "LV power/ signal connector",
                     "LV power/ signal ",
                     "jumper",
-                    "Subsea cabling IWIS g"
+                    "Subsea cabling IWIS"
                 ]
             },
             {
-                "name": "Vibration",
+                "name": "Sensors",
                 "Maintainable items": [
                     "Flow",
                     "Leak",
@@ -1534,20 +1717,20 @@
         "Equipment unit": "Subsea wellhead and X-mas trees",
         "Subunit": [
             {
-                "name": "offs)",
+                "name": "Subsea wellhead",
                 "Maintainable items": [
                     "Permanent guide base (PGB)",
                     "Temporary guide base (TGB)",
                     "Conductor housing",
                     "Wellhead housing (high-pressure housing)",
                     "Casing hangers",
-                    "Annulus seal assemblies (pack-",
-                    "offs)"
+                    "Annulus seal assemblies (packoffs)"
                 ]
             },
             {
-                "name": "Valve, workover",
+                "name": "Subsea ",
                 "Maintainable items": [
+                    "X-mas tree",
                     "Chemical inj. coupling",
                     "Flowspool",
                     "Piping (hard pipe)",
@@ -1570,17 +1753,17 @@
                 ]
             },
             {
-                "name": "Tubing-hanger isolation plug",
+                "name": "Tubing hanger",
                 "Maintainable items": [
                     "Chemical inj. coupling",
                     "Hydraulic coupling",
-                    "LV/power signal connector d",
+                    "LV/power signal connector",
                     "Tubing-hanger body",
                     "Tubing-hanger isolation plug"
                 ]
             },
             {
-                "name": "Valve, utility isolation",
+                "name": "Flowbase",
                 "Maintainable items": [
                     "Frame",
                     "Hub/mandrel",
@@ -1590,7 +1773,7 @@
                 ]
             },
             {
-                "name": "Valve, control",
+                "name": "Flow control module",
                 "Maintainable items": [
                     "Chemical inj. coupling",
                     "Connector",
@@ -1605,7 +1788,7 @@
                 ]
             },
             {
-                "name": "ROV panel",
+                "name": "Vertical connection module (VCM)",
                 "Maintainable items": [
                     "VCM connector",
                     "Valve and actuator",
@@ -1621,39 +1804,44 @@
         "Equipment unit": "Risers",
         "Subunit": [
             {
-                "name": "Pipe",
+                "name": "Riser",
                 "Maintainable items": [
+                    "Connector",
                     "Insulation",
                     "Pipe"
                 ]
             },
             {
-                "name": "Valve, utility isolation",
+                "name": "Riser base",
                 "Maintainable items": [
+                    "Gas lift",
                     "Structure",
                     "Valve, process isolation",
                     "Valve, utility isolation"
                 ]
             },
             {
-                "name": "Subsea part",
+                "name": "Heating system",
                 "Maintainable items": [
+                    "Topside part",
                     "Subsea part"
                 ]
             },
             {
-                "name": "Coating \u2013 external",
+                "name": "Protection",
                 "Maintainable items": [
-                    "Coating \u2013 external"
+                    "Anode",
+                    "Coating external"
                 ]
             },
             {
-                "name": "Tension- and motion-compensation equipment",
+                "name": "Accessories",
                 "Maintainable items": [
+                    "Bend restrictor",
                     "Buoyancy device",
                     "J/I-tube seal",
                     "Stabilizing and guiding equipment",
-                    "Tension- and motion-compensation equipment"
+                    "Tension and motion-compensation equipment"
                 ]
             }
         ]
@@ -1662,8 +1850,9 @@
         "Equipment unit": "Subsea pumps a",
         "Subunit": [
             {
-                "name": "Valve, process isolation Valve, other",
+                "name": "Pump",
                 "Maintainable items": [
+                    "Bearing, radial",
                     "Bearing, thrust",
                     "Casing",
                     "Connector",
@@ -1680,8 +1869,9 @@
                 ]
             },
             {
-                "name": "Subsea electrical penetrator",
+                "name": "Electric motor",
                 "Maintainable items": [
+                    "Bearing, radial",
                     "Bearing, thrust",
                     "Casing",
                     "Connector",
@@ -1695,8 +1885,9 @@
                 ]
             },
             {
-                "name": "Valve, check",
+                "name": "Barrier fluid",
                 "Maintainable items": [
+                    "Accumulator",
                     "Hydraulic coupling",
                     "Cooling",
                     "Filter",
@@ -1708,8 +1899,9 @@
                 ]
             },
             {
-                "name": "Valve, other",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Cable",
                     "Junction box Leak sensor",
                     "Level sensor",
                     "Power supply",
@@ -1721,8 +1913,9 @@
                 ]
             },
             {
-                "name": "Purge system",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Connector",
                     "Cooling/heating Piping",
                     "Pulsation damper",
                     "Purge system"
@@ -1735,11 +1928,14 @@
         "Subunit": [
             {
                 "name": "Topside power distribution equipment",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "(No subdivision)"
+                ]
             },
             {
-                "name": "Fibre-optic line o",
+                "name": "Dynamic power cable",
                 "Maintainable items": [
+                    "Topside cable termination unit",
                     "Tension & motion compensation equipment Bend restrictor",
                     "Buoyancy device",
                     "J/I-tube seal",
@@ -1748,32 +1944,34 @@
                     "Midline joint",
                     "Sheath/armour",
                     "HV power line",
-                    "Fibre-optic line o"
+                    "Fibre-optic line"
                 ]
             },
             {
-                "name": "Midline joint",
+                "name": "Static power cable",
                 "Maintainable items": [
-                    "Fibre-optic line o",
+                    "HV power line",
+                    "Fibre-optic line",
                     "Factory joint",
                     "Offshore joint",
                     "Sheath/armour",
                     "Subsea cable termination unit",
-                    "Topside cable termination unit h",
+                    "Topside cable termination unit",
                     "Onshore cable termination unit",
                     "Bend restrictor",
                     "Midline joint"
                 ]
             },
             {
-                "name": "Control and monitoring m",
+                "name": "Subsea power distribution equipment",
                 "Maintainable items": [
+                    "Subsea power connector",
                     "Subsea switchgear",
-                    "Subsea power transformer g",
-                    "Subsea penetrator f",
-                    "Subsea frequency converter d Subsea power jumper j",
+                    "Subsea power transformer",
+                    "Subsea penetrator",
+                    "Subsea frequency converter Subsea power jumper",
                     "Subsea UPS",
-                    "Control and monitoring m"
+                    "Control and monitoring"
                 ]
             }
         ]
@@ -1782,8 +1980,9 @@
         "Equipment unit": "Subsea pressure vessels",
         "Subunit": [
             {
-                "name": "Valve, other",
+                "name": "External items",
                 "Maintainable items": [
+                    "Protective structure",
                     "Support structure",
                     "Insulation",
                     "Connector",
@@ -1796,8 +1995,9 @@
                 ]
             },
             {
-                "name": "Distributor",
+                "name": "Internal items",
                 "Maintainable items": [
+                    "Coalescer plates",
                     "Baffle plates",
                     "Trays",
                     "Vanes",
@@ -1811,14 +2011,17 @@
                 ]
             },
             {
-                "name": "Valve, control",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Sensors",
                     "Valve, control"
                 ]
             },
             {
                 "name": "Miscellaneous",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Others"
+                ]
             }
         ]
     },
@@ -1826,25 +2029,28 @@
         "Equipment unit": "Subsea pipelines",
         "Subunit": [
             {
-                "name": "Valve, process isolation d",
+                "name": "Pipe",
                 "Maintainable items": [
+                    "Coating external",
                     "Connector",
                     "Sealine",
                     "Safety joint",
                     "Flexible pipe spool",
                     "Rigid pipe spool",
-                    "Valve, process isolation d"
+                    "Valve, process isolation"
                 ]
             },
             {
-                "name": "Topsides part",
+                "name": "Heating system",
                 "Maintainable items": [
+                    "Subsea part",
                     "Topsides part"
                 ]
             },
             {
-                "name": "Pig station",
+                "name": "Subsea Isolation Station (SIS)",
                 "Maintainable items": [
+                    "Structure - protective",
                     "Structure - support",
                     "Valve, process isolation",
                     "Valve, utility isolation",
@@ -1854,8 +2060,9 @@
                 ]
             },
             {
-                "name": "Pig station",
+                "name": "Onshore Isolation Station (OIS)",
                 "Maintainable items": [
+                    "Structure - protective",
                     "Structure - support",
                     "Valve f, process isolation",
                     "Valve, utility isolation",
@@ -1870,8 +2077,9 @@
         "Equipment unit": "Downhole well completion",
         "Subunit": [
             {
-                "name": "Permanent bridge plug",
+                "name": "Casing",
                 "Maintainable items": [
+                    "Casing",
                     "Cement",
                     "Casing hanger",
                     "Liner",
@@ -1881,8 +2089,9 @@
                 ]
             },
             {
-                "name": "Fracturing plug",
+                "name": "Completion string",
                 "Maintainable items": [
+                    "Tubing hanger",
                     "Tubing",
                     "Flow coupling",
                     "TR-SCSSV",
@@ -1905,8 +2114,9 @@
                 ]
             },
             {
-                "name": "Chemical injection valve",
+                "name": "Insert",
                 "Maintainable items": [
+                    "Gas lift valve (GLV)",
                     "Dummy GLV",
                     "WR-SCSSV",
                     "WR Bridge plug",
@@ -1914,8 +2124,9 @@
                 ]
             },
             {
-                "name": "Signal/instrument cable",
+                "name": "Downhole power/ control/monitoring",
                 "Maintainable items": [
+                    "Electric-connector, downhole gauge",
                     "Electric-connector, tubing hanger",
                     "Downhole control module",
                     "Hydraulic control line",
@@ -1932,8 +2143,9 @@
         "Equipment unit": "Electrical submersible pumps",
         "Subunit": [
             {
-                "name": "Wellhead penetrator",
+                "name": "ESP cable",
                 "Maintainable items": [
+                    "Main power cable",
                     "Motor lead extension",
                     "Packer penetrator",
                     "Pigtail",
@@ -1942,8 +2154,9 @@
                 ]
             },
             {
-                "name": "Down hole sensor",
+                "name": "ESP motor",
                 "Maintainable items": [
+                    "Base",
                     "Coupling",
                     "Filter",
                     "Head",
@@ -1960,8 +2173,9 @@
                 ]
             },
             {
-                "name": "Thrust washers",
+                "name": "ESP pump",
                 "Maintainable items": [
+                    "Base",
                     "Coupling",
                     "Diffusers",
                     "Head/Discharge",
@@ -1975,8 +2189,9 @@
                 ]
             },
             {
-                "name": "Thrust washers",
+                "name": "ESP pump intake",
                 "Maintainable items": [
+                    "Base",
                     "Coupling",
                     "Diffusers",
                     "Discharge ports/ screens Head",
@@ -1993,8 +2208,9 @@
                 ]
             },
             {
-                "name": "Thrust bearing",
+                "name": "ESP seal",
                 "Maintainable items": [
+                    "Bag chamber",
                     "Base",
                     "Coupling",
                     "Head",
@@ -2014,17 +2230,18 @@
         "Equipment unit": "Surface wellhead and X-mas trees",
         "Subunit": [
             {
-                "name": "Control line exit block/ chemical inj. block Wellhead housing",
+                "name": "Wellhead",
                 "Maintainable items": [
+                    "Annulus seal assemblies (Pack-offs) Casing hangers",
                     "Conductor housing",
                     "Control line exit block/ chemical inj. block Wellhead housing"
                 ]
             },
             {
-                "name": "Tubing head spool",
+                "name": "Tubing hanger",
                 "Maintainable items": [
-                    "Hydraulic coupling",
-                    "(termination in control line block)",
+                    "Chemical injection coupling",
+                    "Hydraulic coupling (termination in control line block)",
                     "Power/signal coupler",
                     "El. fiber (termination in control line block)",
                     "Tubing-hanger body",
@@ -2035,22 +2252,23 @@
                 ]
             },
             {
-                "name": "Valve, other",
+                "name": "X-mas tree",
                 "Maintainable items": [
+                    "Tree caps",
                     "Tree loops/flowlines",
                     "Tree/wellhead connector",
-                    "X-mas tree/flowline connection (interface point) f",
+                    "X-mas tree/flowline connection (interface point)",
                     "Valve, check",
                     "Valve, choke",
                     "Valve, process isolationa,",
                     "Valve, utility isolation ",
-                    "b, h",
                     "Valve, other"
                 ]
             },
             {
-                "name": "Temperature sensors",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Control panel",
                     "Hydraulic instrument tubing",
                     "Electric instrument tubing",
                     "Pressure indicator",
@@ -2065,15 +2283,17 @@
         "Equipment unit": "Top drives",
         "Subunit": [
             {
-                "name": "Radial, thrust and axial bearing",
+                "name": "Drivers",
                 "Maintainable items": [
+                    "Electric driver",
                     "Hydraulic driver",
                     "Radial, thrust and axial bearing"
                 ]
             },
             {
-                "name": "Gearwheels",
+                "name": "Gear",
                 "Maintainable items": [
+                    "Bearings",
                     "Packing/ seals",
                     "Coupling to driver",
                     "Coupling to swivel",
@@ -2082,8 +2302,9 @@
                 ]
             },
             {
-                "name": "Swivel stem",
+                "name": "Rotary swivel",
                 "Maintainable items": [
+                    "Gooseneck",
                     "Packing/ seals",
                     "Axial, radial and thrust bearing",
                     "Swivel housing",
@@ -2091,8 +2312,9 @@
                 ]
             },
             {
-                "name": "Torque wrench",
+                "name": "Pipe- handler assembly",
                 "Maintainable items": [
+                    "Link hanger ",
                     "incl. tilt ",
                     "actuators",
                     "Pipe-handler position motor",
@@ -2101,8 +2323,9 @@
                 ]
             },
             {
-                "name": "Lube oil",
+                "name": "Lubrication",
                 "Maintainable items": [
+                    "Oil tank",
                     "Heaters",
                     "Coolers",
                     "Pump with motor Valves",
@@ -2111,8 +2334,9 @@
                 ]
             },
             {
-                "name": "Other valves",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Control panel Control",
                     "Electric and/or hydraulic solenoid cabinet",
                     "Service loops Manifolds",
                     "Junction box Sensor",
@@ -2122,8 +2346,9 @@
                 ]
             },
             {
-                "name": "Counter-balance compensator/ read-saver system",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "Guide dolly frame",
                     "Internal blowout preventers (kelly valves)",
                     "Counter-balance compensator/ read-saver system"
                 ]
@@ -2134,8 +2359,9 @@
         "Equipment unit": "Subsea blowout preventers (BOP)",
         "Subunit": [
             {
-                "name": "Gooseneck hose",
+                "name": "Preventers, valves and lines",
                 "Maintainable items": [
+                    "Annular preventers",
                     "Body",
                     "Flanges",
                     "Packing element",
@@ -2164,8 +2390,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Hydraulic connectors",
                 "Maintainable items": [
+                    "LMRP connectors and wellhead connectors:",
                     "Body",
                     "Locking mechanism",
                     "Piston(s)",
@@ -2174,8 +2401,9 @@
                 ]
             },
             {
-                "name": "Bolting",
+                "name": "Flexible joint",
                 "Maintainable items": [
+                    "Flexible joint:",
                     "Flexible element",
                     "Housing",
                     "Flanges",
@@ -2185,8 +2413,9 @@
                 ]
             },
             {
-                "name": "Pod selector valve",
+                "name": "Primary control",
                 "Maintainable items": [
+                    "Subsea",
                     "Control Pod",
                     "Pilot valves",
                     "Shuttle valves",
@@ -2203,8 +2432,7 @@
                     "Hydraulic bundles (pilot lines and main supply)",
                     "Multiplex cables",
                     "Rigid hydraulic supply line",
-                    "Surface:",
-                    "Control panels",
+                    "Surface Control panels",
                     "Surface control unit",
                     "Electrical power supply",
                     "Power supply",
@@ -2218,8 +2446,9 @@
                 ]
             },
             {
-                "name": "ROV intervention panel",
+                "name": "Backup control",
                 "Maintainable items": [
+                    "Subsea:",
                     "Solenoid valves",
                     "Pilot valves",
                     "Shuttle valves",
@@ -2229,7 +2458,7 @@
                     "Transducers Surface:",
                     "Surface control unit",
                     "Transducers",
-                    "ROV operated a:",
+                    "ROV operated",
                     "Hot stab",
                     "Shuttle valves",
                     "Valves, ROV operated shut-off",
@@ -2242,8 +2471,9 @@
         "Equipment unit": "Surface blowout preventers (BOP)",
         "Subunit": [
             {
-                "name": "Rigid pipe",
+                "name": "Preventers, valves and lines",
                 "Maintainable items": [
+                    "Annular preventer:",
                     "Body",
                     "Flanges",
                     "Packing element",
@@ -2271,8 +2501,9 @@
                 ]
             },
             {
-                "name": "Seals",
+                "name": "Connectors",
                 "Maintainable items": [
+                    "Connectors:",
                     "Body",
                     "Locking mechanism",
                     "Piston(s)",
@@ -2281,8 +2512,9 @@
                 ]
             },
             {
-                "name": "Instrumentation (e.g. pressure sensor, readout) Hydraulic power unit",
+                "name": "Primary control",
                 "Maintainable items": [
+                    "Surface controls:",
                     "Control Pod",
                     "Pilot valves",
                     "Pressure regulator valves",
@@ -2311,15 +2543,16 @@
         "Equipment unit": "Surface well control equipment (for well intervention)",
         "Subunit": [
             {
-                "name": "Sealing element",
+                "name": "Temporary connection and high pressure extension",
                 "Maintainable items": [
                     "Sealing surface",
                     "Sealing element"
                 ]
             },
             {
-                "name": "Shearing element",
+                "name": "Well ",
                 "Maintainable items": [
+                    "Intervention ",
                     "BOP",
                     "Ram assembly",
                     "Sealing element",
@@ -2327,21 +2560,21 @@
                 ]
             },
             {
-                "name": "Hydraulic circuit",
+                "name": "Dynamic pressure seal",
                 "Maintainable items": [
                     "Sealing element",
                     "Hydraulic circuit"
                 ]
             },
             {
-                "name": "Valve, utility isolation",
+                "name": "Lateral isolation valve",
                 "Maintainable items": [
                     "Valve, process isolation",
                     "Valve, utility isolation"
                 ]
             },
             {
-                "name": "Hydraulic fluid tank",
+                "name": "Control and monitoring",
                 "Maintainable items": [
                     "Prime mover",
                     "Solenoid control valve",
@@ -2364,17 +2597,18 @@
         "Equipment unit": "Subsea well intervention: Open water intervention",
         "Subunit": [
             {
-                "name": "Connector",
+                "name": "Well control ",
                 "Maintainable items": [
+                    "package (WCP)",
                     "Valve, process isolation",
                     "Valve, utility isolation Valve, shear",
                     "Connector"
                 ]
             },
             {
-                "name": "Bleed-off valve",
+                "name": "Emergency disconnect package",
                 "Maintainable items": [
-                    "WCP)",
+                    "the top of WCP",
                     "Retainer valve",
                     "Valve, utility isolation",
                     "Connector",
@@ -2382,7 +2616,7 @@
                 ]
             },
             {
-                "name": "Swivel",
+                "name": "WO riser",
                 "Maintainable items": [
                     "WO stress joint",
                     "WO safety joint",
@@ -2392,14 +2626,14 @@
                 ]
             },
             {
-                "name": "Elevator interface",
+                "name": "Rig interface",
                 "Maintainable items": [
                     "Tension frame",
                     "Elevator interface"
                 ]
             },
             {
-                "name": "Valve, relief",
+                "name": "Topside control & monitoring",
                 "Maintainable items": [
                     "Solenoid control valve",
                     "Pilot control valve",
@@ -2419,7 +2653,7 @@
                 ]
             },
             {
-                "name": "Hydraulic fluid subsea tanks",
+                "name": "Subsea control and monitoring",
                 "Maintainable items": [
                     "Solenoid control valve",
                     "Pilot control valve",
@@ -2440,8 +2674,9 @@
         "Equipment unit": "Jacking and fixation",
         "Subunit": [
             {
-                "name": "Greasing system",
+                "name": "Jacking unit",
                 "Maintainable items": [
+                    "Load shift system Motor",
                     "Gear Box",
                     "Pinion",
                     "Variable frequency drive Brake",
@@ -2450,11 +2685,14 @@
             },
             {
                 "name": "Fixation",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Clamping unit"
+                ]
             },
             {
-                "name": "Greasing system",
+                "name": "Leg structure",
                 "Maintainable items": [
+                    "Chord",
                     "Bracing",
                     "Spud can",
                     "Rack",
@@ -2465,11 +2703,14 @@
             },
             {
                 "name": "Hull-mounted structure",
-                "Maintainable items": []
+                "Maintainable items": [
+                    "Jacking support structure Leg guides"
+                ]
             },
             {
-                "name": "Seals",
+                "name": "Control and monitoring",
                 "Maintainable items": [
+                    "Actuating device",
                     "Control unit",
                     "Internal power supply Monitoring",
                     "Sensor",
@@ -2480,8 +2721,9 @@
                 ]
             },
             {
-                "name": "Others",
+                "name": "Miscellaneous",
                 "Maintainable items": [
+                    "HPU",
                     "Others"
                 ]
             }
