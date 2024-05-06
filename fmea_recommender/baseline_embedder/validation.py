@@ -144,10 +144,6 @@ def calculate_precision(cand_list, gold_list, validation_model, threshold=0.7):
                     already_matched_gold.add(gold_match)
                 break
 
-    print (already_matched_gold)
-    print (gold_list)
-    print (cand_list)
-    print ('----------------')
     precision = len(already_matched_gold) / len(set(cand_list))
     return precision
 
@@ -186,7 +182,6 @@ def calculate_recall(cand_list, gold_list, validation_model, threshold=0.7):
                     already_matched_cand.add(cand_match)
                 break
 
-    print (already_matched_cand)
     recall = len(already_matched_cand) / len(set(gold_list))
     return recall
 
