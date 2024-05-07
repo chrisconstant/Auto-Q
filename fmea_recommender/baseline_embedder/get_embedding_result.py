@@ -157,22 +157,27 @@ for db in sets:
             top_values_list = []
             top_indices_list = []
 
-
             for query in query_tagged:
                 with torch.no_grad():
-                    query_embeddings = pooling(model(parser([query])))['sentence_embedding']
+                    query_embeddings = pooling(model(parser([query])))[
+                        "sentence_embedding"
+                    ]
 
                 sim_distance = []
 
                 for document in document_tagged:
                     # Document
                     with torch.no_grad():
-                        document_embeddings = pooling(model(parser([document])))['sentence_embedding']
+                        document_embeddings = pooling(model(parser([document])))[
+                            "sentence_embedding"
+                        ]
 
                     # compute the cosine similarity
                     sim = lambda x, y: torch.dot(x, y) / (torch.norm(x) * torch.norm(y))
 
-                    sim_distance.append(sim(query_embeddings[0], document_embeddings[0]))
+                    sim_distance.append(
+                        sim(query_embeddings[0], document_embeddings[0])
+                    )
 
                 # now discover the
                 # Enumerate the list to preserve the indices
