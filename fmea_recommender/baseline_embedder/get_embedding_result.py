@@ -2,6 +2,8 @@ import pandas as pd
 import torch
 from llm2vec import LLM2Vec
 from sentence_transformers import SentenceTransformer
+from echo_embeddings import EchoEmbeddingsMistral, EchoPooling, EchoParser
+import torch
 
 sets = [
     {
@@ -30,6 +32,11 @@ models = [
         "type": "LLM2vec",
     },
     {"mdl": "all-mpnet-base-v2", "mode": "all_mpnet_base_v2", "type": "ST"},
+    {
+        "mdl": "jspringer/echo-mistral-7b-instruct-lasttoken",
+        "mode": "echo_mistral_7b_instruct_lasttoken",
+        "type": "Echo",
+    },
 ]
 
 for db in sets:
@@ -86,6 +93,72 @@ for db in sets:
 
             train_reps = sentence_model.encode(documents)
             test_reps = sentence_model.encode(querys)
+
+            # Normalize representations
+            train_reps_norm = torch.nn.functional.normalize(
+                torch.tensor(train_reps), p=2, dim=1
+            )
+            test_reps_norm = torch.nn.functional.normalize(
+                torch.tensor(test_reps), p=2, dim=1
+            )
+
+            # Calculate cosine similarity
+            cos_sim = torch.mm(test_reps_norm, train_reps_norm.transpose(0, 1))
+
+            # Get top k indices and values
+            top_values, top_indices = torch.topk(cos_sim, k=3, dim=1)
+            top_values_list = top_values.tolist()
+            top_indices_list = top_indices.tolist()
+
+            # Convert lists to pandas DataFrames
+            df_values = pd.DataFrame(
+                top_values_list, columns=[f"Top Value {i+1}" for i in range(3)]
+            )
+            df_indices = pd.DataFrame(
+                top_indices_list, columns=[f"Top Index {i+1}" for i in range(3)]
+            )
+
+            # Concatenate DataFrames horizontally (along columns)
+            df_merged = pd.concat([df_values, df_indices], axis=1)
+            df_merged.to_csv(prefixmatch + ".csv", index=False)
+        elif mdl["type"] == "Echo":
+            templates = {
+                "query": "<s>Instruct:{!%%prompt%%,}\nQuery:{!%%text%%}\nQuery again:{%%text%%}{</s>}",
+                "document": "<s>Document:{!%%text%%}\nDocument again:{%%text%%}{</s>}",
+            }
+
+            # Create the model
+            path_to_model = mdl["mdl"]
+            model = EchoEmbeddingsMistral.from_pretrained(path_to_model)
+            model = model.eval()
+
+            # Create the parser
+            parser = EchoParser(path_to_model, templates, max_length=300)
+
+            # Create the pooling: strategy can either be mean or last
+            pooling = EchoPooling(strategy="last")
+
+            df = pd.read_csv(db["train"])
+            documents = list(df["TypeData.GenCompType"])
+
+            df = pd.read_csv(db["dest"])
+            queries = list(df["TypeData.GenCompType"])
+
+            # specify the prompt, queries, and documents
+            prompt = "Retrieve passages that answer the question"
+
+            query_variables = [{"prompt": prompt, "text": q} for q in queries]
+            document_variables = [{"text": d} for d in documents]
+
+            query_tagged = [("query", q) for q in query_variables]
+            document_tagged = [("document", d) for d in document_variables]
+
+            # Get the tokenized embeddings
+            with torch.no_grad():
+                test_reps = pooling(model(parser(query_tagged)))["sentence_embedding"]
+                train_reps = pooling(model(parser(document_tagged)))[
+                    "sentence_embedding"
+                ]
 
             # Normalize representations
             train_reps_norm = torch.nn.functional.normalize(
