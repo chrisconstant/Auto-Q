@@ -160,14 +160,14 @@ for db in sets:
 
             for query in query_tagged:
                 with torch.no_grad():
-                    query_embeddings = pooling(model(parser([query_tagged])))['sentence_embedding']
+                    query_embeddings = pooling(model(parser([query])))['sentence_embedding']
 
                 sim_distance = []
 
                 for document in document_tagged:
                     # Document
                     with torch.no_grad():
-                        document_embeddings = pooling(model(parser([document_tagged])))['sentence_embedding']
+                        document_embeddings = pooling(model(parser([document])))['sentence_embedding']
 
                     # compute the cosine similarity
                     sim = lambda x, y: torch.dot(x, y) / (torch.norm(x) * torch.norm(y))
