@@ -157,42 +157,36 @@ for db in sets:
             top_values_list = []
             top_indices_list = []
 
-            with torch.no_grad():
 
-                for query in query_tagged:
-                    query_parsed_and_tokenized = parser(query)
-                    query_token_embedding = model(query_parsed_and_tokenized)
-                    query_embedding = pooling(query_token_embedding)[
-                        "sentence_embedding"
-                    ]
+            for query in query_tagged:
+                with torch.no_grad():
+                    query_embeddings = pooling(model(parser([query_tagged])))['sentence_embedding']
 
-                    sim_distance = []
+                sim_distance = []
 
-                    for document in document_tagged:
-                        # Document
-                        document_parsed_and_tokenized = parser(document)
-                        document_token_embedding = model(document_parsed_and_tokenized)
-                        document_embedding = pooling(document_token_embedding)[
-                            "sentence_embedding"
-                        ]
-                        cosine_sim = torch.dot(query_embedding, document_embedding) / (
-                            torch.norm(query_embedding) * torch.norm(document_embedding)
-                        )
-                        sim_distance.append(cosine_sim)
+                for document in document_tagged:
+                    # Document
+                    with torch.no_grad():
+                        document_embeddings = pooling(model(parser([document_tagged])))['sentence_embedding']
 
-                    # now discover the
-                    # Enumerate the list to preserve the indices
-                    indexed_distances = list(enumerate(sim_distance))
+                    # compute the cosine similarity
+                    sim = lambda x, y: torch.dot(x, y) / (torch.norm(x) * torch.norm(y))
 
-                    # Sort the list based on cosine values in descending order
-                    sorted_distances = sorted(
-                        indexed_distances, key=lambda x: x[1], reverse=True
-                    )
+                    sim_distance.append(sim(query_embeddings[0], document_embeddings[0]))
 
-                    # Get the top 3 values and their indices
-                    top_3 = sorted_distances[:3]
-                    top_indices_list.append([top_3[0][0], top_3[1][0], top_3[2][0]])
-                    top_values_list.append([top_3[0][1], top_3[1][1], top_3[2][1]])
+                # now discover the
+                # Enumerate the list to preserve the indices
+                indexed_distances = list(enumerate(sim_distance))
+
+                # Sort the list based on cosine values in descending order
+                sorted_distances = sorted(
+                    indexed_distances, key=lambda x: x[1], reverse=True
+                )
+
+                # Get the top 3 values and their indices
+                top_3 = sorted_distances[:3]
+                top_indices_list.append([top_3[0][0], top_3[1][0], top_3[2][0]])
+                top_values_list.append([top_3[0][1], top_3[1][1], top_3[2][1]])
 
             # Convert lists to pandas DataFrames
             df_values = pd.DataFrame(
