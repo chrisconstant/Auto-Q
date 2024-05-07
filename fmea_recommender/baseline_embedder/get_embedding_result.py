@@ -145,7 +145,7 @@ for db in sets:
             queries = list(df["TypeData.GenCompType"])
 
             # specify the prompt, queries, and documents
-            prompt = "Retrieve passages that answer the question"
+            prompt = "Find similar equipment:"
 
             query_variables = [{"prompt": prompt, "text": q} for q in queries]
             document_variables = [{"text": d} for d in documents]
@@ -154,27 +154,45 @@ for db in sets:
             document_tagged = [("document", d) for d in document_variables]
 
             # Get the tokenized embeddings
+            top_values_list = []
+            top_indices_list = []
+
             with torch.no_grad():
-                test_reps = pooling(model(parser(query_tagged)))["sentence_embedding"]
-                train_reps = pooling(model(parser(document_tagged)))[
-                    "sentence_embedding"
-                ]
 
-            # Normalize representations
-            train_reps_norm = torch.nn.functional.normalize(
-                torch.tensor(train_reps), p=2, dim=1
-            )
-            test_reps_norm = torch.nn.functional.normalize(
-                torch.tensor(test_reps), p=2, dim=1
-            )
+                for query in query_tagged:
+                    query_parsed_and_tokenized = parser(query)
+                    query_token_embedding = model(query_parsed_and_tokenized)
+                    query_embedding = pooling(query_token_embedding)[
+                        "sentence_embedding"
+                    ]
 
-            # Calculate cosine similarity
-            cos_sim = torch.mm(test_reps_norm, train_reps_norm.transpose(0, 1))
+                    sim_distance = []
 
-            # Get top k indices and values
-            top_values, top_indices = torch.topk(cos_sim, k=3, dim=1)
-            top_values_list = top_values.tolist()
-            top_indices_list = top_indices.tolist()
+                    for document in document_tagged:
+                        # Document
+                        document_parsed_and_tokenized = parser(document)
+                        document_token_embedding = model(document_parsed_and_tokenized)
+                        document_embedding = pooling(document_token_embedding)[
+                            "sentence_embedding"
+                        ]
+                        cosine_sim = torch.dot(query_embedding, document_embedding) / (
+                            torch.norm(query_embedding) * torch.norm(document_embedding)
+                        )
+                        sim_distance.append(cosine_sim)
+
+                    # now discover the
+                    # Enumerate the list to preserve the indices
+                    indexed_distances = list(enumerate(sim_distance))
+
+                    # Sort the list based on cosine values in descending order
+                    sorted_distances = sorted(
+                        indexed_distances, key=lambda x: x[1], reverse=True
+                    )
+
+                    # Get the top 3 values and their indices
+                    top_3 = sorted_distances[:3]
+                    top_indices_list.append([top_3[0][0], top_3[1][0], top_3[2][0]])
+                    top_values_list.append([top_3[0][1], top_3[1][1], top_3[2][1]])
 
             # Convert lists to pandas DataFrames
             df_values = pd.DataFrame(
