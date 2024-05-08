@@ -1,0 +1,78 @@
+[
+    {
+        "Taxonomy hierarchy": "Industry",
+        "Definition": "Type of main industry",
+        "Examples": "Petroleum, natural gas, petrochemical"
+    },
+    {
+        "Taxonomy hierarchy": "Business category",
+        "Definition": "Type of business or processing stream",
+        "Examples": "Upstream (E and P), midstream, downstream (refining), petrochemical"
+    },
+    {
+        "Taxonomy hierarchy": "Installation category",
+        "Definition": "Type of facility",
+        "Examples": "Oil/gas production, transportation, drilling, LNG, refinery, petrochemical (see Table A.1)"
+    },
+    {
+        "Taxonomy hierarchy": "Plant/Unit category",
+        "Definition": "Type of plant/unit",
+        "Examples": "Platform, semi-submersible, hydrocracker, ethylene cracker, polyethylene, acetic acid plant, methanol plant (see Table A.2)"
+    },
+    {
+        "Taxonomy hierarchy": "Section/ System",
+        "Definition": "Main section/system of the plant",
+        "Examples": "Compression, natural gas, liquefaction, vacuum gas oil, methanol regeneration, oxidation section, reaction system, distillation section, tanker loading system (see Table A.3)"
+    },
+    {
+        "Taxonomy hierarchy": "Equipment class/unit",
+        "Definition": "Class of similar equipment units. Each equipment class contains comparable equipment units (e.g. compressors).",
+        "Examples": "Heat exchangers, compressors, piping, pumps, gas turbines, subsea wellhead and X-mas trees, lifeboats, extruders, subsea BOPs (see Table A.4)"
+    },
+    {
+        "Taxonomy hierarchy": "Subunit",
+        "Definition": "A subsystem necessary for the equipment unit to function",
+        "Examples": "Lubrication subunit, cooling subunit, control and monitoring, heating subunit, pelletizing subunit, quenching subunit, refrigeration subunit, reflux subunit, distributed control subunit"
+    },
+    {
+        "Taxonomy hierarchy": "Component/ Maintainable item (MI)",
+        "Definition": "The group of parts of the equipment unit that are commonly maintained (repaired/ restored) as a whole",
+        "Examples": "Cooler, coupling, gearbox, lubrication oil pump, instrument loop, motor, valve, filter, pressure sensor, temperature sensor, electric circuit",
+        "Notes": "For some types of equipment, there might not be a MI; e.g. if the equipment class is piping, there might be no MI, but the part could be elbow. While this level can be useful in some cases, it is considered optional in this International Standard."
+    },
+    {
+        "Taxonomy hierarchy": "Part",
+        "Definition": "A single piece of equipment",
+        "Examples": "Seal, tube, shell, impeller, gasket, filter plate, bolt, nut, etc."
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
