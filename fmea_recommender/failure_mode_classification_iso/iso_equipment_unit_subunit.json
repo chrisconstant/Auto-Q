@@ -83,7 +83,7 @@
         "Equipment unit": "Compressors",
         "Subunit": [
             {
-                "name": "Power  transmission",
+                "name": "Power transmission",
                 "Maintainable items": [
                     "Gearbox/ variable drive Bearings",
                     "Belt/sheave",
@@ -1202,7 +1202,7 @@
         ]
     },
     {
-        "Equipment unit": "Power transformers a",
+        "Equipment unit": "Power transformers",
         "Subunit": [
             {
                 "name": "Transformer unit",
@@ -1616,7 +1616,7 @@
         "Equipment unit": "Subsea production control",
         "Subunit": [
             {
-                "name": "Chemical ",
+                "name": "Chemical",
                 "Maintainable items": [
                     "Injection (topside)",
                     "No breakdown"
@@ -1645,18 +1645,18 @@
                     "LV power/ signal line",
                     "Fibre-optic line",
                     "Sheath/ armour",
-                    "Subsea h umbilical-termination unit (SUTU)",
+                    "Subsea umbilical-termination unit (SUTU)",
                     "Topside umbilical-termination unit (TUTU)"
                 ]
             },
             {
-                "name": "Electric- power unit (topside)",
+                "name": "Electric-power unit (topside)",
                 "Maintainable items": [
                     "No breakdown"
                 ]
             },
             {
-                "name": "Hydraulic- power unit (topside)",
+                "name": "Hydraulic-power unit (topside)",
                 "Maintainable items": [
                     "No breakdown"
                 ]
@@ -1668,7 +1668,7 @@
                 ]
             },
             {
-                "name": "Subsea control module f",
+                "name": "Subsea control module",
                 "Maintainable items": [
                     "Accumulator subsea",
                     "Module base plate",
@@ -1728,7 +1728,7 @@
                 ]
             },
             {
-                "name": "Subsea ",
+                "name": "Subsea",
                 "Maintainable items": [
                     "X-mas tree",
                     "Chemical inj. coupling",
@@ -1847,7 +1847,7 @@
         ]
     },
     {
-        "Equipment unit": "Subsea pumps a",
+        "Equipment unit": "Subsea pumps",
         "Subunit": [
             {
                 "name": "Pump",
@@ -2312,7 +2312,7 @@
                 ]
             },
             {
-                "name": "Pipe- handler assembly",
+                "name": "Pipe-handler assembly",
                 "Maintainable items": [
                     "Link hanger ",
                     "incl. tilt ",
@@ -2361,32 +2361,29 @@
             {
                 "name": "Preventers, valves and lines",
                 "Maintainable items": [
-                    "Annular preventers",
-                    "Body",
-                    "Flanges",
-                    "Packing element",
-                    "Hydraulic piston",
-                    "Seals",
-                    "Ram preventers:",
-                    "Body",
-                    "Locking device",
-                    "Flanges",
-                    "Ram block",
-                    "Ram seals",
-                    "Shear blade",
-                    "Piston/operator",
-                    "Seals",
-                    "Choke-and-kill valves:",
-                    "Actuator",
-                    "Gate body",
-                    "Seals bonnet",
-                    "Choke-and-kill lines:",
-                    "Riser-attached line",
-                    "Couplers/ Connectors",
-                    "Seals",
-                    "Hose/Pipe",
-                    "Rigid pipe",
-                    "Gooseneck hose"
+                    "Annular preventers - Body",
+                    "Annular preventers - Flanges",
+                    "Annular preventers - Packing element",
+                    "Annular preventers - Hydraulic piston",
+                    "Annular preventers - Seals",
+                    "Ram preventers - Body",
+                    "Ram preventers - Locking device",
+                    "Ram preventers - Flanges",
+                    "Ram preventers - Ram block",
+                    "Ram preventers - Ram seals",
+                    "Ram preventers - Shear blade",
+                    "Ram preventers - Piston/operator",
+                    "Ram preventers - Seals",
+                    "Choke-and-kill valves - Actuator",
+                    "Choke-and-kill valves - Gate body",
+                    "Choke-and-kill valves - Seals bonnet",
+                    "Choke-and-kill valves - Choke-and-kill lines:",
+                    "Choke-and-kill valves - Riser-attached line",
+                    "Choke-and-kill valves - Couplers/ Connectors",
+                    "Choke-and-kill valves - Seals",
+                    "Choke-and-kill valves - Hose/Pipe",
+                    "Choke-and-kill valves - Rigid pipe",
+                    "Choke-and-kill valves - Gooseneck hose"
                 ]
             },
             {
@@ -2550,10 +2547,8 @@
                 ]
             },
             {
-                "name": "Well ",
+                "name": "Well Intervention BOP",
                 "Maintainable items": [
-                    "Intervention ",
-                    "BOP",
                     "Ram assembly",
                     "Sealing element",
                     "Shearing element"
@@ -2637,7 +2632,7 @@
                 "Maintainable items": [
                     "Solenoid control valve",
                     "Pilot control valve",
-                    "Accumulator \u2013 topside",
+                    "Accumulator topside",
                     "Hydraulic coupling",
                     "Master control station (topside)",
                     "Pressure regulator",
@@ -2657,7 +2652,7 @@
                 "Maintainable items": [
                     "Solenoid control valve",
                     "Pilot control valve",
-                    "Accumulator \u2013 subsea",
+                    "Accumulator subsea",
                     "Hydraulic coupling WO Umbilical",
                     "Subsea electronic module",
                     "LV power/ signal connector",
