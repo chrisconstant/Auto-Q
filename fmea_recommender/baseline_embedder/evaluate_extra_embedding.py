@@ -42,49 +42,51 @@ sets = [
     },
 ]
 
-k = 3
+totalks = [1, 3]
 
-for item in sets:
-    df = pd.read_csv(item["dest"])
-    df.columns = ["TypeData.CompTypeID", "TypeData.GenCompType", "failure_locations"]
+for k in totalks:
 
-    df.rename(columns={"failure_locations": "gold_failure_locations"}, inplace=True)
-    df.rename(columns={"TypeData.GenCompType": "short_descriptions"}, inplace=True)
-    # df['gold_failure_locations'] = df['gold_failure_locations'].apply(lambda x: ast.literal_eval(x))
+    for item in sets:
+        df = pd.read_csv(item["dest"])
+        df.columns = ["TypeData.CompTypeID", "TypeData.GenCompType", "failure_locations"]
 
-    df1 = pd.read_csv(item["index"])
-    data = pd.read_csv(item["train"])
-    data.rename(columns={"failure_locations": "gold_failure_locations"}, inplace=True)
-    L = list(data["gold_failure_locations"])
+        df.rename(columns={"failure_locations": "gold_failure_locations"}, inplace=True)
+        df.rename(columns={"TypeData.GenCompType": "short_descriptions"}, inplace=True)
+        # df['gold_failure_locations'] = df['gold_failure_locations'].apply(lambda x: ast.literal_eval(x))
 
-    if k > 1:
-        merged_column = df1[["Top Index 1", "Top Index 2", "Top Index 3"]].values.tolist()
-        df1["merged_column"] = merged_column
-        cand_col_name = item["cname"]
-        df[cand_col_name] = df1["merged_column"].apply(lambda x: [ast.literal_eval(L[xi]) for xi in x])
-        df[cand_col_name] = df[cand_col_name].apply(lambda x: list(set([item for sublist in x for item in sublist])))
-    else:
-        cand_col_name = item["cname"]
-        df[cand_col_name] = df1["Top Index 1"].apply(lambda x: L[x])
+        df1 = pd.read_csv(item["index"])
+        data = pd.read_csv(item["train"])
+        data.rename(columns={"failure_locations": "gold_failure_locations"}, inplace=True)
+        L = list(data["gold_failure_locations"])
 
-    print(df[cand_col_name])
-    print(df["gold_failure_locations"])
+        if k > 1:
+            merged_column = df1[["Top Index 1", "Top Index 2", "Top Index 3"]].values.tolist()
+            df1["merged_column"] = merged_column
+            cand_col_name = item["cname"]
+            df[cand_col_name] = df1["merged_column"].apply(lambda x: [ast.literal_eval(L[xi]) for xi in x])
+            df[cand_col_name] = df[cand_col_name].apply(lambda x: list(set([item for sublist in x for item in sublist])))
+        else:
+            cand_col_name = item["cname"]
+            df[cand_col_name] = df1["Top Index 1"].apply(lambda x: L[x])
 
-    val_model = SentenceTransformer("all-mpnet-base-v2")
-    step_1_data = validation.calculate_metrics(df, val_model, cand_col_name)
+        print(df[cand_col_name])
+        print(df["gold_failure_locations"])
 
-    table, plot = validation.get_precision_results(step_1_data)
-    print(table)
+        val_model = SentenceTransformer("all-mpnet-base-v2")
+        step_1_data = validation.calculate_metrics(df, val_model, cand_col_name)
 
-    table, plot = validation.get_recall_results(step_1_data)
-    print(table)
+        table, plot = validation.get_precision_results(step_1_data)
+        print(table)
 
-    prec_cols = [col for col in step_1_data if col.startswith("prec_")]
-    cand_col_names = [col[5:] for col in prec_cols]
-    f1_results = []
-    for col in cand_col_names:
-        f1 = validation.calculate_overall_f1(step_1_data, col)
-        f1_results.append((f1, col))
-    f1_results.sort(reverse=True)
-    for res in f1_results:
-        print("F1:", res[0], "\t", res[1])
+        table, plot = validation.get_recall_results(step_1_data)
+        print(table)
+
+        prec_cols = [col for col in step_1_data if col.startswith("prec_")]
+        cand_col_names = [col[5:] for col in prec_cols]
+        f1_results = []
+        for col in cand_col_names:
+            f1 = validation.calculate_overall_f1(step_1_data, col)
+            f1_results.append((f1, col))
+        f1_results.sort(reverse=True)
+        for res in f1_results:
+            print("F1:", res[0], "\t", res[1])

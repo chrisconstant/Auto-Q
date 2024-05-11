@@ -54,41 +54,43 @@ sets = [
     },
 ]
 
-k = 1
+totalks = [1, 3]
 
-for item in sets:
-    df = pd.read_csv(item["dest"])
-    df = df[["desc_and_uni_task", "problemcode"]]
+for k in totalks:
 
-    df.rename(columns={"label": "problemcode"}, inplace=True)
-    df.rename(columns={"desc_and_uni_task": "short_descriptions"}, inplace=True)
-    # df['gold_failure_locations'] = df['gold_failure_locations'].apply(lambda x: ast.literal_eval(x))
+    for item in sets:
+        df = pd.read_csv(item["dest"])
+        df = df[["desc_and_uni_task", "problemcode"]]
 
-    df1 = pd.read_csv(item["index"])
-    data = pd.read_csv(item["train"])
-    data.rename(columns={"label": "gold_failure_locations"}, inplace=True)
-    L = list(data["gold_failure_locations"])
+        df.rename(columns={"label": "problemcode"}, inplace=True)
+        df.rename(columns={"desc_and_uni_task": "short_descriptions"}, inplace=True)
+        # df['gold_failure_locations'] = df['gold_failure_locations'].apply(lambda x: ast.literal_eval(x))
 
-    if k > 1:
-        merged_column = df1[
-            ["Top Index 1", "Top Index 2", "Top Index 3"]
-        ].values.tolist()
-        df1["merged_column"] = merged_column
-        cand_col_name = item["cname"]
-        df[cand_col_name] = df1["merged_column"].apply(lambda x: [L[xi] for xi in x])
-        df[cand_col_name] = df1["merged_column"].apply(lambda x: [L[xi] for xi in x])
-        df[cand_col_name] = df[cand_col_name].apply(
-            lambda x: find_majority_or_first_element(x)
+        df1 = pd.read_csv(item["index"])
+        data = pd.read_csv(item["train"])
+        data.rename(columns={"label": "gold_failure_locations"}, inplace=True)
+        L = list(data["gold_failure_locations"])
+
+        if k > 1:
+            merged_column = df1[
+                ["Top Index 1", "Top Index 2", "Top Index 3"]
+            ].values.tolist()
+            df1["merged_column"] = merged_column
+            cand_col_name = item["cname"]
+            df[cand_col_name] = df1["merged_column"].apply(lambda x: [L[xi] for xi in x])
+            df[cand_col_name] = df1["merged_column"].apply(lambda x: [L[xi] for xi in x])
+            df[cand_col_name] = df[cand_col_name].apply(
+                lambda x: find_majority_or_first_element(x)
+            )
+        else:
+            cand_col_name = item["cname"]
+            df[cand_col_name] = df1["Top Index 1"].apply(lambda x: L[x])
+
+        # print (df)
+        precision, recall, f1_score, _ = precision_recall_fscore_support(
+            df["problemcode"],
+            df[cand_col_name],
+            average="macro",
+            zero_division=1,
         )
-    else:
-        cand_col_name = item["cname"]
-        df[cand_col_name] = df1["Top Index 1"].apply(lambda x: L[x])
-
-    # print (df)
-    precision, recall, f1_score, _ = precision_recall_fscore_support(
-        df["problemcode"],
-        df[cand_col_name],
-        average="macro",
-        zero_division=1,
-    )
-    print(k, precision, recall, f1_score, item["cname"])
+        print(k, precision, recall, f1_score, item["cname"])
