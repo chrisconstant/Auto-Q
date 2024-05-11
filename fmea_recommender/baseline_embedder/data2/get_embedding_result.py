@@ -32,6 +32,8 @@ models = [
         "type": "LLM2vec",
     },
     {"mdl": "all-mpnet-base-v2", "mode": "all_mpnet_base_v2", "type": "ST"},
+    {"mdl": "intfloat/e5-small-v2", "mode": "e5_small_v2", "type": "ST"},
+    {"mdl": "intfloat/e5-large-v2", "mode": "e5_large_v2", "type": "ST"},
     # {
     #    "mdl": "jspringer/echo-mistral-7b-instruct-lasttoken",
     #    "mode": "echo_mistral_7b_instruct_lasttoken",
