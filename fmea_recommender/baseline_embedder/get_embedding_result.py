@@ -93,7 +93,7 @@ for db in sets:
             df = pd.read_csv(db["dest"])
             querys = list(df["TypeData.GenCompType"])
 
-            if len(mdl['query'] > 0):
+            if len(mdl['query']) > 0:
                 documents = [mdl['query'] + item for item in documents]
                 querys = [mdl['query'] + item for item in querys]
 

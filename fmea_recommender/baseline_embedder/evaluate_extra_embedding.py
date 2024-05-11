@@ -40,6 +40,30 @@ sets = [
         "index": "./Mistral_7B_Instruct_v2_mntp_unsup_simcse_test.csv",
         "cname": "Mistral_7B_Instruct_v2_mntp_unsup_simcse_test",
     },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_val_short_desc_to_failure_locations.csv",
+        "index": "./e5_small_v2_val.csv",
+        "cname": "e5_small_v2_val",
+    },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_test_short_desc_to_failure_locations.csv",
+        "index": "./e5_small_v2_test.csv",
+        "cname": "e5_small_v2_test",
+    },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_val_short_desc_to_failure_locations.csv",
+        "index": "./e5_large_v2_val.csv",
+        "cname": "e5_large_v2_val",
+    },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_test_short_desc_to_failure_locations.csv",
+        "index": "./e5_large_v2_test.csv",
+        "cname": "e5_large_v2_test",
+    },
 ]
 
 totalks = [1, 3]
@@ -47,6 +71,7 @@ totalks = [1, 3]
 for k in totalks:
 
     for item in sets:
+        print (k)
         df = pd.read_csv(item["dest"])
         df.columns = ["TypeData.CompTypeID", "TypeData.GenCompType", "failure_locations"]
 

@@ -3,8 +3,7 @@ from sentence_transformers import SentenceTransformer
 import validation
 import ast
 from collections import Counter
-from sklearn.metrics import precision_recall_fscore_support
-
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 def find_majority_or_first_element(items):
     counts = Counter(items)
@@ -127,3 +126,6 @@ for k in totalks:
             zero_division=1,
         )
         print('micro', k, precision, recall, f1_score, item["cname"])
+
+        accuracy = accuracy_score(df["problemcode"], df[cand_col_name])
+        print('accuracy', k, accuracy, 0, 0, item["cname"])

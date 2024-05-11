@@ -3,7 +3,7 @@ from sentence_transformers import SentenceTransformer
 import validation
 import ast
 from collections import Counter
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 def find_majority_or_first_element(items):
     counts = Counter(items)
@@ -105,7 +105,10 @@ for k in totalks:
             df[cand_col_name] = df1["Top Index 1"].apply(lambda x: L[x])
 
         precision, recall, f1_score, _ = precision_recall_fscore_support(df['gold_failure_locations'], df[cand_col_name], average='macro', zero_division=1)
-        print (k, precision, recall, f1_score, item['cname'], 'micro')
+        print (k, precision, recall, f1_score, item['cname'], 'macro')
 
         precision, recall, f1_score, _ = precision_recall_fscore_support(df['gold_failure_locations'], df[cand_col_name], average='micro', zero_division=1)
         print (k, precision, recall, f1_score, item['cname'], 'micro')
+
+        accuracy = accuracy_score(df["gold_failure_locations"], df[cand_col_name])
+        print(k, accuracy, 0, 0, item["cname"], 'accuracy')
