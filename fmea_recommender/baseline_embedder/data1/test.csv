@@ -1,0 +1,63 @@
+workordertext,description,label
+ejected,Minor in-service problems,SER
+sticking shu,Fail to function,FTI
+not turning,Plugged / choked,PLU
+has failed,Breakdown,BRD
+needs fitting,Minor in-service problems,SER
+runs for a while and trip,Electrical,ELE
+very stiff to operate,Fail to function,FTI
+requires rebuild,Minor in-service problems,SER
+has no equipment earth,Electrical,ELE
+require tighteninginspecti,Minor in-service problems,SER
+does not work,Breakdown,BRD
+runs continuously,Failure to stop on demand,STP
+severe corrosion,Structural deficiency,STD
+contamination,Contamination,CON
+doesnt trip,Electrical,ELE
+ripped,Structural deficiency,STD
+unserviceable not in,Breakdown,BRD
+cant be adjusted,Fail to function,FTI
+worn,Structural deficiency,STD
+misalignment,Minor in-service problems,SER
+switched o,Spurious stop,UST
+to be torqued,Minor in-service problems,SER
+sped up,High output,HIO
+unable to pump,Low output,LOO
+spillage,Leaking,ELK
+spraying out slurry,Leaking,ELK
+jammed open,Plugged / choked,PLU
+no pump,Plugged / choked,PLU
+not truning,Plugged / choked,PLU
+unable to tighten,Minor in-service problems,SER
+burnt,Overheating,OHE
+hot joint,Overheating,OHE
+burst,Breakdown,BRD
+pumping fault,Low output,LOO
+not controlling,Minor in-service problems,SER
+surging cutting in and out,Electrical,ELE
+failed electrical,Electrical,ELE
+loose tighten,Minor in-service problems,SER
+high earth reading,Abnormal instrument reading,AIR
+cavitating,Erratic output,ERO
+requires repack,Minor in-service problems,SER
+needs support,Minor in-service problems,SER
+needs maintenance,Minor in-service problems,SER
+not spinning,Minor in-service problems,SER
+dont activate,Failure to start on demand,FTS
+unserviceable b feluwa,Breakdown,BRD
+no power,Electrical,ELE
+requires cleaning,Minor in-service problems,SER
+doesnt work,Breakdown,BRD
+vibrationlubealignment,Vibration,VIB
+blockage,Plugged / choked,PLU
+ongoing issue,Other,OTH
+poorly supported,Minor in-service problems,SER
+rocking around,Vibration,VIB
+siezeddescale,Breakdown,BRD
+dropped,Minor in-service problems,SER
+spraying,Leaking,ELK
+not covered,Minor in-service problems,SER
+hot jointfurn,Overheating,OHE
+running dry,Other,OTH
+smoking up,Overheating,OHE
+jammed,Plugged / choked,PLU

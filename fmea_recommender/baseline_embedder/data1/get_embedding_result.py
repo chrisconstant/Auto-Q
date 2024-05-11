@@ -7,13 +7,13 @@ import torch
 
 sets = [
     {
-        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
-        "dest": "./data/all_ids_deduplicated_val_short_desc_to_failure_locations.csv",
+        "train": "train.csv",
+        "dest": "dev.csv",
         "mode": "val",
     },
     {
-        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
-        "dest": "./data/all_ids_deduplicated_test_short_desc_to_failure_locations.csv",
+        "train": "train.csv",
+        "dest": "test.csv",
         "mode": "test",
     },
 ]
@@ -52,12 +52,12 @@ for db in sets:
             prefixmatch = mdl["mode"] + "_" + db["mode"]
 
             df = pd.read_csv(db["train"])
-            documents = list(df["TypeData.GenCompType"])
+            documents = list(df["workordertext"])
             d_reps = l2v.encode(documents)
 
             df = pd.read_csv(db["dest"])
-            querys = list(df["TypeData.GenCompType"])
-            instruction = "Given an industrial equipment, retrieve similar equipment:"
+            querys = list(df["workordertext"])
+            instruction = "Given a workorder description, retrieve similar workorder:"
             queries = [instruction + " " + item for item in querys]
             q_reps = l2v.encode(queries)
 
@@ -86,10 +86,10 @@ for db in sets:
             prefixmatch = mdl["mode"] + "_" + db["mode"]
 
             df = pd.read_csv(db["train"])
-            documents = list(df["TypeData.GenCompType"])
+            documents = list(df["workordertext"])
 
             df = pd.read_csv(db["dest"])
-            querys = list(df["TypeData.GenCompType"])
+            querys = list(df["workordertext"])
 
             train_reps = sentence_model.encode(documents)
             test_reps = sentence_model.encode(querys)
@@ -139,13 +139,13 @@ for db in sets:
             pooling = EchoPooling(strategy="last")
 
             df = pd.read_csv(db["train"])
-            documents = list(df["TypeData.GenCompType"])
+            documents = list(df["workordertext"])
 
             df = pd.read_csv(db["dest"])
-            queries = list(df["TypeData.GenCompType"])
+            queries = list(df["workordertext"])
 
             # specify the prompt, queries, and documents
-            prompt = "Find similar equipment:"
+            prompt = "Find similar workorder:"
 
             query_variables = [{"prompt": prompt, "text": q} for q in queries]
             document_variables = [{"text": d} for d in documents]
