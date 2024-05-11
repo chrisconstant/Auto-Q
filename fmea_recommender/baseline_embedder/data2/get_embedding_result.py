@@ -31,9 +31,9 @@ models = [
         "mode": "Mistral_7B_Instruct_v2_mntp_supervised",
         "type": "LLM2vec",
     },
-    {"mdl": "all-mpnet-base-v2", "mode": "all_mpnet_base_v2", "type": "ST"},
-    {"mdl": "intfloat/e5-small-v2", "mode": "e5_small_v2", "type": "ST"},
-    {"mdl": "intfloat/e5-large-v2", "mode": "e5_large_v2", "type": "ST"},
+    {"mdl": "all-mpnet-base-v2", "mode": "all_mpnet_base_v2", "type": "ST", "query": ""},
+    {"mdl": "intfloat/e5-small-v2", "mode": "e5_small_v2", "type": "ST", "query": "query: "},
+    {"mdl": "intfloat/e5-large-v2", "mode": "e5_large_v2", "type": "ST", "query": "query: "},
     # {
     #    "mdl": "jspringer/echo-mistral-7b-instruct-lasttoken",
     #    "mode": "echo_mistral_7b_instruct_lasttoken",
@@ -92,6 +92,10 @@ for db in sets:
 
             df = pd.read_csv(db["dest"])
             querys = list(df["desc_and_uni_task"])
+
+            if len(mdl['query'] > 0):
+                documents = [mdl['query'] + item for item in documents]
+                querys = [mdl['query'] + item for item in querys]
 
             train_reps = sentence_model.encode(documents)
             test_reps = sentence_model.encode(querys)
