@@ -5,6 +5,7 @@ import ast
 from collections import Counter
 from sklearn.metrics import precision_recall_fscore_support
 
+
 def find_majority_or_first_element(items):
     counts = Counter(items)
     majority_element, majority_count = counts.most_common(1)[0]
@@ -12,6 +13,7 @@ def find_majority_or_first_element(items):
         return majority_element
     else:
         return items[0]
+
 
 sets = [
     {
@@ -56,7 +58,7 @@ k = 1
 
 for item in sets:
     df = pd.read_csv(item["dest"])
-    df.columns = ["desc_and_uni_task","problemcode"]
+    df = df[["desc_and_uni_task", "problemcode"]]
 
     df.rename(columns={"label": "problemcode"}, inplace=True)
     df.rename(columns={"desc_and_uni_task": "short_descriptions"}, inplace=True)
@@ -67,17 +69,26 @@ for item in sets:
     data.rename(columns={"label": "gold_failure_locations"}, inplace=True)
     L = list(data["gold_failure_locations"])
 
-
     if k > 1:
-        merged_column = df1[["Top Index 1", "Top Index 2", "Top Index 3"]].values.tolist()
+        merged_column = df1[
+            ["Top Index 1", "Top Index 2", "Top Index 3"]
+        ].values.tolist()
         df1["merged_column"] = merged_column
         cand_col_name = item["cname"]
         df[cand_col_name] = df1["merged_column"].apply(lambda x: [L[xi] for xi in x])
         df[cand_col_name] = df1["merged_column"].apply(lambda x: [L[xi] for xi in x])
-        df[cand_col_name] = df[cand_col_name].apply(lambda x: find_majority_or_first_element(x))
+        df[cand_col_name] = df[cand_col_name].apply(
+            lambda x: find_majority_or_first_element(x)
+        )
     else:
         cand_col_name = item["cname"]
         df[cand_col_name] = df1["Top Index 1"].apply(lambda x: L[x])
 
-    precision, recall, f1_score, _ = precision_recall_fscore_support(df['gold_failure_locations'], df[cand_col_name], average='macro', zero_division=1)
-    print (k, precision, recall, f1_score, item['cname'])
+    # print (df)
+    precision, recall, f1_score, _ = precision_recall_fscore_support(
+        df["problemcode"],
+        df[cand_col_name],
+        average="macro",
+        zero_division=1,
+    )
+    print(k, precision, recall, f1_score, item["cname"])
