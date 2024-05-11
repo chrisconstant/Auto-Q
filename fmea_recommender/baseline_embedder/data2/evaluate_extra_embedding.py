@@ -52,6 +52,30 @@ sets = [
         "index": "./Mistral_7B_Instruct_v2_mntp_unsup_simcse_test.csv",
         "cname": "Mistral_7B_Instruct_v2_mntp_unsup_simcse_test",
     },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_train_trial.csv",
+        "index": "./e5_small_v2_val.csv",
+        "cname": "e5_small_v2_val",
+    },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_test_trial.csv",
+        "index": "./e5_small_v2_test.csv",
+        "cname": "e5_small_v2_test",
+    },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_train_trial.csv",
+        "index": "./e5_large_v2_val.csv",
+        "cname": "e5_large_v2_val",
+    },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_test_trial.csv",
+        "index": "./e5_large_v2_test.csv",
+        "cname": "e5_large_v2_test",
+    },
 ]
 
 totalks = [1, 3]
@@ -93,4 +117,13 @@ for k in totalks:
             average="macro",
             zero_division=1,
         )
-        print(k, precision, recall, f1_score, item["cname"])
+        print('macro', k, precision, recall, f1_score, item["cname"])
+
+        # print (df)
+        precision, recall, f1_score, _ = precision_recall_fscore_support(
+            df["problemcode"],
+            df[cand_col_name],
+            average="micro",
+            zero_division=1,
+        )
+        print('micro', k, precision, recall, f1_score, item["cname"])
