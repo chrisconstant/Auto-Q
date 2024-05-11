@@ -105,4 +105,7 @@ for k in totalks:
             df[cand_col_name] = df1["Top Index 1"].apply(lambda x: L[x])
 
         precision, recall, f1_score, _ = precision_recall_fscore_support(df['gold_failure_locations'], df[cand_col_name], average='macro', zero_division=1)
-        print (k, precision, recall, f1_score, item['cname'])
+        print (k, precision, recall, f1_score, item['cname'], 'micro')
+
+        precision, recall, f1_score, _ = precision_recall_fscore_support(df['gold_failure_locations'], df[cand_col_name], average='micro', zero_division=1)
+        print (k, precision, recall, f1_score, item['cname'], 'micro')
