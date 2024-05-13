@@ -45,7 +45,7 @@ models = [
 ]
 
 for db in sets:
-    for mdl in models[5:]:
+    for mdl in models:
         if mdl["type"] == "LLM2vec":
             l2v = LLM2Vec.from_pretrained(
                 mdl["mdl"],
@@ -232,7 +232,6 @@ for db in sets:
             df = pd.read_csv(db["dest"])
             querys = list(df["TypeData.GenCompType"])
 
-            response = list(client.text.embedding.create(model_id='baai/bge-large-en-v1.5',inputs=documents,))
             response = list(
                 client.text.embedding.create(
                     model_id=mdl["mdl"],
@@ -241,7 +240,6 @@ for db in sets:
             )
             train_reps = [item.results[0] for item in response]
 
-            response = list(client.text.embedding.create(model_id='baai/bge-large-en-v1.5',inputs=documents,))
             response = list(
                 client.text.embedding.create(
                     model_id=mdl["mdl"],

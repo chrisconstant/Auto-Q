@@ -34,6 +34,9 @@ models = [
     {"mdl": "all-mpnet-base-v2", "mode": "all_mpnet_base_v2", "type": "ST", "query": ""},
     {"mdl": "intfloat/e5-small-v2", "mode": "e5_small_v2", "type": "ST", "query": "query: "},
     {"mdl": "intfloat/e5-large-v2", "mode": "e5_large_v2", "type": "ST", "query": "query: "},
+    {"mdl": "baai/bge-large-en-v1.5", "mode": "bge_large_en", "type": "BAM", "query": ""},
+    {"mdl": "ibm/slate.125m.english.rtrvr", "mode": "slate_125m_english_rtrvr", "type": "BAM", "query": ""},
+    {"mdl": "ibm/slate.30m.english.rtrvr.02.28.2024", "mode": "slate_30m_english_rtrvr", "type": "BAM", "query": ""},
     # {
     #    "mdl": "jspringer/echo-mistral-7b-instruct-lasttoken",
     #    "mode": "echo_mistral_7b_instruct_lasttoken",
@@ -42,7 +45,7 @@ models = [
 ]
 
 for db in sets:
-    for mdl in models:
+    for mdl in models[5:]:
         if mdl["type"] == "LLM2vec":
             l2v = LLM2Vec.from_pretrained(
                 mdl["mdl"],
@@ -198,6 +201,69 @@ for db in sets:
                 top_3 = sorted_distances[:3]
                 top_indices_list.append([top_3[0][0], top_3[1][0], top_3[2][0]])
                 top_values_list.append([top_3[0][1], top_3[1][1], top_3[2][1]])
+
+            # Convert lists to pandas DataFrames
+            df_values = pd.DataFrame(
+                top_values_list, columns=[f"Top Value {i+1}" for i in range(3)]
+            )
+            df_indices = pd.DataFrame(
+                top_indices_list, columns=[f"Top Index {i+1}" for i in range(3)]
+            )
+
+            # Concatenate DataFrames horizontally (along columns)
+            df_merged = pd.concat([df_values, df_indices], axis=1)
+            df_merged.to_csv(prefixmatch + ".csv", index=False)
+        elif mdl["type"] == "BAM":
+            prefixmatch = mdl["mode"] + "_" + db["mode"]
+
+            df = pd.read_csv(db["train"])
+            documents = list(df["description"] + ',' + df["longdescription"])
+
+            df = pd.read_csv(db["dest"])
+            querys = list(df["desc_and_uni_task"])
+
+            from dotenv import load_dotenv
+            from genai import Client, Credentials
+
+            api_key = "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg"
+            api_url = "https://bam-api.res.ibm.com"
+            credentials = {
+                "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
+                "api_endpoint": "https://bam-api.res.ibm.com",
+            }
+            client = Client(credentials=Credentials(**credentials))
+
+            response = list(
+                client.text.embedding.create(
+                    model_id=mdl["mdl"],
+                    inputs=documents,
+                )
+            )
+            train_reps = [item.results[0] for item in response]
+
+            response = list(
+                client.text.embedding.create(
+                    model_id=mdl["mdl"],
+                    inputs=querys,
+                )
+            )
+            test_reps = [item.results[0] for item in response]
+
+            # Normalize representations
+            train_reps_norm = torch.nn.functional.normalize(
+                torch.tensor(train_reps), p=2, dim=1
+            )
+            test_reps_norm = torch.nn.functional.normalize(
+                torch.tensor(test_reps), p=2, dim=1
+            )
+
+            # Calculate cosine similarity
+            cos_sim = torch.mm(test_reps_norm, train_reps_norm.transpose(0, 1))
+
+            # Get top k indices and values
+            top_values, top_indices = torch.topk(cos_sim, k=3, dim=1)
+            top_values_list = top_values.tolist()
+            top_indices_list = top_indices.tolist()
 
             # Convert lists to pandas DataFrames
             df_values = pd.DataFrame(
