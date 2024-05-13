@@ -45,7 +45,7 @@ models = [
 ]
 
 for db in sets:
-    for mdl in models[5:]:
+    for mdl in models:
         if mdl["type"] == "LLM2vec":
             l2v = LLM2Vec.from_pretrained(
                 mdl["mdl"],

@@ -1,75 +1,45 @@
-macro 1 0.26666666666666666 0.42343604108309985 0.0548499897239393 dfsp_mpnet_base_v2_val
-micro 1 0.10891089108910891 0.10891089108910891 0.10891089108910891 dfsp_mpnet_base_v2_val
-accuracy 1 0.10891089108910891 0 0 dfsp_mpnet_base_v2_val
-macro 1 0.38339826839826835 0.39142857142857146 0.04572008113590263 dfsp_mpnet_base_v2_test
-micro 1 0.1 0.1 0.1 dfsp_mpnet_base_v2_test
-accuracy 1 0.1 0 0 dfsp_mpnet_base_v2_test
-macro 1 0.4285214785214785 0.4000544662309368 0.13277706387044555 Mistral_7B_Instruct_v2_mntp_supervised_val
-micro 1 0.21782178217821782 0.21782178217821782 0.21782178217821782 Mistral_7B_Instruct_v2_mntp_supervised_val
-accuracy 1 0.21782178217821782 0 0 Mistral_7B_Instruct_v2_mntp_supervised_val
-macro 1 0.4989013172836701 0.3573147440794499 0.11395045254442672 Mistral_7B_Instruct_v2_mntp_supervised_test
-micro 1 0.2 0.2 0.2 Mistral_7B_Instruct_v2_mntp_supervised_test
-accuracy 1 0.2 0 0 Mistral_7B_Instruct_v2_mntp_supervised_test
-macro 1 0.446891992090954 0.31571510957324106 0.06839064434220143 Mistral_7B_Instruct_v2_mntp_unsup_simcse_val
-micro 1 0.1188118811881188 0.1188118811881188 0.1188118811881188 Mistral_7B_Instruct_v2_mntp_unsup_simcse_val
-accuracy 1 0.1188118811881188 0 0 Mistral_7B_Instruct_v2_mntp_unsup_simcse_val
-macro 1 0.2786210317460317 0.357497594997595 0.06164571586566471 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
-micro 1 0.12 0.12 0.12 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
-accuracy 1 0.12 0 0 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
-macro 1 0.3919033220071282 0.30692041522491353 0.06600431692834897 e5_small_v2_val
-micro 1 0.1188118811881188 0.1188118811881188 0.1188118811881188 e5_small_v2_val
-accuracy 1 0.1188118811881188 0 0 e5_small_v2_val
-macro 1 0.4965569561157796 0.31772345301757066 0.08313238338813787 e5_small_v2_test
-micro 1 0.13 0.13 0.13 e5_small_v2_test
-accuracy 1 0.13 0 0 e5_small_v2_test
-macro 1 0.33724323062558353 0.35299884659746245 0.13542459245784055 e5_large_v2_val
-micro 1 0.15841584158415842 0.15841584158415842 0.15841584158415842 e5_large_v2_val
-accuracy 1 0.15841584158415842 0 0 e5_large_v2_val
-macro 1 0.37556479978354973 0.30273268398268394 0.1477073784059078 e5_large_v2_test
-micro 1 0.17 0.17 0.17 e5_large_v2_test
-accuracy 1 0.17 0 0 e5_large_v2_test
-macro 3 0.26666666666666666 0.42343604108309985 0.0548499897239393 dfsp_mpnet_base_v2_val
-micro 3 0.10891089108910891 0.10891089108910891 0.10891089108910891 dfsp_mpnet_base_v2_val
-accuracy 3 0.10891089108910891 0 0 dfsp_mpnet_base_v2_val
-macro 3 0.38339826839826835 0.39142857142857146 0.04572008113590263 dfsp_mpnet_base_v2_test
-micro 3 0.1 0.1 0.1 dfsp_mpnet_base_v2_test
-accuracy 3 0.1 0 0 dfsp_mpnet_base_v2_test
-macro 3 0.4285214785214785 0.4000544662309368 0.13277706387044555 Mistral_7B_Instruct_v2_mntp_supervised_val
-micro 3 0.21782178217821782 0.21782178217821782 0.21782178217821782 Mistral_7B_Instruct_v2_mntp_supervised_val
-accuracy 3 0.21782178217821782 0 0 Mistral_7B_Instruct_v2_mntp_supervised_val
-macro 3 0.4989013172836701 0.3573147440794499 0.11395045254442672 Mistral_7B_Instruct_v2_mntp_supervised_test
-micro 3 0.2 0.2 0.2 Mistral_7B_Instruct_v2_mntp_supervised_test
-accuracy 3 0.2 0 0 Mistral_7B_Instruct_v2_mntp_supervised_test
-macro 3 0.446891992090954 0.31571510957324106 0.06839064434220143 Mistral_7B_Instruct_v2_mntp_unsup_simcse_val
-micro 3 0.1188118811881188 0.1188118811881188 0.1188118811881188 Mistral_7B_Instruct_v2_mntp_unsup_simcse_val
-accuracy 3 0.1188118811881188 0 0 Mistral_7B_Instruct_v2_mntp_unsup_simcse_val
-macro 3 0.2786210317460317 0.357497594997595 0.06164571586566471 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
-micro 3 0.12 0.12 0.12 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
-accuracy 3 0.12 0 0 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
-macro 3 0.3919033220071282 0.30692041522491353 0.06600431692834897 e5_small_v2_val
-micro 3 0.1188118811881188 0.1188118811881188 0.1188118811881188 e5_small_v2_val
-accuracy 3 0.1188118811881188 0 0 e5_small_v2_val
-macro 3 0.4965569561157796 0.31772345301757066 0.08313238338813787 e5_small_v2_test
-micro 3 0.13 0.13 0.13 e5_small_v2_test
-accuracy 3 0.13 0 0 e5_small_v2_test
-macro 3 0.33724323062558353 0.35299884659746245 0.13542459245784055 e5_large_v2_val
-micro 3 0.15841584158415842 0.15841584158415842 0.15841584158415842 e5_large_v2_val
-accuracy 3 0.15841584158415842 0 0 e5_large_v2_val
-macro 3 0.37556479978354973 0.30273268398268394 0.1477073784059078 e5_large_v2_test
-micro 3 0.17 0.17 0.17 e5_large_v2_test
-accuracy 3 0.17 0 0 e5_large_v2_test
+macro 1 0.5860544217687075 0.690758348794063 0.6137874030731174 dfsp_mpnet_base_v2_test
+micro 1 0.6 0.6 0.6 dfsp_mpnet_base_v2_test
+accuracy 1 0.6 0 0 dfsp_mpnet_base_v2_test
+macro 1 0.6233920841063698 0.6987940630797773 0.639729083879902 Mistral_7B_Instruct_v2_mntp_supervised_test
+micro 1 0.59 0.59 0.59 Mistral_7B_Instruct_v2_mntp_supervised_test
+accuracy 1 0.59 0 0 Mistral_7B_Instruct_v2_mntp_supervised_test
+macro 1 0.6717687074829932 0.7019596474953617 0.6720008976477353 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
+micro 1 0.61 0.61 0.61 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
+accuracy 1 0.61 0 0 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
+macro 1 0.6584207772177697 0.7111549165120594 0.6625831492017097 e5_small_v2_test
+micro 1 0.62 0.62 0.62 e5_small_v2_test
+accuracy 1 0.62 0 0 e5_small_v2_test
+macro 1 0.6759906759906759 0.6999536178107607 0.6561626049021007 e5_large_v2_test
+micro 1 0.61 0.61 0.61 e5_large_v2_test
+accuracy 1 0.61 0 0 e5_large_v2_test
+macro 3 0.5600237064522778 0.6386750154607297 0.5718369151005976 dfsp_mpnet_base_v2_test
+micro 3 0.58 0.58 0.58 dfsp_mpnet_base_v2_test
+accuracy 3 0.58 0 0 dfsp_mpnet_base_v2_test
+macro 3 0.6189493979409945 0.628555967841682 0.6053066920548124 Mistral_7B_Instruct_v2_mntp_supervised_test
+micro 3 0.55 0.55 0.55 Mistral_7B_Instruct_v2_mntp_supervised_test
+accuracy 3 0.55 0 0 Mistral_7B_Instruct_v2_mntp_supervised_test
+macro 3 0.6576719576719576 0.6370786951144094 0.6326631223684904 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
+micro 3 0.57 0.57 0.57 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
+accuracy 3 0.57 0 0 Mistral_7B_Instruct_v2_mntp_unsup_simcse_test
+macro 3 0.6504009706649458 0.6326685219542362 0.6061545597259882 e5_small_v2_test
+micro 3 0.59 0.59 0.59 e5_small_v2_test
+accuracy 3 0.59 0 0 e5_small_v2_test
+macro 3 0.6598470973470973 0.6354553184910328 0.6081458899349214 e5_large_v2_test
+micro 3 0.57 0.57 0.57 e5_large_v2_test
+accuracy 3 0.57 0 0 e5_large_v2_test
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@cccxc590.pok.ibm.com>
-Subject: Job 3883804: <python3.10 evaluate_extra_embedding.py> in cluster <cccCluster> Done
+Subject: Job 3884362: <python3.10 evaluate_extra_embedding.py> in cluster <cccCluster> Done
 
-Job <python3.10 evaluate_extra_embedding.py> was submitted from host <cccxl016> by user <modelfactory> in cluster <cccCluster> at Sat May 11 15:24:43 2024
-Job was executed on host(s) <8*cccxc590>, in queue <nonstandard>, as user <modelfactory> in cluster <cccCluster> at Sat May 11 15:24:44 2024
+Job <python3.10 evaluate_extra_embedding.py> was submitted from host <cccxl016> by user <modelfactory> in cluster <cccCluster> at Sat May 11 18:28:21 2024
+Job was executed on host(s) <8*cccxc590>, in queue <nonstandard>, as user <modelfactory> in cluster <cccCluster> at Sat May 11 18:28:23 2024
 </u/modelfactory> was used as the home directory.
-</u/modelfactory/AutoQA/fmea_recommender/baseline_embedder/data2> was used as the working directory.
-Started at Sat May 11 15:24:44 2024
-Terminated at Sat May 11 15:24:57 2024
-Results reported at Sat May 11 15:24:57 2024
+</u/modelfactory/AutoQA/fmea_recommender/baseline_embedder/data3> was used as the working directory.
+Started at Sat May 11 18:28:23 2024
+Terminated at Sat May 11 18:28:36 2024
+Results reported at Sat May 11 18:28:36 2024
 
 Your job looked like:
 
@@ -82,16 +52,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   5.13 sec.
-    Max Memory :                                 260 MB
-    Average Memory :                             200.75 MB
+    CPU time :                                   5.08 sec.
+    Max Memory :                                 265 MB
+    Average Memory :                             199.25 MB
     Total Requested Memory :                     394240.00 MB
-    Delta Memory :                               393980.00 MB
+    Delta Memory :                               393975.00 MB
     Max Swap :                                   -
     Max Processes :                              3
     Max Threads :                                19
-    Run time :                                   13 sec.
-    Turnaround time :                            14 sec.
+    Run time :                                   11 sec.
+    Turnaround time :                            15 sec.
 
 The output (if any) is above this job summary.
 
