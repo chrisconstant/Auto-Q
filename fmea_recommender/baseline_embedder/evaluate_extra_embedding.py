@@ -64,6 +64,42 @@ sets = [
         "index": "./e5_large_v2_test.csv",
         "cname": "e5_large_v2_test",
     },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_val_short_desc_to_failure_locations.csv",
+        "index": "./slate_30m_english_rtrvr_val.csv",
+        "cname": "slate_30m_english_rtrvr_val",
+    },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_test_short_desc_to_failure_locations.csv",
+        "index": "./slate_30m_english_rtrvr_test.csv",
+        "cname": "slate_30m_english_rtrvr_test",
+    },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_val_short_desc_to_failure_locations.csv",
+        "index": "./slate_125m_english_rtrvr_val.csv",
+        "cname": "slate_125m_english_rtrvr_val",
+    },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_test_short_desc_to_failure_locations.csv",
+        "index": "./slate_125m_english_rtrvr_test.csv",
+        "cname": "slate_125m_english_rtrvr_test",
+    },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_val_short_desc_to_failure_locations.csv",
+        "index": "./bge_large_en_val.csv",
+        "cname": "bge_large_en_val",
+    },
+    {
+        "train": "./data/all_ids_deduplicated_train_short_desc_to_failure_locations.csv",
+        "dest": "./data/all_ids_deduplicated_test_short_desc_to_failure_locations.csv",
+        "index": "./bge_large_en_test.csv",
+        "cname": "bge_large_en_test",
+    },
 ]
 
 totalks = [1, 3]
