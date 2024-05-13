@@ -75,6 +75,42 @@ sets = [
         "index": "./e5_large_v2_test.csv",
         "cname": "e5_large_v2_test",
     },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_train_trial.csv",
+        "index": "./slate_30m_english_rtrvr_val.csv",
+        "cname": "slate_30m_english_rtrvr_val",
+    },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_test_trial.csv",
+        "index": "./slate_30m_english_rtrvr_test.csv",
+        "cname": "slate_30m_english_rtrvr_test",
+    },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_train_trial.csv",
+        "index": "./slate_125m_english_rtrvr_val.csv",
+        "cname": "slate_125m_english_rtrvr_val",
+    },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_test_trial.csv",
+        "index": "./slate_125m_english_rtrvr_test.csv",
+        "cname": "slate_125m_english_rtrvr_test",
+    },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_train_trial.csv",
+        "index": "./bge_large_en_val.csv",
+        "cname": "bge_large_en_val",
+    },
+    {
+        "train": "failure_code.csv",
+        "dest": "client_1_test_trial.csv",
+        "index": "./bge_large_en_test.csv",
+        "cname": "bge_large_en_test",
+    },
 ]
 
 totalks = [1, 3]
