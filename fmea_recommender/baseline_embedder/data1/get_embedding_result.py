@@ -34,6 +34,9 @@ models = [
     {"mdl": "all-mpnet-base-v2", "mode": "all_mpnet_base_v2", "type": "ST", "query": ""},
     {"mdl": "intfloat/e5-small-v2", "mode": "e5_small_v2", "type": "ST", "query": "query: "},
     {"mdl": "intfloat/e5-large-v2", "mode": "e5_large_v2", "type": "ST", "query": "query: "},
+    {"mdl": "baai/bge-large-en-v1.5", "mode": "bge_large_en", "type": "BAM", "query": ""},
+    {"mdl": "ibm/slate.125m.english.rtrvr", "mode": "slate_125m_english_rtrvr", "type": "BAM", "query": ""},
+    {"mdl": "ibm/slate.30m.english.rtrvr.02.28.2024", "mode": "slate_30m_english_rtrvr", "type": "BAM", "query": ""},
     # {
     #    "mdl": "jspringer/echo-mistral-7b-instruct-lasttoken",
     #    "mode": "echo_mistral_7b_instruct_lasttoken",
