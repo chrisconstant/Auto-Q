@@ -13,6 +13,15 @@ accuracy 1 0.62 0 0 e5_small_v2_test
 macro 1 0.6759906759906759 0.6999536178107607 0.6561626049021007 e5_large_v2_test
 micro 1 0.61 0.61 0.61 e5_large_v2_test
 accuracy 1 0.61 0 0 e5_large_v2_test
+macro 1 0.6181366252794824 0.6840097402597403 0.629314357321876 slate_30m_english_rtrvr_test
+micro 1 0.59 0.59 0.59 slate_30m_english_rtrvr_test
+accuracy 1 0.59 0 0 slate_30m_english_rtrvr_test
+macro 1 0.6397031539888683 0.6891001855287568 0.6437938333228029 slate_125m_english_rtrvr_test
+micro 1 0.6 0.6 0.6 slate_125m_english_rtrvr_test
+accuracy 1 0.6 0 0 slate_125m_english_rtrvr_test
+macro 1 0.6831349206349205 0.7098794063079776 0.654465053478572 bge_large_en_test
+micro 1 0.63 0.63 0.63 bge_large_en_test
+accuracy 1 0.63 0 0 bge_large_en_test
 macro 3 0.5600237064522778 0.6386750154607297 0.5718369151005976 dfsp_mpnet_base_v2_test
 micro 3 0.58 0.58 0.58 dfsp_mpnet_base_v2_test
 accuracy 3 0.58 0 0 dfsp_mpnet_base_v2_test
@@ -28,18 +37,27 @@ accuracy 3 0.59 0 0 e5_small_v2_test
 macro 3 0.6598470973470973 0.6354553184910328 0.6081458899349214 e5_large_v2_test
 micro 3 0.57 0.57 0.57 e5_large_v2_test
 accuracy 3 0.57 0 0 e5_large_v2_test
+macro 3 0.6222789115646259 0.6250270562770562 0.6000051535765821 slate_30m_english_rtrvr_test
+micro 3 0.57 0.57 0.57 slate_30m_english_rtrvr_test
+accuracy 3 0.57 0 0 slate_30m_english_rtrvr_test
+macro 3 0.5977040816326531 0.5903447742733456 0.5762755102040816 slate_125m_english_rtrvr_test
+micro 3 0.52 0.52 0.52 slate_125m_english_rtrvr_test
+accuracy 3 0.52 0 0 slate_125m_english_rtrvr_test
+macro 3 0.7062873634302206 0.699791280148423 0.6682326549807751 bge_large_en_test
+micro 3 0.65 0.65 0.65 bge_large_en_test
+accuracy 3 0.65 0 0 bge_large_en_test
 
 ------------------------------------------------------------
-Sender: LSF System <lsfadmin@cccxc590.pok.ibm.com>
-Subject: Job 3884362: <python3.10 evaluate_extra_embedding.py> in cluster <cccCluster> Done
+Sender: LSF System <lsfadmin@cccxc587.pok.ibm.com>
+Subject: Job 3894495: <python3.10 evaluate_extra_embedding.py> in cluster <cccCluster> Done
 
-Job <python3.10 evaluate_extra_embedding.py> was submitted from host <cccxl016> by user <modelfactory> in cluster <cccCluster> at Sat May 11 18:28:21 2024
-Job was executed on host(s) <8*cccxc590>, in queue <nonstandard>, as user <modelfactory> in cluster <cccCluster> at Sat May 11 18:28:23 2024
+Job <python3.10 evaluate_extra_embedding.py> was submitted from host <cccxl016> by user <modelfactory> in cluster <cccCluster> at Sun May 12 21:39:31 2024
+Job was executed on host(s) <8*cccxc587>, in queue <nonstandard>, as user <modelfactory> in cluster <cccCluster> at Sun May 12 21:39:32 2024
 </u/modelfactory> was used as the home directory.
 </u/modelfactory/AutoQA/fmea_recommender/baseline_embedder/data3> was used as the working directory.
-Started at Sat May 11 18:28:23 2024
-Terminated at Sat May 11 18:28:36 2024
-Results reported at Sat May 11 18:28:36 2024
+Started at Sun May 12 21:39:32 2024
+Terminated at Sun May 12 21:39:37 2024
+Results reported at Sun May 12 21:39:37 2024
 
 Your job looked like:
 
@@ -52,16 +70,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   5.08 sec.
-    Max Memory :                                 265 MB
-    Average Memory :                             199.25 MB
+    CPU time :                                   4.26 sec.
+    Max Memory :                                 143 MB
+    Average Memory :                             96.00 MB
     Total Requested Memory :                     394240.00 MB
-    Delta Memory :                               393975.00 MB
+    Delta Memory :                               394097.00 MB
     Max Swap :                                   -
     Max Processes :                              3
-    Max Threads :                                19
-    Run time :                                   11 sec.
-    Turnaround time :                            15 sec.
+    Max Threads :                                12
+    Run time :                                   3 sec.
+    Turnaround time :                            6 sec.
 
 The output (if any) is above this job summary.
 

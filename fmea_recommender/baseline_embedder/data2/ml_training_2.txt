@@ -28,6 +28,24 @@ accuracy 1 0.15841584158415842 0 0 e5_large_v2_val
 macro 1 0.37556479978354973 0.30273268398268394 0.1477073784059078 e5_large_v2_test
 micro 1 0.17 0.17 0.17 e5_large_v2_test
 accuracy 1 0.17 0 0 e5_large_v2_test
+macro 1 0.28276573787409703 0.44762254901960785 0.123136436832089 slate_30m_english_rtrvr_val
+micro 1 0.18811881188118812 0.18811881188118812 0.18811881188118812 slate_30m_english_rtrvr_val
+accuracy 1 0.18811881188118812 0 0 slate_30m_english_rtrvr_val
+macro 1 0.3264233193277311 0.4571049783549784 0.12893170838823012 slate_30m_english_rtrvr_test
+micro 1 0.2 0.2 0.2 slate_30m_english_rtrvr_test
+accuracy 1 0.2 0 0 slate_30m_english_rtrvr_test
+macro 1 0.27518640350877194 0.4641911764705882 0.12305555555555558 slate_125m_english_rtrvr_val
+micro 1 0.1782178217821782 0.1782178217821782 0.1782178217821782 slate_125m_english_rtrvr_val
+accuracy 1 0.1782178217821782 0 0 slate_125m_english_rtrvr_val
+macro 1 0.30823633156966485 0.3945767195767196 0.13098052045420466 slate_125m_english_rtrvr_test
+micro 1 0.18 0.18 0.18 slate_125m_english_rtrvr_test
+accuracy 1 0.18 0 0 slate_125m_english_rtrvr_test
+macro 1 0.3439516129032258 0.42754901960784314 0.10909774436090225 bge_large_en_val
+micro 1 0.15841584158415842 0.15841584158415842 0.15841584158415842 bge_large_en_val
+accuracy 1 0.15841584158415842 0 0 bge_large_en_val
+macro 1 0.3552348885682219 0.3731541606541607 0.1338348152073642 bge_large_en_test
+micro 1 0.17 0.17 0.17 bge_large_en_test
+accuracy 1 0.17 0 0 bge_large_en_test
 macro 3 0.26666666666666666 0.42343604108309985 0.0548499897239393 dfsp_mpnet_base_v2_val
 micro 3 0.10891089108910891 0.10891089108910891 0.10891089108910891 dfsp_mpnet_base_v2_val
 accuracy 3 0.10891089108910891 0 0 dfsp_mpnet_base_v2_val
@@ -58,18 +76,36 @@ accuracy 3 0.15841584158415842 0 0 e5_large_v2_val
 macro 3 0.37556479978354973 0.30273268398268394 0.1477073784059078 e5_large_v2_test
 micro 3 0.17 0.17 0.17 e5_large_v2_test
 accuracy 3 0.17 0 0 e5_large_v2_test
+macro 3 0.28276573787409703 0.44762254901960785 0.123136436832089 slate_30m_english_rtrvr_val
+micro 3 0.18811881188118812 0.18811881188118812 0.18811881188118812 slate_30m_english_rtrvr_val
+accuracy 3 0.18811881188118812 0 0 slate_30m_english_rtrvr_val
+macro 3 0.3264233193277311 0.4571049783549784 0.12893170838823012 slate_30m_english_rtrvr_test
+micro 3 0.2 0.2 0.2 slate_30m_english_rtrvr_test
+accuracy 3 0.2 0 0 slate_30m_english_rtrvr_test
+macro 3 0.27518640350877194 0.4641911764705882 0.12305555555555558 slate_125m_english_rtrvr_val
+micro 3 0.1782178217821782 0.1782178217821782 0.1782178217821782 slate_125m_english_rtrvr_val
+accuracy 3 0.1782178217821782 0 0 slate_125m_english_rtrvr_val
+macro 3 0.30823633156966485 0.3945767195767196 0.13098052045420466 slate_125m_english_rtrvr_test
+micro 3 0.18 0.18 0.18 slate_125m_english_rtrvr_test
+accuracy 3 0.18 0 0 slate_125m_english_rtrvr_test
+macro 3 0.3439516129032258 0.42754901960784314 0.10909774436090225 bge_large_en_val
+micro 3 0.15841584158415842 0.15841584158415842 0.15841584158415842 bge_large_en_val
+accuracy 3 0.15841584158415842 0 0 bge_large_en_val
+macro 3 0.3552348885682219 0.3731541606541607 0.1338348152073642 bge_large_en_test
+micro 3 0.17 0.17 0.17 bge_large_en_test
+accuracy 3 0.17 0 0 bge_large_en_test
 
 ------------------------------------------------------------
-Sender: LSF System <lsfadmin@cccxc590.pok.ibm.com>
-Subject: Job 3883804: <python3.10 evaluate_extra_embedding.py> in cluster <cccCluster> Done
+Sender: LSF System <lsfadmin@cccxc582.pok.ibm.com>
+Subject: Job 3894494: <python3.10 evaluate_extra_embedding.py> in cluster <cccCluster> Done
 
-Job <python3.10 evaluate_extra_embedding.py> was submitted from host <cccxl016> by user <modelfactory> in cluster <cccCluster> at Sat May 11 15:24:43 2024
-Job was executed on host(s) <8*cccxc590>, in queue <nonstandard>, as user <modelfactory> in cluster <cccCluster> at Sat May 11 15:24:44 2024
+Job <python3.10 evaluate_extra_embedding.py> was submitted from host <cccxl016> by user <modelfactory> in cluster <cccCluster> at Sun May 12 21:39:24 2024
+Job was executed on host(s) <8*cccxc582>, in queue <nonstandard>, as user <modelfactory> in cluster <cccCluster> at Sun May 12 21:39:27 2024
 </u/modelfactory> was used as the home directory.
 </u/modelfactory/AutoQA/fmea_recommender/baseline_embedder/data2> was used as the working directory.
-Started at Sat May 11 15:24:44 2024
-Terminated at Sat May 11 15:24:57 2024
-Results reported at Sat May 11 15:24:57 2024
+Started at Sun May 12 21:39:27 2024
+Terminated at Sun May 12 21:39:40 2024
+Results reported at Sun May 12 21:39:40 2024
 
 Your job looked like:
 
@@ -82,16 +118,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   5.13 sec.
-    Max Memory :                                 260 MB
-    Average Memory :                             200.75 MB
+    CPU time :                                   5.39 sec.
+    Max Memory :                                 272 MB
+    Average Memory :                             209.75 MB
     Total Requested Memory :                     394240.00 MB
-    Delta Memory :                               393980.00 MB
+    Delta Memory :                               393968.00 MB
     Max Swap :                                   -
     Max Processes :                              3
     Max Threads :                                19
-    Run time :                                   13 sec.
-    Turnaround time :                            14 sec.
+    Run time :                                   20 sec.
+    Turnaround time :                            16 sec.
 
 The output (if any) is above this job summary.
 
