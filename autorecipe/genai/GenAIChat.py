@@ -1,5 +1,5 @@
-from genai.credentials import Credentials
-from genai.extensions.langchain.chat_llm import LangChainChatInterface
+# from genai.credentials import Credentials
+# from genai.extensions.langchain.chat_llm import LangChainChatInterface
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 # from langchain.schema import HumanMessage, SystemMessage, AIMessage
 from typing import Callable, Dict, List, Optional, Tuple, Union
@@ -9,9 +9,11 @@ import json
 import mlflow
 import socket
 import time
-from genai.exceptions import ApiNetworkException, ApiResponseException, ValidationError
-from genai import Client, Credentials
-from genai.extensions.langchain.utils import CustomAIMessageChunk
+# from genai.exceptions import ApiNetworkException, ApiResponseException, ValidationError
+# from genai import Client, Credentials
+# from genai.extensions.langchain.utils import CustomAIMessageChunk
+from langchain_ibm import ChatWatsonx
+import os
 
 UNKNOWN = "unknown"
 
@@ -94,13 +96,14 @@ class GenAIChatClient():
         self.skill = skill
         ignored_key = 'moderations'
         filtered_params = {key: value for key, value in params.items() if key != ignored_key}
-
-        self.llm = LangChainChatInterface(
-            client=Client(credentials=Credentials(**credentials)),
+        self.llm = ChatWatsonx(
             model_id=model,
-            parameters=TextGenerationParameters(**filtered_params),
-            moderations=params['moderations']
+            url=credentials['api_endpoint'],
+            apikey=credentials['api_key'],
+            project_id=credentials['project_id'],
+            params=params,
         )
+
         self._conversation_id = None
         self.system_message = system_message
         self.stateful = stateful
@@ -142,6 +145,7 @@ class GenAIChatClient():
 
     def create(self, context, messages, experiment_id):
         """ """
+        # todo: fix llm call
         time.sleep(5) # putting sleep for 5 second
         with mlflow.start_run(experiment_id=experiment_id, nested=True) as conv:
             q_dict = {"Question": messages}
@@ -163,12 +167,12 @@ class GenAIChatClient():
 
                 if result:
                     a_dict = {"Answer": result.generations[0][0].text}
-                    t_dict = result.generations[0][0].generation_info["token_usage"]
-                    self._update_tokens_usage(
-                        t_dict["prompt_tokens"],
-                        t_dict["completion_tokens"],
-                        t_dict["total_tokens"],
-                    )
+                    # t_dict = result.generations[0][0].generation_info["token_usage"]
+                    # self._update_tokens_usage(
+                    #     t_dict["prompt_tokens"],
+                    #     t_dict["completion_tokens"],
+                    #     t_dict["total_tokens"],
+                    # )
                     mlflow.log_dict(a_dict, "Answer.json")
                     if self.post_process_text:
                         return self.clean_user_assistant(result.generations[0][0].text)
@@ -209,12 +213,12 @@ class GenAIChatClient():
                                 "meta"
                             ]["conversation_id"]
                         a_dict = {"Answer": result.generations[0][0].text}
-                        t_dict = result.generations[0][0].generation_info["token_usage"]
-                        self._update_tokens_usage(
-                            t_dict["prompt_tokens"],
-                            t_dict["completion_tokens"],
-                            t_dict["total_tokens"],
-                        )
+                        # t_dict = result.generations[0][0]['response_metadata']['token_usage']
+                        # self._update_tokens_usage(
+                        #     t_dict["prompt_tokens"],
+                        #     t_dict["completion_tokens"],
+                        #     t_dict["total_tokens"],
+                        # )
                         mlflow.log_dict(a_dict, "Answer.json")
                         if self.post_process_text:
                             return self.clean_user_assistant(result.generations[0][0].text)

@@ -1,10 +1,10 @@
 from autorecipe.genai.GenAIChat import GenAIChatClient
 import uuid
 import mlflow
-from dotenv import load_dotenv
 import uuid
 import mlflow
-
+from dotenv import load_dotenv
+import os
 from genai.schema import (
     DecodingMethod,
     ModerationHAP,
@@ -14,8 +14,6 @@ from genai.schema import (
 
 
 load_dotenv()
-api_key = "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg"
-api_url = "https://bam-api.res.ibm.com"
 
 ASSET_LIST_complete = [
     "Electrical submersible pump"
@@ -26,33 +24,36 @@ ASSET_LIST = [
 ]
 
 LLMsets = [
-    "ibm/granite-13b-instruct-v2",
-    "meta-llama/llama-2-70b-chat",
-    "ibm-mistralai/mixtral-8x7b-instruct-v01-q",
-    "ibm/granite-13b-chat-v2",
-    "ibm/granite-13b-labrador-rc",
-    "mistralai/mixtral-8x7b-instruct-v0-1",
+    "ibm/granite-3-3-8b-instruct",
+    "mistralai/mistral-large",
+    "mistralai/mistral-medium-2505",
+    "meta-llama/llama-3-3-70b-instruct"
 ]
-
+load_dotenv('.env')
+model_id = 3
 final_ans = ""
 final_confidence = ""
 
 DEFAULT_CONFIG = {
-    "model": LLMsets[0],
+    "model": LLMsets[model_id],
     "params": {
-        "decoding_method": DecodingMethod.GREEDY,
+        "decoding_method": "greedy",
         "min_new_tokens": 200,
         "max_new_tokens": 2000,  # 1500,
-        "stop_sequences": ["(TOKENSTOP)"],
+        # "stop_sequences": ["(TOKENSTOP)","User:","USER:","Assistant:","ASSISTANT:"],
         #"stream": True,
-        "return_options": TextGenerationReturnOptions(input_text=False, input_tokens=True),
-        "moderations": ModerationParameters(
-            hap=ModerationHAP(input=True, output=False, threshold=0.01)
-        ),
+        "return_options": {
+            'input_text': False, 
+            'input_tokens': True
+        },
+        # "moderations": ModerationParameters(
+        #     hap=ModerationHAP(input=True, output=False, threshold=0.01)
+        # ),
     },
     "creds": {
-        "api_key": "pak-whBjdbU__x9iGseK-ZU2q0xbxrI3mwEwgKms9UDBtlg",
-        "api_endpoint": "https://bam-api.res.ibm.com",
+        "api_key": os.environ['GENAI_KEY'],
+        "api_endpoint": os.environ['GENAI_API'],
+        "project_id": os.environ['WATSONX_PROJECT_ID']
     },
     "stream": True,
 }
@@ -109,7 +110,6 @@ def get_asset_description(iteration=3, asset_class="Electrical submersible pump"
     """
     initstep = True
     stateful = False
-
     for i in range(iteration):
         experiment_name = (
             "MyExperiment_" + asset_class + "_" + str(uuid.uuid4())

@@ -1,13 +1,9 @@
-from genai.credentials import Credentials
-from genai.schema import TextGenerationParameters, TextGenerationReturnOptions
 import mlflow
 import socket
 import time
-from genai import Client, Credentials
-from genai.extensions.langchain import LangChainInterface
 import time
 import socket
-from genai import Client, Credentials
+from langchain_ibm import ChatWatsonx
 
 UNKNOWN = "unknown"
 
@@ -30,13 +26,19 @@ class GenAIInstructClient():
         self.skill = skill
         ignored_key = 'moderations'
         filtered_params = {key: value for key, value in params.items() if key != ignored_key}
-
-        self.llm = LangChainInterface(
-            client=Client(credentials=Credentials(**credentials)),
+        self.llm = ChatWatsonx(
             model_id=model,
-            parameters=TextGenerationParameters(**filtered_params),
-            moderations=params['moderations']
+            url=credentials['api_endpoint'],
+            apikey=credentials['api_key'],
+            project_id=credentials['project_id'],
+            params=params,
         )
+        # self.llm = LangChainInterface(
+        #     client=Client(credentials=Credentials(**credentials)),
+        #     model_id=model,
+        #     parameters=TextGenerationParameters(**filtered_params),
+        #     moderations=params['moderations']
+        # )
         self.system_message = system_message
         self.question_message = question_message
 
