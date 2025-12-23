@@ -1,4 +1,3 @@
-#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
 
 from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
 
